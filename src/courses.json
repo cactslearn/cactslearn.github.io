@@ -1,0 +1,504 @@
+[
+  {
+    "slug": "java-full-stack-developer-training",
+    "name": "Java Full Stack Developer Training",
+    "price": "₹19,999",
+    "price_num": 19999,
+    "duration": "16 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "1-to-1 Java Full Stack training. Learn Core/Advanced Java, Spring Boot, Hibernate, React, and SQL with hands-on coding and real-world internships.",
+    "seo_title": "Java Full Stack Developer Training in Pune | CACTS Shivane",
+    "meta_description": "Join the best 1-to-1 Java Full Stack Developer Training in Pune. Direct live project internship, personalized syllabus, and mentor support. Only ₹19,999.",
+    "h1": "Java Full Stack Developer Training in Pune",
+    "h2": "Master Spring Boot, React, and SQL via One-to-One Mentoring & Live Internships",
+    "skills": ["Core Java", "Advanced Java", "Spring Boot", "Hibernate", "ReactJS", "REST APIs", "MySQL", "Git & GitHub"],
+    "overview": "Our Java Full Stack Developer Training is custom-engineered for career aspirants who want true development skills. At CACTS Pune, we teach you 1-to-1. No large batches. You will code from day one, building enterprise-level applications, and complete your learning with an active internship on a live company project.",
+    "modules": [
+      {
+        "title": "Module 1: Java Core Fundamentals",
+        "duration": "4 Weeks",
+        "topics": ["Object-Oriented Programming (OOPs) concepts in depth", "Java Collections Framework & Generic Data Structures", "Exception Handling and Multi-threading basics", "File I/O and JVM memory model architecture"]
+      },
+      {
+        "title": "Module 2: Advanced Java & Database Integration",
+        "duration": "4 Weeks",
+        "topics": ["JDBC connections and connection pools", "Servlets & JSP Web Containers", "Hibernate ORM mapping and HQL queries", "Relational database modeling with MySQL"]
+      },
+      {
+        "title": "Module 3: Spring Framework & Spring Boot microservices",
+        "duration": "4 Weeks",
+        "topics": ["Spring Core, Dependency Injection (DI) & Inversion of Control (IoC)", "Spring Boot MVC for RESTful API construction", "Spring Data JPA & repository integration", "Spring Security basics and JWT authentication"]
+      },
+      {
+        "title": "Module 4: React Front-End & Live Internship",
+        "duration": "4 Weeks",
+        "topics": ["React Components, Hooks, and State Management", "Integrating Spring Boot APIs with React Axios clients", "Git version control, code review loops, and CI/CD staging deploy", "Onboarding on a live, real company project internship"]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is the primary language focus of this full stack course?",
+        "a": "The course is focused on Java for the backend (Spring Boot, Hibernate) and JavaScript/TypeScript for the frontend (ReactJS)."
+      },
+      {
+        "q": "Do I get to work on a live project?",
+        "a": "Yes. The final module of the training transitions into a real internship where you work on actual company projects, committing code to git repositories."
+      }
+    ]
+  },
+  {
+    "slug": "full-stack-development-training",
+    "name": "Full Stack Development Training",
+    "price": "₹17,999",
+    "price_num": 17999,
+    "duration": "14 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "Individual Full Stack Web Development course. Cover HTML, CSS, JavaScript, React, Node.js, and Express. Includes live project internship.",
+    "seo_title": "Full Stack Development Course in Pune | CACTS Shivane",
+    "meta_description": "Learn Full Stack Web Development (MERN Stack) with 1-to-1 training in Pune. Internship on real company projects. Transparent fees: ₹17,999.",
+    "h1": "Full Stack Web Development Training in Pune",
+    "h2": "Build Modern MERN Applications with Direct 1-on-1 Mentor Guidance",
+    "skills": ["HTML5 & CSS3", "Modern JavaScript (ES6+)", "ReactJS", "Node.js", "Express.js", "MongoDB", "RESTful API", "GitHub"],
+    "overview": "Become a confident web developer by learning the MERN (MongoDB, Express, React, Node) stack. Through our unique 1-to-1 virtual sessions, we guide you step-by-step through front-end architectures and backend web services, ending with a production-ready web application deploy.",
+    "modules": [
+      {
+        "title": "Module 1: Modern Front-end Architecture",
+        "duration": "4 Weeks",
+        "topics": ["Semantic HTML5, CSS Flexbox and Grid layouts", "Responsive Design, CSS custom properties, and animations", "Vanilla JS DOM manipulation, Promises, Async/Await, and API fetching"]
+      },
+      {
+        "title": "Module 2: React.js UI Engineering",
+        "duration": "4 Weeks",
+        "topics": ["React Functional Components and React Hooks (useState, useEffect)", "State Management and client-side routing", "Asynchronous data fetching and styling in React"]
+      },
+      {
+        "title": "Module 3: Backend Node.js & Express APIs",
+        "duration": "3 Weeks",
+        "topics": ["Node.js event loop and file systems", "Express.js routing, controllers, and middleware configuration", "REST API architecture and JSON response formatting"]
+      },
+      {
+        "title": "Module 4: MongoDB & Staging Deployment",
+        "duration": "3 Weeks",
+        "topics": ["NoSQL database modeling with MongoDB & Mongoose", "User authentication (bcrypt & JSON Web Tokens)", "Git workflow and deploying web apps to Cloud Providers"]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What database systems are taught in the Full Stack course?",
+        "a": "We cover MongoDB as the primary NoSQL database, along with fundamentals of REST API connectivity."
+      },
+      {
+        "q": "Is this course suitable for beginners?",
+        "a": "Yes. Since the training is 1-to-1, we tailor the pace to suit your background, whether you are a student or a career switcher."
+      }
+    ]
+  },
+  {
+    "slug": "ai-machine-learning-training",
+    "name": "AI & Machine Learning Training",
+    "price": "₹24,999",
+    "price_num": 24999,
+    "duration": "16 Weeks",
+    "gbp_category": "Training Centre",
+    "gbp_description": "Master Machine Learning algorithms, Deep Learning, NLP, and computer vision with personalized 1-on-1 sessions. Internship on active company projects.",
+    "seo_title": "AI and Machine Learning Training in Pune | CACTS Shivane",
+    "meta_description": "Personalized 1-to-1 AI & Machine Learning Course in Shivane, Pune. Build custom ML models & Neural Networks. Real company project experience. ₹24,999.",
+    "h1": "AI & Machine Learning Training in Pune",
+    "h2": "Master Predictive Modeling, Neural Networks, and NLP with 1-to-1 Mentoring",
+    "skills": ["Python for ML", "Scikit-Learn", "TensorFlow & Keras", "Pandas & Numpy", "Neural Networks", "NLP & Computer Vision", "Supervised Learning"],
+    "overview": "Enter the frontier of computer science. Our AI & Machine Learning training breaks down complex mathematical models into practical, code-first Python implementations. You get direct mentor access to debug your model training, optimize loss functions, and deploy models in real-world scenarios.",
+    "modules": [
+      {
+        "title": "Module 1: Mathematical Foundations & Python for ML",
+        "duration": "4 Weeks",
+        "topics": ["Linear Algebra, Calculus, and Probability for AI", "Numerical computation with NumPy and Data analysis with Pandas", "Data visualization with Matplotlib and Seaborn"]
+      },
+      {
+        "title": "Module 2: Classical Machine Learning Algorithms",
+        "duration": "4 Weeks",
+        "topics": ["Supervised learning: Regression, Decision Trees, Random Forests, SVMs", "Unsupervised learning: K-Means clustering, PCA dimensionality reduction", "Model evaluation metrics: Precision, Recall, F1-Score, ROC-AUC"]
+      },
+      {
+        "title": "Module 3: Deep Learning & Neural Networks",
+        "duration": "4 Weeks",
+        "topics": ["Perceptrons, Backpropagation, and activation functions", "Building Neural Networks using TensorFlow and Keras", "Introduction to Convolutional Neural Networks (CNN) for image data"]
+      },
+      {
+        "title": "Module 4: NLP & Live AI Model Deployment",
+        "duration": "4 Weeks",
+        "topics": ["Natural Language Processing (NLP) text processing & vectorization", "Deploying models as microservices using Flask/FastAPI", "Collaborating on active company machine learning pipelines"]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need a strong math background for the AI/ML course?",
+        "a": "A basic understanding of algebra is helpful, but we teach all required mathematical foundations step-by-step during the course."
+      },
+      {
+        "q": "Which libraries will I use in Python?",
+        "a": "You will gain hands-on experience with NumPy, Pandas, Scikit-Learn, TensorFlow, and Keras."
+      }
+    ]
+  },
+  {
+    "slug": "data-science-training",
+    "name": "Data Science Training",
+    "price": "₹22,999",
+    "price_num": 22999,
+    "duration": "14 Weeks",
+    "gbp_category": "Training Centre",
+    "gbp_description": "1-to-1 Data Science training. Includes Statistics, Python, Pandas, Numpy, data visualization, and predictive modeling. Built around live company tasks.",
+    "seo_title": "Data Science Course in Pune | CACTS Shivane",
+    "meta_description": "Enroll in our Data Science Training in Pune. 1-to-1 training in statistics, Python modeling, SQL, and data visualization. Real company projects. ₹22,999.",
+    "h1": "Data Science Training in Pune",
+    "h2": "Turn Raw Data into Business Intelligence via Hands-On 1-on-1 Sessions",
+    "skills": ["Statistics", "Python Data Science", "Pandas & Numpy", "SQL for Analytics", "Data Wrangling", "Machine Learning Core", "Data Visualization"],
+    "overview": "Data Science is the key to corporate decision-making. At CACTS Pune, we bypass general lecture halls to give you personalized training in data analysis. Learn to extract, clean, analyze, and visualize data, building a portfolio of real-world studies.",
+    "modules": [
+      {
+        "title": "Module 1: Descriptive & Inferential Statistics",
+        "duration": "3 Weeks",
+        "topics": ["Central tendency, dispersion, probability distributions", "Hypothesis testing, p-values, A/B testing principles", "Sampling techniques and statistical errors"]
+      },
+      {
+        "title": "Module 2: Python Data Pipeline",
+        "duration": "4 Weeks",
+        "topics": ["Data collection, cleaning, and preprocessing with Pandas", "Dealing with missing values and outliers", "Exploratory Data Analysis (EDA) best practices"]
+      },
+      {
+        "title": "Module 3: Structured Querying & Warehousing",
+        "duration": "3 Weeks",
+        "topics": ["Relational database querying with SQL (joins, subqueries, aggregates)", "Connecting Python to SQL databases", "Data schema design for analytics"]
+      },
+      {
+        "title": "Module 4: Predictive Modeling & Case Projects",
+        "duration": "4 Weeks",
+        "topics": ["Linear and logistic regression implementations", "Building business dashboards and storyboards", "Analyzing actual company datasets during the live internship phase"]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Will I learn SQL in the Data Science course?",
+        "a": "Yes. SQL is a fundamental database language for data science, and we cover database queries extensively."
+      },
+      {
+        "q": "Is the internship part of the tuition?",
+        "a": "Yes, the live project internship experience is fully included in the ₹22,999 program fee."
+      }
+    ]
+  },
+  {
+    "slug": "data-engineering-training",
+    "name": "Data Engineering Training",
+    "price": "₹24,999",
+    "price_num": 24999,
+    "duration": "16 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "Professional Data Engineering course covering ETL pipelines, SQL, Apache Spark, Hadoop, and cloud data warehouses. 1-to-1 guidance, no batch constraints.",
+    "seo_title": "Data Engineering Training in Pune | CACTS Shivane",
+    "meta_description": "Learn to design scalable data pipelines. 1-to-1 Data Engineering Course in Pune. Apache Spark, Hadoop, SQL, and ETL. Real project internships. ₹24,999.",
+    "h1": "Data Engineering Training in Pune",
+    "h2": "Architect Scalable Data Lakes and ETL Pipelines with Private Mentorship",
+    "skills": ["ETL Pipelines", "Apache Spark", "Hadoop Ecosystem", "Advanced SQL", "Data Warehousing", "Cloud Data Lakes", "Python Scripting"],
+    "overview": "Data Engineers build the backbone that makes data science possible. Learn to design, build, and maintain high-volume data pipelines. From database schema structures to big data streaming frameworks, you will study 1-to-1 with an experienced system engineer.",
+    "modules": [
+      {
+        "title": "Module 1: Advanced SQL & Data Architecture",
+        "duration": "4 Weeks",
+        "topics": ["Complex relational querying, window functions, and indexing", "OLAP vs OLTP systems architecture", "Designing star and snowflake data warehouse schemas"]
+      },
+      {
+        "title": "Module 2: Python Scripting & ETL Pipelines",
+        "duration": "4 Weeks",
+        "topics": ["Writing robust ETL scripts in Python", "Interacting with APIs and file formats (JSON, CSV, Parquet)", "Automating jobs and tracking execution logs"]
+      },
+      {
+        "title": "Module 3: Big Data and Distributed Systems",
+        "duration": "4 Weeks",
+        "topics": ["Hadoop HDFS storage and MapReduce principles", "Distributed computing with Apache Spark (DataFrames & SQL)", "Stream processing concepts and queue messaging"]
+      },
+      {
+        "title": "Module 4: Cloud Data Lakes & Integration",
+        "duration": "4 Weeks",
+        "topics": ["Deploying data pipelines on Cloud platforms", "Database migrations and security access controls", "Real company data warehouse optimization project"]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What is the difference between Data Science and Data Engineering?",
+        "a": "Data Science focuses on analyzing data and building predictive models. Data Engineering focuses on building the systems, data pipelines, and infrastructure that store and move that data."
+      },
+      {
+        "q": "Do we write code in Apache Spark?",
+        "a": "Yes. We use PySpark (Spark with Python) to write distributed data manipulation processes."
+      }
+    ]
+  },
+  {
+    "slug": "python-programming-training",
+    "name": "Python Programming Training",
+    "price": "₹9,999",
+    "price_num": 9999,
+    "duration": "8 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "Essential Python Programming from variables to advanced object-oriented code, data structures, and script automation. Personalized training since 2012.",
+    "seo_title": "Python Training in Pune | CACTS Shivane",
+    "meta_description": "Master Python programming with 1-to-1 online training. Direct mentor support, hands-on scripting projects. Affordable fees: ₹9,999 in Shivane, Pune.",
+    "h1": "Python Programming Training in Pune",
+    "h2": "Go from Zero to Advanced Scripting and OOP in 8 Weeks with 1-to-1 Help",
+    "skills": ["Python Syntax", "OOP Concepts", "Data Structures", "File Handling", "APIs & Web Scraping", "SQL Connection", "Script Automation"],
+    "overview": "Python is the most popular entry language to the software industry. Rather than reading books, you will write active code on your screen, guided live by a developer. We build a personalized learning path to match your learning speed.",
+    "modules": [
+      {
+        "title": "Module 1: Python Core Foundations",
+        "duration": "3 Weeks",
+        "topics": ["Variables, dynamic data types, and operators", "Control flow logic (if-else, loops) and functions", "List, Dictionary, Tuple, and Set data structures"]
+      },
+      {
+        "title": "Module 2: Object-Oriented Python & Libraries",
+        "duration": "3 Weeks",
+        "topics": ["Classes, inheritance, polymorphism, and encapsulation", "Working with standard packages (OS, Sys, Math, DateTime)", "File I/O operations and robust Exception Handling"]
+      },
+      {
+        "title": "Module 3: Database & Script Automation",
+        "duration": "2 Weeks",
+        "topics": ["Connecting to databases (SQL/SQLite) from Python", "Parsing web data (APIs and Web Scraping with BeautifulSoup)", "Writing custom scripts to automate desktop workflows"]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is Python a good language to start with?",
+        "a": "Yes, Python's readable syntax makes it the ideal language for beginners starting their IT journey."
+      },
+      {
+        "q": "Can I upgrade to Data Science or AI/ML later?",
+        "a": "Absolutely. This course covers the solid Python foundations required to transition into advanced analytics."
+      }
+    ]
+  },
+  {
+    "slug": "power-bi-training",
+    "name": "Power BI Training",
+    "price": "₹7,999",
+    "price_num": 7999,
+    "duration": "6 Weeks",
+    "gbp_category": "Training Centre",
+    "gbp_description": "Comprehensive Power BI dashboard creation, DAX functions, data modeling, and reporting. Hands-on learning with corporate dashboard projects.",
+    "seo_title": "Power BI Course in Pune | CACTS Shivane",
+    "meta_description": "Learn Power BI dashboard building & DAX scripting. 1-to-1 professional coaching in Shivane, Pune. Real-world business data reporting. Fee: ₹7,999.",
+    "h1": "Power BI Dashboard Training in Pune",
+    "h2": "Design Corporate Data Dashboards and DAX Models with Individual Guidance",
+    "skills": ["Power BI Desktop", "DAX Functions", "Data Modeling", "Power Query ETL", "Interactive Dashboards", "Data Transformation"],
+    "overview": "Power BI transforms business data into interactive visual decisions. Learn to build executive-level financial, operations, and sales reports under the supervision of a BI consultant. You will work on real database schemas, writing complex DAX queries.",
+    "modules": [
+      {
+        "title": "Module 1: Data Connection & Power Query Transformation",
+        "duration": "2 Weeks",
+        "topics": ["Connecting to SQL databases, Excel, and API data feeds", "Cleaning, pivoting, and merging data in Power Query", "Custom columns and data type structuring"]
+      },
+      {
+        "title": "Module 2: Data Modeling & DAX Formulas",
+        "duration": "2 Weeks",
+        "topics": ["Establishing database table relationships (star schemas)", "Writing calculated columns and measures", "Using DAX functions (CALCULATE, RELATED, Time Intelligence)"]
+      },
+      {
+        "title": "Module 3: Reporting, Publishing & Live Dashboard Projects",
+        "duration": "2 Weeks",
+        "topics": ["Selecting standard and custom visual charts", "Configuring dashboard filters, slicers, and drill-downs", "Publishing reports to Power BI Service and sharing securely"]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need coding experience for Power BI?",
+        "a": "No coding background is required. Power BI relies mostly on drag-and-drop visuals and formula logic similar to advanced Excel."
+      },
+      {
+        "q": "What is DAX?",
+        "a": "DAX (Data Analysis Expressions) is the formula language used in Power BI to create custom measures and calculations."
+      }
+    ]
+  },
+  {
+    "slug": "cloud-computing-training",
+    "name": "Cloud Computing Training",
+    "price": "₹14,999",
+    "price_num": 14999,
+    "duration": "10 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "Master AWS and Azure services, cloud architecture, and security. 1-on-1 virtual sessions with real-world deployments.",
+    "seo_title": "Cloud Computing Training in Pune | CACTS Shivane",
+    "meta_description": "Learn AWS & Cloud Engineering with 1-to-1 training in Pune. Real-world sandbox deployment and network architecture. Course Fee: ₹14,999.",
+    "h1": "Cloud Computing Training in Pune",
+    "h2": "Architect Scalable AWS and Azure Infrastructures with Direct Live Deployments",
+    "skills": ["AWS Infrastructure", "Azure Core Services", "Cloud Security", "VPC Networking", "Compute (EC2/VMs)", "Storage Solutions", "Identity Access (IAM)"],
+    "overview": "Cloud Computing is the base layer of modern IT infrastructure. Learn the architecture of AWS and Azure. Through screen-sharing sessions, you will configure virtual networks, load balancers, database instances, and secure access permissions in real-time.",
+    "modules": [
+      {
+        "title": "Module 1: Cloud Architecture Foundations & Networking",
+        "duration": "3 Weeks",
+        "topics": ["Introduction to Cloud virtualization benefits and regions", "Configuring Virtual Private Clouds (VPC) and subnets", "Managing route tables, internet gateways, and security groups"]
+      },
+      {
+        "title": "Module 2: Compute & Storage Operations",
+        "duration": "3 Weeks",
+        "topics": ["Launching EC2 virtual machines and storage volumes", "Configuring S3 objects, bucket policies, and lifecycle management", "Setting up Elastic Load Balancers and Auto Scaling policies"]
+      },
+      {
+        "title": "Module 3: Cloud Databases, IAM & Monitoring",
+        "duration": "4 Weeks",
+        "topics": ["Deploying RDS managed relational databases (MySQL/PostgreSQL)", "Creating IAM user groups, access policies, and MFA keys", "Configuring CloudWatch log events and metric notifications", "Deploying a live web app during the company project internship"]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Which cloud platforms do we cover?",
+        "a": "We focus primarily on Amazon Web Services (AWS) and cover core comparison concepts of Microsoft Azure."
+      },
+      {
+        "q": "Do we get access to a cloud sandbox?",
+        "a": "Yes, we guide you in setting up and managing your cloud accounts within the secure free tier parameters."
+      }
+    ]
+  },
+  {
+    "slug": "devops-training",
+    "name": "DevOps Training",
+    "price": "₹14,999",
+    "price_num": 14999,
+    "duration": "12 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "1-to-1 DevOps engineering. Master CI/CD pipelines, Docker, Kubernetes, Ansible, and Git. Real company environment internship integration.",
+    "seo_title": "DevOps Training in Pune | CACTS Shivane",
+    "meta_description": "Master CI/CD pipelines, Docker, and Kubernetes. 1-to-1 DevOps Course in Shivane, Pune. Real company deployment experience. Only ₹14,999.",
+    "h1": "DevOps Engineering Training in Pune",
+    "h2": "Automate Build, Test, and Deploy Workflows under Individual Developer Coaching",
+    "skills": ["CI/CD Pipelines", "Docker Containers", "Kubernetes", "Linux Shell scripting", "Ansible", "Git Version Control", "Monitoring Tools"],
+    "overview": "DevOps bridges the gap between writing code and running software. At CACTS Pune, we teach you containerization, automation scripts, and continuous integration pipelines. Our 1-to-1 mentoring ensures you understand deployment topologies and cluster configurations.",
+    "modules": [
+      {
+        "title": "Module 1: Linux Operations & Version Control",
+        "duration": "3 Weeks",
+        "topics": ["Linux directory structures, permissions, and shell scripting", "Git commands, branch workflows, and remote repository syncing", "Package management and system services administration"]
+      },
+      {
+        "title": "Module 2: Containerization with Docker",
+        "duration": "3 Weeks",
+        "topics": ["Writing Dockerfiles to build customized application containers", "Managing Docker volumes, networks, and environment variables", "Multi-container deployments with Docker Compose"]
+      },
+      {
+        "title": "Module 3: Kubernetes Orchestration & Ansible Automation",
+        "duration": "3 Weeks",
+        "topics": ["Deploying Kubernetes pods, services, and replica sets", "Writing Ansible playbooks for automated server configurations", "Managing secrets and environment configurations"]
+      },
+      {
+        "title": "Module 4: CI/CD Pipelines & Real Deployment",
+        "duration": "3 Weeks",
+        "topics": ["Configuring Jenkins / GitHub Actions pipelines for auto-builds", "Deploying containerized code to remote server nodes", "Active infrastructure configuration for live company projects"]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need to be a developer to learn DevOps?",
+        "a": "No, but basic scripting knowledge is helpful. We cover shell scripting and basic programming workflows as part of the curriculum."
+      },
+      {
+        "q": "What tools are covered in CI/CD?",
+        "a": "We focus on GitHub Actions and Jenkins for build and deployment automation."
+      }
+    ]
+  },
+  {
+    "slug": "software-testing-training",
+    "name": "Software Testing Training",
+    "price": "₹9,999",
+    "price_num": 9999,
+    "duration": "10 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "Manual and Automation software testing. Covers Selenium WebDriver, JUnit, TestNG, API testing, and bug tracking. 1-to-1 personalized guidance.",
+    "seo_title": "Software Testing Course in Pune | CACTS Shivane",
+    "meta_description": "Learn Manual & Automation Software Testing in Shivane, Pune. 1-to-1 training in Selenium, Java, and API testing. Internship on live projects. ₹9,999.",
+    "h1": "Software Testing Training in Pune",
+    "h2": "Master Manual QA, Selenium WebDriver, and API Testing with 1-to-1 Mentorship",
+    "skills": ["Manual Testing", "Selenium WebDriver", "Java for QA", "TestNG Framework", "API Testing", "Jira & Bug Tracking", "SQL for Database Testing"],
+    "overview": "Quality assurance is critical for every software release. Our training begins with the fundamentals of manual test planning and bugs tracking, then transitions into automated Selenium testing scripts. You get direct support to write and debug test cases.",
+    "modules": [
+      {
+        "title": "Module 1: Manual Testing & QA Processes",
+        "duration": "3 Weeks",
+        "topics": ["Software Development Life Cycle (SDLC) & testing methodologies", "Writing comprehensive test plans, cases, and scenarios", "Defect reporting and tracking lifecycle using Jira templates"]
+      },
+      {
+        "title": "Module 2: Java Coding & Automation Foundations",
+        "duration": "3 Weeks",
+        "topics": ["Java syntax, variables, conditions, and loops for testing", "Object-Oriented Programming (OOP) concepts in Java", "Setting up testing frameworks (JUnit and TestNG)"]
+      },
+      {
+        "title": "Module 3: Selenium WebDriver & Page Object Model",
+        "duration": "2 Weeks",
+        "topics": ["Locators (XPath, CSS selectors) and element interactions", "Handling alerts, dynamic waits, popups, and frames", "Designing reusable testing frameworks with Page Object Model (POM)"]
+      },
+      {
+        "title": "Module 4: API Testing & Database QA",
+        "duration": "2 Weeks",
+        "topics": ["REST API testing with Postman and validating JSON codes", "Database verification querying with SQL", "Running tests against active company application modules"]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do we cover automation testing?",
+        "a": "Yes. This course covers both manual testing methodologies and automation scripting using Selenium with Java."
+      },
+      {
+        "q": "What API testing tools are covered?",
+        "a": "We use Postman for REST API manual test executions and API payload validations."
+      }
+    ]
+  },
+  {
+    "slug": "cybersecurity-training",
+    "name": "Cybersecurity Training",
+    "price": "₹19,999",
+    "price_num": 19999,
+    "duration": "12 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "Learn ethical hacking, network security, penetration testing, and cryptography. Direct individual support and practical lab implementation.",
+    "seo_title": "Cybersecurity Training in Pune | CACTS Shivane",
+    "meta_description": "Learn Ethical Hacking & Network Security in Pune. 1-to-1 Cybersecurity Course in Shivane. Sandbox security lab testing. Fees: ₹19,999.",
+    "h1": "Cybersecurity & Ethical Hacking Training in Pune",
+    "h2": "Master Vulnerability Assessment, Network Defense, and Hacking Tools 1-on-1",
+    "skills": ["Ethical Hacking", "Network Security", "Vulnerability Scanning", "Metasploit & Nmap", "Cryptography", "Linux Security", "OWASP Top 10"],
+    "overview": "Secure digital systems from rising threat actors. Learn cybersecurity methodologies in a secure sandbox laboratory. Our 1-to-1 training ensures you learn active penetration testing, system hardening, and security operations with real-world scenarios.",
+    "modules": [
+      {
+        "title": "Module 1: Networking Basics & Linux Security",
+        "duration": "3 Weeks",
+        "topics": ["TCP/IP protocols, subnetting, and port allocations", "Linux commands, administration, and system configurations", "Network scanning and reconnaissance basics using Nmap"]
+      },
+      {
+        "title": "Module 2: Vulnerability Analysis & Exploits",
+        "duration": "3 Weeks",
+        "topics": ["Identifying security vulnerabilities using scanners", "Exploiting security gaps in sandbox labs using Metasploit", "System privilege escalation and maintaining access vectors"]
+      },
+      {
+        "title": "Module 3: Web Application Security & OWASP",
+        "duration": "3 Weeks",
+        "topics": ["SQL Injection, Cross-Site Scripting (XSS), and CSRF attacks", "OWASP Top 10 security framework definitions", "Web app firewalls and defensive API configuration concepts"]
+      },
+      {
+        "title": "Module 4: Cryptography & Security Operations",
+        "duration": "3 Weeks",
+        "topics": ["Encryption standards, hashing, and digital certificates", "Setting up intrusion detection monitors and firewall rules", "Conducting vulnerability reviews on company staging systems"]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is this an ethical hacking course?",
+        "a": "Yes. We focus on ethical hacking methodologies to test system security and patch vulnerabilities."
+      },
+      {
+        "q": "Do we require high-performance hardware?",
+        "a": "A standard computer with 8GB RAM and virtualization support (VirtualBox/VMware) is sufficient for lab setups."
+      }
+    ]
+  }
+]

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Developer Cheat Sheets, Git Guides, & Tutorials | CACTS</title>
+    <meta name="description"
+        content="Free programming tutorials, SQL query cheat sheets, command-line references, and Git workflow guides compiled by the developer-mentors at CACTS.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cactslearn.github.io/free-learning-resources.html">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .resource-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .resource-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-5px);
+            background: var(--bg-card-hover);
+            box-shadow: 0 10px 25px -10px rgba(20, 184, 166, 0.15);
+        }
+
+        .resource-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            font-family: var(--font-heading);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resource-features {
+            list-style: none;
+            margin: 1.25rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .resource-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .resource-features li::before {
+            content: '▫';
+            color: var(--accent);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span>CACTS</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="internship-on-live-projects.html">Live Internship</a>
+                <a href="one-to-one-software-training.html">1-to-1 Model</a>
+                <a href="free-career-guidance.html">Career Guidance</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faqs.html">FAQs</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+                <a href="contact.html" class="btn btn-accent" style="padding: 0.5rem 1rem; color: #0b0f19;">Book
+                    Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 8rem;">
+        <section aria-labelledby="resources-h1" class="tech-section">
+            <nav aria-label="Breadcrumb" style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
+                <a href="index.html" style="color: var(--accent);">Home</a> &gt;
+                <span style="color: var(--text-primary);">Free Learning Resources</span>
+            </nav>
+
+            <h1 id="resources-h1" class="section-title">Free Developer Cheat Sheets &amp; Guides</h1>
+            <p class="section-subtitle">Compiled by our active developer-mentors. Download these PDF reference cheat sheets, CLI cheat lists, and syntax manuals to assist your learning.</p>
+
+            <div class="resources-grid">
+                <!-- Git Workflow Card -->
+                <div class="resource-card">
+                    <div>
+                        <div class="resource-title">
+                            📁 Git Workflow &amp; Command Sheet
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                            A concise command reference mapping branching, staging, commits, rebase workflows, merge conflicts, and pull requests gatekeeping.
+                        </p>
+                        <ul class="resource-features">
+                            <li>Local commit sequences (add, commit, push)</li>
+                            <li>Feature branching &amp; merging</li>
+                            <li>Resolving merge conflicts with clean logs</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20Git%20Workflow%20Cheat%20Sheet." 
+                       class="btn btn-primary" style="text-align: center; margin-top: 1.5rem;" target="_blank">
+                        Request PDF on WhatsApp
+                    </a>
+                </div>
+
+                <!-- SQL Query Card -->
+                <div class="resource-card">
+                    <div>
+                        <div class="resource-title">
+                            🗄️ SQL Queries &amp; DB Schema Guide
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                            Relational database lookup sheet detailing subqueries, window functions, table joins, index creations, and normalization rules.
+                        </p>
+                        <ul class="resource-features">
+                            <li>JOIN operations &amp; GROUP BY aggregation</li>
+                            <li>Common Table Expressions (CTEs)</li>
+                            <li>Database index optimization commands</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20SQL%20Queries%20Cheat%20Sheet." 
+                       class="btn btn-primary" style="text-align: center; margin-top: 1.5rem;" target="_blank">
+                        Request PDF on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Linux Terminal Card -->
+                <div class="resource-card">
+                    <div>
+                        <div class="resource-title">
+                            🐧 Linux CLI &amp; System Logs Manual
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                            Terminal navigation guide outlining folder permissions, port tracking, process management, and live logging operations.
+                        </p>
+                        <ul class="resource-features">
+                            <li>System logs monitoring (tail -f, grep)</li>
+                            <li>Permissions modification (chmod, chown)</li>
+                            <li>Network port allocation tracking (lsof, netstat)</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20Linux%20CLI%20Manual." 
+                       class="btn btn-primary" style="text-align: center; margin-top: 1.5rem;" target="_blank">
+                        Request PDF on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Python Basics Card -->
+                <div class="resource-card">
+                    <div>
+                        <div class="resource-title">
+                            🐍 Python Coding &amp; Scripting Reference
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                            A foundational reference guide detailing variables, lists, nested loop logic, functions, library imports, and API integrations.
+                        </p>
+                        <ul class="resource-features">
+                            <li>Slicing &amp; collection comprehension</li>
+                            <li>REST API requests integration (requests library)</li>
+                            <li>CSV and JSON file manipulation logs</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20Python%20Programming%20Reference." 
+                       class="btn btn-primary" style="text-align: center; margin-top: 1.5rem;" target="_blank">
+                        Request PDF on WhatsApp
+                    </a>
+                </div>
+
+                <!-- REST API Codes Card -->
+                <div class="resource-card">
+                    <div>
+                        <div class="resource-title">
+                            🌐 Web REST API Response Code Chart
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.5;">
+                            A quick overview mapping HTTP methods, client headers, token storage locations, and standard server response states.
+                        </p>
+                        <ul class="resource-features">
+                            <li>REST methods (GET, POST, PUT, DELETE)</li>
+                            <li>Status definitions (200, 201, 400, 401, 500)</li>
+                            <li>Bearer token header setups</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20REST%20API%20Chart." 
+                       class="btn btn-primary" style="text-align: center; margin-top: 1.5rem;" target="_blank">
+                        Request PDF on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Free Consultation Grid -->
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 3rem; text-align: center; margin-top: 5rem;">
+                <h2>Unsure How to Implement These Reference Sheets?</h2>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 2rem auto; font-size: 1.05rem;">
+                    Our developer-mentors teach 1-to-1. Book a trial session to code live on a screenshare and master these tools.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary">Book Free Trial Session</a>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20want%20to%20ask%20about%20your%201-to-1%20mentorship%20in%20conjunction%20with%20free%20resources." class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss on WhatsApp</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html"
+                    style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: white;">CACTS</a>
+                <p>Centre of Advanced Computer Training and Studies. Providing practical, one-to-one virtual software
+                    training and internships on real company projects since 2012.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Programs</h4>
+                <ul style="list-style: none;">
+                    <li><a href="java-full-stack-developer-training.html">Java Full Stack</a></li>
+                    <li><a href="full-stack-development-training.html">Full Stack Web</a></li>
+                    <li><a href="ai-machine-learning-training.html">AI &amp; Machine Learning</a></li>
+                    <li><a href="data-science-training.html">Data Science</a></li>
+                    <li><a href="data-engineering-training.html">Data Engineering</a></li>
+                    <li><a href="python-programming-training.html">Python Scripting</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Institutional Links</h4>
+                <ul style="list-style: none;">
+                    <li><a href="about.html">About CACTS</a></li>
+                    <li><a href="internship-on-live-projects.html">Live Projects Internship</a></li>
+                    <li><a href="one-to-one-software-training.html">1-to-1 Mentoring Model</a></li>
+                    <li><a href="free-career-guidance.html">Free Career Guidance</a></li>
+                    <li><a href="reviews.html">Success Reviews</a></li>
+                    <li><a href="faqs.html">Institutional FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Learning Portals</h4>
+                <ul style="list-style: none;">
+                    <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
+                    <li><a href="course-recommendation-quiz.html">Course Finder Quiz</a></li>
+                    <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
+                    <li><a href="student-projects.html">Student Projects</a></li>
+                    <li><a href="internship-showcase.html">Internship Showcase</a></li>
+                    <li><a href="project-portfolios.html">Project Portfolios</a></li>
+                    <li><a href="technology-comparisons.html">Tech Comparisons</a></li>
+                    <li><a href="free-learning-resources.html">Free Resources</a></li>
+                    <li><a href="technology-career-guides.html">Career Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact CACTS</h4>
+                <p style="margin-bottom: 0.5rem;">Shivane, Pune, Maharashtra, India (411023)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Phone:</strong> +91 96655 66357</p>
+                <p><strong>Hours:</strong> Mon - Sat: 9:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div style="text-align: left;">
+                <p>&copy; <span id="footer-year">2026</span> CACTS - Centre of Advanced Computer Training and Studies. All rights reserved.</p>
+                <p style="margin-top: 0.25rem; font-size: 0.8rem; color: var(--text-secondary);">Shivane, Pune, Maharashtra, India - Pincode 411023</p>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="sitemap.html" style="color: var(--text-secondary);">Sitemap</a>
+                <span style="color: var(--border);">|</span>
+                <a href="privacy-policy.html" style="color: var(--text-secondary);">Privacy Policy</a>
+                <span style="color: var(--border);">|</span>
+                <a href="terms-conditions.html" style="color: var(--text-secondary);">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-ctas"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

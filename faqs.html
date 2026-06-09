@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | CACTS Pune</title>
+    <meta name="description"
+        content="Read our consolidated list of FAQs covering CACTS's 1-to-1 virtual software training, live project internships, pricing, and schedules in Shivane, Pune.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cactslearn.github.io/faqs.html">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .faq-search-wrapper {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto 2.5rem auto;
+        }
+        .faq-search-input {
+            width: 100%;
+            padding: 1.1rem 1.5rem 1.1rem 3.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            font-size: 1.05rem;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5), inset 0 1px 0px rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+        }
+        .faq-search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow), 0 10px 30px -10px rgba(0,0,0,0.5);
+            background: rgba(11, 15, 25, 0.85);
+        }
+        body.light-theme .faq-search-input {
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05), inset 0 1px 0px rgba(255, 255, 255, 0.8);
+        }
+        body.light-theme .faq-search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px var(--primary-glow);
+            background: #ffffff;
+        }
+        .faq-search-icon {
+            position: absolute;
+            left: 1.25rem;
+            top: 1.25rem;
+            color: var(--text-secondary);
+            width: 20px;
+            height: 20px;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+        .faq-search-input:focus + .faq-search-icon {
+            color: var(--accent-light);
+        }
+        body.light-theme .faq-search-input:focus + .faq-search-icon {
+            color: var(--primary);
+        }
+        .faq-tabs {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 3.5rem;
+            justify-content: center;
+        }
+        .faq-tab {
+            padding: 0.6rem 1.2rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            backdrop-filter: blur(8px);
+        }
+        .faq-tab:hover {
+            color: var(--text-primary);
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+            transform: translateY(-1px);
+        }
+        .faq-tab.active {
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            color: #060913;
+            border-color: transparent;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+        body.light-theme .faq-tab.active {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #ffffff;
+            box-shadow: 0 4px 15px var(--primary-glow);
+        }
+        
+        .faq-group {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .faq-group.hidden {
+            display: none !important;
+        }
+        .faq-card.hidden {
+            display: none !important;
+        }
+        .faq-highlight {
+            background-color: rgba(20, 184, 166, 0.35);
+            color: #ffffff;
+            padding: 0 3px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        .faq-category-header {
+            color: var(--accent-light);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.75rem;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        body.light-theme .faq-category-header {
+            color: var(--primary);
+        }
+
+        /* Modernized FAQ Card Layout (Static / Always Open) */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        @media (max-width: 900px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .faq-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0px rgba(255,255,255,0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            opacity: 0.4;
+            transition: var(--transition);
+        }
+
+        .faq-card:hover::before {
+            opacity: 1;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(99, 102, 241, 0.35);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.12), inset 0 1px 0px rgba(255,255,255,0.05);
+            background: var(--bg-card-hover);
+        }
+
+        .faq-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.4;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .faq-q-badge {
+            background: var(--accent-glow);
+            border: 1px solid var(--accent);
+            color: var(--accent-light);
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 2px 7px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px var(--accent-glow);
+        }
+        
+        body.light-theme .faq-q-badge {
+            background: var(--primary-glow);
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 2px 8px var(--primary-glow);
+        }
+
+        .faq-card p {
+            color: var(--text-secondary);
+            font-size: 0.96rem;
+            line-height: 1.65;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span>CACTS</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="internship-on-live-projects.html">Live Internship</a>
+                <a href="one-to-one-software-training.html">1-to-1 Model</a>
+                <a href="free-career-guidance.html">Career Guidance</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faqs.html">FAQs</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+                <a href="contact.html" class="btn btn-accent" style="padding: 0.5rem 1rem; color: #0b0f19;">Book
+                    Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 8rem;">
+        <section aria-labelledby="faqs-h1" class="tech-section">
+            <h1 id="faqs-h1" class="section-title">Knowledge Base &amp; FAQs</h1>
+            <p class="section-subtitle">Read detailed answers to consolidated questions about our 1-to-1 virtual software training, live project internships, and platform operations.</p>
+
+            <!-- Interactive Search and Category Filters -->
+            <div class="faq-search-wrapper">
+                <input type="text" id="faq-search" class="faq-search-input" placeholder="Search questions... (e.g. Java, Git, fees, timing)">
+                <svg class="faq-search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+
+            <div class="faq-tabs">
+                <button class="faq-tab active" data-category="all">All Questions</button>
+                <button class="faq-tab" data-category="training">1-to-1 Model</button>
+                <button class="faq-tab" data-category="internship">Live Internship</button>
+                <button class="faq-tab" data-category="courses">Programs &amp; Customization</button>
+                <button class="faq-tab" data-category="pricing">Pricing &amp; Booking</button>
+                <button class="faq-tab" data-category="setup">Setup &amp; Timings</button>
+            </div>
+
+            <div id="no-results-msg" class="no-results" style="display: none;">
+                <div style="font-size: 2.5rem; margin-bottom: 1rem;">🔍</div>
+                <p>No matches found for your search query. Please try another keyword.</p>
+            </div>
+
+            <div style="max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 3.5rem;">
+
+                <!-- Category 1: The 1-to-1 Mentorship Model -->
+                <div class="faq-group" data-group="training">
+                    <h3 class="faq-category-header">1. The 1-to-1 Mentorship Model</h3>
+                    <div class="faq-grid">
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q1</span> How does One-to-One virtual software training work at CACTS?</h4>
+                            <p>You get a private virtual classroom with an active developer. Using tools like Google Meet or Zoom, you share your screen to write code live, receiving instant line-by-line feedback and guidance.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q2</span> Why is a 1-to-1 learning model superior to standard batch training?</h4>
+                            <p>In typical batches of 30-50 students, the pace is rigid. Our 1-to-1 model lets us adjust the training speed dynamically to match your grasp. We stop, explain, and review whenever you face a bug or conceptual bottleneck.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q3</span> Are the training sessions pre-recorded lectures?</h4>
+                            <p>No. Every single session is conducted live in real-time. We do not use pre-recorded video playbacks, ensuring active, two-way interaction at all times.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q4</span> Who are the mentors at CACTS?</h4>
+                            <p>All mentors are working software developers and engineers. They work on active commercial projects and bring real industry standards, patterns, and workflows directly to your sessions.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q5</span> What happens if I need to miss or reschedule a class?</h4>
+                            <p>Since there are no batch constraints, you can easily reschedule any session by coordinating with your mentor. You will never miss a class or fall behind other students.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q6</span> Can I ask coding questions outside of class hours?</h4>
+                            <p>Yes. You get direct support channels (such as chat or email) to ask questions, resolve syntax bugs, or request feedback on your tasks between classes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Live Project Internship -->
+                <div class="faq-group" data-group="internship">
+                    <h3 class="faq-category-header">2. Live Project Internship</h3>
+                    <div class="faq-grid">
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q7</span> What does the Live Project Internship phase involve?</h4>
+                            <p>After completing core modules, you join active company git repositories. You will work on real tickets, write production code, submit pull requests, and receive feedback from dev teams.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q8</span> Are these mock or sandbox projects?</h4>
+                            <p>No. We do not use dummy exercises or copy-paste templates. You will work on real, live-running application codebases backed by actual companies.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q9</span> Do I get professional tools exposure (Git, Jira)?</h4>
+                            <p>Yes. You will work with standard tools like GitHub/GitLab, manage branches, handle merge conflicts, write code reviews, and track task items in Jira.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q10</span> Do you provide placement guarantees or assistance?</h4>
+                            <p>No. We do not guarantee jobs or placements. We focus strictly on building high-demand practical skills and giving you real-world project credentials that help you stand out to hiring managers.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q11</span> Do I receive an internship certificate?</h4>
+                            <p>Yes. Upon successful completion of project milestones and active repository contributions, you will receive an official Internship Certificate detailing your technical contributions and role.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q12</span> How does the code review loop work during the internship?</h4>
+                            <p>When you submit a pull request, senior developers review every line. They guide you to refactor for clean code patterns, optimized queries, and standard security checks.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Custom Syllabus & Programs -->
+                <div class="faq-group" data-group="courses">
+                    <h3 class="faq-category-header">3. Programs &amp; Customization</h3>
+                    <div class="faq-grid">
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q13</span> What technologies and courses are available?</h4>
+                            <p>We offer comprehensive paths in Java Full Stack, MERN Web Development, Python Scripting, AI & Machine Learning, Data Science, Data Engineering, Power BI, Cloud Computing, DevOps, Software Testing, and Cybersecurity.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q14</span> Can I customize the course syllabus to match my goals?</h4>
+                            <p>Yes. Since our model is 1-to-1, we can easily tailor the syllabus, databases, or frameworks to match your career goals, target job descriptions, or academic project needs.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q15</span> Is the Software Testing program manual or automated?</h4>
+                            <p>Both. The training covers manual test planning, test case writing, and bug reporting in Jira, alongside automation scripting using Selenium, WebDriver, and test frameworks.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q16</span> What is covered in the DevOps and Cloud pathways?</h4>
+                            <p>You will learn Linux operations, Docker, Kubernetes, CI/CD pipelines (GitHub Actions/Jenkins), and cloud architectures on AWS, including server configuration, routing, and access controls.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Pricing, Fees & Demo -->
+                <div class="faq-group" data-group="pricing">
+                    <h3 class="faq-category-header">4. Pricing &amp; Booking</h3>
+                    <div class="faq-grid">
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q17</span> What is the pricing model, and are there hidden costs?</h4>
+                            <p>Our fees are all-inclusive (ranging from ₹7,999 to ₹24,999 depending on the course). There are zero hidden registration, staging server, or certification fees.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q18</span> Do you offer installment payment structures?</h4>
+                            <p>Yes. We support flexible installment plans to make our value-driven training financially comfortable for students and freshers.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q19</span> How do I book a trial demo session, and is it free?</h4>
+                            <p>Yes, the trial class is 100% free. You can request it via our website form or WhatsApp. It is a full 1-to-1 virtual class to experience our screenshare model before enrolling.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q20</span> What is the refund policy?</h4>
+                            <p>We offer transparent refund guidelines if you choose to discontinue your program within the first week of classes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 5: Setup & Schedules -->
+                <div class="faq-group" data-group="setup">
+                    <h3 class="faq-category-header">5. Setup &amp; Schedules</h3>
+                    <div class="faq-grid">
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q21</span> What hardware or computer specifications do I need?</h4>
+                            <p>A standard laptop or desktop with at least 8GB RAM, a working webcam and microphone, and a stable internet connection capable of hosting video screenshare calls.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q22</span> Do you support macOS or Linux setups?</h4>
+                            <p>Yes. Our developer-mentors will guide you through installing and configuring local databases, compilers, and IDEs on Windows, macOS, or Linux.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q23</span> Can I take classes during evenings or weekends?</h4>
+                            <p>Yes. We offer highly flexible schedule slots, including evening hours and weekend-only blocks, to fit around college schedules or full-time jobs.</p>
+                        </div>
+                        <div class="faq-card">
+                            <h4><span class="faq-q-badge">Q24</span> How long has CACTS been operating in Pune?</h4>
+                            <p>CACTS was established in 2012 in Shivane, Pune. For over a decade, we have mentored thousands of students through personalized, one-to-one computer training.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html"
+                    style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: white;">CACTS</a>
+                <p>Centre of Advanced Computer Training and Studies. Providing practical, one-to-one virtual software
+                    training and internships on real company projects since 2012.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Programs</h4>
+                <ul style="list-style: none;">
+                    <li><a href="java-full-stack-developer-training.html">Java Full Stack</a></li>
+                    <li><a href="full-stack-development-training.html">Full Stack Web</a></li>
+                    <li><a href="ai-machine-learning-training.html">AI &amp; Machine Learning</a></li>
+                    <li><a href="data-science-training.html">Data Science</a></li>
+                    <li><a href="data-engineering-training.html">Data Engineering</a></li>
+                    <li><a href="python-programming-training.html">Python Scripting</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Institutional Links</h4>
+                <ul style="list-style: none;">
+                    <li><a href="about.html">About CACTS</a></li>
+                    <li><a href="internship-on-live-projects.html">Live Projects Internship</a></li>
+                    <li><a href="one-to-one-software-training.html">1-to-1 Mentoring Model</a></li>
+                    <li><a href="free-career-guidance.html">Free Career Guidance</a></li>
+                    <li><a href="reviews.html">Success Reviews</a></li>
+                    <li><a href="faqs.html">Institutional FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Learning Portals</h4>
+                <ul style="list-style: none;">
+                    <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
+                    <li><a href="course-recommendation-quiz.html">Course Finder Quiz</a></li>
+                    <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
+                    <li><a href="student-projects.html">Student Projects</a></li>
+                    <li><a href="internship-showcase.html">Internship Showcase</a></li>
+                    <li><a href="project-portfolios.html">Project Portfolios</a></li>
+                    <li><a href="technology-comparisons.html">Tech Comparisons</a></li>
+                    <li><a href="free-learning-resources.html">Free Resources</a></li>
+                    <li><a href="technology-career-guides.html">Career Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact CACTS</h4>
+                <p style="margin-bottom: 0.5rem;">Shivane, Pune, Maharashtra, India (411023)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Phone:</strong> +91 96655 66357</p>
+                <p><strong>Hours:</strong> Mon - Sat: 9:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div style="text-align: left;">
+                <p>&copy; <span id="footer-year">2026</span> CACTS - Centre of Advanced Computer Training and Studies. All rights reserved.</p>
+                <p style="margin-top: 0.25rem; font-size: 0.8rem; color: var(--text-secondary);">Shivane, Pune, Maharashtra, India - Pincode 411023</p>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="sitemap.html" style="color: var(--text-secondary);">Sitemap</a>
+                <span style="color: var(--border);">|</span>
+                <a href="privacy-policy.html" style="color: var(--text-secondary);">Privacy Policy</a>
+                <span style="color: var(--border);">|</span>
+                <a href="terms-conditions.html" style="color: var(--text-secondary);">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contacts -->
+    <div class="floating-ctas">
+        <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20learning%20more%20about%20your%201-to-1%20training."
+            class="cta-circle cta-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+            💬
+        </a>
+        <a href="tel:+919665566357" class="cta-circle cta-call" aria-label="Call CACTS">
+            📞
+        </a>
+    </div>
+
+    <!-- Injecting full FAQPage schema markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does One-to-One virtual software training work at CACTS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You get a private virtual classroom with an active developer. Using tools like Google Meet or Zoom, you share your screen to write code live, receiving instant line-by-line feedback and guidance."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is a 1-to-1 learning model superior to standard batch training?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In typical batches of 30-50 students, the pace is rigid. Our 1-to-1 model lets us adjust the training speed dynamically to match your grasp. We stop, explain, and review whenever you face a bug or conceptual bottleneck."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the training sessions pre-recorded lectures?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Every single session is conducted live in real-time. We do not use pre-recorded video playbacks, ensuring active, two-way interaction at all times."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who are the mentors at CACTS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All mentors are working software developers and engineers. They work on active commercial projects and bring real industry standards, patterns, and workflows directly to your sessions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does the Live Project Internship phase involve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "After completing core modules, you join active company git repositories. You will work on real tickets, write production code, submit pull requests, and receive feedback from dev teams."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are these mock or sandbox projects?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We do not use dummy exercises or copy-paste templates. You will work on real, live-running application codebases backed by actual companies."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you provide placement guarantees or assistance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We do not guarantee jobs or placements. We focus strictly on building high-demand practical skills and giving you real-world project credentials that help you stand out to hiring managers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the pricing model, and are there hidden costs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our fees are all-inclusive (ranging from ₹7,999 to ₹24,999 depending on the course). There are zero hidden registration, staging server, or certification fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long has CACTS been operating in Pune?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CACTS was established in 2012 in Shivane, Pune. For over a decade, we have mentored thousands of students through personalized, one-to-one computer training."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <script src="js/main.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('faq-search');
+        const tabs = document.querySelectorAll('.faq-tab');
+        const faqGroups = document.querySelectorAll('.faq-group');
+        const noResultsMsg = document.getElementById('no-results-msg');
+
+        let activeCategory = 'all';
+        let searchQuery = '';
+
+        // Save original HTML content to restore highlights properly
+        const faqHeaders = document.querySelectorAll('.faq-card h4');
+        faqHeaders.forEach(header => {
+            header.setAttribute('data-original-text', header.innerHTML);
+        });
+
+        const faqAnswers = document.querySelectorAll('.faq-card p');
+        faqAnswers.forEach(ans => {
+            ans.setAttribute('data-original-text', ans.innerHTML);
+        });
+
+        function filterFAQs() {
+            let totalVisible = 0;
+
+            faqGroups.forEach(group => {
+                const groupCategory = group.getAttribute('data-group');
+                const cards = group.querySelectorAll('.faq-card');
+                let visibleInGroup = 0;
+
+                const categoryMatch = (activeCategory === 'all' || activeCategory === groupCategory);
+
+                cards.forEach(card => {
+                    const questionElement = card.querySelector('h4');
+                    const answerElement = card.querySelector('p');
+                    
+                    const questionText = questionElement.textContent.toLowerCase();
+                    const answerText = answerElement.textContent.toLowerCase();
+                    
+                    const searchMatch = !searchQuery || 
+                                        questionText.includes(searchQuery) || 
+                                        answerText.includes(searchQuery);
+
+                    if (categoryMatch && searchMatch) {
+                        card.classList.remove('hidden');
+                        visibleInGroup++;
+                        totalVisible++;
+
+                        highlightText(questionElement, searchQuery);
+                        highlightText(answerElement, searchQuery);
+                    } else {
+                        card.classList.add('hidden');
+                        resetHighlight(questionElement);
+                        resetHighlight(answerElement);
+                    }
+                });
+
+                if (visibleInGroup > 0 && categoryMatch) {
+                    group.classList.remove('hidden');
+                } else {
+                    group.classList.add('hidden');
+                }
+            });
+
+            if (totalVisible === 0) {
+                noResultsMsg.style.display = 'block';
+            } else {
+                noResultsMsg.style.display = 'none';
+            }
+        }
+
+        function highlightText(element, query) {
+            const originalText = element.getAttribute('data-original-text') || element.innerHTML;
+
+            if (!query) {
+                element.innerHTML = originalText;
+                return;
+            }
+
+            const regex = new RegExp(`(${escapeRegExp(query)})`, 'gi');
+            
+            // Highlight text inside elements
+            // If it's the heading, we want to make sure we don't break the badge tag
+            const qBadge = element.querySelector('.faq-q-badge');
+            if (qBadge) {
+                const badgeHtml = qBadge.outerHTML;
+                // Get question text only
+                const justText = element.textContent.substring(qBadge.textContent.length).trim();
+                const highlightedText = justText.replace(regex, '<mark class="faq-highlight">$1</mark>');
+                element.innerHTML = `${badgeHtml} ${highlightedText}`;
+            } else {
+                const highlightedText = originalText.replace(regex, '<mark class="faq-highlight">$1</mark>');
+                element.innerHTML = highlightedText;
+            }
+        }
+
+        function resetHighlight(element) {
+            const originalText = element.getAttribute('data-original-text');
+            if (originalText) {
+                element.innerHTML = originalText;
+            }
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                activeCategory = tab.getAttribute('data-category');
+                filterFAQs();
+            });
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value.toLowerCase().trim();
+            filterFAQs();
+        });
+    });
+    </script>
+</body>
+</html>

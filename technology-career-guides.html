@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Career Guides & Pune Software Market Insights | CACTS</title>
+    <meta name="description"
+        content="Read detailed technology career guides outlining hiring trends, tech interview structures, resume templates, and salary scales in Pune.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cactslearn.github.io/technology-career-guides.html">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .guides-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .guide-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 2.25rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+        }
+
+        .guide-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-5px);
+            background: var(--bg-card-hover);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.1);
+        }
+
+        .guide-badge {
+            align-self: flex-start;
+            padding: 0.25rem 0.65rem;
+            background: var(--accent-glow);
+            border: 1px solid var(--accent);
+            color: var(--accent-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .guide-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-family: var(--font-heading);
+            line-height: 1.3;
+        }
+
+        .guide-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .guide-takeaways {
+            margin-bottom: 1.5rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        .guide-takeaways-title {
+            font-size: 0.85rem;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .guide-takeaways ul {
+            list-style: none;
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .guide-takeaways ul li::before {
+            content: '📌 ';
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span>CACTS</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="internship-on-live-projects.html">Live Internship</a>
+                <a href="one-to-one-software-training.html">1-to-1 Model</a>
+                <a href="free-career-guidance.html">Career Guidance</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faqs.html">FAQs</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+                <a href="contact.html" class="btn btn-accent" style="padding: 0.5rem 1rem; color: #0b0f19;">Book
+                    Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 8rem;">
+        <section aria-labelledby="guides-h1" class="tech-section">
+            <nav aria-label="Breadcrumb" style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
+                <a href="index.html" style="color: var(--accent);">Home</a> &gt;
+                <span style="color: var(--text-primary);">Career Guides</span>
+            </nav>
+
+            <h1 id="guides-h1" class="section-title">Pune Tech Career Guides &amp; Insights</h1>
+            <p class="section-subtitle">Read developer-authored analyses on Pune's software market conditions, code review expectations, structural resume strategies, and skill shifts.</p>
+
+            <div class="guides-grid">
+                <!-- Guide 1 -->
+                <div class="guide-card">
+                    <div>
+                        <span class="guide-badge">Hiring Market</span>
+                        <h3 class="guide-title">Spring Boot Market Scope in Pune</h3>
+                        <p class="guide-excerpt">
+                            Why large MNCs and banking systems in Hinjawadi and Magarpatta rely on Java Spring Boot. We analyze core enterprise stability and long-term backend hiring cycles.
+                        </p>
+                        <div class="guide-takeaways">
+                            <div class="guide-takeaways-title">Key Takeaways</div>
+                            <ul>
+                                <li>Enterprise dependencies on Spring Microservices</li>
+                                <li>Longer project lifecycle stability in banking</li>
+                                <li>Active SQL/Hibernate integration requirements</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20read%20the%20Spring%20Boot%20Market%20Scope%20Guide." 
+                       class="btn btn-primary" style="text-align: center;" target="_blank">
+                        Request PDF Guide on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Guide 2 -->
+                <div class="guide-card">
+                    <div>
+                        <span class="guide-badge">Interview Tips</span>
+                        <h3 class="guide-title">Startup Technical Code Reviews</h3>
+                        <p class="guide-excerpt">
+                            Demystifying the entry-level coding round. Understand how startups evaluate pull requests (PRs), code formatting conventions, naming schemas, and database calls.
+                        </p>
+                        <div class="guide-takeaways">
+                            <div class="guide-takeaways-title">Key Takeaways</div>
+                            <ul>
+                                <li>Clean code principles (DRY and SOLID)</li>
+                                <li>Common Git workflow traps to avoid</li>
+                                <li>Writing basic unit tests before commit</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20read%20the%20Startup%20Code%20Reviews%20Guide." 
+                       class="btn btn-primary" style="text-align: center;" target="_blank">
+                        Request PDF Guide on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Guide 3 -->
+                <div class="guide-card">
+                    <div>
+                        <span class="guide-badge">Developer Resume</span>
+                        <h3 class="guide-title">Structuring a High-Trust Tech Resume</h3>
+                        <p class="guide-excerpt">
+                            Stop listing generic bullet points. We explain how to present code repository links, live staging logs, and systems design diagrams that prove your hands-on capabilities.
+                        </p>
+                        <div class="guide-takeaways">
+                            <div class="guide-takeaways-title">Key Takeaways</div>
+                            <ul>
+                                <li>Embedding repository links for core features</li>
+                                <li>Describing systems architecture choices</li>
+                                <li>Focusing on performance achievements over tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20read%20the%20High-Trust%20Tech%20Resume%20Guide." 
+                       class="btn btn-primary" style="text-align: center;" target="_blank">
+                        Request PDF Guide on WhatsApp
+                    </a>
+                </div>
+
+                <!-- Guide 4 -->
+                <div class="guide-card">
+                    <div>
+                        <span class="guide-badge">System Operations</span>
+                        <h3 class="guide-title">Linux CLI Mandate for DevOps</h3>
+                        <p class="guide-excerpt">
+                            Transitioning to infrastructure automation? We analyze why graphical panels are insufficient and detail the specific shell loops, permission matrices, and logs commands you must master.
+                        </p>
+                        <div class="guide-takeaways">
+                            <div class="guide-takeaways-title">Key Takeaways</div>
+                            <ul>
+                                <li>CLI terminal commands over console GUIs</li>
+                                <li>Basic bash shell scheduling structures</li>
+                                <li>Port routing and process socket debugging</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20read%20the%20Linux%20CLI%20for%20DevOps%20Guide." 
+                       class="btn btn-primary" style="text-align: center;" target="_blank">
+                        Request PDF Guide on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <!-- Lead Form CTA -->
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 3rem; text-align: center; margin-top: 5rem;">
+                <h2>Want Personal Advice on Your IT Career Roadmap?</h2>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 2rem auto; font-size: 1.05rem;">
+                    Our developer-mentors coordinate 1-to-1 virtual consultations. Learn how to map your learning curve to these market insights.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary">Request Free Consultation</a>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20reviewing%20the%20tech%20career%20guides%20and%20want%20some%20personal%20career%20advice." class="btn btn-accent" target="_blank" style="color: #0b0f19;">Connect with a Developer</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html"
+                    style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: white;">CACTS</a>
+                <p>Centre of Advanced Computer Training and Studies. Providing practical, one-to-one virtual software
+                    training and internships on real company projects since 2012.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Programs</h4>
+                <ul style="list-style: none;">
+                    <li><a href="java-full-stack-developer-training.html">Java Full Stack</a></li>
+                    <li><a href="full-stack-development-training.html">Full Stack Web</a></li>
+                    <li><a href="ai-machine-learning-training.html">AI &amp; Machine Learning</a></li>
+                    <li><a href="data-science-training.html">Data Science</a></li>
+                    <li><a href="data-engineering-training.html">Data Engineering</a></li>
+                    <li><a href="python-programming-training.html">Python Scripting</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Institutional Links</h4>
+                <ul style="list-style: none;">
+                    <li><a href="about.html">About CACTS</a></li>
+                    <li><a href="internship-on-live-projects.html">Live Projects Internship</a></li>
+                    <li><a href="one-to-one-software-training.html">1-to-1 Mentoring Model</a></li>
+                    <li><a href="free-career-guidance.html">Free Career Guidance</a></li>
+                    <li><a href="reviews.html">Success Reviews</a></li>
+                    <li><a href="faqs.html">Institutional FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Learning Portals</h4>
+                <ul style="list-style: none;">
+                    <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
+                    <li><a href="course-recommendation-quiz.html">Course Finder Quiz</a></li>
+                    <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
+                    <li><a href="student-projects.html">Student Projects</a></li>
+                    <li><a href="internship-showcase.html">Internship Showcase</a></li>
+                    <li><a href="project-portfolios.html">Project Portfolios</a></li>
+                    <li><a href="technology-comparisons.html">Tech Comparisons</a></li>
+                    <li><a href="free-learning-resources.html">Free Resources</a></li>
+                    <li><a href="technology-career-guides.html">Career Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact CACTS</h4>
+                <p style="margin-bottom: 0.5rem;">Shivane, Pune, Maharashtra, India (411023)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Phone:</strong> +91 96655 66357</p>
+                <p><strong>Hours:</strong> Mon - Sat: 9:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div style="text-align: left;">
+                <p>&copy; <span id="footer-year">2026</span> CACTS - Centre of Advanced Computer Training and Studies. All rights reserved.</p>
+                <p style="margin-top: 0.25rem; font-size: 0.8rem; color: var(--text-secondary);">Shivane, Pune, Maharashtra, India - Pincode 411023</p>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="sitemap.html" style="color: var(--text-secondary);">Sitemap</a>
+                <span style="color: var(--border);">|</span>
+                <a href="privacy-policy.html" style="color: var(--text-secondary);">Privacy Policy</a>
+                <span style="color: var(--border);">|</span>
+                <a href="terms-conditions.html" style="color: var(--text-secondary);">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-ctas"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

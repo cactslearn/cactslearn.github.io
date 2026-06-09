@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Case Study Portfolios & Systems Architecture | CACTS</title>
+    <meta name="description"
+        content="Browse detailed architectural case studies of portfolios built by CACTS mentees. See database schemas, REST systems, and staging logs.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cactslearn.github.io/project-portfolios.html">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .portfolio-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            margin-top: 3.5rem;
+        }
+
+        .portfolio-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            transition: var(--transition);
+        }
+
+        .portfolio-item:hover {
+            border-color: var(--border-hover);
+            background: var(--bg-card-hover);
+            box-shadow: 0 10px 30px rgba(20, 184, 166, 0.08);
+        }
+
+        .portfolio-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-tag {
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-glow);
+            border: 1px solid var(--primary-light);
+            color: var(--primary-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .diagram-box {
+            background: #030712;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: monospace;
+            font-size: 0.88rem;
+            color: #10b981;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            line-height: 1.4;
+        }
+
+        .portfolio-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+
+        .spec-item h4 {
+            color: var(--accent-light);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span>CACTS</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="internship-on-live-projects.html">Live Internship</a>
+                <a href="one-to-one-software-training.html">1-to-1 Model</a>
+                <a href="free-career-guidance.html">Career Guidance</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faqs.html">FAQs</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+                <a href="contact.html" class="btn btn-accent" style="padding: 0.5rem 1rem; color: #0b0f19;">Book
+                    Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 8rem;">
+        <section aria-labelledby="portfolio-h1" class="tech-section">
+            <nav aria-label="Breadcrumb" style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
+                <a href="index.html" style="color: var(--accent);">Home</a> &gt;
+                <span style="color: var(--text-primary);">Project Portfolios</span>
+            </nav>
+
+            <h1 id="portfolio-h1" class="section-title">Systems Architecture Case Studies</h1>
+            <p class="section-subtitle">Read detailed architectural profiles of systems built by our candidates. We focus on low-level structures, network scaling patterns, and validation loops.</p>
+
+            <div class="portfolio-list">
+                <!-- Case Study 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-header">
+                        <div>
+                            <span class="portfolio-tag">Java Full Stack</span>
+                            <h2 style="margin-top: 0.5rem; color: var(--text-primary);">Distributed E-Commerce Core API</h2>
+                        </div>
+                        <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20building%20Java%20Microservices%20like%20the%20E-Commerce%20Core%20API." 
+                           class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss Architecture</a>
+                    </div>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        A multi-database microservice architecture designed to handle transaction volumes. Integrates token authorization modules, custom Spring gateway filters, and transactional integrity guarantees across services.
+                    </p>
+
+                    <div class="diagram-box">
+[Client Web Browser]
+       │ (REST APIs / JWT Token Header)
+       ▼
+[Spring Cloud API Gateway] ──(Authentication Filter Validation)
+       │
+       ├───► [Auth Microservice] ──► (PostgreSQL Session Cluster)
+       │
+       ├───► [Catalog Microservice] ──► (Read-Replica SQL Database)
+       │
+       └───► [Order Processing API] ──► (Spring Data JPA) ──► [Write MySQL Database]
+                                                 └──► [Redis Cache Layer]
+                    </div>
+
+                    <div class="portfolio-specs">
+                        <div class="spec-item">
+                            <h4>Database Schemas</h4>
+                            <p>3NF normalization, foreign keys indices, partitioned billing records</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Caching Strategy</h4>
+                            <p>Redis caching wrapping catalog details to minimize database locks</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Verification Staging</h4>
+                            <p>Staging environment verifying JSON payloads and route redirections</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-header">
+                        <div>
+                            <span class="portfolio-tag">MERN Full Stack</span>
+                            <h2 style="margin-top: 0.5rem; color: var(--text-primary);">Real-Time Collaborative Code Editor</h2>
+                        </div>
+                        <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20building%20React/Socket.io%20apps%20like%20the%20Collaborative%20Code%20Editor." 
+                           class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss Architecture</a>
+                    </div>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        A web application synchronizing document states across multiple users. Implements room connection limits, WebSocket message validations, and asynchronous database writing queues.
+                    </p>
+
+                    <div class="diagram-box">
+[Multiple React Clients]
+       │ (WebSocket TCP Sessions)
+       ▼
+[Node.js / Express Web Sockets Server]
+       │
+       ├───► [Socket.io Room Hub] ──► (In-Memory Room State Map)
+       │
+       ├───► [Redis Pub/Sub Layer] ──► (Distributes edits across multiple servers)
+       │
+       └───► [Async DB Queue Worker] ──► [MongoDB Database Cluster]
+                    </div>
+
+                    <div class="portfolio-specs">
+                        <div class="spec-item">
+                            <h4>Network Protocol</h4>
+                            <p>WebSockets running over persistent TCP channels with heartbeats</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>State Management</h4>
+                            <p>React context API syncing editor states with validation checks</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Staging Deployment</h4>
+                            <p>Deployed with environment variable boundaries separating client-server keys</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 3 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-header">
+                        <div>
+                            <span class="portfolio-tag">Data Engineering</span>
+                            <h2 style="margin-top: 0.5rem; color: var(--text-primary);">Stock Price ETL Streaming Pipeline</h2>
+                        </div>
+                        <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20building%20ETL%20Data%20Pipelines%20like%20the%20Stock%20Streaming%20system." 
+                           class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss Architecture</a>
+                    </div>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        A streaming ETL data pipeline loading parsed API messages into database warehouses. Built using Spark structured streaming and schedulers.
+                    </p>
+
+                    <div class="diagram-box">
+[API Data Stream]
+       │
+       ▼
+[Apache Kafka Message Broker] ──(Buffering raw JSON payloads)
+       │
+       ▼
+[PySpark Streaming Engine] ──(Column cleaning, cast operations)
+       │
+       ├───► [PostgreSQL Analytics Lake] ──► [Power BI Dashboard]
+       │
+       └───► [Cold Storage AWS S3]
+                    </div>
+
+                    <div class="portfolio-specs">
+                        <div class="spec-item">
+                            <h4>Stream Parsing</h4>
+                            <p>Pyspark structuring casting schemas and filtering timestamp exceptions</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Storage Partitioning</h4>
+                            <p>AWS S3 data folder partition maps matching calendar year/month paths</p>
+                        </div>
+                        <div class="spec-item">
+                            <h4>Workflow Controller</h4>
+                            <p>Scheduled data verification pipelines managing database upsert updates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 3rem; text-align: center; margin-top: 5rem;">
+                <h2>Interested in Engineering Professional Systems?</h2>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 1rem auto 2rem auto; font-size: 1.05rem;">
+                    Our trainees don't copy-paste basic syntax. They configure systems, design API routing layouts, and write code.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary">Book Free Trial Session</a>
+                    <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20reviewing%20the%20student%20portfolio%20architectures%20and%20want%20to%20know%20how%20to%20learn%20this." class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss Portfolios on WhatsApp</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html"
+                    style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: white;">CACTS</a>
+                <p>Centre of Advanced Computer Training and Studies. Providing practical, one-to-one virtual software
+                    training and internships on real company projects since 2012.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Programs</h4>
+                <ul style="list-style: none;">
+                    <li><a href="java-full-stack-developer-training.html">Java Full Stack</a></li>
+                    <li><a href="full-stack-development-training.html">Full Stack Web</a></li>
+                    <li><a href="ai-machine-learning-training.html">AI &amp; Machine Learning</a></li>
+                    <li><a href="data-science-training.html">Data Science</a></li>
+                    <li><a href="data-engineering-training.html">Data Engineering</a></li>
+                    <li><a href="python-programming-training.html">Python Scripting</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Institutional Links</h4>
+                <ul style="list-style: none;">
+                    <li><a href="about.html">About CACTS</a></li>
+                    <li><a href="internship-on-live-projects.html">Live Projects Internship</a></li>
+                    <li><a href="one-to-one-software-training.html">1-to-1 Mentoring Model</a></li>
+                    <li><a href="free-career-guidance.html">Free Career Guidance</a></li>
+                    <li><a href="reviews.html">Success Reviews</a></li>
+                    <li><a href="faqs.html">Institutional FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Learning Portals</h4>
+                <ul style="list-style: none;">
+                    <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
+                    <li><a href="course-recommendation-quiz.html">Course Finder Quiz</a></li>
+                    <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
+                    <li><a href="student-projects.html">Student Projects</a></li>
+                    <li><a href="internship-showcase.html">Internship Showcase</a></li>
+                    <li><a href="project-portfolios.html">Project Portfolios</a></li>
+                    <li><a href="technology-comparisons.html">Tech Comparisons</a></li>
+                    <li><a href="free-learning-resources.html">Free Resources</a></li>
+                    <li><a href="technology-career-guides.html">Career Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact CACTS</h4>
+                <p style="margin-bottom: 0.5rem;">Shivane, Pune, Maharashtra, India (411023)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Phone:</strong> +91 96655 66357</p>
+                <p><strong>Hours:</strong> Mon - Sat: 9:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div style="text-align: left;">
+                <p>&copy; <span id="footer-year">2026</span> CACTS - Centre of Advanced Computer Training and Studies. All rights reserved.</p>
+                <p style="margin-top: 0.25rem; font-size: 0.8rem; color: var(--text-secondary);">Shivane, Pune, Maharashtra, India - Pincode 411023</p>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="sitemap.html" style="color: var(--text-secondary);">Sitemap</a>
+                <span style="color: var(--border);">|</span>
+                <a href="privacy-policy.html" style="color: var(--text-secondary);">Privacy Policy</a>
+                <span style="color: var(--border);">|</span>
+                <a href="terms-conditions.html" style="color: var(--text-secondary);">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-ctas"></div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

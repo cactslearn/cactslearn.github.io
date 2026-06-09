@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive IT Course Recommendation Quiz | CACTS Pune</title>
+    <meta name="description"
+        content="Take our quick 5-minute interactive quiz to analyze your logic baseline and career goals. Find the best software training track matching your background.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cactslearn.github.io/course-recommendation-quiz.html">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .quiz-container {
+            max-width: 650px;
+            margin: 3rem auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .quiz-progress-bar {
+            height: 4px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .quiz-progress-fill {
+            height: 100%;
+            width: 20%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.4s ease;
+        }
+
+        .quiz-step {
+            display: none;
+        }
+
+        .quiz-step.active {
+            display: block;
+            animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .quiz-question {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-family: var(--font-heading);
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .quiz-option {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.1rem 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .quiz-option:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--border-hover);
+            color: var(--text-primary);
+        }
+
+        .quiz-option.selected {
+            background: var(--accent-glow);
+            border-color: var(--accent);
+            color: var(--text-primary);
+            box-shadow: inset 0 0 10px rgba(20, 184, 166, 0.05);
+        }
+
+        .quiz-option-radio {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .quiz-option.selected .quiz-option-radio {
+            border-color: var(--accent);
+            background: var(--accent);
+        }
+
+        .quiz-option-radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--bg-main);
+            border-radius: 50%;
+            display: none;
+        }
+
+        .quiz-option.selected .quiz-option-radio::after {
+            display: block;
+        }
+
+        .quiz-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+        }
+
+        .quiz-results-card {
+            display: none;
+            text-align: center;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .results-badge {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            background: var(--accent-glow);
+            border: 1px solid var(--accent);
+            color: var(--accent-light);
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 20px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span>CACTS</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="internship-on-live-projects.html">Live Internship</a>
+                <a href="one-to-one-software-training.html">1-to-1 Model</a>
+                <a href="free-career-guidance.html">Career Guidance</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faqs.html">FAQs</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+                <a href="contact.html" class="btn btn-accent" style="padding: 0.5rem 1rem; color: #0b0f19;">Book
+                    Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 8rem;">
+        <section aria-labelledby="quiz-h1" class="tech-section">
+            <nav aria-label="Breadcrumb" style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
+                <a href="index.html" style="color: var(--accent);">Home</a> &gt;
+                <span style="color: var(--text-primary);">Course Finder Quiz</span>
+            </nav>
+
+            <h1 id="quiz-h1" class="section-title">Course Recommendation Finder</h1>
+            <p class="section-subtitle">Take our interactive 5-question logic assessment tool to match your background and analytical style with the right software development course.</p>
+
+            <div class="quiz-container">
+                <div class="quiz-progress-bar" id="progress-bar-container">
+                    <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+                </div>
+
+                <!-- Step 1 -->
+                <div class="quiz-step active" data-step="1">
+                    <div class="quiz-question">Q1: What is your current educational or professional background?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-value="it_student">
+                            <div class="quiz-option-radio"></div>
+                            <span>IT / Computer Science Graduate (BE, BCA, BCS, MCA)</span>
+                        </div>
+                        <div class="quiz-option" data-value="non_it_student">
+                            <div class="quiz-option-radio"></div>
+                            <span>Non-IT Graduate / Student (BCom, BSc, BA, Mechanical)</span>
+                        </div>
+                        <div class="quiz-option" data-value="non_it_pro">
+                            <div class="quiz-option-radio"></div>
+                            <span>Working Professional in Non-IT role</span>
+                        </div>
+                        <div class="quiz-option" data-value="it_pro">
+                            <div class="quiz-option-radio"></div>
+                            <span>Working Professional in IT / Coding role</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="quiz-step" data-step="2">
+                    <div class="quiz-question">Q2: Which computer operations area interests you the most?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-value="web">
+                            <div class="quiz-option-radio"></div>
+                            <span>Building user dashboards and client web applications</span>
+                        </div>
+                        <div class="quiz-option" data-value="database">
+                            <div class="quiz-option-radio"></div>
+                            <span>Creating database queries and managing large datasets</span>
+                        </div>
+                        <div class="quiz-option" data-value="ai">
+                            <div class="quiz-option-radio"></div>
+                            <span>Statistical models, analysis, and prediction graphs</span>
+                        </div>
+                        <div class="quiz-option" data-value="ops">
+                            <div class="quiz-option-radio"></div>
+                            <span>Automating software deployments, scripts, and clouds</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="quiz-step" data-step="3">
+                    <div class="quiz-question">Q3: How comfortable are you with logical reasoning or math puzzle patterns?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-value="high">
+                            <div class="quiz-option-radio"></div>
+                            <span>Love them (Logic puzzles and analytical challenges are exciting)</span>
+                        </div>
+                        <div class="quiz-option" data-value="medium">
+                            <div class="quiz-option-radio"></div>
+                            <span>Moderate (Comfortable with basic logic, need guidance)</span>
+                        </div>
+                        <div class="quiz-option" data-value="low">
+                            <div class="quiz-option-radio"></div>
+                            <span>Not comfortable (Prefer visual structures or direct guidelines)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="quiz-step" data-step="4">
+                    <div class="quiz-question">Q4: What is your primary learning goal?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-value="mnc">
+                            <div class="quiz-option-radio"></div>
+                            <span>To land structured roles in large enterprise software firms</span>
+                        </div>
+                        <div class="quiz-option" data-value="startup">
+                            <div class="quiz-option-radio"></div>
+                            <span>To build custom applications in dynamic startup setups</span>
+                        </div>
+                        <div class="quiz-option" data-value="data_analysis">
+                            <div class="quiz-option-radio"></div>
+                            <span>To analyze business data patterns and make reports</span>
+                        </div>
+                        <div class="quiz-option" data-value="cloud_migration">
+                            <div class="quiz-option-radio"></div>
+                            <span>To handle release scripts and maintain servers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="quiz-step" data-step="5">
+                    <div class="quiz-question">Q5: How many hours can you commit to programming practice weekly?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" data-value="part">
+                            <div class="quiz-option-radio"></div>
+                            <span>5 to 10 hours (Need flexible pacing)</span>
+                        </div>
+                        <div class="quiz-option" data-value="full">
+                            <div class="quiz-option-radio"></div>
+                            <span>15 to 25 hours (Want comprehensive learning paths)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation buttons -->
+                <div class="quiz-buttons" id="quiz-navigation">
+                    <button class="btn btn-secondary" id="btn-back" style="visibility: hidden;">Back</button>
+                    <button class="btn btn-primary" id="btn-next" disabled>Next Question</button>
+                </div>
+
+                <!-- Results Output Card -->
+                <div class="quiz-results-card" id="quiz-results">
+                    <span class="results-badge">Recommended Course Match</span>
+                    <h2 id="recommended-title" style="font-size: 2rem; color: var(--accent-light); margin-bottom: 1rem;">Java Full Stack Developer</h2>
+                    <p id="recommended-description" style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
+                        Based on your technical background and interest in enterprise architecture, our Java Full Stack mentoring program is your ideal fit. You will master Spring Boot microservices, OOPs coding models, and SQL databases.
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="" id="course-page-link" class="btn btn-primary">View Detailed Curriculum</a>
+                        <a href="" id="whatsapp-quiz-btn" class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss Result on WhatsApp</a>
+                    </div>
+                    <button class="btn btn-secondary" id="btn-reset" style="margin-top: 2rem; font-size: 0.85rem;">Retake Quiz</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html"
+                    style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: white;">CACTS</a>
+                <p>Centre of Advanced Computer Training and Studies. Providing practical, one-to-one virtual software
+                    training and internships on real company projects since 2012.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Programs</h4>
+                <ul style="list-style: none;">
+                    <li><a href="java-full-stack-developer-training.html">Java Full Stack</a></li>
+                    <li><a href="full-stack-development-training.html">Full Stack Web</a></li>
+                    <li><a href="ai-machine-learning-training.html">AI &amp; Machine Learning</a></li>
+                    <li><a href="data-science-training.html">Data Science</a></li>
+                    <li><a href="data-engineering-training.html">Data Engineering</a></li>
+                    <li><a href="python-programming-training.html">Python Scripting</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Institutional Links</h4>
+                <ul style="list-style: none;">
+                    <li><a href="about.html">About CACTS</a></li>
+                    <li><a href="internship-on-live-projects.html">Live Projects Internship</a></li>
+                    <li><a href="one-to-one-software-training.html">1-to-1 Mentoring Model</a></li>
+                    <li><a href="free-career-guidance.html">Free Career Guidance</a></li>
+                    <li><a href="reviews.html">Success Reviews</a></li>
+                    <li><a href="faqs.html">Institutional FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Learning Portals</h4>
+                <ul style="list-style: none;">
+                    <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
+                    <li><a href="course-recommendation-quiz.html">Course Finder Quiz</a></li>
+                    <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
+                    <li><a href="student-projects.html">Student Projects</a></li>
+                    <li><a href="internship-showcase.html">Internship Showcase</a></li>
+                    <li><a href="project-portfolios.html">Project Portfolios</a></li>
+                    <li><a href="technology-comparisons.html">Tech Comparisons</a></li>
+                    <li><a href="free-learning-resources.html">Free Resources</a></li>
+                    <li><a href="technology-career-guides.html">Career Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact CACTS</h4>
+                <p style="margin-bottom: 0.5rem;">Shivane, Pune, Maharashtra, India (411023)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Phone:</strong> +91 96655 66357</p>
+                <p><strong>Hours:</strong> Mon - Sat: 9:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div style="text-align: left;">
+                <p>&copy; <span id="footer-year">2026</span> CACTS - Centre of Advanced Computer Training and Studies. All rights reserved.</p>
+                <p style="margin-top: 0.25rem; font-size: 0.8rem; color: var(--text-secondary);">Shivane, Pune, Maharashtra, India - Pincode 411023</p>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="sitemap.html" style="color: var(--text-secondary);">Sitemap</a>
+                <span style="color: var(--border);">|</span>
+                <a href="privacy-policy.html" style="color: var(--text-secondary);">Privacy Policy</a>
+                <span style="color: var(--border);">|</span>
+                <a href="terms-conditions.html" style="color: var(--text-secondary);">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-ctas"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        const answers = {};
+        let currentStep = 1;
+        const totalSteps = 5;
+
+        const steps = document.querySelectorAll('.quiz-step');
+        const nextBtn = document.getElementById('btn-next');
+        const backBtn = document.getElementById('btn-back');
+        const progressFill = document.getElementById('quiz-progress-fill');
+        const quizNav = document.getElementById('quiz-navigation');
+        const progressBarContainer = document.getElementById('progress-bar-container');
+        const resultsCard = document.getElementById('quiz-results');
+
+        // Setup options click handler
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+                this.classList.add('selected');
+                
+                nextBtn.removeAttribute('disabled');
+            });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const activeStep = document.querySelector('.quiz-step.active');
+            const selectedOpt = activeStep.querySelector('.quiz-option.selected');
+            const stepNum = parseInt(activeStep.getAttribute('data-step'));
+            
+            // Save answer
+            answers[stepNum] = selectedOpt.getAttribute('data-value');
+
+            if (currentStep < totalSteps) {
+                // Transition to next
+                activeStep.classList.remove('active');
+                currentStep++;
+                const nextStep = document.querySelector(`.quiz-step[data-step="${currentStep}"]`);
+                nextStep.classList.add('active');
+
+                // Update navigation state
+                backBtn.style.visibility = 'visible';
+                
+                // Disable next button until option is chosen for next question
+                const nextSelected = nextStep.querySelector('.quiz-option.selected');
+                if (!nextSelected) {
+                    nextBtn.setAttribute('disabled', 'true');
+                } else {
+                    nextBtn.removeAttribute('disabled');
+                }
+
+                if (currentStep === totalSteps) {
+                    nextBtn.textContent = 'Finish Quiz';
+                }
+
+                // Update progress bar
+                progressFill.style.width = `${(currentStep / totalSteps) * 100}%`;
+            } else {
+                // Calculate Recommendation
+                showResults();
+            }
+        });
+
+        backBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                const activeStep = document.querySelector('.quiz-step.active');
+                activeStep.classList.remove('active');
+                currentStep--;
+                const prevStep = document.querySelector(`.quiz-step[data-step="${currentStep}"]`);
+                prevStep.classList.add('active');
+
+                if (currentStep === 1) {
+                    backBtn.style.visibility = 'hidden';
+                }
+                
+                nextBtn.textContent = 'Next Question';
+                nextBtn.removeAttribute('disabled');
+                
+                // Update progress bar
+                progressFill.style.width = `${(currentStep / totalSteps) * 100}%`;
+            }
+        });
+
+        function showResults() {
+            // Hide quiz steps & nav
+            steps.forEach(s => s.classList.remove('active'));
+            quizNav.style.display = 'none';
+            progressBarContainer.style.display = 'none';
+
+            let course = "Java Full Stack";
+            let desc = "Based on your technical background and interest in enterprise architecture, our Java Full Stack mentoring program is your ideal fit. You will master Spring Boot microservices, OOPs coding models, and SQL databases.";
+            let slug = "java-full-stack-developer-training.html";
+
+            const interest = answers[2];
+            const math = answers[3];
+            const goal = answers[4];
+
+            if (interest === 'web' && goal === 'startup') {
+                course = "Full Stack Web Developer (MERN)";
+                desc = "Since you love building client web applications and prefer startup settings, MERN (MongoDB, Express, React, Node) Full Stack training matches your workflow. You will construct responsive Single-Page Applications (SPAs) with unified JavaScript coding.";
+                slug = "full-stack-development-training.html";
+            } else if (interest === 'database') {
+                course = "Data Engineering";
+                desc = "Your interest in database systems and organizing large datasets aligns perfectly with our Data Engineering syllabus. You will master PySpark streaming, SQL queries, and ETL staging on AWS platforms.";
+                slug = "data-engineering-training.html";
+            } else if (interest === 'ai' || (interest === 'database' && math === 'high')) {
+                course = "Data Science or AI/ML";
+                desc = "With your interest in stats, graphs, and analytical problem-solving, our Data Science program is the best match. You will learn Python syntax, Pandas metrics, Scikit-Learn libraries, and Power BI dashboards.";
+                slug = "data-science-training.html";
+            } else if (interest === 'ops' || goal === 'cloud_migration') {
+                course = "DevOps Engineering & Cloud";
+                desc = "Your interest in cloud servers, releases, and deployment scripts maps to our DevOps training. You will handle Kubernetes orchestration, Docker virtualization, and Terraform infrastructure commands.";
+                slug = "devops-training.html";
+            } else if (answers[1] === 'non_it_student' && interest === 'web') {
+                course = "Python Programming";
+                desc = "As a non-IT graduate transitioning to code, we suggest beginning with Python Programming. It establishes core loop foundations, variable patterns, and databases in a friendly learning curve before moving to web frameworks.";
+                slug = "python-programming-training.html";
+            }
+
+            // Render Results
+            document.getElementById('recommended-title').textContent = course;
+            document.getElementById('recommended-description').textContent = desc;
+            
+            const detailsLink = document.getElementById('course-page-link');
+            detailsLink.setAttribute('href', slug);
+            
+            const message = `Hi CACTS, I completed your IT Course Finder Quiz.\n\n` +
+                            `• Recommended: ${course}\n` +
+                            `• Background: ${answers[1]}\n` +
+                            `• Interest Area: ${interest}`;
+            document.getElementById('whatsapp-quiz-btn').setAttribute('href', `https://wa.me/919665566357?text=${encodeURIComponent(message)}`);
+
+            resultsCard.style.display = 'block';
+        }
+
+        document.getElementById('btn-reset').addEventListener('click', () => {
+            // Reset state
+            currentStep = 1;
+            answers[1] = null;
+            answers[2] = null;
+            answers[3] = null;
+            answers[4] = null;
+            answers[5] = null;
+
+            // Reset UI
+            document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            nextBtn.setAttribute('disabled', 'true');
+            nextBtn.textContent = 'Next Question';
+            backBtn.style.visibility = 'hidden';
+            
+            resultsCard.style.display = 'none';
+            progressBarContainer.style.display = 'block';
+            progressFill.style.width = '20%';
+            quizNav.style.display = 'flex';
+            
+            steps.forEach(s => s.classList.remove('active'));
+            document.querySelector('.quiz-step[data-step="1"]').classList.add('active');
+        });
+    </script>
+</body>
+
+</html>

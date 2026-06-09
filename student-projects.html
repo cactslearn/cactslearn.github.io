@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CACTS Student Project Showcase & Code Repositories | Pune</title>
+    <meta name="description"
+        content="Explore real software applications built by CACTS students. Access live staging links, frontend designs, database architectures, and public Git repositories.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cactslearn.github.io/student-projects.html">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .filter-btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.6rem 1.25rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent-glow);
+            border-color: var(--accent);
+            color: var(--text-primary);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border-hover);
+            box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.15);
+            background: var(--bg-card-hover);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0.7;
+        }
+
+        .project-badge {
+            align-self: flex-start;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-glow);
+            border: 1px solid var(--primary-light);
+            color: var(--primary-light);
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        .project-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .project-links .btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            flex: 1;
+            text-align: center;
+        }
+
+        .hide {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span>CACTS</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">☰</button>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="internship-on-live-projects.html">Live Internship</a>
+                <a href="one-to-one-software-training.html">1-to-1 Model</a>
+                <a href="free-career-guidance.html">Career Guidance</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faqs.html">FAQs</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">☀️</button>
+                <a href="contact.html" class="btn btn-accent" style="padding: 0.5rem 1rem; color: #0b0f19;">Book
+                    Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 8rem;">
+        <section aria-labelledby="projects-h1" class="tech-section">
+            <nav aria-label="Breadcrumb" style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
+                <a href="index.html" style="color: var(--accent);">Home</a> &gt;
+                <span style="color: var(--text-primary);">Student Projects</span>
+            </nav>
+
+            <h1 id="projects-h1" class="section-title">Student Software Code Portfolios</h1>
+            <p class="section-subtitle">Browse through production-grade systems engineered by CACTS mentees. No sandbox exercises - these are fully deployed apps with clean code structures and live public repositories.</p>
+
+            <!-- Filters -->
+            <div class="filter-btn-container">
+                <button class="filter-btn active" data-filter="all">All Ecosystems</button>
+                <button class="filter-btn" data-filter="java">Java &amp; Enterprise</button>
+                <button class="filter-btn" data-filter="mern">MERN Full Stack</button>
+                <button class="filter-btn" data-filter="data">Data &amp; AI</button>
+                <button class="filter-btn" data-filter="devops">DevOps &amp; Cloud</button>
+            </div>
+
+            <!-- Grid -->
+            <div class="projects-grid" id="projects-container">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="java">
+                    <div>
+                        <span class="project-badge">Java Full Stack</span>
+                        <h3 style="margin-bottom: 0.75rem; color: var(--text-primary);">EduStream Gateway</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            A microservices API gateway integrating Spring Cloud, JWT-based security modules, and PostgreSQL clustering. Handles token refreshes, route filtering, and CORS policies for institutional platforms.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-meta">
+                            <div class="project-meta-item">💻 Java / Spring Boot</div>
+                            <div class="project-meta-item">🗄️ PostgreSQL</div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/cacts-student-labs/edustream-gateway" class="btn btn-secondary" target="_blank">View Repository</a>
+                            <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20building%20Java%20Full%20Stack%20projects%20like%20EduStream." class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss Tech</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-category="mern">
+                    <div>
+                        <span class="project-badge">MERN Full Stack</span>
+                        <h3 style="margin-bottom: 0.75rem; color: var(--text-primary);">DevPulse Dashboard</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            A live metrics portal charting git commits and server performance stats. Features interactive Chart.js layouts, WebSocket connections, Node/Express endpoints, and state-managed React contexts.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-meta">
+                            <div class="project-meta-item">💻 React / Node.js</div>
+                            <div class="project-meta-item">🗄️ MongoDB</div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/cacts-student-labs/devpulse-metrics-dashboard" class="btn btn-secondary" target="_blank">View Repository</a>
+                            <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20MERN%20stack%20projects%20like%20DevPulse." class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss Tech</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-category="data">
+                    <div>
+                        <span class="project-badge">Data Engineering</span>
+                        <h3 style="margin-bottom: 0.75rem; color: var(--text-primary);">AutoLog ETL Pipeline</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            A functional streaming ETL architecture mapping data flows from public APIs. Built using Apache Spark streaming, custom Python data parser classes, and loading refined datasets directly into Amazon S3 buckets.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-meta">
+                            <div class="project-meta-item">💻 Python / PySpark</div>
+                            <div class="project-meta-item">☁️ AWS S3</div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/cacts-student-labs/autolog-etl-pipeline" class="btn btn-secondary" target="_blank">View Repository</a>
+                            <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20Data%20Engineering%20pipelines%20like%20AutoLog." class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss Tech</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-category="data">
+                    <div>
+                        <span class="project-badge">AI &amp; Machine Learning</span>
+                        <h3 style="margin-bottom: 0.75rem; color: var(--text-primary);">FinLogic Predictor</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            A machine learning engine analyzing market credit risks. Integrates Pandas feature cleanup, Scikit-Learn RandomForest algorithms, and FastAPI endpoints for real-world risk score inference.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-meta">
+                            <div class="project-meta-item">💻 Python / FastAPI</div>
+                            <div class="project-meta-item">🤖 Scikit-Learn</div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/cacts-student-labs/finlogic-ml-predictor" class="btn btn-secondary" target="_blank">View Repository</a>
+                            <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20AI/ML%20projects%20like%20FinLogic." class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss Tech</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-category="devops">
+                    <div>
+                        <span class="project-badge">DevOps &amp; Cloud</span>
+                        <h3 style="margin-bottom: 0.75rem; color: var(--text-primary);">CloudScale K8s Setup</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            Terraform and Kubernetes infrastructure setup automating blue-green node groups. Integrates Prometheus tracking, Helm configs for Nginx Ingress, and secure IAM access mappings.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-meta">
+                            <div class="project-meta-item">💻 Terraform / Helm</div>
+                            <div class="project-meta-item">☁️ AWS EKS</div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/cacts-student-labs/cloudscale-k8s-terraform" class="btn btn-secondary" target="_blank">View Repository</a>
+                            <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20DevOps/Cloud%20automation%20like%20CloudScale." class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss Tech</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card" data-category="java">
+                    <div>
+                        <span class="project-badge">Database Systems</span>
+                        <h3 style="margin-bottom: 0.75rem; color: var(--text-primary);">QueryVault Engine</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                            A low-level custom SQL parser and indexing demonstration written in Java. Implements B-Tree file search storage mechanics to demonstrate database internal indexing and transaction logs.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="project-meta">
+                            <div class="project-meta-item">💻 Java Core</div>
+                            <div class="project-meta-item">🗄️ Custom File DB</div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/cacts-student-labs/queryvault-db-engine" class="btn btn-secondary" target="_blank">View Repository</a>
+                            <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20low-level%20Java%20database%20projects%20like%20QueryVault." class="btn btn-accent" target="_blank" style="color: #0b0f19;">Discuss Tech</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html"
+                    style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: white;">CACTS</a>
+                <p>Centre of Advanced Computer Training and Studies. Providing practical, one-to-one virtual software
+                    training and internships on real company projects since 2012.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Programs</h4>
+                <ul style="list-style: none;">
+                    <li><a href="java-full-stack-developer-training.html">Java Full Stack</a></li>
+                    <li><a href="full-stack-development-training.html">Full Stack Web</a></li>
+                    <li><a href="ai-machine-learning-training.html">AI &amp; Machine Learning</a></li>
+                    <li><a href="data-science-training.html">Data Science</a></li>
+                    <li><a href="data-engineering-training.html">Data Engineering</a></li>
+                    <li><a href="python-programming-training.html">Python Scripting</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Institutional Links</h4>
+                <ul style="list-style: none;">
+                    <li><a href="about.html">About CACTS</a></li>
+                    <li><a href="internship-on-live-projects.html">Live Projects Internship</a></li>
+                    <li><a href="one-to-one-software-training.html">1-to-1 Mentoring Model</a></li>
+                    <li><a href="free-career-guidance.html">Free Career Guidance</a></li>
+                    <li><a href="reviews.html">Success Reviews</a></li>
+                    <li><a href="faqs.html">Institutional FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Learning Portals</h4>
+                <ul style="list-style: none;">
+                    <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
+                    <li><a href="course-recommendation-quiz.html">Course Finder Quiz</a></li>
+                    <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
+                    <li><a href="student-projects.html">Student Projects</a></li>
+                    <li><a href="internship-showcase.html">Internship Showcase</a></li>
+                    <li><a href="project-portfolios.html">Project Portfolios</a></li>
+                    <li><a href="technology-comparisons.html">Tech Comparisons</a></li>
+                    <li><a href="free-learning-resources.html">Free Resources</a></li>
+                    <li><a href="technology-career-guides.html">Career Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact CACTS</h4>
+                <p style="margin-bottom: 0.5rem;">Shivane, Pune, Maharashtra, India (411023)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Phone:</strong> +91 96655 66357</p>
+                <p><strong>Hours:</strong> Mon - Sat: 9:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div style="text-align: left;">
+                <p>&copy; <span id="footer-year">2026</span> CACTS - Centre of Advanced Computer Training and Studies. All rights reserved.</p>
+                <p style="margin-top: 0.25rem; font-size: 0.8rem; color: var(--text-secondary);">Shivane, Pune, Maharashtra, India - Pincode 411023</p>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="sitemap.html" style="color: var(--text-secondary);">Sitemap</a>
+                <span style="color: var(--border);">|</span>
+                <a href="privacy-policy.html" style="color: var(--text-secondary);">Privacy Policy</a>
+                <span style="color: var(--border);">|</span>
+                <a href="terms-conditions.html" style="color: var(--text-secondary);">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="floating-ctas"></div>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+                document.querySelectorAll('.project-card').forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.classList.remove('hide');
+                    } else {
+                        card.classList.add('hide');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

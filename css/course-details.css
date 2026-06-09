@@ -1,0 +1,319 @@
+/* Course Landing Page Styles */
+
+.course-hero {
+    padding-top: 9rem;
+    padding-bottom: 6rem;
+    position: relative;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.08) 0%, transparent 45%),
+        radial-gradient(var(--border) 1.5px, transparent 1.5px);
+    background-size: 100% 100%, 100% 100%, 24px 24px;
+}
+
+body.light-theme .course-hero {
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, rgba(20, 184, 166, 0.04) 0%, transparent 45%),
+        radial-gradient(rgba(0,0,0,0.03) 1.5px, transparent 1.5px);
+    background-size: 100% 100%, 100% 100%, 24px 24px;
+}
+
+.course-badge {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    background: var(--primary-glow);
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    color: var(--primary-light);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 30px;
+    margin-bottom: 1.25rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.05);
+}
+
+.course-meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.75rem 0 2.25rem 0;
+}
+
+.meta-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(4px);
+    transition: var(--transition);
+}
+
+.meta-tag:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--border-hover);
+    color: var(--text-primary);
+}
+
+.meta-tag svg {
+    color: var(--accent);
+    width: 18px;
+    height: 18px;
+}
+
+/* Course Layout Container */
+.course-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3.5rem;
+    align-items: start;
+}
+
+/* Curriculum Accordion */
+.curriculum-section {
+    margin-bottom: 3.5rem;
+}
+
+.curriculum-module {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.curriculum-module:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.3);
+}
+
+.module-header {
+    padding: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.005);
+    transition: var(--transition);
+}
+
+.module-header:hover {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+body.light-theme .module-header:hover {
+    background: rgba(0, 0, 0, 0.01);
+}
+
+.module-header h4 {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.module-duration {
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.module-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: rgba(6, 9, 19, 0.3);
+}
+
+body.light-theme .module-content {
+    background: rgba(248, 250, 252, 0.4);
+}
+
+.module-content.active {
+    max-height: 1200px;
+}
+
+.module-content-inner {
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.module-content-inner ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.module-content-inner li {
+    position: relative;
+    padding-left: 1.75rem;
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.module-content-inner li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--accent-light);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Pricing Sidebar Card */
+.pricing-sidebar-card {
+    background: linear-gradient(145deg, var(--bg-card), rgba(16, 21, 36, 0.85));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    position: sticky;
+    top: 8rem;
+    box-shadow: 
+        0 20px 40px -15px rgba(0, 0, 0, 0.5), 
+        inset 0 1px 0px rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+body.light-theme .pricing-sidebar-card {
+    background: linear-gradient(145deg, var(--bg-card), rgba(255, 255, 255, 0.9));
+    box-shadow: 
+        0 20px 40px -15px rgba(0, 0, 0, 0.05), 
+        inset 0 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+/* Subtle accent line at top of sidebar */
+.pricing-sidebar-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--accent), var(--primary), transparent);
+    border-radius: 0 0 4px 4px;
+}
+
+.price-display {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.75rem;
+    text-align: center;
+}
+
+.price-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.price-value {
+    font-family: var(--font-heading);
+    font-size: 2.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--text-primary) 30%, var(--accent-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0.5rem 0;
+}
+
+body.light-theme .price-value {
+    background: linear-gradient(135deg, var(--text-primary) 30%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.price-sub {
+    font-size: 0.85rem;
+    color: var(--accent-light);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+body.light-theme .price-sub {
+    color: var(--primary);
+}
+
+.pricing-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 0.98rem;
+    color: var(--text-secondary);
+}
+
+.pricing-features li svg {
+    color: var(--success);
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+}
+
+.pricing-cta {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Skills grid */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.skill-bubble {
+    font-size: 0.85rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    backdrop-filter: blur(4px);
+}
+
+.skill-bubble:hover {
+    border-color: var(--accent);
+    color: var(--text-primary);
+    background: var(--accent-glow);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+@media (max-width: 992px) {
+    .course-layout {
+        grid-template-columns: 1fr;
+    }
+    .pricing-sidebar-card {
+        position: static;
+        margin-top: 3rem;
+    }
+}
