@@ -276,6 +276,12 @@ def build():
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://cactslearn.github.io/software-training-institute-pune.html</loc>
+        <lastmod>{current_date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 """
 
     for pg in generated_pages:
