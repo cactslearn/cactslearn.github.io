@@ -118,12 +118,34 @@ def build():
             "mainEntity": faq_entities
         }
 
+        breadcrumb_schema = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://cactslearn.github.io/index.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": name,
+                    "item": f"https://cactslearn.github.io/{slug}.html"
+                }
+            ]
+        }
+
         schema_markup = f"""
         <script type="application/ld+json">
         {json.dumps(course_schema, indent=2)}
         </script>
         <script type="application/ld+json">
         {json.dumps(faq_schema, indent=2)}
+        </script>
+        <script type="application/ld+json">
+        {json.dumps(breadcrumb_schema, indent=2)}
         </script>
         """
 

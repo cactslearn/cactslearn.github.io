@@ -15,11 +15,16 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": ["LocalBusiness", "EducationalOrganization", "Organization"],
       "name": "CACTS - Centre of Advanced Computer Training and Studies",
       "image": "https://cactslearn.github.io/images/cacts-logo.png",
       "url": "https://cactslearn.github.io/",
       "telephone": "+919665566357",
+      "sameAs": [
+        "https://www.facebook.com/cactspune/",
+        "https://www.linkedin.com/company/cacts/",
+        "https://www.instagram.com/cacts_pune/"
+      ],
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Shivane",
@@ -39,6 +44,26 @@
         "opens": "09:00",
         "closes": "19:00"
       }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cactslearn.github.io/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact Us",
+          "item": "https://cactslearn.github.io/contact.html"
+        }
+      ]
     }
     </script>
 </head>

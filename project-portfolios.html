@@ -88,6 +88,27 @@
             font-size: 0.9rem;
         }
     </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cactslearn.github.io/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Project Portfolios",
+          "item": "https://cactslearn.github.io/project-portfolios.html"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -140,18 +161,111 @@
                         A multi-database microservice architecture designed to handle transaction volumes. Integrates token authorization modules, custom Spring gateway filters, and transactional integrity guarantees across services.
                     </p>
 
-                    <div class="diagram-box">
-[Client Web Browser]
-       │ (REST APIs / JWT Token Header)
-       ▼
-[Spring Cloud API Gateway] ──(Authentication Filter Validation)
-       │
-       ├───► [Auth Microservice] ──► (PostgreSQL Session Cluster)
-       │
-       ├───► [Catalog Microservice] ──► (Read-Replica SQL Database)
-       │
-       └───► [Order Processing API] ──► (Spring Data JPA) ──► [Write MySQL Database]
-                                                 └──► [Redis Cache Layer]
+                    <div class="diagram-box" style="padding: 1rem; background: #030712; display: flex; justify-content: center;">
+                        <svg width="100%" height="250" viewBox="0 0 600 250" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                          <!-- Grids & Glowing Defs -->
+                          <defs>
+                            <linearGradient id="glow-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#6366f1" stop-opacity="0.15"/>
+                              <stop offset="100%" stop-color="#14b8a6" stop-opacity="0.15"/>
+                            </linearGradient>
+                            <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stop-color="#6366f1"/>
+                              <stop offset="100%" stop-color="#14b8a6"/>
+                            </linearGradient>
+                            <filter id="glow-effect" x="-10%" y="-10%" width="120%" height="120%">
+                              <feGaussianBlur stdDeviation="3" result="blur" />
+                              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                          </defs>
+
+                          <!-- Background Grid Pattern -->
+                          <path d="M 0,25 H 600 M 0,50 H 600 M 0,75 H 600 M 0,100 H 600 M 0,125 H 600 M 0,150 H 600 M 0,175 H 600 M 0,200 H 600 M 0,225 H 600" stroke="rgba(255,255,255,0.01)" stroke-width="1"/>
+                          <path d="M 50,0 V 250 M 100,0 V 250 M 150,0 V 250 M 200,0 V 250 M 250,0 V 250 M 300,0 V 250 M 350,0 V 250 M 400,0 V 250 M 450,0 V 250 M 500,0 V 250 M 550,0 V 250" stroke="rgba(255,255,255,0.01)" stroke-width="1"/>
+
+                          <!-- Node: Client Web Browser -->
+                          <rect x="20" y="100" width="110" height="40" rx="6" fill="#0b0f19" stroke="#6366f1" stroke-width="1.5" filter="url(#glow-effect)"/>
+                          <text x="32" y="124" fill="#f8fafc" font-family="monospace" font-size="9" font-weight="600">Client Browser</text>
+                          <text x="32" y="134" fill="#64748b" font-family="monospace" font-size="7">HTTP / JWT Header</text>
+
+                          <!-- Connection: Client -> Gateway -->
+                          <path d="M 130,120 H 170" stroke="url(#line-grad)" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+                          <!-- Node: Spring Cloud API Gateway -->
+                          <rect x="170" y="80" width="130" height="80" rx="6" fill="#0b0f19" stroke="#818cf8" stroke-width="1.5"/>
+                          <text x="180" y="104" fill="#a5b4fc" font-family="monospace" font-size="10" font-weight="700">Spring Gateway</text>
+                          <text x="180" y="120" fill="#64748b" font-family="monospace" font-size="7">Auth & Route Filters</text>
+                          <rect x="180" y="132" width="110" height="18" rx="3" fill="rgba(20, 184, 166, 0.05)" stroke="rgba(20, 184, 166, 0.2)"/>
+                          <text x="186" y="143" fill="#2dd4bf" font-family="monospace" font-size="8">JWT Validation</text>
+
+                          <!-- Connection: Gateway -> Auth -->
+                          <path d="M 300,100 Q 340,40 380,40" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="2" marker-end="url(#arrow)"/>
+                          <text x="315" y="60" fill="#64748b" font-family="monospace" font-size="7">Verify Token</text>
+
+                          <!-- Node: Auth Microservice -->
+                          <rect x="380" y="20" width="110" height="40" rx="6" fill="#0b0f19" stroke="#6366f1" stroke-width="1.5"/>
+                          <text x="390" y="44" fill="#a5b4fc" font-family="monospace" font-size="9" font-weight="600">Auth Service</text>
+
+                          <!-- Connection: Auth -> Session Cluster -->
+                          <path d="M 490,40 H 510" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+                          <!-- Database Node: PostgreSQL Session Cluster -->
+                          <path d="M 510,25 C 510,22 535,22 535,22 C 535,22 560,22 560,25 V 55 C 560,58 535,58 535,58 C 535,58 510,58 510,55 Z" fill="#0b0f19" stroke="#10b981" stroke-width="1.5"/>
+                          <path d="M 510,33 C 510,30 535,30 535,30 C 535,30 560,30 560,33" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                          <path d="M 510,41 C 510,38 535,38 535,38 C 535,38 560,38 560,41" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                          <text x="515" y="47" fill="#34d399" font-family="monospace" font-size="6" font-weight="700">PG Session</text>
+
+                          <!-- Connection: Gateway -> Catalog -->
+                          <path d="M 300,120 H 380" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+                          <text x="325" y="115" fill="#64748b" font-family="monospace" font-size="7">GET /catalog</text>
+
+                          <!-- Node: Catalog Microservice -->
+                          <rect x="380" y="100" width="110" height="40" rx="6" fill="#0b0f19" stroke="#6366f1" stroke-width="1.5"/>
+                          <text x="390" y="124" fill="#a5b4fc" font-family="monospace" font-size="9" font-weight="600">Catalog Service</text>
+
+                          <!-- Connection: Catalog -> Read-Replica SQL -->
+                          <path d="M 490,120 H 510" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+                          <!-- Database Node: Read-Replica SQL -->
+                          <path d="M 510,105 C 510,102 535,102 535,102 C 535,102 560,102 560,105 V 135 C 560,138 535,138 535,138 C 535,138 510,138 510,135 Z" fill="#0b0f19" stroke="#10b981" stroke-width="1.5"/>
+                          <path d="M 510,113 C 510,110 535,110 535,110 C 535,110 560,110 560,113" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                          <path d="M 510,121 C 510,118 535,118 535,118 C 535,118 560,118 560,121" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                          <text x="516" y="127" fill="#34d399" font-family="monospace" font-size="6" font-weight="700">Replica SQL</text>
+
+                          <!-- Connection: Gateway -> Order -->
+                          <path d="M 300,140 Q 340,200 380,200" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+                          <text x="310" y="180" fill="#64748b" font-family="monospace" font-size="7">POST /orders</text>
+
+                          <!-- Node: Order Processing API -->
+                          <rect x="380" y="180" width="110" height="48" rx="6" fill="#0b0f19" stroke="#14b8a6" stroke-width="1.5" filter="url(#glow-effect)"/>
+                          <text x="390" y="202" fill="#2dd4bf" font-family="monospace" font-size="9" font-weight="600">Order Service</text>
+                          <text x="390" y="214" fill="#64748b" font-family="monospace" font-size="7">Spring Data JPA</text>
+
+                          <!-- Connection: Order -> MySQL Write DB -->
+                          <path d="M 490,195 Q 500,195 510,185" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+                          <!-- Database Node: MySQL Write DB -->
+                          <path d="M 510,165 C 510,162 535,162 535,162 C 535,162 560,162 560,165 V 195 C 560,198 535,198 535,198 C 535,198 510,198 510,195 Z" fill="#0b0f19" stroke="#f59e0b" stroke-width="1.5"/>
+                          <path d="M 510,173 C 510,170 535,170 535,170 C 535,170 560,170 560,173" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+                          <path d="M 510,181 C 510,178 535,178 535,178 C 535,178 560,178 560,181" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+                          <text x="519" y="187" fill="#f59e0b" font-family="monospace" font-size="6" font-weight="700">Write DB</text>
+
+                          <!-- Connection: Order -> Redis Cache -->
+                          <path d="M 490,215 Q 500,215 510,225" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+                          <!-- Database Node: Redis Cache -->
+                          <path d="M 510,205 C 510,202 535,202 535,202 C 535,202 560,202 560,205 V 235 C 560,238 535,238 535,238 C 535,238 510,238 510,235 Z" fill="#0b0f19" stroke="#ef4444" stroke-width="1.5"/>
+                          <path d="M 510,213 C 510,210 535,210 535,210 C 535,210 560,210 560,213" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+                          <path d="M 510,221 C 510,218 535,218 535,218 C 535,218 560,218 560,221" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+                          <text x="517" y="227" fill="#ef4444" font-family="monospace" font-size="6" font-weight="700">Redis Cache</text>
+
+                          <!-- Marker Definitions -->
+                          <defs>
+                            <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+                              <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"/>
+                            </marker>
+                          </defs>
+                        </svg>
                     </div>
 
                     <div class="portfolio-specs">
@@ -184,17 +298,78 @@
                         A web application synchronizing document states across multiple users. Implements room connection limits, WebSocket message validations, and asynchronous database writing queues.
                     </p>
 
-                    <div class="diagram-box">
-[Multiple React Clients]
-       │ (WebSocket TCP Sessions)
-       ▼
-[Node.js / Express Web Sockets Server]
-       │
-       ├───► [Socket.io Room Hub] ──► (In-Memory Room State Map)
-       │
-       ├───► [Redis Pub/Sub Layer] ──► (Distributes edits across multiple servers)
-       │
-       └───► [Async DB Queue Worker] ──► [MongoDB Database Cluster]
+                    <div class="diagram-box" style="padding: 1rem; background: #030712; display: flex; justify-content: center;">
+                        <svg width="100%" height="250" viewBox="0 0 600 250" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                          <defs>
+                            <linearGradient id="glow-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#14b8a6" stop-opacity="0.15"/>
+                              <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.15"/>
+                            </linearGradient>
+                            <linearGradient id="line-grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                              <stop offset="0%" stop-color="#38bdf8"/>
+                              <stop offset="100%" stop-color="#14b8a6"/>
+                            </linearGradient>
+                            <filter id="glow-effect2" x="-10%" y="-10%" width="120%" height="120%">
+                              <feGaussianBlur stdDeviation="3" result="blur" />
+                              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                          </defs>
+
+                          <!-- Grid Pattern -->
+                          <path d="M 0,25 H 600 M 0,50 H 600 M 0,75 H 600 M 0,100 H 600 M 0,125 H 600 M 0,150 H 600 M 0,175 H 600 M 0,200 H 600 M 0,225 H 600" stroke="rgba(255,255,255,0.01)" stroke-width="1"/>
+                          <path d="M 50,0 V 250 M 100,0 V 250 M 150,0 V 250 M 200,0 V 250 M 250,0 V 250 M 300,0 V 250 M 350,0 V 250 M 400,0 V 250 M 450,0 V 250 M 500,0 V 250 M 550,0 V 250" stroke="rgba(255,255,255,0.01)" stroke-width="1"/>
+
+                          <!-- React Clients -->
+                          <rect x="20" y="30" width="90" height="35" rx="5" fill="#0b0f19" stroke="#38bdf8" stroke-width="1.2"/>
+                          <text x="28" y="52" fill="#f8fafc" font-family="monospace" font-size="8" font-weight="600">React Client 1</text>
+                          
+                          <rect x="20" y="100" width="90" height="35" rx="5" fill="#0b0f19" stroke="#38bdf8" stroke-width="1.2"/>
+                          <text x="28" y="122" fill="#f8fafc" font-family="monospace" font-size="8" font-weight="600">React Client 2</text>
+                          
+                          <rect x="20" y="170" width="90" height="35" rx="5" fill="#0b0f19" stroke="#38bdf8" stroke-width="1.2" opacity="0.6"/>
+                          <text x="28" y="192" fill="#64748b" font-family="monospace" font-size="8" font-weight="600">React Client N</text>
+
+                          <!-- WS TCP connections -->
+                          <path d="M 110,48 Q 160,48 210,105" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="3" marker-end="url(#arrow2)"/>
+                          <path d="M 110,117 H 210" stroke="#38bdf8" stroke-width="1.2" marker-end="url(#arrow2)"/>
+                          <path d="M 110,188 Q 160,188 210,135" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="3" marker-end="url(#arrow2)"/>
+                          <text x="120" y="95" fill="#38bdf8" font-family="monospace" font-size="7">WebSockets TCP</text>
+
+                          <!-- Node.js Server -->
+                          <rect x="210" y="90" width="140" height="60" rx="6" fill="#0b0f19" stroke="#14b8a6" stroke-width="1.5" filter="url(#glow-effect2)"/>
+                          <text x="220" y="115" fill="#2dd4bf" font-family="monospace" font-size="10" font-weight="700">Node.js Server</text>
+                          <text x="220" y="130" fill="#64748b" font-family="monospace" font-size="7">Express & Socket.io</text>
+
+                          <!-- Connection: Server -> Socket Room Hub -->
+                          <path d="M 350,110 Q 390,70 430,70" fill="none" stroke="#64748b" stroke-width="1.2" marker-end="url(#arrow2)"/>
+
+                          <!-- Node: Socket Room Hub -->
+                          <rect x="430" y="50" width="130" height="40" rx="5" fill="#0b0f19" stroke="#818cf8" stroke-width="1.2"/>
+                          <text x="440" y="70" fill="#a5b4fc" font-family="monospace" font-size="8" font-weight="600">Socket Room Hub</text>
+                          <text x="440" y="80" fill="#64748b" font-family="monospace" font-size="6">In-Memory Room State Map</text>
+
+                          <!-- Connection: Server -> Redis Pub/Sub -->
+                          <path d="M 350,120 H 430" stroke="#64748b" stroke-width="1.2" marker-end="url(#arrow2)"/>
+
+                          <!-- Node: Redis Pub/Sub -->
+                          <rect x="430" y="105" width="130" height="40" rx="5" fill="#0b0f19" stroke="#ef4444" stroke-width="1.2"/>
+                          <text x="440" y="125" fill="#f87171" font-family="monospace" font-size="8" font-weight="600">Redis Pub/Sub</text>
+                          <text x="440" y="135" fill="#64748b" font-family="monospace" font-size="6">Distribute Edits Globally</text>
+
+                          <!-- Connection: Server -> Queue Worker -->
+                          <path d="M 350,130 Q 390,170 430,170" fill="none" stroke="#64748b" stroke-width="1.2" marker-end="url(#arrow2)"/>
+
+                          <!-- Node: Queue Worker & DB -->
+                          <rect x="430" y="160" width="130" height="50" rx="5" fill="#0b0f19" stroke="#10b981" stroke-width="1.2"/>
+                          <text x="440" y="180" fill="#34d399" font-family="monospace" font-size="8" font-weight="600">Async DB Worker</text>
+                          <text x="440" y="195" fill="#64748b" font-family="monospace" font-size="7">MongoDB Cluster Store</text>
+
+                          <defs>
+                            <marker id="arrow2" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+                              <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"/>
+                            </marker>
+                          </defs>
+                        </svg>
                     </div>
 
                     <div class="portfolio-specs">
@@ -227,18 +402,77 @@
                         A streaming ETL data pipeline loading parsed API messages into database warehouses. Built using Spark structured streaming and schedulers.
                     </p>
 
-                    <div class="diagram-box">
-[API Data Stream]
-       │
-       ▼
-[Apache Kafka Message Broker] ──(Buffering raw JSON payloads)
-       │
-       ▼
-[PySpark Streaming Engine] ──(Column cleaning, cast operations)
-       │
-       ├───► [PostgreSQL Analytics Lake] ──► [Power BI Dashboard]
-       │
-       └───► [Cold Storage AWS S3]
+                    <div class="diagram-box" style="padding: 1rem; background: #030712; display: flex; justify-content: center;">
+                        <svg width="100%" height="250" viewBox="0 0 600 250" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                          <defs>
+                            <linearGradient id="glow-grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.15"/>
+                              <stop offset="100%" stop-color="#10b981" stop-opacity="0.15"/>
+                            </linearGradient>
+                            <linearGradient id="line-grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+                              <stop offset="0%" stop-color="#f59e0b"/>
+                              <stop offset="100%" stop-color="#10b981"/>
+                            </linearGradient>
+                            <filter id="glow-effect3" x="-10%" y="-10%" width="120%" height="120%">
+                              <feGaussianBlur stdDeviation="3" result="blur" />
+                              <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                          </defs>
+
+                          <!-- Grid Pattern -->
+                          <path d="M 0,25 H 600 M 0,50 H 600 M 0,75 H 600 M 0,100 H 600 M 0,125 H 600 M 0,150 H 600 M 0,175 H 600 M 0,200 H 600 M 0,225 H 600" stroke="rgba(255,255,255,0.01)" stroke-width="1"/>
+                          <path d="M 50,0 V 250 M 100,0 V 250 M 150,0 V 250 M 200,0 V 250 M 250,0 V 250 M 300,0 V 250 M 350,0 V 250 M 400,0 V 250 M 450,0 V 250 M 500,0 V 250 M 550,0 V 250" stroke="rgba(255,255,255,0.01)" stroke-width="1"/>
+
+                          <!-- API Stream -->
+                          <rect x="20" y="100" width="100" height="40" rx="5" fill="#0b0f19" stroke="#f59e0b" stroke-width="1.5" filter="url(#glow-effect3)"/>
+                          <text x="28" y="120" fill="#fdba74" font-family="monospace" font-size="9" font-weight="600">API Data Stream</text>
+                          <text x="28" y="132" fill="#64748b" font-family="monospace" font-size="7">Raw JSON Payloads</text>
+
+                          <!-- Connection: API -> Kafka -->
+                          <path d="M 120,120 H 160" stroke="url(#line-grad3)" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+                          <!-- Apache Kafka Message Broker -->
+                          <rect x="160" y="90" width="120" height="60" rx="6" fill="#0b0f19" stroke="#f59e0b" stroke-width="1.5"/>
+                          <text x="170" y="115" fill="#fdba74" font-family="monospace" font-size="10" font-weight="700">Apache Kafka</text>
+                          <text x="170" y="130" fill="#64748b" font-family="monospace" font-size="7">Topic Message Buffer</text>
+
+                          <!-- Connection: Kafka -> Spark -->
+                          <path d="M 280,120 H 320" stroke="#10b981" stroke-width="1.5" marker-end="url(#arrow3)"/>
+
+                          <!-- PySpark Streaming Engine -->
+                          <rect x="320" y="90" width="130" height="60" rx="6" fill="#0b0f19" stroke="#10b981" stroke-width="1.5" filter="url(#glow-effect3)"/>
+                          <text x="330" y="115" fill="#34d399" font-family="monospace" font-size="10" font-weight="700">Spark Streaming</text>
+                          <text x="330" y="130" fill="#64748b" font-family="monospace" font-size="7">Cast & Filter Pipeline</text>
+
+                          <!-- Connection: Spark -> PG Analytics (top) -->
+                          <path d="M 450,110 Q 480,60 510,60" fill="none" stroke="#64748b" stroke-width="1.2" marker-end="url(#arrow3)"/>
+
+                          <!-- Database Node: PG Analytics -->
+                          <path d="M 510,45 C 510,42 535,42 535,42 C 535,42 560,42 560,45 V 75 C 560,78 535,78 535,78 C 535,78 510,78 510,75 Z" fill="#0b0f19" stroke="#38bdf8" stroke-width="1.2"/>
+                          <path d="M 510,53 C 510,50 535,50 535,50 C 535,50 560,50 560,53" fill="none" stroke="#38bdf8" stroke-width="1.2"/>
+                          <path d="M 510,61 C 510,58 535,58 535,58 C 535,58 560,58 560,61" fill="none" stroke="#38bdf8" stroke-width="1.2"/>
+                          <text x="515" y="67" fill="#38bdf8" font-family="monospace" font-size="6" font-weight="700">PG Analytics</text>
+
+                          <!-- Connection: PG Analytics -> Power BI -->
+                          <path d="M 535,78 V 105" stroke="#38bdf8" stroke-dasharray="2" stroke-width="1.2" marker-end="url(#arrow3)"/>
+
+                          <!-- Node: Power BI Dashboard -->
+                          <rect x="500" y="105" width="70" height="30" rx="3" fill="#0b0f19" stroke="#f59e0b" stroke-width="1.2"/>
+                          <text x="507" y="123" fill="#f59e0b" font-family="monospace" font-size="7" font-weight="600">Power BI</text>
+
+                          <!-- Connection: Spark -> AWS S3 (bottom) -->
+                          <path d="M 450,130 Q 480,180 510,180" fill="none" stroke="#64748b" stroke-width="1.2" marker-end="url(#arrow3)"/>
+
+                          <!-- Node: Cold Storage AWS S3 -->
+                          <rect x="510" y="165" width="60" height="30" rx="4" fill="#0b0f19" stroke="#a78bfa" stroke-width="1.2"/>
+                          <text x="516" y="183" fill="#c084fc" font-family="monospace" font-size="7" font-weight="600">AWS S3 Cold</text>
+
+                          <defs>
+                            <marker id="arrow3" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
+                              <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"/>
+                            </marker>
+                          </defs>
+                        </svg>
                     </div>
 
                     <div class="portfolio-specs">
