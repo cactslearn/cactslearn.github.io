@@ -14,82 +14,6 @@
         .comparison-section-item {
             margin-bottom: 5rem;
         }
-
-        .comparison-table-wrapper {
-            width: 100%;
-            overflow-x: auto;
-            border: 1px solid var(--border);
-            border-radius: var(--border-radius);
-            background: var(--bg-card);
-            margin: 2rem 0;
-        }
-
-        table.comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.95rem;
-        }
-
-        table.comparison-table th, table.comparison-table td {
-            padding: 1.25rem 1.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        table.comparison-table th {
-            background: rgba(255, 255, 255, 0.02);
-            color: var(--accent-light);
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.05rem;
-            border-bottom: 2px solid var(--border);
-        }
-
-        table.comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        table.comparison-table td strong {
-            color: var(--text-primary);
-        }
-
-        /* Responsive Reflow into Cards */
-        @media (max-width: 768px) {
-            table.comparison-table, table.comparison-table thead, table.comparison-table tbody, table.comparison-table th, table.comparison-table td, table.comparison-table tr {
-                display: block;
-            }
-
-            table.comparison-table thead {
-                display: none; /* Hide header on mobile */
-            }
-
-            table.comparison-table tr {
-                border-bottom: 2px solid var(--border);
-                padding: 1rem 0;
-            }
-
-            table.comparison-table tr:last-child {
-                border-bottom: none;
-            }
-
-            table.comparison-table td {
-                border-bottom: none;
-                padding: 0.5rem 1.5rem;
-                position: relative;
-                padding-left: 50%;
-                text-align: right;
-            }
-
-            table.comparison-table td::before {
-                content: attr(data-label);
-                position: absolute;
-                left: 1.5rem;
-                width: 45%;
-                font-weight: 700;
-                text-align: left;
-                color: var(--accent-light);
-            }
-        }
     </style>
 
     <script type="application/ld+json">
@@ -156,7 +80,7 @@
                     Enterprise companies favor structured frameworks like Java Spring Boot for stability (which we cover in our 1-to-1 <a href="java-full-stack-developer-training.html" style="color: var(--accent);">Java Full Stack Developer Training</a>), while startups and product platforms scale quickly using JavaScript/MERN stacks (taught in our <a href="full-stack-development-training.html" style="color: var(--accent);">Full Stack Development Training</a>).
                 </p>
 
-                <div class="comparison-table-wrapper">
+                <div class="table-container">
                     <table class="comparison-table">
                         <thead>
                             <tr>
@@ -203,7 +127,7 @@
                     Data Scientists build statistical predictions and predictive algorithms (mastered in our <a href="data-science-training.html" style="color: var(--accent);">Data Science Training</a>), while Data Engineers construct the underlying pipelines and systems to feed raw data securely (focused on in our <a href="data-engineering-training.html" style="color: var(--accent);">Data Engineering Training</a>).
                 </p>
 
-                <div class="comparison-table-wrapper">
+                <div class="table-container">
                     <table class="comparison-table">
                         <thead>
                             <tr>
@@ -250,7 +174,7 @@
                     DevOps is a pipeline methodology focusing on software building cycles (the focus of our <a href="devops-training.html" style="color: var(--accent);">DevOps Engineering Training</a>), whereas Cloud Administrators manage and provision cloud environments (covered in our <a href="cloud-computing-training.html" style="color: var(--accent);">Cloud Computing Training</a>).
                 </p>
 
-                <div class="comparison-table-wrapper">
+                <div class="table-container">
                     <table class="comparison-table">
                         <thead>
                             <tr>
