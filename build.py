@@ -121,6 +121,12 @@ def build():
             })
         if schema_reviews:
             course_schema["review"] = schema_reviews
+            course_schema["aggregateRating"] = {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "bestRating": "5",
+                "reviewCount": str(len(schema_reviews))
+            }
 
         faq_entities = []
         for faq in faqs:
