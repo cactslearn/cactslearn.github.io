@@ -348,6 +348,36 @@ def build():
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
+    <url>
+        <loc>https://cactslearn.github.io/software-training-institute-shivane.html</loc>
+        <lastmod>{current_date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/software-training-institute-karvenagar.html</loc>
+        <lastmod>{current_date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/software-training-institute-warje.html</loc>
+        <lastmod>{current_date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/software-training-institute-kothrud.html</loc>
+        <lastmod>{current_date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/software-training-institute-sinhagad-road.html</loc>
+        <lastmod>{current_date}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 """
 
     for pg in generated_pages:
