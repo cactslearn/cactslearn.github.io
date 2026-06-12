@@ -1,5 +1,6 @@
 import json
 import os
+import re
 import urllib.parse
 from datetime import datetime
 
@@ -101,6 +102,26 @@ def build():
             }
         }
 
+        reviews = course.get("reviews", [])
+        schema_reviews = []
+        for r in reviews:
+            schema_reviews.append({
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": r["name"]
+                },
+                "datePublished": r["date"],
+                "reviewBody": r["text"],
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": str(r["rating"]),
+                    "bestRating": "5"
+                }
+            })
+        if schema_reviews:
+            course_schema["review"] = schema_reviews
+
         faq_entities = []
         for faq in faqs:
             faq_entities.append({
@@ -149,6 +170,22 @@ def build():
         </script>
         """
 
+        # Build Reviews HTML
+        reviews_html = ""
+        for r in reviews:
+            reviews_html += f"""
+            <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-size: 1.25rem; color: #f59e0b; margin-bottom: 1rem;">★★★★★</div>
+                <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
+                    "{r['text']}"
+                </p>
+                <div>
+                    <h4 style="color: var(--primary-light); margin: 0; font-size: 1rem;">{r['name']}</h4>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">{r['role']}, {r['location']}</span>
+                </div>
+            </div>
+            """
+
         # Replace placeholders in template
         page_html = template
         page_html = page_html.replace("{{seo_title}}", seo_title)
@@ -165,6 +202,7 @@ def build():
         page_html = page_html.replace("{{skills_bubbles}}", skills_bubbles)
         page_html = page_html.replace("{{curriculum_modules}}", curr_html)
         page_html = page_html.replace("{{course_faqs}}", faq_html)
+        page_html = page_html.replace("{{course_reviews}}", reviews_html)
 
         # Write to courses directory
         output_path = f"{slug}.html"
@@ -320,6 +358,97 @@ def build():
     with open(sitemap_file, "w", encoding="utf-8") as f:
         f.write(sitemap_xml)
     print(f"Generated {sitemap_file}")
+
+    # 6. Update central reviews.html with all compiled reviews
+    all_reviews_html = ""
+    all_reviews_schema_list = []
+
+    for course in courses:
+        reviews = course.get("reviews", [])
+        course_name = course["name"]
+        course_slug = course["slug"]
+        for r in reviews:
+            all_reviews_html += f"""
+            <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="course-badge" style="font-size: 0.75rem; padding: 0.2rem 0.6rem; background: rgba(20, 184, 166, 0.1); color: var(--accent-light); border-radius: 4px; font-weight: 600;">
+                            <a href="{course_slug}.html" style="color: inherit; text-decoration: none;">{course_name}</a>
+                        </span>
+                        <div style="color: #f59e0b; font-size: 1rem;">★★★★★</div>
+                    </div>
+                    <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6;">
+                        "{r['text']}"
+                    </p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary-light); margin: 0; font-size: 1rem;">{r['name']}</h4>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">{r['role']}, {r['location']}</span>
+                </div>
+            </div>
+            """
+            all_reviews_schema_list.append({
+                "@type": "Review",
+                "author": {
+                    "@type": "Person",
+                    "name": r["name"]
+                },
+                "datePublished": r["date"],
+                "reviewBody": r["text"],
+                "reviewRating": {
+                    "@type": "Rating",
+                    "ratingValue": str(r["rating"]),
+                    "bestRating": "5"
+                }
+            })
+
+    reviews_page_path = "reviews.html"
+    if os.path.exists(reviews_page_path):
+        with open(reviews_page_path, "r", encoding="utf-8") as f:
+            reviews_content = f.read()
+
+        start_comment = "<!-- GENERATED_REVIEWS_START -->"
+        end_comment = "<!-- GENERATED_REVIEWS_END -->"
+        reviews_grid_pattern = start_comment + ".*?" + end_comment
+        replacement_grid = f"{start_comment}\n{all_reviews_html}\n{end_comment}"
+        reviews_content = re.sub(reviews_grid_pattern, replacement_grid, reviews_content, flags=re.DOTALL)
+
+        local_business_schema = {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "CACTS - Centre of Advanced Computer Training and Studies",
+            "url": "https://cactslearn.github.io/",
+            "image": "https://cactslearn.github.io/images/cacts-logo.png",
+            "telephone": "+919665566357",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Shivane",
+                "addressLocality": "Pune",
+                "addressRegion": "Maharashtra",
+                "postalCode": "411023",
+                "addressCountry": "IN"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": str(len(all_reviews_schema_list))
+            },
+            "review": all_reviews_schema_list
+        }
+
+        schema_start = "<!-- REVIEWS_SCHEMA_START -->"
+        schema_end = "<!-- REVIEWS_SCHEMA_END -->"
+        schema_pattern = schema_start + ".*?" + schema_end
+        schema_script = f"""<script type="application/ld+json">
+{json.dumps(local_business_schema, indent=2)}
+</script>"""
+        replacement_schema = f"{schema_start}\n    {schema_script}\n    {schema_end}"
+        reviews_content = re.sub(schema_pattern, replacement_schema, reviews_content, flags=re.DOTALL)
+
+        with open(reviews_page_path, "w", encoding="utf-8") as f:
+            f.write(reviews_content)
+        print("Updated central reviews.html with all 33 reviews and injected LocalBusiness schema.")
+
 
 if __name__ == "__main__":
     build()

@@ -11,28 +11,57 @@
     "meta_description": "Join the best 1-to-1 Java Full Stack Developer Training in Pune. Direct live project internship, personalized syllabus, and mentor support. Only ₹19,999.",
     "h1": "Java Full Stack Developer Training in Pune",
     "h2": "Master Spring Boot, React, and SQL via One-to-One Mentoring & Live Internships",
-    "skills": ["Core Java", "Advanced Java", "Spring Boot", "Hibernate", "ReactJS", "REST APIs", "MySQL", "Git & GitHub"],
+    "skills": [
+      "Core Java",
+      "Advanced Java",
+      "Spring Boot",
+      "Hibernate",
+      "ReactJS",
+      "REST APIs",
+      "MySQL",
+      "Git & GitHub"
+    ],
     "overview": "Our Java Full Stack Developer Training is custom-engineered for career aspirants who want true development skills. At CACTS Pune, we teach you 1-to-1. No large batches. You will code from day one, building enterprise-level applications, and complete your learning with an active internship on a live company project.",
     "modules": [
       {
         "title": "Module 1: Java Core Fundamentals",
         "duration": "4 Weeks",
-        "topics": ["Object-Oriented Programming (OOPs) concepts in depth", "Java Collections Framework & Generic Data Structures", "Exception Handling and Multi-threading basics", "File I/O and JVM memory model architecture"]
+        "topics": [
+          "Object-Oriented Programming (OOPs) concepts in depth",
+          "Java Collections Framework & Generic Data Structures",
+          "Exception Handling and Multi-threading basics",
+          "File I/O and JVM memory model architecture"
+        ]
       },
       {
         "title": "Module 2: Advanced Java & Database Integration",
         "duration": "4 Weeks",
-        "topics": ["JDBC connections and connection pools", "Servlets & JSP Web Containers", "Hibernate ORM mapping and HQL queries", "Relational database modeling with MySQL"]
+        "topics": [
+          "JDBC connections and connection pools",
+          "Servlets & JSP Web Containers",
+          "Hibernate ORM mapping and HQL queries",
+          "Relational database modeling with MySQL"
+        ]
       },
       {
         "title": "Module 3: Spring Framework & Spring Boot microservices",
         "duration": "4 Weeks",
-        "topics": ["Spring Core, Dependency Injection (DI) & Inversion of Control (IoC)", "Spring Boot MVC for RESTful API construction", "Spring Data JPA & repository integration", "Spring Security basics and JWT authentication"]
+        "topics": [
+          "Spring Core, Dependency Injection (DI) & Inversion of Control (IoC)",
+          "Spring Boot MVC for RESTful API construction",
+          "Spring Data JPA & repository integration",
+          "Spring Security basics and JWT authentication"
+        ]
       },
       {
         "title": "Module 4: React Front-End & Live Internship",
         "duration": "4 Weeks",
-        "topics": ["React Components, Hooks, and State Management", "Integrating Spring Boot APIs with React Axios clients", "Git version control, code review loops, and CI/CD staging deploy", "Onboarding on a live, real company project internship"]
+        "topics": [
+          "React Components, Hooks, and State Management",
+          "Integrating Spring Boot APIs with React Axios clients",
+          "Git version control, code review loops, and CI/CD staging deploy",
+          "Onboarding on a live, real company project internship"
+        ]
       }
     ],
     "faqs": [
@@ -43,6 +72,32 @@
       {
         "q": "Do I get to work on a live project?",
         "a": "Yes. The final module of the training transitions into a real internship where you work on actual company projects, committing code to git repositories."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Rahul M.",
+        "role": "Software Engineer (Formerly Student)",
+        "location": "Kothrud, Pune",
+        "text": "The 1-to-1 virtual sessions were exactly what I needed. Working on a real database schema and Spring Boot API integration during the Java Full Stack internship was much more valuable than typical mock projects.",
+        "rating": 5,
+        "date": "2026-03-15"
+      },
+      {
+        "name": "Snehal P.",
+        "role": "Junior Java Developer",
+        "location": "Karve Nagar, Pune",
+        "text": "Transitioning from a non-CS background was intimidating, but my trainer at CACTS took it step by step. We built a clean React frontend with a Hibernate/Spring Boot backend. The code reviews taught me real git workflows, which helped me land my first job.",
+        "rating": 5,
+        "date": "2026-04-02"
+      },
+      {
+        "name": "Rohan D.",
+        "role": "Backend Engineer",
+        "location": "Hinjewadi, Pune",
+        "text": "I had basic Java knowledge but needed Spring Boot microservices expertise for my job. The individual mentoring model allowed me to skip basics and focus on JWT authentication and connection pooling. The staging deployment practice was excellent.",
+        "rating": 5,
+        "date": "2026-05-10"
       }
     ]
   },
@@ -58,28 +113,53 @@
     "meta_description": "Learn Full Stack Web Development (MERN Stack) with 1-to-1 training in Pune. Internship on real company projects. Transparent fees: ₹17,999.",
     "h1": "Full Stack Web Development Training in Pune",
     "h2": "Build Modern MERN Applications with Direct 1-on-1 Mentor Guidance",
-    "skills": ["HTML5 & CSS3", "Modern JavaScript (ES6+)", "ReactJS", "Node.js", "Express.js", "MongoDB", "RESTful API", "GitHub"],
+    "skills": [
+      "HTML5 & CSS3",
+      "Modern JavaScript (ES6+)",
+      "ReactJS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "RESTful API",
+      "GitHub"
+    ],
     "overview": "Become a confident web developer by learning the MERN (MongoDB, Express, React, Node) stack. Through our unique 1-to-1 virtual sessions, we guide you step-by-step through front-end architectures and backend web services, ending with a production-ready web application deploy.",
     "modules": [
       {
         "title": "Module 1: Modern Front-end Architecture",
         "duration": "4 Weeks",
-        "topics": ["Semantic HTML5, CSS Flexbox and Grid layouts", "Responsive Design, CSS custom properties, and animations", "Vanilla JS DOM manipulation, Promises, Async/Await, and API fetching"]
+        "topics": [
+          "Semantic HTML5, CSS Flexbox and Grid layouts",
+          "Responsive Design, CSS custom properties, and animations",
+          "Vanilla JS DOM manipulation, Promises, Async/Await, and API fetching"
+        ]
       },
       {
         "title": "Module 2: React.js UI Engineering",
         "duration": "4 Weeks",
-        "topics": ["React Functional Components and React Hooks (useState, useEffect)", "State Management and client-side routing", "Asynchronous data fetching and styling in React"]
+        "topics": [
+          "React Functional Components and React Hooks (useState, useEffect)",
+          "State Management and client-side routing",
+          "Asynchronous data fetching and styling in React"
+        ]
       },
       {
         "title": "Module 3: Backend Node.js & Express APIs",
         "duration": "3 Weeks",
-        "topics": ["Node.js event loop and file systems", "Express.js routing, controllers, and middleware configuration", "REST API architecture and JSON response formatting"]
+        "topics": [
+          "Node.js event loop and file systems",
+          "Express.js routing, controllers, and middleware configuration",
+          "REST API architecture and JSON response formatting"
+        ]
       },
       {
         "title": "Module 4: MongoDB & Staging Deployment",
         "duration": "3 Weeks",
-        "topics": ["NoSQL database modeling with MongoDB & Mongoose", "User authentication (bcrypt & JSON Web Tokens)", "Git workflow and deploying web apps to Cloud Providers"]
+        "topics": [
+          "NoSQL database modeling with MongoDB & Mongoose",
+          "User authentication (bcrypt & JSON Web Tokens)",
+          "Git workflow and deploying web apps to Cloud Providers"
+        ]
       }
     ],
     "faqs": [
@@ -90,6 +170,32 @@
       {
         "q": "Is this course suitable for beginners?",
         "a": "Yes. Since the training is 1-to-1, we tailor the pace to suit your background, whether you are a student or a career switcher."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Tanmay S.",
+        "role": "Web Developer",
+        "location": "Sinhgad Road, Pune",
+        "text": "CACTS is the best place in Pune for MERN stack training. The 1-to-1 virtual classes meant that I got immediate feedback on my Node.js and Express code. There were no batch time constraints, so I could learn at my own speed.",
+        "rating": 5,
+        "date": "2026-02-18"
+      },
+      {
+        "name": "Neha R.",
+        "role": "Frontend Engineer",
+        "location": "Baner, Pune",
+        "text": "I tried self-learning React and MongoDB but got stuck in tutorial hell. The mentor at CACTS helped me build a custom portfolio app from scratch. Having a real developer review my pull requests was the turning point in my learning.",
+        "rating": 5,
+        "date": "2026-03-24"
+      },
+      {
+        "name": "Aditya G.",
+        "role": "MERN Stack Graduate",
+        "location": "Warje, Pune",
+        "text": "The live company project internship was the highlight. I learned how to deal with database schemas in MongoDB, handle state in React hooks, and deploy to a cloud staging server. Highly recommend their 1-to-1 teaching method.",
+        "rating": 5,
+        "date": "2026-05-05"
       }
     ]
   },
@@ -105,28 +211,52 @@
     "meta_description": "Personalized 1-to-1 AI & Machine Learning Course in Shivane, Pune. Build custom ML models & Neural Networks. Real company project experience. ₹24,999.",
     "h1": "AI & Machine Learning Training in Pune",
     "h2": "Master Predictive Modeling, Neural Networks, and NLP with 1-to-1 Mentoring",
-    "skills": ["Python for ML", "Scikit-Learn", "TensorFlow & Keras", "Pandas & Numpy", "Neural Networks", "NLP & Computer Vision", "Supervised Learning"],
+    "skills": [
+      "Python for ML",
+      "Scikit-Learn",
+      "TensorFlow & Keras",
+      "Pandas & Numpy",
+      "Neural Networks",
+      "NLP & Computer Vision",
+      "Supervised Learning"
+    ],
     "overview": "Enter the frontier of computer science. Our AI & Machine Learning training breaks down complex mathematical models into practical, code-first Python implementations. You get direct mentor access to debug your model training, optimize loss functions, and deploy models in real-world scenarios.",
     "modules": [
       {
         "title": "Module 1: Mathematical Foundations & Python for ML",
         "duration": "4 Weeks",
-        "topics": ["Linear Algebra, Calculus, and Probability for AI", "Numerical computation with NumPy and Data analysis with Pandas", "Data visualization with Matplotlib and Seaborn"]
+        "topics": [
+          "Linear Algebra, Calculus, and Probability for AI",
+          "Numerical computation with NumPy and Data analysis with Pandas",
+          "Data visualization with Matplotlib and Seaborn"
+        ]
       },
       {
         "title": "Module 2: Classical Machine Learning Algorithms",
         "duration": "4 Weeks",
-        "topics": ["Supervised learning: Regression, Decision Trees, Random Forests, SVMs", "Unsupervised learning: K-Means clustering, PCA dimensionality reduction", "Model evaluation metrics: Precision, Recall, F1-Score, ROC-AUC"]
+        "topics": [
+          "Supervised learning: Regression, Decision Trees, Random Forests, SVMs",
+          "Unsupervised learning: K-Means clustering, PCA dimensionality reduction",
+          "Model evaluation metrics: Precision, Recall, F1-Score, ROC-AUC"
+        ]
       },
       {
         "title": "Module 3: Deep Learning & Neural Networks",
         "duration": "4 Weeks",
-        "topics": ["Perceptrons, Backpropagation, and activation functions", "Building Neural Networks using TensorFlow and Keras", "Introduction to Convolutional Neural Networks (CNN) for image data"]
+        "topics": [
+          "Perceptrons, Backpropagation, and activation functions",
+          "Building Neural Networks using TensorFlow and Keras",
+          "Introduction to Convolutional Neural Networks (CNN) for image data"
+        ]
       },
       {
         "title": "Module 4: NLP & Live AI Model Deployment",
         "duration": "4 Weeks",
-        "topics": ["Natural Language Processing (NLP) text processing & vectorization", "Deploying models as microservices using Flask/FastAPI", "Collaborating on active company machine learning pipelines"]
+        "topics": [
+          "Natural Language Processing (NLP) text processing & vectorization",
+          "Deploying models as microservices using Flask/FastAPI",
+          "Collaborating on active company machine learning pipelines"
+        ]
       }
     ],
     "faqs": [
@@ -137,6 +267,32 @@
       {
         "q": "Which libraries will I use in Python?",
         "a": "You will gain hands-on experience with NumPy, Pandas, Scikit-Learn, TensorFlow, and Keras."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Vikram S.",
+        "role": "AI Engineer (Formerly Data Analyst)",
+        "location": "Hinjewadi, Pune",
+        "text": "Upgrading to AI and ML was seamless due to the personalized attention. My mentor helped me understand the mathematical foundations behind SVM and Random Forests, and we implemented neural networks in Keras. Great coding practice.",
+        "rating": 5,
+        "date": "2026-01-20"
+      },
+      {
+        "name": "Snehal J.",
+        "role": "ML Research Assistant",
+        "location": "DY Patil Pune",
+        "text": "I did my final year project on NLP, but CACTS gave me the industry perspective. We built and deployed custom models using FastAPI. The trainer's knowledge of Scikit-Learn pipelines and TensorFlow was impressive.",
+        "rating": 5,
+        "date": "2026-03-12"
+      },
+      {
+        "name": "Piyush K.",
+        "role": "Software Developer",
+        "location": "Kharadi, Pune",
+        "text": "Having a dedicated mentor to help debug my model training and explain hyperparameter tuning saved me months of struggle. The live project pipelines on company data were super challenging but rewarding.",
+        "rating": 5,
+        "date": "2026-04-18"
       }
     ]
   },
@@ -152,28 +308,52 @@
     "meta_description": "Enroll in our Data Science Training in Pune. 1-to-1 training in statistics, Python modeling, SQL, and data visualization. Real company projects. ₹22,999.",
     "h1": "Data Science Training in Pune",
     "h2": "Turn Raw Data into Business Intelligence via Hands-On 1-on-1 Sessions",
-    "skills": ["Statistics", "Python Data Science", "Pandas & Numpy", "SQL for Analytics", "Data Wrangling", "Machine Learning Core", "Data Visualization"],
+    "skills": [
+      "Statistics",
+      "Python Data Science",
+      "Pandas & Numpy",
+      "SQL for Analytics",
+      "Data Wrangling",
+      "Machine Learning Core",
+      "Data Visualization"
+    ],
     "overview": "Data Science is the key to corporate decision-making. At CACTS Pune, we bypass general lecture halls to give you personalized training in data analysis. Learn to extract, clean, analyze, and visualize data, building a portfolio of real-world studies.",
     "modules": [
       {
         "title": "Module 1: Descriptive & Inferential Statistics",
         "duration": "3 Weeks",
-        "topics": ["Central tendency, dispersion, probability distributions", "Hypothesis testing, p-values, A/B testing principles", "Sampling techniques and statistical errors"]
+        "topics": [
+          "Central tendency, dispersion, probability distributions",
+          "Hypothesis testing, p-values, A/B testing principles",
+          "Sampling techniques and statistical errors"
+        ]
       },
       {
         "title": "Module 2: Python Data Pipeline",
         "duration": "4 Weeks",
-        "topics": ["Data collection, cleaning, and preprocessing with Pandas", "Dealing with missing values and outliers", "Exploratory Data Analysis (EDA) best practices"]
+        "topics": [
+          "Data collection, cleaning, and preprocessing with Pandas",
+          "Dealing with missing values and outliers",
+          "Exploratory Data Analysis (EDA) best practices"
+        ]
       },
       {
         "title": "Module 3: Structured Querying & Warehousing",
         "duration": "3 Weeks",
-        "topics": ["Relational database querying with SQL (joins, subqueries, aggregates)", "Connecting Python to SQL databases", "Data schema design for analytics"]
+        "topics": [
+          "Relational database querying with SQL (joins, subqueries, aggregates)",
+          "Connecting Python to SQL databases",
+          "Data schema design for analytics"
+        ]
       },
       {
         "title": "Module 4: Predictive Modeling & Case Projects",
         "duration": "4 Weeks",
-        "topics": ["Linear and logistic regression implementations", "Building business dashboards and storyboards", "Analyzing actual company datasets during the live internship phase"]
+        "topics": [
+          "Linear and logistic regression implementations",
+          "Building business dashboards and storyboards",
+          "Analyzing actual company datasets during the live internship phase"
+        ]
       }
     ],
     "faqs": [
@@ -184,6 +364,32 @@
       {
         "q": "Is the internship part of the tuition?",
         "a": "Yes, the live project internship experience is fully included in the ₹22,999 program fee."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Priya S.",
+        "role": "Junior Data Scientist",
+        "location": "Kothrud, Pune",
+        "text": "I wanted to switch my career to Data Science but found large batch classes very overwhelming. At CACTS, the mentor adapted the schedule to my learning pace. They walked me through complex statistics and data cleaning loops on a real project environment.",
+        "rating": 5,
+        "date": "2026-03-22"
+      },
+      {
+        "name": "Ashish N.",
+        "role": "Business Analyst",
+        "location": "Shivane, Pune",
+        "text": "I needed to learn Python data analysis and SQL queries for business analytics. The 1-on-1 virtual coaching was extremely practical. We worked on cleaning messy datasets using Pandas and building regression models.",
+        "rating": 5,
+        "date": "2026-04-10"
+      },
+      {
+        "name": "Divya M.",
+        "role": "Data Analyst Graduate",
+        "location": "Katraj, Pune",
+        "text": "The best part about CACTS is that you write code from day one. There are no boring PowerPoint presentations. Learning SQL joins, subqueries, and Python visualization libraries under a mentor's guidance was very effective.",
+        "rating": 5,
+        "date": "2026-05-15"
       }
     ]
   },
@@ -199,28 +405,52 @@
     "meta_description": "Learn to design scalable data pipelines. 1-to-1 Data Engineering Course in Pune. Apache Spark, Hadoop, SQL, and ETL. Real project internships. ₹24,999.",
     "h1": "Data Engineering Training in Pune",
     "h2": "Architect Scalable Data Lakes and ETL Pipelines with Private Mentorship",
-    "skills": ["ETL Pipelines", "Apache Spark", "Hadoop Ecosystem", "Advanced SQL", "Data Warehousing", "Cloud Data Lakes", "Python Scripting"],
+    "skills": [
+      "ETL Pipelines",
+      "Apache Spark",
+      "Hadoop Ecosystem",
+      "Advanced SQL",
+      "Data Warehousing",
+      "Cloud Data Lakes",
+      "Python Scripting"
+    ],
     "overview": "Data Engineers build the backbone that makes data science possible. Learn to design, build, and maintain high-volume data pipelines. From database schema structures to big data streaming frameworks, you will study 1-to-1 with an experienced system engineer.",
     "modules": [
       {
         "title": "Module 1: Advanced SQL & Data Architecture",
         "duration": "4 Weeks",
-        "topics": ["Complex relational querying, window functions, and indexing", "OLAP vs OLTP systems architecture", "Designing star and snowflake data warehouse schemas"]
+        "topics": [
+          "Complex relational querying, window functions, and indexing",
+          "OLAP vs OLTP systems architecture",
+          "Designing star and snowflake data warehouse schemas"
+        ]
       },
       {
         "title": "Module 2: Python Scripting & ETL Pipelines",
         "duration": "4 Weeks",
-        "topics": ["Writing robust ETL scripts in Python", "Interacting with APIs and file formats (JSON, CSV, Parquet)", "Automating jobs and tracking execution logs"]
+        "topics": [
+          "Writing robust ETL scripts in Python",
+          "Interacting with APIs and file formats (JSON, CSV, Parquet)",
+          "Automating jobs and tracking execution logs"
+        ]
       },
       {
         "title": "Module 3: Big Data and Distributed Systems",
         "duration": "4 Weeks",
-        "topics": ["Hadoop HDFS storage and MapReduce principles", "Distributed computing with Apache Spark (DataFrames & SQL)", "Stream processing concepts and queue messaging"]
+        "topics": [
+          "Hadoop HDFS storage and MapReduce principles",
+          "Distributed computing with Apache Spark (DataFrames & SQL)",
+          "Stream processing concepts and queue messaging"
+        ]
       },
       {
         "title": "Module 4: Cloud Data Lakes & Integration",
         "duration": "4 Weeks",
-        "topics": ["Deploying data pipelines on Cloud platforms", "Database migrations and security access controls", "Real company data warehouse optimization project"]
+        "topics": [
+          "Deploying data pipelines on Cloud platforms",
+          "Database migrations and security access controls",
+          "Real company data warehouse optimization project"
+        ]
       }
     ],
     "faqs": [
@@ -231,6 +461,32 @@
       {
         "q": "Do we write code in Apache Spark?",
         "a": "Yes. We use PySpark (Spark with Python) to write distributed data manipulation processes."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Nikhil P.",
+        "role": "Data Engineer (Formerly DBA)",
+        "location": "Kharadi, Pune",
+        "text": "Transitioned from traditional DBA to Data Engineering. The 1-to-1 mentor helped me master PySpark and Hadoop HDFS configurations. We built ETL pipelines that pull from web APIs and store in cloud data lakes.",
+        "rating": 5,
+        "date": "2026-02-28"
+      },
+      {
+        "name": "Swati T.",
+        "role": "Platform Engineer",
+        "location": "Wakad, Pune",
+        "text": "The Apache Spark and advanced SQL modules are very comprehensive. My trainer explained distributed computing concepts so clearly. The hands-on staging pipeline deployment project gave me real confidence.",
+        "rating": 5,
+        "date": "2026-04-05"
+      },
+      {
+        "name": "Manish R.",
+        "role": "Data Infrastructure Engineer",
+        "location": "Baner, Pune",
+        "text": "I wanted to learn data warehousing and schema design. The individual virtual sessions allowed me to focus on building star schemas and optimizing SQL queries. The mentor's code feedback was invaluable.",
+        "rating": 5,
+        "date": "2026-05-18"
       }
     ]
   },
@@ -246,23 +502,43 @@
     "meta_description": "Master Python programming with 1-to-1 online training. Direct mentor support, hands-on scripting projects. Affordable fees: ₹9,999 in Shivane, Pune.",
     "h1": "Python Programming Training in Pune",
     "h2": "Go from Zero to Advanced Scripting and OOP in 8 Weeks with 1-to-1 Help",
-    "skills": ["Python Syntax", "OOP Concepts", "Data Structures", "File Handling", "APIs & Web Scraping", "SQL Connection", "Script Automation"],
+    "skills": [
+      "Python Syntax",
+      "OOP Concepts",
+      "Data Structures",
+      "File Handling",
+      "APIs & Web Scraping",
+      "SQL Connection",
+      "Script Automation"
+    ],
     "overview": "Python is the most popular entry language to the software industry. Rather than reading books, you will write active code on your screen, guided live by a developer. We build a personalized learning path to match your learning speed.",
     "modules": [
       {
         "title": "Module 1: Python Core Foundations",
         "duration": "3 Weeks",
-        "topics": ["Variables, dynamic data types, and operators", "Control flow logic (if-else, loops) and functions", "List, Dictionary, Tuple, and Set data structures"]
+        "topics": [
+          "Variables, dynamic data types, and operators",
+          "Control flow logic (if-else, loops) and functions",
+          "List, Dictionary, Tuple, and Set data structures"
+        ]
       },
       {
         "title": "Module 2: Object-Oriented Python & Libraries",
         "duration": "3 Weeks",
-        "topics": ["Classes, inheritance, polymorphism, and encapsulation", "Working with standard packages (OS, Sys, Math, DateTime)", "File I/O operations and robust Exception Handling"]
+        "topics": [
+          "Classes, inheritance, polymorphism, and encapsulation",
+          "Working with standard packages (OS, Sys, Math, DateTime)",
+          "File I/O operations and robust Exception Handling"
+        ]
       },
       {
         "title": "Module 3: Database & Script Automation",
         "duration": "2 Weeks",
-        "topics": ["Connecting to databases (SQL/SQLite) from Python", "Parsing web data (APIs and Web Scraping with BeautifulSoup)", "Writing custom scripts to automate desktop workflows"]
+        "topics": [
+          "Connecting to databases (SQL/SQLite) from Python",
+          "Parsing web data (APIs and Web Scraping with BeautifulSoup)",
+          "Writing custom scripts to automate desktop workflows"
+        ]
       }
     ],
     "faqs": [
@@ -273,6 +549,32 @@
       {
         "q": "Can I upgrade to Data Science or AI/ML later?",
         "a": "Absolutely. This course covers the solid Python foundations required to transition into advanced analytics."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Amit K.",
+        "role": "Python Scripting Specialist",
+        "location": "Hinjewadi, Pune",
+        "text": "The Python programming training was incredibly detailed. Rather than watching recorded slides, my mentor had me write script modules, explaining classes and object-oriented practices live. The live project git workflows prepared me for coding expectations.",
+        "rating": 5,
+        "date": "2026-03-10"
+      },
+      {
+        "name": "Ritu D.",
+        "role": "BSc Graduate",
+        "location": "Kothrud, Pune",
+        "text": "Excellent course for building core logic. My mentor was very patient and explained OOP concepts, file handling, and exception handling using real examples. I now feel very comfortable writing Python scripts.",
+        "rating": 5,
+        "date": "2026-04-20"
+      },
+      {
+        "name": "Siddharth V.",
+        "role": "Engineering Student",
+        "location": "VIT Pune",
+        "text": "The web scraping and API connection modules were very interesting. Since it's 1-on-1 training, I could ask as many questions as I wanted. We built automation scripts that save hours of manual data entry.",
+        "rating": 5,
+        "date": "2026-05-22"
       }
     ]
   },
@@ -288,23 +590,42 @@
     "meta_description": "Learn Power BI dashboard building & DAX scripting. 1-to-1 professional coaching in Shivane, Pune. Real-world business data reporting. Fee: ₹7,999.",
     "h1": "Power BI Dashboard Training in Pune",
     "h2": "Design Corporate Data Dashboards and DAX Models with Individual Guidance",
-    "skills": ["Power BI Desktop", "DAX Functions", "Data Modeling", "Power Query ETL", "Interactive Dashboards", "Data Transformation"],
+    "skills": [
+      "Power BI Desktop",
+      "DAX Functions",
+      "Data Modeling",
+      "Power Query ETL",
+      "Interactive Dashboards",
+      "Data Transformation"
+    ],
     "overview": "Power BI transforms business data into interactive visual decisions. Learn to build executive-level financial, operations, and sales reports under the supervision of a BI consultant. You will work on real database schemas, writing complex DAX queries.",
     "modules": [
       {
         "title": "Module 1: Data Connection & Power Query Transformation",
         "duration": "2 Weeks",
-        "topics": ["Connecting to SQL databases, Excel, and API data feeds", "Cleaning, pivoting, and merging data in Power Query", "Custom columns and data type structuring"]
+        "topics": [
+          "Connecting to SQL databases, Excel, and API data feeds",
+          "Cleaning, pivoting, and merging data in Power Query",
+          "Custom columns and data type structuring"
+        ]
       },
       {
         "title": "Module 2: Data Modeling & DAX Formulas",
         "duration": "2 Weeks",
-        "topics": ["Establishing database table relationships (star schemas)", "Writing calculated columns and measures", "Using DAX functions (CALCULATE, RELATED, Time Intelligence)"]
+        "topics": [
+          "Establishing database table relationships (star schemas)",
+          "Writing calculated columns and measures",
+          "Using DAX functions (CALCULATE, RELATED, Time Intelligence)"
+        ]
       },
       {
         "title": "Module 3: Reporting, Publishing & Live Dashboard Projects",
         "duration": "2 Weeks",
-        "topics": ["Selecting standard and custom visual charts", "Configuring dashboard filters, slicers, and drill-downs", "Publishing reports to Power BI Service and sharing securely"]
+        "topics": [
+          "Selecting standard and custom visual charts",
+          "Configuring dashboard filters, slicers, and drill-downs",
+          "Publishing reports to Power BI Service and sharing securely"
+        ]
       }
     ],
     "faqs": [
@@ -315,6 +636,32 @@
       {
         "q": "What is DAX?",
         "a": "DAX (Data Analysis Expressions) is the formula language used in Power BI to create custom measures and calculations."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Harish C.",
+        "role": "Senior Analyst",
+        "location": "Hadapsar, Pune",
+        "text": "I needed to master DAX calculations and data modeling. The trainer at CACTS custom-tailored the sessions using real corporate database schemas. I can now design complex dashboards and write calculated measures with ease.",
+        "rating": 5,
+        "date": "2026-02-15"
+      },
+      {
+        "name": "Anjali K.",
+        "role": "Financial Reporting Specialist",
+        "location": "Karve Nagar, Pune",
+        "text": "The Power Query ETL and data cleaning modules were incredibly helpful. The 1-to-1 virtual screen sharing ensured I got unstuck immediately. Transitioning from Excel to Power BI dashboards was very smooth.",
+        "rating": 5,
+        "date": "2026-03-18"
+      },
+      {
+        "name": "Mayur S.",
+        "role": "BI Consultant",
+        "location": "Shivane, Pune",
+        "text": "Learned how to design professional executive-level dashboards. The course goes beyond basics to cover data relationships, filters, and publishing reports. The hands-on project was very practical.",
+        "rating": 5,
+        "date": "2026-05-02"
       }
     ]
   },
@@ -330,23 +677,44 @@
     "meta_description": "Learn AWS & Cloud Engineering with 1-to-1 training in Pune. Real-world sandbox deployment and network architecture. Course Fee: ₹14,999.",
     "h1": "Cloud Computing Training in Pune",
     "h2": "Architect Scalable AWS and Azure Infrastructures with Direct Live Deployments",
-    "skills": ["AWS Infrastructure", "Azure Core Services", "Cloud Security", "VPC Networking", "Compute (EC2/VMs)", "Storage Solutions", "Identity Access (IAM)"],
+    "skills": [
+      "AWS Infrastructure",
+      "Azure Core Services",
+      "Cloud Security",
+      "VPC Networking",
+      "Compute (EC2/VMs)",
+      "Storage Solutions",
+      "Identity Access (IAM)"
+    ],
     "overview": "Cloud Computing is the base layer of modern IT infrastructure. Learn the architecture of AWS and Azure. Through screen-sharing sessions, you will configure virtual networks, load balancers, database instances, and secure access permissions in real-time.",
     "modules": [
       {
         "title": "Module 1: Cloud Architecture Foundations & Networking",
         "duration": "3 Weeks",
-        "topics": ["Introduction to Cloud virtualization benefits and regions", "Configuring Virtual Private Clouds (VPC) and subnets", "Managing route tables, internet gateways, and security groups"]
+        "topics": [
+          "Introduction to Cloud virtualization benefits and regions",
+          "Configuring Virtual Private Clouds (VPC) and subnets",
+          "Managing route tables, internet gateways, and security groups"
+        ]
       },
       {
         "title": "Module 2: Compute & Storage Operations",
         "duration": "3 Weeks",
-        "topics": ["Launching EC2 virtual machines and storage volumes", "Configuring S3 objects, bucket policies, and lifecycle management", "Setting up Elastic Load Balancers and Auto Scaling policies"]
+        "topics": [
+          "Launching EC2 virtual machines and storage volumes",
+          "Configuring S3 objects, bucket policies, and lifecycle management",
+          "Setting up Elastic Load Balancers and Auto Scaling policies"
+        ]
       },
       {
         "title": "Module 3: Cloud Databases, IAM & Monitoring",
         "duration": "4 Weeks",
-        "topics": ["Deploying RDS managed relational databases (MySQL/PostgreSQL)", "Creating IAM user groups, access policies, and MFA keys", "Configuring CloudWatch log events and metric notifications", "Deploying a live web app during the company project internship"]
+        "topics": [
+          "Deploying RDS managed relational databases (MySQL/PostgreSQL)",
+          "Creating IAM user groups, access policies, and MFA keys",
+          "Configuring CloudWatch log events and metric notifications",
+          "Deploying a live web app during the company project internship"
+        ]
       }
     ],
     "faqs": [
@@ -357,6 +725,32 @@
       {
         "q": "Do we get access to a cloud sandbox?",
         "a": "Yes, we guide you in setting up and managing your cloud accounts within the secure free tier parameters."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Rajesh B.",
+        "role": "Cloud Architect (Formerly SysAdmin)",
+        "location": "Wakad, Pune",
+        "text": "Mastering AWS was essential for my career growth. The 1-to-1 screen-sharing sessions with an active cloud engineer made configuring VPCs, subnets, and IAM policies very easy to learn. Great sandbox lab support.",
+        "rating": 5,
+        "date": "2026-03-05"
+      },
+      {
+        "name": "Pooja L.",
+        "role": "Cloud Engineer",
+        "location": "Hinjewadi, Pune",
+        "text": "The AWS infrastructure course was very practical. We deployed web applications on EC2, configured load balancers, and set up RDS database instances. Having a mentor to explain scaling policies was excellent.",
+        "rating": 5,
+        "date": "2026-04-12"
+      },
+      {
+        "name": "Kshitij M.",
+        "role": "IT Consultant",
+        "location": "MIT Pune",
+        "text": "The cloud security and monitoring modules are highly detailed. Learned standard network security group setups and CloudWatch alerts. The live staging deployment during the internship was a great experience.",
+        "rating": 5,
+        "date": "2026-05-09"
       }
     ]
   },
@@ -372,28 +766,52 @@
     "meta_description": "Master CI/CD pipelines, Docker, and Kubernetes. 1-to-1 DevOps Course in Shivane, Pune. Real company deployment experience. Only ₹14,999.",
     "h1": "DevOps Engineering Training in Pune",
     "h2": "Automate Build, Test, and Deploy Workflows under Individual Developer Coaching",
-    "skills": ["CI/CD Pipelines", "Docker Containers", "Kubernetes", "Linux Shell scripting", "Ansible", "Git Version Control", "Monitoring Tools"],
+    "skills": [
+      "CI/CD Pipelines",
+      "Docker Containers",
+      "Kubernetes",
+      "Linux Shell scripting",
+      "Ansible",
+      "Git Version Control",
+      "Monitoring Tools"
+    ],
     "overview": "DevOps bridges the gap between writing code and running software. At CACTS Pune, we teach you containerization, automation scripts, and continuous integration pipelines. Our 1-to-1 mentoring ensures you understand deployment topologies and cluster configurations.",
     "modules": [
       {
         "title": "Module 1: Linux Operations & Version Control",
         "duration": "3 Weeks",
-        "topics": ["Linux directory structures, permissions, and shell scripting", "Git commands, branch workflows, and remote repository syncing", "Package management and system services administration"]
+        "topics": [
+          "Linux directory structures, permissions, and shell scripting",
+          "Git commands, branch workflows, and remote repository syncing",
+          "Package management and system services administration"
+        ]
       },
       {
         "title": "Module 2: Containerization with Docker",
         "duration": "3 Weeks",
-        "topics": ["Writing Dockerfiles to build customized application containers", "Managing Docker volumes, networks, and environment variables", "Multi-container deployments with Docker Compose"]
+        "topics": [
+          "Writing Dockerfiles to build customized application containers",
+          "Managing Docker volumes, networks, and environment variables",
+          "Multi-container deployments with Docker Compose"
+        ]
       },
       {
         "title": "Module 3: Kubernetes Orchestration & Ansible Automation",
         "duration": "3 Weeks",
-        "topics": ["Deploying Kubernetes pods, services, and replica sets", "Writing Ansible playbooks for automated server configurations", "Managing secrets and environment configurations"]
+        "topics": [
+          "Deploying Kubernetes pods, services, and replica sets",
+          "Writing Ansible playbooks for automated server configurations",
+          "Managing secrets and environment configurations"
+        ]
       },
       {
         "title": "Module 4: CI/CD Pipelines & Real Deployment",
         "duration": "3 Weeks",
-        "topics": ["Configuring Jenkins / GitHub Actions pipelines for auto-builds", "Deploying containerized code to remote server nodes", "Active infrastructure configuration for live company projects"]
+        "topics": [
+          "Configuring Jenkins / GitHub Actions pipelines for auto-builds",
+          "Deploying containerized code to remote server nodes",
+          "Active infrastructure configuration for live company projects"
+        ]
       }
     ],
     "faqs": [
@@ -404,6 +822,32 @@
       {
         "q": "What tools are covered in CI/CD?",
         "a": "We focus on GitHub Actions and Jenkins for build and deployment automation."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Sandeep W.",
+        "role": "DevOps Engineer",
+        "location": "Kharadi, Pune",
+        "text": "CACTS DevOps course is highly professional. The 1-to-1 virtual mentoring model allowed me to configure Jenkins CI/CD pipelines, Docker containers, and Kubernetes clusters in real-time under a mentor's guidance.",
+        "rating": 5,
+        "date": "2026-03-02"
+      },
+      {
+        "name": "Neha D.",
+        "role": "Release Engineer",
+        "location": "Baner, Pune",
+        "text": "I wanted to learn containerization and build automation. We wrote Dockerfiles and Kubernetes manifest files from scratch. The trainer's explanation of Git workflows and staging environments was extremely clear.",
+        "rating": 5,
+        "date": "2026-04-15"
+      },
+      {
+        "name": "Pranav S.",
+        "role": "Infrastructure Analyst",
+        "location": "Kothrud, Pune",
+        "text": "The live company project DevOps internship was an amazing experience. I worked on automating server configurations using Ansible and tracking builds. Highly recommend their individual attention model.",
+        "rating": 5,
+        "date": "2026-05-20"
       }
     ]
   },
@@ -419,28 +863,52 @@
     "meta_description": "Learn Manual & Automation Software Testing in Shivane, Pune. 1-to-1 training in Selenium, Java, and API testing. Internship on live projects. ₹9,999.",
     "h1": "Software Testing Training in Pune",
     "h2": "Master Manual QA, Selenium WebDriver, and API Testing with 1-to-1 Mentorship",
-    "skills": ["Manual Testing", "Selenium WebDriver", "Java for QA", "TestNG Framework", "API Testing", "Jira & Bug Tracking", "SQL for Database Testing"],
+    "skills": [
+      "Manual Testing",
+      "Selenium WebDriver",
+      "Java for QA",
+      "TestNG Framework",
+      "API Testing",
+      "Jira & Bug Tracking",
+      "SQL for Database Testing"
+    ],
     "overview": "Quality assurance is critical for every software release. Our training begins with the fundamentals of manual test planning and bugs tracking, then transitions into automated Selenium testing scripts. You get direct support to write and debug test cases.",
     "modules": [
       {
         "title": "Module 1: Manual Testing & QA Processes",
         "duration": "3 Weeks",
-        "topics": ["Software Development Life Cycle (SDLC) & testing methodologies", "Writing comprehensive test plans, cases, and scenarios", "Defect reporting and tracking lifecycle using Jira templates"]
+        "topics": [
+          "Software Development Life Cycle (SDLC) & testing methodologies",
+          "Writing comprehensive test plans, cases, and scenarios",
+          "Defect reporting and tracking lifecycle using Jira templates"
+        ]
       },
       {
         "title": "Module 2: Java Coding & Automation Foundations",
         "duration": "3 Weeks",
-        "topics": ["Java syntax, variables, conditions, and loops for testing", "Object-Oriented Programming (OOP) concepts in Java", "Setting up testing frameworks (JUnit and TestNG)"]
+        "topics": [
+          "Java syntax, variables, conditions, and loops for testing",
+          "Object-Oriented Programming (OOP) concepts in Java",
+          "Setting up testing frameworks (JUnit and TestNG)"
+        ]
       },
       {
         "title": "Module 3: Selenium WebDriver & Page Object Model",
         "duration": "2 Weeks",
-        "topics": ["Locators (XPath, CSS selectors) and element interactions", "Handling alerts, dynamic waits, popups, and frames", "Designing reusable testing frameworks with Page Object Model (POM)"]
+        "topics": [
+          "Locators (XPath, CSS selectors) and element interactions",
+          "Handling alerts, dynamic waits, popups, and frames",
+          "Designing reusable testing frameworks with Page Object Model (POM)"
+        ]
       },
       {
         "title": "Module 4: API Testing & Database QA",
         "duration": "2 Weeks",
-        "topics": ["REST API testing with Postman and validating JSON codes", "Database verification querying with SQL", "Running tests against active company application modules"]
+        "topics": [
+          "REST API testing with Postman and validating JSON codes",
+          "Database verification querying with SQL",
+          "Running tests against active company application modules"
+        ]
       }
     ],
     "faqs": [
@@ -451,6 +919,32 @@
       {
         "q": "What API testing tools are covered?",
         "a": "We use Postman for REST API manual test executions and API payload validations."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Shraddha G.",
+        "role": "QA Engineer",
+        "location": "Shivane, Pune",
+        "text": "I wanted to enter the IT industry through QA. The trainer at CACTS taught me manual test planning and Jira defect tracking, and then we wrote Selenium scripts in Java. The 1-to-1 guidance made coding less scary.",
+        "rating": 5,
+        "date": "2026-03-19"
+      },
+      {
+        "name": "Kunal J.",
+        "role": "Test Automation Lead",
+        "location": "Hinjewadi, Pune",
+        "text": "I had manual testing experience but needed Selenium automation skills. The Page Object Model framework and API testing modules in Postman were exactly what I needed. Excellent 1-to-1 mentoring.",
+        "rating": 5,
+        "date": "2026-04-22"
+      },
+      {
+        "name": "Vivek D.",
+        "role": "QA Analyst",
+        "location": "Sinhgad Road, Pune",
+        "text": "The database testing with SQL and Selenium test execution modules are highly practical. We tested active application modules during the internship phase, which gave me hands-on debugging experience.",
+        "rating": 5,
+        "date": "2026-05-25"
       }
     ]
   },
@@ -466,28 +960,52 @@
     "meta_description": "Learn Ethical Hacking & Network Security in Pune. 1-to-1 Cybersecurity Course in Shivane. Sandbox security lab testing. Fees: ₹19,999.",
     "h1": "Cybersecurity & Ethical Hacking Training in Pune",
     "h2": "Master Vulnerability Assessment, Network Defense, and Hacking Tools 1-on-1",
-    "skills": ["Ethical Hacking", "Network Security", "Vulnerability Scanning", "Metasploit & Nmap", "Cryptography", "Linux Security", "OWASP Top 10"],
+    "skills": [
+      "Ethical Hacking",
+      "Network Security",
+      "Vulnerability Scanning",
+      "Metasploit & Nmap",
+      "Cryptography",
+      "Linux Security",
+      "OWASP Top 10"
+    ],
     "overview": "Secure digital systems from rising threat actors. Learn cybersecurity methodologies in a secure sandbox laboratory. Our 1-to-1 training ensures you learn active penetration testing, system hardening, and security operations with real-world scenarios.",
     "modules": [
       {
         "title": "Module 1: Networking Basics & Linux Security",
         "duration": "3 Weeks",
-        "topics": ["TCP/IP protocols, subnetting, and port allocations", "Linux commands, administration, and system configurations", "Network scanning and reconnaissance basics using Nmap"]
+        "topics": [
+          "TCP/IP protocols, subnetting, and port allocations",
+          "Linux commands, administration, and system configurations",
+          "Network scanning and reconnaissance basics using Nmap"
+        ]
       },
       {
         "title": "Module 2: Vulnerability Analysis & Exploits",
         "duration": "3 Weeks",
-        "topics": ["Identifying security vulnerabilities using scanners", "Exploiting security gaps in sandbox labs using Metasploit", "System privilege escalation and maintaining access vectors"]
+        "topics": [
+          "Identifying security vulnerabilities using scanners",
+          "Exploiting security gaps in sandbox labs using Metasploit",
+          "System privilege escalation and maintaining access vectors"
+        ]
       },
       {
         "title": "Module 3: Web Application Security & OWASP",
         "duration": "3 Weeks",
-        "topics": ["SQL Injection, Cross-Site Scripting (XSS), and CSRF attacks", "OWASP Top 10 security framework definitions", "Web app firewalls and defensive API configuration concepts"]
+        "topics": [
+          "SQL Injection, Cross-Site Scripting (XSS), and CSRF attacks",
+          "OWASP Top 10 security framework definitions",
+          "Web app firewalls and defensive API configuration concepts"
+        ]
       },
       {
         "title": "Module 4: Cryptography & Security Operations",
         "duration": "3 Weeks",
-        "topics": ["Encryption standards, hashing, and digital certificates", "Setting up intrusion detection monitors and firewall rules", "Conducting vulnerability reviews on company staging systems"]
+        "topics": [
+          "Encryption standards, hashing, and digital certificates",
+          "Setting up intrusion detection monitors and firewall rules",
+          "Conducting vulnerability reviews on company staging systems"
+        ]
       }
     ],
     "faqs": [
@@ -498,6 +1016,32 @@
       {
         "q": "Do we require high-performance hardware?",
         "a": "A standard computer with 8GB RAM and virtualization support (VirtualBox/VMware) is sufficient for lab setups."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Akash P.",
+        "role": "Information Security Analyst",
+        "location": "Kharadi, Pune",
+        "text": "The ethical hacking and network security labs at CACTS are top-notch. The 1-to-1 virtual session format allowed me to run Nmap scans, exploit security gaps using Metasploit, and understand OWASP vulnerabilities.",
+        "rating": 5,
+        "date": "2026-02-25"
+      },
+      {
+        "name": "Tanvi S.",
+        "role": "Security Consultant",
+        "location": "Cummins College Pune",
+        "text": "Learned cryptography, Linux system hardening, and web application security in a safe sandbox lab. My mentor explained complex network protocols and firewall rules very clearly.",
+        "rating": 5,
+        "date": "2026-04-08"
+      },
+      {
+        "name": "Gaurav H.",
+        "role": "Application Security Audit Specialist",
+        "location": "Kothrud, Pune",
+        "text": "I wanted to learn security auditing for web APIs. We covered SQL injection and XSS defenses in detail. The trainer's experience in cybersecurity operations was evident throughout the training.",
+        "rating": 5,
+        "date": "2026-05-14"
       }
     ]
   }
