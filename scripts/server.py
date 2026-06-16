@@ -21,6 +21,11 @@ class CleanURLHTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         return super().do_GET()
 
 if __name__ == "__main__":
+    # Ensure current working directory is the project root
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(script_dir)
+    os.chdir(project_root)
+
     # Allow port reuse to avoid 'Address already in use' errors on quick restarts
     socketserver.TCPServer.allow_reuse_address = True
     print(f"Starting CACTS Local Dev Server on http://localhost:{PORT}")

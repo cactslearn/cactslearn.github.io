@@ -3,6 +3,11 @@ import json
 import re
 import xml.etree.ElementTree as ET
 
+# Ensure working directory is the project root
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(script_dir)
+os.chdir(project_root)
+
 print("Starting validation checks on the 55 split course pages...")
 
 # Load courses

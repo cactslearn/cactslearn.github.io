@@ -1,11 +1,22 @@
 import json
 import os
+import sys
 import re
 import urllib.parse
 from datetime import datetime
+
+# Set up project root and path for import
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(script_dir)
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
 from src.subpages_content import SUBPAGES_DATA
 
 def build():
+    # Ensure current working directory is the project root
+    os.chdir(project_root)
+
     # Paths
     src_json = os.path.join("src", "courses.json")
     src_template = os.path.join("src", "template.html")
