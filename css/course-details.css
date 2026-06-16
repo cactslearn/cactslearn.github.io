@@ -308,6 +308,67 @@ body.light-theme .price-sub {
     box-shadow: 0 4px 12px var(--accent-glow);
 }
 
+}
+
+/* Tabs navigation styles */
+.course-tabs-container {
+    position: sticky;
+    top: 70px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.course-tabs-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.course-tabs-inner::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.course-tabs-inner {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.tab-link {
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.tab-link:hover {
+    color: var(--text-primary);
+    border-bottom-color: var(--border-hover);
+}
+
+.tab-link.active {
+    color: var(--accent-light);
+    font-weight: 600;
+    border-bottom-color: var(--accent);
+}
+
+body.light-theme .tab-link.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
 @media (max-width: 992px) {
     .course-layout {
         grid-template-columns: 1fr;

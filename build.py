@@ -3,12 +3,12 @@ import os
 import re
 import urllib.parse
 from datetime import datetime
+from src.subpages_content import SUBPAGES_DATA
 
 def build():
     # Paths
     src_json = os.path.join("src", "courses.json")
     src_template = os.path.join("src", "template.html")
-    courses_dir = ""
     sitemap_file = "sitemap.xml"
 
     # Load course configurations
@@ -36,20 +36,21 @@ def build():
         modules = course["modules"]
         faqs = course["faqs"]
 
-        canonical = f"https://cactslearn.github.io/{slug}.html"
+        base_slug = slug.replace("-training", "")
         name_encoded = urllib.parse.quote(name)
+
+        # Get subpage content database
+        data = SUBPAGES_DATA.get(slug, {})
 
         # 1. Build Skills Bubbles
         skills_bubbles = ""
         for s in skills:
             skills_bubbles += f'<span class="skill-bubble">{s}</span>\n'
 
-        # 2. Build Curriculum Modules
+        # 2. Build Curriculum Modules summary
         curr_html = ""
         for mod in modules:
-            topics_li = ""
-            for t in mod["topics"]:
-                topics_li += f'<li>{t}</li>\n'
+            topics_li = "".join([f"<li>{t}</li>" for t in mod["topics"]])
             curr_html += f"""
             <div class="curriculum-module">
                 <div class="module-header">
@@ -83,7 +84,111 @@ def build():
             </div>
             """
 
-        # 4. Generate Schema Markup
+        # 4. Generate Reviews Block
+        reviews = course.get("reviews", [])
+        reviews_html = ""
+        for r in reviews:
+            reviews_html += f"""
+            <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="font-size: 1.25rem; color: #f59e0b; margin-bottom: 1rem;">★★★★★</div>
+                <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
+                    "{r['text']}"
+                </p>
+                <div>
+                    <h4 style="color: var(--primary-light); margin: 0; font-size: 1rem;">{r['name']}</h4>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary);">{r['role']}, {r['location']}</span>
+                </div>
+            </div>
+            """
+
+        # Define active links list tabs generator
+        def get_tabs_html(active_type):
+            tabs_config = [
+                {"type": "overview", "label": "Overview", "url": f"{slug}.html"},
+                {"type": "syllabus", "label": "Syllabus", "url": f"{base_slug}-syllabus.html"},
+                {"type": "fees", "label": "Fees & Options", "url": f"{base_slug}-course-fees.html"},
+                {"type": "interview", "label": "Interview Qs", "url": f"{base_slug}-interview-questions.html"},
+                {"type": "roadmap", "label": "Roadmap", "url": f"{base_slug}-roadmap.html"}
+            ]
+            html = ""
+            for tab in tabs_config:
+                active_class = "active" if tab["type"] == active_type else ""
+                html += f'<a href="{tab["url"]}" class="tab-link {active_class}">{tab["label"]}</a>\n'
+            return html
+
+        # ----------------------------------------------------
+        # PAGE 1: Commercial Overview Page ([slug].html)
+        # ----------------------------------------------------
+        overview_left_column = f"""
+        <h2 id="details-heading" style="margin-bottom: 1.5rem;">Course Overview</h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">{overview}</p>
+
+        <!-- Market Comparison Checklist -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 2.5rem;">
+            <h3 style="margin-bottom: 1rem; font-family: var(--font-heading); color: var(--text-primary);">
+                Why train with CACTS vs the typical market?</h3>
+            <div class="grid-2" style="gap: 1.5rem; align-items: start;">
+                <div>
+                    <h4 style="color: var(--warning); font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        ⚠️ Typical Market Courses</h4>
+                    <ul style="color: var(--text-secondary); font-size: 0.9rem; list-style-type: none; display: flex; flex-direction: column; gap: 0.4rem; padding-left: 0;">
+                        <li>❌ 30-50 student batches</li>
+                        <li>❌ Passive recorded lecture video playback</li>
+                        <li>❌ Hardcoded, outdated mock sandbox templates</li>
+                        <li>❌ No direct code feedback from developers</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--success); font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        ✅ CACTS 1-to-1 Training</h4>
+                    <ul style="color: var(--text-secondary); font-size: 0.9rem; list-style-type: none; display: flex; flex-direction: column; gap: 0.4rem; padding-left: 0;">
+                        <li>✓ Strictly individual 1-to-1 virtual attention</li>
+                        <li>✓ Fully active dynamic pacing based on your grasp</li>
+                        <li>✓ Real company git repositories and developer commits</li>
+                        <li>✓ Screen-sharing, live code writing, and peer PR reviews</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="margin-bottom: 1.5rem;">Key Skills You Will Acquire</h2>
+        <div class="skills-grid" style="margin-bottom: 2.5rem;">
+            {skills_bubbles}
+        </div>
+
+        <div class="curriculum-section">
+            <h2 style="margin-bottom: 1.5rem;">Curriculum Outline</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">This curriculum is fully customized for you. We adapt the pace based on your learning speed. Our trainers work 1-to-1, detailing every line of code.</p>
+            <div class="curriculum-accordion">
+                {curr_html}
+            </div>
+        </div>
+
+        <!-- Live Company Project Block -->
+        <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--accent); border-radius: var(--border-radius); padding: 2.5rem; margin-top: 3rem; margin-bottom: 3rem;">
+            <h3 style="color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                🏢 Live Project Internship Integration
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 1.25rem;">
+                Unlike institutes that assign mock projects or simple copy-paste tasks, CACTS bridges the learning gap by placing you on real company software development environments. You will coordinate with active developers, write production code, submit code reviews, and deploy test cases.
+            </p>
+            <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li>Hands-on Git access and branch merge policies.</li>
+                <li>Real-world debugging under senior developer code review loops.</li>
+                <li>Staging pipeline deployments.</li>
+            </ul>
+            <a href="internship-on-live-projects.html" class="btn btn-secondary" style="border-color: var(--accent); color: var(--text-primary);">Learn About Our Live Project Internships &gt;</a>
+        </div>
+
+        <!-- Course Specific FAQs -->
+        <div style="margin-top: 4rem;">
+            <h2 style="margin-bottom: 1.5rem;">Course FAQs</h2>
+            <div class="course-faqs-accordion">
+                {faq_html}
+            </div>
+        </div>
+        """
+
         course_schema = {
             "@context": "https://schema.org",
             "@type": "Course",
@@ -101,8 +206,6 @@ def build():
                 "category": "Value-Driven Professional Programming Training"
             }
         }
-
-        reviews = course.get("reviews", [])
         schema_reviews = []
         for r in reviews:
             schema_reviews.append({
@@ -138,7 +241,6 @@ def build():
                     "text": faq["a"]
                 }
             })
-
         faq_schema = {
             "@context": "https://schema.org",
             "@type": "FAQPage",
@@ -149,18 +251,8 @@ def build():
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://cactslearn.github.io/index.html"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": name,
-                    "item": f"https://cactslearn.github.io/{slug}.html"
-                }
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cactslearn.github.io/index.html"},
+                {"@type": "ListItem", "position": 2, "name": name, "item": f"https://cactslearn.github.io/{slug}.html"}
             ]
         }
 
@@ -176,47 +268,529 @@ def build():
         </script>
         """
 
-        # Build Reviews HTML
-        reviews_html = ""
-        for r in reviews:
-            reviews_html += f"""
-            <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="font-size: 1.25rem; color: #f59e0b; margin-bottom: 1rem;">★★★★★</div>
-                <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
-                    "{r['text']}"
-                </p>
-                <div>
-                    <h4 style="color: var(--primary-light); margin: 0; font-size: 1rem;">{r['name']}</h4>
-                    <span style="font-size: 0.8rem; color: var(--text-secondary);">{r['role']}, {r['location']}</span>
+        page_html1 = template
+        page_html1 = page_html1.replace("{{seo_title}}", seo_title)
+        page_html1 = page_html1.replace("{{meta_description}}", meta_description)
+        page_html1 = page_html1.replace("{{canonical}}", f"https://cactslearn.github.io/{slug}.html")
+        page_html1 = page_html1.replace("{{schema_markup}}", schema_markup)
+        page_html1 = page_html1.replace("{{course_name}}", name)
+        page_html1 = page_html1.replace("{{course_name_encoded}}", name_encoded)
+        page_html1 = page_html1.replace("{{h1}}", h1)
+        page_html1 = page_html1.replace("{{h2}}", h2)
+        page_html1 = page_html1.replace("{{duration}}", duration)
+        page_html1 = page_html1.replace("{{price}}", price)
+        page_html1 = page_html1.replace("{{course_reviews}}", reviews_html)
+        page_html1 = page_html1.replace("{{course_tabs}}", get_tabs_html("overview"))
+        page_html1 = page_html1.replace("{{course_left_column}}", overview_left_column)
+
+        with open(f"{slug}.html", "w", encoding="utf-8") as f:
+            f.write(page_html1)
+        generated_pages.append(slug)
+
+        # ----------------------------------------------------
+        # PAGE 2: Syllabus Page ([base_slug]-syllabus.html)
+        # ----------------------------------------------------
+        syllabus_projects_html = "".join([f"<li>{proj}</li>" for proj in data.get("syllabus_projects", [])])
+        syllabus_tools_html = "".join([f'<span class="skill-bubble">{tool}</span>' for tool in data.get("syllabus_tools", [])])
+
+        expanded_curr_html = ""
+        for mod in modules:
+            topics_li = "".join([f"<li>{t}</li>" for t in mod["topics"]])
+            expanded_curr_html += f"""
+            <div class="curriculum-module">
+                <div class="module-header" style="cursor: default;">
+                    <h4 style="color: var(--accent-light);">{mod['title']}</h4>
+                    <span class="module-duration">{mod['duration']}</span>
+                </div>
+                <div class="module-content active" style="max-height: none; background: rgba(6, 9, 19, 0.15);">
+                    <div class="module-content-inner">
+                        <ul>
+                            {topics_li}
+                        </ul>
+                    </div>
                 </div>
             </div>
             """
 
-        # Replace placeholders in template
-        page_html = template
-        page_html = page_html.replace("{{seo_title}}", seo_title)
-        page_html = page_html.replace("{{meta_description}}", meta_description)
-        page_html = page_html.replace("{{canonical}}", canonical)
-        page_html = page_html.replace("{{schema_markup}}", schema_markup)
-        page_html = page_html.replace("{{course_name}}", name)
-        page_html = page_html.replace("{{course_name_encoded}}", name_encoded)
-        page_html = page_html.replace("{{h1}}", h1)
-        page_html = page_html.replace("{{h2}}", h2)
-        page_html = page_html.replace("{{duration}}", duration)
-        page_html = page_html.replace("{{price}}", price)
-        page_html = page_html.replace("{{overview}}", overview)
-        page_html = page_html.replace("{{skills_bubbles}}", skills_bubbles)
-        page_html = page_html.replace("{{curriculum_modules}}", curr_html)
-        page_html = page_html.replace("{{course_faqs}}", faq_html)
-        page_html = page_html.replace("{{course_reviews}}", reviews_html)
+        syllabus_faq_html = ""
+        syllabus_faq_entities = []
+        for faq in data.get("syllabus_faqs", []):
+            syllabus_faq_html += f"""
+            <div class="curriculum-module">
+                <div class="module-header faq-header">
+                    <h4>{faq['q']}</h4>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="faq-content module-content">
+                    <div class="module-content-inner">
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">{faq['a']}</p>
+                    </div>
+                </div>
+            </div>
+            """
+            syllabus_faq_entities.append({
+                "@type": "Question",
+                "name": faq["q"],
+                "acceptedAnswer": {"@type": "Answer", "text": faq["a"]}
+            })
 
-        # Write to courses directory
-        output_path = f"{slug}.html"
-        with open(output_path, "w", encoding="utf-8") as f:
-            f.write(page_html)
+        syllabus_left_column = f"""
+        <h2 style="margin-bottom: 1.5rem;">Detailed Training Syllabus</h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">Below is the comprehensive, module-by-module curriculum. As this training is strictly 1-to-1, we can adjust the syllabus scope or spend more time on specific modules based on your learning speed.</p>
 
-        print(f"Generated page: {output_path}")
-        generated_pages.append(slug)
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 2.5rem;">
+            <h3 style="margin-bottom: 0.75rem; color: var(--text-primary); font-family: var(--font-heading);">Course Prerequisites</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.98rem; margin: 0;">{data.get('syllabus_prerequisites', '')}</p>
+        </div>
+
+        <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Full Curriculum Structure</h3>
+        <div class="curriculum-accordion" style="margin-bottom: 3rem;">
+            {expanded_curr_html}
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 3rem;">
+            <h3 style="color: var(--accent-light); margin-bottom: 1.25rem; font-family: var(--font-heading);">🛠️ Tools & Technologies Mastered</h3>
+            <div class="skills-grid" style="margin-bottom: 1.5rem;">
+                {syllabus_tools_html}
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">You will gain hands-on operational capability in these tools during screenshare coding loops, creating real repositories.</p>
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 3rem;">
+            <h3 style="color: var(--primary-light); margin-bottom: 1.25rem; font-family: var(--font-heading);">📁 Hands-on Lab Assignments & Projects</h3>
+            <ul style="color: var(--text-secondary); margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                {syllabus_projects_html}
+            </ul>
+        </div>
+
+        <div style="margin-top: 4rem;">
+            <h2 style="margin-bottom: 1.5rem;">Syllabus FAQs</h2>
+            <div class="course-faqs-accordion">
+                {syllabus_faq_html}
+            </div>
+        </div>
+        """
+
+        syllabus_parts = []
+        for idx, mod in enumerate(modules):
+            syllabus_parts.append({
+                "@type": "CreativeWork",
+                "name": mod["title"],
+                "timeRequired": f"P{mod['duration'].replace(' Weeks', 'W')}" if "Weeks" in mod["duration"] else "P1M"
+            })
+        course_schema_syllabus = {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": f"{name} Syllabus",
+            "description": f"Detailed topic-by-topic training syllabus for {name} in Pune.",
+            "provider": {
+                "@type": "Organization",
+                "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "url": "https://cactslearn.github.io/"
+            },
+            "hasPart": syllabus_parts
+        }
+
+        syllabus_breadcrumb = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cactslearn.github.io/index.html"},
+                {"@type": "ListItem", "position": 2, "name": name, "item": f"https://cactslearn.github.io/{slug}.html"},
+                {"@type": "ListItem", "position": 3, "name": "Syllabus", "item": f"https://cactslearn.github.io/{base_slug}-syllabus.html"}
+            ]
+        }
+
+        schema_markup2 = f"""
+        <script type="application/ld+json">
+        {json.dumps(course_schema_syllabus, indent=2)}
+        </script>
+        <script type="application/ld+json">
+        {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": syllabus_faq_entities}, indent=2)}
+        </script>
+        <script type="application/ld+json">
+        {json.dumps(syllabus_breadcrumb, indent=2)}
+        </script>
+        """
+
+        page_html2 = template
+        page_html2 = page_html2.replace("{{seo_title}}", f"{name} Syllabus | Detailed Course Topics | CACTS Pune")
+        page_html2 = page_html2.replace("{{meta_description}}", f"Read the complete, detailed course syllabus for 1-to-1 {name} training in Pune. Explore modules, prerequisites, and live tools.")
+        page_html2 = page_html2.replace("{{canonical}}", f"https://cactslearn.github.io/{base_slug}-syllabus.html")
+        page_html2 = page_html2.replace("{{schema_markup}}", schema_markup2)
+        page_html2 = page_html2.replace("{{course_name}}", name)
+        page_html2 = page_html2.replace("{{course_name_encoded}}", name_encoded)
+        page_html2 = page_html2.replace("{{h1}}", f"{name} Syllabus & Modules")
+        page_html2 = page_html2.replace("{{h2}}", f"Complete dynamic pacing topics, hand-on tools, and project milestones.")
+        page_html2 = page_html2.replace("{{duration}}", duration)
+        page_html2 = page_html2.replace("{{price}}", price)
+        page_html2 = page_html2.replace("{{course_reviews}}", reviews_html)
+        page_html2 = page_html2.replace("{{course_tabs}}", get_tabs_html("syllabus"))
+        page_html2 = page_html2.replace("{{course_left_column}}", syllabus_left_column)
+
+        with open(f"{base_slug}-syllabus.html", "w", encoding="utf-8") as f:
+            f.write(page_html2)
+        generated_pages.append(f"{base_slug}-syllabus")
+
+        # ----------------------------------------------------
+        # PAGE 3: Fees Page ([base_slug]-course-fees.html)
+        # ----------------------------------------------------
+        fees_faq_html = ""
+        fees_faq_entities = []
+        for faq in data.get("fees_faqs", []):
+            fees_faq_html += f"""
+            <div class="curriculum-module">
+                <div class="module-header faq-header">
+                    <h4>{faq['q']}</h4>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="faq-content module-content">
+                    <div class="module-content-inner">
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">{faq['a']}</p>
+                    </div>
+                </div>
+            </div>
+            """
+            fees_faq_entities.append({
+                "@type": "Question",
+                "name": faq["q"],
+                "acceptedAnswer": {"@type": "Answer", "text": faq["a"]}
+            })
+
+        fees_left_column = f"""
+        <h2 style="margin-bottom: 1.5rem;">Course Fees & Flexible Options</h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">We offer transparent, value-driven pricing structures for our individual 1-to-1 virtual mentoring. No hidden registration fees or laboratory charges.</p>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 3rem;">
+            <h3 style="color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading);">Tuition Fees Structure</h3>
+            <p style="color: var(--text-primary); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem;">Price: {price} <span style="font-size: 0.9rem; font-weight: normal; color: var(--text-secondary);">(All-inclusive tuition fee)</span></p>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">{data.get('fees_structure', '')}</p>
+        </div>
+
+        <!-- Comparative pricing card -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 3rem;">
+            <h3 style="color: var(--warning); margin-bottom: 1.25rem; font-family: var(--font-heading);">Market Cost Comparison (Pune)</h3>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; color: var(--text-secondary); font-size: 0.95rem; min-width: 400px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); color: var(--text-primary);">
+                            <th style="padding: 0.75rem 0.5rem;">Feature</th>
+                            <th style="padding: 0.75rem 0.5rem;">Typical Pune Institutes</th>
+                            <th style="padding: 0.75rem 0.5rem; color: var(--success);">CACTS Training</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 0.75rem 0.5rem; font-weight: 600;">Average Fees</td>
+                            <td style="padding: 0.75rem 0.5rem;">{data.get('fees_comparison', {}).get('typical_pune_fees', '₹40,000')}</td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--success); font-weight: 600;">{price}</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 0.75rem 0.5rem; font-weight: 600;">Batch Size</td>
+                            <td style="padding: 0.75rem 0.5rem;">{data.get('fees_comparison', {}).get('pune_batch_size', '30+')}</td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--success); font-weight: 600;">Strictly 1-to-1 (Private)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 0.75rem 0.5rem; font-weight: 600;">Learning Mode</td>
+                            <td style="padding: 0.75rem 0.5rem;">Passive batch listening</td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--success); font-weight: 600;">Active screenshare coding</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem 0.5rem; font-weight: 600;">Code Review</td>
+                            <td style="padding: 0.75rem 0.5rem;">Rare or automated tools</td>
+                            <td style="padding: 0.75rem 0.5rem; color: var(--success); font-weight: 600;">Direct senior dev comments</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin-top: 1.5rem; line-height: 1.5;">{data.get('fees_comparison', {}).get('cacts_value', '')}</p>
+        </div>
+
+        <div style="margin-top: 4rem;">
+            <h2 style="margin-bottom: 1.5rem;">Fees & Payment FAQs</h2>
+            <div class="course-faqs-accordion">
+                {fees_faq_html}
+            </div>
+        </div>
+        """
+
+        course_schema_fees = {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "name": f"{name} Course Fees",
+            "description": f"Transparent tuition and installment fees for {name} in Pune.",
+            "provider": {
+                "@type": "Organization",
+                "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "url": "https://cactslearn.github.io/"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": str(price_num),
+                "priceCurrency": "INR",
+                "category": "Value-Driven Professional Programming Training"
+            }
+        }
+
+        fees_breadcrumb = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cactslearn.github.io/index.html"},
+                {"@type": "ListItem", "position": 2, "name": name, "item": f"https://cactslearn.github.io/{slug}.html"},
+                {"@type": "ListItem", "position": 3, "name": "Course Fees", "item": f"https://cactslearn.github.io/{base_slug}-course-fees.html"}
+            ]
+        }
+
+        schema_markup3 = f"""
+        <script type="application/ld+json">
+        {json.dumps(course_schema_fees, indent=2)}
+        </script>
+        <script type="application/ld+json">
+        {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": fees_faq_entities}, indent=2)}
+        </script>
+        <script type="application/ld+json">
+        {json.dumps(fees_breadcrumb, indent=2)}
+        </script>
+        """
+
+        page_html3 = template
+        page_html3 = page_html3.replace("{{seo_title}}", f"{name} Course Fees in Pune | Transparent Pricing | CACTS")
+        page_html3 = page_html3.replace("{{meta_description}}", f"Check current fees, installment structures, and pricing discounts for 1-to-1 {name} training in Pune. Zero hidden charges.")
+        page_html3 = page_html3.replace("{{canonical}}", f"https://cactslearn.github.io/{base_slug}-course-fees.html")
+        page_html3 = page_html3.replace("{{schema_markup}}", schema_markup3)
+        page_html3 = page_html3.replace("{{course_name}}", name)
+        page_html3 = page_html3.replace("{{course_name_encoded}}", name_encoded)
+        page_html3 = page_html3.replace("{{h1}}", f"{name} Training Fees")
+        page_html3 = page_html3.replace("{{h2}}", f"Affordable pricing, flexible installment formats, and 1-on-1 mentor value.")
+        page_html3 = page_html3.replace("{{duration}}", duration)
+        page_html3 = page_html3.replace("{{price}}", price)
+        page_html3 = page_html3.replace("{{course_reviews}}", reviews_html)
+        page_html3 = page_html3.replace("{{course_tabs}}", get_tabs_html("fees"))
+        page_html3 = page_html3.replace("{{course_left_column}}", fees_left_column)
+
+        with open(f"{base_slug}-course-fees.html", "w", encoding="utf-8") as f:
+            f.write(page_html3)
+        generated_pages.append(f"{base_slug}-course-fees")
+
+        # ----------------------------------------------------
+        # PAGE 4: Interview Questions ([base_slug]-interview-questions.html)
+        # ----------------------------------------------------
+        interview_list_html = ""
+        interview_schema_entities = []
+        for idx, item in enumerate(data.get("interview_questions", [])):
+            interview_list_html += f"""
+            <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 1.5rem;">
+                <h3 style="font-size: 1.1rem; color: var(--accent-light); margin-bottom: 1rem; line-height: 1.4; font-family: var(--font-heading);">Q{idx+1}: {item['q']}</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6; font-size: 0.98rem; margin: 0; white-space: pre-wrap;"><strong>Answer:</strong> {item['a']}</p>
+            </div>
+            """
+            interview_schema_entities.append({
+                "@type": "Question",
+                "name": item["q"],
+                "acceptedAnswer": {"@type": "Answer", "text": item["a"]}
+            })
+
+        interview_faq_html = ""
+        for faq in data.get("interview_faqs", []):
+            interview_faq_html += f"""
+            <div class="curriculum-module">
+                <div class="module-header faq-header">
+                    <h4>{faq['q']}</h4>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="faq-content module-content">
+                    <div class="module-content-inner">
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">{faq['a']}</p>
+                    </div>
+                </div>
+            </div>
+            """
+            interview_schema_entities.append({
+                "@type": "Question",
+                "name": faq["q"],
+                "acceptedAnswer": {"@type": "Answer", "text": faq["a"]}
+            })
+
+        interview_left_column = f"""
+        <h2 style="margin-bottom: 1.5rem;">Technical Interview Questions</h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">Review the top developer interview questions for {name} asked by IT hiring managers in Pune. We practice these live during mock interview sessions.</p>
+
+        <div style="margin-bottom: 3rem;">
+            {interview_list_html}
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 3rem;">
+            <h3 style="color: var(--primary-light); margin-bottom: 1rem; font-family: var(--font-heading);">1-to-1 Corporate Mock Interview Loops</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">During the final modules of the course, we schedule dedicated screensharing mock interviews. You write code live on shared editors, explaining your runtime complexity and database designs to prepare for real technical rounds.</p>
+        </div>
+
+        <div style="margin-top: 4rem;">
+            <h2 style="margin-bottom: 1.5rem;">Interview & Placement FAQs</h2>
+            <div class="course-faqs-accordion">
+                {interview_faq_html}
+            </div>
+        </div>
+        """
+
+        interview_breadcrumb = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cactslearn.github.io/index.html"},
+                {"@type": "ListItem", "position": 2, "name": name, "item": f"https://cactslearn.github.io/{slug}.html"},
+                {"@type": "ListItem", "position": 3, "name": "Interview Questions", "item": f"https://cactslearn.github.io/{base_slug}-interview-questions.html"}
+            ]
+        }
+
+        schema_markup4 = f"""
+        <script type="application/ld+json">
+        {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": interview_schema_entities}, indent=2)}
+        </script>
+        <script type="application/ld+json">
+        {json.dumps(interview_breadcrumb, indent=2)}
+        </script>
+        """
+
+        page_html4 = template
+        page_html4 = page_html4.replace("{{seo_title}}", f"Top {name} Interview Questions & Answers | CACTS Pune")
+        page_html4 = page_html4.replace("{{meta_description}}", f"Master technical programming, data, and system questions for {name} interviews. Screen-sharing answers vetted by developers.")
+        page_html4 = page_html4.replace("{{canonical}}", f"https://cactslearn.github.io/{base_slug}-interview-questions.html")
+        page_html4 = page_html4.replace("{{schema_markup}}", schema_markup4)
+        page_html4 = page_html4.replace("{{course_name}}", name)
+        page_html4 = page_html4.replace("{{course_name_encoded}}", name_encoded)
+        page_html4 = page_html4.replace("{{h1}}", f"{name} Interview Preparation")
+        page_html4 = page_html4.replace("{{h2}}", f"Technical mock interview code answers, core logic structures, and resume guides.")
+        page_html4 = page_html4.replace("{{duration}}", duration)
+        page_html4 = page_html4.replace("{{price}}", price)
+        page_html4 = page_html4.replace("{{course_reviews}}", reviews_html)
+        page_html4 = page_html4.replace("{{course_tabs}}", get_tabs_html("interview"))
+        page_html4 = page_html4.replace("{{course_left_column}}", interview_left_column)
+
+        with open(f"{base_slug}-interview-questions.html", "w", encoding="utf-8") as f:
+            f.write(page_html4)
+        generated_pages.append(f"{base_slug}-interview-questions")
+
+        # ----------------------------------------------------
+        # PAGE 5: Roadmap Page ([base_slug]-roadmap.html)
+        # ----------------------------------------------------
+        roadmap_milestones_html = ""
+        for m in data.get("roadmap_milestones", []):
+            roadmap_milestones_html += f"""
+            <div class="curriculum-module">
+                <div class="module-header" style="cursor: default;">
+                    <h4 style="color: var(--accent-light); font-family: var(--font-heading);">{m['phase']}: {m['title']}</h4>
+                    <span class="module-duration">{m['duration']}</span>
+                </div>
+                <div class="module-content active" style="max-height: none; background: rgba(6, 9, 19, 0.15);">
+                    <div class="module-content-inner">
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0.5rem;"><strong>Skills Focus:</strong> {m['skills']}</p>
+                        <p style="color: var(--text-primary); font-size: 0.95rem; margin: 0;"><strong>Milestone Project:</strong> {m['project']}</p>
+                    </div>
+                </div>
+            </div>
+            """
+
+        roadmap_faq_html = ""
+        roadmap_faq_entities = []
+        for faq in data.get("roadmap_faqs", []):
+            roadmap_faq_html += f"""
+            <div class="curriculum-module">
+                <div class="module-header faq-header">
+                    <h4>{faq['q']}</h4>
+                    <span class="accordion-icon">+</span>
+                </div>
+                <div class="faq-content module-content">
+                    <div class="module-content-inner">
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;">{faq['a']}</p>
+                    </div>
+                </div>
+            </div>
+            """
+            roadmap_faq_entities.append({
+                "@type": "Question",
+                "name": faq["q"],
+                "acceptedAnswer": {"@type": "Answer", "text": faq["a"]}
+            })
+
+        roadmap_left_column = f"""
+        <h2 style="margin-bottom: 1.5rem;">{name} Career Roadmap</h2>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">Below is the step-by-step milestone learning path from absolute beginner to production-ready software developer, including average developer salaries in Pune.</p>
+
+        <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Milestone Learning Timeline</h3>
+        <div class="curriculum-accordion" style="margin-bottom: 3rem;">
+            {roadmap_milestones_html}
+        </div>
+
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 3rem;">
+            <h3 style="color: var(--success); margin-bottom: 1rem; font-family: var(--font-heading);">Pune IT Salary & Placement Outlook</h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Pune is a major IT destination, with tech parks in Hinjewadi, Kharadi, and Baner. Full stack, Data Science, and DevOps developers who can configure environments, run Git workflows, and write clean database queries are in high demand across mid-sized companies and MNCs.</p>
+        </div>
+
+        <div style="margin-top: 4rem;">
+            <h2 style="margin-bottom: 1.5rem;">Career Path FAQs</h2>
+            <div class="course-faqs-accordion">
+                {roadmap_faq_html}
+            </div>
+        </div>
+        """
+
+        steps = []
+        for idx, m in enumerate(data.get("roadmap_milestones", [])):
+            steps.append({
+                "@type": "HowToStep",
+                "position": idx + 1,
+                "name": m["title"],
+                "text": f"Skills: {m['skills']}. Milestone Project: {m['project']}"
+            })
+        roadmap_howto = {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": f"How to become a {name} Specialist",
+            "description": f"Step-by-step career path and roadmap milestones for {name}.",
+            "step": steps
+        }
+
+        roadmap_breadcrumb = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cactslearn.github.io/index.html"},
+                {"@type": "ListItem", "position": 2, "name": name, "item": f"https://cactslearn.github.io/{slug}.html"},
+                {"@type": "ListItem", "position": 3, "name": "Career Roadmap", "item": f"https://cactslearn.github.io/{base_slug}-roadmap.html"}
+            ]
+        }
+
+        schema_markup5 = f"""
+        <script type="application/ld+json">
+        {json.dumps(roadmap_howto, indent=2)}
+        </script>
+        <script type="application/ld+json">
+        {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": roadmap_faq_entities}, indent=2)}
+        </script>
+        <script type="application/ld+json">
+        {json.dumps(roadmap_breadcrumb, indent=2)}
+        </script>
+        """
+
+        page_html5 = template
+        page_html5 = page_html5.replace("{{seo_title}}", f"{name} Career Roadmap | Step-by-Step Guide | CACTS Pune")
+        page_html5 = page_html5.replace("{{meta_description}}", f"Explore the complete learning and employment roadmap for {name}. Follow salary phases, milestones, and local Pune tech timelines.")
+        page_html5 = page_html5.replace("{{canonical}}", f"https://cactslearn.github.io/{base_slug}-roadmap.html")
+        page_html5 = page_html5.replace("{{schema_markup}}", schema_markup5)
+        page_html5 = page_html5.replace("{{course_name}}", name)
+        page_html5 = page_html5.replace("{{course_name_encoded}}", name_encoded)
+        page_html5 = page_html5.replace("{{h1}}", f"{name} Learning Roadmap")
+        page_html5 = page_html5.replace("{{h2}}", f"Phase-by-phase timeline milestones, Pune starting salaries, and job roles.")
+        page_html5 = page_html5.replace("{{duration}}", duration)
+        page_html5 = page_html5.replace("{{price}}", price)
+        page_html5 = page_html5.replace("{{course_reviews}}", reviews_html)
+        page_html5 = page_html5.replace("{{course_tabs}}", get_tabs_html("roadmap"))
+        page_html5 = page_html5.replace("{{course_left_column}}", roadmap_left_column)
+
+        with open(f"{base_slug}-roadmap.html", "w", encoding="utf-8") as f:
+            f.write(page_html5)
+        generated_pages.append(f"{base_slug}-roadmap")
 
     # 5. Generate sitemap.xml
     current_date = datetime.now().strftime("%Y-%m-%d")
@@ -484,7 +1058,6 @@ def build():
         with open(reviews_page_path, "w", encoding="utf-8") as f:
             f.write(reviews_content)
         print("Updated central reviews.html with all 33 reviews and injected LocalBusiness schema.")
-
 
 if __name__ == "__main__":
     build()
