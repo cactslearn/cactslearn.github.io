@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /assets/private/
+Disallow: /apple-app-site-association
+Disallow: /.well-known/apple-app-site-association
 
 Sitemap: https://cactslearn.github.io/sitemap.xml
