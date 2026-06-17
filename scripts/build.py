@@ -346,7 +346,7 @@ def build():
             })
 
         syllabus_left_column = f"""
-        <h2 style="margin-bottom: 1.5rem;">Detailed Training Syllabus</h2>
+        <h2 style="margin-bottom: 1.5rem;">Detailed Syllabus</h2>
         <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">Below is the comprehensive, module-by-module curriculum. As this training is strictly 1-to-1, we can adjust the syllabus scope or spend more time on specific modules based on your learning speed.</p>
 
         <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 2.5rem;">
@@ -393,7 +393,7 @@ def build():
             "@context": "https://schema.org",
             "@type": "Course",
             "name": f"{name} Syllabus",
-            "description": f"Detailed topic-by-topic training syllabus for {name} in Pune.",
+            "description": f"Detailed topic-by-topic Syllabus for {name} in Pune.",
             "provider": {
                 "@type": "Organization",
                 "name": "CACTS - Centre of Advanced Computer Training and Studies",
@@ -572,7 +572,7 @@ def build():
         page_html3 = page_html3.replace("{{schema_markup}}", schema_markup3)
         page_html3 = page_html3.replace("{{course_name}}", name)
         page_html3 = page_html3.replace("{{course_name_encoded}}", name_encoded)
-        page_html3 = page_html3.replace("{{h1}}", f"{name} Training Fees")
+        page_html3 = page_html3.replace("{{h1}}", f"{name} Course Fees")
         page_html3 = page_html3.replace("{{h2}}", f"Affordable pricing, flexible installment formats, and 1-on-1 mentor value.")
         page_html3 = page_html3.replace("{{duration}}", duration)
         page_html3 = page_html3.replace("{{price}}", price)
