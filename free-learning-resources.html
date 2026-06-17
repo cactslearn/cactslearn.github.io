@@ -67,6 +67,16 @@
             color: var(--accent);
             font-weight: bold;
         }
+        .resources-list-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        .resources-list-links a:hover {
+            color: var(--accent-light) !important;
+            transform: translateX(4px);
+        }
     </style>
 
     <script type="application/ld+json">
@@ -230,6 +240,52 @@
                        class="btn btn-primary" style="text-align: center; margin-top: 1.5rem;" target="_blank">
                         Request PDF on WhatsApp
                     </a>
+                </div>
+            </div>
+
+            <!-- New Programmatic Resource Directories -->
+            <div style="margin-top: 5rem;">
+                <h2 style="font-family: var(--font-heading); margin-bottom: 2.5rem; text-align: center;">Explore Our Technology Glossaries &amp; Project Guides</h2>
+                
+                <div class="grid-3" style="gap: 2.5rem; margin-bottom: 5rem;">
+                    <!-- Glossary Directory Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.25rem;">
+                        <h3 style="color: var(--accent-light); margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">📖 Tech Glossaries</h3>
+                        <ul class="resources-list-links" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.95rem;">
+                            <li><a href="what-is-apache-spark.html">What is Apache Spark?</a></li>
+                            <li><a href="what-is-kafka.html">What is Apache Kafka?</a></li>
+                            <li><a href="what-is-docker.html">What is Docker?</a></li>
+                            <li><a href="what-is-kubernetes.html">What is Kubernetes?</a></li>
+                            <li><a href="what-is-jenkins.html">What is Jenkins?</a></li>
+                            <li><a href="what-is-terraform.html">What is Terraform?</a></li>
+                            <li><a href="what-is-power-bi.html">What is Power BI?</a></li>
+                            <li><a href="what-is-hadoop.html">What is Hadoop?</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Project Ideas Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.25rem;">
+                        <h3 style="color: var(--primary-light); margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">📁 Project Portfolios</h3>
+                        <ul class="resources-list-links" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.95rem;">
+                            <li><a href="java-full-stack-project-ideas.html">Java Full Stack Project Ideas</a></li>
+                            <li><a href="data-science-project-ideas.html">Data Science Project Ideas</a></li>
+                            <li><a href="data-engineering-project-ideas.html">Data Engineering Project Ideas</a></li>
+                            <li><a href="devops-project-ideas.html">DevOps Project Ideas</a></li>
+                            <li><a href="cybersecurity-project-ideas.html">Cybersecurity Project Ideas</a></li>
+                            <li><a href="power-bi-dashboard-ideas.html">Power BI Dashboard Ideas</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Certifications Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.25rem;">
+                        <h3 style="color: var(--warning); margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">🏆 Certifications Guides</h3>
+                        <ul class="resources-list-links" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.95rem;">
+                            <li><a href="best-data-engineering-certifications.html">Best Data Engineering Certifications</a></li>
+                            <li><a href="best-devops-certifications.html">Best DevOps Certifications</a></li>
+                            <li><a href="best-cybersecurity-certifications.html">Best Cybersecurity Certifications</a></li>
+                            <li><a href="best-power-bi-certifications.html">Best Power BI Certifications</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 

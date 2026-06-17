@@ -14,6 +14,16 @@
         .comparison-section-item {
             margin-bottom: 5rem;
         }
+        .resources-list-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        .resources-list-links a:hover {
+            color: var(--accent-light) !important;
+            transform: translateX(4px);
+        }
     </style>
 
     <script type="application/ld+json">
@@ -211,6 +221,27 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+
+            <!-- Detailed Side-by-Side Comparison Guides -->
+            <div style="margin-top: 5rem; margin-bottom: 5rem;">
+                <h2 style="font-family: var(--font-heading); margin-bottom: 2.5rem; text-align: center;">Deep-Dive Tool &amp; Platform Comparisons</h2>
+                <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem;">
+                    <div class="grid-3" style="gap: 2rem;">
+                        <ul class="resources-list-links" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.95rem;">
+                            <li><a href="java-vs-python.html">Java vs Python Comparison</a></li>
+                            <li><a href="power-bi-vs-tableau.html">Power BI vs Tableau Comparison</a></li>
+                        </ul>
+                        <ul class="resources-list-links" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.95rem;">
+                            <li><a href="docker-vs-kubernetes.html">Docker vs Kubernetes Comparison</a></li>
+                            <li><a href="spark-vs-hadoop.html">Spark vs Hadoop Comparison</a></li>
+                        </ul>
+                        <ul class="resources-list-links" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.95rem;">
+                            <li><a href="aws-vs-azure.html">AWS vs Azure Cloud Comparison</a></li>
+                            <li><a href="jenkins-vs-github-actions.html">Jenkins vs GitHub Actions Comparison</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 

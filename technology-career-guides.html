@@ -91,6 +91,16 @@
         .guide-takeaways ul li::before {
             content: '📌 ';
         }
+        .resources-list-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        .resources-list-links a:hover {
+            color: var(--accent-light) !important;
+            transform: translateX(4px);
+        }
     </style>
 
     <script type="application/ld+json">
@@ -241,6 +251,47 @@
                        class="btn btn-primary" style="text-align: center;" target="_blank">
                         Request PDF Guide on WhatsApp
                     </a>
+                </div>
+            </div>
+
+            <!-- New Programmatic Career Resource Directories -->
+            <div style="margin-top: 5rem;">
+                <h2 style="font-family: var(--font-heading); margin-bottom: 2.5rem; text-align: center;">Explore Our Career Roles, Roadmaps, &amp; Industry Use Cases</h2>
+                
+                <div class="grid-3" style="gap: 2.5rem; margin-bottom: 5rem;">
+                    <!-- Career Roles Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.25rem;">
+                        <h3 style="color: var(--accent-light); margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">👤 Career Profiles</h3>
+                        <ul class="resources-list-links" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.95rem;">
+                            <li><a href="what-does-a-data-engineer-do.html">What Does a Data Engineer Do?</a></li>
+                            <li><a href="what-does-a-devops-engineer-do.html">What Does a DevOps Engineer Do?</a></li>
+                            <li><a href="what-does-an-ai-engineer-do.html">What Does an AI Engineer Do?</a></li>
+                            <li><a href="what-does-a-soc-analyst-do.html">What Does a SOC Analyst Do?</a></li>
+                            <li><a href="what-does-a-power-bi-developer-do.html">What Does a Power BI Developer Do?</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Learning Paths Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.25rem;">
+                        <h3 style="color: var(--primary-light); margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">🗺️ Career Roadmaps</h3>
+                        <ul class="resources-list-links" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.95rem;">
+                            <li><a href="beginner-to-data-engineer-roadmap.html">Beginner to Data Engineer</a></li>
+                            <li><a href="beginner-to-devops-engineer-roadmap.html">Beginner to DevOps Engineer</a></li>
+                            <li><a href="beginner-to-ai-engineer-roadmap.html">Beginner to AI Engineer</a></li>
+                            <li><a href="beginner-to-cybersecurity-analyst-roadmap.html">Beginner to Cybersecurity Analyst</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Industry Use Cases Card -->
+                    <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.25rem;">
+                        <h3 style="color: var(--warning); margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">🏢 Industry Use Cases</h3>
+                        <ul class="resources-list-links" style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.95rem;">
+                            <li><a href="how-data-engineering-is-used-in-e-commerce.html">Data Engineering in E-Commerce</a></li>
+                            <li><a href="how-ai-is-used-in-healthcare.html">AI in Healthcare Systems</a></li>
+                            <li><a href="how-power-bi-is-used-in-manufacturing.html">Power BI in Manufacturing</a></li>
+                            <li><a href="how-devops-is-used-in-software-companies.html">DevOps in Software Companies</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 

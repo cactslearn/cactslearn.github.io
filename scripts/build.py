@@ -12,6 +12,7 @@ if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
 from src.subpages_content import SUBPAGES_DATA
+from src.extra_pages_content import EXTRA_PAGES
 
 def build():
     # Ensure current working directory is the project root
@@ -802,6 +803,139 @@ def build():
         with open(f"{base_slug}-roadmap.html", "w", encoding="utf-8") as f:
             f.write(page_html5)
         generated_pages.append(f"{base_slug}-roadmap")
+
+    # Generate Extra Resource Pages
+    resource_template_path = os.path.join("src", "resource_template.html")
+    with open(resource_template_path, "r", encoding="utf-8") as f:
+        res_template = f.read()
+
+    for pg in EXTRA_PAGES:
+        category = pg["category"]
+        slug = pg["slug"]
+        seo_title = pg["seo_title"]
+        meta_description = pg["meta_description"]
+        h1 = pg["h1"]
+        h2 = pg["h2"]
+        related_course = pg["related_course"]
+        related_course_slug = pg["related_course_slug"]
+        key_takeaways = pg["key_takeaways"]
+        content_blocks = pg["content_blocks"]
+        faqs = pg["faqs"]
+        category_label = pg["category_label"]
+
+        if category in ["glossary", "projects", "certifications"]:
+            category_index = "free-learning-resources.html"
+        elif category == "comparison":
+            category_index = "technology-comparisons.html"
+        else:
+            category_index = "technology-career-guides.html"
+
+        key_takeaways_html = "\n".join([f"<li>{item}</li>" for item in key_takeaways])
+
+        content_html = ""
+        for block in content_blocks:
+            text_formatted = block["text"].replace("\n", "<br>")
+            content_html += f"""
+                    <div style="margin-bottom: 2rem;">
+                        <h2 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 1rem; font-family: var(--font-heading);">{block['title']}</h2>
+                        <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">{text_formatted}</p>
+                    </div>
+            """
+
+        faq_html = ""
+        faq_entities = []
+        for faq in faqs:
+            faq_html += f"""
+                    <div class="curriculum-module">
+                        <div class="module-header faq-header">
+                            <h4>{faq['q']}</h4>
+                            <span class="accordion-icon">+</span>
+                        </div>
+                        <div class="faq-content module-content">
+                            <div class="module-content-inner">
+                                <p style="color: var(--text-secondary); font-size: 0.95rem;">{faq['a']}</p>
+                            </div>
+                        </div>
+                    </div>
+            """
+            faq_entities.append({
+                "@type": "Question",
+                "name": faq["q"],
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": faq["a"]
+                }
+            })
+
+        breadcrumb_schema = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cactslearn.github.io/index.html"},
+                {"@type": "ListItem", "position": 2, "name": category_label, "item": f"https://cactslearn.github.io/{category_index}"},
+                {"@type": "ListItem", "position": 3, "name": h1, "item": f"https://cactslearn.github.io/{slug}.html"}
+            ]
+        }
+
+        faq_schema = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faq_entities
+        }
+
+        article_schema = {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": seo_title,
+            "description": meta_description,
+            "author": {
+                "@type": "Organization",
+                "name": "CACTS Pune",
+                "url": "https://cactslearn.github.io/"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://cactslearn.github.io/images/cacts-logo.png"
+                }
+            },
+            "mainEntityOfPage": f"https://cactslearn.github.io/{slug}.html"
+        }
+
+        schema_markup = f"""
+        <script type="application/ld+json">
+        {json.dumps(article_schema, indent=2)}
+        </script>
+        <script type="application/ld+json">
+        {json.dumps(faq_schema, indent=2)}
+        </script>
+        <script type="application/ld+json">
+        {json.dumps(breadcrumb_schema, indent=2)}
+        </script>
+        """
+
+        page_html = res_template
+        page_html = page_html.replace("{{seo_title}}", seo_title)
+        page_html = page_html.replace("{{meta_description}}", meta_description)
+        page_html = page_html.replace("{{canonical}}", f"https://cactslearn.github.io/{slug}.html")
+        page_html = page_html.replace("{{schema_markup}}", schema_markup)
+        page_html = page_html.replace("{{category_index}}", category_index)
+        page_html = page_html.replace("{{category_label}}", category_label)
+        page_html = page_html.replace("{{h1}}", h1)
+        page_html = page_html.replace("{{h2}}", h2)
+        page_html = page_html.replace("{{h1_encoded}}", urllib.parse.quote(h1))
+        page_html = page_html.replace("{{key_takeaways_html}}", key_takeaways_html)
+        page_html = page_html.replace("{{content_html}}", content_html)
+        page_html = page_html.replace("{{faq_html}}", faq_html)
+        page_html = page_html.replace("{{related_course}}", related_course)
+        page_html = page_html.replace("{{related_course_slug}}", related_course_slug)
+        page_html = page_html.replace("{{related_course_encoded}}", urllib.parse.quote(related_course))
+
+        with open(f"{slug}.html", "w", encoding="utf-8") as f:
+            f.write(page_html)
+        generated_pages.append(slug)
 
     # 5. Generate sitemap.xml
     current_date = datetime.now().strftime("%Y-%m-%d")
