@@ -14,6 +14,7 @@ if project_root not in sys.path:
 from src.subpages_content import SUBPAGES_DATA
 from src.extra_pages_content import EXTRA_PAGES
 from src.resource_code_snippets import CODE_SNIPPETS_DATA
+from src.course_assets import COURSE_ASSETS_DATA
 
 def build():
     # Ensure current working directory is the project root
@@ -134,6 +135,33 @@ def build():
                 html += f'<a href="{tab["url"]}" class="tab-link {active_class}">{tab["label"]}</a>\n'
             return html
 
+        # Get course implementation assets (code & schemas)
+        asset = COURSE_ASSETS_DATA.get(slug, {})
+        asset_html = ""
+        if asset:
+            import html
+            code_escaped = html.escape(asset["code"])
+            schema_escaped = html.escape(asset["schema"])
+            asset_html = f"""
+        <!-- Practical Code & Schema Implementation Assets -->
+        <div style="margin-top: 3.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; overflow: hidden;">
+            <h2 style="margin-bottom: 1rem; font-family: var(--font-heading); color: var(--accent-light);">💻 Hands-On Implementation Preview</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.98rem;">
+                Here is a concrete preview of the production-level code assets and system schemas you will design, write, and deploy during our 1-to-1 live project sessions.
+            </p>
+            
+            <h3 style="color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.1rem;">🛠️ {html.escape(asset["code_title"])}</h3>
+            <div style="margin-bottom: 2rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--border);">
+                <pre style="margin: 0; background: #060913; padding: 1.25rem; overflow-x: auto; font-family: monospace; font-size: 0.88rem; color: #a5f3fc; white-space: pre;"><code class="language-{asset["lang"]}">{code_escaped}</code></pre>
+            </div>
+            
+            <h3 style="color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.1rem;">📐 {html.escape(asset["schema_title"])}</h3>
+            <div style="border-radius: 8px; overflow: hidden; border: 1px solid var(--border); background: #060913; padding: 1.5rem; font-family: monospace; font-size: 0.88rem; color: #34d399; overflow-x: auto; line-height: 1.5; white-space: pre-wrap;">
+                <pre style="margin: 0; white-space: pre-wrap;">{schema_escaped}</pre>
+            </div>
+        </div>
+            """
+
         # ----------------------------------------------------
         # PAGE 1: Commercial Overview Page ([slug].html)
         # ----------------------------------------------------
@@ -197,6 +225,8 @@ def build():
             </ul>
             <a href="internship-on-live-projects.html" class="btn btn-secondary" style="border-color: var(--accent); color: var(--text-primary);">Learn About Our Live Project Internships &gt;</a>
         </div>
+
+        {asset_html}
 
         <!-- Course Specific FAQs -->
         <div style="margin-top: 4rem;">
@@ -644,7 +674,7 @@ def build():
         </div>
 
         <div style="margin-top: 4rem;">
-            <h2 style="margin-bottom: 1.5rem;">Interview & Placement FAQs</h2>
+            <h2 style="margin-bottom: 1.5rem;">Interview & Career FAQs</h2>
             <div class="course-faqs-accordion">
                 {interview_faq_html}
             </div>
@@ -741,7 +771,7 @@ def build():
         </div>
 
         <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 3rem;">
-            <h3 style="color: var(--success); margin-bottom: 1rem; font-family: var(--font-heading);">Pune IT Salary & Placement Outlook</h3>
+            <h3 style="color: var(--success); margin-bottom: 1rem; font-family: var(--font-heading);">Pune IT Salary & Career Outlook</h3>
             <p style="color: var(--text-secondary); line-height: 1.6; margin: 0;">Pune is a major IT destination, with tech parks in Hinjewadi, Kharadi, and Baner. Full stack, Data Science, and DevOps developers who can configure environments, run Git workflows, and write clean database queries are in high demand across mid-sized companies and MNCs.</p>
         </div>
 

@@ -301,7 +301,7 @@ EXTRA_PAGES = [
                 "text": "Java is a statically typed language, meaning variable types must be declared explicitly at compilation time. This results in highly structured, compile-safe code that prevents runtime errors in large enterprise codebases. Python is dynamically typed and interpreted, emphasizing clean readability and rapid prototyping with less boilerplate code."
             },
             {
-                "title": "Hiring Scope and Market Placement",
+                "title": "Hiring Scope and Market Position",
                 "text": "Java remains the absolute leader for backend development in large MNCs, banking systems, and financial architectures (using Spring Boot). Python is the undisputed leader for Data Science, Machine Learning, and Big Data analytics (using Pandas and TensorFlow). Your choice should depend on whether you want to build enterprise apps or analyze data."
             },
             {

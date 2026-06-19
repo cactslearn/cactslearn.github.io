@@ -202,7 +202,7 @@ SUBPAGES_DATA = {
         },
         "fees_faqs": [
             {"q": "Are there extra costs for running Hadoop or Spark labs?", "a": "No. We show you how to configure single-node clusters locally on your laptop and utilize free cloud platforms so there are no extra laboratory fees."},
-            {"q": "Do you offer placement support for Data Engineers?", "a": "Yes. We share your GitHub repository pipelines and verified internship certificates directly with local IT companies in Hinjewadi and Kharadi."}
+            {"q": "Do you offer job placement services for Data Engineers?", "a": "No. We do not provide job placement guarantees or placement services. However, we guide you to build a public GitHub portfolio of your internship pipelines, which you can share directly with recruiters."}
         ],
         "interview_questions": [
             {"q": "Explain the difference between OLTP and OLAP systems.", "a": "OLTP (Online Transaction Processing) systems are optimized for transactional, rapid write/read operations, usually highly normalized (e.g. operational databases). OLAP (Online Analytical Processing) systems are optimized for complex, aggregate queries, usually denormalized using star or snowflake schemas (e.g. data warehouses)."},
