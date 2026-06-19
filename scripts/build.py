@@ -176,17 +176,17 @@ def build():
             <div class="grid-2" style="gap: 1.5rem; align-items: start;">
                 <div>
                     <h4 style="color: var(--warning); font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                        ⚠️ Typical Market Courses</h4>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--warning); flex-shrink: 0;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>Typical Market Courses</h4>
                     <ul style="color: var(--text-secondary); font-size: 0.9rem; list-style-type: none; display: flex; flex-direction: column; gap: 0.4rem; padding-left: 0;">
-                        <li>❌ 30-50 student batches</li>
-                        <li>❌ Passive recorded lecture video playback</li>
-                        <li>❌ Hardcoded, outdated mock sandbox templates</li>
-                        <li>❌ No direct code feedback from developers</li>
+                        <li style="display: flex; align-items: center; gap: 0.35rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--warning); flex-shrink: 0; display: inline-block; vertical-align: middle;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> 30-50 student batches</li>
+                        <li style="display: flex; align-items: center; gap: 0.35rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--warning); flex-shrink: 0; display: inline-block; vertical-align: middle;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Passive recorded lecture video playback</li>
+                        <li style="display: flex; align-items: center; gap: 0.35rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--warning); flex-shrink: 0; display: inline-block; vertical-align: middle;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Hardcoded, outdated mock sandbox templates</li>
+                        <li style="display: flex; align-items: center; gap: 0.35rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--warning); flex-shrink: 0; display: inline-block; vertical-align: middle;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> No direct code feedback from developers</li>
                     </ul>
                 </div>
                 <div>
                     <h4 style="color: var(--success); font-size: 0.95rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                        ✅ CACTS 1-to-1 Training</h4>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--success); flex-shrink: 0;"><polyline points="20 6 9 17 4 12"></polyline></svg>CACTS 1-to-1 Training</h4>
                     <ul style="color: var(--text-secondary); font-size: 0.9rem; list-style-type: none; display: flex; flex-direction: column; gap: 0.4rem; padding-left: 0;">
                         <li>✓ Strictly individual 1-to-1 virtual attention</li>
                         <li>✓ Fully active dynamic pacing based on your grasp</li>
