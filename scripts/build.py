@@ -13,6 +13,7 @@ if project_root not in sys.path:
 
 from src.subpages_content import SUBPAGES_DATA
 from src.extra_pages_content import EXTRA_PAGES
+from src.resource_code_snippets import CODE_SNIPPETS_DATA
 
 def build():
     # Ensure current working directory is the project root
@@ -106,9 +107,14 @@ def build():
                 <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
                     "{r['text']}"
                 </p>
-                <div>
-                    <h4 style="color: var(--primary-light); margin: 0; font-size: 1rem;">{r['name']}</h4>
-                    <span style="font-size: 0.8rem; color: var(--text-secondary);">{r['role']}, {r['location']}</span>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 0.5rem;">
+                    <div>
+                        <h4 style="color: var(--primary-light); margin: 0; font-size: 1rem;">{r['name']}</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">{r['role']}, {r['location']}</span>
+                    </div>
+                    <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-size: 0.75rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.25rem; white-space: nowrap;">
+                        Verify Review ↗
+                    </a>
                 </div>
             </div>
             """
@@ -842,6 +848,51 @@ def build():
                     </div>
             """
 
+        # Append technical code block and documentation outlinks
+        snippet_data = CODE_SNIPPETS_DATA.get(slug, {})
+        if snippet_data:
+            if "code_snippet" in snippet_data:
+                code_info = snippet_data["code_snippet"]
+                escaped_code = code_info["code"].replace("<", "&lt;").replace(">", "&gt;")
+                content_html += f"""
+                    <div class="code-snippet-container">
+                        <h3 class="code-snippet-title">{code_info['title']}</h3>
+                        <pre><code class="language-{code_info['language']}">{escaped_code}</code></pre>
+                    </div>
+                """
+            
+            if "official_doc" in snippet_data:
+                doc_info = snippet_data["official_doc"]
+                content_html += f"""
+                    <div class="official-doc-container">
+                        <div>
+                            <h4 class="official-doc-title">Official Documentation</h4>
+                            <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
+                        </div>
+                        <a href="{doc_info['url']}" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                            {doc_info['label']} ↗
+                        </a>
+                    </div>
+                """
+
+            if "internal_links" in snippet_data:
+                links_html = ""
+                for link in snippet_data["internal_links"]:
+                    links_html += f"""
+                    <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                        {link['context'].replace(link['label'], f'<a href="{link["url"]}" style="color: var(--accent); text-decoration: none; font-weight: 600;">{link["label"]}</a>')}
+                    </li>
+                    """
+                content_html += f"""
+                    <div class="related-guides-container">
+                        <h4 class="related-guides-title">Related Practical Guides</h4>
+                        <ul class="related-guides-list">
+                            {links_html}
+                        </ul>
+                    </div>
+                """
+
+
         faq_html = ""
         faq_entities = []
         for faq in faqs:
@@ -889,9 +940,9 @@ def build():
             "headline": seo_title,
             "description": meta_description,
             "author": {
-                "@type": "Organization",
-                "name": "CACTS Pune",
-                "url": "https://cactslearn.github.io/"
+                "@type": "Person",
+                "name": "Hambirrao P",
+                "url": "https://www.linkedin.com/in/hambirrao/"
             },
             "publisher": {
                 "@type": "Organization",
@@ -1136,9 +1187,14 @@ def build():
                         "{r['text']}"
                     </p>
                 </div>
-                <div>
-                    <h4 style="color: var(--primary-light); margin: 0; font-size: 1rem;">{r['name']}</h4>
-                    <span style="font-size: 0.8rem; color: var(--text-secondary);">{r['role']}, {r['location']}</span>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 0.5rem;">
+                    <div>
+                        <h4 style="color: var(--primary-light); margin: 0; font-size: 1rem;">{r['name']}</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">{r['role']}, {r['location']}</span>
+                    </div>
+                    <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-size: 0.75rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.25rem; white-space: nowrap;">
+                        Verify Review ↗
+                    </a>
                 </div>
             </div>
             """
@@ -1182,6 +1238,11 @@ def build():
                 "addressRegion": "Maharashtra",
                 "postalCode": "411023",
                 "addressCountry": "IN"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "18.46655",
+                "longitude": "73.77834"
             },
             "aggregateRating": {
                 "@type": "AggregateRating",

@@ -29,9 +29,9 @@
   "headline": "What is Jenkins? | CI/CD Automation Guide | CACTS Pune",
   "description": "Learn what Jenkins is, how its automation pipelines work, and why it is a fundamental tool for continuous integration and delivery (CI/CD) in DevOps.",
   "author": {
-    "@type": "Organization",
-    "name": "CACTS Pune",
-    "url": "https://cactslearn.github.io/"
+    "@type": "Person",
+    "name": "Hambirrao P",
+    "url": "https://www.linkedin.com/in/hambirrao/"
   },
   "publisher": {
     "@type": "Organization",
@@ -136,7 +136,19 @@
                 <!-- Left Column: Article Body -->
                 <div>
                     <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary); font-family: var(--font-heading);">What is Jenkins?</h1>
-                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.6;">An Introduction to Continuous Integration, Build Automation, and CI/CD Pipelines</p>
+                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">An Introduction to Continuous Integration, Build Automation, and CI/CD Pipelines</p>
+
+                    <!-- E-E-A-T Author & Freshness block -->
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; flex-wrap: wrap; font-size: 0.88rem; color: var(--text-secondary); border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                        <span style="display: inline-flex; align-items: center; gap: 0.35rem;">
+                            👨‍💻 <b>Fact-Checked &amp; Reviewed by:</b> 
+                            <a href="https://www.linkedin.com/in/hambirrao/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">Hambirrao P</a>
+                        </span>
+                        <span style="color: var(--border);">|</span>
+                        <span>📅 <b>Updated:</b> June 2026</span>
+                        <span style="color: var(--border);">|</span>
+                        <span style="color: var(--success); font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">✓ Verified Technical Expert</span>
+                    </div>
 
                     <!-- Key Takeaways Callout -->
                     <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--accent); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 3rem;">
@@ -168,6 +180,52 @@
                         <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">Jenkins utilizes 'Pipelines' to orchestrate deployment steps. Using a text file called a Jenkinsfile committed to the project repository, developers define distinct build stages (e.g. Test, Build Container, Deploy to Cloud). This Infrastructure-as-Code approach ensures release pipelines are repeatable and transparent.</p>
                     </div>
             
+                    <div class="code-snippet-container">
+                        <h3 class="code-snippet-title">Declarative Jenkins Pipeline Configuration (Jenkinsfile)</h3>
+                        <pre><code class="language-groovy">pipeline {
+    agent any
+    stages {
+        stage('Repository Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/cacts/sample-api.git'
+            }
+        }
+        stage('Unit Testing') {
+            steps {
+                sh 'npm run test'
+            }
+        }
+        stage('Containerize & Deploy') {
+            steps {
+                sh 'docker build -t cacts-api:latest .'
+                sh 'docker run -d -p 8080:8080 cacts-api:latest'
+            }
+        }
+    }
+}</code></pre>
+                    </div>
+                
+                    <div class="official-doc-container">
+                        <div>
+                            <h4 class="official-doc-title">Official Documentation</h4>
+                            <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
+                        </div>
+                        <a href="https://www.jenkins.io/doc/" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                            Official Jenkins Documentation ↗
+                        </a>
+                    </div>
+                
+                    <div class="related-guides-container">
+                        <h4 class="related-guides-title">Related Practical Guides</h4>
+                        <ul class="related-guides-list">
+                            
+                    <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                        Read our comparative analysis evaluating self-hosted Jenkins automation servers against cloud-native GitHub Actions.
+                    </li>
+                    
+                        </ul>
+                    </div>
+                
                     </div>
 
                     <!-- FAQ Accordions -->

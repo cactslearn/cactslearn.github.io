@@ -36,8 +36,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "18.4666",
-        "longitude": "73.7783"
+        "latitude": "18.46655",
+        "longitude": "73.77834"
       },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
@@ -682,21 +682,7 @@
     <div class="floating-ctas"></div>
 
     <script src="js/main.js"></script>
-    <script>
-        document.getElementById('pune-lead-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const exp = document.getElementById('experience').value;
-
-            const message = `Hi CACTS, I'm visiting the Software Training Warje page and want to schedule a demo.\n\n` +
-                            `• Name: ${name}\n` +
-                            `• WhatsApp: ${phone}\n` +
-                            `• Target Experience: ${exp}`;
-
-            window.open(`https://wa.me/919665566357?text=${encodeURIComponent(message)}`, '_blank');
-        });
-    </script>
+    
 </body>
 
 </html>

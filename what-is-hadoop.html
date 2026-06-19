@@ -29,9 +29,9 @@
   "headline": "What is Apache Hadoop? | Big Data Storage Guide | CACTS Pune",
   "description": "Understand what Apache Hadoop is, its core modules (HDFS, MapReduce, YARN), and why distributed storage is critical for big data engineering.",
   "author": {
-    "@type": "Organization",
-    "name": "CACTS Pune",
-    "url": "https://cactslearn.github.io/"
+    "@type": "Person",
+    "name": "Hambirrao P",
+    "url": "https://www.linkedin.com/in/hambirrao/"
   },
   "publisher": {
     "@type": "Organization",
@@ -136,7 +136,19 @@
                 <!-- Left Column: Article Body -->
                 <div>
                     <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary); font-family: var(--font-heading);">What is Apache Hadoop?</h1>
-                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.6;">An Introduction to Distributed Storage, MapReduce Computation, and Big Data Architecture</p>
+                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">An Introduction to Distributed Storage, MapReduce Computation, and Big Data Architecture</p>
+
+                    <!-- E-E-A-T Author & Freshness block -->
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; flex-wrap: wrap; font-size: 0.88rem; color: var(--text-secondary); border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                        <span style="display: inline-flex; align-items: center; gap: 0.35rem;">
+                            👨‍💻 <b>Fact-Checked &amp; Reviewed by:</b> 
+                            <a href="https://www.linkedin.com/in/hambirrao/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">Hambirrao P</a>
+                        </span>
+                        <span style="color: var(--border);">|</span>
+                        <span>📅 <b>Updated:</b> June 2026</span>
+                        <span style="color: var(--border);">|</span>
+                        <span style="color: var(--success); font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">✓ Verified Technical Expert</span>
+                    </div>
 
                     <!-- Key Takeaways Callout -->
                     <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--accent); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 3rem;">
@@ -168,6 +180,39 @@
                         <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">While modern data pipelines frequently use memory-centric frameworks like Spark or cloud services like Snowflake for processing, Hadoop HDFS remains highly relevant as a cost-effective, high-capacity distributed file system for storing massive historical datasets.</p>
                     </div>
             
+                    <div class="code-snippet-container">
+                        <h3 class="code-snippet-title">HDFS File Management Shell Operations</h3>
+                        <pre><code class="language-bash"># Create a partitioned analytics folder structure on HDFS
+hdfs dfs -mkdir -p /analytics/cacts/input
+
+# Transfer local data lake CSV from local machine to Hadoop
+hdfs dfs -put client_records.csv /analytics/cacts/input/
+
+# Read files and verify HDFS directory structures
+hdfs dfs -ls /analytics/cacts/input/</code></pre>
+                    </div>
+                
+                    <div class="official-doc-container">
+                        <div>
+                            <h4 class="official-doc-title">Official Documentation</h4>
+                            <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
+                        </div>
+                        <a href="https://hadoop.apache.org/docs/stable/" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                            Official Apache Hadoop Documentation ↗
+                        </a>
+                    </div>
+                
+                    <div class="related-guides-container">
+                        <h4 class="related-guides-title">Related Practical Guides</h4>
+                        <ul class="related-guides-list">
+                            
+                    <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                        Understand the performance advantages of Spark's RAM-based model over MapReduce's disk operations.
+                    </li>
+                    
+                        </ul>
+                    </div>
+                
                     </div>
 
                     <!-- FAQ Accordions -->

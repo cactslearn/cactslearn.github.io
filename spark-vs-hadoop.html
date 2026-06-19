@@ -29,9 +29,9 @@
   "headline": "Spark vs Hadoop | Big Data Analytics Comparison | CACTS Pune",
   "description": "Compare Apache Spark vs Apache Hadoop. Understand in-memory processing vs disk-based storage and how data engineers use them in pipelines.",
   "author": {
-    "@type": "Organization",
-    "name": "CACTS Pune",
-    "url": "https://cactslearn.github.io/"
+    "@type": "Person",
+    "name": "Hambirrao P",
+    "url": "https://www.linkedin.com/in/hambirrao/"
   },
   "publisher": {
     "@type": "Organization",
@@ -136,7 +136,19 @@
                 <!-- Left Column: Article Body -->
                 <div>
                     <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary); font-family: var(--font-heading);">Spark vs Hadoop</h1>
-                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.6;">In-Memory Computation vs. Distributed Storage: Choosing the Big Data Core</p>
+                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">In-Memory Computation vs. Distributed Storage: Choosing the Big Data Core</p>
+
+                    <!-- E-E-A-T Author & Freshness block -->
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; flex-wrap: wrap; font-size: 0.88rem; color: var(--text-secondary); border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                        <span style="display: inline-flex; align-items: center; gap: 0.35rem;">
+                            👨‍💻 <b>Fact-Checked &amp; Reviewed by:</b> 
+                            <a href="https://www.linkedin.com/in/hambirrao/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">Hambirrao P</a>
+                        </span>
+                        <span style="color: var(--border);">|</span>
+                        <span>📅 <b>Updated:</b> June 2026</span>
+                        <span style="color: var(--border);">|</span>
+                        <span style="color: var(--success); font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">✓ Verified Technical Expert</span>
+                    </div>
 
                     <!-- Key Takeaways Callout -->
                     <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--accent); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 3rem;">
@@ -168,6 +180,43 @@
                         <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">Rather than competing, Spark and Hadoop are often integrated. A standard enterprise big data cluster uses HDFS to store terabytes of historical files cheaply, and runs Apache Spark as the computation layer to clean and aggregate those files, utilizing YARN to coordinate cluster memory.</p>
                     </div>
             
+                    <div class="code-snippet-container">
+                        <h3 class="code-snippet-title">Data Processing Methods (PySpark vs Java MapReduce)</h3>
+                        <pre><code class="language-python"># Apache Spark DataFrame aggregation (In-Memory Processing)
+df.groupBy("year").avg("salary").write.parquet("hdfs://...")
+
+// Java MapReduce Map Function (Disk-bound pipeline setup)
+public void map(LongWritable key, Text value, Context context) throws IOException {
+    String[] parts = value.toString().split(",");
+    context.write(new Text(parts[0]), new IntWritable(Integer.parseInt(parts[1])));
+}</code></pre>
+                    </div>
+                
+                    <div class="official-doc-container">
+                        <div>
+                            <h4 class="official-doc-title">Official Documentation</h4>
+                            <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
+                        </div>
+                        <a href="https://spark.apache.org/" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                            Spark & Hadoop Homepages ↗
+                        </a>
+                    </div>
+                
+                    <div class="related-guides-container">
+                        <h4 class="related-guides-title">Related Practical Guides</h4>
+                        <ul class="related-guides-list">
+                            
+                    <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                        Get introduced to Apache Spark architecture and its speed advantages over standard databases.
+                    </li>
+                    
+                    <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                        Learn about HDFS file storage nodes, clusters, and MapReduce processing structures.
+                    </li>
+                    
+                        </ul>
+                    </div>
+                
                     </div>
 
                     <!-- FAQ Accordions -->

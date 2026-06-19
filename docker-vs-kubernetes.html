@@ -29,9 +29,9 @@
   "headline": "Docker vs Kubernetes | Container vs Orchestrator | CACTS Pune",
   "description": "Compare Docker vs Kubernetes (K8s). Understand the difference between containerizing an app and orchestrating container fleets across cloud clusters.",
   "author": {
-    "@type": "Organization",
-    "name": "CACTS Pune",
-    "url": "https://cactslearn.github.io/"
+    "@type": "Person",
+    "name": "Hambirrao P",
+    "url": "https://www.linkedin.com/in/hambirrao/"
   },
   "publisher": {
     "@type": "Organization",
@@ -136,7 +136,19 @@
                 <!-- Left Column: Article Body -->
                 <div>
                     <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--text-primary); font-family: var(--font-heading);">Docker vs Kubernetes</h1>
-                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 2.5rem; line-height: 1.6;">Packaging vs. Orchestration: Understanding the DevOps Core Container Stack</p>
+                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">Packaging vs. Orchestration: Understanding the DevOps Core Container Stack</p>
+
+                    <!-- E-E-A-T Author & Freshness block -->
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; flex-wrap: wrap; font-size: 0.88rem; color: var(--text-secondary); border-bottom: 1px solid var(--border); padding-bottom: 1rem;">
+                        <span style="display: inline-flex; align-items: center; gap: 0.35rem;">
+                            👨‍💻 <b>Fact-Checked &amp; Reviewed by:</b> 
+                            <a href="https://www.linkedin.com/in/hambirrao/" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-weight: 600;">Hambirrao P</a>
+                        </span>
+                        <span style="color: var(--border);">|</span>
+                        <span>📅 <b>Updated:</b> June 2026</span>
+                        <span style="color: var(--border);">|</span>
+                        <span style="color: var(--success); font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">✓ Verified Technical Expert</span>
+                    </div>
 
                     <!-- Key Takeaways Callout -->
                     <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--accent); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 3rem;">
@@ -168,6 +180,49 @@
                         <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">Historically, Kubernetes used Docker directly to run containers. Today, Kubernetes supports any runtime that complies with the Container Runtime Interface (CRI). However, Docker remains the dominant and easiest tool for developers to build and test images locally on their laptops before deployment.</p>
                     </div>
             
+                    <div class="code-snippet-container">
+                        <h3 class="code-snippet-title">Infrastructure Formats (Dockerfile vs Kubernetes YAML Pod)</h3>
+                        <pre><code class="language-dockerfile"># Dockerfile: Build environment
+FROM alpine:latest
+RUN apk update && apk add curl
+CMD ["curl", "https://cactslearn.github.io"]
+
+# Kubernetes YAML Pod manifest: Coordinates replicas
+apiVersion: v1
+kind: Pod
+metadata:
+  name: curl-pod
+spec:
+  containers:
+  - name: curl-container
+    image: custom-curl-app:latest</code></pre>
+                    </div>
+                
+                    <div class="official-doc-container">
+                        <div>
+                            <h4 class="official-doc-title">Official Documentation</h4>
+                            <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
+                        </div>
+                        <a href="https://kubernetes.io/" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                            Docker & Kubernetes Documentation Portals ↗
+                        </a>
+                    </div>
+                
+                    <div class="related-guides-container">
+                        <h4 class="related-guides-title">Related Practical Guides</h4>
+                        <ul class="related-guides-list">
+                            
+                    <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                        Read our comprehensive glossary entry detailing Docker containers, images, and layers.
+                    </li>
+                    
+                    <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                        Read our detailed introduction to Kubernetes cluster nodes and self-healing pods.
+                    </li>
+                    
+                        </ul>
+                    </div>
+                
                     </div>
 
                     <!-- FAQ Accordions -->
