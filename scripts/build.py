@@ -145,17 +145,17 @@ def build():
             asset_html = f"""
         <!-- Practical Code & Schema Implementation Assets -->
         <div style="margin-top: 3.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; overflow: hidden;">
-            <h2 style="margin-bottom: 1rem; font-family: var(--font-heading); color: var(--accent-light);">💻 Hands-On Implementation Preview</h2>
+            <h2 style="margin-bottom: 1rem; font-family: var(--font-heading); color: var(--accent-light); display: inline-flex; align-items: center; gap: 0.5rem;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line><line x1="12" y1="17" x2="12" y2="20"></line></svg>Hands-On Implementation Preview</h2>
             <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 0.98rem;">
                 Here is a concrete preview of the production-level code assets and system schemas you will design, write, and deploy during our 1-to-1 live project sessions.
             </p>
             
-            <h3 style="color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.1rem;">🛠️ {html.escape(asset["code_title"])}</h3>
+            <h3 style="color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 0.5rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>{html.escape(asset["code_title"])}</h3>
             <div style="margin-bottom: 2rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--border);">
                 <pre style="margin: 0; background: #060913; padding: 1.25rem; overflow-x: auto; font-family: monospace; font-size: 0.88rem; color: #a5f3fc; white-space: pre;"><code class="language-{asset["lang"]}">{code_escaped}</code></pre>
             </div>
             
-            <h3 style="color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.1rem;">📐 {html.escape(asset["schema_title"])}</h3>
+            <h3 style="color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 0.5rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>{html.escape(asset["schema_title"])}</h3>
             <div style="border-radius: 8px; overflow: hidden; border: 1px solid var(--border); background: #060913; padding: 1.5rem; font-family: monospace; font-size: 0.88rem; color: #34d399; overflow-x: auto; line-height: 1.5; white-space: pre-wrap;">
                 <pre style="margin: 0; white-space: pre-wrap;">{schema_escaped}</pre>
             </div>
@@ -213,7 +213,7 @@ def build():
         <!-- Live Company Project Block -->
         <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--accent); border-radius: var(--border-radius); padding: 2.5rem; margin-top: 3rem; margin-bottom: 3rem;">
             <h3 style="color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
-                🏢 Live Project Internship Integration
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="16"></line><line x1="15" y1="22" x2="15" y2="16"></line><line x1="9" y1="16" x2="15" y2="16"></line><path d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm6-8h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"></path></svg>Live Project Internship Integration
             </h3>
             <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 1.25rem;">
                 Unlike institutes that assign mock projects or simple copy-paste tasks, CACTS bridges the learning gap by placing you on real company software development environments. You will coordinate with active developers, write production code, submit code reviews, and deploy test cases.
@@ -397,7 +397,7 @@ def build():
         </div>
 
         <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 3rem;">
-            <h3 style="color: var(--accent-light); margin-bottom: 1.25rem; font-family: var(--font-heading);">🛠️ Tools & Technologies Mastered</h3>
+            <h3 style="color: var(--accent-light); margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>Tools & Technologies Mastered</h3>
             <div class="skills-grid" style="margin-bottom: 1.5rem;">
                 {syllabus_tools_html}
             </div>
@@ -405,7 +405,7 @@ def build():
         </div>
 
         <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; margin-bottom: 3rem;">
-            <h3 style="color: var(--primary-light); margin-bottom: 1.25rem; font-family: var(--font-heading);">📁 Hands-on Lab Assignments & Projects</h3>
+            <h3 style="color: var(--primary-light); margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>Hands-on Lab Assignments & Projects</h3>
             <ul style="color: var(--text-secondary); margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
                 {syllabus_projects_html}
             </ul>
