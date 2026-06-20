@@ -509,6 +509,8 @@ def build():
         page_html2 = page_html2.replace("{{course_reviews}}", reviews_html)
         page_html2 = page_html2.replace("{{course_tabs}}", get_tabs_html("syllabus"))
         page_html2 = page_html2.replace("{{course_left_column}}", syllabus_left_column)
+        page_html2 = page_html2.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
+        page_html2 = page_html2.replace('Request Free Trial Demo', 'Schedule Syllabus Consultation')
 
         with open(f"{base_slug}-syllabus.html", "w", encoding="utf-8") as f:
             f.write(page_html2)
@@ -650,6 +652,8 @@ def build():
         page_html3 = page_html3.replace("{{course_reviews}}", reviews_html)
         page_html3 = page_html3.replace("{{course_tabs}}", get_tabs_html("fees"))
         page_html3 = page_html3.replace("{{course_left_column}}", fees_left_column)
+        page_html3 = page_html3.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
+        page_html3 = page_html3.replace('Request Free Trial Demo', 'Inquire About Installments')
 
         with open(f"{base_slug}-course-fees.html", "w", encoding="utf-8") as f:
             f.write(page_html3)
@@ -748,6 +752,8 @@ def build():
         page_html4 = page_html4.replace("{{course_reviews}}", reviews_html)
         page_html4 = page_html4.replace("{{course_tabs}}", get_tabs_html("interview"))
         page_html4 = page_html4.replace("{{course_left_column}}", interview_left_column)
+        page_html4 = page_html4.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
+        page_html4 = page_html4.replace('Request Free Trial Demo', 'Book 1-to-1 Demo Slot')
 
         with open(f"{base_slug}-interview-questions.html", "w", encoding="utf-8") as f:
             f.write(page_html4)
@@ -869,6 +875,8 @@ def build():
         page_html5 = page_html5.replace("{{course_reviews}}", reviews_html)
         page_html5 = page_html5.replace("{{course_tabs}}", get_tabs_html("roadmap"))
         page_html5 = page_html5.replace("{{course_left_column}}", roadmap_left_column)
+        page_html5 = page_html5.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
+        page_html5 = page_html5.replace('Request Free Trial Demo', 'Schedule Career Guidance')
 
         with open(f"{base_slug}-roadmap.html", "w", encoding="utf-8") as f:
             f.write(page_html5)
@@ -1006,7 +1014,10 @@ def build():
             "author": {
                 "@type": "Person",
                 "name": "Hambirrao P",
-                "url": "https://www.linkedin.com/in/hambirrao/"
+                "url": "https://cactslearn.github.io/about.html#hambirrao",
+                "sameAs": [
+                    "https://www.linkedin.com/in/hambirrao/"
+                ]
             },
             "publisher": {
                 "@type": "Organization",

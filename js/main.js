@@ -92,6 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Pre-select course option in contact form from URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseParam = urlParams.get('course');
+    if (courseParam) {
+        const courseSelect = document.getElementById('course_choice');
+        if (courseSelect) {
+            const decodedCourse = decodeURIComponent(courseParam).toLowerCase();
+            for (let i = 0; i < courseSelect.options.length; i++) {
+                const option = courseSelect.options[i];
+                if (option.value.toLowerCase() === decodedCourse || option.text.toLowerCase().includes(decodedCourse)) {
+                    option.selected = true;
+                    break;
+                }
+            }
+        }
+    }
+
     // 5. Contact Lead Form submission handling
     const leadForms = document.querySelectorAll('.lead-form, #inquiry-form');
     leadForms.forEach(form => {
