@@ -2,28 +2,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Theme Switcher Logic
     const body = document.body;
     const themeToggle = document.getElementById('theme-toggle');
+    const sunIcon = themeToggle ? themeToggle.querySelector('.sun-icon') : null;
+    const moonIcon = themeToggle ? themeToggle.querySelector('.moon-icon') : null;
     
     // Check saved theme or default to dark
     const savedTheme = localStorage.getItem('cacts-theme') || 'dark';
     if (savedTheme === 'light') {
         body.classList.add('light-theme');
-        if (themeToggle) themeToggle.textContent = '🌙'; // Moon to switch to dark
+        if (sunIcon) sunIcon.style.display = 'none';
+        if (moonIcon) moonIcon.style.display = 'block';
     } else {
         body.classList.remove('light-theme');
-        if (themeToggle) themeToggle.textContent = '☀️'; // Sun to switch to light
+        if (sunIcon) sunIcon.style.display = 'block';
+        if (moonIcon) moonIcon.style.display = 'none';
     }
 
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
             const isLight = body.classList.contains('light-theme');
+            const sun = themeToggle.querySelector('.sun-icon');
+            const moon = themeToggle.querySelector('.moon-icon');
             if (isLight) {
                 body.classList.remove('light-theme');
                 localStorage.setItem('cacts-theme', 'dark');
-                themeToggle.textContent = '☀️';
+                if (sun) sun.style.display = 'block';
+                if (moon) moon.style.display = 'none';
             } else {
                 body.classList.add('light-theme');
                 localStorage.setItem('cacts-theme', 'light');
-                themeToggle.textContent = '🌙';
+                if (sun) sun.style.display = 'none';
+                if (moon) moon.style.display = 'block';
             }
         });
     }
@@ -175,8 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             Submit via SMS Text
                         </a>
                     </div>
-                    <p style="color: var(--warning); font-size: 0.82rem; margin-top: 1.25rem; border-top: 1px solid var(--border); padding-top: 1rem; line-height: 1.4;">
-                        ⚠️ Pop-up blocked? If the WhatsApp window did not open automatically, please click the "Submit via WhatsApp" button above to finalize your inquiry.
+                    <p style="color: var(--warning); font-size: 0.82rem; margin-top: 1.25rem; border-top: 1px solid var(--border); padding-top: 1rem; line-height: 1.4; display: flex; align-items: flex-start; gap: 0.35rem;">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--warning); flex-shrink: 0; margin-top: 0.15rem;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                        <span>Pop-up blocked? If the WhatsApp window did not open automatically, please click the "Submit via WhatsApp" button above to finalize your inquiry.</span>
                     </p>
                 </div>
             `;
