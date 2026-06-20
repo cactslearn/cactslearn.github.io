@@ -162,6 +162,38 @@ def build():
         </div>
             """
 
+        # Collect related resources from EXTRA_PAGES
+        related_resources = []
+        for pg in EXTRA_PAGES:
+            if pg.get("related_course_slug") == slug:
+                related_resources.append(pg)
+
+        resources_html = ""
+        if related_resources:
+            resources_li = ""
+            for res in related_resources:
+                res_url = f"{res['slug']}.html"
+                resources_li += f"""
+                <li style="margin-bottom: 0.75rem;">
+                    <a href="{res_url}" style="color: var(--accent); text-decoration: none; font-weight: 600;">{res['h1']}</a> 
+                    <span style="color: var(--text-secondary); font-size: 0.9rem;">— {res['h2']}</span>
+                </li>
+                """
+            resources_html = f"""
+        <!-- Related Technical & Career Resources -->
+        <div style="margin-top: 3.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem; margin-bottom: 3rem;">
+            <h3 style="margin-bottom: 1rem; font-family: var(--font-heading); color: var(--text-primary); display: inline-flex; align-items: center; gap: 0.5rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>Related Career &amp; Technical Resource Guides
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">
+                Explore our developer-vetted glossary definitions, industry comparison analyses, and career roadmap guides for {name}.
+            </p>
+            <ul style="list-style-type: none; padding-left: 0; display: flex; flex-direction: column; gap: 0.5rem; margin: 0;">
+                {resources_li}
+            </ul>
+        </div>
+            """
+
         # ----------------------------------------------------
         # PAGE 1: Commercial Overview Page ([slug].html)
         # ----------------------------------------------------
@@ -225,6 +257,8 @@ def build():
             </ul>
             <a href="internship-on-live-projects.html" class="btn btn-secondary" style="border-color: var(--accent); color: var(--text-primary);">Learn About Our Live Project Internships &gt;</a>
         </div>
+
+        {resources_html}
 
         {asset_html}
 

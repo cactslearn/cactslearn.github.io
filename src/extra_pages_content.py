@@ -897,6 +897,10 @@ EXTRA_PAGES = [
             {
                 "title": "Step 3: Distributed Big Data and Cloud Lakes",
                 "text": "For the final phase, transition to big data. Learn PySpark to write parallel data processes that scale across cluster servers. Master distributed storage concepts like Hadoop HDFS and Hive. Finish by deploying your data warehouse pipelines to AWS or Azure."
+            },
+            {
+                "title": "Data Pipeline & Infrastructure Architecture Flowchart",
+                "text": "<span style=\"display: block; font-family: monospace; white-space: pre; background: #060913; border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; color: var(--accent-light); line-height: 1.5; margin: 1rem 0; overflow-x: auto;\">[JSON API / CSV Sources]<br>         │<br>         ▼  (Python ETL / Pandas Clean)<br>[PostgreSQL Database Staging]<br>         │<br>         ▼  (PySpark Memory Transform)<br>[Cloud Lake / AWS S3 / Redshift]<br>         │<br>         ▼  (SQL Star Schema Queries)<br>[Power BI Executive Dashboards]</span>"
             }
         ],
         "faqs": [
@@ -931,6 +935,10 @@ EXTRA_PAGES = [
             {
                 "title": "Step 3: CI/CD Pipelines & Orchestration",
                 "text": "Automate releases. Use Jenkins to create build pipelines that compile and test code on every commit. Proceed to Kubernetes to manage container fleets, routing traffic, and scaling container instances. Finish by learning Infrastructure as Code with Terraform."
+            },
+            {
+                "title": "Cloud DevOps CI/CD Automation Flowchart",
+                "text": "<span style=\"display: block; font-family: monospace; white-space: pre; background: #060913; border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; color: var(--accent-light); line-height: 1.5; margin: 1rem 0; overflow-x: auto;\">[Local Code Changes]<br>         │<br>         ▼  (Git Commit & Push)<br>[GitHub Repository]<br>         │<br>         ▼  (Webhook Trigger)<br>[Jenkins CI Build Server]<br>   ├── Run Unit Tests<br>   ├── Build Docker Image<br>   └── Push to Registry<br>         │<br>         ▼  (Terraform IaC Deploy)<br>[Kubernetes K8s Cluster]</span>"
             }
         ],
         "faqs": [
@@ -965,6 +973,10 @@ EXTRA_PAGES = [
             {
                 "title": "Step 3: Deep Learning and REST API Deployment",
                 "text": "Transition to deep learning. Build neural networks using TensorFlow and Keras. Learn CNNs for image analysis and NLP for text processing. Finish by deploying your predictive models as production APIs using FastAPI or Flask."
+            },
+            {
+                "title": "AI Model Training & Deployment Pipeline Flowchart",
+                "text": "<span style=\"display: block; font-family: monospace; white-space: pre; background: #060913; border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; color: var(--accent-light); line-height: 1.5; margin: 1rem 0; overflow-x: auto;\">[Raw Data Streams]<br>         │<br>         ▼  (Pandas / NumPy Wrangling)<br>[Clean Training Dataset]<br>         │<br>         ▼  (Scikit-Learn / TensorFlow)<br>[Trained Machine Learning Model]<br>         │<br>         ▼  (FastAPI Wrapper / Docker)<br>[Production Inference API]<br>         │<br>         ▼  (HTTP Client Request)<br>[Client Web Application]</span>"
             }
         ],
         "faqs": [
@@ -999,6 +1011,10 @@ EXTRA_PAGES = [
             {
                 "title": "Step 3: Threat Detection and SIEM Logs Monitoring",
                 "text": "For the final phase, configure active monitoring systems. Learn to use packet capture tools like Wireshark to intercept traffic. Set up open-source SIEM platforms to aggregate system logs, and write alert triggers to detect security breaches."
+            },
+            {
+                "title": "Defensive Security Threat Monitoring Flowchart",
+                "text": "<span style=\"display: block; font-family: monospace; white-space: pre; background: #060913; border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; color: var(--accent-light); line-height: 1.5; margin: 1rem 0; overflow-x: auto;\">[Firewalls / Routers / Servers]<br>         │<br>         ▼  (Syslog / Auditd Logs)<br>[Wazuh SIEM Log Aggregator]<br>         │<br>         ▼  (Regex Signature Rules)<br>[Active Threat Alerts]<br>         │<br>         ▼  (SOC Analyst Verification)<br>[Vulnerability Patch / Host Isolation]</span>"
             }
         ],
         "faqs": [

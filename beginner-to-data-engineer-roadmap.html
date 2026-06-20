@@ -182,6 +182,11 @@
                         <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">For the final phase, transition to big data. Learn PySpark to write parallel data processes that scale across cluster servers. Master distributed storage concepts like Hadoop HDFS and Hive. Finish by deploying your data warehouse pipelines to AWS or Azure.</p>
                     </div>
             
+                    <div style="margin-bottom: 2rem;">
+                        <h2 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 1rem; font-family: var(--font-heading);">Data Pipeline & Infrastructure Architecture Flowchart</h2>
+                        <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;"><span style="display: block; font-family: monospace; white-space: pre; background: #060913; border: 1px solid var(--border); padding: 1.25rem; border-radius: 8px; color: var(--accent-light); line-height: 1.5; margin: 1rem 0; overflow-x: auto;">[JSON API / CSV Sources]<br>         │<br>         ▼  (Python ETL / Pandas Clean)<br>[PostgreSQL Database Staging]<br>         │<br>         ▼  (PySpark Memory Transform)<br>[Cloud Lake / AWS S3 / Redshift]<br>         │<br>         ▼  (SQL Star Schema Queries)<br>[Power BI Executive Dashboards]</span></p>
+                    </div>
+            
                     </div>
 
                     <!-- FAQ Accordions -->
@@ -321,12 +326,12 @@
         <!-- Trust Credentials & Accreditations -->
         <div style="border-top: 1px solid var(--border); padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
             <div style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5;">
-                <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong> Our curricula and git code review models are designed in alignment with ISO 29993:2017 standards for non-formal education training and software engineering industry practices.
+                <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong> Our curricula and git code review models are designed in alignment with ISO 29993:2017 standards for non-formal education training and software engineering industry practices. *Self-declared alignment for educational service quality.
             </div>
             <div style="display: flex; gap: 1.5rem; align-items: center; opacity: 0.75; flex-wrap: wrap;">
                 <!-- ISO Compliant Badge -->
-                <div style="display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; color: var(--accent-light);">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> ISO 29993:2017 ALIGNED
+                <div title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers." style="display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; color: var(--accent-light); cursor: help;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> ISO 29993:2017 ALIGNED*
                 </div>
                 <!-- Developer Led Badge -->
                 <div style="display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; color: var(--primary-light);">

@@ -95,8 +95,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Contact Lead Form submission handling
     const leadForms = document.querySelectorAll('.lead-form, #inquiry-form');
     leadForms.forEach(form => {
+        const phoneInput = form.querySelector('input[name="phone"]');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', () => {
+                phoneInput.setCustomValidity("");
+            });
+        }
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            // Validate phone number regex
+            if (phoneInput) {
+                const phoneVal = phoneInput.value.replace(/\s+/g, '').replace(/^\+91/, '');
+                const phoneRegex = /^[6-9]\d{9}$/;
+                if (!phoneRegex.test(phoneVal)) {
+                    phoneInput.setCustomValidity("Please enter a valid 10-digit Indian mobile number (starting with 6-9).");
+                    phoneInput.reportValidity();
+                    return;
+                } else {
+                    phoneInput.setCustomValidity("");
+                }
+            }
+
             const formData = new FormData(form);
             const data = {};
             formData.forEach((value, key) => { data[key] = value; });
@@ -131,12 +152,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     <div style="display: flex; flex-direction: column; gap: 0.75rem;">
                         <a href="${waUrl}" class="btn btn-accent" target="_blank" style="color: #0b0f19; width: 100%; text-align: center; font-weight:700;">
-                            Submit via WhatsApp
+                            Submit via WhatsApp (Manual Link)
                         </a>
                         <a href="${smsUrl}" class="btn btn-secondary" style="width: 100%; text-align: center;">
                             Submit via SMS Text
                         </a>
                     </div>
+                    <p style="color: var(--warning); font-size: 0.82rem; margin-top: 1.25rem; border-top: 1px solid var(--border); padding-top: 1rem; line-height: 1.4;">
+                        ⚠️ Pop-up blocked? If the WhatsApp window did not open automatically, please click the "Submit via WhatsApp" button above to finalize your inquiry.
+                    </p>
                 </div>
             `;
 
