@@ -193,6 +193,67 @@
                         <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">Historically, Kubernetes used Docker directly to run containers. Today, Kubernetes supports any runtime that complies with the Container Runtime Interface (CRI). However, Docker remains the dominant and easiest tool for developers to build and test images locally on their laptops before deployment.</p>
                     </div>
             
+                    <div style="margin-top: 3rem; margin-bottom: 3rem;">
+                        <h2 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 1.5rem; font-family: var(--font-heading);">Side-by-Side Parameter Matrix</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1rem; line-height: 1.6;">Below is a side-by-side technical parameters comparison designed to help you choose the right path.</p>
+                        <div class="table-container" style="margin-bottom: 2rem;">
+                            <table class="responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th>Comparison Parameter</th>
+                                        <th>Docker Containerization</th>
+                                        <th>Kubernetes Orchestration</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Core Utility</td>
+                                <td data-label="Docker Containerization">Packages application processes with dependencies</td>
+                                <td data-label="Kubernetes Orchestration">Orchestrates clusters of running container instances</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Scaling Fleet</td>
+                                <td data-label="Docker Containerization">Local scaling (Docker Compose, manual run)</td>
+                                <td data-label="Kubernetes Orchestration">Autoscale pods based on CPU/RAM metrics</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Setup Overhead</td>
+                                <td data-label="Docker Containerization">Minimal (single engine install on host)</td>
+                                <td data-label="Kubernetes Orchestration">High (requires cluster networking, DNS, control plane)</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">High Availability</td>
+                                <td data-label="Docker Containerization">Manual restarts / basic restarts</td>
+                                <td data-label="Kubernetes Orchestration">Automated self-healing, rolling updates, pod rescheduling</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Network Setup</td>
+                                <td data-label="Docker Containerization">Single bridge networks, port mapping</td>
+                                <td data-label="Kubernetes Orchestration">Cluster-wide overlay networking, services, ingress</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Use Case</td>
+                                <td data-label="Docker Containerization">Build, run, and test a single app locally</td>
+                                <td data-label="Kubernetes Orchestration">Manage 100+ microservices in production clouds</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Resource Usage</td>
+                                <td data-label="Docker Containerization">Very low (shares host OS kernel space)</td>
+                                <td data-label="Kubernetes Orchestration">Moderate to high (runs master control plane processes)</td>
+                            </tr>
+                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            
                     <div class="code-snippet-container">
                         <h3 class="code-snippet-title">Infrastructure Formats (Dockerfile vs Kubernetes YAML Pod)</h3>
                         <pre><code class="language-dockerfile"># Dockerfile: Build environment

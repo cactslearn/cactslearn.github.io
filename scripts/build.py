@@ -268,6 +268,25 @@ def build():
 
         {asset_html}
 
+        <!-- Trainer Bio / Meet Your Mentor -->
+        <div style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; margin-top: 3rem; margin-bottom: 3rem; display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+            <div style="flex-shrink: 0; width: 100px; height: 100px; border-radius: 50%; border: 2px solid var(--accent); background: linear-gradient(135deg, var(--bg-card) 0%, var(--accent-glow) 100%); display: flex; align-items: center; justify-content: center;">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </div>
+            <div style="flex: 1; min-width: 250px;">
+                <h3 style="color: var(--text-primary); margin-bottom: 0.25rem; font-family: var(--font-heading);">Meet Your Mentor: Hambirrao P</h3>
+                <h4 style="color: var(--accent-light); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.75rem; text-transform: uppercase;">Lead Technology Trainer</h4>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem;">
+                    Hambirrao P is a senior enterprise technology specialist with 12+ years of hands-on coding experience in enterprise software design, including Spring Boot architecture, Python CLI automation, React layouts, and AWS cloud migrations. He has individually mentored 800+ developers in Pune since 2012.
+                </p>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="https://www.linkedin.com/in/hambirrao/" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.35rem;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg> LinkedIn Profile &gt;
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <!-- Course Specific FAQs -->
         <div style="margin-top: 4rem;">
             <h2 style="margin-bottom: 1.5rem;">Course FAQs</h2>
@@ -893,6 +912,88 @@ def build():
     with open(resource_template_path, "r", encoding="utf-8") as f:
         res_template = f.read()
 
+    COMPARISON_TABLES = {
+        "java-vs-python": {
+            "title_a": "Java (Spring Boot)",
+            "title_b": "Python (Data/ML)",
+            "rows": [
+                ["Core Philosophy", "Statically typed, compiled to bytecode", "Dynamically typed, interpreted script"],
+                ["Syntax & Structure", "Verbose, class-based, strict type safety", "Minimal boilerplate, indentation-based, readable"],
+                ["Execution Velocity", "Very high (JIT compiler optimized runtimes)", "Moderate (interpreted execution, CPU-bound)"],
+                ["Enterprise Adoption", "Core banking, insurance, transaction engines", "AI/ML models, data pipelines, web scraping"],
+                ["Standard Framework", "Spring Boot, Jakarta EE", "Django, FastAPI, Flask, PySpark"],
+                ["Pune IT Job Volume", "Highest (massive enterprise bank/MNC demand)", "High (startups, data analytics, ML teams)"],
+                ["Primary Roles", "Backend Engineer, Java Microservices Developer", "Data Scientist, ML Engineer, DevOps Scripting"],
+                ["Learning Curve", "Steep (requires understanding OOP & types first)", "Gentle (highly intuitive, english-like syntax)"]
+            ]
+        },
+        "power-bi-vs-tableau": {
+            "title_a": "Microsoft Power BI",
+            "title_b": "Salesforce Tableau",
+            "rows": [
+                ["Ecosystem Fit", "Native Microsoft (Office 365, Azure, SQL Server)", "Platform-independent (strong custom connectors)"],
+                ["Pricing Model", "Low cost (Desktop free, Pro ~$10/user/month)", "High cost (Creator starts at ~$75/user/month)"],
+                ["Calculations", "Data Analysis Expressions (DAX) & M Query", "Level of Detail (LOD) & Tableau calculations"],
+                ["Data Modeling", "Robust built-in data modeling relationships", "Primarily visualization; requires clean inputs"],
+                ["Visual Flexibility", "Good standard templates, drag-and-drop", "Superior, highly customized canvas structures"],
+                ["Pune Hiring Volume", "Extremely high (dominates SMB & Enterprise)", "Moderate (large consultancies, specialized analytics)"],
+                ["Learning Curve", "Short (intuitive for Excel power users)", "Medium (requires conceptual viz training)"]
+            ]
+        },
+        "docker-vs-kubernetes": {
+            "title_a": "Docker Containerization",
+            "title_b": "Kubernetes Orchestration",
+            "rows": [
+                ["Core Utility", "Packages application processes with dependencies", "Orchestrates clusters of running container instances"],
+                ["Scaling Fleet", "Local scaling (Docker Compose, manual run)", "Autoscale pods based on CPU/RAM metrics"],
+                ["Setup Overhead", "Minimal (single engine install on host)", "High (requires cluster networking, DNS, control plane)"],
+                ["High Availability", "Manual restarts / basic restarts", "Automated self-healing, rolling updates, pod rescheduling"],
+                ["Network Setup", "Single bridge networks, port mapping", "Cluster-wide overlay networking, services, ingress"],
+                ["Use Case", "Build, run, and test a single app locally", "Manage 100+ microservices in production clouds"],
+                ["Resource Usage", "Very low (shares host OS kernel space)", "Moderate to high (runs master control plane processes)"]
+            ]
+        },
+        "spark-vs-hadoop": {
+            "title_a": "Apache Spark",
+            "title_b": "Apache Hadoop",
+            "rows": [
+                ["Processing Speed", "Up to 100x faster (runs calculations in RAM)", "Slower (writes intermediate records to physical disks)"],
+                ["Primary Function", "Computational processing and analytical engine", "Distributed storage (HDFS) & cluster scheduling (YARN)"],
+                ["Data Storage", "None (must read/write from external storage)", "Integrated distributed filesystem (HDFS)"],
+                ["Machine Learning", "Native robust libraries (MLlib in-memory)", "Requires third-party tools (Mahout on MapReduce)"],
+                ["Real-Time Streams", "Native stream support (micro-batches)", "Strictly batch-oriented processing"],
+                ["Cluster Setup", "Can run in standalone mode or on YARN/Mesos", "Requires full YARN control plane configuration"],
+                ["Learning Curve", "Medium (requires Spark DataFrame concept knowledge)", "Steep (requires Java MapReduce program logic)"]
+            ]
+        },
+        "aws-vs-azure": {
+            "title_a": "Amazon Web Services (AWS)",
+            "title_b": "Microsoft Azure",
+            "rows": [
+                ["Market Position", "Global leader (pioneered public cloud since 2006)", "Second place (rapid enterprise growth since 2010)"],
+                ["Core Compute", "AWS EC2 (Elastic Compute Cloud)", "Azure Virtual Machines"],
+                ["Object Storage", "AWS S3 (Simple Storage Service)", "Azure Blob Storage"],
+                ["Database Service", "AWS RDS (supporting Aurora, Postgres, etc.)", "Azure SQL Database (native MS SQL Server)"],
+                ["Enterprise Fit", "Preferred by startups, SaaS, tech giants", "Native integration for active directory, Windows Server"],
+                ["Pricing Logic", "Pay-as-you-go, complex resource tiers", "Discounted bundles for existing Microsoft licensing"],
+                ["Pune IT Demand", "Very high (dominant in product and web squads)", "High (widely used in enterprise banks and services)"]
+            ]
+        },
+        "jenkins-vs-github-actions": {
+            "title_a": "Jenkins CI/CD",
+            "title_b": "GitHub Actions",
+            "rows": [
+                ["Deployment Model", "Self-hosted (must deploy, patch, and manage host)", "Cloud-managed (GitHub hosts runner VMs)"],
+                ["Configuration", "Jenkinsfile (using Groovy-based syntax)", "YAML workflow files inside repository folder"],
+                ["Integration", "Requires webhook triggers & credentials setup", "Native integration with GitHub repository events"],
+                ["Plugin Ecosystem", "Over 1,800 community-developed plugins", "Marketplace with thousands of pre-configured Actions"],
+                ["Security Audits", "You manage credential stores and SSH keys", "GitHub manages secrets decryption in runners"],
+                ["Maintenance", "High (requires updating Java runtime, core, plugins)", "Zero maintenance (handled by GitHub infrastructure)"],
+                ["Ideal Fit", "Complex, customized enterprise build setups", "Cloud-native microservices & active web application releases"]
+            ]
+        }
+    }
+
     for pg in EXTRA_PAGES:
         category = pg["category"]
         slug = pg["slug"]
@@ -925,6 +1026,40 @@ def build():
                         <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">{text_formatted}</p>
                     </div>
             """
+
+        if category == "comparison" and slug in COMPARISON_TABLES:
+            comp_data = COMPARISON_TABLES[slug]
+            rows_html = ""
+            for row in comp_data["rows"]:
+                rows_html += f"""
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">{row[0]}</td>
+                                <td data-label="{comp_data['title_a']}">{row[1]}</td>
+                                <td data-label="{comp_data['title_b']}">{row[2]}</td>
+                            </tr>
+                """
+            
+            table_html = f"""
+                    <div style="margin-top: 3rem; margin-bottom: 3rem;">
+                        <h2 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 1.5rem; font-family: var(--font-heading);">Side-by-Side Parameter Matrix</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1rem; line-height: 1.6;">Below is a side-by-side technical parameters comparison designed to help you choose the right path.</p>
+                        <div class="table-container" style="margin-bottom: 2rem;">
+                            <table class="responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th>Comparison Parameter</th>
+                                        <th>{comp_data['title_a']}</th>
+                                        <th>{comp_data['title_b']}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {rows_html}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            """
+            content_html += table_html
 
         # Append technical code block and documentation outlinks
         snippet_data = CODE_SNIPPETS_DATA.get(slug, {})

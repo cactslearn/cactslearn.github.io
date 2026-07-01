@@ -193,6 +193,67 @@
                         <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">Power BI uses Data Analysis Expressions (DAX) to build calculated measures, giving developers control over filter contexts. Tableau uses its own calculation syntax, including Level of Detail (LOD) expressions. Both languages are powerful, but DAX is more structured for relational databases.</p>
                     </div>
             
+                    <div style="margin-top: 3rem; margin-bottom: 3rem;">
+                        <h2 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 1.5rem; font-family: var(--font-heading);">Side-by-Side Parameter Matrix</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1rem; line-height: 1.6;">Below is a side-by-side technical parameters comparison designed to help you choose the right path.</p>
+                        <div class="table-container" style="margin-bottom: 2rem;">
+                            <table class="responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th>Comparison Parameter</th>
+                                        <th>Microsoft Power BI</th>
+                                        <th>Salesforce Tableau</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Ecosystem Fit</td>
+                                <td data-label="Microsoft Power BI">Native Microsoft (Office 365, Azure, SQL Server)</td>
+                                <td data-label="Salesforce Tableau">Platform-independent (strong custom connectors)</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Pricing Model</td>
+                                <td data-label="Microsoft Power BI">Low cost (Desktop free, Pro ~$10/user/month)</td>
+                                <td data-label="Salesforce Tableau">High cost (Creator starts at ~$75/user/month)</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Calculations</td>
+                                <td data-label="Microsoft Power BI">Data Analysis Expressions (DAX) & M Query</td>
+                                <td data-label="Salesforce Tableau">Level of Detail (LOD) & Tableau calculations</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Data Modeling</td>
+                                <td data-label="Microsoft Power BI">Robust built-in data modeling relationships</td>
+                                <td data-label="Salesforce Tableau">Primarily visualization; requires clean inputs</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Visual Flexibility</td>
+                                <td data-label="Microsoft Power BI">Good standard templates, drag-and-drop</td>
+                                <td data-label="Salesforce Tableau">Superior, highly customized canvas structures</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Pune Hiring Volume</td>
+                                <td data-label="Microsoft Power BI">Extremely high (dominates SMB & Enterprise)</td>
+                                <td data-label="Salesforce Tableau">Moderate (large consultancies, specialized analytics)</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Learning Curve</td>
+                                <td data-label="Microsoft Power BI">Short (intuitive for Excel power users)</td>
+                                <td data-label="Salesforce Tableau">Medium (requires conceptual viz training)</td>
+                            </tr>
+                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            
                     <div class="code-snippet-container">
                         <h3 class="code-snippet-title">Aggregations comparison (DAX vs Tableau Calculated Fields)</h3>
                         <pre><code class="language-dax">// Power BI: DAX Measure

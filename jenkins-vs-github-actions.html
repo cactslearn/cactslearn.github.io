@@ -193,6 +193,67 @@
                         <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">Jenkins is the industry standard for companies with complex, legacy, or on-premise server setups that require custom security integrations. GitHub Actions is the standard for modern cloud applications, allowing developers to manage code and release cycles within a single browser tab.</p>
                     </div>
             
+                    <div style="margin-top: 3rem; margin-bottom: 3rem;">
+                        <h2 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 1.5rem; font-family: var(--font-heading);">Side-by-Side Parameter Matrix</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1rem; line-height: 1.6;">Below is a side-by-side technical parameters comparison designed to help you choose the right path.</p>
+                        <div class="table-container" style="margin-bottom: 2rem;">
+                            <table class="responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th>Comparison Parameter</th>
+                                        <th>Jenkins CI/CD</th>
+                                        <th>GitHub Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Deployment Model</td>
+                                <td data-label="Jenkins CI/CD">Self-hosted (must deploy, patch, and manage host)</td>
+                                <td data-label="GitHub Actions">Cloud-managed (GitHub hosts runner VMs)</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Configuration</td>
+                                <td data-label="Jenkins CI/CD">Jenkinsfile (using Groovy-based syntax)</td>
+                                <td data-label="GitHub Actions">YAML workflow files inside repository folder</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Integration</td>
+                                <td data-label="Jenkins CI/CD">Requires webhook triggers & credentials setup</td>
+                                <td data-label="GitHub Actions">Native integration with GitHub repository events</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Plugin Ecosystem</td>
+                                <td data-label="Jenkins CI/CD">Over 1,800 community-developed plugins</td>
+                                <td data-label="GitHub Actions">Marketplace with thousands of pre-configured Actions</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Security Audits</td>
+                                <td data-label="Jenkins CI/CD">You manage credential stores and SSH keys</td>
+                                <td data-label="GitHub Actions">GitHub manages secrets decryption in runners</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Maintenance</td>
+                                <td data-label="Jenkins CI/CD">High (requires updating Java runtime, core, plugins)</td>
+                                <td data-label="GitHub Actions">Zero maintenance (handled by GitHub infrastructure)</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Ideal Fit</td>
+                                <td data-label="Jenkins CI/CD">Complex, customized enterprise build setups</td>
+                                <td data-label="GitHub Actions">Cloud-native microservices & active web application releases</td>
+                            </tr>
+                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            
                     <div class="code-snippet-container">
                         <h3 class="code-snippet-title">CI Job Pipelines (Jenkinsfile vs GitHub Actions YAML Workflow)</h3>
                         <pre><code class="language-groovy">// Jenkinsfile pipeline script

@@ -193,6 +193,67 @@
                         <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">Rather than competing, Spark and Hadoop are often integrated. A standard enterprise big data cluster uses HDFS to store terabytes of historical files cheaply, and runs Apache Spark as the computation layer to clean and aggregate those files, utilizing YARN to coordinate cluster memory.</p>
                     </div>
             
+                    <div style="margin-top: 3rem; margin-bottom: 3rem;">
+                        <h2 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 1.5rem; font-family: var(--font-heading);">Side-by-Side Parameter Matrix</h2>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1rem; line-height: 1.6;">Below is a side-by-side technical parameters comparison designed to help you choose the right path.</p>
+                        <div class="table-container" style="margin-bottom: 2rem;">
+                            <table class="responsive-table">
+                                <thead>
+                                    <tr>
+                                        <th>Comparison Parameter</th>
+                                        <th>Apache Spark</th>
+                                        <th>Apache Hadoop</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Processing Speed</td>
+                                <td data-label="Apache Spark">Up to 100x faster (runs calculations in RAM)</td>
+                                <td data-label="Apache Hadoop">Slower (writes intermediate records to physical disks)</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Primary Function</td>
+                                <td data-label="Apache Spark">Computational processing and analytical engine</td>
+                                <td data-label="Apache Hadoop">Distributed storage (HDFS) & cluster scheduling (YARN)</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Data Storage</td>
+                                <td data-label="Apache Spark">None (must read/write from external storage)</td>
+                                <td data-label="Apache Hadoop">Integrated distributed filesystem (HDFS)</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Machine Learning</td>
+                                <td data-label="Apache Spark">Native robust libraries (MLlib in-memory)</td>
+                                <td data-label="Apache Hadoop">Requires third-party tools (Mahout on MapReduce)</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Real-Time Streams</td>
+                                <td data-label="Apache Spark">Native stream support (micro-batches)</td>
+                                <td data-label="Apache Hadoop">Strictly batch-oriented processing</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Cluster Setup</td>
+                                <td data-label="Apache Spark">Can run in standalone mode or on YARN/Mesos</td>
+                                <td data-label="Apache Hadoop">Requires full YARN control plane configuration</td>
+                            </tr>
+                
+                            <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">Learning Curve</td>
+                                <td data-label="Apache Spark">Medium (requires Spark DataFrame concept knowledge)</td>
+                                <td data-label="Apache Hadoop">Steep (requires Java MapReduce program logic)</td>
+                            </tr>
+                
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            
                     <div class="code-snippet-container">
                         <h3 class="code-snippet-title">Data Processing Methods (PySpark vs Java MapReduce)</h3>
                         <pre><code class="language-python"># Apache Spark DataFrame aggregation (In-Memory Processing)
