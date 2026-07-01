@@ -308,8 +308,6 @@ body.light-theme .price-sub {
     box-shadow: 0 4px 12px var(--accent-glow);
 }
 
-}
-
 /* Tabs navigation styles */
 .course-tabs-container {
     position: sticky;
