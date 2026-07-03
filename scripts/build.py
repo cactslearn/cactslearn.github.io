@@ -26,12 +26,95 @@ def build():
     sitemap_file = "sitemap.xml"
 
     # Load course configurations
+    # Load course configurations
     with open(src_json, "r", encoding="utf-8") as f:
         courses = json.load(f)
 
     # Load master HTML template
     with open(src_template, "r", encoding="utf-8") as f:
         template = f.read()
+
+    COMPARISON_TABLES = {
+        "java-vs-python": {
+            "title_a": "Java (Spring Boot)",
+            "title_b": "Python (Data/ML)",
+            "rows": [
+                ["Core Philosophy", "Statically typed, compiled to bytecode", "Dynamically typed, interpreted script"],
+                ["Syntax & Structure", "Verbose, class-based, strict type safety", "Minimal boilerplate, indentation-based, readable"],
+                ["Execution Velocity", "Very high (JIT compiler optimized runtimes)", "Moderate (interpreted execution, CPU-bound)"],
+                ["Enterprise Adoption", "Core banking, insurance, transaction engines", "AI/ML models, data pipelines, web scraping"],
+                ["Standard Framework", "Spring Boot, Jakarta EE", "Django, FastAPI, Flask, PySpark"],
+                ["Pune IT Job Volume", "Highest (massive enterprise bank/MNC demand)", "High (startups, data analytics, ML teams)"],
+                ["Primary Roles", "Backend Engineer, Java Microservices Developer", "Data Scientist, ML Engineer, DevOps Scripting"],
+                ["Learning Curve", "Steep (requires understanding OOP & types first)", "Gentle (highly intuitive, english-like syntax)"]
+            ]
+        },
+        "power-bi-vs-tableau": {
+            "title_a": "Microsoft Power BI",
+            "title_b": "Salesforce Tableau",
+            "rows": [
+                ["Ecosystem Fit", "Native Microsoft (Office 365, Azure, SQL Server)", "Platform-independent (strong custom connectors)"],
+                ["Pricing Model", "Low cost (Desktop free, Pro ~$10/user/month)", "High cost (Creator starts at ~$75/user/month)"],
+                ["Calculations", "Data Analysis Expressions (DAX) & M Query", "Level of Detail (LOD) & Tableau calculations"],
+                ["Data Modeling", "Robust built-in data modeling relationships", "Primarily visualization; requires clean inputs"],
+                ["Visual Flexibility", "Good standard templates, drag-and-drop", "Superior, highly customized canvas structures"],
+                ["Pune Hiring Volume", "Extremely high (dominates SMB & Enterprise)", "Moderate (large consultancies, specialized analytics)"],
+                ["Learning Curve", "Short (intuitive for Excel power users)", "Medium (requires conceptual viz training)"]
+            ]
+        },
+        "docker-vs-kubernetes": {
+            "title_a": "Docker Containerization",
+            "title_b": "Kubernetes Orchestration",
+            "rows": [
+                ["Core Utility", "Packages application processes with dependencies", "Orchestrates clusters of running container instances"],
+                ["Scaling Fleet", "Local scaling (Docker Compose, manual run)", "Autoscale pods based on CPU/RAM metrics"],
+                ["Setup Overhead", "Minimal (single engine install on host)", "High (requires cluster networking, DNS, control plane)"],
+                ["High Availability", "Manual restarts / basic restarts", "Automated self-healing, rolling updates, pod rescheduling"],
+                ["Network Setup", "Single bridge networks, port mapping", "Cluster-wide overlay networking, services, ingress"],
+                ["Use Case", "Build, run, and test a single app locally", "Manage 100+ microservices in production clouds"],
+                ["Resource Usage", "Very low (shares host OS kernel space)", "Moderate to high (runs master control plane processes)"]
+            ]
+        },
+        "spark-vs-hadoop": {
+            "title_a": "Apache Spark",
+            "title_b": "Apache Hadoop",
+            "rows": [
+                ["Processing Speed", "Up to 100x faster (runs calculations in RAM)", "Slower (writes intermediate records to physical disks)"],
+                ["Primary Function", "Computational processing and analytical engine", "Distributed storage (HDFS) & cluster scheduling (YARN)"],
+                ["Data Storage", "None (must read/write from external storage)", "Integrated distributed filesystem (HDFS)"],
+                ["Machine Learning", "Native robust libraries (MLlib in-memory)", "Requires third-party tools (Mahout on MapReduce)"],
+                ["Real-Time Streams", "Native stream support (micro-batches)", "Strictly batch-oriented processing"],
+                ["Cluster Setup", "Can run in standalone mode or on YARN/Mesos", "Requires full YARN control plane configuration"],
+                ["Learning Curve", "Medium (requires Spark DataFrame concept knowledge)", "Steep (requires Java MapReduce program logic)"]
+            ]
+        },
+        "aws-vs-azure": {
+            "title_a": "Amazon Web Services (AWS)",
+            "title_b": "Microsoft Azure",
+            "rows": [
+                ["Market Position", "Global leader (pioneered public cloud since 2006)", "Second place (rapid enterprise growth since 2010)"],
+                ["Core Compute", "AWS EC2 (Elastic Compute Cloud)", "Azure Virtual Machines"],
+                ["Object Storage", "AWS S3 (Simple Storage Service)", "Azure Blob Storage"],
+                ["Database Service", "AWS RDS (supporting Aurora, Postgres, etc.)", "Azure SQL Database (native MS SQL Server)"],
+                ["Enterprise Fit", "Preferred by startups, SaaS, tech giants", "Native integration for active directory, Windows Server"],
+                ["Pricing Logic", "Pay-as-you-go, complex resource tiers", "Discounted bundles for existing Microsoft licensing"],
+                ["Pune IT Demand", "Very high (dominant in product and web squads)", "High (widely used in enterprise banks and services)"]
+            ]
+        },
+        "jenkins-vs-github-actions": {
+            "title_a": "Jenkins CI/CD",
+            "title_b": "GitHub Actions",
+            "rows": [
+                ["Deployment Model", "Self-hosted (must deploy, patch, and manage host)", "Cloud-managed (GitHub hosts runner VMs)"],
+                ["Configuration", "Jenkinsfile (using Groovy-based syntax)", "YAML workflow files inside repository folder"],
+                ["Integration", "Requires webhook triggers & credentials setup", "Native integration with GitHub repository events"],
+                ["Plugin Ecosystem", "Over 1,800 community-developed plugins", "Marketplace with thousands of pre-configured Actions"],
+                ["Security Audits", "You manage credential stores and SSH keys", "GitHub manages secrets decryption in runners"],
+                ["Maintenance", "High (requires updating Java runtime, core, plugins)", "Zero maintenance (handled by GitHub infrastructure)"],
+                ["Ideal Fit", "Complex, customized enterprise build setups", "Cloud-native microservices & active web application releases"]
+            ]
+        }
+    }
 
     generated_pages = []
 
@@ -55,6 +138,23 @@ def build():
 
         # Get subpage content database
         data = SUBPAGES_DATA.get(slug, {})
+
+        # Collect related extra pages
+        course_project_ideas = None
+        course_career_roadmap = None
+        course_certifications = None
+        course_comparisons = []
+        for pg in EXTRA_PAGES:
+            if pg.get("related_course_slug") == slug:
+                cat = pg["category"]
+                if cat == "projects":
+                    course_project_ideas = pg
+                elif cat == "roadmap":
+                    course_career_roadmap = pg
+                elif cat == "certifications":
+                    course_certifications = pg
+                elif cat == "comparison":
+                    course_comparisons.append(pg)
 
         # 1. Build Skills Bubbles
         skills_bubbles = ""
@@ -135,6 +235,95 @@ def build():
                 {"type": "interview", "label": "Interview Qs", "url": f"{base_slug}-interview-questions.html"},
                 {"type": "roadmap", "label": "Roadmap", "url": f"{base_slug}-roadmap.html"}
             ]
+
+            # 1. Project/Dashboard Ideas tab
+            if course_project_ideas:
+                proj_url = f"{course_project_ideas['slug']}.html"
+                proj_label = "Dashboard Ideas" if slug == "power-bi-training" else "Project Ideas"
+                tabs_config.append({"type": "projects", "label": proj_label, "url": proj_url})
+            else:
+                fallback_mapping = {
+                    "full-stack-development-training": ("project-portfolios.html", "Portfolios", "projects"),
+                    "ai-machine-learning-training": ("data-science-project-ideas.html", "Project Ideas", "projects"),
+                    "cloud-computing-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
+                    "python-programming-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
+                    "software-testing-training": ("student-projects.html", "Student Projects", "projects")
+                }
+                url, label, type_ = fallback_mapping.get(slug, ("student-projects.html", "Projects", "projects"))
+                tabs_config.append({"type": type_, "label": label, "url": url})
+
+            # 2. Career Roadmap tab
+            if course_career_roadmap:
+                tabs_config.append({
+                    "type": "career-roadmap",
+                    "label": "Career Roadmap",
+                    "url": f"{course_career_roadmap['slug']}.html"
+                })
+            else:
+                fallback_roadmaps = {
+                    "java-full-stack-developer-training": "career-roadmaps.html",
+                    "full-stack-development-training": "career-roadmaps.html",
+                    "python-programming-training": "beginner-to-ai-engineer-roadmap.html",
+                    "data-science-training": "beginner-to-ai-engineer-roadmap.html",
+                    "cloud-computing-training": "beginner-to-devops-engineer-roadmap.html",
+                    "software-testing-training": "career-roadmaps.html"
+                }
+                url = fallback_roadmaps.get(slug)
+                if url:
+                    tabs_config.append({
+                        "type": "career-roadmap",
+                        "label": "Career Roadmap",
+                        "url": url
+                    })
+
+            # 3. Certifications tab
+            if course_certifications:
+                tabs_config.append({
+                    "type": "certifications",
+                    "label": "Certifications",
+                    "url": f"{course_certifications['slug']}.html"
+                })
+            else:
+                fallback_certifications = {
+                    "java-full-stack-developer-training": "best-devops-certifications.html",
+                    "full-stack-development-training": "best-devops-certifications.html",
+                    "ai-machine-learning-training": "best-data-engineering-certifications.html",
+                    "data-science-training": "best-data-engineering-certifications.html",
+                    "python-programming-training": "best-data-engineering-certifications.html",
+                    "cloud-computing-training": "best-devops-certifications.html",
+                    "software-testing-training": "best-devops-certifications.html"
+                }
+                url = fallback_certifications.get(slug)
+                if url:
+                    tabs_config.append({
+                        "type": "certifications",
+                        "label": "Certifications",
+                        "url": url
+                    })
+
+            # 4. Tech Comparisons tab
+            if course_comparisons:
+                tabs_config.append({
+                    "type": "comparison",
+                    "label": "Compare Tools" if slug != "java-full-stack-developer-training" else "Java vs Python",
+                    "url": f"{course_comparisons[0]['slug']}.html"
+                })
+            else:
+                fallback_comparisons = {
+                    "full-stack-development-training": "jenkins-vs-github-actions.html",
+                    "ai-machine-learning-training": "spark-vs-hadoop.html",
+                    "data-science-training": "spark-vs-hadoop.html",
+                    "python-programming-training": "java-vs-python.html",
+                    "software-testing-training": "jenkins-vs-github-actions.html"
+                }
+                url = fallback_comparisons.get(slug)
+                if url:
+                    tabs_config.append({
+                        "type": "comparison",
+                        "label": "Compare Tools",
+                        "url": url
+                    })
+
             html = ""
             for tab in tabs_config:
                 active_class = "active" if tab["type"] == active_type else ""
@@ -389,6 +578,8 @@ def build():
         page_html1 = page_html1.replace("{{course_reviews}}", reviews_html)
         page_html1 = page_html1.replace("{{course_tabs}}", get_tabs_html("overview"))
         page_html1 = page_html1.replace("{{course_left_column}}", overview_left_column)
+        breadcrumbs_overview = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <span style="color: var(--text-primary);">{name}</span>'
+        page_html1 = page_html1.replace("{{course_breadcrumbs}}", breadcrumbs_overview)
 
         with open(f"{slug}.html", "w", encoding="utf-8") as f:
             f.write(page_html1)
@@ -536,6 +727,8 @@ def build():
         page_html2 = page_html2.replace("{{course_left_column}}", syllabus_left_column)
         page_html2 = page_html2.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
         page_html2 = page_html2.replace('Request Free Trial Demo', 'Schedule Syllabus Consultation')
+        breadcrumbs_syllabus = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Syllabus</span>'
+        page_html2 = page_html2.replace("{{course_breadcrumbs}}", breadcrumbs_syllabus)
 
         with open(f"{base_slug}-syllabus.html", "w", encoding="utf-8") as f:
             f.write(page_html2)
@@ -679,6 +872,8 @@ def build():
         page_html3 = page_html3.replace("{{course_left_column}}", fees_left_column)
         page_html3 = page_html3.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
         page_html3 = page_html3.replace('Request Free Trial Demo', 'Inquire About Installments')
+        breadcrumbs_fees = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Fees &amp; Options</span>'
+        page_html3 = page_html3.replace("{{course_breadcrumbs}}", breadcrumbs_fees)
 
         with open(f"{base_slug}-course-fees.html", "w", encoding="utf-8") as f:
             f.write(page_html3)
@@ -779,6 +974,8 @@ def build():
         page_html4 = page_html4.replace("{{course_left_column}}", interview_left_column)
         page_html4 = page_html4.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
         page_html4 = page_html4.replace('Request Free Trial Demo', 'Book 1-to-1 Demo Slot')
+        breadcrumbs_interview = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Interview Questions</span>'
+        page_html4 = page_html4.replace("{{course_breadcrumbs}}", breadcrumbs_interview)
 
         with open(f"{base_slug}-interview-questions.html", "w", encoding="utf-8") as f:
             f.write(page_html4)
@@ -902,100 +1099,796 @@ def build():
         page_html5 = page_html5.replace("{{course_left_column}}", roadmap_left_column)
         page_html5 = page_html5.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
         page_html5 = page_html5.replace('Request Free Trial Demo', 'Schedule Career Guidance')
+        breadcrumbs_roadmap = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Roadmap</span>'
+        page_html5 = page_html5.replace("{{course_breadcrumbs}}", breadcrumbs_roadmap)
 
         with open(f"{base_slug}-roadmap.html", "w", encoding="utf-8") as f:
             f.write(page_html5)
         generated_pages.append(f"{base_slug}-roadmap")
+
+        # ----------------------------------------------------
+        # PAGE 6: Project Ideas Page (if matching entry exists in EXTRA_PAGES)
+        # ----------------------------------------------------
+        proj_ideas_entry = None
+        for pg in EXTRA_PAGES:
+            if pg.get("category") == "projects" and pg.get("related_course_slug") == slug:
+                proj_ideas_entry = pg
+                break
+
+        if proj_ideas_entry:
+            proj_slug = proj_ideas_entry["slug"]
+            proj_h1 = proj_ideas_entry["h1"]
+            proj_h2 = proj_ideas_entry["h2"]
+            proj_seo_title = proj_ideas_entry["seo_title"]
+            proj_meta_description = proj_ideas_entry["meta_description"]
+            proj_key_takeaways = proj_ideas_entry["key_takeaways"]
+            proj_content_blocks = proj_ideas_entry["content_blocks"]
+            proj_faqs = proj_ideas_entry["faqs"]
+            proj_category_label = proj_ideas_entry["category_label"]
+
+            # Key takeaways section
+            takeaways_li = "".join([f"<li>{item}</li>" for item in proj_key_takeaways])
+            takeaways_html = f"""
+            <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--accent); border-radius: var(--border-radius); padding: 2rem; margin-top: 1rem; margin-bottom: 3rem;">
+                <h3 style="color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .5 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><line x1="9" y1="18" x2="15" y2="18"></line><line x1="10" y1="22" x2="14" y2="22"></line></svg>Key Takeaways
+                </h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                    {takeaways_li}
+                </ul>
+            </div>
+            """
+
+            # Build content blocks
+            content_html = ""
+            for block in proj_content_blocks:
+                text_formatted = block["text"].replace("\n", "<br>")
+                content_html += f"""
+                <div style="margin-bottom: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem;">
+                    <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1rem; font-family: var(--font-heading);">{block['title']}</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin: 0;">{text_formatted}</p>
+                </div>
+                """
+
+            # Append technical code block if exists
+            snippet_data = CODE_SNIPPETS_DATA.get(proj_slug, {})
+            if snippet_data:
+                if "code_snippet" in snippet_data:
+                    code_info = snippet_data["code_snippet"]
+                    escaped_code = code_info["code"].replace("<", "&lt;").replace(">", "&gt;")
+                    content_html += f"""
+                    <div class="code-snippet-container" style="margin-bottom: 2.5rem;">
+                        <h3 class="code-snippet-title" style="margin-bottom: 1rem;">{code_info['title']}</h3>
+                        <pre><code class="language-{code_info['language']}">{escaped_code}</code></pre>
+                    </div>
+                    """
+                if "official_doc" in snippet_data:
+                    doc_info = snippet_data["official_doc"]
+                    content_html += f"""
+                    <div class="official-doc-container" style="margin-bottom: 2.5rem;">
+                        <div>
+                            <h4 class="official-doc-title">Official Documentation</h4>
+                            <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
+                        </div>
+                        <a href="{doc_info['url']}" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                            {doc_info['label']} ↗
+                        </a>
+                    </div>
+                    """
+                if "internal_links" in snippet_data:
+                    links_html = ""
+                    for link in snippet_data["internal_links"]:
+                        links_html += f"""
+                        <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                            {link['context'].replace(link['label'], f'<a href="{link["url"]}" style="color: var(--accent); text-decoration: none; font-weight: 600;">{link["label"]}</a>')}
+                        </li>
+                        """
+                    content_html += f"""
+                    <div class="related-guides-container" style="margin-bottom: 2.5rem;">
+                        <h4 class="related-guides-title">Related Practical Guides</h4>
+                        <ul class="related-guides-list">
+                            {links_html}
+                        </ul>
+                    </div>
+                    """
+
+            # Build FAQs
+            proj_faq_html = ""
+            proj_faq_entities = []
+            for faq in proj_faqs:
+                proj_faq_html += f"""
+                <div class="curriculum-module">
+                    <div class="module-header faq-header">
+                        <h4>{faq['q']}</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="faq-content module-content">
+                        <div class="module-content-inner">
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">{faq['a']}</p>
+                        </div>
+                    </div>
+                </div>
+                """
+                proj_faq_entities.append({
+                    "@type": "Question",
+                    "name": faq["q"],
+                    "acceptedAnswer": {"@type": "Answer", "text": faq["a"]}
+                })
+
+            proj_left_column = f"""
+            <h2 style="margin-bottom: 1.5rem;">Project Implementation Portfolios</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">
+                Browse our structured blueprints and developer checklists for building enterprise {name} systems. Mapped directly to CACTS 1-to-1 mentoring.
+            </p>
+            {takeaways_html}
+            {content_html}
+            <div style="margin-top: 4rem;">
+                <h2 style="margin-bottom: 1.5rem;">Project &amp; Syllabus FAQs</h2>
+                <div class="course-faqs-accordion">
+                    {proj_faq_html}
+                </div>
+            </div>
+            """
+
+            proj_breadcrumb = {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cactslearn.github.io/index.html"},
+                    {"@type": "ListItem", "position": 2, "name": name, "item": f"https://cactslearn.github.io/{slug}.html"},
+                    {"@type": "ListItem", "position": 3, "name": proj_category_label, "item": f"https://cactslearn.github.io/{proj_slug}.html"}
+                ]
+            }
+
+            article_schema = {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": proj_seo_title,
+                "description": proj_meta_description,
+                "author": {
+                    "@type": "Person",
+                    "name": "Hambirrao P",
+                    "url": "https://cactslearn.github.io/about.html#hambirrao",
+                    "sameAs": [
+                        "https://www.linkedin.com/in/hambirrao/"
+                    ]
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://cactslearn.github.io/images/cacts-logo.png"
+                    }
+                },
+                "mainEntityOfPage": f"https://cactslearn.github.io/{proj_slug}.html"
+            }
+
+            schema_markup6 = f"""
+            <script type="application/ld+json">
+            {json.dumps(article_schema, indent=2)}
+            </script>
+            <script type="application/ld+json">
+            {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": proj_faq_entities}, indent=2)}
+            </script>
+            <script type="application/ld+json">
+            {json.dumps(proj_breadcrumb, indent=2)}
+            </script>
+            """
+
+            page_html6 = template
+            page_html6 = page_html6.replace("{{seo_title}}", proj_seo_title)
+            page_html6 = page_html6.replace("{{meta_description}}", proj_meta_description)
+            page_html6 = page_html6.replace("{{canonical}}", f"https://cactslearn.github.io/{proj_slug}.html")
+            page_html6 = page_html6.replace("{{schema_markup}}", schema_markup6)
+            page_html6 = page_html6.replace("{{course_name}}", name)
+            page_html6 = page_html6.replace("{{course_name_encoded}}", name_encoded)
+            page_html6 = page_html6.replace("{{h1}}", proj_h1)
+            page_html6 = page_html6.replace("{{h2}}", proj_h2)
+            page_html6 = page_html6.replace("{{duration}}", duration)
+            page_html6 = page_html6.replace("{{price}}", price)
+            page_html6 = page_html6.replace("{{course_reviews}}", reviews_html)
+            page_html6 = page_html6.replace("{{course_tabs}}", get_tabs_html("projects"))
+            page_html6 = page_html6.replace("{{course_left_column}}", proj_left_column)
+            page_html6 = page_html6.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
+            page_html6 = page_html6.replace('Request Free Trial Demo', 'Book 1-to-1 Project Review')
+            breadcrumbs_proj = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">{proj_category_label}</span>'
+            page_html6 = page_html6.replace("{{course_breadcrumbs}}", breadcrumbs_proj)
+
+            with open(f"{proj_slug}.html", "w", encoding="utf-8") as f:
+                f.write(page_html6)
+            generated_pages.append(proj_slug)
+
+        # ----------------------------------------------------
+        # PAGE 7: Career Roadmap Page (if matching entry exists in EXTRA_PAGES)
+        # ----------------------------------------------------
+        if course_career_roadmap:
+            road_slug = course_career_roadmap["slug"]
+            road_h1 = course_career_roadmap["h1"]
+            road_h2 = course_career_roadmap["h2"]
+            road_seo_title = course_career_roadmap["seo_title"]
+            road_meta_description = course_career_roadmap["meta_description"]
+            road_key_takeaways = course_career_roadmap["key_takeaways"]
+            road_content_blocks = course_career_roadmap["content_blocks"]
+            road_faqs = course_career_roadmap["faqs"]
+            road_category_label = course_career_roadmap["category_label"]
+
+            takeaways_li = "".join([f"<li>{item}</li>" for item in road_key_takeaways])
+            takeaways_html = f"""
+            <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--accent); border-radius: var(--border-radius); padding: 2rem; margin-top: 1rem; margin-bottom: 3rem;">
+                <h3 style="color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .5 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><line x1="9" y1="18" x2="15" y2="18"></line><line x1="10" y1="22" x2="14" y2="22"></line></svg>Key Takeaways
+                </h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                    {takeaways_li}
+                </ul>
+            </div>
+            """
+
+            content_html = ""
+            for block in road_content_blocks:
+                text_formatted = block["text"].replace("\n", "<br>")
+                content_html += f"""
+                <div style="margin-bottom: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem;">
+                    <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1rem; font-family: var(--font-heading);">{block['title']}</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin: 0;">{text_formatted}</p>
+                </div>
+                """
+
+            # Code/Doc snippet
+            snippet_data = CODE_SNIPPETS_DATA.get(road_slug, {})
+            if snippet_data:
+                if "code_snippet" in snippet_data:
+                    code_info = snippet_data["code_snippet"]
+                    escaped_code = code_info["code"].replace("<", "&lt;").replace(">", "&gt;")
+                    content_html += f"""
+                    <div class="code-snippet-container" style="margin-bottom: 2.5rem;">
+                        <h3 class="code-snippet-title" style="margin-bottom: 1rem;">{code_info['title']}</h3>
+                        <pre><code class="language-{code_info['language']}">{escaped_code}</code></pre>
+                    </div>
+                    """
+                if "official_doc" in snippet_data:
+                    doc_info = snippet_data["official_doc"]
+                    content_html += f"""
+                    <div class="official-doc-container" style="margin-bottom: 2.5rem;">
+                        <div>
+                            <h4 class="official-doc-title">Official Documentation</h4>
+                            <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
+                        </div>
+                        <a href="{doc_info['url']}" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                            {doc_info['label']} ↗
+                        </a>
+                    </div>
+                    """
+                if "internal_links" in snippet_data:
+                    links_html = ""
+                    for link in snippet_data["internal_links"]:
+                        links_html += f"""
+                        <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                            {link['context'].replace(link['label'], f'<a href="{link["url"]}" style="color: var(--accent); text-decoration: none; font-weight: 600;">{link["label"]}</a>')}
+                        </li>
+                        """
+                    content_html += f"""
+                    <div class="related-guides-container" style="margin-bottom: 2.5rem;">
+                        <h4 class="related-guides-title">Related Practical Guides</h4>
+                        <ul class="related-guides-list">
+                            {links_html}
+                        </ul>
+                    </div>
+                    """
+
+            road_faq_html = ""
+            road_faq_entities = []
+            for faq in road_faqs:
+                road_faq_html += f"""
+                <div class="curriculum-module">
+                    <div class="module-header faq-header">
+                        <h4>{faq['q']}</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="faq-content module-content">
+                        <div class="module-content-inner">
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">{faq['a']}</p>
+                        </div>
+                    </div>
+                </div>
+                """
+                road_faq_entities.append({
+                    "@type": "Question",
+                    "name": faq["q"],
+                    "acceptedAnswer": {"@type": "Answer", "text": faq["a"]}
+                })
+
+            road_left_column = f"""
+            <h2 style="margin-bottom: 1.5rem;">Beginner Career Roadmap</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">
+                Step-by-step career navigation roadmap for learning {name} and landing developer roles in Pune.
+            </p>
+            {takeaways_html}
+            {content_html}
+            <div style="margin-top: 4rem;">
+                <h2 style="margin-bottom: 1.5rem;">Career Roadmap &amp; Syllabus FAQs</h2>
+                <div class="course-faqs-accordion">
+                    {road_faq_html}
+                </div>
+            </div>
+            """
+
+            road_breadcrumb = {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cactslearn.github.io/index.html"},
+                    {"@type": "ListItem", "position": 2, "name": name, "item": f"https://cactslearn.github.io/{slug}.html"},
+                    {"@type": "ListItem", "position": 3, "name": "Career Roadmap", "item": f"https://cactslearn.github.io/{road_slug}.html"}
+                ]
+            }
+
+            article_schema = {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": road_seo_title,
+                "description": road_meta_description,
+                "author": {
+                    "@type": "Person",
+                    "name": "Hambirrao P",
+                    "url": "https://cactslearn.github.io/about.html#hambirrao",
+                    "sameAs": ["https://www.linkedin.com/in/hambirrao/"]
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://cactslearn.github.io/images/cacts-logo.png"
+                    }
+                },
+                "mainEntityOfPage": f"https://cactslearn.github.io/{road_slug}.html"
+            }
+
+            schema_markup7 = f"""
+            <script type="application/ld+json">
+            {json.dumps(article_schema, indent=2)}
+            </script>
+            <script type="application/ld+json">
+            {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": road_faq_entities}, indent=2)}
+            </script>
+            <script type="application/ld+json">
+            {json.dumps(road_breadcrumb, indent=2)}
+            </script>
+            """
+
+            page_html7 = template
+            page_html7 = page_html7.replace("{{seo_title}}", road_seo_title)
+            page_html7 = page_html7.replace("{{meta_description}}", road_meta_description)
+            page_html7 = page_html7.replace("{{canonical}}", f"https://cactslearn.github.io/{road_slug}.html")
+            page_html7 = page_html7.replace("{{schema_markup}}", schema_markup7)
+            page_html7 = page_html7.replace("{{course_name}}", name)
+            page_html7 = page_html7.replace("{{course_name_encoded}}", name_encoded)
+            page_html7 = page_html7.replace("{{h1}}", road_h1)
+            page_html7 = page_html7.replace("{{h2}}", road_h2)
+            page_html7 = page_html7.replace("{{duration}}", duration)
+            page_html7 = page_html7.replace("{{price}}", price)
+            page_html7 = page_html7.replace("{{course_reviews}}", reviews_html)
+            page_html7 = page_html7.replace("{{course_tabs}}", get_tabs_html("career-roadmap"))
+            page_html7 = page_html7.replace("{{course_left_column}}", road_left_column)
+            page_html7 = page_html7.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
+            page_html7 = page_html7.replace('Request Free Trial Demo', 'Schedule Career Roadmap Call')
+            breadcrumbs_road = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Career Roadmap</span>'
+            page_html7 = page_html7.replace("{{course_breadcrumbs}}", breadcrumbs_road)
+
+            with open(f"{road_slug}.html", "w", encoding="utf-8") as f:
+                f.write(page_html7)
+            generated_pages.append(road_slug)
+
+        # ----------------------------------------------------
+        # PAGE 8: Certifications Page (if matching entry exists in EXTRA_PAGES)
+        # ----------------------------------------------------
+        if course_certifications:
+            cert_slug = course_certifications["slug"]
+            cert_h1 = course_certifications["h1"]
+            cert_h2 = course_certifications["h2"]
+            cert_seo_title = course_certifications["seo_title"]
+            cert_meta_description = course_certifications["meta_description"]
+            cert_key_takeaways = course_certifications["key_takeaways"]
+            cert_content_blocks = course_certifications["content_blocks"]
+            cert_faqs = course_certifications["faqs"]
+            cert_category_label = course_certifications["category_label"]
+
+            takeaways_li = "".join([f"<li>{item}</li>" for item in cert_key_takeaways])
+            takeaways_html = f"""
+            <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--accent); border-radius: var(--border-radius); padding: 2rem; margin-top: 1rem; margin-bottom: 3rem;">
+                <h3 style="color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .5 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><line x1="9" y1="18" x2="15" y2="18"></line><line x1="10" y1="22" x2="14" y2="22"></line></svg>Key Takeaways
+                </h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                    {takeaways_li}
+                </ul>
+            </div>
+            """
+
+            content_html = ""
+            for block in cert_content_blocks:
+                text_formatted = block["text"].replace("\n", "<br>")
+                content_html += f"""
+                <div style="margin-bottom: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem;">
+                    <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1rem; font-family: var(--font-heading);">{block['title']}</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin: 0;">{text_formatted}</p>
+                </div>
+                """
+
+            # Snippets
+            snippet_data = CODE_SNIPPETS_DATA.get(cert_slug, {})
+            if snippet_data:
+                if "code_snippet" in snippet_data:
+                    code_info = snippet_data["code_snippet"]
+                    escaped_code = code_info["code"].replace("<", "&lt;").replace(">", "&gt;")
+                    content_html += f"""
+                    <div class="code-snippet-container" style="margin-bottom: 2.5rem;">
+                        <h3 class="code-snippet-title" style="margin-bottom: 1rem;">{code_info['title']}</h3>
+                        <pre><code class="language-{code_info['language']}">{escaped_code}</code></pre>
+                    </div>
+                    """
+                if "official_doc" in snippet_data:
+                    doc_info = snippet_data["official_doc"]
+                    content_html += f"""
+                    <div class="official-doc-container" style="margin-bottom: 2.5rem;">
+                        <div>
+                            <h4 class="official-doc-title">Official Documentation</h4>
+                            <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
+                        </div>
+                        <a href="{doc_info['url']}" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                            {doc_info['label']} ↗
+                        </a>
+                    </div>
+                    """
+                if "internal_links" in snippet_data:
+                    links_html = ""
+                    for link in snippet_data["internal_links"]:
+                        links_html += f"""
+                        <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                            {link['context'].replace(link['label'], f'<a href="{link["url"]}" style="color: var(--accent); text-decoration: none; font-weight: 600;">{link["label"]}</a>')}
+                        </li>
+                        """
+                    content_html += f"""
+                    <div class="related-guides-container" style="margin-bottom: 2.5rem;">
+                        <h4 class="related-guides-title">Related Practical Guides</h4>
+                        <ul class="related-guides-list">
+                            {links_html}
+                        </ul>
+                    </div>
+                    """
+
+            cert_faq_html = ""
+            cert_faq_entities = []
+            for faq in cert_faqs:
+                cert_faq_html += f"""
+                <div class="curriculum-module">
+                    <div class="module-header faq-header">
+                        <h4>{faq['q']}</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="faq-content module-content">
+                        <div class="module-content-inner">
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">{faq['a']}</p>
+                        </div>
+                    </div>
+                </div>
+                """
+                cert_faq_entities.append({
+                    "@type": "Question",
+                    "name": faq["q"],
+                    "acceptedAnswer": {"@type": "Answer", "text": faq["a"]}
+                })
+
+            cert_left_column = f"""
+            <h2 style="margin-bottom: 1.5rem;">Best Technical Certifications</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">
+                Explore industry-validated certifications to boost your {name} credentials and resume.
+            </p>
+            {takeaways_html}
+            {content_html}
+            <div style="margin-top: 4rem;">
+                <h2 style="margin-bottom: 1.5rem;">Certifications &amp; Syllabus FAQs</h2>
+                <div class="course-faqs-accordion">
+                    {cert_faq_html}
+                </div>
+            </div>
+            """
+
+            cert_breadcrumb = {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cactslearn.github.io/index.html"},
+                    {"@type": "ListItem", "position": 2, "name": name, "item": f"https://cactslearn.github.io/{slug}.html"},
+                    {"@type": "ListItem", "position": 3, "name": "Certifications", "item": f"https://cactslearn.github.io/{cert_slug}.html"}
+                ]
+            }
+
+            article_schema = {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": cert_seo_title,
+                "description": cert_meta_description,
+                "author": {
+                    "@type": "Person",
+                    "name": "Hambirrao P",
+                    "url": "https://cactslearn.github.io/about.html#hambirrao",
+                    "sameAs": ["https://www.linkedin.com/in/hambirrao/"]
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://cactslearn.github.io/images/cacts-logo.png"
+                    }
+                },
+                "mainEntityOfPage": f"https://cactslearn.github.io/{cert_slug}.html"
+            }
+
+            schema_markup8 = f"""
+            <script type="application/ld+json">
+            {json.dumps(article_schema, indent=2)}
+            </script>
+            <script type="application/ld+json">
+            {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": cert_faq_entities}, indent=2)}
+            </script>
+            <script type="application/ld+json">
+            {json.dumps(cert_breadcrumb, indent=2)}
+            </script>
+            """
+
+            page_html8 = template
+            page_html8 = page_html8.replace("{{seo_title}}", cert_seo_title)
+            page_html8 = page_html8.replace("{{meta_description}}", cert_meta_description)
+            page_html8 = page_html8.replace("{{canonical}}", f"https://cactslearn.github.io/{cert_slug}.html")
+            page_html8 = page_html8.replace("{{schema_markup}}", schema_markup8)
+            page_html8 = page_html8.replace("{{course_name}}", name)
+            page_html8 = page_html8.replace("{{course_name_encoded}}", name_encoded)
+            page_html8 = page_html8.replace("{{h1}}", cert_h1)
+            page_html8 = page_html8.replace("{{h2}}", cert_h2)
+            page_html8 = page_html8.replace("{{duration}}", duration)
+            page_html8 = page_html8.replace("{{price}}", price)
+            page_html8 = page_html8.replace("{{course_reviews}}", reviews_html)
+            page_html8 = page_html8.replace("{{course_tabs}}", get_tabs_html("certifications"))
+            page_html8 = page_html8.replace("{{course_left_column}}", cert_left_column)
+            page_html8 = page_html8.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
+            page_html8 = page_html8.replace('Request Free Trial Demo', 'Schedule Certification Guide Call')
+            breadcrumbs_cert = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Certifications</span>'
+            page_html8 = page_html8.replace("{{course_breadcrumbs}}", breadcrumbs_cert)
+
+            with open(f"{cert_slug}.html", "w", encoding="utf-8") as f:
+                f.write(page_html8)
+            generated_pages.append(cert_slug)
+
+        # ----------------------------------------------------
+        # PAGE 9: Comparison Guides Page (if matching entries exist in EXTRA_PAGES)
+        # ----------------------------------------------------
+        for comp_entry in course_comparisons:
+            comp_slug = comp_entry["slug"]
+            comp_h1 = comp_entry["h1"]
+            comp_h2 = comp_entry["h2"]
+            comp_seo_title = comp_entry["seo_title"]
+            comp_meta_description = comp_entry["meta_description"]
+            comp_key_takeaways = comp_entry["key_takeaways"]
+            comp_content_blocks = comp_entry["content_blocks"]
+            comp_faqs = comp_entry["faqs"]
+            comp_category_label = comp_entry["category_label"]
+
+            takeaways_li = "".join([f"<li>{item}</li>" for item in comp_key_takeaways])
+            takeaways_html = f"""
+            <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--accent); border-radius: var(--border-radius); padding: 2rem; margin-top: 1rem; margin-bottom: 3rem;">
+                <h3 style="color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .5 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><line x1="9" y1="18" x2="15" y2="18"></line><line x1="10" y1="22" x2="14" y2="22"></line></svg>Key Takeaways
+                </h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                    {takeaways_li}
+                </ul>
+            </div>
+            """
+
+            content_html = ""
+            for block in comp_content_blocks:
+                text_formatted = block["text"].replace("\n", "<br>")
+                content_html += f"""
+                <div style="margin-bottom: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem;">
+                    <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1rem; font-family: var(--font-heading);">{block['title']}</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin: 0;">{text_formatted}</p>
+                </div>
+                """
+
+            # Parameter matrix
+            if comp_slug in COMPARISON_TABLES:
+                comp_data = COMPARISON_TABLES[comp_slug]
+                rows_html = ""
+                for row in comp_data["rows"]:
+                    rows_html += f"""
+                                <tr style="transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.01)'" onmouseout="this.style.background='transparent'">
+                                    <td data-label="Parameter" style="font-weight: 600; color: var(--text-primary);">{row[0]}</td>
+                                    <td data-label="{comp_data['title_a']}">{row[1]}</td>
+                                    <td data-label="{comp_data['title_b']}">{row[2]}</td>
+                                </tr>
+                    """
+                
+                table_html = f"""
+                        <div style="margin-top: 3rem; margin-bottom: 3rem;">
+                            <h2 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 1.5rem; font-family: var(--font-heading);">Side-by-Side Parameter Matrix</h2>
+                            <p style="color: var(--text-secondary); margin-bottom: 2rem; font-size: 1rem; line-height: 1.6;">Below is a side-by-side technical parameters comparison designed to help you choose the right path.</p>
+                            <div class="table-container" style="margin-bottom: 2rem;">
+                                <table class="responsive-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Comparison Parameter</th>
+                                            <th>{comp_data['title_a']}</th>
+                                            <th>{comp_data['title_b']}</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {rows_html}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                """
+                content_html += table_html
+
+            # Snippet
+            snippet_data = CODE_SNIPPETS_DATA.get(comp_slug, {})
+            if snippet_data:
+                if "code_snippet" in snippet_data:
+                    code_info = snippet_data["code_snippet"]
+                    escaped_code = code_info["code"].replace("<", "&lt;").replace(">", "&gt;")
+                    content_html += f"""
+                    <div class="code-snippet-container" style="margin-bottom: 2.5rem;">
+                        <h3 class="code-snippet-title" style="margin-bottom: 1rem;">{code_info['title']}</h3>
+                        <pre><code class="language-{code_info['language']}">{escaped_code}</code></pre>
+                    </div>
+                    """
+                if "official_doc" in snippet_data:
+                    doc_info = snippet_data["official_doc"]
+                    content_html += f"""
+                    <div class="official-doc-container" style="margin-bottom: 2.5rem;">
+                        <div>
+                            <h4 class="official-doc-title">Official Documentation</h4>
+                            <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
+                        </div>
+                        <a href="{doc_info['url']}" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                            {doc_info['label']} ↗
+                        </a>
+                    </div>
+                    """
+                if "internal_links" in snippet_data:
+                    links_html = ""
+                    for link in snippet_data["internal_links"]:
+                        links_html += f"""
+                        <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                            {link['context'].replace(link['label'], f'<a href="{link["url"]}" style="color: var(--accent); text-decoration: none; font-weight: 600;">{link["label"]}</a>')}
+                        </li>
+                        """
+                    content_html += f"""
+                    <div class="related-guides-container" style="margin-bottom: 2.5rem;">
+                        <h4 class="related-guides-title">Related Practical Guides</h4>
+                        <ul class="related-guides-list">
+                            {links_html}
+                        </ul>
+                    </div>
+                    """
+
+            comp_faq_html = ""
+            comp_faq_entities = []
+            for faq in comp_faqs:
+                comp_faq_html += f"""
+                <div class="curriculum-module">
+                    <div class="module-header faq-header">
+                        <h4>{faq['q']}</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="faq-content module-content">
+                        <div class="module-content-inner">
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">{faq['a']}</p>
+                        </div>
+                    </div>
+                </div>
+                """
+                comp_faq_entities.append({
+                    "@type": "Question",
+                    "name": faq["q"],
+                    "acceptedAnswer": {"@type": "Answer", "text": faq["a"]}
+                })
+
+            comp_left_column = f"""
+            <h2 style="margin-bottom: 1.5rem;">Technology Stack Comparison</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">
+                Understand core differences between competing software libraries, deployment tools, and coding frameworks.
+            </p>
+            {takeaways_html}
+            {content_html}
+            <div style="margin-top: 4rem;">
+                <h2 style="margin-bottom: 1.5rem;">Technology &amp; Syllabus FAQs</h2>
+                <div class="course-faqs-accordion">
+                    {comp_faq_html}
+                </div>
+            </div>
+            """
+
+            comp_breadcrumb = {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cactslearn.github.io/index.html"},
+                    {"@type": "ListItem", "position": 2, "name": name, "item": f"https://cactslearn.github.io/{slug}.html"},
+                    {"@type": "ListItem", "position": 3, "name": "Compare Tools", "item": f"https://cactslearn.github.io/{comp_slug}.html"}
+                ]
+            }
+
+            article_schema = {
+                "@context": "https://schema.org",
+                "@type": "Article",
+                "headline": comp_seo_title,
+                "description": comp_meta_description,
+                "author": {
+                    "@type": "Person",
+                    "name": "Hambirrao P",
+                    "url": "https://cactslearn.github.io/about.html#hambirrao",
+                    "sameAs": ["https://www.linkedin.com/in/hambirrao/"]
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://cactslearn.github.io/images/cacts-logo.png"
+                    }
+                },
+                "mainEntityOfPage": f"https://cactslearn.github.io/{comp_slug}.html"
+            }
+
+            schema_markup9 = f"""
+            <script type="application/ld+json">
+            {json.dumps(article_schema, indent=2)}
+            </script>
+            <script type="application/ld+json">
+            {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": comp_faq_entities}, indent=2)}
+            </script>
+            <script type="application/ld+json">
+            {json.dumps(comp_breadcrumb, indent=2)}
+            </script>
+            """
+
+            page_html9 = template
+            page_html9 = page_html9.replace("{{seo_title}}", comp_seo_title)
+            page_html9 = page_html9.replace("{{meta_description}}", comp_meta_description)
+            page_html9 = page_html9.replace("{{canonical}}", f"https://cactslearn.github.io/{comp_slug}.html")
+            page_html9 = page_html9.replace("{{schema_markup}}", schema_markup9)
+            page_html9 = page_html9.replace("{{course_name}}", name)
+            page_html9 = page_html9.replace("{{course_name_encoded}}", name_encoded)
+            page_html9 = page_html9.replace("{{h1}}", comp_h1)
+            page_html9 = page_html9.replace("{{h2}}", comp_h2)
+            page_html9 = page_html9.replace("{{duration}}", duration)
+            page_html9 = page_html9.replace("{{price}}", price)
+            page_html9 = page_html9.replace("{{course_reviews}}", reviews_html)
+            page_html9 = page_html9.replace("{{course_tabs}}", get_tabs_html("comparison"))
+            page_html9 = page_html9.replace("{{course_left_column}}", comp_left_column)
+            page_html9 = page_html9.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
+            page_html9 = page_html9.replace('Request Free Trial Demo', 'Compare Platform Features')
+            breadcrumbs_comp = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Tech Comparison</span>'
+            page_html9 = page_html9.replace("{{course_breadcrumbs}}", breadcrumbs_comp)
+
+            with open(f"{comp_slug}.html", "w", encoding="utf-8") as f:
+                f.write(page_html9)
+            generated_pages.append(comp_slug)
 
     # Generate Extra Resource Pages
     resource_template_path = os.path.join("src", "resource_template.html")
     with open(resource_template_path, "r", encoding="utf-8") as f:
         res_template = f.read()
 
-    COMPARISON_TABLES = {
-        "java-vs-python": {
-            "title_a": "Java (Spring Boot)",
-            "title_b": "Python (Data/ML)",
-            "rows": [
-                ["Core Philosophy", "Statically typed, compiled to bytecode", "Dynamically typed, interpreted script"],
-                ["Syntax & Structure", "Verbose, class-based, strict type safety", "Minimal boilerplate, indentation-based, readable"],
-                ["Execution Velocity", "Very high (JIT compiler optimized runtimes)", "Moderate (interpreted execution, CPU-bound)"],
-                ["Enterprise Adoption", "Core banking, insurance, transaction engines", "AI/ML models, data pipelines, web scraping"],
-                ["Standard Framework", "Spring Boot, Jakarta EE", "Django, FastAPI, Flask, PySpark"],
-                ["Pune IT Job Volume", "Highest (massive enterprise bank/MNC demand)", "High (startups, data analytics, ML teams)"],
-                ["Primary Roles", "Backend Engineer, Java Microservices Developer", "Data Scientist, ML Engineer, DevOps Scripting"],
-                ["Learning Curve", "Steep (requires understanding OOP & types first)", "Gentle (highly intuitive, english-like syntax)"]
-            ]
-        },
-        "power-bi-vs-tableau": {
-            "title_a": "Microsoft Power BI",
-            "title_b": "Salesforce Tableau",
-            "rows": [
-                ["Ecosystem Fit", "Native Microsoft (Office 365, Azure, SQL Server)", "Platform-independent (strong custom connectors)"],
-                ["Pricing Model", "Low cost (Desktop free, Pro ~$10/user/month)", "High cost (Creator starts at ~$75/user/month)"],
-                ["Calculations", "Data Analysis Expressions (DAX) & M Query", "Level of Detail (LOD) & Tableau calculations"],
-                ["Data Modeling", "Robust built-in data modeling relationships", "Primarily visualization; requires clean inputs"],
-                ["Visual Flexibility", "Good standard templates, drag-and-drop", "Superior, highly customized canvas structures"],
-                ["Pune Hiring Volume", "Extremely high (dominates SMB & Enterprise)", "Moderate (large consultancies, specialized analytics)"],
-                ["Learning Curve", "Short (intuitive for Excel power users)", "Medium (requires conceptual viz training)"]
-            ]
-        },
-        "docker-vs-kubernetes": {
-            "title_a": "Docker Containerization",
-            "title_b": "Kubernetes Orchestration",
-            "rows": [
-                ["Core Utility", "Packages application processes with dependencies", "Orchestrates clusters of running container instances"],
-                ["Scaling Fleet", "Local scaling (Docker Compose, manual run)", "Autoscale pods based on CPU/RAM metrics"],
-                ["Setup Overhead", "Minimal (single engine install on host)", "High (requires cluster networking, DNS, control plane)"],
-                ["High Availability", "Manual restarts / basic restarts", "Automated self-healing, rolling updates, pod rescheduling"],
-                ["Network Setup", "Single bridge networks, port mapping", "Cluster-wide overlay networking, services, ingress"],
-                ["Use Case", "Build, run, and test a single app locally", "Manage 100+ microservices in production clouds"],
-                ["Resource Usage", "Very low (shares host OS kernel space)", "Moderate to high (runs master control plane processes)"]
-            ]
-        },
-        "spark-vs-hadoop": {
-            "title_a": "Apache Spark",
-            "title_b": "Apache Hadoop",
-            "rows": [
-                ["Processing Speed", "Up to 100x faster (runs calculations in RAM)", "Slower (writes intermediate records to physical disks)"],
-                ["Primary Function", "Computational processing and analytical engine", "Distributed storage (HDFS) & cluster scheduling (YARN)"],
-                ["Data Storage", "None (must read/write from external storage)", "Integrated distributed filesystem (HDFS)"],
-                ["Machine Learning", "Native robust libraries (MLlib in-memory)", "Requires third-party tools (Mahout on MapReduce)"],
-                ["Real-Time Streams", "Native stream support (micro-batches)", "Strictly batch-oriented processing"],
-                ["Cluster Setup", "Can run in standalone mode or on YARN/Mesos", "Requires full YARN control plane configuration"],
-                ["Learning Curve", "Medium (requires Spark DataFrame concept knowledge)", "Steep (requires Java MapReduce program logic)"]
-            ]
-        },
-        "aws-vs-azure": {
-            "title_a": "Amazon Web Services (AWS)",
-            "title_b": "Microsoft Azure",
-            "rows": [
-                ["Market Position", "Global leader (pioneered public cloud since 2006)", "Second place (rapid enterprise growth since 2010)"],
-                ["Core Compute", "AWS EC2 (Elastic Compute Cloud)", "Azure Virtual Machines"],
-                ["Object Storage", "AWS S3 (Simple Storage Service)", "Azure Blob Storage"],
-                ["Database Service", "AWS RDS (supporting Aurora, Postgres, etc.)", "Azure SQL Database (native MS SQL Server)"],
-                ["Enterprise Fit", "Preferred by startups, SaaS, tech giants", "Native integration for active directory, Windows Server"],
-                ["Pricing Logic", "Pay-as-you-go, complex resource tiers", "Discounted bundles for existing Microsoft licensing"],
-                ["Pune IT Demand", "Very high (dominant in product and web squads)", "High (widely used in enterprise banks and services)"]
-            ]
-        },
-        "jenkins-vs-github-actions": {
-            "title_a": "Jenkins CI/CD",
-            "title_b": "GitHub Actions",
-            "rows": [
-                ["Deployment Model", "Self-hosted (must deploy, patch, and manage host)", "Cloud-managed (GitHub hosts runner VMs)"],
-                ["Configuration", "Jenkinsfile (using Groovy-based syntax)", "YAML workflow files inside repository folder"],
-                ["Integration", "Requires webhook triggers & credentials setup", "Native integration with GitHub repository events"],
-                ["Plugin Ecosystem", "Over 1,800 community-developed plugins", "Marketplace with thousands of pre-configured Actions"],
-                ["Security Audits", "You manage credential stores and SSH keys", "GitHub manages secrets decryption in runners"],
-                ["Maintenance", "High (requires updating Java runtime, core, plugins)", "Zero maintenance (handled by GitHub infrastructure)"],
-                ["Ideal Fit", "Complex, customized enterprise build setups", "Cloud-native microservices & active web application releases"]
-            ]
-        }
-    }
-
     for pg in EXTRA_PAGES:
         category = pg["category"]
+        if category in ["projects", "roadmap", "certifications", "comparison"]:
+            continue
         slug = pg["slug"]
         seo_title = pg["seo_title"]
         meta_description = pg["meta_description"]
@@ -1183,6 +2076,51 @@ def build():
         </script>
         """
 
+        # Construct dynamic course tabs for project pages if applicable
+        resource_tabs_html = ""
+        course_match = None
+        for c in courses:
+            if c["slug"] == related_course_slug:
+                course_match = c
+                break
+
+        if category == "projects" and course_match:
+            base_slug = related_course_slug.replace("-training", "")
+            project_mapping = {
+                "java-full-stack-developer-training": ("java-full-stack-project-ideas.html", "Project Ideas", "projects"),
+                "data-science-training": ("data-science-project-ideas.html", "Project Ideas", "projects"),
+                "data-engineering-training": ("data-engineering-project-ideas.html", "Project Ideas", "projects"),
+                "devops-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
+                "cybersecurity-training": ("cybersecurity-project-ideas.html", "Project Ideas", "projects"),
+                "power-bi-training": ("power-bi-dashboard-ideas.html", "Dashboard Ideas", "projects"),
+                "full-stack-development-training": ("project-portfolios.html", "Portfolios", "projects"),
+                "ai-machine-learning-training": ("data-science-project-ideas.html", "Project Ideas", "projects"),
+                "cloud-computing-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
+                "python-programming-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
+                "software-testing-training": ("student-projects.html", "Student Projects", "projects")
+            }
+            proj_url, proj_label, proj_type = project_mapping.get(related_course_slug, ("student-projects.html", "Projects", "projects"))
+            tabs_config = [
+                {"type": "overview", "label": "Overview", "url": f"{related_course_slug}.html"},
+                {"type": "syllabus", "label": "Syllabus", "url": f"{base_slug}-syllabus.html"},
+                {"type": "fees", "label": "Fees & Options", "url": f"{base_slug}-course-fees.html"},
+                {"type": "interview", "label": "Interview Qs", "url": f"{base_slug}-interview-questions.html"},
+                {"type": "roadmap", "label": "Roadmap", "url": f"{base_slug}-roadmap.html"},
+                {"type": proj_type, "label": proj_label, "url": proj_url}
+            ]
+            tabs_inner = ""
+            for tab in tabs_config:
+                active_class = "active" if tab["type"] == proj_type else ""
+                tabs_inner += f'<a href="{tab["url"]}" class="tab-link {active_class}">{tab["label"]}</a>\n'
+            
+            resource_tabs_html = f"""
+            <div class="course-tabs-container" style="margin-top: 2rem; margin-bottom: 2rem;">
+                <div class="course-tabs-inner">
+                    {tabs_inner}
+                </div>
+            </div>
+            """
+
         page_html = res_template
         page_html = page_html.replace("{{seo_title}}", seo_title)
         page_html = page_html.replace("{{meta_description}}", meta_description)
@@ -1199,6 +2137,7 @@ def build():
         page_html = page_html.replace("{{related_course}}", related_course)
         page_html = page_html.replace("{{related_course_slug}}", related_course_slug)
         page_html = page_html.replace("{{related_course_encoded}}", urllib.parse.quote(related_course))
+        page_html = page_html.replace("{{resource_tabs}}", resource_tabs_html)
 
         with open(f"{slug}.html", "w", encoding="utf-8") as f:
             f.write(page_html)
