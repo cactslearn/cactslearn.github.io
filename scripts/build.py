@@ -1170,7 +1170,7 @@ def build():
                             <h4 class="official-doc-title">Official Documentation</h4>
                             <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
                         </div>
-                        <a href="{doc_info['url']}" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                        <a href="{doc_info['url']}" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-secondary official-doc-link">
                             {doc_info['label']} ↗
                         </a>
                     </div>
@@ -1355,7 +1355,7 @@ def build():
                             <h4 class="official-doc-title">Official Documentation</h4>
                             <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
                         </div>
-                        <a href="{doc_info['url']}" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                        <a href="{doc_info['url']}" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-secondary official-doc-link">
                             {doc_info['label']} ↗
                         </a>
                     </div>
@@ -1537,7 +1537,7 @@ def build():
                             <h4 class="official-doc-title">Official Documentation</h4>
                             <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
                         </div>
-                        <a href="{doc_info['url']}" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                        <a href="{doc_info['url']}" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-secondary official-doc-link">
                             {doc_info['label']} ↗
                         </a>
                     </div>
@@ -1754,7 +1754,7 @@ def build():
                             <h4 class="official-doc-title">Official Documentation</h4>
                             <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
                         </div>
-                        <a href="{doc_info['url']}" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                        <a href="{doc_info['url']}" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-secondary official-doc-link">
                             {doc_info['label']} ↗
                         </a>
                     </div>
@@ -1975,7 +1975,7 @@ def build():
                             <h4 class="official-doc-title">Official Documentation</h4>
                             <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
                         </div>
-                        <a href="{doc_info['url']}" target="_blank" rel="noopener" class="btn btn-secondary official-doc-link">
+                        <a href="{doc_info['url']}" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-secondary official-doc-link">
                             {doc_info['label']} ↗
                         </a>
                     </div>
