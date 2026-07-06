@@ -257,6 +257,10 @@
                             <div class="quiz-option-radio"></div>
                             <span>Automating software deployments, scripts, and clouds</span>
                         </div>
+                        <div class="quiz-option" data-value="mobile">
+                            <div class="quiz-option-radio"></div>
+                            <span>Building cross-platform smartphone apps (iOS &amp; Android)</span>
+                        </div>
                     </div>
                 </div>
 
@@ -364,6 +368,8 @@
                 <ul style="list-style: none;">
                     <li><a href="java-full-stack-developer-training.html">Java Full Stack</a></li>
                     <li><a href="full-stack-development-training.html">Full Stack Web</a></li>
+                    <li><a href="react-js-developer-training.html">React JS Developer</a></li>
+                    <li><a href="react-native-mobile-developer-training.html">React Native Mobile</a></li>
                     <li><a href="ai-machine-learning-training.html">AI &amp; Machine Learning</a></li>
                     <li><a href="data-science-training.html">Data Science</a></li>
                     <li><a href="data-engineering-training.html">Data Engineering</a></li>
@@ -545,10 +551,24 @@
             const math = answers[3];
             const goal = answers[4];
 
-            if (interest === 'web' && goal === 'startup') {
-                course = "Full Stack Web Developer (MERN)";
-                desc = "Since you love building client web applications and prefer startup settings, MERN (MongoDB, Express, React, Node) Full Stack training matches your workflow. You will construct responsive Single-Page Applications (SPAs) with unified JavaScript coding.";
-                slug = "full-stack-development-training.html";
+            if (interest === 'web') {
+                if (answers[5] === 'part') {
+                    course = "React JS Developer";
+                    desc = "Since you want to design interactive client-side web interfaces with a flexible weekly study target, React JS Developer Training is your ideal match. You will focus on functional components, hooks, global states, and Axios REST queries.";
+                    slug = "react-js-developer-training.html";
+                } else if (goal === 'startup') {
+                    course = "Full Stack Web Developer (MERN)";
+                    desc = "Since you love building client web applications and prefer startup settings, MERN (MongoDB, Express, React, Node) Full Stack training matches your workflow. You will construct responsive Single-Page Applications (SPAs) with unified JavaScript coding.";
+                    slug = "full-stack-development-training.html";
+                } else {
+                    course = "Full Stack Web Developer (MERN)";
+                    desc = "Since you love building client web applications, MERN (MongoDB, Express, React, Node) Full Stack training matches your workflow. You will construct responsive Single-Page Applications (SPAs) with unified JavaScript coding.";
+                    slug = "full-stack-development-training.html";
+                }
+            } else if (interest === 'mobile') {
+                course = "React Native Mobile Developer";
+                desc = "Since you want to build cross-platform smartphone apps, our React Native Mobile Developer Training is the perfect fit. You will master Expo CLI, navigation controllers, SQLite databases, and EAS cloud deployment workflows.";
+                slug = "react-native-mobile-developer-training.html";
             } else if (interest === 'database') {
                 course = "Data Engineering";
                 desc = "Your interest in database systems and organizing large datasets aligns perfectly with our Data Engineering syllabus. You will master PySpark streaming, SQL queries, and ETL staging on AWS platforms.";

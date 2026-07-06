@@ -1044,5 +1044,193 @@
         "date": "2026-05-14"
       }
     ]
+  },
+  {
+    "slug": "react-js-developer-training",
+    "name": "React JS Developer Training",
+    "price": "₹14,999",
+    "price_num": 14999,
+    "duration": "8 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "1-to-1 React JS training in Pune. Master modern components, React Hooks, Redux Toolkit, Axios, TailwindCSS, and complete a live frontend internship.",
+    "seo_title": "React JS Developer Training in Pune | CACTS Shivane",
+    "meta_description": "Join the best 1-to-1 React JS Developer Training in Pune. Direct live frontend project internship, custom syllabus, and mentor support. Only ₹14,999.",
+    "h1": "React JS Developer Training in Pune",
+    "h2": "Master React Hooks, Redux, and REST API Integration via 1-to-1 Mentoring & Internships",
+    "skills": [
+      "JavaScript ES6+",
+      "ReactJS Components",
+      "React Hooks",
+      "Redux Toolkit",
+      "React Router",
+      "Axios REST integration",
+      "TailwindCSS",
+      "Git & GitHub"
+    ],
+    "overview": "Our React JS Developer Training is tailored for developers and beginners who want to build high-performance, single-page web applications. Guided by an individual corporate mentor, you will write modern clean code, learn state management, and build real dashboards, finishing with a live web project internship.",
+    "modules": [
+      {
+        "title": "Module 1: Advanced JS & Layouts",
+        "duration": "2 Weeks",
+        "topics": [
+          "ES6+ syntax, Promises, Async/Await and Array methods",
+          "Responsive layouts with Flexbox, CSS Grid, and TailwindCSS",
+          "DOM manipulation events and local storage integrations",
+          "Git branch management, merge conflict resolution"
+        ]
+      },
+      {
+        "title": "Module 2: React Core & Component Design",
+        "duration": "2 Weeks",
+        "topics": [
+          "JSX compiler, virtual DOM, and component rendering cycles",
+          "Functional components, Props validation, and state hook mapping",
+          "Handling lists, forms, and custom inputs in React",
+          "React side-effects with useEffect and cleanup callbacks"
+        ]
+      },
+      {
+        "title": "Module 3: Routing & Global State",
+        "duration": "2 Weeks",
+        "topics": [
+          "Single Page App routing using React Router DOM",
+          "Context API for theme and language state sharing",
+          "Redux Toolkit slices, stores, and async thunk middleware",
+          "HTTP REST client calls using Axios libraries"
+        ]
+      },
+      {
+        "title": "Module 4: Performance & Live Internship",
+        "duration": "2 Weeks",
+        "topics": [
+          "React.memo, useMemo, and useCallback optimizations",
+          "Testing components, mock service worker endpoints",
+          "Building production bundles and Netlify/Vercel pipelines",
+          "Onboarding on a live enterprise dashboard frontend internship"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need to know Java or Node to learn React?",
+        "a": "No. React is a frontend library. We teach you how to mock and consume REST APIs using dummy endpoints, so you do not need backend experience."
+      },
+      {
+        "q": "What projects will I build?",
+        "a": "You will build a dynamic responsive web portal, an interactive catalog, and a comprehensive real-world SaaS admin dashboard."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Amit K.",
+        "role": "Frontend Developer",
+        "location": "Aundh, Pune",
+        "text": "The 1-to-1 React sessions helped me understand state lifting and context API. Building an admin dashboard in TailwindCSS during the internship was fantastic.",
+        "rating": 5,
+        "date": "2026-04-12"
+      },
+      {
+        "name": "Priyanka S.",
+        "role": "React Engineer",
+        "location": "Baner, Pune",
+        "text": "As a designer wanting to transition, the pacing was perfect. We focused on functional hooks and API calls. The resume review got me calls within weeks.",
+        "rating": 5,
+        "date": "2026-05-20"
+      }
+    ]
+  },
+  {
+    "slug": "react-native-mobile-developer-training",
+    "name": "React Native Mobile Developer Training",
+    "price": "₹16,999",
+    "price_num": 16999,
+    "duration": "8 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "1-to-1 React Native mobile developer training in Pune. Master cross-platform iOS & Android apps, Expo CLI, navigation, SQLite, and deploy to app stores.",
+    "seo_title": "React Native Mobile Developer Training in Pune | CACTS Shivane",
+    "meta_description": "Join the best 1-to-1 React Native Mobile Developer Training in Pune. Direct live app project internship, custom syllabus, and mobile store deployment. Only ₹16,999.",
+    "h1": "React Native Mobile Developer Training in Pune",
+    "h2": "Master iOS & Android Cross-Platform Development via 1-to-1 Mentoring & Live Internships",
+    "skills": [
+      "React Native",
+      "Expo CLI",
+      "TypeScript",
+      "React Navigation",
+      "Mobile UI layouts",
+      "SQLite local storage",
+      "App Store & Google Play",
+      "Git & GitHub"
+    ],
+    "overview": "Our React Native Mobile Developer Training is designed to turn you into a cross-platform mobile developer. In our 1-to-1 virtual mentoring model, you will write a single codebase in TypeScript that compiles directly to high-performance native iOS and Android apps, culminating in a live store submission.",
+    "modules": [
+      {
+        "title": "Module 1: Mobile UI & Expo Layouts",
+        "duration": "2 Weeks",
+        "topics": [
+          "Expo CLI toolchain configuration and mobile simulators",
+          "Core components: View, Text, Image, ScrollView, FlatList",
+          "Mobile styles: flex layouts, StyleSheet, safe areas",
+          "Handling user inputs, TextInput, pressable touch dynamics"
+        ]
+      },
+      {
+        "title": "Module 2: TypeScript & App Navigation",
+        "duration": "2 Weeks",
+        "topics": [
+          "TypeScript type safety, interfaces, and component props",
+          "React Navigation setup: Stack, Bottom Tab, and Drawer navigations",
+          "Passing params across screens, custom headers",
+          "Handling form state validation and custom UI buttons"
+        ]
+      },
+      {
+        "title": "Module 3: Native Features & APIs",
+        "duration": "2 Weeks",
+        "topics": [
+          "Local storage caching with SQLite and AsyncStorage",
+          "Device hardware APIs: Camera roll, Location coordinates",
+          "Push notifications scheduling and listener config",
+          "Consuming REST APIs over mobile network layers"
+        ]
+      },
+      {
+        "title": "Module 4: Stores Deployment & Internship",
+        "duration": "2 Weeks",
+        "topics": [
+          "App signing configurations, keystores, provisioning profiles",
+          "Expo Application Services (EAS) build systems",
+          "Google Play Console and Apple App Store Connect setup",
+          "Onboarding on a live mobile app internship deployment project"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need a Mac to learn React Native?",
+        "a": "No. Using Expo CLI, you can write and run code on Windows and test it live on an Android phone or iOS device using the Expo Go client app."
+      },
+      {
+        "q": "What apps will I build?",
+        "a": "You will build a dynamic responsive mobile catalog, a secure local note logger, and a complete collaborative live chat mobile app."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Vikram R.",
+        "role": "Mobile App Developer",
+        "location": "Warje, Pune",
+        "text": "The 1-to-1 sessions made mobile navigation and SQLite integration easy. Deploying our app via EAS build to Google Play Console during the internship was the highlight.",
+        "rating": 5,
+        "date": "2026-03-22"
+      },
+      {
+        "name": "Meera D.",
+        "role": "iOS & Android Engineer",
+        "location": "Pimple Saudagar, Pune",
+        "text": "I loved the TypeScript integration and the Expo Go simulator setup. My mentor helped me resolve app signing and build profiles that made landing my current role possible.",
+        "rating": 5,
+        "date": "2026-05-05"
+      }
+    ]
   }
 ]

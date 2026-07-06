@@ -361,5 +361,146 @@ jobs:
         "internal_links": [
             {"label": "what-is-jenkins.html", "url": "what-is-jenkins.html", "context": "Learn more about Jenkins pipelines and plugins in our Jenkins glossary page."}
         ]
+    },
+    "react-js-project-ideas": {
+        "code_snippet": {
+            "title": "Interactive Kanban Task Shift Logic (React Hooks)",
+            "language": "javascript",
+            "code": """import React, { useState } from 'react';
+
+export function KanbanBoard() {
+  const [tasks, setTasks] = useState([
+    { id: 1, title: 'Configure Redux Store', stage: 'todo' },
+    { id: 2, title: 'Integrate Axios Client', stage: 'in_progress' }
+  ]);
+
+  const moveTask = (taskId, targetStage) => {
+    setTasks(tasks.map(task => 
+      task.id === taskId ? { ...task, stage: targetStage } : task
+    ));
+  };
+
+  return (
+    <div style={{ display: 'flex', gap: '1rem' }}>
+      {/* Board columns and card rendering logic */}
+    </div>
+  );
+}"""
+        },
+        "official_doc": {
+            "label": "Official React JS Documentation",
+            "url": "https://react.dev/"
+        },
+        "internal_links": [
+            {"label": "React JS Developer Training", "url": "react-js-developer-training.html", "context": "Learn React state management and modular design in our dedicated frontend syllabus."},
+            {"label": "React JS Developer Roadmap", "url": "react-js-developer-roadmap.html", "context": "See how project milestones fit into your frontend career trajectory."}
+        ]
+    },
+    "react-native-project-ideas": {
+        "code_snippet": {
+            "title": "Expo Location GPS coordinates Logger (React Native)",
+            "language": "javascript",
+            "code": """import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import * as Location from 'expo-location';
+
+export default function GeoTracker() {
+  const [location, setLocation] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
+
+  const getCoordinates = async () => {
+    let { status } = await Location.requestForegroundPermissionsAsync();
+    if (status !== 'granted') {
+      setErrorMsg('Permission to access location was denied');
+      return;
+    }
+    let loc = await Location.getCurrentPositionAsync({});
+    setLocation(loc.coords);
+  };
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>GPS Logger</Text>
+      <Button title="Get Position" onPress={getCoordinates} />
+      {location && <Text>Lat: {location.latitude}, Lon: {location.longitude}</Text>}
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' }
+});"""
+        },
+        "official_doc": {
+            "label": "Official React Native Documentation",
+            "url": "https://reactnative.dev/"
+        },
+        "internal_links": [
+            {"label": "React Native Mobile Developer Training", "url": "react-native-mobile-developer-training.html", "context": "Learn device camera, GPS, and push notification integrations in our hands-on course."},
+            {"label": "React Native Mobile Developer Roadmap", "url": "react-native-mobile-developer-roadmap.html", "context": "Check the mobile development phases from configuration to store deployment."}
+        ]
+    },
+    "react-vs-angular": {
+        "code_snippet": {
+            "title": "Profile Fetching (React useState/useEffect vs Angular TypeScript Component)",
+            "language": "javascript",
+            "code": """// React (Functional Component with Lifecycle Hook)
+function Profile({ userId }) {
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    fetch(`/api/user/${userId}`).then(res => res.json()).then(setUser);
+  }, [userId]);
+  return <div>{user?.name}</div>;
+}
+
+// Angular (TypeScript Component with Dependency Injection)
+@Component({
+  selector: 'app-profile',
+  template: `<div>{{ user?.name }}</div>`
+})
+export class ProfileComponent implements OnInit {
+  @Input() userId!: string;
+  user: any;
+  constructor(private http: HttpClient) {}
+  ngOnInit() {
+    this.http.get(`/api/user/${this.userId}`).subscribe(data => this.user = data);
+  }
+}"""
+        },
+        "official_doc": {
+            "label": "React & Angular Documentation Guides",
+            "url": "https://angular.dev/"
+        },
+        "internal_links": [
+            {"label": "React JS Project Ideas", "url": "react-js-project-ideas.html", "context": "Check frontend app ideas you can build to master React Hooks and state management."}
+        ]
+    },
+    "react-native-vs-flutter": {
+        "code_snippet": {
+            "title": "Basic Container Styling (React Native Flexbox vs Flutter Widgets)",
+            "language": "javascript",
+            "code": """// React Native: JavaScript Styling objects mapping to host views
+<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+  <Text style={{ fontSize: 16 }}>React Native Container</Text>
+</View>
+
+// Flutter: Dart Widget layout rendering via custom graphics engine
+Widget build(BuildContext context) {
+  return Center(
+    child: Text(
+      'Flutter Container',
+      style: TextStyle(fontSize: 16),
+    ),
+  );
+}"""
+        },
+        "official_doc": {
+            "label": "React Native & Flutter Developers Homes",
+            "url": "https://flutter.dev"
+        },
+        "internal_links": [
+            {"label": "React Native Project Ideas", "url": "react-native-project-ideas.html", "context": "Explore mobile application blueprints incorporating local SQLite and hardware APIs."}
+        ]
     }
 }
+

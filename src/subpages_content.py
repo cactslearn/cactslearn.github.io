@@ -469,5 +469,95 @@ SUBPAGES_DATA = {
         "roadmap_faqs": [
             {"q": "What is the starting salary for a Security Analyst in Pune?", "a": "Starting salaries in Pune range from ₹4 LPA to ₹6 LPA, driven by a global focus on digital security audits."}
         ]
+    },
+    "react-js-developer-training": {
+        "syllabus_prerequisites": "Basic understanding of HTML and CSS. No prior JavaScript coding experience is required, as we cover programming basics.",
+        "syllabus_projects": [
+            "Project 1: Responsive Product landing page with TailwindCSS grids.",
+            "Project 2: Interactive Task Planner using dynamic states and storage.",
+            "Project 3: Movie Search UI consuming third-party REST APIs via Axios.",
+            "Project 4: Real-time Analytics Dashboard frontend deployed on Netlify."
+        ],
+        "syllabus_tools": ["VS Code", "Node Package Manager (npm)", "Vite toolchain", "Tailwind CSS", "Git & GitHub", "Netlify / Vercel"],
+        "syllabus_faqs": [
+            {"q": "Can we use TypeScript in this course?", "a": "Yes. We cover TypeScript basics and configure React components with TS in Module 3."},
+            {"q": "Do we cover Next.js?", "a": "Yes, we introduce Next.js file-based routing and SSR (Server-Side Rendering) in the advanced section."}
+        ],
+        "fees_structure": "The React JS Developer Training fee is ₹14,999 (all-inclusive). You can pay in 2 monthly installments of ₹7,500. A 5% discount (₹14,249 final fee) is available for upfront payment.",
+        "fees_comparison": {
+            "typical_pune_fees": "₹30,000 - ₹40,000",
+            "pune_batch_size": "25 to 40 students",
+            "cacts_value": "1-to-1 virtual instructor, personalized code reviews, and live frontend commits at half the typical cost."
+        },
+        "fees_faqs": [
+            {"q": "Is there any extra charge for internship certificates?", "a": "No, the fees cover the training, the live project commit reviews, and the completion certificate."},
+            {"q": "What payment methods are supported?", "a": "We accept major UPI handlers, GPay, PhonePe, credit cards, and NetBanking."}
+        ],
+        "interview_questions": [
+            {"q": "Explain the concept of Lifting State Up in React.", "a": "When multiple components need to share the same changing data, you lift the shared state up to their closest common ancestor. The state is then passed down as props, and changes are handled by callbacks."},
+            {"q": "What is Redux Toolkit and how does it simplify Redux?", "a": "Redux Toolkit (RTK) is the official recommended way to write Redux logic. It simplifies boilerplate by auto-configuring the store, using Immer for mutable-looking update logic, and generating action creators automatically via createSlice."},
+            {"q": "What is the difference between useMemo and useCallback?", "a": "useMemo memoizes the computed value of a heavy function to avoid recalculating it. useCallback memoizes the function instance itself to prevent unnecessary child component re-renders when passed as a prop."},
+            {"q": "How does React router handle dynamic routes?", "a": "React Router uses paths with parameters (e.g. '/profile/:id'). Inside the target component, the useParams hook extracts these parameters to fetch or display resource-specific data."},
+            {"q": "What are React Keys and why are they necessary in lists?", "a": "Keys help React identify which items have changed, been added, or been removed. They give elements a stable identity, allowing the virtual DOM diffing algorithm to perform efficient UI updates without recreating the list nodes."}
+        ],
+        "interview_faqs": [
+            {"q": "How do mock interviews prepare me for frontend rounds?", "a": "Our mock interviews focus on live coding challenges, custom hook design questions, and explanation of web optimization techniques."},
+            {"q": "Will I get access to common React JS test sheets?", "a": "Yes. We share vetted practice sheets covering top interview topics and machine coding rounds."}
+        ],
+        "roadmap_milestones": [
+            {"phase": "Phase 1", "title": "Modern JavaScript & Responsive Styling", "duration": "2 Weeks", "skills": "ES6 syntax, TailwindCSS, Flexbox/Grid layouts, Asynchronous JS", "project": "Corporate Product Portal"},
+            {"phase": "Phase 2", "title": "React JS Core Logic & Components", "duration": "2 Weeks", "skills": "Virtual DOM, JSX, Props, useState, useEffect hooks, list render", "project": "Interactive Kanban Board"},
+            {"phase": "Phase 3", "title": "Advanced State & REST API Integrations", "duration": "2 Weeks", "skills": "React Router DOM, Context API, Redux Toolkit, Axios REST client", "project": "E-Commerce User Interface"},
+            {"phase": "Phase 4", "title": "Performance Optimization & Live Internship", "duration": "2 Weeks", "skills": "useMemo/useCallback, Git merge cycles, production builds, Vercel deployment", "project": "Analytics Console deployed on Internship"}
+        ],
+        "roadmap_faqs": [
+            {"q": "Can I get a job with just React JS skills in Pune?", "a": "Yes. There is high demand for Junior Frontend React Developers. Combining React with good Git credentials makes you a strong candidate."},
+            {"q": "How do I show my React skills on my resume?", "a": "Highlight your deployed dashboard projects, your GitHub commit links, and your state management integrations rather than just listing React as a keyword."}
+        ]
+    },
+    "react-native-mobile-developer-training": {
+        "syllabus_prerequisites": "Basic programming fundamentals (understanding of variables and lists). Prior React experience is helpful but not mandatory, as we cover basic hooks.",
+        "syllabus_projects": [
+            "Project 1: Personal Finance Ledger mobile interface using local state.",
+            "Project 2: Local Task Manager with SQLite database local persistence.",
+            "Project 3: Location Tracker App mapping device GPS coordinates.",
+            "Project 4: Real-time Messaging Mobile App deployed on Expo Store."
+        ],
+        "syllabus_tools": ["VS Code", "Expo CLI & EAS Build", "Android Studio / Xcode", "SQLite Database", "Postman", "Google Play / Apple App Store Developer Consoles"],
+        "syllabus_faqs": [
+            {"q": "What is the difference between Expo CLI and CLI workflow?", "a": "Expo CLI provides managed developer workflows, handles app build signing, and speeds up testing. Native CLI offers complete control over Java/Objective-C layers. We start with Expo and teach managed-to-bare conversions."},
+            {"q": "Can I test the iOS app on an iPhone from Windows?", "a": "Yes. The Expo Go client allows you to scan a QR code on Windows and run the app live on your iPhone device."}
+        ],
+        "fees_structure": "The React Native Mobile Developer Training fee is ₹16,999 (all-inclusive). You can pay in 2 monthly installments of ₹8,500. Upfront payments get a 5% discount (₹16,149 final fee).",
+        "fees_comparison": {
+            "typical_pune_fees": "₹35,000 - ₹48,000",
+            "pune_batch_size": "20 to 35 students",
+            "cacts_value": "1-to-1 virtual private screensharing, complete App Store building/signing guidelines at nearly 45% of standard training rates."
+        },
+        "fees_faqs": [
+            {"q": "Do I have to pay for a developer account to submit apps?", "a": "Developer licenses (Google Play is $25 one-time, Apple is $99/year) are paid directly to Google/Apple. CACTS provides shared internal staging stores for test submissions at no extra charge."},
+            {"q": "Is there any EMI option available?", "a": "Yes, we support card-based no-cost EMI options through our payment gateway partners."}
+        ],
+        "interview_questions": [
+            {"q": "What is the difference between StyleSheet.create and inline styling in React Native?", "a": "StyleSheet.create registers and compiles styles, sending references over the React Native bridge only once, which optimizes performance. Inline styles recreate a new object on every render, causing memory overhead."},
+            {"q": "Explain the role of the Bridge in React Native.", "a": "The Bridge coordinates asynchronous communication between the JavaScript engine (running your React code) and the native platform layers (Java for Android, Objective-C/Swift for iOS), translating payloads into native events."},
+            {"q": "What is AsyncStorage and when should you use SQLite?", "a": "AsyncStorage is a simple unencrypted key-value store for saving configuration or user preferences. For structured relational data querying, indexes, and complex local queries, SQLite is preferred."},
+            {"q": "How do push notifications work in a React Native app?", "a": "The app requests permissions, registers with a notification service (like Firebase Cloud Messaging or Expo Notification Service), and receives a device token. The backend uses this token to push payloads via native messaging services."},
+            {"q": "What is EAS Build and how does it help Windows developers?", "a": "Expo Application Services (EAS) Build is a cloud build service. It builds ipa (iOS) and aab/apk (Android) binaries on Expo's remote servers, allowing Windows developers to generate iOS builds without owning a Mac."}
+        ],
+        "interview_faqs": [
+            {"q": "Are mock interviews geared towards native app design?", "a": "Yes, questions cover mobile UI performance, flatlist optimization, local sync, and build configurations."},
+            {"q": "Will I get help setting up my app portfolio on GitHub?", "a": "Yes. We show you how to structure your mobile code repositories, document them with preview GIFs, and link to Expo public builds."}
+        ],
+        "roadmap_milestones": [
+            {"phase": "Phase 1", "title": "Expo Workspace & Component Styling", "duration": "2 Weeks", "skills": "Expo CLI setup, Core Views, StyleSheet layout styling, flex dynamics", "project": "Business Product Catalog"},
+            {"phase": "Phase 2", "title": "TypeScript Navigation & Forms", "duration": "2 Weeks", "skills": "TypeScript types, interfaces, React Navigation (Tab/Drawer), validation", "project": "Local Event Booking App"},
+            {"phase": "Phase 3", "title": "SQLite Local Cache & Device APIs", "duration": "2 Weeks", "skills": "SQLite databases, AsyncStorage storage, GPS Location, Camera API", "project": "Secure Local Note Logger"},
+            {"phase": "Phase 4", "title": "EAS Cloud Build & Mobile App Store Deployment", "duration": "2 Weeks", "skills": "App signing, keystores, provisioning profiles, EAS Build cloud compile, Google Play / App Store submissions", "project": "Messaging Client deployed on Store"}
+        ],
+        "roadmap_faqs": [
+            {"q": "Can freshers secure React Native jobs in Pune?", "a": "Yes. Mobile app development is booming. Freshers with a portfolio of working mobile apps deployed to stores stand out significantly."},
+            {"q": "How does React Native compare to Flutter?", "a": "React Native uses JavaScript/TypeScript and React principles, which makes it extremely fast to pick up for web developers. Flutter uses Dart. Both are highly popular."}
+        ]
     }
 }

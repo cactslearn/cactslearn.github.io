@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Native vs Flutter | Mobile App Framework Comparison | CACTS</title>
+    <meta name="description" content="Compare React Native and Flutter for mobile development. Review language frameworks, compiler performance, layout engines, and Pune jobs.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cactslearn.github.io/react-native-vs-flutter.html">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="React Native vs Flutter | Mobile App Framework Comparison | CACTS">
+    <meta property="og:description" content="Compare React Native and Flutter for mobile development. Review language frameworks, compiler performance, layout engines, and Pune jobs.">
+    <meta property="og:url" content="https://cactslearn.github.io/react-native-vs-flutter.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/course-details.css">
+
+    <!-- Structured JSON-LD Schema Markup -->
+    
+            <script type="application/ld+json">
+            {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "React Native vs Flutter | Mobile App Framework Comparison | CACTS",
+  "description": "Compare React Native and Flutter for mobile development. Review language frameworks, compiler performance, layout engines, and Pune jobs.",
+  "author": {
+    "@type": "Person",
+    "name": "Hambirrao P",
+    "url": "https://cactslearn.github.io/about.html#hambirrao",
+    "sameAs": [
+      "https://www.linkedin.com/in/hambirrao/"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CACTS - Centre of Advanced Computer Training and Studies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cactslearn.github.io/images/cacts-logo.png"
+    }
+  },
+  "mainEntityOfPage": "https://cactslearn.github.io/react-native-vs-flutter.html"
+}
+            </script>
+            <script type="application/ld+json">
+            {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does React Native feel native?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Because React Native compiles down to actual native Android and iOS components, the tactile feel, scrolling animations, and accessibility structures match native OS platforms exactly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which has better integration with device hardware?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both frameworks offer robust libraries to access GPS, cameras, Bluetooth, and biometric scanners. React Native's Expo CLI provides pre-vetted modules that handle hardware configurations cleanly."
+      }
+    }
+  ]
+}
+            </script>
+            <script type="application/ld+json">
+            {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cactslearn.github.io/index.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "React Native Mobile Developer Training",
+      "item": "https://cactslearn.github.io/react-native-mobile-developer-training.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Compare Tools",
+      "item": "https://cactslearn.github.io/react-native-vs-flutter.html"
+    }
+  ]
+}
+            </script>
+            
+</head>
+
+<body>
+
+    <!-- Header / Navigation -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span>CACTS</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="internship-on-live-projects.html">Live Internship</a>
+                <a href="one-to-one-software-training.html">1-to-1 Model</a>
+                <a href="free-career-guidance.html">Career Guidance</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faqs.html">FAQs</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="contact.html" class="btn btn-accent" style="padding: 0.5rem 1rem; color: #0b0f19;">Book
+                    Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Course Hero Section -->
+        <section class="course-hero" aria-labelledby="course-h1">
+            <nav aria-label="Breadcrumb" style="margin-bottom: 1rem; font-size: 0.85rem; color: var(--text-secondary);">
+                <a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="react-native-mobile-developer-training.html" style="color: var(--accent);">React Native Mobile Developer Training</a> &gt; <span style="color: var(--text-primary);">Tech Comparison</span>
+            </nav>
+            <div class="grid-2">
+                <div>
+                    <span class="course-badge">1-to-1 Personal Mentorship</span>
+                    <h1 id="course-h1">React Native vs Flutter</h1>
+                    <p style="font-size: 1.2rem; color: var(--text-secondary); margin-top: 1rem;">Comparing JavaScript Bridge Compilation and Native Widget Skia/Impeller Engines</p>
+
+                    <div class="course-meta-tags">
+                        <div class="meta-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <span>8 Weeks</span>
+                        </div>
+                        <div class="meta-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                            <span>₹16,999 (Value-Driven Pricing)</span>
+                        </div>
+                        <div class="meta-tag">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                                </path>
+                            </svg>
+                            <span>Shivane, Pune &amp; Online</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20the%201-to-1%20React%20Native%20Mobile%20Developer%20Training%20training."
+                            class="btn btn-accent" target="_blank">
+                            WhatsApp Inquiry
+                        </a>
+                        <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20request%20a%20call%20back%20regarding%20the%201-to-1%20React%20Native%20Mobile%20Developer%20Training%20training."
+                            class="btn btn-secondary" target="_blank">Request Call back</a>
+                    </div>
+                </div>
+
+                <div class="lead-form-container" id="register">
+                    <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Schedule a Free 1-to-1 Trial
+                    </h3>
+                    <form class="lead-form">
+                        <input type="hidden" name="course" value="React Native Mobile Developer Training">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address (Optional)</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91 96655 66357">
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Your Experience Level</label>
+                            <select id="experience" name="experience">
+                                <option value="Student">Student / Fresher</option>
+                                <option value="Working Professional">Working Professional</option>
+                                <option value="Career Switcher">Career Switcher</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Book Demo Session</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Course Sub-navigation Tabs -->
+        <div class="course-tabs-container">
+            <div class="course-tabs-inner">
+                <a href="react-native-mobile-developer-training.html" class="tab-link ">Overview</a>
+<a href="react-native-mobile-developer-syllabus.html" class="tab-link ">Syllabus</a>
+<a href="react-native-mobile-developer-course-fees.html" class="tab-link ">Fees & Options</a>
+<a href="react-native-mobile-developer-interview-questions.html" class="tab-link ">Interview Qs</a>
+<a href="react-native-mobile-developer-roadmap.html" class="tab-link ">Roadmap</a>
+<a href="react-native-project-ideas.html" class="tab-link ">Project Ideas</a>
+<a href="beginner-to-react-native-developer-roadmap.html" class="tab-link ">Career Roadmap</a>
+<a href="react-native-vs-flutter.html" class="tab-link active">Compare Tools</a>
+
+            </div>
+        </div>
+
+        <!-- Course Content & Info -->
+        <section aria-labelledby="details-heading" style="border-top: 1px solid var(--border);">
+            <div class="course-layout">
+                <div>
+                    
+            <h2 style="margin-bottom: 1.5rem;">Technology Stack Comparison</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2.5rem;">
+                Understand core differences between competing software libraries, deployment tools, and coding frameworks.
+            </p>
+            
+            <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--accent); border-radius: var(--border-radius); padding: 2rem; margin-top: 1rem; margin-bottom: 3rem;">
+                <h3 style="color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .5 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><line x1="9" y1="18" x2="15" y2="18"></line><line x1="10" y1="22" x2="14" y2="22"></line></svg>Key Takeaways
+                </h3>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                    <li>React Native compiles JS views into actual native elements via a platform bridge; Flutter renders custom widgets using its Skia/Impeller graphics engine.</li><li>React Native uses JavaScript/TypeScript which is familiar to web developers; Flutter uses Google's Dart language.</li><li>Both produce excellent performance, but React Native is heavily favored by teams already working with React JS.</li>
+                </ul>
+            </div>
+            
+            
+                <div style="margin-bottom: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem;">
+                    <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1rem; font-family: var(--font-heading);">Programming Language & Developer Experience</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin: 0;">React Native allows web developers to reuse React design principles, coding in TypeScript. Flutter uses Dart, which is a typed, object-oriented language. React Native benefits from the vast NPM library registry, while Flutter utilizes Pub.dev package indexes.</p>
+                </div>
+                
+                <div style="margin-bottom: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem;">
+                    <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1rem; font-family: var(--font-heading);">Layout Engines & Rendering Mechanics</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin: 0;">React Native references native host widgets directly, resulting in standard iOS and Android components. Flutter bypasses host styling entirely, rendering pixels pixel-perfect onto a dedicated canvas, resulting in highly consistent cross-platform designs.</p>
+                </div>
+                
+                <div style="margin-bottom: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem;">
+                    <h3 style="font-size: 1.4rem; color: var(--text-primary); margin-bottom: 1rem; font-family: var(--font-heading);">Pune IT Hiring & Ecosystem</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin: 0;">Many mobile teams in Pune deploy React Native to reuse code between responsive web platforms (React) and mobile applications. Flutter is widely chosen for new greenfield mobile apps due to its rapid widget composition templates.</p>
+                </div>
+                
+                    <div class="code-snippet-container" style="margin-bottom: 2.5rem;">
+                        <h3 class="code-snippet-title" style="margin-bottom: 1rem;">Basic Container Styling (React Native Flexbox vs Flutter Widgets)</h3>
+                        <pre><code class="language-javascript">// React Native: JavaScript Styling objects mapping to host views
+&lt;View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}&gt;
+  &lt;Text style={{ fontSize: 16 }}&gt;React Native Container&lt;/Text&gt;
+&lt;/View&gt;
+
+// Flutter: Dart Widget layout rendering via custom graphics engine
+Widget build(BuildContext context) {
+  return Center(
+    child: Text(
+      'Flutter Container',
+      style: TextStyle(fontSize: 16),
+    ),
+  );
+}</code></pre>
+                    </div>
+                    
+                    <div class="official-doc-container" style="margin-bottom: 2.5rem;">
+                        <div>
+                            <h4 class="official-doc-title">Official Documentation</h4>
+                            <p class="official-doc-desc">Access official code repositories and developer documentation.</p>
+                        </div>
+                        <a href="https://flutter.dev" target="_blank" rel="nofollow noopener noreferrer" class="btn btn-secondary official-doc-link">
+                            React Native & Flutter Developers Homes ↗
+                        </a>
+                    </div>
+                    
+                    <div class="related-guides-container" style="margin-bottom: 2.5rem;">
+                        <h4 class="related-guides-title">Related Practical Guides</h4>
+                        <ul class="related-guides-list">
+                            
+                        <li style="margin-bottom: 0.75rem; line-height: 1.5;">
+                            Explore mobile application blueprints incorporating local SQLite and hardware APIs.
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+            <div style="margin-top: 4rem;">
+                <h2 style="margin-bottom: 1.5rem;">Technology &amp; Syllabus FAQs</h2>
+                <div class="course-faqs-accordion">
+                    
+                <div class="curriculum-module">
+                    <div class="module-header faq-header">
+                        <h4>Does React Native feel native?</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="faq-content module-content">
+                        <div class="module-content-inner">
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">Yes. Because React Native compiles down to actual native Android and iOS components, the tactile feel, scrolling animations, and accessibility structures match native OS platforms exactly.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="curriculum-module">
+                    <div class="module-header faq-header">
+                        <h4>Which has better integration with device hardware?</h4>
+                        <span class="accordion-icon">+</span>
+                    </div>
+                    <div class="faq-content module-content">
+                        <div class="module-content-inner">
+                            <p style="color: var(--text-secondary); font-size: 0.95rem;">Both frameworks offer robust libraries to access GPS, cameras, Bluetooth, and biometric scanners. React Native's Expo CLI provides pre-vetted modules that handle hardware configurations cleanly.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+            
+                </div>
+
+                <!-- Sticky Sidebar Pricing -->
+                <aside class="pricing-sidebar-card">
+                    <div class="price-display">
+                        <span class="price-label">Program Fee (All-inclusive)</span>
+                        <div class="price-value">₹16,999</div>
+                        <span class="price-sub">Value-Driven &amp; Affordable IT Training</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>1-to-1 Live Virtual Mentorship</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Personalized Dynamic Pace</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Direct Trainer Screensharing</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Real Company Project Internship</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>No Rigid Batch Bindings</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <span>Individual Project Review Loop</span>
+                        </li>
+                    </ul>
+                    <div class="pricing-cta">
+                        <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20enrolling%20for%201-to-1%20React%20Native%20Mobile%20Developer%20Training%20training."
+                            class="btn btn-accent" style="width: 100%; text-align: center; color: #0b0f19;"
+                            target="_blank">
+                            Enroll via WhatsApp
+                        </a>
+                        <a href="contact.html?course=React%20Native%20Mobile%20Developer%20Training" class="btn btn-secondary"
+                            style="width: 100%; text-align: center; margin-top: 0.75rem;">
+                            Compare Platform Features
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Student Testimonials / Reviews -->
+        <section style="border-top: 1px solid var(--border); padding-top: 3rem;" aria-labelledby="reviews-heading">
+            <h2 id="reviews-heading" class="section-title">Student Success Stories</h2>
+            <p class="section-subtitle">Real feedback from students who completed our 1-to-1 virtual React Native Mobile Developer Training training.</p>
+            <div class="grid-3" style="margin-top: 3rem;">
+                
+            <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="display: flex; gap: 0.25rem; align-items: center; margin-bottom: 1rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="color: var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="color: var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="color: var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="color: var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="color: var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
+                    "The 1-to-1 sessions made mobile navigation and SQLite integration easy. Deploying our app via EAS build to Google Play Console during the internship was the highlight."
+                </p>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 0.5rem;">
+                    <div>
+                        <h4 style="color: var(--primary-light); margin: 0; font-size: 1rem;">Vikram R.</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Mobile App Developer, Warje, Pune</span>
+                    </div>
+                    <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-size: 0.75rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.25rem; white-space: nowrap;">
+                        Verify Review ↗
+                    </a>
+                </div>
+            </div>
+            
+            <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="display: flex; gap: 0.25rem; align-items: center; margin-bottom: 1rem;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="color: var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="color: var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="color: var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="color: var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" style="color: var(--warning);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem; line-height: 1.6; flex-grow: 1;">
+                    "I loved the TypeScript integration and the Expo Go simulator setup. My mentor helped me resolve app signing and build profiles that made landing my current role possible."
+                </p>
+                <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 0.5rem;">
+                    <div>
+                        <h4 style="color: var(--primary-light); margin: 0; font-size: 1rem;">Meera D.</h4>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">iOS & Android Engineer, Pimple Saudagar, Pune</span>
+                    </div>
+                    <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none; font-size: 0.75rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.25rem; white-space: nowrap;">
+                        Verify Review ↗
+                    </a>
+                </div>
+            </div>
+            
+            </div>
+        </section>
+
+        <!-- Related Programs cross-linking matrix -->
+        <section style="border-top: 1px solid var(--border);" aria-labelledby="related-heading">
+            <h2 id="related-heading" class="section-title">Related Training Programs</h2>
+            <p class="section-subtitle">Explore other individual, 1-to-1 virtual software engineering tracks.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
+                <div class="card" style="padding: 1.5rem;">
+                    <h4 style="margin-bottom: 0.5rem;"><a href="java-full-stack-developer-training.html" style="color: var(--text-primary);">Java Full Stack Development</a></h4>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">Enterprise Spring Boot, React, and SQL database pipelines.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h4 style="margin-bottom: 0.5rem;"><a href="full-stack-development-training.html" style="color: var(--text-primary);">Full Stack Web (MERN)</a></h4>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">Modern React, Node, Express, MongoDB applications engineering.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h4 style="margin-bottom: 0.5rem;"><a href="devops-training.html" style="color: var(--text-primary);">DevOps Engineering</a></h4>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">CI/CD automation pipelines, Docker, Kubernetes clusters.</p>
+                </div>
+                <div class="card" style="padding: 1.5rem;">
+                    <h4 style="margin-bottom: 0.5rem;"><a href="ai-machine-learning-training.html" style="color: var(--text-primary);">AI &amp; Machine Learning</a></h4>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary);">Predictive modeling, neural networks, NLP, and deep learning.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html"
+                    style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: white;">CACTS</a>
+                <p>Centre of Advanced Computer Training and Studies. Providing practical, one-to-one virtual software
+                    training and internships on real company projects since 2012.</p>
+                <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                    <a href="https://www.facebook.com/cactspune/" target="_blank" aria-label="Facebook" style="color: var(--text-secondary); transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 50%;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/cacts/" target="_blank" aria-label="LinkedIn" style="color: var(--text-secondary); transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 50%;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://www.instagram.com/cacts_pune/" target="_blank" aria-label="Instagram" style="color: var(--text-secondary); transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 50%;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Programs</h4>
+                <ul style="list-style: none;">
+                    <li><a href="java-full-stack-developer-training.html">Java Full Stack</a></li>
+                    <li><a href="full-stack-development-training.html">Full Stack Web</a></li>
+                    <li><a href="react-js-developer-training.html">React JS Developer</a></li>
+                    <li><a href="react-native-mobile-developer-training.html">React Native Mobile</a></li>
+                    <li><a href="ai-machine-learning-training.html">AI &amp; Machine Learning</a></li>
+                    <li><a href="data-science-training.html">Data Science</a></li>
+                    <li><a href="data-engineering-training.html">Data Engineering</a></li>
+                    <li><a href="python-programming-training.html">Python Scripting</a></li>
+                    <li><a href="devops-training.html">DevOps Engineering</a></li>
+                    <li><a href="cloud-computing-training.html">Cloud Computing</a></li>
+                    <li><a href="power-bi-training.html">Power BI Analytics</a></li>
+                    <li><a href="software-testing-training.html">Software Testing</a></li>
+                    <li><a href="cybersecurity-training.html">Cybersecurity Course</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Institutional Links</h4>
+                <ul style="list-style: none;">
+                    <li><a href="about.html">About CACTS</a></li>
+                    <li><a href="internship-on-live-projects.html">Live Projects Internship</a></li>
+                    <li><a href="one-to-one-software-training.html">1-to-1 Mentoring Model</a></li>
+                    <li><a href="free-career-guidance.html">Free Career Guidance</a></li>
+                    <li><a href="reviews.html">Success Reviews</a></li>
+                    <li><a href="faqs.html">Institutional FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="software-training-institute-pune.html">Software Training Pune</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Learning Portals</h4>
+                <ul style="list-style: none;">
+                    <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
+                    <li><a href="course-recommendation-quiz.html">Course Finder Quiz</a></li>
+                    <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
+                    <li><a href="student-projects.html">Student Projects</a></li>
+                    <li><a href="internship-showcase.html">Internship Showcase</a></li>
+                    <li><a href="project-portfolios.html">Project Portfolios</a></li>
+                    <li><a href="technology-comparisons.html">Tech Comparisons</a></li>
+                    <li><a href="free-learning-resources.html">Free Resources</a></li>
+                    <li><a href="technology-career-guides.html">Career Guides</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact CACTS</h4>
+                <p style="margin-bottom: 0.5rem;">Shivane, Pune, Maharashtra, India (411023)</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Phone:</strong> +91 96655 66357</p>
+                <p><strong>Hours:</strong> Mon - Sat: 9:00 AM - 7:00 PM</p>
+            </div>
+        </div>
+
+        <!-- Trust Credentials & Accreditations -->
+        <div style="border-top: 1px solid var(--border); padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
+            <div style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5;">
+                <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong> Our curricula and git code review models are designed in alignment with ISO 29993:2017 standards for non-formal education training and software engineering industry practices. *Self-declared alignment for educational service quality.
+            </div>
+            <div style="display: flex; gap: 1.5rem; align-items: center; opacity: 0.75; flex-wrap: wrap;">
+                <!-- ISO Compliant Badge -->
+                <div title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers." style="display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; color: var(--accent-light); cursor: help;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> ISO 29993:2017 ALIGNED*
+                </div>
+                <!-- Developer Led Badge -->
+                <div style="display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; color: var(--primary-light);">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line><line x1="12" y1="17" x2="12" y2="20"></line></svg> 100% DEVELOPER LED
+                </div>
+                <!-- Reg Badge -->
+                <div style="display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; color: var(--warning);">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="16"></line><line x1="15" y1="22" x2="15" y2="16"></line><line x1="9" y1="16" x2="15" y2="16"></line><path d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm6-8h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"></path></svg> ESTD. 2012 IN PUNE
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div style="text-align: left;">
+                <p>&copy; <span id="footer-year">2026</span> CACTS - Centre of Advanced Computer Training and Studies. All rights reserved.</p>
+                <p style="margin-top: 0.25rem; font-size: 0.8rem; color: var(--text-secondary);">Shivane, Pune, Maharashtra, India - Pincode 411023</p>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="sitemap.html" style="color: var(--text-secondary);">Sitemap</a>
+                <span style="color: var(--border);">|</span>
+                <a href="privacy-policy.html" style="color: var(--text-secondary);">Privacy Policy</a>
+                <span style="color: var(--border);">|</span>
+                <a href="terms-conditions.html" style="color: var(--text-secondary);">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contacts -->
+    <div class="floating-ctas">
+        <a href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20have%20an%20inquiry%20regarding%20the%201-to-1%20React%20Native%20Mobile%20Developer%20Training%20training."
+            class="cta-circle cta-whatsapp" target="_blank" aria-label="Chat on WhatsApp">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; transform: translateY(-1px);"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+        </a>
+        <a href="tel:+919665566357" class="cta-circle cta-call" aria-label="Call CACTS">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </a>
+    </div>
+
+    <!-- Script Links -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

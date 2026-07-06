@@ -352,5 +352,109 @@ def audit_ports(target_host, ports):
     v         v
 [Server]   [Database]
 (Port 80)  (Port 3306 - Firewalled / Restricted access)"""
+    },
+    "react-js-developer-training": {
+        "code_title": "React Component with Axios Hooks & State Management",
+        "lang": "javascript",
+        "code": """import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+export default function UserList() {
+    const [users, setUsers] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        axios.get('https://api.example.com/users')
+            .then(res => {
+                setUsers(res.data);
+                setLoading(false);
+            })
+            .catch(err => console.error(err));
+    }, []);
+
+    if (loading) return <div className="text-center p-4">Loading users...</div>;
+
+    return (
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+            {users.map(user => (
+                <li key={user.id} className="bg-card border p-4 rounded-lg shadow-sm">
+                    <h3 className="font-bold text-lg">{user.name}</h3>
+                    <p className="text-secondary">{user.email}</p>
+                </li>
+            ))}
+        </ul>
+    );
+}""",
+        "schema_title": "Modern React Front-End State Architecture",
+        "schema": """[Vite Toolchain / Dev Server]
+            |
+            v
+[React DOM (Root Entry Component)]
+            |
+      +-----+-----+
+      |           |
+      v           v
+[React Router] [Redux Toolkit / Context Store]
+      |           |
+      |           v (Slices & State Dispatchers)
+      +---------->[Axios HTTP Client] --> [Backend REST APIs]
+                  |
+                  v (JSON Payload Response)
+             [Dynamic UI Components Render]"""
+    },
+    "react-native-mobile-developer-training": {
+        "code_title": "React Native Component with GPS & Style Sheets",
+        "lang": "javascript",
+        "code": """import React, { useState } from 'react';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
+import * as Location from 'expo-location';
+
+export default function GPSTracker() {
+    const [coords, setCoords] = useState(null);
+
+    const getGeoLocation = async () => {
+        let { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') return;
+        let loc = await Location.getCurrentPositionAsync({});
+        setCoords(loc.coords);
+    };
+
+    return (
+        <View style={styles.container}>
+            <Pressable onPress={getGeoLocation} style={styles.btn}>
+                <Text style={styles.btnText}>Capture GPS Coordinates</Text>
+            </Pressable>
+            {coords && (
+                <Text style={styles.text}>Lat: {coords.latitude}, Lon: {coords.longitude}</Text>
+            )}
+        </View>
+    );
+}
+
+const styles = StyleSheet.create({
+    container: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#0b0f19' },
+    btn: { backgroundColor: '#14b8a6', padding: 16, borderRadius: 8 },
+    btnText: { color: '#0b0f19', fontWeight: 'bold' },
+    text: { color: '#ffffff', marginTop: 16, fontSize: 16 }
+});""",
+        "schema_title": "Expo managed cross-platform mobile architecture",
+        "schema": """[Developer Code (TypeScript)]
+            | (Expo Tooling Compilation)
+            v
+   [JS Bundle + Assets]
+            |
+            v
+[Expo Go client / EAS cloud build compile]
+            |
+      +-----+-----+
+      |           |
+      v           v
+  [iOS App]   [Android App]
+ (UIKit/Swift) (View/Java)
+      |           |
+      +-----+-----+
+            | (Asynchronous Native Bridge)
+            v
+ [SQLite / Native Device Hardware: GPS, Push APIs]"""
     }
 }

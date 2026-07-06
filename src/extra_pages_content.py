@@ -1301,5 +1301,217 @@ EXTRA_PAGES = [
             {"q": "Why is DevOps essential for software startups?", "a": "Startups need to release updates rapidly to compete. Automating testing and server provisioning allows small developer teams to manage complex app deployments efficiently."},
             {"q": "Is DevOps an independent department?", "a": "While companies hire DevOps Engineers, DevOps is primarily a collaborative culture where development and operations teams work together using shared automation tools."}
         ]
+    },
+    {
+        "category": "projects",
+        "category_label": "Project Ideas",
+        "slug": "react-js-project-ideas",
+        "seo_title": "Top React JS Project Ideas for Frontend Developers | CACTS Pune",
+        "meta_description": "Discover high-value React JS project ideas for junior frontend portfolios. Learn to build Kanban boards, e-commerce stores, and dashboards.",
+        "h1": "React JS Project Ideas",
+        "h2": "Building Responsive Frontend Portfolios using React Hooks & Redux Toolkit",
+        "related_course": "React JS Developer Training",
+        "related_course_slug": "react-js-developer-training",
+        "key_takeaways": [
+            "Focus on component reuse, state lifts, and clean hook custom architectures.",
+            "Master REST API consumption using Axios and mock JSON endpoint services.",
+            "Build responsive visual styling with TailwindCSS or custom vanilla flex layouts."
+        ],
+        "content_blocks": [
+            {
+                "title": "Project 1: Interactive Kanban Task Board",
+                "text": "Build a task tracking dashboard where cards can be created, edited, and shifted across progress columns (ToDo, In-Progress, Testing, Completed). Implement drag-and-drop actions, local storage persistence, and dynamic search filter controls."
+            },
+            {
+                "title": "Project 2: E-Commerce Product Catalog with Cart",
+                "text": "Create a single-page storefront fetching catalog data from an external mock API. Build categories filter, price range slider, product search, cart management, and checkout validation using Context API or Redux."
+            },
+            {
+                "title": "Project 3: Interactive Dashboard for SaaS Metrics",
+                "text": "Design a responsive admin dashboard showing user enrollment stats, conversion metrics, and system log status. Connect charting libraries (e.g. Chart.js, Recharts) and implement interactive dark mode toggles."
+            }
+        ],
+        "faqs": [
+            {"q": "Should I build frontend projects with mock data or real backend APIs?", "a": "Mocking APIs using tools like Mock Service Worker (MSW) or free endpoints is standard practice for frontend testing, allowing you to focus completely on state flow and rendering performance."},
+            {"q": "How do I optimize React list rendering?", "a": "Always use unique stable string values for element keys rather than array indices, which avoids unnecessary re-rendering of unchanged elements during lists updates."}
+        ]
+    },
+    {
+        "category": "projects",
+        "category_label": "Project Ideas",
+        "slug": "react-native-project-ideas",
+        "seo_title": "Top React Native Mobile Project Ideas for Portfolios | CACTS Pune",
+        "meta_description": "Explore practical React Native mobile app ideas for iOS and Android. Master Expo, SQLite, maps integration, and push notifications.",
+        "h1": "React Native Project Ideas",
+        "h2": "Building Cross-Platform Mobile Apps with Offline persistence & GPS Triggers",
+        "related_course": "React Native Mobile Developer Training",
+        "related_course_slug": "react-native-mobile-developer-training",
+        "key_takeaways": [
+            "Master cross-screen routing using nested Tab, Stack, and Drawer navigation models.",
+            "Integrate SQLite local storage tables to enable offline availability for critical operations.",
+            "Leverage native device hardware permissions for location coordinates and camera scans."
+        ],
+        "content_blocks": [
+            {
+                "title": "Project 1: GeoTracker Location Logger",
+                "text": "Build a location tracking app that triggers GPS coordinate queries in the background and plots them on a live map screen. Cache route logs to a local SQLite database and support export to JSON format."
+            },
+            {
+                "title": "Project 2: Offline-First Notes & Checklist Manager",
+                "text": "Design a note taking utility that allows categorizing items, adding labels, and scheduling local push reminders. Cache note drafts to AsyncStorage or SQLite for instant rendering on boot."
+            },
+            {
+                "title": "Project 3: Event Booking & Ticketing App",
+                "text": "Create a ticketing interface allowing users to view nearby meetups, input booking fields, and render offline QR tickets using canvas packages. Mock booking transactions via REST integration."
+            }
+        ],
+        "faqs": [
+            {"q": "Can I run and test React Native apps without owning an Apple computer?", "a": "Yes. Expo CLI compiles and bundles JavaScript which you can preview live on any physical iPhone or Android phone by scanning the QR code using the Expo Go client app."},
+            {"q": "How do I manage offline state on mobile?", "a": "Use local databases like SQLite or lighter stores like AsyncStorage to save screen states. Redux Persist can also automate loading local stores into active Redux state tables."}
+        ]
+    },
+    {
+        "category": "roadmap",
+        "category_label": "Career Roadmap",
+        "slug": "beginner-to-react-js-developer-roadmap",
+        "seo_title": "React JS Developer Career Roadmap & Learning Path | CACTS Pune",
+        "meta_description": "Understand the step-by-step roadmap to become a React JS frontend developer. Transition from basic JS layouts to hooks, global state, and pipelines.",
+        "h1": "React JS Developer Roadmap",
+        "h2": "The Structured Path to Mastering Component Libraries & State Flow",
+        "related_course": "React JS Developer Training",
+        "related_course_slug": "react-js-developer-training",
+        "key_takeaways": [
+            "Build solid JavaScript foundations (async promises, ES6, arrays) before diving into React.",
+            "Focus on local state components before introducing complex stores like Redux.",
+            "Establish staging deployment confidence by publishing frontend builds to Netlify/Vercel."
+        ],
+        "content_blocks": [
+            {
+                "title": "Milestone 1: Web Layouts & JS Essentials",
+                "text": "Build clean HTML5 responsive structures, master CSS layout alignment (Flexbox, CSS Grid, TailwindCSS), and learn JavaScript variables, arrays iteration, and dynamic DOM event loops."
+            },
+            {
+                "title": "Milestone 2: Functional Components & Hooks",
+                "text": "Transition to component design. Understand JSX, pass data as props, handle form inputs, and manage state using useState. Fetch remote endpoint data within useEffect lifecycle blocks."
+            },
+            {
+                "title": "Milestone 3: Global States & SPA Routers",
+                "text": "Incorporate multi-screen views using React Router DOM. Set up global data storage sharing with the Context API, and scale to enterprise stores using Redux Toolkit slices and async thunks."
+            },
+            {
+                "title": "Milestone 4: Testing & Cloud Bundles",
+                "text": "Learn component testing conventions, profile rendering bottlenecks, optimize builds using React.lazy, and deploy staging bundles to cloud servers using git release workflows."
+            }
+        ],
+        "faqs": [
+            {"q": "How long does it take to learn React JS?", "a": "For someone with basic HTML/CSS/JS knowledge, 6 to 8 weeks of focused 1-to-1 training and daily practice is sufficient to build job-ready frontend portfolios."},
+            {"q": "Should I learn TypeScript?", "a": "Yes. Large software teams in Pune widely adopt TypeScript for component validation. We recommend picking up TS fundamentals once you are comfortable with standard React hooks."}
+        ]
+    },
+    {
+        "category": "roadmap",
+        "category_label": "Career Roadmap",
+        "slug": "beginner-to-react-native-developer-roadmap",
+        "seo_title": "React Native Mobile Developer Roadmap & Learning Path | CACTS",
+        "meta_description": "Follow our comprehensive roadmap to become a cross-platform mobile developer. Learn Expo CLI, navigation controllers, SQLite, and app store deployment.",
+        "h1": "React Native Mobile Developer Roadmap",
+        "h2": "The Core Guide to Compiling Native iOS & Android Apps from JavaScript",
+        "related_course": "React Native Mobile Developer Training",
+        "related_course_slug": "react-native-mobile-developer-training",
+        "key_takeaways": [
+            "Utilize Expo CLI for faster prototyping and developer feedback loops.",
+            "Ensure type safety across views and navigation parameters using TypeScript.",
+            "Learn EAS build configurations to compile binaries ready for Apple and Google app store review."
+        ],
+        "content_blocks": [
+            {
+                "title": "Milestone 1: Simulators & Mobile Layouts",
+                "text": "Set up local device simulators, install Expo CLI, and build mobile-only structures using core components (View, Text, Image). Style layouts using StyleSheet rules and Safe Area parameters."
+            },
+            {
+                "title": "Milestone 2: Type-safe App Navigation",
+                "text": "Build multi-screen mobile experiences. Integrate TypeScript to validate navigation flows, and set up tab routers, drawer menus, and modal popups using React Navigation."
+            },
+            {
+                "title": "Milestone 3: Hardware Integrations & SQLite",
+                "text": "Access mobile device features. Request camera permissions, fetch live GPS coordinates, schedule push alerts, and cache data collections inside SQLite tables."
+            },
+            {
+                "title": "Milestone 4: EAS Build & Store Launch",
+                "text": "Generate keystores, configure app credentials, trigger cloud EAS builds to compile Android APKs and iOS IPA binaries, and submit builds to Google Play and Apple App Store."
+            }
+        ],
+        "faqs": [
+            {"q": "Do I need to learn Java or Swift first?", "a": "No. React Native handles compilation to native layers. JavaScript/TypeScript is all you need to construct complete cross-platform interfaces."},
+            {"q": "What is EAS?", "a": "Expo Application Services (EAS) is a cloud compilation pipeline that automates building, signing, and deploying application binaries directly onto Google and Apple app store dashboard consoles."}
+        ]
+    },
+    {
+        "category": "comparison",
+        "category_label": "Tech Comparison",
+        "slug": "react-vs-angular",
+        "seo_title": "React JS vs Angular | Frontend Framework Comparison | CACTS",
+        "meta_description": "Read a comparative breakdown between React JS and Angular. Analyze performance, rendering speeds, state management, and Pune job opportunities.",
+        "h1": "React JS vs Angular",
+        "h2": "Comparing a Lightweight UI Library and a Complete Enterprise Framework",
+        "related_course": "React JS Developer Training",
+        "related_course_slug": "react-js-developer-training",
+        "key_takeaways": [
+            "React is a lightweight view library giving developers structural flexibility; Angular is a complete framework with built-in modules.",
+            "React uses a Virtual DOM with reconciled diff updates; Angular uses a Real DOM combined with Zone.js change detection.",
+            "Both are in high demand in Pune, with React favored by startups/MERN teams, and Angular by large enterprise MNCs."
+        ],
+        "content_blocks": [
+            {
+                "title": "Architecture & Learning Curve",
+                "text": "React focuses only on the view layer, requiring third-party libraries for routing or global state, making it highly flexible. Angular is opinionated, offering built-in routers, HTTP clients, and form validators, which leads to a steeper learning curve."
+            },
+            {
+                "title": "Rendering Speed & DOM Management",
+                "text": "React's Virtual DOM minimizes costly repaints by executing batch updates in memory before applying changes. Angular's incremental DOM updates values directly, utilizing TypeScript classes to handle components lifecycles."
+            },
+            {
+                "title": "Ecosystem & Job Demand in Pune",
+                "text": "MERN and React frontend stacks dominate startup and product-focused development groups. Angular is preferred by banks and corporate engineering teams who want long-term structured architectures."
+            }
+        ],
+        "faqs": [
+            {"q": "Which is easier to learn for beginners?", "a": "React JS is generally easier due to its smaller surface area and standard JavaScript coding syntax. Angular requires learning TypeScript and framework-specific patterns (like RxJS) from day one."},
+            {"q": "Can I transition from React to Angular?", "a": "Yes. Once you understand components lifecycle hooks, state rendering, and REST API queries, the core principles transfer easily between frameworks."}
+        ]
+    },
+    {
+        "category": "comparison",
+        "category_label": "Tech Comparison",
+        "slug": "react-native-vs-flutter",
+        "seo_title": "React Native vs Flutter | Mobile App Framework Comparison | CACTS",
+        "meta_description": "Compare React Native and Flutter for mobile development. Review language frameworks, compiler performance, layout engines, and Pune jobs.",
+        "h1": "React Native vs Flutter",
+        "h2": "Comparing JavaScript Bridge Compilation and Native Widget Skia/Impeller Engines",
+        "related_course": "React Native Mobile Developer Training",
+        "related_course_slug": "react-native-mobile-developer-training",
+        "key_takeaways": [
+            "React Native compiles JS views into actual native elements via a platform bridge; Flutter renders custom widgets using its Skia/Impeller graphics engine.",
+            "React Native uses JavaScript/TypeScript which is familiar to web developers; Flutter uses Google's Dart language.",
+            "Both produce excellent performance, but React Native is heavily favored by teams already working with React JS."
+        ],
+        "content_blocks": [
+            {
+                "title": "Programming Language & Developer Experience",
+                "text": "React Native allows web developers to reuse React design principles, coding in TypeScript. Flutter uses Dart, which is a typed, object-oriented language. React Native benefits from the vast NPM library registry, while Flutter utilizes Pub.dev package indexes."
+            },
+            {
+                "title": "Layout Engines & Rendering Mechanics",
+                "text": "React Native references native host widgets directly, resulting in standard iOS and Android components. Flutter bypasses host styling entirely, rendering pixels pixel-perfect onto a dedicated canvas, resulting in highly consistent cross-platform designs."
+            },
+            {
+                "title": "Pune IT Hiring & Ecosystem",
+                "text": "Many mobile teams in Pune deploy React Native to reuse code between responsive web platforms (React) and mobile applications. Flutter is widely chosen for new greenfield mobile apps due to its rapid widget composition templates."
+            }
+        ],
+        "faqs": [
+            {"q": "Does React Native feel native?", "a": "Yes. Because React Native compiles down to actual native Android and iOS components, the tactile feel, scrolling animations, and accessibility structures match native OS platforms exactly."},
+            {"q": "Which has better integration with device hardware?", "a": "Both frameworks offer robust libraries to access GPS, cameras, Bluetooth, and biometric scanners. React Native's Expo CLI provides pre-vetted modules that handle hardware configurations cleanly."}
+        ]
     }
 ]
