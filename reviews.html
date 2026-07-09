@@ -1724,6 +1724,76 @@
             </div>
         </section>
 
+        <!-- Transparent Troubleshooting & Coding Logs -->
+        <section style="border-top: 1px solid var(--border); background: linear-gradient(180deg, transparent 0%, rgba(99, 102, 241, 0.02) 100%);" aria-labelledby="transparency-heading">
+            <div style="text-align: center; margin-bottom: 3.5rem;">
+                <h2 id="transparency-heading" class="section-title">Transparent Coding &amp; Debugging Logs</h2>
+                <p class="section-subtitle">Real developer training is about solving real blockers. Here are actual debugging logs from our student git sessions.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card" style="padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 0.75rem; padding: 0.2rem 0.5rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border-radius: 4px; font-weight: 600;">CORS Blocked</span>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">Java Full Stack Track</span>
+                    </div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Cross-Origin API Header Resolution</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                        A student's React login module failed to authenticate requests from the Spring Boot backend due to CORS preflight options blocks.
+                    </p>
+                    <div style="background: rgba(0, 0, 0, 0.3); padding: 0.75rem; border-radius: 6px; font-family: monospace; font-size: 0.8rem; color: #a7f3d0; margin-bottom: 1rem; border: 1px solid var(--border);">
+                        // Spring Security CORS config<br>
+                        registry.addMapping("/**")<br>
+                        .allowedOrigins("https://domain.com")<br>
+                        .allowedMethods("GET", "POST", "PUT")
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; font-style: italic;">
+                        Outcome: Mentored on configuring explicit security corsMappings instead of wildcard annotations.
+                    </p>
+                </div>
+
+                <div class="card" style="padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 0.75rem; padding: 0.2rem 0.5rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border-radius: 4px; font-weight: 600;">Leak Detected</span>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">MERN Web Track</span>
+                    </div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">MongoDB Connection Pool Exhaustion</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                        An API endpoint kept timing out under concurrent test loads because a database connection was created on every single request loop.
+                    </p>
+                    <div style="background: rgba(0, 0, 0, 0.3); padding: 0.75rem; border-radius: 6px; font-family: monospace; font-size: 0.8rem; color: #a7f3d0; margin-bottom: 1rem; border: 1px solid var(--border);">
+                        // Cached database connector pattern<br>
+                        let cachedDb = null;<br>
+                        export async function connectToDatabase() {<br>
+                        &nbsp;&nbsp;if (cachedDb) return cachedDb;...
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; font-style: italic;">
+                        Outcome: Mentored on using singleton mongoose client pool connection caching in serverless modules.
+                    </p>
+                </div>
+
+                <div class="card" style="padding: 2rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <span style="font-size: 0.75rem; padding: 0.2rem 0.5rem; background: rgba(239, 68, 68, 0.1); color: #ef4444; border-radius: 4px; font-weight: 600;">Auth Error</span>
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">DevOps Pipeline</span>
+                    </div>
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Docker ECS Staging Credentials</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                        A GitHub Actions runner workflow failed during remote image push due to invalid AWS IAM policy parameters and task execution secrets.
+                    </p>
+                    <div style="background: rgba(0, 0, 0, 0.3); padding: 0.75rem; border-radius: 6px; font-family: monospace; font-size: 0.8rem; color: #a7f3d0; margin-bottom: 1rem; border: 1px solid var(--border);">
+                        # GitHub Actions YAML workflow<br>
+                        - name: Login to Amazon ECR<br>
+                        &nbsp;&nbsp;uses: aws-actions/amazon-ecr-login@v1<br>
+                        &nbsp;&nbsp;env: AWS_ACCESS_KEY_ID: ...
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.85rem; font-style: italic;">
+                        Outcome: Mentored on mapping OpenID Connect (OIDC) roles instead of saving permanent access keys.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <!-- Detailed Review Case Study Section -->
         <section style="border-top: 1px solid var(--border);" aria-labelledby="outcomes-heading">
             <h2 id="outcomes-heading" class="section-title">Practical Learning Outcomes</h2>
