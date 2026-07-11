@@ -330,9 +330,9 @@
                 <!-- Results Output Card -->
                 <div class="quiz-results-card" id="quiz-results">
                     <span class="results-badge">Recommended Course Match</span>
-                    <h2 id="recommended-title" style="font-size: 2rem; color: var(--accent-light); margin-bottom: 1rem;">Java Full Stack Developer</h2>
+                    <h2 id="recommended-title" style="font-size: 2rem; color: var(--accent-light); margin-bottom: 1rem;">Java Fullstack</h2>
                     <p id="recommended-description" style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem;">
-                        Based on your technical background and interest in enterprise architecture, our Java Full Stack mentoring program is your ideal fit. You will master Spring Boot microservices, OOPs coding models, and SQL databases.
+                        Based on your technical background and interest in enterprise architecture, our Java Fullstack mentoring program is your ideal fit. You will master Spring Boot microservices, OOPs coding models, and SQL databases.
                     </p>
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                         <a href="" id="course-page-link" class="btn btn-primary">View Detailed Curriculum</a>
@@ -366,16 +366,16 @@
             <div class="footer-links">
                 <h4>Programs</h4>
                 <ul style="list-style: none;">
-                    <li><a href="java-full-stack-developer-training.html">Java Full Stack</a></li>
-                    <li><a href="full-stack-development-training.html">Full Stack Web</a></li>
-                    <li><a href="react-js-developer-training.html">React JS Developer</a></li>
-                    <li><a href="react-native-mobile-developer-training.html">React Native Mobile</a></li>
-                    <li><a href="ai-machine-learning-training.html">AI &amp; Machine Learning</a></li>
+                    <li><a href="java-fullstack-training.html">Java Fullstack</a></li>
+                    <li><a href="full-stack-training.html">Full Stack Web</a></li>
+                    <li><a href="react-js-training.html">React JS</a></li>
+                    <li><a href="react-native-training.html">React Native</a></li>
+                    <li><a href="ai-ml-training.html">AI &amp; Machine Learning</a></li>
                     <li><a href="data-science-training.html">Data Science</a></li>
                     <li><a href="data-engineering-training.html">Data Engineering</a></li>
-                    <li><a href="python-programming-training.html">Python Scripting</a></li>
+                    <li><a href="python-training.html">Python Scripting</a></li>
                     <li><a href="devops-training.html">DevOps Engineering</a></li>
-                    <li><a href="cloud-computing-training.html">Cloud Computing</a></li>
+                    <li><a href="cloud-training.html">Cloud</a></li>
                     <li><a href="power-bi-training.html">Power BI Analytics</a></li>
                     <li><a href="software-testing-training.html">Software Testing</a></li>
                     <li><a href="cybersecurity-training.html">Cybersecurity Course</a></li>
@@ -543,9 +543,9 @@
             quizNav.style.display = 'none';
             progressBarContainer.style.display = 'none';
 
-            let course = "Java Full Stack";
-            let desc = "Based on your technical background and interest in enterprise architecture, our Java Full Stack mentoring program is your ideal fit. You will master Spring Boot microservices, OOPs coding models, and SQL databases.";
-            let slug = "java-full-stack-developer-training.html";
+            let course = "Java Fullstack";
+            let desc = "Based on your technical background and interest in enterprise architecture, our Java Fullstack mentoring program is your ideal fit. You will master Spring Boot microservices, OOPs coding models, and SQL databases.";
+            let slug = "java-fullstack-training.html";
 
             const interest = answers[2];
             const math = answers[3];
@@ -553,22 +553,22 @@
 
             if (interest === 'web') {
                 if (answers[5] === 'part') {
-                    course = "React JS Developer";
-                    desc = "Since you want to design interactive client-side web interfaces with a flexible weekly study target, React JS Developer Training is your ideal match. You will focus on functional components, hooks, global states, and Axios REST queries.";
-                    slug = "react-js-developer-training.html";
+                    course = "React JS";
+                    desc = "Since you want to design interactive client-side web interfaces with a flexible weekly study target, React JS Training is your ideal match. You will focus on functional components, hooks, global states, and Axios REST queries.";
+                    slug = "react-js-training.html";
                 } else if (goal === 'startup') {
                     course = "Full Stack Web Developer (MERN)";
                     desc = "Since you love building client web applications and prefer startup settings, MERN (MongoDB, Express, React, Node) Full Stack training matches your workflow. You will construct responsive Single-Page Applications (SPAs) with unified JavaScript coding.";
-                    slug = "full-stack-development-training.html";
+                    slug = "full-stack-training.html";
                 } else {
                     course = "Full Stack Web Developer (MERN)";
                     desc = "Since you love building client web applications, MERN (MongoDB, Express, React, Node) Full Stack training matches your workflow. You will construct responsive Single-Page Applications (SPAs) with unified JavaScript coding.";
-                    slug = "full-stack-development-training.html";
+                    slug = "full-stack-training.html";
                 }
             } else if (interest === 'mobile') {
-                course = "React Native Mobile Developer";
-                desc = "Since you want to build cross-platform smartphone apps, our React Native Mobile Developer Training is the perfect fit. You will master Expo CLI, navigation controllers, SQLite databases, and EAS cloud deployment workflows.";
-                slug = "react-native-mobile-developer-training.html";
+                course = "React Native";
+                desc = "Since you want to build cross-platform smartphone apps, our React Native Training is the perfect fit. You will master Expo CLI, navigation controllers, SQLite databases, and EAS cloud deployment workflows.";
+                slug = "react-native-training.html";
             } else if (interest === 'database') {
                 course = "Data Engineering";
                 desc = "Your interest in database systems and organizing large datasets aligns perfectly with our Data Engineering syllabus. You will master PySpark streaming, SQL queries, and ETL staging on AWS platforms.";
@@ -582,9 +582,9 @@
                 desc = "Your interest in cloud servers, releases, and deployment scripts maps to our DevOps training. You will handle Kubernetes orchestration, Docker virtualization, and Terraform infrastructure commands.";
                 slug = "devops-training.html";
             } else if (answers[1] === 'non_it_student' && interest === 'web') {
-                course = "Python Programming";
-                desc = "As a non-IT graduate transitioning to code, we suggest beginning with Python Programming. It establishes core loop foundations, variable patterns, and databases in a friendly learning curve before moving to web frameworks.";
-                slug = "python-programming-training.html";
+                course = "Python";
+                desc = "As a non-IT graduate transitioning to code, we suggest beginning with Python. It establishes core loop foundations, variable patterns, and databases in a friendly learning curve before moving to web frameworks.";
+                slug = "python-training.html";
             }
 
             // Render Results

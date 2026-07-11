@@ -243,10 +243,10 @@ def build():
                 tabs_config.append({"type": "projects", "label": proj_label, "url": proj_url})
             else:
                 fallback_mapping = {
-                    "full-stack-development-training": ("project-portfolios.html", "Portfolios", "projects"),
-                    "ai-machine-learning-training": ("data-science-project-ideas.html", "Project Ideas", "projects"),
-                    "cloud-computing-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
-                    "python-programming-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
+                    "full-stack-training": ("project-portfolios.html", "Portfolios", "projects"),
+                    "ai-ml-training": ("data-science-project-ideas.html", "Project Ideas", "projects"),
+                    "cloud-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
+                    "python-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
                     "software-testing-training": ("student-projects.html", "Student Projects", "projects")
                 }
                 url, label, type_ = fallback_mapping.get(slug, ("student-projects.html", "Projects", "projects"))
@@ -261,11 +261,11 @@ def build():
                 })
             else:
                 fallback_roadmaps = {
-                    "java-full-stack-developer-training": "career-roadmaps.html",
-                    "full-stack-development-training": "career-roadmaps.html",
-                    "python-programming-training": "beginner-to-ai-engineer-roadmap.html",
+                    "java-fullstack-training": "career-roadmaps.html",
+                    "full-stack-training": "career-roadmaps.html",
+                    "python-training": "beginner-to-ai-engineer-roadmap.html",
                     "data-science-training": "beginner-to-ai-engineer-roadmap.html",
-                    "cloud-computing-training": "beginner-to-devops-engineer-roadmap.html",
+                    "cloud-training": "beginner-to-devops-engineer-roadmap.html",
                     "software-testing-training": "career-roadmaps.html"
                 }
                 url = fallback_roadmaps.get(slug)
@@ -285,12 +285,12 @@ def build():
                 })
             else:
                 fallback_certifications = {
-                    "java-full-stack-developer-training": "best-devops-certifications.html",
-                    "full-stack-development-training": "best-devops-certifications.html",
-                    "ai-machine-learning-training": "best-data-engineering-certifications.html",
+                    "java-fullstack-training": "best-devops-certifications.html",
+                    "full-stack-training": "best-devops-certifications.html",
+                    "ai-ml-training": "best-data-engineering-certifications.html",
                     "data-science-training": "best-data-engineering-certifications.html",
-                    "python-programming-training": "best-data-engineering-certifications.html",
-                    "cloud-computing-training": "best-devops-certifications.html",
+                    "python-training": "best-data-engineering-certifications.html",
+                    "cloud-training": "best-devops-certifications.html",
                     "software-testing-training": "best-devops-certifications.html"
                 }
                 url = fallback_certifications.get(slug)
@@ -305,15 +305,15 @@ def build():
             if course_comparisons:
                 tabs_config.append({
                     "type": "comparison",
-                    "label": "Compare Tools" if slug != "java-full-stack-developer-training" else "Java vs Python",
+                    "label": "Compare Tools" if slug != "java-fullstack-training" else "Java vs Python",
                     "url": f"{course_comparisons[0]['slug']}.html"
                 })
             else:
                 fallback_comparisons = {
-                    "full-stack-development-training": "jenkins-vs-github-actions.html",
-                    "ai-machine-learning-training": "spark-vs-hadoop.html",
+                    "full-stack-training": "jenkins-vs-github-actions.html",
+                    "ai-ml-training": "spark-vs-hadoop.html",
                     "data-science-training": "spark-vs-hadoop.html",
-                    "python-programming-training": "java-vs-python.html",
+                    "python-training": "java-vs-python.html",
                     "software-testing-training": "jenkins-vs-github-actions.html"
                 }
                 url = fallback_comparisons.get(slug)
@@ -2087,16 +2087,16 @@ def build():
         if category == "projects" and course_match:
             base_slug = related_course_slug.replace("-training", "")
             project_mapping = {
-                "java-full-stack-developer-training": ("java-full-stack-project-ideas.html", "Project Ideas", "projects"),
+                "java-fullstack-training": ("java-fullstack-project-ideas.html", "Project Ideas", "projects"),
                 "data-science-training": ("data-science-project-ideas.html", "Project Ideas", "projects"),
                 "data-engineering-training": ("data-engineering-project-ideas.html", "Project Ideas", "projects"),
                 "devops-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
                 "cybersecurity-training": ("cybersecurity-project-ideas.html", "Project Ideas", "projects"),
                 "power-bi-training": ("power-bi-dashboard-ideas.html", "Dashboard Ideas", "projects"),
-                "full-stack-development-training": ("project-portfolios.html", "Portfolios", "projects"),
-                "ai-machine-learning-training": ("data-science-project-ideas.html", "Project Ideas", "projects"),
-                "cloud-computing-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
-                "python-programming-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
+                "full-stack-training": ("project-portfolios.html", "Portfolios", "projects"),
+                "ai-ml-training": ("data-science-project-ideas.html", "Project Ideas", "projects"),
+                "cloud-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
+                "python-training": ("devops-project-ideas.html", "Project Ideas", "projects"),
                 "software-testing-training": ("student-projects.html", "Student Projects", "projects")
             }
             proj_url, proj_label, proj_type = project_mapping.get(related_course_slug, ("student-projects.html", "Projects", "projects"))

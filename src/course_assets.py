@@ -1,7 +1,7 @@
 # course_assets.py - Technical implementation previews (code snippets & schemas) for CACTS courses
 
 COURSE_ASSETS_DATA = {
-    "java-full-stack-developer-training": {
+    "java-fullstack-training": {
         "code_title": "Spring Boot REST Controller with Security Integration",
         "lang": "java",
         "code": """@RestController
@@ -38,7 +38,7 @@ public class OrderController {
 [MySQL Database]          [Stripe Payment API]
 (Orders star schema)"""
     },
-    "full-stack-development-training": {
+    "full-stack-training": {
         "code_title": "Express.js Router with MongoDB Aggregation Pipeline",
         "lang": "javascript",
         "code": """const router = require('express').Router();
@@ -74,7 +74,7 @@ router.get('/revenue-report', auth, async (req, res) => {
 | status: String ('pending', 'completed')     |
 +---------------------------------------------+"""
     },
-    "ai-machine-learning-training": {
+    "ai-ml-training": {
         "code_title": "Scikit-Learn Predictive Model Pipeline with Scaling",
         "lang": "python",
         "code": """from sklearn.pipeline import Pipeline
@@ -172,7 +172,7 @@ df.write.partitionBy("page").parquet("s3a://data-lake/processed/")""",
        v
 [BI Dashboards] (Power BI / Business Reports)"""
     },
-    "python-programming-training": {
+    "python-training": {
         "code_title": "Python Object-Oriented Class with JSON Serialization",
         "lang": "python",
         "code": """import json
@@ -228,7 +228,7 @@ CALCULATE(
 | Year              |           | Revenue           |
 +-------------------+           +-------------------+"""
     },
-    "cloud-computing-training": {
+    "cloud-training": {
         "code_title": "Terraform Infrastructure as Code (VPC & Subnet)",
         "lang": "hcl",
         "code": """resource "aws_vpc" "custom_vpc" {
@@ -353,7 +353,7 @@ def audit_ports(target_host, ports):
 [Server]   [Database]
 (Port 80)  (Port 3306 - Firewalled / Restricted access)"""
     },
-    "react-js-developer-training": {
+    "react-js-training": {
         "code_title": "React Component with Axios Hooks & State Management",
         "lang": "javascript",
         "code": """import React, { useState, useEffect } from 'react';
@@ -402,7 +402,7 @@ export default function UserList() {
                   v (JSON Payload Response)
              [Dynamic UI Components Render]"""
     },
-    "react-native-mobile-developer-training": {
+    "react-native-training": {
         "code_title": "React Native Component with GPS & Style Sheets",
         "lang": "javascript",
         "code": """import React, { useState } from 'react';

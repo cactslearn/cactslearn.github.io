@@ -182,8 +182,8 @@ EXTRA_PAGES = [
         "meta_description": "Understand what Terraform is, how Infrastructure as Code (IaC) works, and how it automates cloud provisioning across AWS, Azure, and Google Cloud.",
         "h1": "What is Terraform?",
         "h2": "An Introduction to Declarative Cloud Provisioning and Multi-Cloud Infrastructure as Code",
-        "related_course": "Cloud Computing Training",
-        "related_course_slug": "cloud-computing-training",
+        "related_course": "Cloud Training",
+        "related_course_slug": "cloud-training",
         "key_takeaways": [
             "Defines cloud resources in declarative configuration files using HashiCorp Configuration Language (HCL).",
             "Enables automated, repeatable provisioning of networks, VMs, and databases in seconds.",
@@ -288,8 +288,8 @@ EXTRA_PAGES = [
         "meta_description": "Compare Java vs Python side-by-side. Analyze performance, syntax readability, corporate hiring scope in Pune, and career paths in full stack vs data.",
         "h1": "Java vs Python",
         "h2": "Enterprise Backend vs. Data Science: A Side-by-Side Programming Comparison",
-        "related_course": "Java Full Stack Developer Training",
-        "related_course_slug": "java-full-stack-developer-training",
+        "related_course": "Java Fullstack Training",
+        "related_course_slug": "java-fullstack-training",
         "key_takeaways": [
             "Java is statically typed and compiled, offering high performance for enterprise backend systems.",
             "Python is dynamically typed and interpreted, offering simple syntax and dominance in AI/data.",
@@ -424,8 +424,8 @@ EXTRA_PAGES = [
         "meta_description": "Compare Amazon Web Services (AWS) vs Microsoft Azure. Learn about global market share, services comparison, pricing, and hiring trends in Pune.",
         "h1": "AWS vs Azure",
         "h2": "Comparing AWS and Azure: Cloud Infrastructure Services, Pricing, and Job Market",
-        "related_course": "Cloud Computing Training",
-        "related_course_slug": "cloud-computing-training",
+        "related_course": "Cloud Training",
+        "related_course_slug": "cloud-training",
         "key_takeaways": [
             "AWS holds the largest global cloud market share, with a massive array of developer services.",
             "Azure is preferred by enterprise companies that rely heavily on Microsoft software licensing.",
@@ -434,7 +434,7 @@ EXTRA_PAGES = [
         "content_blocks": [
             {
                 "title": "Market Positioning and Global Infrastructure",
-                "text": "Amazon Web Services (AWS) is the pioneer of cloud computing, launching in 2006. It maintains the largest global footprint and market share. Microsoft Azure, launched in 2010, has grown rapidly by leveraging existing enterprise relationships, allowing companies to migrate Windows Server licenses to the cloud easily."
+                "text": "Amazon Web Services (AWS) is the pioneer of cloud, launching in 2006. It maintains the largest global footprint and market share. Microsoft Azure, launched in 2010, has grown rapidly by leveraging existing enterprise relationships, allowing companies to migrate Windows Server licenses to the cloud easily."
             },
             {
                 "title": "Core Services Comparison",
@@ -447,7 +447,7 @@ EXTRA_PAGES = [
         ],
         "faqs": [
             {"q": "Which certification is more valuable: AWS or Azure?", "a": "Both carry high value. The AWS Solutions Architect Associate is the most globally recognized cloud credential, while Azure Administrator is popular in Microsoft-centric companies."},
-            {"q": "Do I need programming to learn cloud computing?", "a": "Basic scripting helps with automation, but core cloud roles focus heavily on networking, security, storage architectures, and service configurations."}
+            {"q": "Do I need programming to learn cloud?", "a": "Basic scripting helps with automation, but core cloud roles focus heavily on networking, security, storage architectures, and service configurations."}
         ]
     },
     {
@@ -491,13 +491,13 @@ EXTRA_PAGES = [
     {
         "category": "projects",
         "category_label": "Project Ideas",
-        "slug": "java-full-stack-project-ideas",
-        "seo_title": "Top Java Full Stack Project Ideas for Students | CACTS Pune",
-        "meta_description": "Explore practical Java Full Stack project ideas incorporating Spring Boot, React, and SQL. Build a corporate-ready portfolio to clear technical rounds.",
-        "h1": "Java Full Stack Project Ideas",
+        "slug": "java-fullstack-project-ideas",
+        "seo_title": "Top Java Fullstack Project Ideas for Students | CACTS Pune",
+        "meta_description": "Explore practical Java Fullstack project ideas incorporating Spring Boot, React, and SQL. Build a corporate-ready portfolio to clear technical rounds.",
+        "h1": "Java Fullstack Project Ideas",
         "h2": "Building High-Trust Portfolios with Spring Boot, React, and Relational Databases",
-        "related_course": "Java Full Stack Developer Training",
-        "related_course_slug": "java-full-stack-developer-training",
+        "related_course": "Java Fullstack Training",
+        "related_course_slug": "java-fullstack-training",
         "key_takeaways": [
             "Avoid simple toy apps; focus on database schema relationships and security locks.",
             "Incorporate core Spring Security features like JWT authentication in your projects.",
@@ -772,8 +772,8 @@ EXTRA_PAGES = [
         "meta_description": "Learn what an AI Engineer does. Explore daily responsibilities, machine learning architectures, model deployment, and AI developer salary scales in Pune.",
         "h1": "What Does an AI Engineer Do?",
         "h2": "Building, Tuning, and Deploying Machine Learning and Deep Learning Models",
-        "related_course": "AI & Machine Learning Training",
-        "related_course_slug": "ai-machine-learning-training",
+        "related_course": "AI & ML Training",
+        "related_course_slug": "ai-ml-training",
         "key_takeaways": [
             "AI Engineers build, train, and deploy machine learning models and neural networks.",
             "Master tools like Python, Jupyter, Scikit-Learn, TensorFlow, and FastAPI.",
@@ -954,8 +954,8 @@ EXTRA_PAGES = [
         "meta_description": "Understand the roadmap to become an AI Engineer. Learn Python math libraries, classical machine learning algorithms, deep learning, and API deployment.",
         "h1": "Beginner to AI Engineer Roadmap",
         "h2": "A Structured Guide to Mastering Data Wrangling, Neural Networks, and ML Deployment",
-        "related_course": "AI & Machine Learning Training",
-        "related_course_slug": "ai-machine-learning-training",
+        "related_course": "AI & ML Training",
+        "related_course_slug": "ai-ml-training",
         "key_takeaways": [
             "Master Python analytics libraries like NumPy and Pandas for data manipulation.",
             "Learn classical machine learning algorithms and hyperparameter optimization.",
@@ -1205,11 +1205,11 @@ EXTRA_PAGES = [
         "category_label": "Industry Use Cases",
         "slug": "how-ai-is-used-in-healthcare",
         "seo_title": "How AI is Used in Healthcare | Machine Learning Cases | CACTS",
-        "meta_description": "Discover how AI and Machine Learning are used in healthcare. Explore medical imaging diagnostics, patient risk scoring, and NLP operations.",
+        "meta_description": "Discover how AI & ML are used in healthcare. Explore medical imaging diagnostics, patient risk scoring, and NLP operations.",
         "h1": "How AI is Used in Healthcare",
         "h2": "Machine Learning and Deep Learning Applications in Diagnostics and Patient Operations",
-        "related_course": "AI & Machine Learning Training",
-        "related_course_slug": "ai-machine-learning-training",
+        "related_course": "AI & ML Training",
+        "related_course_slug": "ai-ml-training",
         "key_takeaways": [
             "Uses Convolutional Neural Networks (CNNs) to analyze medical images and scan scans.",
             "Applies classification algorithms to score patient risk profiles and predict readmissions.",
@@ -1310,8 +1310,8 @@ EXTRA_PAGES = [
         "meta_description": "Discover high-value React JS project ideas for junior frontend portfolios. Learn to build Kanban boards, e-commerce stores, and dashboards.",
         "h1": "React JS Project Ideas",
         "h2": "Building Responsive Frontend Portfolios using React Hooks & Redux Toolkit",
-        "related_course": "React JS Developer Training",
-        "related_course_slug": "react-js-developer-training",
+        "related_course": "React JS Training",
+        "related_course_slug": "react-js-training",
         "key_takeaways": [
             "Focus on component reuse, state lifts, and clean hook custom architectures.",
             "Master REST API consumption using Axios and mock JSON endpoint services.",
@@ -1340,12 +1340,12 @@ EXTRA_PAGES = [
         "category": "projects",
         "category_label": "Project Ideas",
         "slug": "react-native-project-ideas",
-        "seo_title": "Top React Native Mobile Project Ideas for Portfolios | CACTS Pune",
+        "seo_title": "Top React Native Project Ideas for Portfolios | CACTS Pune",
         "meta_description": "Explore practical React Native mobile app ideas for iOS and Android. Master Expo, SQLite, maps integration, and push notifications.",
         "h1": "React Native Project Ideas",
         "h2": "Building Cross-Platform Mobile Apps with Offline persistence & GPS Triggers",
-        "related_course": "React Native Mobile Developer Training",
-        "related_course_slug": "react-native-mobile-developer-training",
+        "related_course": "React Native Training",
+        "related_course_slug": "react-native-training",
         "key_takeaways": [
             "Master cross-screen routing using nested Tab, Stack, and Drawer navigation models.",
             "Integrate SQLite local storage tables to enable offline availability for critical operations.",
@@ -1373,13 +1373,13 @@ EXTRA_PAGES = [
     {
         "category": "roadmap",
         "category_label": "Career Roadmap",
-        "slug": "beginner-to-react-js-developer-roadmap",
-        "seo_title": "React JS Developer Career Roadmap & Learning Path | CACTS Pune",
+        "slug": "beginner-to-react-js-roadmap",
+        "seo_title": "React JS Career Roadmap & Learning Path | CACTS Pune",
         "meta_description": "Understand the step-by-step roadmap to become a React JS frontend developer. Transition from basic JS layouts to hooks, global state, and pipelines.",
-        "h1": "React JS Developer Roadmap",
+        "h1": "React JS Roadmap",
         "h2": "The Structured Path to Mastering Component Libraries & State Flow",
-        "related_course": "React JS Developer Training",
-        "related_course_slug": "react-js-developer-training",
+        "related_course": "React JS Training",
+        "related_course_slug": "react-js-training",
         "key_takeaways": [
             "Build solid JavaScript foundations (async promises, ES6, arrays) before diving into React.",
             "Focus on local state components before introducing complex stores like Redux.",
@@ -1411,13 +1411,13 @@ EXTRA_PAGES = [
     {
         "category": "roadmap",
         "category_label": "Career Roadmap",
-        "slug": "beginner-to-react-native-developer-roadmap",
-        "seo_title": "React Native Mobile Developer Roadmap & Learning Path | CACTS",
+        "slug": "beginner-to-react-native-roadmap",
+        "seo_title": "React Native Roadmap & Learning Path | CACTS",
         "meta_description": "Follow our comprehensive roadmap to become a cross-platform mobile developer. Learn Expo CLI, navigation controllers, SQLite, and app store deployment.",
-        "h1": "React Native Mobile Developer Roadmap",
+        "h1": "React Native Roadmap",
         "h2": "The Core Guide to Compiling Native iOS & Android Apps from JavaScript",
-        "related_course": "React Native Mobile Developer Training",
-        "related_course_slug": "react-native-mobile-developer-training",
+        "related_course": "React Native Training",
+        "related_course_slug": "react-native-training",
         "key_takeaways": [
             "Utilize Expo CLI for faster prototyping and developer feedback loops.",
             "Ensure type safety across views and navigation parameters using TypeScript.",
@@ -1454,8 +1454,8 @@ EXTRA_PAGES = [
         "meta_description": "Read a comparative breakdown between React JS and Angular. Analyze performance, rendering speeds, state management, and Pune job opportunities.",
         "h1": "React JS vs Angular",
         "h2": "Comparing a Lightweight UI Library and a Complete Enterprise Framework",
-        "related_course": "React JS Developer Training",
-        "related_course_slug": "react-js-developer-training",
+        "related_course": "React JS Training",
+        "related_course_slug": "react-js-training",
         "key_takeaways": [
             "React is a lightweight view library giving developers structural flexibility; Angular is a complete framework with built-in modules.",
             "React uses a Virtual DOM with reconciled diff updates; Angular uses a Real DOM combined with Zone.js change detection.",
@@ -1488,8 +1488,8 @@ EXTRA_PAGES = [
         "meta_description": "Compare React Native and Flutter for mobile development. Review language frameworks, compiler performance, layout engines, and Pune jobs.",
         "h1": "React Native vs Flutter",
         "h2": "Comparing JavaScript Bridge Compilation and Native Widget Skia/Impeller Engines",
-        "related_course": "React Native Mobile Developer Training",
-        "related_course_slug": "react-native-mobile-developer-training",
+        "related_course": "React Native Training",
+        "related_course_slug": "react-native-training",
         "key_takeaways": [
             "React Native compiles JS views into actual native elements via a platform bridge; Flutter renders custom widgets using its Skia/Impeller graphics engine.",
             "React Native uses JavaScript/TypeScript which is familiar to web developers; Flutter uses Google's Dart language.",

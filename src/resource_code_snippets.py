@@ -250,7 +250,7 @@ class Dev:
             "url": "https://docs.oracle.com/"
         },
         "internal_links": [
-            {"label": "Java Full Stack Project Ideas", "url": "java-full-stack-project-ideas.html", "context": "Explore full stack projects you can build using Java for enterprise-grade backend stability."}
+            {"label": "Java Fullstack Project Ideas", "url": "java-fullstack-project-ideas.html", "context": "Explore full stack projects you can build using Java for enterprise-grade backend stability."}
         ]
     },
     "power-bi-vs-tableau": {
@@ -336,7 +336,7 @@ az vm create --resource-group cacts-rg --name staging-vm --image Ubuntu2204 --ge
             "url": "https://docs.aws.amazon.com"
         },
         "internal_links": [
-            {"label": "Cloud Computing Training", "url": "cloud-computing-training.html", "context": "Read detailed training courses for learning enterprise cloud networks."}
+            {"label": "Cloud Training", "url": "cloud-training.html", "context": "Read detailed training courses for learning enterprise cloud networks."}
         ]
     },
     "jenkins-vs-github-actions": {
@@ -392,8 +392,8 @@ export function KanbanBoard() {
             "url": "https://react.dev/"
         },
         "internal_links": [
-            {"label": "React JS Developer Training", "url": "react-js-developer-training.html", "context": "Learn React state management and modular design in our dedicated frontend syllabus."},
-            {"label": "React JS Developer Roadmap", "url": "react-js-developer-roadmap.html", "context": "See how project milestones fit into your frontend career trajectory."}
+            {"label": "React JS Training", "url": "react-js-training.html", "context": "Learn React state management and modular design in our dedicated frontend syllabus."},
+            {"label": "React JS Roadmap", "url": "react-js-roadmap.html", "context": "See how project milestones fit into your frontend career trajectory."}
         ]
     },
     "react-native-project-ideas": {
@@ -436,8 +436,8 @@ const styles = StyleSheet.create({
             "url": "https://reactnative.dev/"
         },
         "internal_links": [
-            {"label": "React Native Mobile Developer Training", "url": "react-native-mobile-developer-training.html", "context": "Learn device camera, GPS, and push notification integrations in our hands-on course."},
-            {"label": "React Native Mobile Developer Roadmap", "url": "react-native-mobile-developer-roadmap.html", "context": "Check the mobile development phases from configuration to store deployment."}
+            {"label": "React Native Training", "url": "react-native-training.html", "context": "Learn device camera, GPS, and push notification integrations in our hands-on course."},
+            {"label": "React Native Roadmap", "url": "react-native-roadmap.html", "context": "Check the mobile development phases from configuration to store deployment."}
         ]
     },
     "react-vs-angular": {

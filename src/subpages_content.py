@@ -1,7 +1,7 @@
 # subpages_content.py - Dynamic Content Data for CACTS Course Split Pages
 
 SUBPAGES_DATA = {
-    "java-full-stack-developer-training": {
+    "java-fullstack-training": {
         "syllabus_prerequisites": "Basic logical thinking and computer operations. No prior programming background is required, as we start from absolute variables and loops.",
         "syllabus_projects": [
             "Project 1: Custom Library Management CLI app using Collections & JVM files.",
@@ -14,7 +14,7 @@ SUBPAGES_DATA = {
             {"q": "Can I customize the Java syllabus based on my college project?", "a": "Yes. Since our training is strictly 1-to-1, your mentor can customize the final module projects to match your engineering graduation project requirements."},
             {"q": "Do you cover Java 21 or Java 17?", "a": "We teach Java 17/21 LTS versions, focusing on modern language features like Record types, pattern matching, and virtual threads."}
         ],
-        "fees_structure": "The Java Full Stack Developer Training fee is ₹19,999 (all-inclusive). You can split this into 2 equal monthly installments of ₹10,000. We offer a 5% discount (₹18,999 final fee) for one-time upfront payments.",
+        "fees_structure": "The Java Fullstack Training fee is ₹19,999 (all-inclusive). You can split this into 2 equal monthly installments of ₹10,000. We offer a 5% discount (₹18,999 final fee) for one-time upfront payments.",
         "fees_comparison": {
             "typical_pune_fees": "₹45,000 - ₹60,000",
             "pune_batch_size": "30 to 50 students",
@@ -42,11 +42,11 @@ SUBPAGES_DATA = {
             {"phase": "Phase 4", "title": "React UI Integration & Live Deployment", "duration": "4 Weeks", "skills": "React hooks, state routers, Axios calls, Git merge branches, Staging deploy", "project": "Deploying Full-Stack app on Live Internship"}
         ],
         "roadmap_faqs": [
-            {"q": "What is the average starting salary for a Java Full Stack developer in Pune?", "a": "As of 2026, entry-level salaries in Pune for full-stack developers range from ₹3.6 LPA to ₹5.5 LPA. Candidates with active company internship code commits can negotiate higher packages."},
-            {"q": "How long does it take to get job-ready in Java Full Stack?", "a": "On average, it takes 16 weeks of dedicated 1-to-1 training and active coding (12-15 hours/week) to build production-ready projects and master interview topics."}
+            {"q": "What is the average starting salary for a Java Fullstack developer in Pune?", "a": "As of 2026, entry-level salaries in Pune for full-stack developers range from ₹3.6 LPA to ₹5.5 LPA. Candidates with active company internship code commits can negotiate higher packages."},
+            {"q": "How long does it take to get job-ready in Java Fullstack?", "a": "On average, it takes 16 weeks of dedicated 1-to-1 training and active coding (12-15 hours/week) to build production-ready projects and master interview topics."}
         ]
     },
-    "full-stack-development-training": {
+    "full-stack-training": {
         "syllabus_prerequisites": "No programming knowledge is required. You should know basic web browsing and have a passion for building websites.",
         "syllabus_projects": [
             "Project 1: Responsive Restaurant Landing page using HTML5 Grid & Flexbox.",
@@ -91,7 +91,7 @@ SUBPAGES_DATA = {
             {"q": "What junior roles can I apply for after completing MERN Stack?", "a": "You can apply for Junior Frontend Developer, MERN Stack Developer, JavaScript Engineer, or Associate Software Engineer positions."}
         ]
     },
-    "ai-machine-learning-training": {
+    "ai-ml-training": {
         "syllabus_prerequisites": "Basic Python programming concept. Linear Algebra and Calculus basics are helpful but fully covered in our math modules.",
         "syllabus_projects": [
             "Project 1: Real estate pricing predictor using Linear Regression and Scikit-Learn.",
@@ -104,7 +104,7 @@ SUBPAGES_DATA = {
             {"q": "Do we write pure code or use auto-ML libraries?", "a": "We teach you to write algorithms and custom Scikit-Learn pipelines from scratch. Understanding hyperparameter tuning and loss optimization is crucial for technical interviews."},
             {"q": "Is computer vision covered in the syllabus?", "a": "Yes, we cover image classification, edge detection, and basic CNN architectures using TensorFlow."}
         ],
-        "fees_structure": "The AI & Machine Learning Course fee is ₹24,999 (all-inclusive). We offer an installment option of ₹12,500 × 2 months. Upfront full payment grants a 5% discount (₹23,749 total).",
+        "fees_structure": "The AI & ML Course fee is ₹24,999 (all-inclusive). We offer an installment option of ₹12,500 × 2 months. Upfront full payment grants a 5% discount (₹23,749 total).",
         "fees_comparison": {
             "typical_pune_fees": "₹60,000 - ₹90,000",
             "pune_batch_size": "40 to 60 students",
@@ -226,7 +226,7 @@ SUBPAGES_DATA = {
             {"q": "Is Data Engineering harder than Data Science?", "a": "It is more software-engineering-focused. If you enjoy building systems, writing SQL, and managing data flows rather than statistical analysis, you will excel here."}
         ]
     },
-    "python-programming-training": {
+    "python-training": {
         "syllabus_prerequisites": "No programming background is required. Absolute beginners are welcome.",
         "syllabus_projects": [
             "Project 1: Text-based RPG Game using Python control flow & lists.",
@@ -239,7 +239,7 @@ SUBPAGES_DATA = {
             {"q": "Is Python sufficient to get a job?", "a": "Core Python is excellent for automation, scripting, and QA roles. For core developer roles, we recommend upgrading to Django/Flask or transitioning to Data Science/ML pipelines."},
             {"q": "Do you teach Object-Oriented Programming (OOP) in detail?", "a": "Yes. We focus heavily on OOP concepts (Classes, Inheritance, Polymorphism, Encapsulation) since they are the foundations of all enterprise software."}
         ],
-        "fees_structure": "The Python Programming Training tuition is ₹9,999 (all-inclusive). Payment can be split into 2 installments of ₹5,000. Upfront full payment grants a 5% discount (₹9,499 final fee).",
+        "fees_structure": "The Python Training tuition is ₹9,999 (all-inclusive). Payment can be split into 2 installments of ₹5,000. Upfront full payment grants a 5% discount (₹9,499 final fee).",
         "fees_comparison": {
             "typical_pune_fees": "₹20,000 - ₹30,000",
             "pune_batch_size": "40+ students in large batches",
@@ -307,7 +307,7 @@ SUBPAGES_DATA = {
             {"q": "What is the starting salary for a Power BI Analyst in Pune?", "a": "Entry analyst roles range from ₹3.5 LPA to ₹5 LPA, with high demand across consultancy and IT firms."}
         ]
     },
-    "cloud-computing-training": {
+    "cloud-training": {
         "syllabus_prerequisites": "Basic understanding of networking concepts (IP addresses, DNS). No prior cloud experience is required.",
         "syllabus_projects": [
             "Project 1: Hosting a static portfolio website using AWS S3 & CloudFront.",
@@ -319,7 +319,7 @@ SUBPAGES_DATA = {
         "syllabus_faqs": [
             {"q": "Which cloud provider do we focus on?", "a": "We focus on Amazon Web Services (AWS), which holds the largest market share, and cover core architectural concepts of Microsoft Azure."}
         ],
-        "fees_structure": "The Cloud Computing Training fee is ₹14,999 (all-inclusive). Payment can be split into 2 installments of ₹7,500. Upfront full payment offers a 5% discount (₹14,249 final fee).",
+        "fees_structure": "The Cloud Training fee is ₹14,999 (all-inclusive). Payment can be split into 2 installments of ₹7,500. Upfront full payment offers a 5% discount (₹14,249 final fee).",
         "fees_comparison": {
             "typical_pune_fees": "₹35,000 - ₹50,000",
             "pune_batch_size": "40+ students in large batches",
@@ -470,7 +470,7 @@ SUBPAGES_DATA = {
             {"q": "What is the starting salary for a Security Analyst in Pune?", "a": "Starting salaries in Pune range from ₹4 LPA to ₹6 LPA, driven by a global focus on digital security audits."}
         ]
     },
-    "react-js-developer-training": {
+    "react-js-training": {
         "syllabus_prerequisites": "Basic understanding of HTML and CSS. No prior JavaScript coding experience is required, as we cover programming basics.",
         "syllabus_projects": [
             "Project 1: Responsive Product landing page with TailwindCSS grids.",
@@ -483,7 +483,7 @@ SUBPAGES_DATA = {
             {"q": "Can we use TypeScript in this course?", "a": "Yes. We cover TypeScript basics and configure React components with TS in Module 3."},
             {"q": "Do we cover Next.js?", "a": "Yes, we introduce Next.js file-based routing and SSR (Server-Side Rendering) in the advanced section."}
         ],
-        "fees_structure": "The React JS Developer Training fee is ₹14,999 (all-inclusive). You can pay in 2 monthly installments of ₹7,500. A 5% discount (₹14,249 final fee) is available for upfront payment.",
+        "fees_structure": "The React JS Training fee is ₹14,999 (all-inclusive). You can pay in 2 monthly installments of ₹7,500. A 5% discount (₹14,249 final fee) is available for upfront payment.",
         "fees_comparison": {
             "typical_pune_fees": "₹30,000 - ₹40,000",
             "pune_batch_size": "25 to 40 students",
@@ -515,7 +515,7 @@ SUBPAGES_DATA = {
             {"q": "How do I show my React skills on my resume?", "a": "Highlight your deployed dashboard projects, your GitHub commit links, and your state management integrations rather than just listing React as a keyword."}
         ]
     },
-    "react-native-mobile-developer-training": {
+    "react-native-training": {
         "syllabus_prerequisites": "Basic programming fundamentals (understanding of variables and lists). Prior React experience is helpful but not mandatory, as we cover basic hooks.",
         "syllabus_projects": [
             "Project 1: Personal Finance Ledger mobile interface using local state.",
@@ -528,7 +528,7 @@ SUBPAGES_DATA = {
             {"q": "What is the difference between Expo CLI and CLI workflow?", "a": "Expo CLI provides managed developer workflows, handles app build signing, and speeds up testing. Native CLI offers complete control over Java/Objective-C layers. We start with Expo and teach managed-to-bare conversions."},
             {"q": "Can I test the iOS app on an iPhone from Windows?", "a": "Yes. The Expo Go client allows you to scan a QR code on Windows and run the app live on your iPhone device."}
         ],
-        "fees_structure": "The React Native Mobile Developer Training fee is ₹16,999 (all-inclusive). You can pay in 2 monthly installments of ₹8,500. Upfront payments get a 5% discount (₹16,149 final fee).",
+        "fees_structure": "The React Native Training fee is ₹16,999 (all-inclusive). You can pay in 2 monthly installments of ₹8,500. Upfront payments get a 5% discount (₹16,149 final fee).",
         "fees_comparison": {
             "typical_pune_fees": "₹35,000 - ₹48,000",
             "pune_batch_size": "20 to 35 students",

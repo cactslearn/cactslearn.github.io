@@ -1,15 +1,15 @@
 [
   {
-    "slug": "java-full-stack-developer-training",
-    "name": "Java Full Stack Developer Training",
+    "slug": "java-fullstack-training",
+    "name": "Java Fullstack Training",
     "price": "₹19,999",
     "price_num": 19999,
     "duration": "16 Weeks",
     "gbp_category": "Computer Training School",
-    "gbp_description": "1-to-1 Java Full Stack training. Learn Core/Advanced Java, Spring Boot, Hibernate, React, and SQL with hands-on coding and real-world internships.",
-    "seo_title": "Java Full Stack Developer Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Join the best 1-to-1 Java Full Stack Developer Training in Pune. Direct live project internship, personalized syllabus, and mentor support. Only ₹19,999.",
-    "h1": "Java Full Stack Developer Training in Pune",
+    "gbp_description": "1-to-1 Java Fullstack training. Learn Core/Advanced Java, Spring Boot, Hibernate, React, and SQL with hands-on coding and real-world internships.",
+    "seo_title": "Java Fullstack Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
+    "meta_description": "Join the best 1-to-1 Java Fullstack Training in Pune. Direct live project internship, personalized syllabus, and mentor support. Only ₹19,999.",
+    "h1": "Java Fullstack Training in Pune",
     "h2": "The Anti-Batch Mentorship Lab: Master Spring Boot, React, and SQL via One-to-One Mentoring & Live Internships — Code Commits Over Paper Certificates",
     "skills": [
       "Core Java",
@@ -21,7 +21,7 @@
       "MySQL",
       "Git & GitHub"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Our Java Full Stack Developer Training is custom-engineered for career aspirants who want true development skills. At CACTS Pune, we teach you 1-to-1. No large batches. You will code from day one, building enterprise-level applications, and complete your learning with an active internship on a live company project.",
+    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Our Java Fullstack Training is custom-engineered for career aspirants who want true development skills. At CACTS Pune, we teach you 1-to-1. No large batches. You will code from day one, building enterprise-level applications, and complete your learning with an active internship on a live company project.",
     "modules": [
       {
         "title": "Module 1: Java Core Fundamentals",
@@ -79,7 +79,7 @@
         "name": "Rahul M.",
         "role": "Software Engineer (Formerly Student)",
         "location": "Kothrud, Pune",
-        "text": "The 1-to-1 virtual sessions were exactly what I needed. Working on a real database schema and Spring Boot API integration during the Java Full Stack internship was much more valuable than typical mock projects.",
+        "text": "The 1-to-1 virtual sessions were exactly what I needed. Working on a real database schema and Spring Boot API integration during the Java Fullstack internship was much more valuable than typical mock projects.",
         "rating": 5,
         "date": "2026-03-15"
       },
@@ -102,14 +102,14 @@
     ]
   },
   {
-    "slug": "full-stack-development-training",
-    "name": "Full Stack Development Training",
+    "slug": "full-stack-training",
+    "name": "Full Stack Training",
     "price": "₹17,999",
     "price_num": 17999,
     "duration": "14 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Individual Full Stack Web Development course. Cover HTML, CSS, JavaScript, React, Node.js, and Express. Includes live project internship.",
-    "seo_title": "Full Stack Development Course in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
+    "seo_title": "Full Stack Course in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
     "meta_description": "Learn Full Stack Web Development (MERN Stack) with 1-to-1 training in Pune. Internship on real company projects. Transparent fees: ₹17,999.",
     "h1": "Full Stack Web Development Training in Pune",
     "h2": "The Anti-Batch Mentorship Lab: Build Modern MERN Applications with Direct 1-on-1 Mentor Guidance — Code Commits Over Paper Certificates",
@@ -200,16 +200,16 @@
     ]
   },
   {
-    "slug": "ai-machine-learning-training",
-    "name": "AI & Machine Learning Training",
+    "slug": "ai-ml-training",
+    "name": "AI & ML Training",
     "price": "₹24,999",
     "price_num": 24999,
     "duration": "16 Weeks",
     "gbp_category": "Training Centre",
     "gbp_description": "Master Machine Learning algorithms, Deep Learning, NLP, and computer vision with personalized 1-on-1 sessions. Internship on active company projects.",
-    "seo_title": "AI and Machine Learning Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Personalized 1-to-1 AI & Machine Learning Course in Shivane, Pune. Build custom ML models & Neural Networks. Real company project experience. ₹24,999.",
-    "h1": "AI & Machine Learning Training in Pune",
+    "seo_title": "AI & ML Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
+    "meta_description": "Personalized 1-to-1 AI & ML Course in Shivane, Pune. Build custom ML models & Neural Networks. Real company project experience. ₹24,999.",
+    "h1": "AI & ML Training in Pune",
     "h2": "The Anti-Batch Mentorship Lab: Master Predictive Modeling, Neural Networks, and NLP with 1-to-1 Mentoring — Code Commits Over Paper Certificates",
     "skills": [
       "Python for ML",
@@ -220,7 +220,7 @@
       "NLP & Computer Vision",
       "Supervised Learning"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Enter the frontier of computer science. Our AI & Machine Learning training breaks down complex mathematical models into practical, code-first Python implementations. You get direct mentor access to debug your model training, optimize loss functions, and deploy models in real-world scenarios.",
+    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Enter the frontier of computer science. Our AI & ML training breaks down complex mathematical models into practical, code-first Python implementations. You get direct mentor access to debug your model training, optimize loss functions, and deploy models in real-world scenarios.",
     "modules": [
       {
         "title": "Module 1: Mathematical Foundations & Python for ML",
@@ -491,16 +491,16 @@
     ]
   },
   {
-    "slug": "python-programming-training",
-    "name": "Python Programming Training",
+    "slug": "python-training",
+    "name": "Python Training",
     "price": "₹9,999",
     "price_num": 9999,
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
-    "gbp_description": "Essential Python Programming from variables to advanced object-oriented code, data structures, and script automation. Personalized training since 2012.",
+    "gbp_description": "Essential Python from variables to advanced object-oriented code, data structures, and script automation. Personalized training since 2012.",
     "seo_title": "Python Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
     "meta_description": "Master Python programming with 1-to-1 online training. Direct mentor support, hands-on scripting projects. Affordable fees: ₹9,999 in Shivane, Pune.",
-    "h1": "Python Programming Training in Pune",
+    "h1": "Python Training in Pune",
     "h2": "The Anti-Batch Mentorship Lab: Go from Zero to Advanced Scripting and OOP in 8 Weeks with 1-to-1 Help — Code Commits Over Paper Certificates",
     "skills": [
       "Python Syntax",
@@ -666,16 +666,16 @@
     ]
   },
   {
-    "slug": "cloud-computing-training",
-    "name": "Cloud Computing Training",
+    "slug": "cloud-training",
+    "name": "Cloud Training",
     "price": "₹14,999",
     "price_num": 14999,
     "duration": "10 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Master AWS and Azure services, cloud architecture, and security. 1-on-1 virtual sessions with real-world deployments.",
-    "seo_title": "Cloud Computing Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
+    "seo_title": "Cloud Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
     "meta_description": "Learn AWS & Cloud Engineering with 1-to-1 training in Pune. Real-world sandbox deployment and network architecture. Course Fee: ₹14,999.",
-    "h1": "Cloud Computing Training in Pune",
+    "h1": "Cloud Training in Pune",
     "h2": "The Anti-Batch Mentorship Lab: Architect Scalable AWS and Azure Infrastructures with Direct Live Deployments — Code Commits Over Paper Certificates",
     "skills": [
       "AWS Infrastructure",
@@ -686,7 +686,7 @@
       "Storage Solutions",
       "Identity Access (IAM)"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Cloud Computing is the base layer of modern IT infrastructure. Learn the architecture of AWS and Azure. Through screen-sharing sessions, you will configure virtual networks, load balancers, database instances, and secure access permissions in real-time.",
+    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Cloud is the base layer of modern IT infrastructure. Learn the architecture of AWS and Azure. Through screen-sharing sessions, you will configure virtual networks, load balancers, database instances, and secure access permissions in real-time.",
     "modules": [
       {
         "title": "Module 1: Cloud Architecture Foundations & Networking",
@@ -1046,16 +1046,16 @@
     ]
   },
   {
-    "slug": "react-js-developer-training",
-    "name": "React JS Developer Training",
+    "slug": "react-js-training",
+    "name": "React JS Training",
     "price": "₹14,999",
     "price_num": 14999,
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 React JS training in Pune. Master modern components, React Hooks, Redux Toolkit, Axios, TailwindCSS, and complete a live frontend internship.",
-    "seo_title": "React JS Developer Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Join the best 1-to-1 React JS Developer Training in Pune. Direct live frontend project internship, custom syllabus, and mentor support. Only ₹14,999.",
-    "h1": "React JS Developer Training in Pune",
+    "seo_title": "React JS Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
+    "meta_description": "Join the best 1-to-1 React JS Training in Pune. Direct live frontend project internship, custom syllabus, and mentor support. Only ₹14,999.",
+    "h1": "React JS Training in Pune",
     "h2": "The Anti-Batch Mentorship Lab: Master React Hooks, Redux, and REST API Integration via 1-to-1 Mentoring & Internships — Code Commits Over Paper Certificates",
     "skills": [
       "JavaScript ES6+",
@@ -1067,7 +1067,7 @@
       "TailwindCSS",
       "Git & GitHub"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Our React JS Developer Training is tailored for developers and beginners who want to build high-performance, single-page web applications. Guided by an individual corporate mentor, you will write modern clean code, learn state management, and build real dashboards, finishing with a live web project internship.",
+    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Our React JS Training is tailored for developers and beginners who want to build high-performance, single-page web applications. Guided by an individual corporate mentor, you will write modern clean code, learn state management, and build real dashboards, finishing with a live web project internship.",
     "modules": [
       {
         "title": "Module 1: Advanced JS & Layouts",
@@ -1140,16 +1140,16 @@
     ]
   },
   {
-    "slug": "react-native-mobile-developer-training",
-    "name": "React Native Mobile Developer Training",
+    "slug": "react-native-training",
+    "name": "React Native Training",
     "price": "₹16,999",
     "price_num": 16999,
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 React Native mobile developer training in Pune. Master cross-platform iOS & Android apps, Expo CLI, navigation, SQLite, and deploy to app stores.",
-    "seo_title": "React Native Mobile Developer Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Join the best 1-to-1 React Native Mobile Developer Training in Pune. Direct live app project internship, custom syllabus, and mobile store deployment. Only ₹16,999.",
-    "h1": "React Native Mobile Developer Training in Pune",
+    "seo_title": "React Native Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
+    "meta_description": "Join the best 1-to-1 React Native Training in Pune. Direct live app project internship, custom syllabus, and mobile store deployment. Only ₹16,999.",
+    "h1": "React Native Training in Pune",
     "h2": "The Anti-Batch Mentorship Lab: Master iOS & Android Cross-Platform Development via 1-to-1 Mentoring & Live Internships — Code Commits Over Paper Certificates",
     "skills": [
       "React Native",
@@ -1161,7 +1161,7 @@
       "App Store & Google Play",
       "Git & GitHub"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Our React Native Mobile Developer Training is designed to turn you into a cross-platform mobile developer. In our 1-to-1 virtual mentoring model, you will write a single codebase in TypeScript that compiles directly to high-performance native iOS and Android apps, culminating in a live store submission.",
+    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Our React Native Training is designed to turn you into a cross-platform mobile developer. In our 1-to-1 virtual mentoring model, you will write a single codebase in TypeScript that compiles directly to high-performance native iOS and Android apps, culminating in a live store submission.",
     "modules": [
       {
         "title": "Module 1: Mobile UI & Expo Layouts",
