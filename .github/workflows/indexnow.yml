@@ -1,0 +1,16 @@
+name: 'IndexNow'
+on:
+  push:
+    branches:
+      - main # Or your default branch
+jobs:
+  check-and-submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: IndexNow Action
+        uses: bojieyang/indexnow-action@v3
+        with:
+          sitemap-location: 'https://cactslearn.github.io/sitemap.xml' # Ensure this points to your actual sitemap
+          key: ${{ secrets.INDEXNOW_KEY }}
