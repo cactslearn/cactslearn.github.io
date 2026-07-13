@@ -132,6 +132,8 @@ def build():
         skills = course["skills"]
         modules = course["modules"]
         faqs = course["faqs"]
+        duration_iso = course.get("duration_iso", "P8W")
+        occupational_category = course.get("occupational_category", "Developer")
 
         base_slug = slug.replace("-training", "")
         name_encoded = urllib.parse.quote(name)
@@ -485,23 +487,12 @@ def build():
         </div>
         """
 
-        course_schema = {
-            "@context": "https://schema.org",
+        child_course = {
             "@type": "Course",
             "name": name,
-            "description": meta_description,
-            "provider": {
-                "@type": "Organization",
-                "name": "CACTS - Centre of Advanced Computer Training and Studies",
-                "url": "https://cactslearn.github.io/"
-            },
-            "offers": {
-                "@type": "Offer",
-                "price": str(price_num),
-                "priceCurrency": "INR",
-                "category": "Value-Driven Professional Programming Training"
-            }
+            "description": meta_description
         }
+        
         schema_reviews = []
         for r in reviews:
             schema_reviews.append({
@@ -519,13 +510,45 @@ def build():
                 }
             })
         if schema_reviews:
-            course_schema["review"] = schema_reviews
-            course_schema["aggregateRating"] = {
+            child_course["review"] = schema_reviews
+            child_course["aggregateRating"] = {
                 "@type": "AggregateRating",
                 "ratingValue": "5.0",
                 "bestRating": "5",
                 "reviewCount": str(len(schema_reviews))
             }
+
+        course_schema = {
+            "@context": "https://schema.org",
+            "@type": "EducationalOccupationalProgram",
+            "@id": f"https://cactslearn.github.io/{slug}.html#program",
+            "name": f"{name} | 1-to-1 Mentorship Lab",
+            "description": overview,
+            "provider": {
+                "@type": "EducationalOrganization",
+                "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "url": "https://cactslearn.github.io/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Shivane",
+                    "addressLocality": "Pune",
+                    "postalCode": "411023",
+                    "addressCountry": "IN"
+                }
+            },
+            "educationalProgramMode": "blended",
+            "programType": "Professional Training",
+            "timeToComplete": duration_iso,
+            "occupationalCategory": occupational_category,
+            "educationalCredentialAwarded": "GitHub Portfolio Code Verification & Live Staging Project Certificate",
+            "offers": {
+                "@type": "Offer",
+                "price": str(price_num),
+                "priceCurrency": "INR",
+                "category": "Training Course"
+            },
+            "hasCourse": [child_course]
+        }
 
         faq_entities = []
         for faq in faqs:

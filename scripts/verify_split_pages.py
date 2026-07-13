@@ -89,8 +89,10 @@ for course in courses:
                         print(f" [WARNING] BreadcrumbList in {filename} has {len(items)} items, expected {expected_len}.")
                 
                 # Check page specific schema
-                if key == "overview" and js.get("@type") == "Course" and "review" in js:
-                    schema_ok = True
+                if key == "overview" and js.get("@type") == "EducationalOccupationalProgram":
+                    has_course = js.get("hasCourse", [])
+                    if has_course and "review" in has_course[0]:
+                        schema_ok = True
                 elif key == "syllabus" and js.get("@type") == "Course" and "hasPart" in js:
                     schema_ok = True
                 elif key == "fees" and js.get("@type") == "Course" and "offers" in js:
