@@ -2279,6 +2279,12 @@ def build():
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/cacts-vs-classroom-vs-ai.html</loc>
+        <lastmod>{current_date}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/free-learning-resources.html</loc>
         <lastmod>{current_date}</lastmod>
         <changefreq>monthly</changefreq>
