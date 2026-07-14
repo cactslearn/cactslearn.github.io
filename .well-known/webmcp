@@ -1,0 +1,27 @@
+{
+  "mcp": "1.0",
+  "tools": [
+    {
+      "name": "book_one_to_one_trial",
+      "description": "Books a free 1-to-1 virtual software training trial demo or technology career roadmap consultation at CACTS Pune.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Full name of the student"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Mobile or WhatsApp contact number with country code"
+          },
+          "course": {
+            "type": "string",
+            "description": "Target technology course track (e.g., 'Java Fullstack', 'React JS', 'DevOps', 'Data Science')"
+          }
+        },
+        "required": ["name", "phone", "course"]
+      }
+    }
+  ]
+}

@@ -243,5 +243,29 @@ if os.path.exists(llms_path):
 else:
     print(f" [FAIL] llms.txt does not exist at {llms_path}!")
 
+# 5. Audit WebMCP Manifests
+print("\n--- Auditing WebMCP Manifests ---")
+webmcp_root_path = os.path.join(project_root, "webmcp.json")
+webmcp_wellknown_path = os.path.join(project_root, ".well-known", "webmcp")
+
+manifests_ok = True
+for path in [webmcp_root_path, webmcp_wellknown_path]:
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                js = json.load(f)
+            if js.get("mcp") != "1.0" or not js.get("tools"):
+                print(f" [FAIL] Manifest {path} has invalid WebMCP structure!")
+                manifests_ok = False
+        except Exception as e:
+            print(f" [FAIL] JSON parsing error in manifest {path}: {e}")
+            manifests_ok = False
+    else:
+        print(f" [FAIL] WebMCP Manifest does not exist at {path}!")
+        manifests_ok = False
+
+if manifests_ok:
+    print(" [OK] Both WebMCP Discovery Manifest configurations are fully valid.")
+
 print("\nValidation script finished.")
 
