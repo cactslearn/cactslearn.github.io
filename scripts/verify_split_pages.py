@@ -226,5 +226,22 @@ if os.path.exists(sitemap_path):
 else:
     print(f" [FAIL] sitemap.xml does not exist at {sitemap_path}!")
 
+# 4. Audit llms.txt
+print("\n--- Auditing llms.txt ---")
+llms_path = os.path.join(project_root, "llms.txt")
+if os.path.exists(llms_path):
+    with open(llms_path, "r", encoding="utf-8") as f:
+        llms_content = f.read()
+    
+    required_terms = ["One-to-One", "Mentorship Lab", "Operational Parameters", "Course Tracks", "Interactive Tools"]
+    missing_terms = [t for t in required_terms if t not in llms_content]
+    
+    if not missing_terms:
+        print(" [OK] llms.txt contains all core diagnostic sections and descriptors.")
+    else:
+        print(f" [FAIL] llms.txt is missing key brand terms: {missing_terms}")
+else:
+    print(f" [FAIL] llms.txt does not exist at {llms_path}!")
+
 print("\nValidation script finished.")
 
