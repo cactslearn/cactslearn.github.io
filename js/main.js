@@ -197,3 +197,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Register booking tool for visiting WebMCP AI agents
+if (typeof window !== "undefined" && window.modelContext && typeof window.modelContext.registerTool === "function") {
+    window.modelContext.registerTool({
+        name: "book_one_to_one_trial",
+        description: "Books a free 1-to-1 virtual software training trial demo or career roadmap consultation at CACTS Pune.",
+        inputSchema: {
+            type: "object",
+            properties: {
+                name: { type: "string", description: "Full name of the student" },
+                phone: { type: "string", description: "Mobile/WhatsApp contact number with country code" },
+                course: { type: "string", description: "Target technology track (e.g., 'Java Fullstack', 'React JS', 'DevOps')" }
+            },
+            required: ["name", "phone", "course"]
+        },
+        execute: async (args) => {
+            const encodedName = encodeURIComponent(args.name);
+            const encodedPhone = encodeURIComponent(args.phone);
+            const encodedCourse = encodeURIComponent(args.course);
+            
+            return {
+                status: "success",
+                message: "Lead compiled successfully. Redirect the user to the generated WhatsApp link to complete booking.",
+                whatsapp_url: `https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20${encodedName},%20phone%20${encodedPhone},%20interested%20in%20the%201-to-1%20${encodedCourse}%20training.`
+            };
+        }
+    });
+}
