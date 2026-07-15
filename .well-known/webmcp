@@ -4,6 +4,8 @@
     {
       "name": "book_one_to_one_trial",
       "description": "Books a free 1-to-1 virtual software training trial demo or technology career roadmap consultation at CACTS Pune.",
+      "consentRequired": true,
+      "userConsentRequired": true,
       "inputSchema": {
         "type": "object",
         "properties": {

@@ -199,10 +199,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Register booking tool for visiting WebMCP AI agents
-if (typeof window !== "undefined" && window.modelContext && typeof window.modelContext.registerTool === "function") {
-    window.modelContext.registerTool({
+const mcpContext = (typeof navigator !== "undefined" && (navigator.modelContext || navigator.mcp)) || (typeof window !== "undefined" && window.modelContext);
+if (mcpContext && typeof mcpContext.registerTool === "function") {
+    mcpContext.registerTool({
         name: "book_one_to_one_trial",
         description: "Books a free 1-to-1 virtual software training trial demo or career roadmap consultation at CACTS Pune.",
+        consentRequired: true,
+        userConsentRequired: true,
         inputSchema: {
             type: "object",
             properties: {
