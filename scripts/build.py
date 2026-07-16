@@ -530,8 +530,9 @@ def build():
                 "url": "https://cactslearn.github.io/",
                 "address": {
                     "@type": "PostalAddress",
-                    "streetAddress": "Shivane",
+                    "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
                     "addressLocality": "Pune",
+                    "addressRegion": "Maharashtra",
                     "postalCode": "411023",
                     "addressCountry": "IN"
                 }
@@ -2423,7 +2424,7 @@ def build():
             "telephone": "+919665566357",
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Shivane",
+                "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
                 "addressLocality": "Pune",
                 "addressRegion": "Maharashtra",
                 "postalCode": "411023",
