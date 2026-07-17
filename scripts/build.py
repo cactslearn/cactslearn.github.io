@@ -659,9 +659,15 @@ def build():
             </div>
             """
 
+        syllabus_faqs = list(data.get("syllabus_faqs", []))
+        syllabus_faqs.extend([
+            {"q": f"Can I customize the {name} syllabus?", "a": f"Yes. Since our coaching is strictly 1-to-1, your mentor can customize intermediate modules and project blueprints to align directly with your academic goals, portfolio targets, or company project specs."},
+            {"q": "Do you focus on theory or code execution?", "a": "We focus entirely on code execution. Over 80% of training sessions are spent co-writing scripts, managing git merge conflicts, and running docker/staging deployments live with your trainer."}
+        ])
+
         syllabus_faq_html = ""
         syllabus_faq_entities = []
-        for faq in data.get("syllabus_faqs", []):
+        for faq in syllabus_faqs:
             syllabus_faq_html += f"""
             <div class="curriculum-module">
                 <div class="module-header faq-header">
@@ -786,9 +792,15 @@ def build():
         # ----------------------------------------------------
         # PAGE 3: Fees Page ([base_slug]-course-fees.html)
         # ----------------------------------------------------
+        fees_faqs = list(data.get("fees_faqs", []))
+        fees_faqs.extend([
+            {"q": "Why are CACTS fees lower than traditional class centers in Pune?", "a": "Traditional institutes charge high overhead for physical classrooms, sales counselors, and batch coordinators. CACTS operates as a lean, developer-led mentorship lab. We pass these savings directly to you, delivering premium 1-to-1 training at less than half the market rate."},
+            {"q": "Are there any hidden material or staging server fees?", "a": "No. The stated tuition is 100% all-inclusive. This covers your personal developer screenshares, code reviews, and staging server deployments."}
+        ])
+
         fees_faq_html = ""
         fees_faq_entities = []
-        for faq in data.get("fees_faqs", []):
+        for faq in fees_faqs:
             fees_faq_html += f"""
             <div class="curriculum-module">
                 <div class="module-header faq-header">
@@ -946,8 +958,14 @@ def build():
                 "acceptedAnswer": {"@type": "Answer", "text": item["a"]}
             })
 
+        interview_faqs = list(data.get("interview_faqs", []))
+        interview_faqs.extend([
+            {"q": "How do you prepare students for core technical screening?", "a": "We run 3 dedicated 1-to-1 mock interviews focused on code optimization, algorithm breakdowns, and live screenshare debugging. This builds real-time troubleshooting confidence."},
+            {"q": "Do you help with resume project verification?", "a": "Yes. We assist you in linking your actual GitHub repository branch merges and live server deployments inside your resume. This provides verifiable evidence of your software capabilities to interviewers."}
+        ])
+
         interview_faq_html = ""
-        for faq in data.get("interview_faqs", []):
+        for faq in interview_faqs:
             interview_faq_html += f"""
             <div class="curriculum-module">
                 <div class="module-header faq-header">
@@ -1050,9 +1068,15 @@ def build():
             </div>
             """
 
+        roadmap_faqs = list(data.get("roadmap_faqs", []))
+        roadmap_faqs.extend([
+            {"q": f"How long does it take to get job-ready through the CACTS {name} roadmap?", "a": f"On average, it takes 16 weeks of consistent 1-to-1 training (12-15 hours/week of active coding) to master intermediate skills, deploy staging applications, and publish git code proofs."},
+            {"q": "What kind of job support do you offer?", "a": "We share your verified GitHub contribution graph and staging project portfolio directly with active Pune recruiters. This establishes concrete skill proof, helping you bypass generic resume filters."}
+        ])
+
         roadmap_faq_html = ""
         roadmap_faq_entities = []
-        for faq in data.get("roadmap_faqs", []):
+        for faq in roadmap_faqs:
             roadmap_faq_html += f"""
             <div class="curriculum-module">
                 <div class="module-header faq-header">
