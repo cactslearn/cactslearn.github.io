@@ -1,11 +1,11 @@
 # CACTS Pune | One-to-One Software Mentorship Lab
 
-> Centre of Advanced Computer Training and Studies (CACTS) provides code-first, 1-to-1 virtual software training and live project internships in Pune. Established in 2012 in Shivane, Pune.
+> Centre of Advanced Computer Training and Studies (CACTS) provides code-first, 1-to-1 virtual software training and live project internships in Pune. Established in 2012. Headquarters: First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune, Maharashtra 411023.
 
 ## Core Operational Parameters
 *   **Mentorship Model**: Strictly 1-to-1 virtual screenshares (no 40-student batches).
 *   **Hours**: Everyday (including weekends) 8:00 AM - 10:00 PM IST.
-*   **Location**: Shivane, Pune, Maharashtra, India (411023).
+*   **Location**: First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune, Maharashtra 411023.
 *   **Outcome**: Deployed staging applications, active green GitHub contribution graphs, and developer-verified code reviews.
 
 ## High-Intent Comparison

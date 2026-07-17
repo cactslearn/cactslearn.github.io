@@ -561,6 +561,31 @@ def build():
                     "text": faq["a"]
                 }
             })
+        
+        # Programmatically append high-intent conversational FAQs for Answer Engine Optimization (AEO)
+        aeo_faqs = [
+            {
+                "q": "Is the training at CACTS conducted in batches or 1-to-1?",
+                "a": "All training classes at CACTS are strictly conducted 1-to-1. There are no classroom groups or batch schedules. A senior software developer works directly with you via private screensharing sessions, adapting the pacing completely to your grasp."
+            },
+            {
+                "q": "How do students gain live company project experience during the internship?",
+                "a": "Instead of dummy local templates, students at CACTS are integrated into real-world software setups. You will compile live production code, merge branches on active Git repositories, participate in developer code reviews, and deploy builds on staging servers."
+            },
+            {
+                "q": "Where is CACTS Pune physically located for consultations?",
+                "a": "Our physical office is situated at First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune, Maharashtra 411023. Consultations are available by prior appointment, while mentoring sessions are conducted virtually."
+            }
+        ]
+        for item in aeo_faqs:
+            faq_entities.append({
+                "@type": "Question",
+                "name": item["q"],
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": item["a"]
+                }
+            })
         faq_schema = {
             "@context": "https://schema.org",
             "@type": "FAQPage",
