@@ -781,7 +781,7 @@ def build():
         page_html2 = page_html2.replace("{{course_tabs}}", get_tabs_html("syllabus"))
         page_html2 = page_html2.replace("{{course_left_column}}", syllabus_left_column)
         page_html2 = page_html2.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
-        page_html2 = page_html2.replace('Request Free Trial Demo', 'Schedule Syllabus Consultation')
+        page_html2 = page_html2.replace('Request Call back', 'Request Syllabus Vetting')
         breadcrumbs_syllabus = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Syllabus</span>'
         page_html2 = page_html2.replace("{{course_breadcrumbs}}", breadcrumbs_syllabus)
 
@@ -932,7 +932,7 @@ def build():
         page_html3 = page_html3.replace("{{course_tabs}}", get_tabs_html("fees"))
         page_html3 = page_html3.replace("{{course_left_column}}", fees_left_column)
         page_html3 = page_html3.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
-        page_html3 = page_html3.replace('Request Free Trial Demo', 'Inquire About Installments')
+        page_html3 = page_html3.replace('Request Call back', 'Inquire About Installments')
         breadcrumbs_fees = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Fees &amp; Options</span>'
         page_html3 = page_html3.replace("{{course_breadcrumbs}}", breadcrumbs_fees)
 
@@ -1040,7 +1040,7 @@ def build():
         page_html4 = page_html4.replace("{{course_tabs}}", get_tabs_html("interview"))
         page_html4 = page_html4.replace("{{course_left_column}}", interview_left_column)
         page_html4 = page_html4.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
-        page_html4 = page_html4.replace('Request Free Trial Demo', 'Book 1-to-1 Demo Slot')
+        page_html4 = page_html4.replace('Request Call back', 'Book 1-to-1 Mock Interview')
         breadcrumbs_interview = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Interview Questions</span>'
         page_html4 = page_html4.replace("{{course_breadcrumbs}}", breadcrumbs_interview)
 
@@ -1171,7 +1171,7 @@ def build():
         page_html5 = page_html5.replace("{{course_tabs}}", get_tabs_html("roadmap"))
         page_html5 = page_html5.replace("{{course_left_column}}", roadmap_left_column)
         page_html5 = page_html5.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
-        page_html5 = page_html5.replace('Request Free Trial Demo', 'Schedule Career Guidance')
+        page_html5 = page_html5.replace('Request Call back', 'Schedule Career Logic Mapping')
         breadcrumbs_roadmap = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Roadmap</span>'
         page_html5 = page_html5.replace("{{course_breadcrumbs}}", breadcrumbs_roadmap)
 
@@ -1364,7 +1364,7 @@ def build():
             page_html6 = page_html6.replace("{{course_tabs}}", get_tabs_html("projects"))
             page_html6 = page_html6.replace("{{course_left_column}}", proj_left_column)
             page_html6 = page_html6.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
-            page_html6 = page_html6.replace('Request Free Trial Demo', 'Book 1-to-1 Project Review')
+            page_html6 = page_html6.replace('Request Call back', 'Request Staging Project Review')
             breadcrumbs_proj = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">{proj_category_label}</span>'
             page_html6 = page_html6.replace("{{course_breadcrumbs}}", breadcrumbs_proj)
 
@@ -1546,7 +1546,7 @@ def build():
             page_html7 = page_html7.replace("{{course_tabs}}", get_tabs_html("career-roadmap"))
             page_html7 = page_html7.replace("{{course_left_column}}", road_left_column)
             page_html7 = page_html7.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
-            page_html7 = page_html7.replace('Request Free Trial Demo', 'Schedule Career Roadmap Call')
+            page_html7 = page_html7.replace('Request Call back', 'Schedule Career Roadmap Call')
             breadcrumbs_road = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Career Roadmap</span>'
             page_html7 = page_html7.replace("{{course_breadcrumbs}}", breadcrumbs_road)
 
@@ -1728,7 +1728,7 @@ def build():
             page_html8 = page_html8.replace("{{course_tabs}}", get_tabs_html("certifications"))
             page_html8 = page_html8.replace("{{course_left_column}}", cert_left_column)
             page_html8 = page_html8.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
-            page_html8 = page_html8.replace('Request Free Trial Demo', 'Schedule Certification Guide Call')
+            page_html8 = page_html8.replace('Request Call back', 'Schedule Certification Guide Call')
             breadcrumbs_cert = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Certifications</span>'
             page_html8 = page_html8.replace("{{course_breadcrumbs}}", breadcrumbs_cert)
 
@@ -1945,7 +1945,7 @@ def build():
             page_html9 = page_html9.replace("{{course_tabs}}", get_tabs_html("comparison"))
             page_html9 = page_html9.replace("{{course_left_column}}", comp_left_column)
             page_html9 = page_html9.replace('href="#register"', f'href="contact.html?course={name_encoded}"')
-            page_html9 = page_html9.replace('Request Free Trial Demo', 'Compare Platform Features')
+            page_html9 = page_html9.replace('Request Call back', 'Compare Platform Features')
             breadcrumbs_comp = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Tech Comparison</span>'
             page_html9 = page_html9.replace("{{course_breadcrumbs}}", breadcrumbs_comp)
 

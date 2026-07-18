@@ -888,7 +888,7 @@ EXTRA_PAGES = [
         "content_blocks": [
             {
                 "title": "Step 1: SQL and Relational Database Foundations",
-                "text": "Your journey begins with databases. You must master SQL: writing SELECT queries, joining tables, using aggregate functions, configuring indexes, and designing schemas (normalization and star schemas). This database foundation is required for all data infrastructure roles."
+                "text": "Your technical progression begins with databases. You must master SQL: writing SELECT queries, joining tables, using aggregate functions, configuring indexes, and designing schemas (normalization and star schemas). This database foundation is required for all data infrastructure roles."
             },
             {
                 "title": "Step 2: Python ETL Automation Scripting",

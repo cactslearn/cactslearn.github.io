@@ -2,15 +2,15 @@
   {
     "slug": "java-fullstack-training",
     "name": "Java Fullstack Training",
-    "price": "₹19,999",
+    "price": "\u20b919,999",
     "price_num": 19999,
     "duration": "16 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 Java Fullstack training. Learn Core/Advanced Java, Spring Boot, Hibernate, React, and SQL with hands-on coding and real-world internships.",
     "seo_title": "Java Fullstack Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Join the best 1-to-1 Java Fullstack Training in Pune. Direct live project internship, personalized syllabus, and mentor support. Only ₹19,999.",
+    "meta_description": "Join the best 1-to-1 Java Fullstack Training in Pune. Direct live project internship, personalized syllabus, and mentor support. Only \u20b919,999.",
     "h1": "Java Fullstack Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Master Spring Boot, React, and SQL via One-to-One Mentoring & Live Internships - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship Spring Boot, React, and SQL enterprise backend code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "Core Java",
       "Advanced Java",
@@ -21,7 +21,7 @@
       "MySQL",
       "Git & GitHub"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Our Java Fullstack Training is custom-engineered for career aspirants who want true development skills. At CACTS Pune, we teach you 1-to-1. No large batches. You will code from day one, building enterprise-level applications, and complete your learning with an active internship on a live company project.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Spring Boot, React, and SQL enterprise backend systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Java Core Fundamentals",
@@ -106,15 +106,15 @@
   {
     "slug": "full-stack-training",
     "name": "Full Stack Training",
-    "price": "₹17,999",
+    "price": "\u20b917,999",
     "price_num": 17999,
     "duration": "14 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Individual Full Stack Web Development course. Cover HTML, CSS, JavaScript, React, Node.js, and Express. Includes live project internship.",
     "seo_title": "Full Stack Course in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Learn Full Stack Web Development (MERN Stack) with 1-to-1 training in Pune. Internship on real company projects. Transparent fees: ₹17,999.",
+    "meta_description": "Learn Full Stack Web Development (MERN Stack) with 1-to-1 training in Pune. Internship on real company projects. Transparent fees: \u20b917,999.",
     "h1": "Full Stack Web Development Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Build Modern MERN Applications with Direct 1-on-1 Mentor Guidance - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship MERN (MongoDB, Express, React, Node.js) web application code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "HTML5 & CSS3",
       "Modern JavaScript (ES6+)",
@@ -125,7 +125,7 @@
       "RESTful API",
       "GitHub"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Become a confident web developer by learning the MERN (MongoDB, Express, React, Node) stack. Through our unique 1-to-1 virtual sessions, we guide you step-by-step through front-end architectures and backend web services, ending with a production-ready web application deploy.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual MERN (MongoDB, Express, React, Node.js) web application systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Modern Front-end Architecture",
@@ -206,15 +206,15 @@
   {
     "slug": "ai-ml-training",
     "name": "AI & ML Training",
-    "price": "₹24,999",
+    "price": "\u20b924,999",
     "price_num": 24999,
     "duration": "16 Weeks",
     "gbp_category": "Training Centre",
     "gbp_description": "Master Machine Learning algorithms, Deep Learning, NLP, and computer vision with personalized 1-on-1 sessions. Internship on active company projects.",
     "seo_title": "AI & ML Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Personalized 1-to-1 AI & ML Course in Shivane, Pune. Build custom ML models & Neural Networks. Real company project experience. ₹24,999.",
+    "meta_description": "Personalized 1-to-1 AI & ML Course in Shivane, Pune. Build custom ML models & Neural Networks. Real company project experience. \u20b924,999.",
     "h1": "AI & ML Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Master Predictive Modeling, Neural Networks, and NLP with 1-to-1 Mentoring - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship Predictive Models, Neural Networks, and NLP code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "Python for ML",
       "Scikit-Learn",
@@ -224,7 +224,7 @@
       "NLP & Computer Vision",
       "Supervised Learning"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Enter the frontier of computer science. Our AI & ML training breaks down complex mathematical models into practical, code-first Python implementations. You get direct mentor access to debug your model training, optimize loss functions, and deploy models in real-world scenarios.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Predictive Models, Neural Networks, and NLP systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Mathematical Foundations & Python for ML",
@@ -305,15 +305,15 @@
   {
     "slug": "data-science-training",
     "name": "Data Science Training",
-    "price": "₹22,999",
+    "price": "\u20b922,999",
     "price_num": 22999,
     "duration": "14 Weeks",
     "gbp_category": "Training Centre",
     "gbp_description": "1-to-1 Data Science training. Includes Statistics, Python, Pandas, Numpy, data visualization, and predictive modeling. Built around live company tasks.",
     "seo_title": "Data Science Course in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Enroll in our Data Science Training in Pune. 1-to-1 training in statistics, Python modeling, SQL, and data visualization. Real company projects. ₹22,999.",
+    "meta_description": "Enroll in our Data Science Training in Pune. 1-to-1 training in statistics, Python modeling, SQL, and data visualization. Real company projects. \u20b922,999.",
     "h1": "Data Science Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Turn Raw Data into Business Intelligence via Hands-On 1-on-1 Sessions - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship SQL Databases, Pandas Analytics, and business intelligence code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "Statistics",
       "Python Data Science",
@@ -323,7 +323,7 @@
       "Machine Learning Core",
       "Data Visualization"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Data Science is the key to corporate decision-making. At CACTS Pune, we bypass general lecture halls to give you personalized training in data analysis. Learn to extract, clean, analyze, and visualize data, building a portfolio of real-world studies.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual SQL Databases, Pandas Analytics, and business intelligence systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Descriptive & Inferential Statistics",
@@ -369,7 +369,7 @@
       },
       {
         "q": "Is the internship part of the tuition?",
-        "a": "Yes, the live project internship experience is fully included in the ₹22,999 program fee."
+        "a": "Yes, the live project internship experience is fully included in the \u20b922,999 program fee."
       }
     ],
     "reviews": [
@@ -404,15 +404,15 @@
   {
     "slug": "data-engineering-training",
     "name": "Data Engineering Training",
-    "price": "₹24,999",
+    "price": "\u20b924,999",
     "price_num": 24999,
     "duration": "16 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Professional Data Engineering course covering ETL pipelines, SQL, Apache Spark, Hadoop, and cloud data warehouses. 1-to-1 guidance, no batch constraints.",
     "seo_title": "Data Engineering Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Learn to design scalable data pipelines. 1-to-1 Data Engineering Course in Pune. Apache Spark, Hadoop, SQL, and ETL. Real project internships. ₹24,999.",
+    "meta_description": "Learn to design scalable data pipelines. 1-to-1 Data Engineering Course in Pune. Apache Spark, Hadoop, SQL, and ETL. Real project internships. \u20b924,999.",
     "h1": "Data Engineering Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Architect Scalable Data Lakes and ETL Pipelines with Private Mentorship - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship ETL pipelines, Apache Spark streaming, and AWS data maps code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "ETL Pipelines",
       "Apache Spark",
@@ -422,7 +422,7 @@
       "Cloud Data Lakes",
       "Python Scripting"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Data Engineers build the backbone that makes data science possible. Learn to design, build, and maintain high-volume data pipelines. From database schema structures to big data streaming frameworks, you will study 1-to-1 with an experienced system engineer.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual ETL pipelines, Apache Spark streaming, and AWS data maps systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Advanced SQL & Data Architecture",
@@ -503,15 +503,15 @@
   {
     "slug": "python-training",
     "name": "Python Training",
-    "price": "₹9,999",
+    "price": "\u20b99,999",
     "price_num": 9999,
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Essential Python from variables to advanced object-oriented code, data structures, and script automation. Personalized training since 2012.",
     "seo_title": "Python Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Master Python programming with 1-to-1 online training. Direct mentor support, hands-on scripting projects. Affordable fees: ₹9,999 in Shivane, Pune.",
+    "meta_description": "Master Python programming with 1-to-1 online training. Direct mentor support, hands-on scripting projects. Affordable fees: \u20b99,999 in Shivane, Pune.",
     "h1": "Python Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Go from Zero to Advanced Scripting and OOP in 8 Weeks with 1-to-1 Help - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship Advanced Scripting, OOP, and automation code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "Python Syntax",
       "OOP Concepts",
@@ -521,7 +521,7 @@
       "SQL Connection",
       "Script Automation"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Python is the most popular entry language to the software industry. Rather than reading books, you will write active code on your screen, guided live by a developer. We build a personalized learning path to match your learning speed.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Advanced Scripting, OOP, and automation systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Python Core Foundations",
@@ -593,15 +593,15 @@
   {
     "slug": "power-bi-training",
     "name": "Power BI Training",
-    "price": "₹7,999",
+    "price": "\u20b97,999",
     "price_num": 7999,
     "duration": "6 Weeks",
     "gbp_category": "Training Centre",
     "gbp_description": "Comprehensive Power BI dashboard creation, DAX functions, data modeling, and reporting. Hands-on learning with corporate dashboard projects.",
     "seo_title": "Power BI Course in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Learn Power BI dashboard building & DAX scripting. 1-to-1 professional coaching in Shivane, Pune. Real-world business data reporting. Fee: ₹7,999.",
+    "meta_description": "Learn Power BI dashboard building & DAX scripting. 1-to-1 professional coaching in Shivane, Pune. Real-world business data reporting. Fee: \u20b97,999.",
     "h1": "Power BI Dashboard Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Design Corporate Data Dashboards and DAX Models with Individual Guidance - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship DAX expressions, data relationships, and dashboard structures code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "Power BI Desktop",
       "DAX Functions",
@@ -610,7 +610,7 @@
       "Interactive Dashboards",
       "Data Transformation"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Power BI transforms business data into interactive visual decisions. Learn to build executive-level financial, operations, and sales reports under the supervision of a BI consultant. You will work on real database schemas, writing complex DAX queries.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual DAX expressions, data relationships, and dashboard structures systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Data Connection & Power Query Transformation",
@@ -682,15 +682,15 @@
   {
     "slug": "cloud-training",
     "name": "Cloud Training",
-    "price": "₹14,999",
+    "price": "\u20b914,999",
     "price_num": 14999,
     "duration": "10 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Master AWS and Azure services, cloud architecture, and security. 1-on-1 virtual sessions with real-world deployments.",
     "seo_title": "Cloud Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Learn AWS & Cloud Engineering with 1-to-1 training in Pune. Real-world sandbox deployment and network architecture. Course Fee: ₹14,999.",
+    "meta_description": "Learn AWS & Cloud Engineering with 1-to-1 training in Pune. Real-world sandbox deployment and network architecture. Course Fee: \u20b914,999.",
     "h1": "Cloud Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Architect Scalable AWS and Azure Infrastructures with Direct Live Deployments - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship AWS infrastructure, EC2 scaling clusters, and VPC networks code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "AWS Infrastructure",
       "Azure Core Services",
@@ -700,7 +700,7 @@
       "Storage Solutions",
       "Identity Access (IAM)"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Cloud is the base layer of modern IT infrastructure. Learn the architecture of AWS and Azure. Through screen-sharing sessions, you will configure virtual networks, load balancers, database instances, and secure access permissions in real-time.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual AWS infrastructure, EC2 scaling clusters, and VPC networks systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Cloud Architecture Foundations & Networking",
@@ -773,15 +773,15 @@
   {
     "slug": "devops-training",
     "name": "DevOps Training",
-    "price": "₹14,999",
+    "price": "\u20b914,999",
     "price_num": 14999,
     "duration": "12 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 DevOps engineering. Master CI/CD pipelines, Docker, Kubernetes, Ansible, and Git. Real company environment internship integration.",
     "seo_title": "DevOps Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Master CI/CD pipelines, Docker, and Kubernetes. 1-to-1 DevOps Course in Shivane, Pune. Real company deployment experience. Only ₹14,999.",
+    "meta_description": "Master CI/CD pipelines, Docker, and Kubernetes. 1-to-1 DevOps Course in Shivane, Pune. Real company deployment experience. Only \u20b914,999.",
     "h1": "DevOps Engineering Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Automate Build, Test, and Deploy Workflows under Individual Developer Coaching - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship Docker containerization, Kubernetes orchestration, and CI/CD release pipeline code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "CI/CD Pipelines",
       "Docker Containers",
@@ -791,7 +791,7 @@
       "Git Version Control",
       "Monitoring Tools"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. DevOps bridges the gap between writing code and running software. At CACTS Pune, we teach you containerization, automation scripts, and continuous integration pipelines. Our 1-to-1 mentoring ensures you understand deployment topologies and cluster configurations.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Docker containerization, Kubernetes orchestration, and CI/CD release pipeline systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Linux Operations & Version Control",
@@ -872,15 +872,15 @@
   {
     "slug": "software-testing-training",
     "name": "Software Testing Training",
-    "price": "₹9,999",
+    "price": "\u20b99,999",
     "price_num": 9999,
     "duration": "10 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Manual and Automation software testing. Covers Selenium WebDriver, JUnit, TestNG, API testing, and bug tracking. 1-to-1 personalized guidance.",
     "seo_title": "Software Testing Course in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Learn Manual & Automation Software Testing in Shivane, Pune. 1-to-1 training in Selenium, Java, and API testing. Internship on live projects. ₹9,999.",
+    "meta_description": "Learn Manual & Automation Software Testing in Shivane, Pune. 1-to-1 training in Selenium, Java, and API testing. Internship on live projects. \u20b99,999.",
     "h1": "Software Testing Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Master Manual QA, Selenium WebDriver, and API Testing with 1-to-1 Mentorship - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship manual verification and Selenium automation testing code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "Manual Testing",
       "Selenium WebDriver",
@@ -890,7 +890,7 @@
       "Jira & Bug Tracking",
       "SQL for Database Testing"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Quality assurance is critical for every software release. Our training begins with the fundamentals of manual test planning and bugs tracking, then transitions into automated Selenium testing scripts. You get direct support to write and debug test cases.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual manual verification and Selenium automation testing systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Manual Testing & QA Processes",
@@ -971,15 +971,15 @@
   {
     "slug": "cybersecurity-training",
     "name": "Cybersecurity Training",
-    "price": "₹19,999",
+    "price": "\u20b919,999",
     "price_num": 19999,
     "duration": "12 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Learn ethical hacking, network security, penetration testing, and cryptography. Direct individual support and practical lab implementation.",
     "seo_title": "Cybersecurity Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Learn Ethical Hacking & Network Security in Pune. 1-to-1 Cybersecurity Course in Shivane. Sandbox security lab testing. Fees: ₹19,999.",
+    "meta_description": "Learn Ethical Hacking & Network Security in Pune. 1-to-1 Cybersecurity Course in Shivane. Sandbox security lab testing. Fees: \u20b919,999.",
     "h1": "Cybersecurity & Ethical Hacking Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Master Vulnerability Assessment, Network Defense, and Hacking Tools 1-on-1 - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship vulnerability analysis, network socket tracing, and firewall defense code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "Ethical Hacking",
       "Network Security",
@@ -989,7 +989,7 @@
       "Linux Security",
       "OWASP Top 10"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Secure digital systems from rising threat actors. Learn cybersecurity methodologies in a secure sandbox laboratory. Our 1-to-1 training ensures you learn active penetration testing, system hardening, and security operations with real-world scenarios.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual vulnerability analysis, network socket tracing, and firewall defense systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Networking Basics & Linux Security",
@@ -1070,15 +1070,15 @@
   {
     "slug": "react-js-training",
     "name": "React JS Training",
-    "price": "₹14,999",
+    "price": "\u20b914,999",
     "price_num": 14999,
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 React JS training in Pune. Master modern components, React Hooks, Redux Toolkit, Axios, TailwindCSS, and complete a live frontend internship.",
     "seo_title": "React JS Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Join the best 1-to-1 React JS Training in Pune. Direct live frontend project internship, custom syllabus, and mentor support. Only ₹14,999.",
+    "meta_description": "Join the best 1-to-1 React JS Training in Pune. Direct live frontend project internship, custom syllabus, and mentor support. Only \u20b914,999.",
     "h1": "React JS Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Master React Hooks, Redux, and REST API Integration via 1-to-1 Mentoring & Internships - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship React Hooks, Redux Toolkit, and REST API integration code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "JavaScript ES6+",
       "ReactJS Components",
@@ -1089,7 +1089,7 @@
       "TailwindCSS",
       "Git & GitHub"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Our React JS Training is tailored for developers and beginners who want to build high-performance, single-page web applications. Guided by an individual corporate mentor, you will write modern clean code, learn state management, and build real dashboards, finishing with a live web project internship.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual React Hooks, Redux Toolkit, and REST API integration systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Advanced JS & Layouts",
@@ -1166,15 +1166,15 @@
   {
     "slug": "react-native-training",
     "name": "React Native Training",
-    "price": "₹16,999",
+    "price": "\u20b916,999",
     "price_num": 16999,
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 React Native mobile developer training in Pune. Master cross-platform iOS & Android apps, Expo CLI, navigation, SQLite, and deploy to app stores.",
     "seo_title": "React Native Training in Pune | CACTS Shivane | 1-to-1 Mentorship Lab",
-    "meta_description": "Join the best 1-to-1 React Native Training in Pune. Direct live app project internship, custom syllabus, and mobile store deployment. Only ₹16,999.",
+    "meta_description": "Join the best 1-to-1 React Native Training in Pune. Direct live app project internship, custom syllabus, and mobile store deployment. Only \u20b916,999.",
     "h1": "React Native Training in Pune",
-    "h2": "The Anti-Batch Mentorship Lab: Master iOS & Android Cross-Platform Development via 1-to-1 Mentoring & Live Internships - Code Commits Over Paper Certificates",
+    "h2": "Engineering Mentorship Lab: Ship cross-platform iOS and Android mobile app code. Individual developer seats. Code commits over paper certificates.",
     "skills": [
       "React Native",
       "Expo CLI",
@@ -1185,7 +1185,7 @@
       "App Store & Google Play",
       "Git & GitHub"
     ],
-    "overview": "Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. Our React Native Training is designed to turn you into a cross-platform mobile developer. In our 1-to-1 virtual mentoring model, you will write a single codebase in TypeScript that compiles directly to high-performance native iOS and Android apps, culminating in a live store submission.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual cross-platform iOS and Android mobile app systems from day one, completing your technical milestones by committing code to live company repositories.",
     "modules": [
       {
         "title": "Module 1: Mobile UI & Expo Layouts",
