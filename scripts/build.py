@@ -373,7 +373,7 @@ def build():
                 resources_li += f"""
                 <li style="margin-bottom: 0.75rem;">
                     <a href="{res_url}" style="color: var(--accent); text-decoration: none; font-weight: 600;">{res['h1']}</a> 
-                    <span style="color: var(--text-secondary); font-size: 0.9rem;">— {res['h2']}</span>
+                    <span style="color: var(--text-secondary); font-size: 0.9rem;">: {res['h2']}</span>
                 </li>
                 """
             resources_html = f"""

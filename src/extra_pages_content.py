@@ -858,7 +858,7 @@ EXTRA_PAGES = [
             },
             {
                 "title": "Pune BI Developer Job Market",
-                "text": "Every industry—including retail, manufacturing, and IT services in Pune—requires business intelligence. Because Microsoft Power BI is highly cost-effective, hiring demand is strong. Average starting salaries for Junior BI Analysts range from ₹3.5 LPA to ₹5.5 LPA."
+                "text": "Every industry, including retail, manufacturing, and IT services in Pune, requires business intelligence. Because Microsoft Power BI is highly cost-effective, hiring demand is strong. Average starting salaries for Junior BI Analysts range from ₹3.5 LPA to ₹5.5 LPA."
             }
         ],
         "faqs": [
