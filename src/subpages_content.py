@@ -1,563 +1,1496 @@
 # subpages_content.py - Dynamic Content Data for CACTS Course Split Pages
 
 SUBPAGES_DATA = {
-    "java-fullstack-training": {
-        "syllabus_prerequisites": "Basic logical thinking and computer operations. No prior programming background is required, as we start from absolute variables and loops.",
-        "syllabus_projects": [
-            "Project 1: Custom Library Management CLI app using Collections & JVM files.",
-            "Project 2: Multi-threaded Banking Transaction Simulator with JDBC connection pool.",
-            "Project 3: E-Commerce REST API Engine incorporating Spring Security & JWT keys.",
-            "Project 4: Collaborative Live Internship Platform deployed with React Axios integration."
-        ],
-        "syllabus_tools": ["IntelliJ IDEA", "Apache Maven", "MySQL Workbench", "Postman API client", "Git & GitHub", "Docker Containers"],
-        "syllabus_faqs": [
-            {"q": "Can I customize the Java syllabus based on my college project?", "a": "Yes. Since our training is strictly 1-to-1, your mentor can customize the final module projects to match your engineering graduation project requirements."},
-            {"q": "Do you cover Java 21 or Java 17?", "a": "We teach Java 17/21 LTS versions, focusing on modern language features like Record types, pattern matching, and virtual threads."}
-        ],
-        "fees_structure": "The Java Fullstack Training fee is ₹19,999 (all-inclusive). You can split this into 2 equal monthly installments of ₹10,000. We offer a 5% discount (₹18,999 final fee) for one-time upfront payments.",
-        "fees_comparison": {
-            "typical_pune_fees": "₹45,000 - ₹60,000",
-            "pune_batch_size": "30 to 50 students",
-            "cacts_value": "Strictly individual 1-to-1 virtual coaching, screensharing, and direct developer code reviews at less than half the market rate."
+    'ai-ml-training': {
+        'fees_comparison': {
+            'cacts_value': 'Personalized 1-to-1 math & code debugging sessions with a senior AI engineer at less than a third of typical institute costs.',
+            'pune_batch_size': '40 to 60 students',
+            'typical_pune_fees': '₹60,000 - ₹90,000',
         },
-        "fees_faqs": [
-            {"q": "Are there any hidden lab or exam fees at CACTS?", "a": "No, the ₹19,999 fee is all-inclusive. It covers all 1-to-1 mentorship, live project staging environments, and career training support."},
-            {"q": "What happens if I miss a scheduled 1-to-1 session?", "a": "Since it is individual training, there are no missed classes. We simply reschedule the session to your next available slot without any penalty."}
+        'fees_faqs': [
+            {
+                'a': 'The course involves advanced mathematical concepts, deep learning configurations, and specialized neural network deployments that require longer mentor-guided laboratory hours.',
+                'q': 'Why is the AI/ML course priced higher than Python?',
+            },
+            {
+                'a': "Yes, we guide you to use free-tier cloud environments (like Google Colab, HuggingFace spaces, and Render) so you don't incur extra hosting costs.",
+                'q': 'Are staging cloud server fees included?',
+            },
         ],
-        "interview_questions": [
-            {"q": "What is the difference between HashMap and ConcurrentHashMap in Java?", "a": "HashMap is not thread-safe and can cause infinite loops during rehashing under multi-threaded operations. ConcurrentHashMap is thread-safe, utilizing lock striping or bucket-level locking, which allows concurrent reads and safe writes without blocking the entire table."},
-            {"q": "How does Spring Boot resolve dependency injection?", "a": "Spring Boot uses an Inversion of Control (IoC) container. Beans are scanned via @ComponentScan and registered. Dependencies are resolved using constructor injection, setter injection, or field injection marked with @Autowired at startup."},
-            {"q": "Explain the life cycle of a React hook like useEffect.", "a": "useEffect runs after the component renders. If the dependency array is empty, it runs once. If it has dependencies, it runs whenever those values change. The return function acts as a cleanup phase, running before the component unmounts or before the effect runs again."},
-            {"q": "What is Hibernate Lazy Loading and how do you prevent LazyInitializationException?", "a": "Lazy loading fetches child entities from the database only when accessed. If the Hibernate session is closed, accessing them throws LazyInitializationException. To resolve this, you can use eager fetching, execute JOIN FETCH queries, or keep the session open during the rendering lifecycle."},
-            {"q": "What are the common HTTP response codes used in Spring Boot REST controllers?", "a": "Common codes include 200 OK (successful request), 201 Created (resource successfully generated), 400 Bad Request (invalid payload parameters), 401 Unauthorized (invalid JWT tokens), 404 Not Found (resource missing), and 500 Internal Server Error."}
+        'fees_structure': 'The AI & ML Course fee is ₹24,999 (all-inclusive). We offer an installment option of ₹12,500 × 2 months. Upfront full payment grants a 5% discount (₹23,749 total).',
+        'interview_faqs': [
+            {
+                'a': 'You will build 4 real-world projects, including predictive analytical servers and deep learning classifiers, complete with FastAPI endpoints committed to GitHub.',
+                'q': 'What ML portfolios will I build?',
+            },
+            {
+                'a': 'Yes, your mentor can guide you through structuring data pipelines for Kaggle challenges.',
+                'q': 'Do you help with Kaggle or Hackathon prep?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "Do you conduct mock interviews during this training?", "a": "Yes. You get 3 dedicated 1-to-1 mock interview sessions with active corporate developers to review your coding logic, resume project highlights, and communications."},
-            {"q": "Will I get help building my technical resume?", "a": "Yes. We help you draft a resume that highlights your real Git commits, spring boot APIs, and internship project details rather than dry copy-pasted bullet points."}
+        'interview_questions': [
+            {
+                'a': "L1 (Lasso) adds the absolute values of coefficients as a penalty. It leads to sparse feature matrices, effectively performing feature selection. L2 (Ridge) adds the squared values of coefficients. It shrinks weights close to zero but doesn't eliminate features entirely.",
+                'q': 'Explain the difference between L1 and L2 regularization.',
+            },
+            {
+                'a': 'Overfitting happens when a model learns noise in training data instead of general patterns, causing poor validation performance. To resolve it, you can simplify the model architecture, use cross-validation, apply regularization (L1/L2, dropout), or collect more training data.',
+                'q': 'What is the Overfitting problem and how do you resolve it?',
+            },
+            {
+                'a': 'Gradient descent is an optimization algorithm that minimizes the loss function. It calculates the partial derivatives (gradients) of the loss function relative to model parameters and updates weights in the opposite direction of the gradient by a step size defined by the learning rate.',
+                'q': 'How does gradient descent work in deep learning?',
+            },
+            {
+                'a': 'Precision measures the proportion of true positive predictions out of all predicted positives (True Positives / (True Positives + False Positives)). Recall measures the proportion of actual positives correctly identified (True Positives / (True Positives + False Negatives)).',
+                'q': 'What is the difference between Precision and Recall?',
+            },
+            {
+                'a': 'Activation functions introduce non-linearity into neural networks. ReLU (Rectified Linear Unit, f(x)=max(0, x)) is preferred over Sigmoid in deep networks because it solves the vanishing gradient problem, enabling faster training during backpropagation.',
+                'q': 'What are activation functions and why is ReLU preferred over Sigmoid?',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Java Object-Oriented Foundations", "duration": "4 Weeks", "skills": "Core Java, JVM memory structure, Generic Collections, File I/O", "project": "CLI Database Simulation app"},
-            {"phase": "Phase 2", "title": "Databases & Web APIs", "duration": "4 Weeks", "skills": "MySQL Workbench, SQL Joins, JDBC, Servlets, Hibernate ORM mappings", "project": "Relational Inventory Tracker backend"},
-            {"phase": "Phase 3", "title": "Spring Boot & RESTful APIs", "duration": "4 Weeks", "skills": "Spring DI/IoC, Spring Boot MVC, JPA Repositories, JWT security", "project": "Secure User Authentication server"},
-            {"phase": "Phase 4", "title": "React UI Integration & Live Deployment", "duration": "4 Weeks", "skills": "React hooks, state routers, Axios calls, Git merge branches, Staging deploy", "project": "Deploying Full-Stack app on Live Internship"}
+        'roadmap_faqs': [
+            {
+                'a': 'ML roles typically start between ₹4.5 LPA and ₹7 LPA in Pune. Candidates with a strong understanding of Python deployment and model API integration command premium rates.',
+                'q': 'What is the starting salary for an ML Associate in Pune?',
+            },
+            {
+                'a': 'Yes. While Data Science helps, our syllabus starts with numerical data pipelines, covering all requisite statistics before jumping into ML algorithms.',
+                'q': 'Can I learn AI/ML without learning Data Science first?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "What is the average starting salary for a Java Fullstack developer in Pune?", "a": "As of 2026, entry-level salaries in Pune for full-stack developers range from ₹3.6 LPA to ₹5.5 LPA. Candidates with active company internship code commits can negotiate higher packages."},
-            {"q": "How long does it take to get job-ready in Java Fullstack?", "a": "On average, it takes 16 weeks of dedicated 1-to-1 training and active coding (12-15 hours/week) to build production-ready projects and master interview topics."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 1',
+                'project': 'Exploratory Data Analysis Report',
+                'skills': 'NumPy, Pandas, Matplotlib, linear algebra vectors, calculus optimization',
+                'title': 'Mathematical foundations & Python tools',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Predictive Scoring Engine API',
+                'skills': 'Scikit-Learn, regressions, Random Forests, SVM, model metrics, pipelines',
+                'title': 'Classical Machine Learning',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 3',
+                'project': 'Image Classification Web App',
+                'skills': 'TensorFlow, Keras, Perceptrons, backpropagation, CNN architectures',
+                'title': 'Deep Learning & Neural Nets',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 4',
+                'project': 'Deploying ML Microservice on Internship',
+                'skills': 'Model pickling, FastAPI endpoints, HuggingFace pipelines, git branches',
+                'title': 'FastAPI Deployment & Staging',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'We teach you to write algorithms and custom Scikit-Learn pipelines from scratch. Understanding hyperparameter tuning and loss optimization is crucial for technical interviews.',
+                'q': 'Do we write pure code or use auto-ML libraries?',
+            },
+            {
+                'a': 'Yes, we cover image classification, edge detection, and basic CNN architectures using TensorFlow.',
+                'q': 'Is computer vision covered in the syllabus?',
+            },
+        ],
+        'syllabus_prerequisites': 'Basic Python programming concept. Linear Algebra and Calculus basics are helpful but fully covered in our math modules.',
+        'syllabus_projects': [
+            'Project 1: Real estate pricing predictor using Linear Regression and Scikit-Learn.',
+            'Project 2: Customer Churn Classification app using Decision Trees & Random Forests.',
+            'Project 3: Image Classifier using Convolutional Neural Networks (CNN) in TensorFlow.',
+            'Project 4: Custom API Deployment of an NLP text classification system.',
+        ],
+        'syllabus_tools': [
+            'Jupyter Notebooks',
+            'Scikit-Learn',
+            'TensorFlow / Keras',
+            'Pandas & NumPy',
+            'FastAPI / Flask',
+            'Google Colab',
+        ],
     },
-    "full-stack-training": {
-        "syllabus_prerequisites": "No programming knowledge is required. You should know basic web browsing and have a passion for building websites.",
-        "syllabus_projects": [
-            "Project 1: Responsive Restaurant Landing page using HTML5 Grid & Flexbox.",
-            "Project 2: JavaScript Dynamic Task Manager using Web Storage & Fetch APIs.",
-            "Project 3: Collaborative Chat App using Express, Node.js and MongoDB models.",
-            "Project 4: Complete MERN Dashboard deployed on Netlify / Render pipelines."
-        ],
-        "syllabus_tools": ["VS Code", "Node Package Manager", "Postman", "MongoDB Atlas", "Git & GitHub", "Netlify / Render"],
-        "syllabus_faqs": [
-            {"q": "Is the MERN stack better than PHP or Java for freshers?", "a": "MERN is highly popular for startup roles in Pune due to JavaScript continuity (same language on frontend and backend). It is excellent for rapid prototyping and modern reactive UI engineering."},
-            {"q": "Do we cover TypeScript in the syllabus?", "a": "Yes, we cover TypeScript integration with React.js in the final front-end module."}
-        ],
-        "fees_structure": "The Full Stack (MERN) Development Training tuition is ₹17,999 (all-inclusive). You can pay in 2 installments of ₹9,000. Upfront full payment offers a 5% discount (₹17,099 final fee).",
-        "fees_comparison": {
-            "typical_pune_fees": "₹40,000 - ₹55,000",
-            "pune_batch_size": "35 to 50 students",
-            "cacts_value": "1-to-1 private virtual trainer, no crowded batches, and live staging deploy checks at nearly 40% of standard institute pricing."
+    'cloud-training': {
+        'fees_comparison': {
+            'cacts_value': 'Private 1-to-1 virtual sandbox guidance with a cloud engineer at less than half of typical institute rates.',
+            'pune_batch_size': '40+ students in large batches',
+            'typical_pune_fees': '₹35,000 - ₹50,000',
         },
-        "fees_faqs": [
-            {"q": "Is there a refund policy if I discontinue the training?", "a": "We offer a 100% refund after your first demo class if you choose not to proceed. Once formal training modules begin, fees are non-refundable but can be paused and resumed anytime."},
-            {"q": "Do you accept credit cards and monthly UPI?", "a": "Yes, we accept UPI, Google Pay, NetBanking, and credit card payments."}
+        'fees_faqs': [
+            {
+                'a': "No. We guide you to set up your account under the AWS Free Tier, teaching you how to configure alerts so you don't exceed free usage limits.",
+                'q': 'Do I have to pay for AWS resources during practice?',
+            },
         ],
-        "interview_questions": [
-            {"q": "Explain Event Loop in Node.js.", "a": "Node.js runs on a single thread. The Event Loop delegates asynchronous tasks (like disk reads or database queries) to the system kernel or thread pool. When completed, callbacks are queued and executed sequentially in phases (timers, pending callbacks, poll, check, close callbacks)."},
-            {"q": "What is the difference between Virtual DOM and Real DOM in React?", "a": "The Real DOM updates elements directly, causing expensive repaints. React's Virtual DOM is a lightweight memory representation. When state changes, React updates the Virtual DOM, performs 'diffing' to compare it with the previous state, and updates only the changed nodes in the Real DOM (reconciliation)."},
-            {"q": "How does MongoDB store data and what is a NoSQL document?", "a": "MongoDB stores data in flexible BSON (Binary JSON) documents. Unlike relational rows, documents can contain nested sub-documents or arrays, allowing hierarchical data mapping without rigid schema constraints or complex joins."},
-            {"q": "What is CORS error and how do you resolve it in Express?", "a": "CORS (Cross-Origin Resource Sharing) prevents clients from accessing APIs hosted on different domains. To resolve this, you must configure the CORS middleware in Express to explicitly allow incoming headers from your frontend domain (e.g. app.use(cors({ origin: 'http://localhost:3000' })))."},
-            {"q": "What is the difference between state and props in React?", "a": "State is internal mutable data managed within the component itself. Props are immutable read-only parameters passed down from a parent component."}
+        'fees_structure': 'The Cloud Training fee is ₹14,999 (all-inclusive). Payment can be split into 2 installments of ₹7,500. Upfront full payment offers a 5% discount (₹14,249 final fee).',
+        'interview_faqs': [
+            {
+                'a': 'This course aligns with the AWS Certified Solutions Architect - Associate curriculum guidelines.',
+                'q': 'What AWS certification should I target?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "What kind of interview preparation is provided?", "a": "We provide mock interviews, technical review sheets, resume alignment, and a review of your GitHub project repositories to make sure your code stands out."},
-            {"q": "How many recruiters contact CACTS students?", "a": "We share your verified project portfolio links directly with local hiring partners and recruiters in Pune tech zones."}
+        'interview_questions': [
+            {
+                'a': 'A Public Subnet has a route to an Internet Gateway, allowing resources inside (like web servers) to receive public traffic. A Private Subnet does not have a direct route to the Internet Gateway. To access the internet (e.g. for updates), resources in a private subnet must route traffic through a NAT Gateway located in a public subnet.',
+                'q': 'Explain the difference between a Public Subnet and a Private Subnet in AWS VPC.',
+            },
+            {
+                'a': 'IAM (Identity and Access Management) manages access to AWS resources. To implement least privilege, you avoid using root credentials, create specific IAM users, group them by role, and attach policies that grant only the minimum permissions required to perform their specific tasks.',
+                'q': 'What is AWS IAM and how do you implement the principle of least privilege?',
+            },
+            {
+                'a': 'Vertical Scaling (scaling up) means adding more power (CPU, RAM) to an existing server. Horizontal Scaling (scaling out) means adding more servers to your infrastructure resource pool, distributing load using a load balancer (more resilient).',
+                'q': 'Explain the difference between Horizontal Scaling and Vertical Scaling.',
+            },
+            {
+                'a': 'S3 (Simple Storage Service) is an object storage service. Storage classes include S3 Standard (frequent access), S3 Standard-IA (infrequent access), S3 One Zone-IA (low-cost infrequent access), and S3 Glacier (archival storage with varying retrieval times).',
+                'q': 'What is AWS S3 and what are its storage classes?',
+            },
+            {
+                'a': 'ELB automatically distributes incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses, ensuring high availability and fault tolerance.',
+                'q': 'What is an Elastic Load Balancer (ELB)?',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Semantic Frontend Layouts", "duration": "4 Weeks", "skills": "HTML5, CSS3 Grid, Flexbox, Vanilla JS, DOM, Fetch APIs", "project": "Responsive Corporate Web Portal"},
-            {"phase": "Phase 2", "title": "React.js Component Architecture", "duration": "4 Weeks", "skills": "React Components, State hooks, Props, Router, Axios APIs", "project": "Dynamic Product Catalog App"},
-            {"phase": "Phase 3", "title": "Node.js & Express API Engine", "duration": "3 Weeks", "skills": "Node loops, Express Routing, middleware, REST response JSON", "project": "REST API Booking Engine"},
-            {"phase": "Phase 4", "title": "NoSQL Database & Production Deploy", "duration": "3 Weeks", "skills": "MongoDB Atlas, Mongoose validation, JWT security, Git commits", "project": "Deploying Full MERN Web app on Internship"}
+        'roadmap_faqs': [
+            {
+                'a': 'Starting salaries range from ₹4 LPA to ₹6 LPA in infrastructure operations and system analyst tracks.',
+                'q': 'What is the average starting salary for an AWS Associate in Pune?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "Can a career switcher learn Web Development in 14 weeks?", "a": "Yes. Our individual 1-to-1 pacing means you don't get left behind. We make sure you write and understand every line of code before moving to backend modules."},
-            {"q": "What junior roles can I apply for after completing MERN Stack?", "a": "You can apply for Junior Frontend Developer, MERN Stack Developer, JavaScript Engineer, or Associate Software Engineer positions."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 1',
+                'project': 'Secure Custom Virtual Network Design',
+                'skills': 'VPC design, public/private subnets, security groups, route tables, internet gateways',
+                'title': 'Cloud Fundamentals & Virtual Networks',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Highly Available Web Infrastructure',
+                'skills': 'EC2 provisioning, storage volumes, S3 buckets, policies, load balancers, auto-scaling',
+                'title': 'Compute & Object Storage Operations',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 3',
+                'project': 'Deployed Multi-Tier Web app on Internship',
+                'skills': 'RDS database setup, IAM policies, MFA keys, CloudWatch logs, staging deployment',
+                'title': 'Cloud Databases, Identity & Monitoring',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'We focus on Amazon Web Services (AWS), which holds the largest market share, and cover core architectural concepts of Microsoft Azure.',
+                'q': 'Which cloud provider do we focus on?',
+            },
+        ],
+        'syllabus_prerequisites': 'Basic understanding of networking concepts (IP addresses, DNS). No prior cloud experience is required.',
+        'syllabus_projects': [
+            'Project 1: Hosting a static portfolio website using AWS S3 & CloudFront.',
+            'Project 2: Launching a secure multi-tier web application using EC2 & RDS.',
+            'Project 3: Designing a highly available, load-balanced system with Auto Scaling.',
+            'Project 4: Real company project cloud sandbox deployment.',
+        ],
+        'syllabus_tools': [
+            'AWS Management Console',
+            'AWS CLI',
+            'Visual Studio Code',
+            'Git',
+        ],
     },
-    "ai-ml-training": {
-        "syllabus_prerequisites": "Basic Python programming concept. Linear Algebra and Calculus basics are helpful but fully covered in our math modules.",
-        "syllabus_projects": [
-            "Project 1: Real estate pricing predictor using Linear Regression and Scikit-Learn.",
-            "Project 2: Customer Churn Classification app using Decision Trees & Random Forests.",
-            "Project 3: Image Classifier using Convolutional Neural Networks (CNN) in TensorFlow.",
-            "Project 4: Custom API Deployment of an NLP text classification system."
-        ],
-        "syllabus_tools": ["Jupyter Notebooks", "Scikit-Learn", "TensorFlow / Keras", "Pandas & NumPy", "FastAPI / Flask", "Google Colab"],
-        "syllabus_faqs": [
-            {"q": "Do we write pure code or use auto-ML libraries?", "a": "We teach you to write algorithms and custom Scikit-Learn pipelines from scratch. Understanding hyperparameter tuning and loss optimization is crucial for technical interviews."},
-            {"q": "Is computer vision covered in the syllabus?", "a": "Yes, we cover image classification, edge detection, and basic CNN architectures using TensorFlow."}
-        ],
-        "fees_structure": "The AI & ML Course fee is ₹24,999 (all-inclusive). We offer an installment option of ₹12,500 × 2 months. Upfront full payment grants a 5% discount (₹23,749 total).",
-        "fees_comparison": {
-            "typical_pune_fees": "₹60,000 - ₹90,000",
-            "pune_batch_size": "40 to 60 students",
-            "cacts_value": "Personalized 1-to-1 math & code debugging sessions with a senior AI engineer at less than a third of typical institute costs."
+    'cybersecurity-training': {
+        'fees_comparison': {
+            'cacts_value': 'Strictly individual 1-to-1 virtual labs, running scans and exploits directly with a security specialist, at half the market price.',
+            'pune_batch_size': '30 to 45 students in large classes',
+            'typical_pune_fees': '₹45,000 - ₹65,000',
         },
-        "fees_faqs": [
-            {"q": "Why is the AI/ML course priced higher than Python?", "a": "The course involves advanced mathematical concepts, deep learning configurations, and specialized neural network deployments that require longer mentor-guided laboratory hours."},
-            {"q": "Are staging cloud server fees included?", "a": "Yes, we guide you to use free-tier cloud environments (like Google Colab, HuggingFace spaces, and Render) so you don't incur extra hosting costs."}
+        'fees_faqs': [
+            {
+                'a': 'A standard computer with 8GB RAM and virtualization support (VirtualBox/VMware) is sufficient for lab setups.',
+                'q': 'Do I need high-performance hardware for security labs?',
+            },
         ],
-        "interview_questions": [
-            {"q": "Explain the difference between L1 and L2 regularization.", "a": "L1 (Lasso) adds the absolute values of coefficients as a penalty. It leads to sparse feature matrices, effectively performing feature selection. L2 (Ridge) adds the squared values of coefficients. It shrinks weights close to zero but doesn't eliminate features entirely."},
-            {"q": "What is the Overfitting problem and how do you resolve it?", "a": "Overfitting happens when a model learns noise in training data instead of general patterns, causing poor validation performance. To resolve it, you can simplify the model architecture, use cross-validation, apply regularization (L1/L2, dropout), or collect more training data."},
-            {"q": "How does gradient descent work in deep learning?", "a": "Gradient descent is an optimization algorithm that minimizes the loss function. It calculates the partial derivatives (gradients) of the loss function relative to model parameters and updates weights in the opposite direction of the gradient by a step size defined by the learning rate."},
-            {"q": "What is the difference between Precision and Recall?", "a": "Precision measures the proportion of true positive predictions out of all predicted positives (True Positives / (True Positives + False Positives)). Recall measures the proportion of actual positives correctly identified (True Positives / (True Positives + False Negatives))."},
-            {"q": "What are activation functions and why is ReLU preferred over Sigmoid?", "a": "Activation functions introduce non-linearity into neural networks. ReLU (Rectified Linear Unit, f(x)=max(0, x)) is preferred over Sigmoid in deep networks because it solves the vanishing gradient problem, enabling faster training during backpropagation."}
+        'fees_structure': 'The Cybersecurity Training fee is ₹19,999 (all-inclusive). Payment can be split into 2 installments of ₹10,000. Upfront full payment grants a 5% discount (₹18,999 final fee).',
+        'interview_faqs': [
+            {
+                'a': 'Expect questions on networking protocols, Linux configurations, and OWASP web vulnerability remediation.',
+                'q': 'What rounds are standard for Security Analyst roles?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "What ML portfolios will I build?", "a": "You will build 4 real-world projects, including predictive analytical servers and deep learning classifiers, complete with FastAPI endpoints committed to GitHub."},
-            {"q": "Do you help with Kaggle or Hackathon prep?", "a": "Yes, your mentor can guide you through structuring data pipelines for Kaggle challenges."}
+        'interview_questions': [
+            {
+                'a': 'Symmetric encryption uses the same key for both encryption and decryption (fast, e.g. AES). Asymmetric encryption uses a public key to encrypt and a private key to decrypt (secure key exchange, e.g. RSA).',
+                'q': 'What is the difference between Symmetric and Asymmetric encryption?',
+            },
+            {
+                'a': 'OWASP Top 10 is a standard awareness document for web application security, listing the top 10 most critical security risks (such as SQL Injection, Broken Authentication, Cross-Site Scripting, and Security Misconfiguration).',
+                'q': 'Explain the OWASP Top 10 concept.',
+            },
+            {
+                'a': 'SQL Injection occurs when malicious SQL statements are inserted into input entry fields, executing unauthorized database commands. It is prevented by using parameterized queries (Prepared Statements), input validation, and ORM libraries.',
+                'q': 'What is a SQL Injection attack and how do you prevent it?',
+            },
+            {
+                'a': 'An attacker intercepts communications between two parties (e.g. client and server) without their knowledge, allowing the attacker to read or modify messages before forwarding them (prevented by using HTTPS/TLS).',
+                'q': 'Explain how a man-in-the-middle (MITM) attack works.',
+            },
+            {
+                'a': 'A Vulnerability Scan is an automated search that identifies known security gaps. A Penetration Test is a manual, authorized simulation of a cyberattack to actively exploit security gaps and verify their impact.',
+                'q': 'What is the difference between a Vulnerability Scan and a Penetration Test?',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Mathematical foundations & Python tools", "duration": "4 Weeks", "skills": "NumPy, Pandas, Matplotlib, linear algebra vectors, calculus optimization", "project": "Exploratory Data Analysis Report"},
-            {"phase": "Phase 2", "title": "Classical Machine Learning", "duration": "4 Weeks", "skills": "Scikit-Learn, regressions, Random Forests, SVM, model metrics, pipelines", "project": "Predictive Scoring Engine API"},
-            {"phase": "Phase 3", "title": "Deep Learning & Neural Nets", "duration": "4 Weeks", "skills": "TensorFlow, Keras, Perceptrons, backpropagation, CNN architectures", "project": "Image Classification Web App"},
-            {"phase": "Phase 4", "title": "FastAPI Deployment & Staging", "duration": "4 Weeks", "skills": "Model pickling, FastAPI endpoints, HuggingFace pipelines, git branches", "project": "Deploying ML Microservice on Internship"}
+        'roadmap_faqs': [
+            {
+                'a': 'Starting salaries in Pune range from ₹4 LPA to ₹6 LPA, driven by a global focus on digital security audits.',
+                'q': 'What is the starting salary for a Security Analyst in Pune?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "What is the starting salary for an ML Associate in Pune?", "a": "ML roles typically start between ₹4.5 LPA and ₹7 LPA in Pune. Candidates with a strong understanding of Python deployment and model API integration command premium rates."},
-            {"q": "Can I learn AI/ML without learning Data Science first?", "a": "Yes. While Data Science helps, our syllabus starts with numerical data pipelines, covering all requisite statistics before jumping into ML algorithms."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 1',
+                'project': 'Network Infrastructure Security Audit',
+                'skills': 'Linux shell administration, TCP/IP protocols, running Nmap port scans',
+                'title': 'Network Security & Linux Basics',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 2',
+                'project': 'System Vulnerability Assessment',
+                'skills': 'Running Nessus scans, Metasploit console exploits in sandbox environments',
+                'title': 'Vulnerability Analysis & Exploitation',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 3',
+                'project': 'Web API Security Penetration Report',
+                'skills': 'OWASP vulnerabilities, SQL injection, XSS payloads, Burp Suite intercepting',
+                'title': 'Web Application Security',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 4',
+                'project': 'Infrastructure Security Plan Project',
+                'skills': 'Encryption models, firewalls setup, log analysis, staging audits',
+                'title': 'Cryptography & Defenses Operations',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'Yes. We focus on ethical hacking methodologies to identify vulnerabilities, configure defenses, and document patch recommendations.',
+                'q': 'Is this an ethical hacking course?',
+            },
+        ],
+        'syllabus_prerequisites': 'Basic computer operation and networking concepts (ports, IP addresses). No prior security background is required.',
+        'syllabus_projects': [
+            'Project 1: Penetration testing audit reports on local sandbox labs.',
+            'Project 2: Configuring firewall rules and security groups in Linux.',
+            'Project 3: Cryptographic hashing and key exchange scripts.',
+            'Project 4: OWASP Web application vulnerability assessment project.',
+        ],
+        'syllabus_tools': [
+            'Kali Linux',
+            'Wireshark',
+            'Nmap port scanner',
+            'Metasploit Framework',
+            'Burp Suite',
+        ],
     },
-    "data-science-training": {
-        "syllabus_prerequisites": "Basic understanding of school-level algebra and Excel formulas. No prior database or python coding background is required.",
-        "syllabus_projects": [
-            "Project 1: Sales Analysis interactive dashboard built in Power BI.",
-            "Project 2: Structured SQL analytical reporting on database transactions.",
-            "Project 3: Descriptive & predictive analysis on hospital datasets using Python.",
-            "Project 4: A/B testing analytics pipeline committed to Git."
-        ],
-        "syllabus_tools": ["Python (Pandas)", "SQL (MySQL)", "Power BI Desktop", "Jupyter Notebooks", "Git & GitHub", "Google Sheets"],
-        "syllabus_faqs": [
-            {"q": "Why do we cover both Power BI and Python?", "a": "In industry roles, Power BI is used for rapid business intelligence reporting, while Python is used for advanced data cleaning, statistical modeling, and forecasting. Knowing both is critical for data science positions."},
-            {"q": "Do we cover data extraction using web APIs?", "a": "Yes, we teach you how to fetch data from JSON REST APIs and load it into Pandas dataframes."}
-        ],
-        "fees_structure": "The Data Science Training fee is ₹22,999 (all-inclusive). Payment can be split into 2 installments of ₹11,500. Upfront full payment grants a 5% discount (₹21,849 final fee).",
-        "fees_comparison": {
-            "typical_pune_fees": "₹50,000 - ₹75,000",
-            "pune_batch_size": "40 to 50 students",
-            "cacts_value": "1-on-1 virtual sessions where you share your screen and write data scripts with a dedicated mentor, at less than half of standard classroom prices."
+    'data-engineering-training': {
+        'fees_comparison': {
+            'cacts_value': '1-to-1 custom pacing with a senior data architect, writing real ETL scripts, at a fraction of typical institute fees.',
+            'pune_batch_size': '30 to 45 students',
+            'typical_pune_fees': '₹65,000 - ₹85,000',
         },
-        "fees_faqs": [
-            {"q": "Does the course fee cover the Power BI license?", "a": "Power BI Desktop is free for learning and dashboard construction. We show you how to use the free tier options so you do not incur extra software fees."},
-            {"q": "Can I pause my Data Science training if I have college exams?", "a": "Yes. Since it is 1-to-1 training, you can pause your schedule for exams or holidays and resume from the exact same point without losing any classes."}
+        'fees_faqs': [
+            {
+                'a': 'No. We show you how to configure single-node clusters locally on your laptop and utilize free cloud platforms so there are no extra laboratory fees.',
+                'q': 'Are there extra costs for running Hadoop or Spark labs?',
+            },
+            {
+                'a': 'No. We do not provide job placement guarantees or placement services. However, we guide you to build a public GitHub portfolio of your internship pipelines, which you can share directly with recruiters.',
+                'q': 'Do you offer job placement services for Data Engineers?',
+            },
         ],
-        "interview_questions": [
-            {"q": "Explain the difference between Inner Join, Left Join, and Self Join in SQL.", "a": "Inner Join returns records that have matching values in both tables. Left Join returns all records from the left table and matched records from the right table. Self Join is a join where a table is joined with itself (useful for querying hierarchical organizational schemas)."},
-            {"q": "What is the difference between supervised and unsupervised learning?", "a": "Supervised learning models are trained on labeled datasets where the target variable is known (e.g. regression, classification). Unsupervised learning models analyze unlabeled datasets to find hidden patterns or groupings (e.g. clustering with K-Means)."},
-            {"q": "How do you handle missing values in a Pandas DataFrame?", "a": "You can identify missing values with `.isnull()`. To handle them, you can drop records (`.dropna()`) if they are minimal, or impute them (`.fillna()`) with statistical values (mean, median, mode) or forward/backward fills depending on the context."},
-            {"q": "What is a p-value in hypothesis testing?", "a": "A p-value is the probability of obtaining test results at least as extreme as the observed results, assuming the null hypothesis is true. A lower p-value (typically < 0.05) indicates strong evidence to reject the null hypothesis."},
-            {"q": "Explain the concept of exploratory data analysis (EDA).", "a": "EDA is the process of examining a dataset to summarize its main characteristics, identify anomalies, check assumptions, and visualize variables using statistical charts and plots before formal modeling."}
+        'fees_structure': 'The Data Engineering Training fee is ₹24,999 (all-inclusive). Payment can be split into 2 monthly installments of ₹12,500. Upfront full payment grants a 5% discount (₹23,749 total).',
+        'interview_faqs': [
+            {
+                'a': 'You will face advanced SQL querying (window functions, Joins), Python scripting, and conceptual questions on Spark performance tuning and schema design.',
+                'q': 'What technical rounds should I expect for Data Engineer roles?',
+            },
+            {
+                'a': 'Yes. You get 1-to-1 mock interviews focused on writing optimized SQL queries and PySpark pipelines.',
+                'q': 'Do you help with mock interviews?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "Do you provide SQL query preparation for interviews?", "a": "Yes. SQL query execution is the first round of most analyst interviews. We provide a workbook of 50+ real-world query problems (joins, window functions, subqueries) for hands-on practice."},
-            {"q": "Will my internship project be listed on my resume?", "a": "Yes. You will list your active project commits, detailing how you cleaned and modeled real datasets during the internship."}
+        'interview_questions': [
+            {
+                'a': 'OLTP (Online Transaction Processing) systems are optimized for transactional, rapid write/read operations, usually highly normalized (e.g. operational databases). OLAP (Online Analytical Processing) systems are optimized for complex, aggregate queries, usually denormalized using star or snowflake schemas (e.g. data warehouses).',
+                'q': 'Explain the difference between OLTP and OLAP systems.',
+            },
+            {
+                'a': 'In Spark, `map` applies a transformation to each element of a DataFrame/RDD and returns a new collection of the same size. `flatMap` transforms each element into zero or more elements and flattens the output collection, changing the size.',
+                'q': 'What is the difference between map and flatMap in Apache Spark?',
+            },
+            {
+                'a': 'Normalization reduces redundancy and dependency by splitting tables (e.g., 3NF). We denormalize data warehouses into star schemas to minimize table joins, dramatically speeding up read query performance for business analytics.',
+                'q': 'What is database normalization and why do we denormalize data warehouses?',
+            },
+            {
+                'a': 'Partitioning divides data into directories based on columns (e.g. year/month). When a query filters by the partition column, Spark/Hive reads only that specific directory, skipping all other files (partition pruning), which saves time and compute resources.',
+                'q': 'Explain how partitioning improves query performance in Hive/Spark.',
+            },
+            {
+                'a': 'ETL stands for Extract (reading data from source APIs/databases), Transform (cleaning, filtering, joining data), and Load (writing the output data into a target database or warehouse).',
+                'q': 'What is an ETL pipeline?',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Statistics & Analytical Querying", "duration": "3 Weeks", "skills": "Probability, descriptive statistics, SQL database queries, joins, aggregates", "project": "SQL E-Commerce Sales Audit"},
-            {"phase": "Phase 2", "title": "Python Data Manipulation", "duration": "4 Weeks", "skills": "Pandas, NumPy, EDA workflows, dealing with outliers, data wrangling", "project": "Python Customer Demographic Analysis"},
-            {"phase": "Phase 3", "title": "Data Visualization & Dashboards", "duration": "3 Weeks", "skills": "Power BI Desktop, Power Query ETL, DAX measures, interactive reports", "project": "Corporate Executive BI Dashboard"},
-            {"phase": "Phase 4", "title": "Predictive Modeling & Staging Deploy", "duration": "4 Weeks", "skills": "Regressions, linear forecasting, Git commits, collaborating on active data tasks", "project": "Deploying Analytics Model on Internship"}
+        'roadmap_faqs': [
+            {
+                'a': 'Data Engineering is one of the highest-paying entry roles. Starting salaries in Pune range from ₹5 LPA to ₹8 LPA, driven by a shortage of candidates who can write clean ETL code.',
+                'q': 'What is the salary outlook for Data Engineers in Pune?',
+            },
+            {
+                'a': 'It is more software-engineering-focused. If you enjoy building systems, writing SQL, and managing data flows rather than statistical analysis, you will excel here.',
+                'q': 'Is Data Engineering harder than Data Science?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "What is the average salary for a Junior Data Analyst in Pune?", "a": "Entry-level analyst salaries in Pune range from ₹3.5 LPA to ₹5.2 LPA. Candidates with strong SQL skills and Power BI dashboard portfolios are highly sought after."},
-            {"q": "How is Data Science different from Data Analytics?", "a": "Data Analytics focuses on analyzing historical data to answer business questions. Data Science includes analytics but also covers predictive machine learning modeling and data pipeline engineering."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 1',
+                'project': 'Transactional Database Schema Model',
+                'skills': 'Complex joins, window functions, indexing, normal forms, star schema designs',
+                'title': 'Advanced SQL & Database Schema Design',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Python Web API-to-SQL Pipeline',
+                'skills': 'Python API requests, JSON parsing, logging, writing automated ETL scripts',
+                'title': 'Python ETL Scripting & Automation',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 3',
+                'project': 'Spark Big Data Batch Processor',
+                'skills': 'Hadoop architecture, HDFS storage, Apache Spark DataFrames, PySpark',
+                'title': 'Distributed Big Data Systems',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 4',
+                'project': 'ETL Pipeline Optimization Project',
+                'skills': 'Cloud database integration, staging ETL pipelines, Git workflow',
+                'title': 'Cloud Warehousing & Pipeline Staging',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'Yes. We use PySpark (Spark with Python) to write distributed data transformation pipelines.',
+                'q': 'Do we write code in PySpark?',
+            },
+            {
+                'a': 'We cover OLAP vs OLTP architectures, dimensional modeling (star and snowflake schemas), indexing, and query optimization.',
+                'q': 'What is covered under data warehousing?',
+            },
+        ],
+        'syllabus_prerequisites': 'Intermediate programming concepts (preferably Python) and basic SQL understanding.',
+        'syllabus_projects': [
+            'Project 1: Python ETL pipeline connecting web REST APIs to SQL databases.',
+            'Project 2: Apache Spark data transformation pipeline processing JSON feeds.',
+            'Project 3: Designing a star schema data warehouse in cloud environment.',
+            'Project 4: Pipeline scheduling workflow deployed during the live internship.',
+        ],
+        'syllabus_tools': [
+            'Apache Spark',
+            'Hadoop HDFS',
+            'PostgreSQL / MySQL',
+            'Python (PySpark)',
+            'Docker',
+            'Git & GitHub',
+        ],
     },
-    "data-engineering-training": {
-        "syllabus_prerequisites": "Intermediate programming concepts (preferably Python) and basic SQL understanding.",
-        "syllabus_projects": [
-            "Project 1: Python ETL pipeline connecting web REST APIs to SQL databases.",
-            "Project 2: Apache Spark data transformation pipeline processing JSON feeds.",
-            "Project 3: Designing a star schema data warehouse in cloud environment.",
-            "Project 4: Pipeline scheduling workflow deployed during the live internship."
-        ],
-        "syllabus_tools": ["Apache Spark", "Hadoop HDFS", "PostgreSQL / MySQL", "Python (PySpark)", "Docker", "Git & GitHub"],
-        "syllabus_faqs": [
-            {"q": "Do we write code in PySpark?", "a": "Yes. We use PySpark (Spark with Python) to write distributed data transformation pipelines."},
-            {"q": "What is covered under data warehousing?", "a": "We cover OLAP vs OLTP architectures, dimensional modeling (star and snowflake schemas), indexing, and query optimization."}
-        ],
-        "fees_structure": "The Data Engineering Training fee is ₹24,999 (all-inclusive). Payment can be split into 2 monthly installments of ₹12,500. Upfront full payment grants a 5% discount (₹23,749 total).",
-        "fees_comparison": {
-            "typical_pune_fees": "₹65,000 - ₹85,000",
-            "pune_batch_size": "30 to 45 students",
-            "cacts_value": "1-to-1 custom pacing with a senior data architect, writing real ETL scripts, at a fraction of typical institute fees."
+    'data-science-training': {
+        'fees_comparison': {
+            'cacts_value': '1-on-1 virtual sessions where you share your screen and write data scripts with a dedicated mentor, at less than half of standard classroom prices.',
+            'pune_batch_size': '40 to 50 students',
+            'typical_pune_fees': '₹50,000 - ₹75,000',
         },
-        "fees_faqs": [
-            {"q": "Are there extra costs for running Hadoop or Spark labs?", "a": "No. We show you how to configure single-node clusters locally on your laptop and utilize free cloud platforms so there are no extra laboratory fees."},
-            {"q": "Do you offer job placement services for Data Engineers?", "a": "No. We do not provide job placement guarantees or placement services. However, we guide you to build a public GitHub portfolio of your internship pipelines, which you can share directly with recruiters."}
+        'fees_faqs': [
+            {
+                'a': 'Power BI Desktop is free for learning and dashboard construction. We show you how to use the free tier options so you do not incur extra software fees.',
+                'q': 'Does the course fee cover the Power BI license?',
+            },
+            {
+                'a': 'Yes. Since it is 1-to-1 training, you can pause your schedule for exams or holidays and resume from the exact same point without losing any classes.',
+                'q': 'Can I pause my Data Science training if I have college exams?',
+            },
         ],
-        "interview_questions": [
-            {"q": "Explain the difference between OLTP and OLAP systems.", "a": "OLTP (Online Transaction Processing) systems are optimized for transactional, rapid write/read operations, usually highly normalized (e.g. operational databases). OLAP (Online Analytical Processing) systems are optimized for complex, aggregate queries, usually denormalized using star or snowflake schemas (e.g. data warehouses)."},
-            {"q": "What is the difference between map and flatMap in Apache Spark?", "a": "In Spark, `map` applies a transformation to each element of a DataFrame/RDD and returns a new collection of the same size. `flatMap` transforms each element into zero or more elements and flattens the output collection, changing the size."},
-            {"q": "What is database normalization and why do we denormalize data warehouses?", "a": "Normalization reduces redundancy and dependency by splitting tables (e.g., 3NF). We denormalize data warehouses into star schemas to minimize table joins, dramatically speeding up read query performance for business analytics."},
-            {"q": "Explain how partitioning improves query performance in Hive/Spark.", "a": "Partitioning divides data into directories based on columns (e.g. year/month). When a query filters by the partition column, Spark/Hive reads only that specific directory, skipping all other files (partition pruning), which saves time and compute resources."},
-            {"q": "What is an ETL pipeline?", "a": "ETL stands for Extract (reading data from source APIs/databases), Transform (cleaning, filtering, joining data), and Load (writing the output data into a target database or warehouse)."}
+        'fees_structure': 'The Data Science Training fee is ₹22,999 (all-inclusive). Payment can be split into 2 installments of ₹11,500. Upfront full payment grants a 5% discount (₹21,849 final fee).',
+        'interview_faqs': [
+            {
+                'a': 'Yes. SQL query execution is the first round of most analyst interviews. We provide a workbook of 50+ real-world query problems (joins, window functions, subqueries) for hands-on practice.',
+                'q': 'Do you provide SQL query preparation for interviews?',
+            },
+            {
+                'a': 'Yes. You will list your active project commits, detailing how you cleaned and modeled real datasets during the internship.',
+                'q': 'Will my internship project be listed on my resume?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "What technical rounds should I expect for Data Engineer roles?", "a": "You will face advanced SQL querying (window functions, Joins), Python scripting, and conceptual questions on Spark performance tuning and schema design."},
-            {"q": "Do you help with mock interviews?", "a": "Yes. You get 1-to-1 mock interviews focused on writing optimized SQL queries and PySpark pipelines."}
+        'interview_questions': [
+            {
+                'a': 'Inner Join returns records that have matching values in both tables. Left Join returns all records from the left table and matched records from the right table. Self Join is a join where a table is joined with itself (useful for querying hierarchical organizational schemas).',
+                'q': 'Explain the difference between Inner Join, Left Join, and Self Join in SQL.',
+            },
+            {
+                'a': 'Supervised learning models are trained on labeled datasets where the target variable is known (e.g. regression, classification). Unsupervised learning models analyze unlabeled datasets to find hidden patterns or groupings (e.g. clustering with K-Means).',
+                'q': 'What is the difference between supervised and unsupervised learning?',
+            },
+            {
+                'a': 'You can identify missing values with `.isnull()`. To handle them, you can drop records (`.dropna()`) if they are minimal, or impute them (`.fillna()`) with statistical values (mean, median, mode) or forward/backward fills depending on the context.',
+                'q': 'How do you handle missing values in a Pandas DataFrame?',
+            },
+            {
+                'a': 'A p-value is the probability of obtaining test results at least as extreme as the observed results, assuming the null hypothesis is true. A lower p-value (typically < 0.05) indicates strong evidence to reject the null hypothesis.',
+                'q': 'What is a p-value in hypothesis testing?',
+            },
+            {
+                'a': 'EDA is the process of examining a dataset to summarize its main characteristics, identify anomalies, check assumptions, and visualize variables using statistical charts and plots before formal modeling.',
+                'q': 'Explain the concept of exploratory data analysis (EDA).',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Advanced SQL & Database Schema Design", "duration": "4 Weeks", "skills": "Complex joins, window functions, indexing, normal forms, star schema designs", "project": "Transactional Database Schema Model"},
-            {"phase": "Phase 2", "title": "Python ETL Scripting & Automation", "duration": "4 Weeks", "skills": "Python API requests, JSON parsing, logging, writing automated ETL scripts", "project": "Python Web API-to-SQL Pipeline"},
-            {"phase": "Phase 3", "title": "Distributed Big Data Systems", "duration": "4 Weeks", "skills": "Hadoop architecture, HDFS storage, Apache Spark DataFrames, PySpark", "project": "Spark Big Data Batch Processor"},
-            {"phase": "Phase 4", "title": "Cloud Warehousing & Pipeline Staging", "duration": "4 Weeks", "skills": "Cloud database integration, staging ETL pipelines, Git workflow", "project": "ETL Pipeline Optimization Project"}
+        'roadmap_faqs': [
+            {
+                'a': 'Entry-level analyst salaries in Pune range from ₹3.5 LPA to ₹5.2 LPA. Candidates with strong SQL skills and Power BI dashboard portfolios are highly sought after.',
+                'q': 'What is the average salary for a Junior Data Analyst in Pune?',
+            },
+            {
+                'a': 'Data Analytics focuses on analyzing historical data to answer business questions. Data Science includes analytics but also covers predictive machine learning modeling and data pipeline engineering.',
+                'q': 'How is Data Science different from Data Analytics?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "What is the salary outlook for Data Engineers in Pune?", "a": "Data Engineering is one of the highest-paying entry roles. Starting salaries in Pune range from ₹5 LPA to ₹8 LPA, driven by a shortage of candidates who can write clean ETL code."},
-            {"q": "Is Data Engineering harder than Data Science?", "a": "It is more software-engineering-focused. If you enjoy building systems, writing SQL, and managing data flows rather than statistical analysis, you will excel here."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 1',
+                'project': 'SQL E-Commerce Sales Audit',
+                'skills': 'Probability, descriptive statistics, SQL database queries, joins, aggregates',
+                'title': 'Statistics & Analytical Querying',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Python Customer Demographic Analysis',
+                'skills': 'Pandas, NumPy, EDA workflows, dealing with outliers, data wrangling',
+                'title': 'Python Data Manipulation',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 3',
+                'project': 'Corporate Executive BI Dashboard',
+                'skills': 'Power BI Desktop, Power Query ETL, DAX measures, interactive reports',
+                'title': 'Data Visualization & Dashboards',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 4',
+                'project': 'Deploying Analytics Model on Internship',
+                'skills': 'Regressions, linear forecasting, Git commits, collaborating on active data tasks',
+                'title': 'Predictive Modeling & Staging Deploy',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'In industry roles, Power BI is used for rapid business intelligence reporting, while Python is used for advanced data cleaning, statistical modeling, and forecasting. Knowing both is critical for data science positions.',
+                'q': 'Why do we cover both Power BI and Python?',
+            },
+            {
+                'a': 'Yes, we teach you how to fetch data from JSON REST APIs and load it into Pandas dataframes.',
+                'q': 'Do we cover data extraction using web APIs?',
+            },
+        ],
+        'syllabus_prerequisites': 'Basic understanding of school-level algebra and Excel formulas. No prior database or python coding background is required.',
+        'syllabus_projects': [
+            'Project 1: Sales Analysis interactive dashboard built in Power BI.',
+            'Project 2: Structured SQL analytical reporting on database transactions.',
+            'Project 3: Descriptive & predictive analysis on hospital datasets using Python.',
+            'Project 4: A/B testing analytics pipeline committed to Git.',
+        ],
+        'syllabus_tools': [
+            'Python (Pandas)',
+            'SQL (MySQL)',
+            'Power BI Desktop',
+            'Jupyter Notebooks',
+            'Git & GitHub',
+            'Google Sheets',
+        ],
     },
-    "python-training": {
-        "syllabus_prerequisites": "No programming background is required. Absolute beginners are welcome.",
-        "syllabus_projects": [
-            "Project 1: Text-based RPG Game using Python control flow & lists.",
-            "Project 2: Employee Database System using OOP classes and JSON files.",
-            "Project 3: Custom Web Scraper extracting live data using BeautifulSoup.",
-            "Project 4: Automated Desktop Task Script deployed locally."
-        ],
-        "syllabus_tools": ["Python IDE (IDLE/VS Code)", "pip manager", "Git & GitHub", "MySQL Workbench"],
-        "syllabus_faqs": [
-            {"q": "Is Python sufficient to get a job?", "a": "Core Python is excellent for automation, scripting, and QA roles. For core developer roles, we recommend upgrading to Django/Flask or transitioning to Data Science/ML pipelines."},
-            {"q": "Do you teach Object-Oriented Programming (OOP) in detail?", "a": "Yes. We focus heavily on OOP concepts (Classes, Inheritance, Polymorphism, Encapsulation) since they are the foundations of all enterprise software."}
-        ],
-        "fees_structure": "The Python Training tuition is ₹9,999 (all-inclusive). Payment can be split into 2 installments of ₹5,000. Upfront full payment grants a 5% discount (₹9,499 final fee).",
-        "fees_comparison": {
-            "typical_pune_fees": "₹20,000 - ₹30,000",
-            "pune_batch_size": "40+ students in large batches",
-            "cacts_value": "Private 1-on-1 coaching where the developer writes code with you on screen, at less than half of standard classroom prices."
+    'devops-training': {
+        'fees_comparison': {
+            'cacts_value': 'Private 1-to-1 virtual labs, building real automation pipelines with direct mentor feedback, at nearly a third of market pricing.',
+            'pune_batch_size': '35 to 50 students in large batches',
+            'typical_pune_fees': '₹40,000 - ₹55,000',
         },
-        "fees_faqs": [
-            {"q": "Can I upgrade to Data Science later?", "a": "Yes. You can upgrade your training path to Data Science or AI/ML by paying the pro-rata fee difference."}
+        'fees_faqs': [
+            {
+                'a': 'Yes, we guide you to set up free tier staging environments so there are no extra operational costs.',
+                'q': 'Are staging lab fees included?',
+            },
         ],
-        "interview_questions": [
-            {"q": "What is the difference between list and tuple in Python?", "a": "Lists are mutable (can be modified after creation) and use square brackets `[]`. Tuples are immutable (cannot be modified) and use parentheses `()`. Tuples are faster and safer for read-only data structures."},
-            {"q": "How does memory management work in Python?", "a": "Python uses a private heap to store objects. Memory management is handled by the Python Memory Manager and an automatic Garbage Collector that uses reference counting to deallocate memory when references to an object hit zero."},
-            {"q": "Explain the concept of decorators in Python.", "a": "A decorator is a design pattern in Python that allows you to modify the behavior of a function or class. It takes a function as an argument, extends its functionality without modifying the original code, and returns the modified function."},
-            {"q": "What is the difference between deep copy and shallow copy?", "a": "A shallow copy constructs a new compound object and inserts references to the original nested objects. A deep copy recursively constructs a new object and inserts copies of the nested objects, making it completely independent."},
-            {"q": "Explain exceptions handling blocks in Python.", "a": "Exceptions are handled using `try`, `except`, `else`, and `finally` blocks. Code that might raise an error is placed in `try`. The error is caught in `except`. If no error occurs, `else` runs. `finally` runs regardless, usually for cleanup (like closing files)."}
+        'fees_structure': 'The DevOps Training fee is ₹14,999 (all-inclusive). Payment can be split into 2 installments of ₹7,500. Upfront full payment offers a 5% discount (₹14,249 final fee).',
+        'interview_faqs': [
+            {
+                'a': 'Expect hands-on scripting, writing Dockerfiles, and detailing CI/CD pipeline automation workflows.',
+                'q': 'What DevOps rounds are common in Pune?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "What kind of coding challenges do we solve?", "a": "We solve 30+ logical coding problems (arrays, string manipulation, sorting) to ensure you can clear entry-level screening rounds."}
+        'interview_questions': [
+            {
+                'a': 'A Docker Image is a read-only, static template containing instructions for creating a container (built from a Dockerfile). A Docker Container is a runnable, isolated runtime instance of an image (created using `docker run`).',
+                'q': 'Explain the difference between a Docker Image and a Docker Container.',
+            },
+            {
+                'a': 'A Pod is the smallest deployable unit in Kubernetes, representing a single running container instance. A Deployment is a higher-level controller that manages the lifecycle of Pods, enabling declarative updates, scaling, and rolling updates.',
+                'q': 'What is the difference between a Kubernetes Pod and a Deployment?',
+            },
+            {
+                'a': 'CI (Continuous Integration) is the practice of automating code integration from multiple developers into a shared repository, running automated tests. CD (Continuous Delivery/Deployment) is the practice of automating the deployment of that code to staging or production environments.',
+                'q': 'What is CI/CD and why is it used?',
+            },
+            {
+                'a': 'IaC is the practice of managing and provisioning computing infrastructure (networks, VMs, load balancers) through machine-readable configuration files (like Terraform or Ansible), enabling automation and version control.',
+                'q': 'What is Infrastructure as Code (IaC)?',
+            },
+            {
+                'a': 'Ansible is a configuration management tool used to automate server setups and package installations. Jenkins is a build automation tool used to orchestrate CI/CD pipelines.',
+                'q': 'How does Ansible differ from Jenkins?',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Core Syntax & Pacing", "duration": "3 Weeks", "skills": "Variables, types, control flow loops, functions, lists, dicts", "project": "CLI Text Adventure Game"},
-            {"phase": "Phase 2", "title": "Object-Oriented Programming & File I/O", "duration": "3 Weeks", "skills": "Classes, encapsulation, inheritance, reading/writing files, exceptions", "project": "Student Record OOP System"},
-            {"phase": "Phase 3", "title": "Database Connection & Script Automation", "duration": "2 Weeks", "skills": "SQL integration, Web Scraping with BeautifulSoup, API fetching, scripting", "project": "Live Price Tracker Automation Script"}
+        'roadmap_faqs': [
+            {
+                'a': 'DevOps roles start between ₹4.5 LPA and ₹7 LPA, driven by high demand for pipeline automation skills.',
+                'q': 'What is the average starting salary for a DevOps Associate in Pune?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "What is the starting salary for a Python script developer in Pune?", "a": "Entry roles start between ₹3 LPA and ₹4.5 LPA, often in automation, testing, or operations groups."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 1',
+                'project': 'Server Cleanup Automation Script',
+                'skills': 'Linux shell scripting, folder permissions, Git branches, PR review policies',
+                'title': 'Linux Operations & Git Workflows',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Containerized Web App Stack',
+                'skills': 'Writing Dockerfiles, multi-container compose setups, volumes, network routing',
+                'title': 'Containerization with Docker',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 3',
+                'project': 'Ansible Server Setup Automation',
+                'skills': 'Kubernetes pods, services, deployments, writing Ansible playbooks',
+                'title': 'Orchestration & Configuration Management',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 4',
+                'project': 'CI/CD Pipeline Automation Project',
+                'skills': 'Jenkins setups, GitHub Actions pipelines, automated test runs, staging deployment',
+                'title': 'CI/CD Pipelines & Cloud Staging',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'Yes. We cover Kubernetes pods, services, deployments, replica sets, and basic cluster configurations in our dedicated module.',
+                'q': 'Do we cover Kubernetes in detail?',
+            },
+        ],
+        'syllabus_prerequisites': 'Basic understanding of Linux command-line operations and Git concepts.',
+        'syllabus_projects': [
+            'Project 1: Writing Dockerfiles to containerize a web application.',
+            'Project 2: Configuring a Jenkins CI/CD pipeline for automated test builds.',
+            'Project 3: Deploying a multi-container app cluster using Kubernetes.',
+            'Project 4: Automated server deployment using Ansible playbook.',
+        ],
+        'syllabus_tools': [
+            'Docker',
+            'Kubernetes',
+            'Jenkins',
+            'Ansible',
+            'Linux (Ubuntu)',
+            'Git & GitHub',
+        ],
     },
-    "power-bi-training": {
-        "syllabus_prerequisites": "Basic understanding of spreadsheets (like Excel) and data reports. No prior coding is required.",
-        "syllabus_projects": [
-            "Project 1: Sales Analysis dashboard connecting Excel feeds.",
-            "Project 2: HR Operations report with complex table relationships.",
-            "Project 3: Executive Financial dashboard with DAX Measures.",
-            "Project 4: Real-world database reporting pipeline."
-        ],
-        "syllabus_tools": ["Power BI Desktop", "Power Query ETL", "SQL Server Express", "Power BI Service"],
-        "syllabus_faqs": [
-            {"q": "What is DAX?", "a": "DAX (Data Analysis Expressions) is the formula language used in Power BI to create custom measures and calculations."}
-        ],
-        "fees_structure": "The Power BI Training tuition is ₹7,999 (all-inclusive). We offer a 5% discount (₹7,599 final fee) for one-time upfront payments.",
-        "fees_comparison": {
-            "typical_pune_fees": "₹15,000 - ₹25,000",
-            "pune_batch_size": "35+ students in crowded batches",
-            "cacts_value": "1-to-1 virtual screenshare support with a BI consultant to build custom dashboards, at a fraction of typical coaching rates."
+    'full-stack-training': {
+        'fees_comparison': {
+            'cacts_value': '1-to-1 private virtual trainer, no crowded batches, and live staging deploy checks at nearly 40% of standard institute pricing.',
+            'pune_batch_size': '35 to 50 students',
+            'typical_pune_fees': '₹40,000 - ₹55,000',
         },
-        "fees_faqs": [
-            {"q": "Is there a certificate provided?", "a": "Yes, you get a verified Course Completion Certificate detailing your dashboard projects."}
+        'fees_faqs': [
+            {
+                'a': 'We offer a 100% refund after your first demo class if you choose not to proceed. Once formal training modules begin, fees are non-refundable but can be paused and resumed anytime.',
+                'q': 'Is there a refund policy if I discontinue the training?',
+            },
+            {
+                'a': 'Yes, we accept UPI, Google Pay, NetBanking, and credit card payments.',
+                'q': 'Do you accept credit cards and monthly UPI?',
+            },
         ],
-        "interview_questions": [
-            {"q": "Explain the difference between calculated columns and measures in Power BI.", "a": "Calculated columns are computed row-by-row during data load, stored in the model, and consume memory. Measures are calculated dynamically on the fly during query evaluation based on the report filters, saving memory but using CPU resources."},
-            {"q": "What is Power Query and what language does it use?", "a": "Power Query is the data transformation engine in Power BI used for ETL. It uses the 'M' language to write query transformation steps."},
-            {"q": "Explain the difference between Star Schema and Snowflake Schema.", "a": "A Star Schema has a central fact table directly connected to denormalized dimension tables. A Snowflake Schema has normalized dimension tables, splitting them into sub-tables, which reduces redundancy but requires more complex joins."},
-            {"q": "What is the CALCULATE function in DAX?", "a": "CALCULATE is the most powerful function in DAX. It evaluates an expression in a modified filter context, allowing you to override or add specific filters to the calculation."},
-            {"q": "What is the purpose of the Active and Inactive relationships?", "a": "Power BI allows only one active relationship between two tables at a time. If there are multiple relationships (e.g., Order Date and Ship Date), one is marked active (default), and the others are inactive, which can be activated in DAX using `USERELATIONSHIP`."}
+        'fees_structure': 'The Full Stack (MERN) Development Training tuition is ₹17,999 (all-inclusive). You can pay in 2 installments of ₹9,000. Upfront full payment offers a 5% discount (₹17,099 final fee).',
+        'interview_faqs': [
+            {
+                'a': 'We provide mock interviews, technical review sheets, resume alignment, and a review of your GitHub project repositories to make sure your code stands out.',
+                'q': 'What kind of interview preparation is provided?',
+            },
+            {
+                'a': 'We share your verified project portfolio links directly with local hiring partners and recruiters in Pune tech zones.',
+                'q': 'How many recruiters contact CACTS students?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "Do we practice dashboard design scenarios?", "a": "Yes. We review dashboard layouts, color schemas, and filter contexts to ensure you design reports that executives can read easily."}
+        'interview_questions': [
+            {
+                'a': 'Node.js runs on a single thread. The Event Loop delegates asynchronous tasks (like disk reads or database queries) to the system kernel or thread pool. When completed, callbacks are queued and executed sequentially in phases (timers, pending callbacks, poll, check, close callbacks).',
+                'q': 'Explain Event Loop in Node.js.',
+            },
+            {
+                'a': "The Real DOM updates elements directly, causing expensive repaints. React's Virtual DOM is a lightweight memory representation. When state changes, React updates the Virtual DOM, performs 'diffing' to compare it with the previous state, and updates only the changed nodes in the Real DOM (reconciliation).",
+                'q': 'What is the difference between Virtual DOM and Real DOM in React?',
+            },
+            {
+                'a': 'MongoDB stores data in flexible BSON (Binary JSON) documents. Unlike relational rows, documents can contain nested sub-documents or arrays, allowing hierarchical data mapping without rigid schema constraints or complex joins.',
+                'q': 'How does MongoDB store data and what is a NoSQL document?',
+            },
+            {
+                'a': "CORS (Cross-Origin Resource Sharing) prevents clients from accessing APIs hosted on different domains. To resolve this, you must configure the CORS middleware in Express to explicitly allow incoming headers from your frontend domain (e.g. app.use(cors({ origin: 'http://localhost:3000' }))).",
+                'q': 'What is CORS error and how do you resolve it in Express?',
+            },
+            {
+                'a': 'State is internal mutable data managed within the component itself. Props are immutable read-only parameters passed down from a parent component.',
+                'q': 'What is the difference between state and props in React?',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Data Extraction & Power Query", "duration": "2 Weeks", "skills": "Connecting data sources, Power Query transformations, cleaning rows, merging tables", "project": "Cleaned Dataset Audit"},
-            {"phase": "Phase 2", "title": "Data Modeling & DAX Formulas", "duration": "2 Weeks", "skills": "Table relationships, active vs inactive joins, writing DAX measures and columns", "project": "Fully Modeled Financial Report"},
-            {"phase": "Phase 3", "title": "Visualization & Staging Deploy", "duration": "2 Weeks", "skills": "Selecting charts, filters, slicers, drill-downs, publishing to Power BI Service", "project": "Live Executive Sales Dashboard"}
+        'roadmap_faqs': [
+            {
+                'a': "Yes. Our individual 1-to-1 pacing means you don't get left behind. We make sure you write and understand every line of code before moving to backend modules.",
+                'q': 'Can a career switcher learn Web Development in 14 weeks?',
+            },
+            {
+                'a': 'You can apply for Junior Frontend Developer, MERN Stack Developer, JavaScript Engineer, or Associate Software Engineer positions.',
+                'q': 'What junior roles can I apply for after completing MERN Stack?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "What is the starting salary for a Power BI Analyst in Pune?", "a": "Entry analyst roles range from ₹3.5 LPA to ₹5 LPA, with high demand across consultancy and IT firms."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 1',
+                'project': 'Responsive Corporate Web Portal',
+                'skills': 'HTML5, CSS3 Grid, Flexbox, Vanilla JS, DOM, Fetch APIs',
+                'title': 'Semantic Frontend Layouts',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Dynamic Product Catalog App',
+                'skills': 'React Components, State hooks, Props, Router, Axios APIs',
+                'title': 'React.js Component Architecture',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 3',
+                'project': 'REST API Booking Engine',
+                'skills': 'Node loops, Express Routing, middleware, REST response JSON',
+                'title': 'Node.js & Express API Engine',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 4',
+                'project': 'Deploying Full MERN Web app on Internship',
+                'skills': 'MongoDB Atlas, Mongoose validation, JWT security, Git commits',
+                'title': 'NoSQL Database & Production Deploy',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'MERN is highly popular for startup roles in Pune due to JavaScript continuity (same language on frontend and backend). It is excellent for rapid prototyping and modern reactive UI engineering.',
+                'q': 'Is the MERN stack better than PHP or Java for freshers?',
+            },
+            {
+                'a': 'Yes, we cover TypeScript integration with React.js in the final front-end module.',
+                'q': 'Do we cover TypeScript in the syllabus?',
+            },
+        ],
+        'syllabus_prerequisites': 'No programming knowledge is required. You should know basic web browsing and have a passion for building websites.',
+        'syllabus_projects': [
+            'Project 1: Responsive Restaurant Landing page using HTML5 Grid & Flexbox.',
+            'Project 2: JavaScript Dynamic Task Manager using Web Storage & Fetch APIs.',
+            'Project 3: Collaborative Chat App using Express, Node.js and MongoDB models.',
+            'Project 4: Complete MERN Dashboard deployed on Netlify / Render pipelines.',
+        ],
+        'syllabus_tools': [
+            'VS Code',
+            'Node Package Manager',
+            'Postman',
+            'MongoDB Atlas',
+            'Git & GitHub',
+            'Netlify / Render',
+        ],
     },
-    "cloud-training": {
-        "syllabus_prerequisites": "Basic understanding of networking concepts (IP addresses, DNS). No prior cloud experience is required.",
-        "syllabus_projects": [
-            "Project 1: Hosting a static portfolio website using AWS S3 & CloudFront.",
-            "Project 2: Launching a secure multi-tier web application using EC2 & RDS.",
-            "Project 3: Designing a highly available, load-balanced system with Auto Scaling.",
-            "Project 4: Real company project cloud sandbox deployment."
-        ],
-        "syllabus_tools": ["AWS Management Console", "AWS CLI", "Visual Studio Code", "Git"],
-        "syllabus_faqs": [
-            {"q": "Which cloud provider do we focus on?", "a": "We focus on Amazon Web Services (AWS), which holds the largest market share, and cover core architectural concepts of Microsoft Azure."}
-        ],
-        "fees_structure": "The Cloud Training fee is ₹14,999 (all-inclusive). Payment can be split into 2 installments of ₹7,500. Upfront full payment offers a 5% discount (₹14,249 final fee).",
-        "fees_comparison": {
-            "typical_pune_fees": "₹35,000 - ₹50,000",
-            "pune_batch_size": "40+ students in large batches",
-            "cacts_value": "Private 1-to-1 virtual sandbox guidance with a cloud engineer at less than half of typical institute rates."
+    'java-fullstack-training': {
+        'fees_comparison': {
+            'cacts_value': 'Strictly individual 1-to-1 virtual coaching, screensharing, and direct developer code reviews at less than half the market rate.',
+            'pune_batch_size': '30 to 50 students',
+            'typical_pune_fees': '₹45,000 - ₹60,000',
         },
-        "fees_faqs": [
-            {"q": "Do I have to pay for AWS resources during practice?", "a": "No. We guide you to set up your account under the AWS Free Tier, teaching you how to configure alerts so you don't exceed free usage limits."}
+        'fees_faqs': [
+            {
+                'a': 'No, the ₹19,999 fee is all-inclusive. It covers all 1-to-1 mentorship, live project staging environments, and career training support.',
+                'q': 'Are there any hidden lab or exam fees at CACTS?',
+            },
+            {
+                'a': 'Since it is individual training, there are no missed classes. We simply reschedule the session to your next available slot without any penalty.',
+                'q': 'What happens if I miss a scheduled 1-to-1 session?',
+            },
         ],
-        "interview_questions": [
-            {"q": "Explain the difference between a Public Subnet and a Private Subnet in AWS VPC.", "a": "A Public Subnet has a route to an Internet Gateway, allowing resources inside (like web servers) to receive public traffic. A Private Subnet does not have a direct route to the Internet Gateway. To access the internet (e.g. for updates), resources in a private subnet must route traffic through a NAT Gateway located in a public subnet."},
-            {"q": "What is AWS IAM and how do you implement the principle of least privilege?", "a": "IAM (Identity and Access Management) manages access to AWS resources. To implement least privilege, you avoid using root credentials, create specific IAM users, group them by role, and attach policies that grant only the minimum permissions required to perform their specific tasks."},
-            {"q": "Explain the difference between Horizontal Scaling and Vertical Scaling.", "a": "Vertical Scaling (scaling up) means adding more power (CPU, RAM) to an existing server. Horizontal Scaling (scaling out) means adding more servers to your infrastructure resource pool, distributing load using a load balancer (more resilient)."},
-            {"q": "What is AWS S3 and what are its storage classes?", "a": "S3 (Simple Storage Service) is an object storage service. Storage classes include S3 Standard (frequent access), S3 Standard-IA (infrequent access), S3 One Zone-IA (low-cost infrequent access), and S3 Glacier (archival storage with varying retrieval times)."},
-            {"q": "What is an Elastic Load Balancer (ELB)?", "a": "ELB automatically distributes incoming application traffic across multiple targets, such as EC2 instances, containers, and IP addresses, ensuring high availability and fault tolerance."}
+        'fees_structure': 'The Java Fullstack Training fee is ₹19,999 (all-inclusive). You can split this into 2 equal monthly installments of ₹10,000. We offer a 5% discount (₹18,999 final fee) for one-time upfront payments.',
+        'interview_faqs': [
+            {
+                'a': 'Yes. You get 3 dedicated 1-to-1 mock interview sessions with active corporate developers to review your coding logic, resume project highlights, and communications.',
+                'q': 'Do you conduct mock interviews during this training?',
+            },
+            {
+                'a': 'Yes. We help you draft a resume that highlights your real Git commits, spring boot APIs, and internship project details rather than dry copy-pasted bullet points.',
+                'q': 'Will I get help building my technical resume?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "What AWS certification should I target?", "a": "This course aligns with the AWS Certified Solutions Architect - Associate curriculum guidelines."}
+        'interview_questions': [
+            {
+                'a': 'HashMap is not thread-safe and can cause infinite loops during rehashing under multi-threaded operations. ConcurrentHashMap is thread-safe, utilizing lock striping or bucket-level locking, which allows concurrent reads and safe writes without blocking the entire table.',
+                'q': 'What is the difference between HashMap and ConcurrentHashMap in Java?',
+            },
+            {
+                'a': 'Spring Boot uses an Inversion of Control (IoC) container. Beans are scanned via @ComponentScan and registered. Dependencies are resolved using constructor injection, setter injection, or field injection marked with @Autowired at startup.',
+                'q': 'How does Spring Boot resolve dependency injection?',
+            },
+            {
+                'a': 'useEffect runs after the component renders. If the dependency array is empty, it runs once. If it has dependencies, it runs whenever those values change. The return function acts as a cleanup phase, running before the component unmounts or before the effect runs again.',
+                'q': 'Explain the life cycle of a React hook like useEffect.',
+            },
+            {
+                'a': 'Lazy loading fetches child entities from the database only when accessed. If the Hibernate session is closed, accessing them throws LazyInitializationException. To resolve this, you can use eager fetching, execute JOIN FETCH queries, or keep the session open during the rendering lifecycle.',
+                'q': 'What is Hibernate Lazy Loading and how do you prevent LazyInitializationException?',
+            },
+            {
+                'a': 'Common codes include 200 OK (successful request), 201 Created (resource successfully generated), 400 Bad Request (invalid payload parameters), 401 Unauthorized (invalid JWT tokens), 404 Not Found (resource missing), and 500 Internal Server Error.',
+                'q': 'What are the common HTTP response codes used in Spring Boot REST controllers?',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Cloud Fundamentals & Virtual Networks", "duration": "3 Weeks", "skills": "VPC design, public/private subnets, security groups, route tables, internet gateways", "project": "Secure Custom Virtual Network Design"},
-            {"phase": "Phase 2", "title": "Compute & Object Storage Operations", "duration": "3 Weeks", "skills": "EC2 provisioning, storage volumes, S3 buckets, policies, load balancers, auto-scaling", "project": "Highly Available Web Infrastructure"},
-            {"phase": "Phase 3", "title": "Cloud Databases, Identity & Monitoring", "duration": "4 Weeks", "skills": "RDS database setup, IAM policies, MFA keys, CloudWatch logs, staging deployment", "project": "Deployed Multi-Tier Web app on Internship"}
+        'roadmap_faqs': [
+            {
+                'a': 'As of 2026, entry-level salaries in Pune for full-stack developers range from ₹3.6 LPA to ₹5.5 LPA. Candidates with active company internship code commits can negotiate higher packages.',
+                'q': 'What is the average starting salary for a Java Fullstack developer in Pune?',
+            },
+            {
+                'a': 'On average, it takes 16 weeks of dedicated 1-to-1 training and active coding (12-15 hours/week) to build production-ready projects and master interview topics.',
+                'q': 'How long does it take to get job-ready in Java Fullstack?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "What is the average starting salary for an AWS Associate in Pune?", "a": "Starting salaries range from ₹4 LPA to ₹6 LPA in infrastructure operations and system analyst tracks."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 1',
+                'project': 'CLI Database Simulation app',
+                'skills': 'Core Java, JVM memory structure, Generic Collections, File I/O',
+                'title': 'Java Object-Oriented Foundations',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Relational Inventory Tracker backend',
+                'skills': 'MySQL Workbench, SQL Joins, JDBC, Servlets, Hibernate ORM mappings',
+                'title': 'Databases & Web APIs',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 3',
+                'project': 'Secure User Authentication server',
+                'skills': 'Spring DI/IoC, Spring Boot MVC, JPA Repositories, JWT security',
+                'title': 'Spring Boot & RESTful APIs',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 4',
+                'project': 'Deploying Full-Stack app on Live Internship',
+                'skills': 'React hooks, state routers, Axios calls, Git merge branches, Staging deploy',
+                'title': 'React UI Integration & Live Deployment',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'Yes. Since our training is strictly 1-to-1, your mentor can customize the final module projects to match your engineering graduation project requirements.',
+                'q': 'Can I customize the Java syllabus based on my college project?',
+            },
+            {
+                'a': 'We teach Java 17/21 LTS versions, focusing on modern language features like Record types, pattern matching, and virtual threads.',
+                'q': 'Do you cover Java 21 or Java 17?',
+            },
+        ],
+        'syllabus_prerequisites': 'Basic logical thinking and computer operations. No prior programming background is required, as we start from absolute variables and loops.',
+        'syllabus_projects': [
+            'Project 1: Custom Library Management CLI app using Collections & JVM files.',
+            'Project 2: Multi-threaded Banking Transaction Simulator with JDBC connection pool.',
+            'Project 3: E-Commerce REST API Engine incorporating Spring Security & JWT keys.',
+            'Project 4: Collaborative Live Internship Platform deployed with React Axios integration.',
+        ],
+        'syllabus_tools': [
+            'IntelliJ IDEA',
+            'Apache Maven',
+            'MySQL Workbench',
+            'Postman API client',
+            'Git & GitHub',
+            'Docker Containers',
+        ],
     },
-    "devops-training": {
-        "syllabus_prerequisites": "Basic understanding of Linux command-line operations and Git concepts.",
-        "syllabus_projects": [
-            "Project 1: Writing Dockerfiles to containerize a web application.",
-            "Project 2: Configuring a Jenkins CI/CD pipeline for automated test builds.",
-            "Project 3: Deploying a multi-container app cluster using Kubernetes.",
-            "Project 4: Automated server deployment using Ansible playbook."
-        ],
-        "syllabus_tools": ["Docker", "Kubernetes", "Jenkins", "Ansible", "Linux (Ubuntu)", "Git & GitHub"],
-        "syllabus_faqs": [
-            {"q": "Do we cover Kubernetes in detail?", "a": "Yes. We cover Kubernetes pods, services, deployments, replica sets, and basic cluster configurations in our dedicated module."}
-        ],
-        "fees_structure": "The DevOps Training fee is ₹14,999 (all-inclusive). Payment can be split into 2 installments of ₹7,500. Upfront full payment offers a 5% discount (₹14,249 final fee).",
-        "fees_comparison": {
-            "typical_pune_fees": "₹40,000 - ₹55,000",
-            "pune_batch_size": "35 to 50 students in large batches",
-            "cacts_value": "Private 1-to-1 virtual labs, building real automation pipelines with direct mentor feedback, at nearly a third of market pricing."
+    'power-bi-training': {
+        'fees_comparison': {
+            'cacts_value': '1-to-1 virtual screenshare support with a BI consultant to build custom dashboards, at a fraction of typical coaching rates.',
+            'pune_batch_size': '35+ students in crowded batches',
+            'typical_pune_fees': '₹15,000 - ₹25,000',
         },
-        "fees_faqs": [
-            {"q": "Are staging lab fees included?", "a": "Yes, we guide you to set up free tier staging environments so there are no extra operational costs."}
+        'fees_faqs': [
+            {
+                'a': 'Yes, you get a verified Course Completion Certificate detailing your dashboard projects.',
+                'q': 'Is there a certificate provided?',
+            },
         ],
-        "interview_questions": [
-            {"q": "Explain the difference between a Docker Image and a Docker Container.", "a": "A Docker Image is a read-only, static template containing instructions for creating a container (built from a Dockerfile). A Docker Container is a runnable, isolated runtime instance of an image (created using `docker run`)."},
-            {"q": "What is the difference between a Kubernetes Pod and a Deployment?", "a": "A Pod is the smallest deployable unit in Kubernetes, representing a single running container instance. A Deployment is a higher-level controller that manages the lifecycle of Pods, enabling declarative updates, scaling, and rolling updates."},
-            {"q": "What is CI/CD and why is it used?", "a": "CI (Continuous Integration) is the practice of automating code integration from multiple developers into a shared repository, running automated tests. CD (Continuous Delivery/Deployment) is the practice of automating the deployment of that code to staging or production environments."},
-            {"q": "What is Infrastructure as Code (IaC)?", "a": "IaC is the practice of managing and provisioning computing infrastructure (networks, VMs, load balancers) through machine-readable configuration files (like Terraform or Ansible), enabling automation and version control."},
-            {"q": "How does Ansible differ from Jenkins?", "a": "Ansible is a configuration management tool used to automate server setups and package installations. Jenkins is a build automation tool used to orchestrate CI/CD pipelines."}
+        'fees_structure': 'The Power BI Training tuition is ₹7,999 (all-inclusive). We offer a 5% discount (₹7,599 final fee) for one-time upfront payments.',
+        'interview_faqs': [
+            {
+                'a': 'Yes. We review dashboard layouts, color schemas, and filter contexts to ensure you design reports that executives can read easily.',
+                'q': 'Do we practice dashboard design scenarios?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "What DevOps rounds are common in Pune?", "a": "Expect hands-on scripting, writing Dockerfiles, and detailing CI/CD pipeline automation workflows."}
+        'interview_questions': [
+            {
+                'a': 'Calculated columns are computed row-by-row during data load, stored in the model, and consume memory. Measures are calculated dynamically on the fly during query evaluation based on the report filters, saving memory but using CPU resources.',
+                'q': 'Explain the difference between calculated columns and measures in Power BI.',
+            },
+            {
+                'a': "Power Query is the data transformation engine in Power BI used for ETL. It uses the 'M' language to write query transformation steps.",
+                'q': 'What is Power Query and what language does it use?',
+            },
+            {
+                'a': 'A Star Schema has a central fact table directly connected to denormalized dimension tables. A Snowflake Schema has normalized dimension tables, splitting them into sub-tables, which reduces redundancy but requires more complex joins.',
+                'q': 'Explain the difference between Star Schema and Snowflake Schema.',
+            },
+            {
+                'a': 'CALCULATE is the most powerful function in DAX. It evaluates an expression in a modified filter context, allowing you to override or add specific filters to the calculation.',
+                'q': 'What is the CALCULATE function in DAX?',
+            },
+            {
+                'a': 'Power BI allows only one active relationship between two tables at a time. If there are multiple relationships (e.g., Order Date and Ship Date), one is marked active (default), and the others are inactive, which can be activated in DAX using `USERELATIONSHIP`.',
+                'q': 'What is the purpose of the Active and Inactive relationships?',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Linux Operations & Git Workflows", "duration": "3 Weeks", "skills": "Linux shell scripting, folder permissions, Git branches, PR review policies", "project": "Server Cleanup Automation Script"},
-            {"phase": "Phase 2", "title": "Containerization with Docker", "duration": "3 Weeks", "skills": "Writing Dockerfiles, multi-container compose setups, volumes, network routing", "project": "Containerized Web App Stack"},
-            {"phase": "Phase 3", "title": "Orchestration & Configuration Management", "duration": "3 Weeks", "skills": "Kubernetes pods, services, deployments, writing Ansible playbooks", "project": "Ansible Server Setup Automation"},
-            {"phase": "Phase 4", "title": "CI/CD Pipelines & Cloud Staging", "duration": "3 Weeks", "skills": "Jenkins setups, GitHub Actions pipelines, automated test runs, staging deployment", "project": "CI/CD Pipeline Automation Project"}
+        'roadmap_faqs': [
+            {
+                'a': 'Entry analyst roles range from ₹3.5 LPA to ₹5 LPA, with high demand across consultancy and IT firms.',
+                'q': 'What is the starting salary for a Power BI Analyst in Pune?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "What is the average starting salary for a DevOps Associate in Pune?", "a": "DevOps roles start between ₹4.5 LPA and ₹7 LPA, driven by high demand for pipeline automation skills."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 1',
+                'project': 'Cleaned Dataset Audit',
+                'skills': 'Connecting data sources, Power Query transformations, cleaning rows, merging tables',
+                'title': 'Data Extraction & Power Query',
+            },
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Fully Modeled Financial Report',
+                'skills': 'Table relationships, active vs inactive joins, writing DAX measures and columns',
+                'title': 'Data Modeling & DAX Formulas',
+            },
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 3',
+                'project': 'Live Executive Sales Dashboard',
+                'skills': 'Selecting charts, filters, slicers, drill-downs, publishing to Power BI Service',
+                'title': 'Visualization & Staging Deploy',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'DAX (Data Analysis Expressions) is the formula language used in Power BI to create custom measures and calculations.',
+                'q': 'What is DAX?',
+            },
+        ],
+        'syllabus_prerequisites': 'Basic understanding of spreadsheets (like Excel) and data reports. No prior coding is required.',
+        'syllabus_projects': [
+            'Project 1: Sales Analysis dashboard connecting Excel feeds.',
+            'Project 2: HR Operations report with complex table relationships.',
+            'Project 3: Executive Financial dashboard with DAX Measures.',
+            'Project 4: Real-world database reporting pipeline.',
+        ],
+        'syllabus_tools': [
+            'Power BI Desktop',
+            'Power Query ETL',
+            'SQL Server Express',
+            'Power BI Service',
+        ],
     },
-    "software-testing-training": {
-        "syllabus_prerequisites": "Basic logical thinking. No prior programming background is required.",
-        "syllabus_projects": [
-            "Project 1: Detailed Test Plan and Bug Report using Jira templates.",
-            "Project 2: Writing OOP Java test scripts for Selenium WebDriver.",
-            "Project 3: Designing a Page Object Model (POM) testing framework.",
-            "Project 4: Automated API test suite in Postman."
-        ],
-        "syllabus_tools": ["Selenium WebDriver", "Jira", "Eclipse / IntelliJ", "Postman API", "TestNG / JUnit", "Git"],
-        "syllabus_faqs": [
-            {"q": "Do we cover both manual and automation testing?", "a": "Yes. We cover manual testing processes, test case design, and Jira bug tracking, then transition into writing Selenium automation scripts in Java."}
-        ],
-        "fees_structure": "The Software Testing Training tuition is ₹9,999 (all-inclusive). We offer a 5% discount (₹9,499 final fee) for one-time upfront payments.",
-        "fees_comparison": {
-            "typical_pune_fees": "₹20,000 - ₹35,000",
-            "pune_batch_size": "40+ students in large batches",
-            "cacts_value": "1-to-1 virtual screenshare sessions to write and debug test scripts directly with a developer, at nearly half the market price."
+    'python-training': {
+        'fees_comparison': {
+            'cacts_value': 'Private 1-on-1 coaching where the developer writes code with you on screen, at less than half of standard classroom prices.',
+            'pune_batch_size': '40+ students in large batches',
+            'typical_pune_fees': '₹20,000 - ₹30,000',
         },
-        "fees_faqs": [
-            {"q": "Do I need to pay for Jira or test tools?", "a": "No. We use free open-source testing tools (Selenium, Java, Postman) and show you how to use Jira's free trial accounts."}
+        'fees_faqs': [
+            {
+                'a': 'Yes. You can upgrade your training path to Data Science or AI/ML by paying the pro-rata fee difference.',
+                'q': 'Can I upgrade to Data Science later?',
+            },
         ],
-        "interview_questions": [
-            {"q": "What is the difference between Verification and Validation in Software Testing?", "a": "Verification is the process of evaluating documentation, plans, and code structure (static testing, 'Are we building the product right?'). Validation is the process of executing the actual software to ensure it meets requirements (dynamic testing, 'Are we building the right product?')."},
-            {"q": "What is the Page Object Model (POM) in Selenium?", "a": "POM is a design pattern where each web page is represented as a Class file. Page elements are defined as variables, and interactions are defined as methods in the class. This makes test scripts highly reusable and easy to maintain."},
-            {"q": "Explain the difference between Implicit Wait and Explicit Wait in Selenium.", "a": "Implicit Wait sets a global timeout for the WebDriver to wait for all elements to load before throwing NoSuchElementException. Explicit Wait sets a specific wait condition (e.g. elementToBeClickable) for a particular element, resuming execution as soon as the condition is met, saving execution time."},
-            {"q": "What is a bug lifecycle?", "a": "A bug lifecycle is the sequence of states a defect goes through: New (detected), Assigned (to developer), Open (under review), Fixed (code updated), Pending Retest (waiting for QA), Retesting, Verified (approved), and Closed (archived)."},
-            {"q": "How do you perform API testing using Postman?", "a": "We send HTTP requests (GET, POST, PUT, DELETE) to endpoint URLs, pass headers/payloads, execute the request, and validate response status codes, headers, and JSON body payloads using Postman assertions."}
+        'fees_structure': 'The Python Training tuition is ₹9,999 (all-inclusive). Payment can be split into 2 installments of ₹5,000. Upfront full payment grants a 5% discount (₹9,499 final fee).',
+        'interview_faqs': [
+            {
+                'a': 'We solve 30+ logical coding problems (arrays, string manipulation, sorting) to ensure you can clear entry-level screening rounds.',
+                'q': 'What kind of coding challenges do we solve?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "What coding questions are asked in QA interviews?", "a": "Expect basic Java coding questions (string reversals, array searches) and locator writing challenges (XPath, CSS selectors)."}
+        'interview_questions': [
+            {
+                'a': 'Lists are mutable (can be modified after creation) and use square brackets `[]`. Tuples are immutable (cannot be modified) and use parentheses `()`. Tuples are faster and safer for read-only data structures.',
+                'q': 'What is the difference between list and tuple in Python?',
+            },
+            {
+                'a': 'Python uses a private heap to store objects. Memory management is handled by the Python Memory Manager and an automatic Garbage Collector that uses reference counting to deallocate memory when references to an object hit zero.',
+                'q': 'How does memory management work in Python?',
+            },
+            {
+                'a': 'A decorator is a design pattern in Python that allows you to modify the behavior of a function or class. It takes a function as an argument, extends its functionality without modifying the original code, and returns the modified function.',
+                'q': 'Explain the concept of decorators in Python.',
+            },
+            {
+                'a': 'A shallow copy constructs a new compound object and inserts references to the original nested objects. A deep copy recursively constructs a new object and inserts copies of the nested objects, making it completely independent.',
+                'q': 'What is the difference between deep copy and shallow copy?',
+            },
+            {
+                'a': 'Exceptions are handled using `try`, `except`, `else`, and `finally` blocks. Code that might raise an error is placed in `try`. The error is caught in `except`. If no error occurs, `else` runs. `finally` runs regardless, usually for cleanup (like closing files).',
+                'q': 'Explain exceptions handling blocks in Python.',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Manual QA & Defect Tracking", "duration": "3 Weeks", "skills": "SDLC, STLC, writing test plans, scenarios, logging defects in Jira templates", "project": "Manual Test Suite Execution"},
-            {"phase": "Phase 2", "title": "Java Programming for Automation", "duration": "3 Weeks", "skills": "Java syntax, OOP classes, TestNG testing framework annotations", "project": "Core Java Logical Code Set"},
-            {"phase": "Phase 3", "title": "Selenium Automation Frameworks", "duration": "2 Weeks", "skills": "Selenium locators, handling alerts, waits, designing Page Object Models", "project": "E-Commerce Page Object Framework"},
-            {"phase": "Phase 4", "title": "API Testing & Database QA", "duration": "2 Weeks", "skills": "Postman API requests, validating JSON payloads, SQL verification queries", "project": "API Test Suite Staging"}
+        'roadmap_faqs': [
+            {
+                'a': 'Entry roles start between ₹3 LPA and ₹4.5 LPA, often in automation, testing, or operations groups.',
+                'q': 'What is the starting salary for a Python script developer in Pune?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "What is the starting salary for a QA Engineer in Pune?", "a": "Starting salaries in Pune range from ₹3 LPA to ₹4.5 LPA, with automation roles fetching higher rates than manual testing."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 1',
+                'project': 'CLI Text Adventure Game',
+                'skills': 'Variables, types, control flow loops, functions, lists, dicts',
+                'title': 'Core Syntax & Pacing',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Student Record OOP System',
+                'skills': 'Classes, encapsulation, inheritance, reading/writing files, exceptions',
+                'title': 'Object-Oriented Programming & File I/O',
+            },
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 3',
+                'project': 'Live Price Tracker Automation Script',
+                'skills': 'SQL integration, Web Scraping with BeautifulSoup, API fetching, scripting',
+                'title': 'Database Connection & Script Automation',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'Core Python is excellent for automation, scripting, and QA roles. For core developer roles, we recommend upgrading to Django/Flask or transitioning to Data Science/ML pipelines.',
+                'q': 'Is Python sufficient to get a job?',
+            },
+            {
+                'a': 'Yes. We focus heavily on OOP concepts (Classes, Inheritance, Polymorphism, Encapsulation) since they are the foundations of all enterprise software.',
+                'q': 'Do you teach Object-Oriented Programming (OOP) in detail?',
+            },
+        ],
+        'syllabus_prerequisites': 'No programming background is required. Absolute beginners are welcome.',
+        'syllabus_projects': [
+            'Project 1: Text-based RPG Game using Python control flow & lists.',
+            'Project 2: Employee Database System using OOP classes and JSON files.',
+            'Project 3: Custom Web Scraper extracting live data using BeautifulSoup.',
+            'Project 4: Automated Desktop Task Script deployed locally.',
+        ],
+        'syllabus_tools': [
+            'Python IDE (IDLE/VS Code)',
+            'pip manager',
+            'Git & GitHub',
+            'MySQL Workbench',
+        ],
     },
-    "cybersecurity-training": {
-        "syllabus_prerequisites": "Basic computer operation and networking concepts (ports, IP addresses). No prior security background is required.",
-        "syllabus_projects": [
-            "Project 1: Penetration testing audit reports on local sandbox labs.",
-            "Project 2: Configuring firewall rules and security groups in Linux.",
-            "Project 3: Cryptographic hashing and key exchange scripts.",
-            "Project 4: OWASP Web application vulnerability assessment project."
-        ],
-        "syllabus_tools": ["Kali Linux", "Wireshark", "Nmap port scanner", "Metasploit Framework", "Burp Suite"],
-        "syllabus_faqs": [
-            {"q": "Is this an ethical hacking course?", "a": "Yes. We focus on ethical hacking methodologies to identify vulnerabilities, configure defenses, and document patch recommendations."}
-        ],
-        "fees_structure": "The Cybersecurity Training fee is ₹19,999 (all-inclusive). Payment can be split into 2 installments of ₹10,000. Upfront full payment grants a 5% discount (₹18,999 final fee).",
-        "fees_comparison": {
-            "typical_pune_fees": "₹45,000 - ₹65,000",
-            "pune_batch_size": "30 to 45 students in large classes",
-            "cacts_value": "Strictly individual 1-to-1 virtual labs, running scans and exploits directly with a security specialist, at half the market price."
+    'react-js-training': {
+        'fees_comparison': {
+            'cacts_value': '1-to-1 virtual instructor, personalized code reviews, and live frontend commits at half the typical cost.',
+            'pune_batch_size': '25 to 40 students',
+            'typical_pune_fees': '₹30,000 - ₹40,000',
         },
-        "fees_faqs": [
-            {"q": "Do I need high-performance hardware for security labs?", "a": "A standard computer with 8GB RAM and virtualization support (VirtualBox/VMware) is sufficient for lab setups."}
+        'fees_faqs': [
+            {
+                'a': 'No, the fees cover the training, the live project commit reviews, and the completion certificate.',
+                'q': 'Is there any extra charge for internship certificates?',
+            },
+            {
+                'a': 'We accept major UPI handlers, GPay, PhonePe, credit cards, and NetBanking.',
+                'q': 'What payment methods are supported?',
+            },
         ],
-        "interview_questions": [
-            {"q": "What is the difference between Symmetric and Asymmetric encryption?", "a": "Symmetric encryption uses the same key for both encryption and decryption (fast, e.g. AES). Asymmetric encryption uses a public key to encrypt and a private key to decrypt (secure key exchange, e.g. RSA)."},
-            {"q": "Explain the OWASP Top 10 concept.", "a": "OWASP Top 10 is a standard awareness document for web application security, listing the top 10 most critical security risks (such as SQL Injection, Broken Authentication, Cross-Site Scripting, and Security Misconfiguration)."},
-            {"q": "What is a SQL Injection attack and how do you prevent it?", "a": "SQL Injection occurs when malicious SQL statements are inserted into input entry fields, executing unauthorized database commands. It is prevented by using parameterized queries (Prepared Statements), input validation, and ORM libraries."},
-            {"q": "Explain how a man-in-the-middle (MITM) attack works.", "a": "An attacker intercepts communications between two parties (e.g. client and server) without their knowledge, allowing the attacker to read or modify messages before forwarding them (prevented by using HTTPS/TLS)."},
-            {"q": "What is the difference between a Vulnerability Scan and a Penetration Test?", "a": "A Vulnerability Scan is an automated search that identifies known security gaps. A Penetration Test is a manual, authorized simulation of a cyberattack to actively exploit security gaps and verify their impact."}
+        'fees_structure': 'The React JS Training fee is ₹14,999 (all-inclusive). You can pay in 2 monthly installments of ₹7,500. A 5% discount (₹14,249 final fee) is available for upfront payment.',
+        'interview_faqs': [
+            {
+                'a': 'Our mock interviews focus on live coding challenges, custom hook design questions, and explanation of web optimization techniques.',
+                'q': 'How do mock interviews prepare me for frontend rounds?',
+            },
+            {
+                'a': 'Yes. We share vetted practice sheets covering top interview topics and machine coding rounds.',
+                'q': 'Will I get access to common React JS test sheets?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "What rounds are standard for Security Analyst roles?", "a": "Expect questions on networking protocols, Linux configurations, and OWASP web vulnerability remediation."}
+        'interview_questions': [
+            {
+                'a': 'When multiple components need to share the same changing data, you lift the shared state up to their closest common ancestor. The state is then passed down as props, and changes are handled by callbacks.',
+                'q': 'Explain the concept of Lifting State Up in React.',
+            },
+            {
+                'a': 'Redux Toolkit (RTK) is the official recommended way to write Redux logic. It simplifies boilerplate by auto-configuring the store, using Immer for mutable-looking update logic, and generating action creators automatically via createSlice.',
+                'q': 'What is Redux Toolkit and how does it simplify Redux?',
+            },
+            {
+                'a': 'useMemo memoizes the computed value of a heavy function to avoid recalculating it. useCallback memoizes the function instance itself to prevent unnecessary child component re-renders when passed as a prop.',
+                'q': 'What is the difference between useMemo and useCallback?',
+            },
+            {
+                'a': "React Router uses paths with parameters (e.g. '/profile/:id'). Inside the target component, the useParams hook extracts these parameters to fetch or display resource-specific data.",
+                'q': 'How does React router handle dynamic routes?',
+            },
+            {
+                'a': 'Keys help React identify which items have changed, been added, or been removed. They give elements a stable identity, allowing the virtual DOM diffing algorithm to perform efficient UI updates without recreating the list nodes.',
+                'q': 'What are React Keys and why are they necessary in lists?',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Network Security & Linux Basics", "duration": "3 Weeks", "skills": "Linux shell administration, TCP/IP protocols, running Nmap port scans", "project": "Network Infrastructure Security Audit"},
-            {"phase": "Phase 2", "title": "Vulnerability Analysis & Exploitation", "duration": "3 Weeks", "skills": "Running Nessus scans, Metasploit console exploits in sandbox environments", "project": "System Vulnerability Assessment"},
-            {"phase": "Phase 3", "title": "Web Application Security", "duration": "3 Weeks", "skills": "OWASP vulnerabilities, SQL injection, XSS payloads, Burp Suite intercepting", "project": "Web API Security Penetration Report"},
-            {"phase": "Phase 4", "title": "Cryptography & Defenses Operations", "duration": "3 Weeks", "skills": "Encryption models, firewalls setup, log analysis, staging audits", "project": "Infrastructure Security Plan Project"}
+        'roadmap_faqs': [
+            {
+                'a': 'Yes. There is high demand for Junior Frontend React Developers. Combining React with good Git credentials makes you a strong candidate.',
+                'q': 'Can I get a job with just React JS skills in Pune?',
+            },
+            {
+                'a': 'Highlight your deployed dashboard projects, your GitHub commit links, and your state management integrations rather than just listing React as a keyword.',
+                'q': 'How do I show my React skills on my resume?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "What is the starting salary for a Security Analyst in Pune?", "a": "Starting salaries in Pune range from ₹4 LPA to ₹6 LPA, driven by a global focus on digital security audits."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 1',
+                'project': 'Corporate Product Portal',
+                'skills': 'ES6 syntax, TailwindCSS, Flexbox/Grid layouts, Asynchronous JS',
+                'title': 'Modern JavaScript & Responsive Styling',
+            },
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Interactive Kanban Board',
+                'skills': 'Virtual DOM, JSX, Props, useState, useEffect hooks, list render',
+                'title': 'React JS Core Logic & Components',
+            },
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 3',
+                'project': 'E-Commerce User Interface',
+                'skills': 'React Router DOM, Context API, Redux Toolkit, Axios REST client',
+                'title': 'Advanced State & REST API Integrations',
+            },
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 4',
+                'project': 'Analytics Console deployed on Internship',
+                'skills': 'useMemo/useCallback, Git merge cycles, production builds, Vercel deployment',
+                'title': 'Performance Optimization & Live Internship',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'Yes. We cover TypeScript basics and configure React components with TS in Module 3.',
+                'q': 'Can we use TypeScript in this course?',
+            },
+            {
+                'a': 'Yes, we introduce Next.js file-based routing and SSR (Server-Side Rendering) in the advanced section.',
+                'q': 'Do we cover Next.js?',
+            },
+        ],
+        'syllabus_prerequisites': 'Basic understanding of HTML and CSS. No prior JavaScript coding experience is required, as we cover programming basics.',
+        'syllabus_projects': [
+            'Project 1: Responsive Product landing page with TailwindCSS grids.',
+            'Project 2: Interactive Task Planner using dynamic states and storage.',
+            'Project 3: Movie Search UI consuming third-party REST APIs via Axios.',
+            'Project 4: Real-time Analytics Dashboard frontend deployed on Netlify.',
+        ],
+        'syllabus_tools': [
+            'VS Code',
+            'Node Package Manager (npm)',
+            'Vite toolchain',
+            'Tailwind CSS',
+            'Git & GitHub',
+            'Netlify / Vercel',
+        ],
     },
-    "react-js-training": {
-        "syllabus_prerequisites": "Basic understanding of HTML and CSS. No prior JavaScript coding experience is required, as we cover programming basics.",
-        "syllabus_projects": [
-            "Project 1: Responsive Product landing page with TailwindCSS grids.",
-            "Project 2: Interactive Task Planner using dynamic states and storage.",
-            "Project 3: Movie Search UI consuming third-party REST APIs via Axios.",
-            "Project 4: Real-time Analytics Dashboard frontend deployed on Netlify."
-        ],
-        "syllabus_tools": ["VS Code", "Node Package Manager (npm)", "Vite toolchain", "Tailwind CSS", "Git & GitHub", "Netlify / Vercel"],
-        "syllabus_faqs": [
-            {"q": "Can we use TypeScript in this course?", "a": "Yes. We cover TypeScript basics and configure React components with TS in Module 3."},
-            {"q": "Do we cover Next.js?", "a": "Yes, we introduce Next.js file-based routing and SSR (Server-Side Rendering) in the advanced section."}
-        ],
-        "fees_structure": "The React JS Training fee is ₹14,999 (all-inclusive). You can pay in 2 monthly installments of ₹7,500. A 5% discount (₹14,249 final fee) is available for upfront payment.",
-        "fees_comparison": {
-            "typical_pune_fees": "₹30,000 - ₹40,000",
-            "pune_batch_size": "25 to 40 students",
-            "cacts_value": "1-to-1 virtual instructor, personalized code reviews, and live frontend commits at half the typical cost."
+    'react-native-training': {
+        'fees_comparison': {
+            'cacts_value': '1-to-1 virtual private screensharing, complete App Store building/signing guidelines at nearly 45% of standard training rates.',
+            'pune_batch_size': '20 to 35 students',
+            'typical_pune_fees': '₹35,000 - ₹48,000',
         },
-        "fees_faqs": [
-            {"q": "Is there any extra charge for internship certificates?", "a": "No, the fees cover the training, the live project commit reviews, and the completion certificate."},
-            {"q": "What payment methods are supported?", "a": "We accept major UPI handlers, GPay, PhonePe, credit cards, and NetBanking."}
+        'fees_faqs': [
+            {
+                'a': 'Developer licenses (Google Play is $25 one-time, Apple is $99/year) are paid directly to Google/Apple. CACTS provides shared internal staging stores for test submissions at no extra charge.',
+                'q': 'Do I have to pay for a developer account to submit apps?',
+            },
+            {
+                'a': 'Yes, we support card-based no-cost EMI options through our payment gateway partners.',
+                'q': 'Is there any EMI option available?',
+            },
         ],
-        "interview_questions": [
-            {"q": "Explain the concept of Lifting State Up in React.", "a": "When multiple components need to share the same changing data, you lift the shared state up to their closest common ancestor. The state is then passed down as props, and changes are handled by callbacks."},
-            {"q": "What is Redux Toolkit and how does it simplify Redux?", "a": "Redux Toolkit (RTK) is the official recommended way to write Redux logic. It simplifies boilerplate by auto-configuring the store, using Immer for mutable-looking update logic, and generating action creators automatically via createSlice."},
-            {"q": "What is the difference between useMemo and useCallback?", "a": "useMemo memoizes the computed value of a heavy function to avoid recalculating it. useCallback memoizes the function instance itself to prevent unnecessary child component re-renders when passed as a prop."},
-            {"q": "How does React router handle dynamic routes?", "a": "React Router uses paths with parameters (e.g. '/profile/:id'). Inside the target component, the useParams hook extracts these parameters to fetch or display resource-specific data."},
-            {"q": "What are React Keys and why are they necessary in lists?", "a": "Keys help React identify which items have changed, been added, or been removed. They give elements a stable identity, allowing the virtual DOM diffing algorithm to perform efficient UI updates without recreating the list nodes."}
+        'fees_structure': 'The React Native Training fee is ₹16,999 (all-inclusive). You can pay in 2 monthly installments of ₹8,500. Upfront payments get a 5% discount (₹16,149 final fee).',
+        'interview_faqs': [
+            {
+                'a': 'Yes, questions cover mobile UI performance, flatlist optimization, local sync, and build configurations.',
+                'q': 'Are mock interviews geared towards native app design?',
+            },
+            {
+                'a': 'Yes. We show you how to structure your mobile code repositories, document them with preview GIFs, and link to Expo public builds.',
+                'q': 'Will I get help setting up my app portfolio on GitHub?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "How do mock interviews prepare me for frontend rounds?", "a": "Our mock interviews focus on live coding challenges, custom hook design questions, and explanation of web optimization techniques."},
-            {"q": "Will I get access to common React JS test sheets?", "a": "Yes. We share vetted practice sheets covering top interview topics and machine coding rounds."}
+        'interview_questions': [
+            {
+                'a': 'StyleSheet.create registers and compiles styles, sending references over the React Native bridge only once, which optimizes performance. Inline styles recreate a new object on every render, causing memory overhead.',
+                'q': 'What is the difference between StyleSheet.create and inline styling in React Native?',
+            },
+            {
+                'a': 'The Bridge coordinates asynchronous communication between the JavaScript engine (running your React code) and the native platform layers (Java for Android, Objective-C/Swift for iOS), translating payloads into native events.',
+                'q': 'Explain the role of the Bridge in React Native.',
+            },
+            {
+                'a': 'AsyncStorage is a simple unencrypted key-value store for saving configuration or user preferences. For structured relational data querying, indexes, and complex local queries, SQLite is preferred.',
+                'q': 'What is AsyncStorage and when should you use SQLite?',
+            },
+            {
+                'a': 'The app requests permissions, registers with a notification service (like Firebase Cloud Messaging or Expo Notification Service), and receives a device token. The backend uses this token to push payloads via native messaging services.',
+                'q': 'How do push notifications work in a React Native app?',
+            },
+            {
+                'a': "Expo Application Services (EAS) Build is a cloud build service. It builds ipa (iOS) and aab/apk (Android) binaries on Expo's remote servers, allowing Windows developers to generate iOS builds without owning a Mac.",
+                'q': 'What is EAS Build and how does it help Windows developers?',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Modern JavaScript & Responsive Styling", "duration": "2 Weeks", "skills": "ES6 syntax, TailwindCSS, Flexbox/Grid layouts, Asynchronous JS", "project": "Corporate Product Portal"},
-            {"phase": "Phase 2", "title": "React JS Core Logic & Components", "duration": "2 Weeks", "skills": "Virtual DOM, JSX, Props, useState, useEffect hooks, list render", "project": "Interactive Kanban Board"},
-            {"phase": "Phase 3", "title": "Advanced State & REST API Integrations", "duration": "2 Weeks", "skills": "React Router DOM, Context API, Redux Toolkit, Axios REST client", "project": "E-Commerce User Interface"},
-            {"phase": "Phase 4", "title": "Performance Optimization & Live Internship", "duration": "2 Weeks", "skills": "useMemo/useCallback, Git merge cycles, production builds, Vercel deployment", "project": "Analytics Console deployed on Internship"}
+        'roadmap_faqs': [
+            {
+                'a': 'Yes. Mobile app development is booming. Freshers with a portfolio of working mobile apps deployed to stores stand out significantly.',
+                'q': 'Can freshers secure React Native jobs in Pune?',
+            },
+            {
+                'a': 'React Native uses JavaScript/TypeScript and React principles, which makes it extremely fast to pick up for web developers. Flutter uses Dart. Both are highly popular.',
+                'q': 'How does React Native compare to Flutter?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "Can I get a job with just React JS skills in Pune?", "a": "Yes. There is high demand for Junior Frontend React Developers. Combining React with good Git credentials makes you a strong candidate."},
-            {"q": "How do I show my React skills on my resume?", "a": "Highlight your deployed dashboard projects, your GitHub commit links, and your state management integrations rather than just listing React as a keyword."}
-        ]
+        'roadmap_milestones': [
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 1',
+                'project': 'Business Product Catalog',
+                'skills': 'Expo CLI setup, Core Views, StyleSheet layout styling, flex dynamics',
+                'title': 'Expo Workspace & Component Styling',
+            },
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Local Event Booking App',
+                'skills': 'TypeScript types, interfaces, React Navigation (Tab/Drawer), validation',
+                'title': 'TypeScript Navigation & Forms',
+            },
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 3',
+                'project': 'Secure Local Note Logger',
+                'skills': 'SQLite databases, AsyncStorage storage, GPS Location, Camera API',
+                'title': 'SQLite Local Cache & Device APIs',
+            },
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 4',
+                'project': 'Messaging Client deployed on Store',
+                'skills': 'App signing, keystores, provisioning profiles, EAS Build cloud compile, Google Play / App Store submissions',
+                'title': 'EAS Cloud Build & Mobile App Store Deployment',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'Expo CLI provides managed developer workflows, handles app build signing, and speeds up testing. Native CLI offers complete control over Java/Objective-C layers. We start with Expo and teach managed-to-bare conversions.',
+                'q': 'What is the difference between Expo CLI and CLI workflow?',
+            },
+            {
+                'a': 'Yes. The Expo Go client allows you to scan a QR code on Windows and run the app live on your iPhone device.',
+                'q': 'Can I test the iOS app on an iPhone from Windows?',
+            },
+        ],
+        'syllabus_prerequisites': 'Basic programming fundamentals (understanding of variables and lists). Prior React experience is helpful but not mandatory, as we cover basic hooks.',
+        'syllabus_projects': [
+            'Project 1: Personal Finance Ledger mobile interface using local state.',
+            'Project 2: Local Task Manager with SQLite database local persistence.',
+            'Project 3: Location Tracker App mapping device GPS coordinates.',
+            'Project 4: Real-time Messaging Mobile App deployed on Expo Store.',
+        ],
+        'syllabus_tools': [
+            'VS Code',
+            'Expo CLI & EAS Build',
+            'Android Studio / Xcode',
+            'SQLite Database',
+            'Postman',
+            'Google Play / Apple App Store Developer Consoles',
+        ],
     },
-    "react-native-training": {
-        "syllabus_prerequisites": "Basic programming fundamentals (understanding of variables and lists). Prior React experience is helpful but not mandatory, as we cover basic hooks.",
-        "syllabus_projects": [
-            "Project 1: Personal Finance Ledger mobile interface using local state.",
-            "Project 2: Local Task Manager with SQLite database local persistence.",
-            "Project 3: Location Tracker App mapping device GPS coordinates.",
-            "Project 4: Real-time Messaging Mobile App deployed on Expo Store."
-        ],
-        "syllabus_tools": ["VS Code", "Expo CLI & EAS Build", "Android Studio / Xcode", "SQLite Database", "Postman", "Google Play / Apple App Store Developer Consoles"],
-        "syllabus_faqs": [
-            {"q": "What is the difference between Expo CLI and CLI workflow?", "a": "Expo CLI provides managed developer workflows, handles app build signing, and speeds up testing. Native CLI offers complete control over Java/Objective-C layers. We start with Expo and teach managed-to-bare conversions."},
-            {"q": "Can I test the iOS app on an iPhone from Windows?", "a": "Yes. The Expo Go client allows you to scan a QR code on Windows and run the app live on your iPhone device."}
-        ],
-        "fees_structure": "The React Native Training fee is ₹16,999 (all-inclusive). You can pay in 2 monthly installments of ₹8,500. Upfront payments get a 5% discount (₹16,149 final fee).",
-        "fees_comparison": {
-            "typical_pune_fees": "₹35,000 - ₹48,000",
-            "pune_batch_size": "20 to 35 students",
-            "cacts_value": "1-to-1 virtual private screensharing, complete App Store building/signing guidelines at nearly 45% of standard training rates."
+    'software-architect-training': {
+        'fees_comparison': {
+            'cacts_value': 'Individual 1-to-1 developer review loops on your architectural design specs and deployment configs at less than a third of competitor pricing.',
+            'pune_batch_size': '25 to 40 professionals',
+            'typical_pune_fees': '₹60,000 - ₹90,000',
         },
-        "fees_faqs": [
-            {"q": "Do I have to pay for a developer account to submit apps?", "a": "Developer licenses (Google Play is $25 one-time, Apple is $99/year) are paid directly to Google/Apple. CACTS provides shared internal staging stores for test submissions at no extra charge."},
-            {"q": "Is there any EMI option available?", "a": "Yes, we support card-based no-cost EMI options through our payment gateway partners."}
+        'fees_faqs': [
+            {
+                'a': 'The CACTS lab covers initial deployment staging boxes. Any custom enterprise-grade AWS or Azure resource billing remains under your personal usage thresholds.',
+                'q': 'Are cloud infrastructure hosting bills included in the fee?',
+            },
+            {
+                'a': 'No, because we operate strictly on a 1-to-1 coaching format. We do not group candidates into batches, ensuring full personal attention.',
+                'q': 'Is there a discount for company-sponsored groups?',
+            },
         ],
-        "interview_questions": [
-            {"q": "What is the difference between StyleSheet.create and inline styling in React Native?", "a": "StyleSheet.create registers and compiles styles, sending references over the React Native bridge only once, which optimizes performance. Inline styles recreate a new object on every render, causing memory overhead."},
-            {"q": "Explain the role of the Bridge in React Native.", "a": "The Bridge coordinates asynchronous communication between the JavaScript engine (running your React code) and the native platform layers (Java for Android, Objective-C/Swift for iOS), translating payloads into native events."},
-            {"q": "What is AsyncStorage and when should you use SQLite?", "a": "AsyncStorage is a simple unencrypted key-value store for saving configuration or user preferences. For structured relational data querying, indexes, and complex local queries, SQLite is preferred."},
-            {"q": "How do push notifications work in a React Native app?", "a": "The app requests permissions, registers with a notification service (like Firebase Cloud Messaging or Expo Notification Service), and receives a device token. The backend uses this token to push payloads via native messaging services."},
-            {"q": "What is EAS Build and how does it help Windows developers?", "a": "Expo Application Services (EAS) Build is a cloud build service. It builds ipa (iOS) and aab/apk (Android) binaries on Expo's remote servers, allowing Windows developers to generate iOS builds without owning a Mac."}
+        'fees_structure': 'The Software Architect Training fee is ₹29,999 (all-inclusive). You can pay in 2 installments of ₹15,000. Upfront full payment offers a 5% discount (₹28,499 final fee).',
+        'interview_faqs': [
+            {
+                'a': 'We run mock whiteboarding mock interviews live on shared canvas editors. You design microservice layouts, explain load balancing paths, and calculate sizing parameters under developer audits.',
+                'q': 'How do you evaluate architectural system design skills?',
+            },
+            {
+                'a': 'Yes. We guide you in publishing your Kubernetes deployment files, Terraform scripts, and sequence diagram files in a public repository so recruiters can verify your design capabilities.',
+                'q': 'Can I list these system designs on my resume?',
+            },
         ],
-        "interview_faqs": [
-            {"q": "Are mock interviews geared towards native app design?", "a": "Yes, questions cover mobile UI performance, flatlist optimization, local sync, and build configurations."},
-            {"q": "Will I get help setting up my app portfolio on GitHub?", "a": "Yes. We show you how to structure your mobile code repositories, document them with preview GIFs, and link to Expo public builds."}
+        'interview_questions': [
+            {
+                'a': 'The CAP Theorem states that a distributed system can guarantee at most two out of three properties: Consistency, Availability, and Partition Tolerance. When a network partition occurs, a database must choose between Consistency (refusing requests to avoid stale data) or Availability (accepting requests with potentially stale data). System architects use this to choose AP stores like Cassandra vs. CP stores like MongoDB.',
+                'q': 'What is the CAP Theorem and how does it influence distributed database selection?',
+            },
+            {
+                'a': 'In microservices, local transactions span multiple databases. The Saga pattern manages this by executing a sequence of local transactions. Each transaction updates its local database and triggers the next step. If a transaction fails, the Saga runs compensating transactions in reverse order to undo the changes, preserving consistency without locking resources across nodes.',
+                'q': 'Explain the Saga Pattern and how it resolves distributed transactions in microservices.',
+            },
+            {
+                'a': 'In Cache-Aside, the application queries the cache first. If a miss occurs, it queries the database, updates the cache, and returns. In Write-Through, the application writes data directly to the cache, which immediately writes to the database. Cache-Aside is ideal for read-heavy workloads, whereas Write-Through guarantees consistency at the cost of write latency.',
+                'q': 'What is the difference between Redis Cache-Aside and Write-Through caching strategies?',
+            },
+            {
+                'a': 'Kafka guarantees strict message ordering within a single Partition, not across a whole Topic. To order messages (e.g. transactional events by user ID), you must use a Partition Key. All events sharing the same key map to the same partition and are processed sequentially by a single consumer in the group.',
+                'q': 'How does Kafka guarantee message ordering across multiple consumer instances?',
+            },
+            {
+                'a': "A circuit breaker wraps remote service calls. If the target service times out repeatedly, the circuit breaker trips 'Open', immediately failing subsequent calls with an error instead of waiting. This prevents resource exhaustion (like thread locks) in caller services. Once the target heals, the breaker enters 'Half-Open' to verify before resetting to 'Closed'.",
+                'q': 'What is a circuit breaker in system design and how does it prevent cascading failures?',
+            },
         ],
-        "roadmap_milestones": [
-            {"phase": "Phase 1", "title": "Expo Workspace & Component Styling", "duration": "2 Weeks", "skills": "Expo CLI setup, Core Views, StyleSheet layout styling, flex dynamics", "project": "Business Product Catalog"},
-            {"phase": "Phase 2", "title": "TypeScript Navigation & Forms", "duration": "2 Weeks", "skills": "TypeScript types, interfaces, React Navigation (Tab/Drawer), validation", "project": "Local Event Booking App"},
-            {"phase": "Phase 3", "title": "SQLite Local Cache & Device APIs", "duration": "2 Weeks", "skills": "SQLite databases, AsyncStorage storage, GPS Location, Camera API", "project": "Secure Local Note Logger"},
-            {"phase": "Phase 4", "title": "EAS Cloud Build & Mobile App Store Deployment", "duration": "2 Weeks", "skills": "App signing, keystores, provisioning profiles, EAS Build cloud compile, Google Play / App Store submissions", "project": "Messaging Client deployed on Store"}
+        'roadmap_faqs': [
+            {
+                'a': 'Hinjewadi and Kharadi tech hubs host major enterprise networks and SaaS products that require architects. Starting salaries for system design leads and technical architects range from ₹15 LPA to ₹30+ LPA.',
+                'q': 'What is the market demand for Software Architects in Pune?',
+            },
+            {
+                'a': 'Yes. Our 1-to-1 pacing targets your exact gaps, whether in database scaling, event queues, or Kubernetes configurations. This accelerates your growth.',
+                'q': 'Can a senior software developer learn system design in 16 weeks?',
+            },
         ],
-        "roadmap_faqs": [
-            {"q": "Can freshers secure React Native jobs in Pune?", "a": "Yes. Mobile app development is booming. Freshers with a portfolio of working mobile apps deployed to stores stand out significantly."},
-            {"q": "How does React Native compare to Flutter?", "a": "React Native uses JavaScript/TypeScript and React principles, which makes it extremely fast to pick up for web developers. Flutter uses Dart. Both are highly popular."}
-        ]
-    }
+        'roadmap_milestones': [
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 1',
+                'project': 'Enterprise API Gateway Routing Spec',
+                'skills': 'Monolith decomposition, Domain-Driven Design, UML Sequence, Gateway Routing',
+                'title': 'System Boundaries & DDD Models',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Load-Balanced Multi-Database cluster setup',
+                'skills': 'Database Replication, Sharding, Redis Cache-Aside, Load Balancing configs',
+                'title': 'High Availability & Distributed Caching',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 3',
+                'project': 'Event-Driven Transaction pipeline',
+                'skills': 'Apache Kafka Producers/Consumers, Partition sizing, Idempotency, Saga workflows',
+                'title': 'Asynchronous Processing & Event Brokers',
+            },
+            {
+                'duration': '4 Weeks',
+                'phase': 'Phase 4',
+                'project': 'Deploying scaled Microservices Cluster on AWS EKS',
+                'skills': 'Kubernetes Pod configurations, AWS VPC routing, Prometheus dashboards, Terraform scripts',
+                'title': 'Cloud Orchestration & Observability',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'Yes. Since our mentoring is strictly 1-to-1, you can bring your current product design layouts and work on refactoring their scaling pipelines live with your mentor.',
+                'q': 'Can I align the system design projects with my active corporate migrations?',
+            },
+            {
+                'a': 'Yes, we cover declarative cloud sizing using Terraform scripts to spin up AWS cluster topologies.',
+                'q': 'Do we cover infrastructure-as-code?',
+            },
+        ],
+        'syllabus_prerequisites': 'At least 2 years of active programming experience in Java, Python, Go, Node.js or C#, and a strong understanding of database connections and web server routing.',
+        'syllabus_projects': [
+            'Project 1: Domain-Driven Design (DDD) sequence models and boundary architecture maps for an enterprise portal.',
+            'Project 2: Highly available distributed database staging environment with master-slave replication and Redis layer.',
+            'Project 3: Real-time event-driven transaction processor using Apache Kafka partitions and consumer groups.',
+            'Project 4: Complete microservices backend cluster deployed on AWS Elastic Kubernetes Service (EKS) with Prometheus dashboards.',
+        ],
+        'syllabus_tools': [
+            'Apache Kafka',
+            'Redis Server',
+            'Docker & Kubernetes',
+            'AWS EKS',
+            'Terraform IaC',
+            'HAProxy',
+            'Prometheus & Grafana',
+            'Lucidchart / UML',
+        ],
+    },
+    'software-testing-training': {
+        'fees_comparison': {
+            'cacts_value': '1-to-1 virtual screenshare sessions to write and debug test scripts directly with a developer, at nearly half the market price.',
+            'pune_batch_size': '40+ students in large batches',
+            'typical_pune_fees': '₹20,000 - ₹35,000',
+        },
+        'fees_faqs': [
+            {
+                'a': "No. We use free open-source testing tools (Selenium, Java, Postman) and show you how to use Jira's free trial accounts.",
+                'q': 'Do I need to pay for Jira or test tools?',
+            },
+        ],
+        'fees_structure': 'The Software Testing Training tuition is ₹9,999 (all-inclusive). We offer a 5% discount (₹9,499 final fee) for one-time upfront payments.',
+        'interview_faqs': [
+            {
+                'a': 'Expect basic Java coding questions (string reversals, array searches) and locator writing challenges (XPath, CSS selectors).',
+                'q': 'What coding questions are asked in QA interviews?',
+            },
+        ],
+        'interview_questions': [
+            {
+                'a': "Verification is the process of evaluating documentation, plans, and code structure (static testing, 'Are we building the product right?'). Validation is the process of executing the actual software to ensure it meets requirements (dynamic testing, 'Are we building the right product?').",
+                'q': 'What is the difference between Verification and Validation in Software Testing?',
+            },
+            {
+                'a': 'POM is a design pattern where each web page is represented as a Class file. Page elements are defined as variables, and interactions are defined as methods in the class. This makes test scripts highly reusable and easy to maintain.',
+                'q': 'What is the Page Object Model (POM) in Selenium?',
+            },
+            {
+                'a': 'Implicit Wait sets a global timeout for the WebDriver to wait for all elements to load before throwing NoSuchElementException. Explicit Wait sets a specific wait condition (e.g. elementToBeClickable) for a particular element, resuming execution as soon as the condition is met, saving execution time.',
+                'q': 'Explain the difference between Implicit Wait and Explicit Wait in Selenium.',
+            },
+            {
+                'a': 'A bug lifecycle is the sequence of states a defect goes through: New (detected), Assigned (to developer), Open (under review), Fixed (code updated), Pending Retest (waiting for QA), Retesting, Verified (approved), and Closed (archived).',
+                'q': 'What is a bug lifecycle?',
+            },
+            {
+                'a': 'We send HTTP requests (GET, POST, PUT, DELETE) to endpoint URLs, pass headers/payloads, execute the request, and validate response status codes, headers, and JSON body payloads using Postman assertions.',
+                'q': 'How do you perform API testing using Postman?',
+            },
+        ],
+        'roadmap_faqs': [
+            {
+                'a': 'Starting salaries in Pune range from ₹3 LPA to ₹4.5 LPA, with automation roles fetching higher rates than manual testing.',
+                'q': 'What is the starting salary for a QA Engineer in Pune?',
+            },
+        ],
+        'roadmap_milestones': [
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 1',
+                'project': 'Manual Test Suite Execution',
+                'skills': 'SDLC, STLC, writing test plans, scenarios, logging defects in Jira templates',
+                'title': 'Manual QA & Defect Tracking',
+            },
+            {
+                'duration': '3 Weeks',
+                'phase': 'Phase 2',
+                'project': 'Core Java Logical Code Set',
+                'skills': 'Java syntax, OOP classes, TestNG testing framework annotations',
+                'title': 'Java Programming for Automation',
+            },
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 3',
+                'project': 'E-Commerce Page Object Framework',
+                'skills': 'Selenium locators, handling alerts, waits, designing Page Object Models',
+                'title': 'Selenium Automation Frameworks',
+            },
+            {
+                'duration': '2 Weeks',
+                'phase': 'Phase 4',
+                'project': 'API Test Suite Staging',
+                'skills': 'Postman API requests, validating JSON payloads, SQL verification queries',
+                'title': 'API Testing & Database QA',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'Yes. We cover manual testing processes, test case design, and Jira bug tracking, then transition into writing Selenium automation scripts in Java.',
+                'q': 'Do we cover both manual and automation testing?',
+            },
+        ],
+        'syllabus_prerequisites': 'Basic logical thinking. No prior programming background is required.',
+        'syllabus_projects': [
+            'Project 1: Detailed Test Plan and Bug Report using Jira templates.',
+            'Project 2: Writing OOP Java test scripts for Selenium WebDriver.',
+            'Project 3: Designing a Page Object Model (POM) testing framework.',
+            'Project 4: Automated API test suite in Postman.',
+        ],
+        'syllabus_tools': [
+            'Selenium WebDriver',
+            'Jira',
+            'Eclipse / IntelliJ',
+            'Postman API',
+            'TestNG / JUnit',
+            'Git',
+        ],
+    },
 }

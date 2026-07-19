@@ -709,6 +709,36 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/software-architect-training.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/software-architect-syllabus.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/software-architect-course-fees.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/software-architect-interview-questions.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/software-architect-roadmap.html</loc>
+        <lastmod>2026-07-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/what-is-apache-spark.html</loc>
         <lastmod>2026-07-18</lastmod>
         <changefreq>weekly</changefreq>

@@ -185,7 +185,22 @@ def build():
 
         # 3. Build Course FAQs
         faq_html = ""
-        for faq in faqs:
+        # Integrate AEO dynamic FAQs directly into the visible accordions
+        visible_faqs = list(faqs) + [
+            {
+                "q": "Is the training at CACTS conducted in batches or 1-to-1?",
+                "a": "All training classes at CACTS are strictly conducted 1-to-1. There are no classroom groups or batch schedules. A senior software developer works directly with you via private screensharing sessions, adapting the pacing completely to your grasp."
+            },
+            {
+                "q": "How do students gain live company project experience during the internship?",
+                "a": "Instead of dummy local templates, students at CACTS are integrated into real-world software setups. You will compile live production code, merge branches on active Git repositories, participate in developer code reviews, and deploy builds on staging servers."
+            },
+            {
+                "q": "Where is CACTS Pune physically located for consultations?",
+                "a": "Our physical office is situated at First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune, Maharashtra 411023. Consultations are available by prior appointment, while mentoring sessions are conducted virtually."
+            }
+        ]
+        for faq in visible_faqs:
             faq_html += f"""
             <div class="curriculum-module">
                 <div class="module-header faq-header">
@@ -2503,7 +2518,7 @@ def build():
 
         with open(reviews_page_path, "w", encoding="utf-8") as f:
             f.write(reviews_content)
-        print("Updated central reviews.html with all 33 reviews and injected LocalBusiness schema.")
+        print(f"Updated central reviews.html with all {len(all_reviews_schema_list)} reviews and injected LocalBusiness schema.")
 
 if __name__ == "__main__":
     build()
