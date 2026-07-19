@@ -4,9 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.getElementById('theme-toggle');
     const sunIcon = themeToggle ? themeToggle.querySelector('.sun-icon') : null;
     const moonIcon = themeToggle ? themeToggle.querySelector('.moon-icon') : null;
-    
-    // Check saved theme or default to dark
-    const savedTheme = localStorage.getItem('cacts-theme') || 'dark';
+
+    // Check saved theme or detect system theme preference
+    let savedTheme = localStorage.getItem('cacts-theme');
+    if (!savedTheme) {
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        savedTheme = prefersLight ? 'light' : 'dark';
+    }
+
     if (savedTheme === 'light') {
         body.classList.add('light-theme');
         if (sunIcon) sunIcon.style.display = 'none';
@@ -78,14 +83,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const content = headerToggle.nextElementSibling;
             if (content) {
                 const isOpen = content.classList.contains('active');
-                
+
                 // Close other elements in the same parent if needed
                 const container = headerToggle.parentElement.parentElement;
                 container.querySelectorAll('.module-content, .faq-content').forEach(c => {
                     c.classList.remove('active');
                     c.style.maxHeight = null;
                 });
-                
+
                 const icon = headerToggle.querySelector('.accordion-icon');
                 container.querySelectorAll('.accordion-icon').forEach(i => {
                     if (i) i.textContent = '+';
@@ -155,13 +160,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Construct WhatsApp/SMS query string details
             const messageText = `Hi CACTS, I want to inquire for a Free 1-to-1 Trial Demo.\n\n` +
-                                `• Name: ${data.name || ''}\n` +
-                                `• Course: ${data.course || ''}\n` +
-                                `• Phone: ${data.phone || ''}\n` +
-                                `• Email: ${data.email || ''}\n` +
-                                `• Exp: ${data.experience || 'Student'}\n` +
-                                `• Notes: ${data.notes || 'None'}`;
-            
+                `• Name: ${data.name || ''}\n` +
+                `• Course: ${data.course || ''}\n` +
+                `• Phone: ${data.phone || ''}\n` +
+                `• Email: ${data.email || ''}\n` +
+                `• Exp: ${data.experience || 'Student'}\n` +
+                `• Notes: ${data.notes || 'None'}`;
+
             const waUrl = `https://wa.me/919665566357?text=${encodeURIComponent(messageText)}`;
             const smsUrl = `sms:+919665566357?body=${encodeURIComponent(messageText)}`;
 
@@ -219,7 +224,7 @@ if (mcpContext && typeof mcpContext.registerTool === "function") {
             const encodedName = encodeURIComponent(args.name);
             const encodedPhone = encodeURIComponent(args.phone);
             const encodedCourse = encodeURIComponent(args.course);
-            
+
             return {
                 status: "success",
                 message: "Lead compiled successfully. Redirect the user to the generated WhatsApp link to complete booking.",
