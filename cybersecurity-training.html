@@ -25,14 +25,16 @@
         <script type="application/ld+json">
         {
   "@context": "https://schema.org",
-  "@type": "EducationalOccupationalProgram",
-  "@id": "https://cactslearn.github.io/cybersecurity-training.html#program",
-  "name": "Cybersecurity Training | 1-to-1 Mentorship Lab",
-  "description": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual vulnerability analysis, network socket tracing, and firewall defense systems from day one, completing your technical milestones by committing code to live company repositories.",
+  "@type": "Course",
+  "@id": "https://cactslearn.github.io/cybersecurity-training.html#course",
+  "name": "Cybersecurity Training",
+  "description": "Learn Ethical Hacking & Network Security in Pune. 1-to-1 Cybersecurity Course in Shivane. Sandbox security lab testing. Fees: \u20b919,999.",
+  "url": "https://cactslearn.github.io/cybersecurity-training.html",
   "provider": {
-    "@type": "EducationalOrganization",
+    "@type": "Organization",
     "name": "CACTS - Centre of Advanced Computer Training and Studies",
     "url": "https://cactslearn.github.io/",
+    "sameAs": "https://cactslearn.github.io/",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
@@ -42,74 +44,103 @@
       "addressCountry": "IN"
     }
   },
-  "educationalProgramMode": "blended",
-  "programType": "Professional Training",
-  "timeToComplete": "P12W",
-  "occupationalCategory": "Information Security Analyst",
-  "educationalCredentialAwarded": "GitHub Portfolio Code Verification & Live Staging Project Certificate",
   "offers": {
     "@type": "Offer",
     "price": "19999",
     "priceCurrency": "INR",
-    "category": "Training Course"
+    "category": "Training Course",
+    "url": "https://cactslearn.github.io/cybersecurity-training.html",
+    "availability": "https://schema.org/InStock"
   },
-  "hasCourse": [
+  "hasCourseInstance": [
     {
-      "@type": "Course",
-      "name": "Cybersecurity Training",
-      "description": "Learn Ethical Hacking & Network Security in Pune. 1-to-1 Cybersecurity Course in Shivane. Sandbox security lab testing. Fees: \u20b919,999.",
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Akash P."
-          },
-          "datePublished": "2026-02-25",
-          "reviewBody": "The ethical hacking and network security labs at CACTS are top-notch. The 1-to-1 virtual session format allowed me to run Nmap scans, exploit security gaps using Metasploit, and understand OWASP vulnerabilities.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Tanvi S."
-          },
-          "datePublished": "2026-04-08",
-          "reviewBody": "Learned cryptography, Linux system hardening, and web application security in a safe sandbox lab. My mentor explained complex network protocols and firewall rules very clearly.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Gaurav H."
-          },
-          "datePublished": "2026-05-14",
-          "reviewBody": "I wanted to learn security auditing for web APIs. We covered SQL injection and XSS defenses in detail. The trainer's experience in cybersecurity operations was evident throughout the training.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
+      "@type": "CourseInstance",
+      "courseMode": "onsite",
+      "duration": "P12W",
+      "instructor": {
+        "@type": "Person",
+        "name": "Hambirrao P",
+        "jobTitle": "Lead Technology Trainer"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "CACTS Shivane Training Lab",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+          "addressLocality": "Pune",
+          "addressRegion": "Maharashtra",
+          "postalCode": "411023",
+          "addressCountry": "IN"
         }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "bestRating": "5",
-        "reviewCount": "3"
+      }
+    },
+    {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "duration": "P12W",
+      "instructor": {
+        "@type": "Person",
+        "name": "Hambirrao P",
+        "jobTitle": "Lead Technology Trainer"
+      },
+      "location": {
+        "@type": "VirtualLocation",
+        "name": "CACTS 1-to-1 Virtual Classroom Lab",
+        "url": "https://cactslearn.github.io/one-to-one-software-training.html"
       }
     }
-  ]
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Akash P."
+      },
+      "datePublished": "2026-02-25",
+      "reviewBody": "The ethical hacking and network security labs at CACTS are top-notch. The 1-to-1 virtual session format allowed me to run Nmap scans, exploit security gaps using Metasploit, and understand OWASP vulnerabilities.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Tanvi S."
+      },
+      "datePublished": "2026-04-08",
+      "reviewBody": "Learned cryptography, Linux system hardening, and web application security in a safe sandbox lab. My mentor explained complex network protocols and firewall rules very clearly.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Gaurav H."
+      },
+      "datePublished": "2026-05-14",
+      "reviewBody": "I wanted to learn security auditing for web APIs. We covered SQL injection and XSS defenses in detail. The trainer's experience in cybersecurity operations was evident throughout the training.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "reviewCount": "3"
+  }
 }
         </script>
         <script type="application/ld+json">

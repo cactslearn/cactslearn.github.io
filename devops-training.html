@@ -25,14 +25,16 @@
         <script type="application/ld+json">
         {
   "@context": "https://schema.org",
-  "@type": "EducationalOccupationalProgram",
-  "@id": "https://cactslearn.github.io/devops-training.html#program",
-  "name": "DevOps Training | 1-to-1 Mentorship Lab",
-  "description": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Docker containerization, Kubernetes orchestration, and CI/CD release pipeline systems from day one, completing your technical milestones by committing code to live company repositories.",
+  "@type": "Course",
+  "@id": "https://cactslearn.github.io/devops-training.html#course",
+  "name": "DevOps Training",
+  "description": "Master CI/CD pipelines, Docker, and Kubernetes. 1-to-1 DevOps Course in Shivane, Pune. Real company deployment experience. Only \u20b914,999.",
+  "url": "https://cactslearn.github.io/devops-training.html",
   "provider": {
-    "@type": "EducationalOrganization",
+    "@type": "Organization",
     "name": "CACTS - Centre of Advanced Computer Training and Studies",
     "url": "https://cactslearn.github.io/",
+    "sameAs": "https://cactslearn.github.io/",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
@@ -42,74 +44,103 @@
       "addressCountry": "IN"
     }
   },
-  "educationalProgramMode": "blended",
-  "programType": "Professional Training",
-  "timeToComplete": "P8W",
-  "occupationalCategory": "DevOps Engineer",
-  "educationalCredentialAwarded": "GitHub Portfolio Code Verification & Live Staging Project Certificate",
   "offers": {
     "@type": "Offer",
     "price": "14999",
     "priceCurrency": "INR",
-    "category": "Training Course"
+    "category": "Training Course",
+    "url": "https://cactslearn.github.io/devops-training.html",
+    "availability": "https://schema.org/InStock"
   },
-  "hasCourse": [
+  "hasCourseInstance": [
     {
-      "@type": "Course",
-      "name": "DevOps Training",
-      "description": "Master CI/CD pipelines, Docker, and Kubernetes. 1-to-1 DevOps Course in Shivane, Pune. Real company deployment experience. Only \u20b914,999.",
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Sandeep W."
-          },
-          "datePublished": "2026-03-02",
-          "reviewBody": "CACTS DevOps course is highly professional. The 1-to-1 virtual mentoring model allowed me to configure Jenkins CI/CD pipelines, Docker containers, and Kubernetes clusters in real-time under a mentor's guidance.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Neha D."
-          },
-          "datePublished": "2026-04-15",
-          "reviewBody": "I wanted to learn containerization and build automation. We wrote Dockerfiles and Kubernetes manifest files from scratch. The trainer's explanation of Git workflows and staging environments was extremely clear.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Pranav S."
-          },
-          "datePublished": "2026-05-20",
-          "reviewBody": "The live company project DevOps internship was an amazing experience. I worked on automating server configurations using Ansible and tracking builds. Highly recommend their individual attention model.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
+      "@type": "CourseInstance",
+      "courseMode": "onsite",
+      "duration": "P8W",
+      "instructor": {
+        "@type": "Person",
+        "name": "Hambirrao P",
+        "jobTitle": "Lead Technology Trainer"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "CACTS Shivane Training Lab",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+          "addressLocality": "Pune",
+          "addressRegion": "Maharashtra",
+          "postalCode": "411023",
+          "addressCountry": "IN"
         }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "bestRating": "5",
-        "reviewCount": "3"
+      }
+    },
+    {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "duration": "P8W",
+      "instructor": {
+        "@type": "Person",
+        "name": "Hambirrao P",
+        "jobTitle": "Lead Technology Trainer"
+      },
+      "location": {
+        "@type": "VirtualLocation",
+        "name": "CACTS 1-to-1 Virtual Classroom Lab",
+        "url": "https://cactslearn.github.io/one-to-one-software-training.html"
       }
     }
-  ]
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Sandeep W."
+      },
+      "datePublished": "2026-03-02",
+      "reviewBody": "CACTS DevOps course is highly professional. The 1-to-1 virtual mentoring model allowed me to configure Jenkins CI/CD pipelines, Docker containers, and Kubernetes clusters in real-time under a mentor's guidance.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Neha D."
+      },
+      "datePublished": "2026-04-15",
+      "reviewBody": "I wanted to learn containerization and build automation. We wrote Dockerfiles and Kubernetes manifest files from scratch. The trainer's explanation of Git workflows and staging environments was extremely clear.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Pranav S."
+      },
+      "datePublished": "2026-05-20",
+      "reviewBody": "The live company project DevOps internship was an amazing experience. I worked on automating server configurations using Ansible and tracking builds. Highly recommend their individual attention model.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "reviewCount": "3"
+  }
 }
         </script>
         <script type="application/ld+json">

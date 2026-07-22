@@ -502,12 +502,6 @@ def build():
         </div>
         """
 
-        child_course = {
-            "@type": "Course",
-            "name": name,
-            "description": meta_description
-        }
-        
         schema_reviews = []
         for r in reviews:
             schema_reviews.append({
@@ -524,25 +518,19 @@ def build():
                     "bestRating": "5"
                 }
             })
-        if schema_reviews:
-            child_course["review"] = schema_reviews
-            child_course["aggregateRating"] = {
-                "@type": "AggregateRating",
-                "ratingValue": "5.0",
-                "bestRating": "5",
-                "reviewCount": str(len(schema_reviews))
-            }
 
         course_schema = {
             "@context": "https://schema.org",
-            "@type": "EducationalOccupationalProgram",
-            "@id": f"https://cactslearn.github.io/{slug}.html#program",
-            "name": f"{name} | 1-to-1 Mentorship Lab",
-            "description": overview,
+            "@type": "Course",
+            "@id": f"https://cactslearn.github.io/{slug}.html#course",
+            "name": name,
+            "description": meta_description,
+            "url": f"https://cactslearn.github.io/{slug}.html",
             "provider": {
-                "@type": "EducationalOrganization",
+                "@type": "Organization",
                 "name": "CACTS - Centre of Advanced Computer Training and Studies",
                 "url": "https://cactslearn.github.io/",
+                "sameAs": "https://cactslearn.github.io/",
                 "address": {
                     "@type": "PostalAddress",
                     "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
@@ -552,19 +540,63 @@ def build():
                     "addressCountry": "IN"
                 }
             },
-            "educationalProgramMode": "blended",
-            "programType": "Professional Training",
-            "timeToComplete": duration_iso,
-            "occupationalCategory": occupational_category,
-            "educationalCredentialAwarded": "GitHub Portfolio Code Verification & Live Staging Project Certificate",
             "offers": {
                 "@type": "Offer",
                 "price": str(price_num),
                 "priceCurrency": "INR",
-                "category": "Training Course"
+                "category": "Training Course",
+                "url": f"https://cactslearn.github.io/{slug}.html",
+                "availability": "https://schema.org/InStock"
             },
-            "hasCourse": [child_course]
+            "hasCourseInstance": [
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": "onsite",
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "name": "CACTS Shivane Training Lab",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                            "addressLocality": "Pune",
+                            "addressRegion": "Maharashtra",
+                            "postalCode": "411023",
+                            "addressCountry": "IN"
+                        }
+                    }
+                },
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": "online",
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "VirtualLocation",
+                        "name": "CACTS 1-to-1 Virtual Classroom Lab",
+                        "url": "https://cactslearn.github.io/one-to-one-software-training.html"
+                    }
+                }
+            ]
         }
+
+        if schema_reviews:
+            course_schema["review"] = schema_reviews
+            course_schema["aggregateRating"] = {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "bestRating": "5",
+                "reviewCount": str(len(schema_reviews))
+            }
 
         faq_entities = []
         for faq in faqs:
@@ -749,13 +781,71 @@ def build():
         course_schema_syllabus = {
             "@context": "https://schema.org",
             "@type": "Course",
+            "@id": f"https://cactslearn.github.io/{base_slug}-syllabus.html#course",
             "name": f"{name} Syllabus",
             "description": f"Detailed topic-by-topic Syllabus for {name} in Pune.",
+            "url": f"https://cactslearn.github.io/{base_slug}-syllabus.html",
             "provider": {
                 "@type": "Organization",
                 "name": "CACTS - Centre of Advanced Computer Training and Studies",
-                "url": "https://cactslearn.github.io/"
+                "url": "https://cactslearn.github.io/",
+                "sameAs": "https://cactslearn.github.io/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                    "addressLocality": "Pune",
+                    "addressRegion": "Maharashtra",
+                    "postalCode": "411023",
+                    "addressCountry": "IN"
+                }
             },
+            "offers": {
+                "@type": "Offer",
+                "price": str(price_num),
+                "priceCurrency": "INR",
+                "category": "Training Course",
+                "url": f"https://cactslearn.github.io/{base_slug}-syllabus.html",
+                "availability": "https://schema.org/InStock"
+            },
+            "hasCourseInstance": [
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": "onsite",
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "name": "CACTS Shivane Training Lab",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                            "addressLocality": "Pune",
+                            "addressRegion": "Maharashtra",
+                            "postalCode": "411023",
+                            "addressCountry": "IN"
+                        }
+                    }
+                },
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": "online",
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "VirtualLocation",
+                        "name": "CACTS 1-to-1 Virtual Classroom Lab",
+                        "url": "https://cactslearn.github.io/one-to-one-software-training.html"
+                    }
+                }
+            ],
             "hasPart": syllabus_parts
         }
 
@@ -895,19 +985,71 @@ def build():
         course_schema_fees = {
             "@context": "https://schema.org",
             "@type": "Course",
+            "@id": f"https://cactslearn.github.io/{base_slug}-course-fees.html#course",
             "name": f"{name} Course Fees",
             "description": f"Transparent tuition and installment fees for {name} in Pune.",
+            "url": f"https://cactslearn.github.io/{base_slug}-course-fees.html",
             "provider": {
                 "@type": "Organization",
                 "name": "CACTS - Centre of Advanced Computer Training and Studies",
-                "url": "https://cactslearn.github.io/"
+                "url": "https://cactslearn.github.io/",
+                "sameAs": "https://cactslearn.github.io/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                    "addressLocality": "Pune",
+                    "addressRegion": "Maharashtra",
+                    "postalCode": "411023",
+                    "addressCountry": "IN"
+                }
             },
             "offers": {
                 "@type": "Offer",
                 "price": str(price_num),
                 "priceCurrency": "INR",
-                "category": "Value-Driven Professional Programming Training"
-            }
+                "category": "Value-Driven Professional Programming Training",
+                "url": f"https://cactslearn.github.io/{base_slug}-course-fees.html",
+                "availability": "https://schema.org/InStock"
+            },
+            "hasCourseInstance": [
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": "onsite",
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "name": "CACTS Shivane Training Lab",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                            "addressLocality": "Pune",
+                            "addressRegion": "Maharashtra",
+                            "postalCode": "411023",
+                            "addressCountry": "IN"
+                        }
+                    }
+                },
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": "online",
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "VirtualLocation",
+                        "name": "CACTS 1-to-1 Virtual Classroom Lab",
+                        "url": "https://cactslearn.github.io/one-to-one-software-training.html"
+                    }
+                }
+            ]
         }
 
         fees_breadcrumb = {
@@ -1031,7 +1173,80 @@ def build():
             ]
         }
 
+        course_schema_interview = {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "@id": f"https://cactslearn.github.io/{base_slug}-interview-questions.html#course",
+            "name": f"{name} Interview Preparation",
+            "description": f"Master technical programming, data, and system questions for {name} interviews.",
+            "url": f"https://cactslearn.github.io/{base_slug}-interview-questions.html",
+            "provider": {
+                "@type": "Organization",
+                "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "url": "https://cactslearn.github.io/",
+                "sameAs": "https://cactslearn.github.io/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                    "addressLocality": "Pune",
+                    "addressRegion": "Maharashtra",
+                    "postalCode": "411023",
+                    "addressCountry": "IN"
+                }
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": str(price_num),
+                "priceCurrency": "INR",
+                "category": "Training Course",
+                "url": f"https://cactslearn.github.io/{base_slug}-interview-questions.html",
+                "availability": "https://schema.org/InStock"
+            },
+            "hasCourseInstance": [
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": "onsite",
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "name": "CACTS Shivane Training Lab",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                            "addressLocality": "Pune",
+                            "addressRegion": "Maharashtra",
+                            "postalCode": "411023",
+                            "addressCountry": "IN"
+                        }
+                    }
+                },
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": "online",
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "VirtualLocation",
+                        "name": "CACTS 1-to-1 Virtual Classroom Lab",
+                        "url": "https://cactslearn.github.io/one-to-one-software-training.html"
+                    }
+                }
+            ]
+        }
+
         schema_markup4 = f"""
+        <script type="application/ld+json">
+        {json.dumps(course_schema_interview, indent=2)}
+        </script>
         <script type="application/ld+json">
         {json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": interview_schema_entities}, indent=2)}
         </script>
@@ -1159,7 +1374,80 @@ def build():
             ]
         }
 
+        course_schema_roadmap = {
+            "@context": "https://schema.org",
+            "@type": "Course",
+            "@id": f"https://cactslearn.github.io/{base_slug}-roadmap.html#course",
+            "name": f"{name} Learning Roadmap",
+            "description": f"Phase-by-phase timeline milestones, Pune starting salaries, and job roles for {name}.",
+            "url": f"https://cactslearn.github.io/{base_slug}-roadmap.html",
+            "provider": {
+                "@type": "Organization",
+                "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "url": "https://cactslearn.github.io/",
+                "sameAs": "https://cactslearn.github.io/",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                    "addressLocality": "Pune",
+                    "addressRegion": "Maharashtra",
+                    "postalCode": "411023",
+                    "addressCountry": "IN"
+                }
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": str(price_num),
+                "priceCurrency": "INR",
+                "category": "Training Course",
+                "url": f"https://cactslearn.github.io/{base_slug}-roadmap.html",
+                "availability": "https://schema.org/InStock"
+            },
+            "hasCourseInstance": [
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": "onsite",
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "name": "CACTS Shivane Training Lab",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                            "addressLocality": "Pune",
+                            "addressRegion": "Maharashtra",
+                            "postalCode": "411023",
+                            "addressCountry": "IN"
+                        }
+                    }
+                },
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": "online",
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "VirtualLocation",
+                        "name": "CACTS 1-to-1 Virtual Classroom Lab",
+                        "url": "https://cactslearn.github.io/one-to-one-software-training.html"
+                    }
+                }
+            ]
+        }
+
         schema_markup5 = f"""
+        <script type="application/ld+json">
+        {json.dumps(course_schema_roadmap, indent=2)}
+        </script>
         <script type="application/ld+json">
         {json.dumps(roadmap_howto, indent=2)}
         </script>

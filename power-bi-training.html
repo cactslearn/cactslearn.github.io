@@ -25,14 +25,16 @@
         <script type="application/ld+json">
         {
   "@context": "https://schema.org",
-  "@type": "EducationalOccupationalProgram",
-  "@id": "https://cactslearn.github.io/power-bi-training.html#program",
-  "name": "Power BI Training | 1-to-1 Mentorship Lab",
-  "description": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual DAX expressions, data relationships, and dashboard structures systems from day one, completing your technical milestones by committing code to live company repositories.",
+  "@type": "Course",
+  "@id": "https://cactslearn.github.io/power-bi-training.html#course",
+  "name": "Power BI Training",
+  "description": "Learn Power BI dashboard building & DAX scripting. 1-to-1 professional coaching in Shivane, Pune. Real-world business data reporting. Fee: \u20b97,999.",
+  "url": "https://cactslearn.github.io/power-bi-training.html",
   "provider": {
-    "@type": "EducationalOrganization",
+    "@type": "Organization",
     "name": "CACTS - Centre of Advanced Computer Training and Studies",
     "url": "https://cactslearn.github.io/",
+    "sameAs": "https://cactslearn.github.io/",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
@@ -42,74 +44,103 @@
       "addressCountry": "IN"
     }
   },
-  "educationalProgramMode": "blended",
-  "programType": "Professional Training",
-  "timeToComplete": "P4W",
-  "occupationalCategory": "Business Intelligence Analyst",
-  "educationalCredentialAwarded": "GitHub Portfolio Code Verification & Live Staging Project Certificate",
   "offers": {
     "@type": "Offer",
     "price": "7999",
     "priceCurrency": "INR",
-    "category": "Training Course"
+    "category": "Training Course",
+    "url": "https://cactslearn.github.io/power-bi-training.html",
+    "availability": "https://schema.org/InStock"
   },
-  "hasCourse": [
+  "hasCourseInstance": [
     {
-      "@type": "Course",
-      "name": "Power BI Training",
-      "description": "Learn Power BI dashboard building & DAX scripting. 1-to-1 professional coaching in Shivane, Pune. Real-world business data reporting. Fee: \u20b97,999.",
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Harish C."
-          },
-          "datePublished": "2026-02-15",
-          "reviewBody": "I needed to master DAX calculations and data modeling. The trainer at CACTS custom-tailored the sessions using real corporate database schemas. I can now design complex dashboards and write calculated measures with ease.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Anjali K."
-          },
-          "datePublished": "2026-03-18",
-          "reviewBody": "The Power Query ETL and data cleaning modules were incredibly helpful. The 1-to-1 virtual screen sharing ensured I got unstuck immediately. Transitioning from Excel to Power BI dashboards was very smooth.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Mayur S."
-          },
-          "datePublished": "2026-05-02",
-          "reviewBody": "Learned how to design professional executive-level dashboards. The course goes beyond basics to cover data relationships, filters, and publishing reports. The hands-on project was very practical.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
+      "@type": "CourseInstance",
+      "courseMode": "onsite",
+      "duration": "P4W",
+      "instructor": {
+        "@type": "Person",
+        "name": "Hambirrao P",
+        "jobTitle": "Lead Technology Trainer"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "CACTS Shivane Training Lab",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+          "addressLocality": "Pune",
+          "addressRegion": "Maharashtra",
+          "postalCode": "411023",
+          "addressCountry": "IN"
         }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "bestRating": "5",
-        "reviewCount": "3"
+      }
+    },
+    {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "duration": "P4W",
+      "instructor": {
+        "@type": "Person",
+        "name": "Hambirrao P",
+        "jobTitle": "Lead Technology Trainer"
+      },
+      "location": {
+        "@type": "VirtualLocation",
+        "name": "CACTS 1-to-1 Virtual Classroom Lab",
+        "url": "https://cactslearn.github.io/one-to-one-software-training.html"
       }
     }
-  ]
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Harish C."
+      },
+      "datePublished": "2026-02-15",
+      "reviewBody": "I needed to master DAX calculations and data modeling. The trainer at CACTS custom-tailored the sessions using real corporate database schemas. I can now design complex dashboards and write calculated measures with ease.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Anjali K."
+      },
+      "datePublished": "2026-03-18",
+      "reviewBody": "The Power Query ETL and data cleaning modules were incredibly helpful. The 1-to-1 virtual screen sharing ensured I got unstuck immediately. Transitioning from Excel to Power BI dashboards was very smooth.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Mayur S."
+      },
+      "datePublished": "2026-05-02",
+      "reviewBody": "Learned how to design professional executive-level dashboards. The course goes beyond basics to cover data relationships, filters, and publishing reports. The hands-on project was very practical.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "reviewCount": "3"
+  }
 }
         </script>
         <script type="application/ld+json">

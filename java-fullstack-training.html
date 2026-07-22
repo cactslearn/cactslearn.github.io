@@ -25,14 +25,16 @@
         <script type="application/ld+json">
         {
   "@context": "https://schema.org",
-  "@type": "EducationalOccupationalProgram",
-  "@id": "https://cactslearn.github.io/java-fullstack-training.html#program",
-  "name": "Java Fullstack Training | 1-to-1 Mentorship Lab",
-  "description": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Spring Boot, React, and SQL enterprise backend systems from day one, completing your technical milestones by committing code to live company repositories.",
+  "@type": "Course",
+  "@id": "https://cactslearn.github.io/java-fullstack-training.html#course",
+  "name": "Java Fullstack Training",
+  "description": "Join the best 1-to-1 Java Fullstack Training in Pune. Direct live project internship, personalized syllabus, and mentor support. Only \u20b919,999.",
+  "url": "https://cactslearn.github.io/java-fullstack-training.html",
   "provider": {
-    "@type": "EducationalOrganization",
+    "@type": "Organization",
     "name": "CACTS - Centre of Advanced Computer Training and Studies",
     "url": "https://cactslearn.github.io/",
+    "sameAs": "https://cactslearn.github.io/",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
@@ -42,74 +44,103 @@
       "addressCountry": "IN"
     }
   },
-  "educationalProgramMode": "blended",
-  "programType": "Professional Training",
-  "timeToComplete": "P16W",
-  "occupationalCategory": "Software Developer",
-  "educationalCredentialAwarded": "GitHub Portfolio Code Verification & Live Staging Project Certificate",
   "offers": {
     "@type": "Offer",
     "price": "19999",
     "priceCurrency": "INR",
-    "category": "Training Course"
+    "category": "Training Course",
+    "url": "https://cactslearn.github.io/java-fullstack-training.html",
+    "availability": "https://schema.org/InStock"
   },
-  "hasCourse": [
+  "hasCourseInstance": [
     {
-      "@type": "Course",
-      "name": "Java Fullstack Training",
-      "description": "Join the best 1-to-1 Java Fullstack Training in Pune. Direct live project internship, personalized syllabus, and mentor support. Only \u20b919,999.",
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Rahul M."
-          },
-          "datePublished": "2026-03-15",
-          "reviewBody": "The 1-to-1 virtual sessions were exactly what I needed. Working on a real database schema and Spring Boot API integration during the Java Fullstack internship was much more valuable than typical mock projects.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Snehal P."
-          },
-          "datePublished": "2026-04-02",
-          "reviewBody": "Transitioning from a non-CS background was intimidating, but my trainer at CACTS took it step by step. We built a clean React frontend with a Hibernate/Spring Boot backend. The code reviews taught me real git workflows, which helped me land my first job.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Rohan D."
-          },
-          "datePublished": "2026-05-10",
-          "reviewBody": "I had basic Java knowledge but needed Spring Boot microservices expertise for my job. The individual mentoring model allowed me to skip basics and focus on JWT authentication and connection pooling. The staging deployment practice was excellent.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          }
+      "@type": "CourseInstance",
+      "courseMode": "onsite",
+      "duration": "P16W",
+      "instructor": {
+        "@type": "Person",
+        "name": "Hambirrao P",
+        "jobTitle": "Lead Technology Trainer"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "CACTS Shivane Training Lab",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+          "addressLocality": "Pune",
+          "addressRegion": "Maharashtra",
+          "postalCode": "411023",
+          "addressCountry": "IN"
         }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "bestRating": "5",
-        "reviewCount": "3"
+      }
+    },
+    {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      "duration": "P16W",
+      "instructor": {
+        "@type": "Person",
+        "name": "Hambirrao P",
+        "jobTitle": "Lead Technology Trainer"
+      },
+      "location": {
+        "@type": "VirtualLocation",
+        "name": "CACTS 1-to-1 Virtual Classroom Lab",
+        "url": "https://cactslearn.github.io/one-to-one-software-training.html"
       }
     }
-  ]
+  ],
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Rahul M."
+      },
+      "datePublished": "2026-03-15",
+      "reviewBody": "The 1-to-1 virtual sessions were exactly what I needed. Working on a real database schema and Spring Boot API integration during the Java Fullstack internship was much more valuable than typical mock projects.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Snehal P."
+      },
+      "datePublished": "2026-04-02",
+      "reviewBody": "Transitioning from a non-CS background was intimidating, but my trainer at CACTS took it step by step. We built a clean React frontend with a Hibernate/Spring Boot backend. The code reviews taught me real git workflows, which helped me land my first job.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "Rohan D."
+      },
+      "datePublished": "2026-05-10",
+      "reviewBody": "I had basic Java knowledge but needed Spring Boot microservices expertise for my job. The individual mentoring model allowed me to skip basics and focus on JWT authentication and connection pooling. The staging deployment practice was excellent.",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      }
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "bestRating": "5",
+    "reviewCount": "3"
+  }
 }
         </script>
         <script type="application/ld+json">
