@@ -233,3 +233,178 @@ if (mcpContext && typeof mcpContext.registerTool === "function") {
         }
     });
 }
+    // --- PUNE IT SALARY CALCULATOR LOGIC ---
+    const calcTrack = document.getElementById('calc-track');
+    const calcExp = document.getElementById('calc-exp');
+    const calcProof = document.getElementById('calc-proof');
+    const calcLoc = document.getElementById('calc-location');
+    const expVal = document.getElementById('exp-val');
+    const resSalary = document.getElementById('res-salary');
+    const resGapBadge = document.getElementById('res-gap-badge');
+    const resAts = document.getElementById('res-ats');
+    const resOutlook = document.getElementById('res-outlook');
+    const resPosition = document.getElementById('res-position');
+    const resCtaLink = document.getElementById('res-cta-link');
+
+    const trackData = {
+        'java': { base: 4.5, expMult: 1.8, name: 'Java Fullstack', link: 'java-fullstack-training.html', pos: 'Fullstack Spring Boot & React Microservices Engineer', outlook: '+18% YOY' },
+        'python': { base: 4.0, expMult: 1.6, name: 'Python Automation', link: 'python-training.html', pos: 'Python Developer & Automation Scripting Specialist', outlook: '+15% YOY' },
+        'react': { base: 4.2, expMult: 1.7, name: 'React JS', link: 'react-js-training.html', pos: 'Modern Frontend & React 19 Application Developer', outlook: '+16% YOY' },
+        'mobile': { base: 4.8, expMult: 1.9, name: 'React Native', link: 'react-native-training.html', pos: 'Cross-Platform iOS & Android Mobile Engineer', outlook: '+20% YOY' },
+        'ai': { base: 6.0, expMult: 2.4, name: 'AI & Machine Learning', link: 'ai-ml-training.html', pos: 'AI Application & RAG Pipeline Engineer', outlook: '+34% YOY' },
+        'data-eng': { base: 5.5, expMult: 2.2, name: 'Data Engineering', link: 'data-engineering-training.html', pos: 'Apache Spark & Data Lake Pipeline Architect', outlook: '+28% YOY' },
+        'devops': { base: 5.2, expMult: 2.1, name: 'DevOps & Cloud', link: 'devops-training.html', pos: 'Cloud Native Kubernetes & Terraform DevOps Architect', outlook: '+22% YOY' },
+        'powerbi': { base: 4.0, expMult: 1.5, name: 'Power BI Analytics', link: 'power-bi-training.html', pos: 'BI Analytics & DAX Dashboard Specialist', outlook: '+14% YOY' },
+        'testing': { base: 3.8, expMult: 1.5, name: 'Software Testing', link: 'software-testing-training.html', pos: 'SDET & Selenium Test Automation Engineer', outlook: '+12% YOY' },
+        'architect': { base: 12.0, expMult: 2.8, name: 'Software Architecture', link: 'software-architect-training.html', pos: 'Enterprise Distributed Systems Architect', outlook: '+25% YOY' }
+    };
+
+    function updateSalaryCalculator() {
+        if (!calcTrack || !calcExp || !calcProof || !calcLoc) return;
+
+        const trackKey = calcTrack.value;
+        const yrs = parseInt(calcExp.value, 10);
+        const proofVal = calcProof.value;
+        const locVal = calcLoc.value;
+
+        const info = trackData[trackKey] || trackData['java'];
+
+        expVal.textContent = yrs === 0 ? '0 Years (Fresher Entry)' : `${yrs} Year${yrs > 1 ? 's' : ''} Experience`;
+
+        // Calculate LPA Range
+        let minLPA = info.base + (yrs * info.expMult);
+        let maxLPA = minLPA * 1.55;
+
+        // Proof Multipliers
+        let proofBonus = 0;
+        let atsPass = '55% Pass Rate';
+
+        if (proofVal === 'cert') {
+            minLPA *= 0.75;
+            maxLPA *= 0.75;
+            proofBonus = 0;
+            atsPass = '32% Pass Rate (High ATS Rejection)';
+        } else if (proofVal === 'basic') {
+            minLPA *= 0.9;
+            maxLPA *= 0.9;
+            proofBonus = 0.8;
+            atsPass = '60% Pass Rate';
+        } else {
+            proofBonus = 2.4;
+            atsPass = '87% Pass Rate (Verified PRs)';
+        }
+
+        // Location Multiplier
+        if (locVal === 'remote') {
+            minLPA *= 1.15;
+            maxLPA *= 1.25;
+        }
+
+        resSalary.textContent = `₹${minLPA.toFixed(1)} LPA – ₹${maxLPA.toFixed(1)} LPA`;
+        resGapBadge.textContent = proofVal === 'proof' ? `+₹${proofBonus.toFixed(1)} LPA Verified Code Bonus Included` : `⚠️ -₹${(minLPA * 0.3).toFixed(1)} LPA Paper Cert Penalty`;
+        resGapBadge.style.background = proofVal === 'proof' ? 'rgba(16, 185, 129, 0.15)' : 'rgba(239, 68, 68, 0.15)';
+        resGapBadge.style.color = proofVal === 'proof' ? '#10b981' : '#ef4444';
+
+        resAts.textContent = atsPass;
+        resOutlook.textContent = info.outlook;
+        resPosition.textContent = info.pos;
+        if (resCtaLink) {
+            resCtaLink.href = info.link;
+            resCtaLink.textContent = `Explore ${info.name} 1-to-1 Mentorship ↗`;
+        }
+    }
+
+    if (calcTrack && calcExp && calcProof && calcLoc) {
+        calcTrack.addEventListener('change', updateSalaryCalculator);
+        calcExp.addEventListener('input', updateSalaryCalculator);
+        calcProof.addEventListener('change', updateSalaryCalculator);
+        calcLoc.addEventListener('change', updateSalaryCalculator);
+        updateSalaryCalculator();
+    }
+
+    // --- COURSE READINESS DIAGNOSTIC LOGIC ---
+    let currentQ = 1;
+    const totalQ = 5;
+    const qQuestions = document.querySelectorAll('.quiz-q');
+    const quizPrev = document.getElementById('quiz-prev');
+    const quizNext = document.getElementById('quiz-next');
+    const stepInd = document.getElementById('quiz-step-indicator');
+    const quizContainer = document.getElementById('quiz-container');
+    const quizResults = document.getElementById('quiz-results');
+
+    function showQuestion(qNum) {
+        if (!qQuestions || qQuestions.length === 0) return;
+        qQuestions.forEach(el => {
+            el.style.display = parseInt(el.getAttribute('data-q'), 10) === qNum ? 'block' : 'none';
+        });
+        if (stepInd) stepInd.textContent = `QUESTION ${qNum} OF ${totalQ}`;
+        if (quizPrev) quizPrev.style.display = qNum > 1 ? 'inline-block' : 'none';
+        if (quizNext) quizNext.textContent = qNum === totalQ ? 'Calculate Readiness Score 🎯' : 'Next Question →';
+    }
+
+    if (quizNext) {
+        quizNext.addEventListener('click', () => {
+            if (currentQ < totalQ) {
+                currentQ++;
+                showQuestion(currentQ);
+            } else {
+                // Calculate Score
+                let score = 0;
+                for (let i = 1; i <= 4; i++) {
+                    const sel = document.querySelector(`input[name="q${i}"]:checked`);
+                    if (sel) score += parseInt(sel.value, 10);
+                }
+                const trackSel = document.querySelector('input[name="q5"]:checked');
+                const selectedTrack = trackSel ? trackSel.value : 'java-fullstack';
+
+                // Display Results
+                if (quizContainer) quizContainer.style.display = 'none';
+                if (quizResults) quizResults.style.display = 'block';
+
+                const pct = Math.round((score / 12) * 100);
+                const qScoreTitle = document.getElementById('q-score-title');
+                const qScoreDesc = document.getElementById('q-score-desc');
+                const qRecTrack = document.getElementById('q-rec-track');
+                const qRecTime = document.getElementById('q-rec-time');
+                const qRecRisk = document.getElementById('q-rec-risk');
+                const qRecLink = document.getElementById('q-rec-link');
+
+                if (pct >= 80) {
+                    qScoreTitle.textContent = `${pct}% High Developer Readiness`;
+                    qScoreDesc.textContent = 'You possess a solid analytical mindset and strong debugging commitment. You are well-positioned for 1-to-1 intensive developer lab mentorship.';
+                    qRecTime.textContent = '12 to 16 Weeks';
+                    qRecRisk.textContent = 'Low Risk (Future-Proof)';
+                } else if (pct >= 55) {
+                    qScoreTitle.textContent = `${pct}% Moderate Readiness`;
+                    qScoreDesc.textContent = 'You have good potential, but need consistent daily hands-on keyboard time (10+ hrs/wk) to build line-by-line debugging confidence.';
+                    qRecTime.textContent = '16 to 20 Weeks';
+                    qRecRisk.textContent = 'Moderate Risk';
+                } else {
+                    qScoreTitle.textContent = `${pct}% Foundation Building Phase`;
+                    qScoreDesc.textContent = 'We recommend starting with logic foundations and dedicated 1-to-1 mentorship to avoid getting overwhelmed by batch fast-pacing.';
+                    qRecTime.textContent = '20+ Weeks';
+                    qRecRisk.textContent = 'High Batch Risk';
+                }
+
+                if (selectedTrack === 'ai-ml') {
+                    if (qRecTrack) qRecTrack.textContent = 'AI & Machine Learning Engineering';
+                    if (qRecLink) qRecLink.href = 'ai-ml-training.html';
+                } else if (selectedTrack === 'devops') {
+                    if (qRecTrack) qRecTrack.textContent = 'DevOps & Cloud Architecture';
+                    if (qRecLink) qRecLink.href = 'devops-training.html';
+                } else {
+                    if (qRecTrack) qRecTrack.textContent = 'Java Fullstack Engineering';
+                    if (qRecLink) qRecLink.href = 'java-fullstack-training.html';
+                }
+            }
+        });
+    }
+
+    if (quizPrev) {
+        quizPrev.addEventListener('click', () => {
+            if (currentQ > 1) {
+                currentQ--;
+                showQuestion(currentQ);
+            }
+        });
+    }

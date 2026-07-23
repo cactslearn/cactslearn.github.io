@@ -2578,6 +2578,24 @@ def build():
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/pune-it-salary-calculator.html</loc>
+        <lastmod>{current_date}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/course-readiness-check.html</loc>
+        <lastmod>{current_date}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/pune-it-salary-report.html</loc>
+        <lastmod>{current_date}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/privacy-policy.html</loc>
         <lastmod>{current_date}</lastmod>
         <changefreq>monthly</changefreq>
