@@ -1,3 +1,43 @@
+
+def get_course_alternate_names(slug, name):
+    base = [
+        f"{name} Course",
+        f"{name} Training",
+        f"{name} Class",
+        f"CACTS {name} Academy",
+        f"{name} Course Pune",
+        f"{name} Training in Pune"
+    ]
+    if "java" in slug:
+        base.extend(["Java Full Stack Development Training", "Spring Boot Microservices Course", "Java React Fullstack Academy Pune"])
+    elif "python" in slug:
+        base.extend(["Python Scripting Course", "Python Automation Training", "CACTS Python Lab Pune"])
+    elif "react-js" in slug:
+        base.extend(["React 19 Training", "Frontend Web Development Course", "React JS Lab Pune"])
+    elif "react-native" in slug:
+        base.extend(["React Native Mobile App Development", "Cross-Platform Mobile Engineering Training"])
+    elif "ai-ml" in slug:
+        base.extend(["AI & Machine Learning Engineering", "Artificial Intelligence Course Pune", "PyTorch & RAG Pipeline Training"])
+    elif "data-science" in slug:
+        base.extend(["Data Science Analytics Course", "Python Data Science Training Pune"])
+    elif "data-engineering" in slug:
+        base.extend(["Data Engineering ETL Course", "Apache Spark & Data Lake Training Pune"])
+    elif "devops" in slug:
+        base.extend(["DevOps & Cloud Native Architecture", "Kubernetes & Terraform Training Pune"])
+    elif "cloud" in slug:
+        base.extend(["Cloud Systems Architecture Training", "AWS & Cloud Engineering Course Pune"])
+    elif "power-bi" in slug:
+        base.extend(["Power BI Analytics Training", "Business Intelligence & DAX Course Pune"])
+    elif "software-testing" in slug:
+        base.extend(["SDET & Selenium Automation Course", "Software Quality Assurance Training Pune"])
+    elif "cybersecurity" in slug:
+        base.extend(["Cybersecurity Operations Training", "Ethical Hacking & Network Defense Course Pune"])
+    elif "software-architect" in slug:
+        base.extend(["Software Architecture & System Design", "Distributed Systems Architect Course Pune"])
+    elif "full-stack" in slug:
+        base.extend(["MERN Stack Development Course", "Full Stack Web Developer Training Pune"])
+    return list(dict.fromkeys(base))
+
 import json
 import os
 import sys
@@ -524,11 +564,21 @@ def build():
             "@type": "Course",
             "@id": f"https://cactslearn.github.io/{slug}.html#course",
             "name": name,
+            "alternateName": get_course_alternate_names(slug, name),
             "description": meta_description,
             "url": f"https://cactslearn.github.io/{slug}.html",
             "provider": {
                 "@type": "Organization",
                 "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "alternateName": [
+                    "CACTS",
+                    "CACTS Institute",
+                    "CACTS Software Training",
+                    "CACTS Pune",
+                    "CACTS Learning",
+                    "CACTS IT Academy",
+                    "Centre of Advanced Computer Training and Studies"
+                ],
                 "url": "https://cactslearn.github.io/",
                 "sameAs": "https://cactslearn.github.io/",
                 "address": {
@@ -783,11 +833,21 @@ def build():
             "@type": "Course",
             "@id": f"https://cactslearn.github.io/{base_slug}-syllabus.html#course",
             "name": f"{name} Syllabus",
+            "alternateName": get_course_alternate_names(base_slug, name),
             "description": f"Detailed topic-by-topic Syllabus for {name} in Pune.",
             "url": f"https://cactslearn.github.io/{base_slug}-syllabus.html",
             "provider": {
                 "@type": "Organization",
                 "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "alternateName": [
+                    "CACTS",
+                    "CACTS Institute",
+                    "CACTS Software Training",
+                    "CACTS Pune",
+                    "CACTS Learning",
+                    "CACTS IT Academy",
+                    "Centre of Advanced Computer Training and Studies"
+                ],
                 "url": "https://cactslearn.github.io/",
                 "sameAs": "https://cactslearn.github.io/",
                 "address": {
@@ -992,6 +1052,15 @@ def build():
             "provider": {
                 "@type": "Organization",
                 "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "alternateName": [
+                    "CACTS",
+                    "CACTS Institute",
+                    "CACTS Software Training",
+                    "CACTS Pune",
+                    "CACTS Learning",
+                    "CACTS IT Academy",
+                    "Centre of Advanced Computer Training and Studies"
+                ],
                 "url": "https://cactslearn.github.io/",
                 "sameAs": "https://cactslearn.github.io/",
                 "address": {
@@ -1183,6 +1252,15 @@ def build():
             "provider": {
                 "@type": "Organization",
                 "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "alternateName": [
+                    "CACTS",
+                    "CACTS Institute",
+                    "CACTS Software Training",
+                    "CACTS Pune",
+                    "CACTS Learning",
+                    "CACTS IT Academy",
+                    "Centre of Advanced Computer Training and Studies"
+                ],
                 "url": "https://cactslearn.github.io/",
                 "sameAs": "https://cactslearn.github.io/",
                 "address": {
@@ -1384,6 +1462,15 @@ def build():
             "provider": {
                 "@type": "Organization",
                 "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "alternateName": [
+                    "CACTS",
+                    "CACTS Institute",
+                    "CACTS Software Training",
+                    "CACTS Pune",
+                    "CACTS Learning",
+                    "CACTS IT Academy",
+                    "Centre of Advanced Computer Training and Studies"
+                ],
                 "url": "https://cactslearn.github.io/",
                 "sameAs": "https://cactslearn.github.io/",
                 "address": {
@@ -1632,6 +1719,15 @@ def build():
                 "publisher": {
                     "@type": "Organization",
                     "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "alternateName": [
+                    "CACTS",
+                    "CACTS Institute",
+                    "CACTS Software Training",
+                    "CACTS Pune",
+                    "CACTS Learning",
+                    "CACTS IT Academy",
+                    "Centre of Advanced Computer Training and Studies"
+                ],
                     "logo": {
                         "@type": "ImageObject",
                         "url": "https://cactslearn.github.io/images/cacts-logo.png"
@@ -1814,6 +1910,15 @@ def build():
                 "publisher": {
                     "@type": "Organization",
                     "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "alternateName": [
+                    "CACTS",
+                    "CACTS Institute",
+                    "CACTS Software Training",
+                    "CACTS Pune",
+                    "CACTS Learning",
+                    "CACTS IT Academy",
+                    "Centre of Advanced Computer Training and Studies"
+                ],
                     "logo": {
                         "@type": "ImageObject",
                         "url": "https://cactslearn.github.io/images/cacts-logo.png"
@@ -1996,6 +2101,15 @@ def build():
                 "publisher": {
                     "@type": "Organization",
                     "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "alternateName": [
+                    "CACTS",
+                    "CACTS Institute",
+                    "CACTS Software Training",
+                    "CACTS Pune",
+                    "CACTS Learning",
+                    "CACTS IT Academy",
+                    "Centre of Advanced Computer Training and Studies"
+                ],
                     "logo": {
                         "@type": "ImageObject",
                         "url": "https://cactslearn.github.io/images/cacts-logo.png"
@@ -2213,6 +2327,15 @@ def build():
                 "publisher": {
                     "@type": "Organization",
                     "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "alternateName": [
+                    "CACTS",
+                    "CACTS Institute",
+                    "CACTS Software Training",
+                    "CACTS Pune",
+                    "CACTS Learning",
+                    "CACTS IT Academy",
+                    "Centre of Advanced Computer Training and Studies"
+                ],
                     "logo": {
                         "@type": "ImageObject",
                         "url": "https://cactslearn.github.io/images/cacts-logo.png"
@@ -2432,6 +2555,15 @@ def build():
             "publisher": {
                 "@type": "Organization",
                 "name": "CACTS - Centre of Advanced Computer Training and Studies",
+                "alternateName": [
+                    "CACTS",
+                    "CACTS Institute",
+                    "CACTS Software Training",
+                    "CACTS Pune",
+                    "CACTS Learning",
+                    "CACTS IT Academy",
+                    "Centre of Advanced Computer Training and Studies"
+                ],
                 "logo": {
                     "@type": "ImageObject",
                     "url": "https://cactslearn.github.io/images/cacts-logo.png"
