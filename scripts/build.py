@@ -932,7 +932,7 @@ def build():
         """
 
         page_html2 = template
-        page_html2 = page_html2.replace("{{seo_title}}", f"{name} Syllabus | Detailed Course Topics | CACTS Pune")
+        page_html2 = page_html2.replace("{{seo_title}}", f"{name} Syllabus & Modules | CACTS Pune")
         page_html2 = page_html2.replace("{{meta_description}}", f"Read the complete, detailed course syllabus for 1-to-1 {name} training in Pune. Explore modules, prerequisites, and live tools.")
         page_html2 = page_html2.replace("{{canonical}}", f"https://cactslearn.github.io/{base_slug}-syllabus.html")
         page_html2 = page_html2.replace("{{schema_markup}}", schema_markup2)
@@ -1144,7 +1144,7 @@ def build():
         """
 
         page_html3 = template
-        page_html3 = page_html3.replace("{{seo_title}}", f"{name} Course Fees in Pune | Transparent Pricing | CACTS")
+        page_html3 = page_html3.replace("{{seo_title}}", f"{name} Course Fees & Tuition | CACTS Pune")
         page_html3 = page_html3.replace("{{meta_description}}", f"Check current fees, installment structures, and pricing discounts for 1-to-1 {name} training in Pune. Zero hidden charges.")
         page_html3 = page_html3.replace("{{canonical}}", f"https://cactslearn.github.io/{base_slug}-course-fees.html")
         page_html3 = page_html3.replace("{{schema_markup}}", schema_markup3)
@@ -1334,7 +1334,7 @@ def build():
         """
 
         page_html4 = template
-        page_html4 = page_html4.replace("{{seo_title}}", f"Top {name} Interview Questions & Answers | CACTS Pune")
+        page_html4 = page_html4.replace("{{seo_title}}", f"{name} Interview Questions & Answers | CACTS")
         page_html4 = page_html4.replace("{{meta_description}}", f"Master technical programming, data, and system questions for {name} interviews. Screen-sharing answers vetted by developers.")
         page_html4 = page_html4.replace("{{canonical}}", f"https://cactslearn.github.io/{base_slug}-interview-questions.html")
         page_html4 = page_html4.replace("{{schema_markup}}", schema_markup4)
@@ -1547,7 +1547,7 @@ def build():
         """
 
         page_html5 = template
-        page_html5 = page_html5.replace("{{seo_title}}", f"{name} Career Roadmap | Step-by-Step Guide | CACTS Pune")
+        page_html5 = page_html5.replace("{{seo_title}}", f"{name} Career Roadmap & Guide | CACTS Pune")
         page_html5 = page_html5.replace("{{meta_description}}", f"Explore the complete learning and employment roadmap for {name}. Follow salary phases, milestones, and local Pune tech timelines.")
         page_html5 = page_html5.replace("{{canonical}}", f"https://cactslearn.github.io/{base_slug}-roadmap.html")
         page_html5 = page_html5.replace("{{schema_markup}}", schema_markup5)
@@ -2958,5 +2958,57 @@ def build():
             f.write(reviews_content)
         print(f"Updated central reviews.html with all {len(all_reviews_schema_list)} reviews and injected LocalBusiness schema.")
 
+
+def update_sitemap_html():
+    sitemap_html_file = "sitemap.html"
+    c_json_path = os.path.join("src", "courses.json")
+    if os.path.exists(c_json_path) and os.path.exists(sitemap_html_file):
+        with open(c_json_path, "r", encoding="utf-8") as f:
+            c_data = json.load(f)
+        split_links_html = ""
+        for cd in c_data:
+            cname = cd["name"]
+            cslug = cd["slug"]
+            cbase = cslug.replace("-training", "")
+            split_links_html += f"""
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.5rem; transition: var(--transition);">
+                        <h4 style="color: var(--text-primary); font-size: 1.1rem; margin-bottom: 1rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent); flex-shrink: 0;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+                            {cname}
+                        </h4>
+                        <ul class="sitemap-list" style="gap: 0.6rem;">
+                            <li>
+                                <span class="sitemap-bullet" style="color: var(--accent);">•</span>
+                                <a href="{cslug}.html" style="font-weight: 700; color: var(--accent-light);">{cname} Overview</a>
+                            </li>
+                            <li style="padding-left: 1.25rem;">
+                                <span class="sitemap-bullet" style="color: var(--text-secondary);">↳</span>
+                                <a href="{cbase}-syllabus.html">{cname} Syllabus</a>
+                            </li>
+                            <li style="padding-left: 1.25rem;">
+                                <span class="sitemap-bullet" style="color: var(--text-secondary);">↳</span>
+                                <a href="{cbase}-course-fees.html">{cname} Fees &amp; Tuition</a>
+                            </li>
+                            <li style="padding-left: 1.25rem;">
+                                <span class="sitemap-bullet" style="color: var(--text-secondary);">↳</span>
+                                <a href="{cbase}-interview-questions.html">{cname} Interview Q&amp;A</a>
+                            </li>
+                            <li style="padding-left: 1.25rem;">
+                                <span class="sitemap-bullet" style="color: var(--text-secondary);">↳</span>
+                                <a href="{cbase}-roadmap.html">{cname} Career Roadmap</a>
+                            </li>
+                        </ul>
+                    </div>
+            """
+        with open(sitemap_html_file, "r", encoding="utf-8") as f:
+            sm_content = f.read()
+        pattern = re.compile(r'(<div style="display: grid; grid-template-columns: repeat\(auto-fill, minmax\(320px, 1fr\)\); gap: 1\.5rem;" id="course-split-grid">)(.*?)(</div>\s*</div>)', re.DOTALL)
+        if pattern.search(sm_content):
+            sm_content = pattern.sub(r'\g<1>\n' + split_links_html + r'\n\g<3>', sm_content)
+            with open(sitemap_html_file, "w", encoding="utf-8") as f:
+                f.write(sm_content)
+        print(f"Automatically updated {sitemap_html_file} with hierarchical course split page directory!")
+
 if __name__ == "__main__":
     build()
+    update_sitemap_html()
