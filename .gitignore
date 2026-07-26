@@ -1,0 +1,5 @@
+# Ignore Search Console and Webmaster Performance Data
+performance/
+
+# Ignore scratch audit JSON files
+seo_tag_length_audit.json
