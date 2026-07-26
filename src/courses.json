@@ -1158,6 +1158,14 @@
         "text": "As a designer wanting to transition, the pacing was perfect. We focused on functional hooks and API calls. The resume review got me calls within weeks.",
         "rating": 5,
         "date": "2026-05-20"
+      },
+      {
+        "name": "Harish M.",
+        "role": "Frontend Developer",
+        "location": "Sinhagad Road, Pune",
+        "text": "Mastering Redux Toolkit, custom React Hooks, and Vercel automated CI/CD deployments in 1-to-1 sessions with my mentor helped me clear technical interviews seamlessly.",
+        "rating": 5,
+        "date": "2026-05-18"
       }
     ],
     "duration_iso": "P8W",
@@ -1254,6 +1262,14 @@
         "text": "I loved the TypeScript integration and the Expo Go simulator setup. My mentor helped me resolve app signing and build profiles that made landing my current role possible.",
         "rating": 5,
         "date": "2026-05-05"
+      },
+      {
+        "name": "Pooja K.",
+        "role": "Mobile Application Engineer",
+        "location": "Deccan, Pune",
+        "text": "Building cross-platform iOS and Android apps with React Native, TypeScript, and SQLite local storage during individual mentoring gave me solid app architecture knowledge.",
+        "rating": 5,
+        "date": "2026-06-05"
       }
     ],
     "duration_iso": "P8W",
@@ -1458,6 +1474,14 @@
         "text": "Building a full-stack DApp with React, Ethers.js, and MetaMask wallet integration under 1-to-1 mentor guidance gave me the practical confidence I needed. Real code reviews over generic theory!",
         "rating": 5,
         "date": "2026-06-28"
+      },
+      {
+        "name": "Nikhil R.",
+        "role": "Web3 Smart Contract Auditor",
+        "location": "Kothrud, Pune",
+        "text": "Auditing Solidity code and building ERC-20 yield contracts during my 1-to-1 training at CACTS gave me hands-on experience that no video course could offer. Truly Pune's best Web3 institute.",
+        "rating": 5,
+        "date": "2026-07-04"
       }
     ]
   }

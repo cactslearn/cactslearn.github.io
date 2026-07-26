@@ -217,6 +217,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/beginner-to-java-fullstack-developer-roadmap.html</loc>
+        <lastmod>2026-07-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/java-vs-python.html</loc>
         <lastmod>2026-07-26</lastmod>
         <changefreq>weekly</changefreq>
@@ -409,6 +415,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/beginner-to-python-developer-roadmap.html</loc>
+        <lastmod>2026-07-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/power-bi-training.html</loc>
         <lastmod>2026-07-26</lastmod>
         <changefreq>weekly</changefreq>
@@ -482,6 +494,12 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/cloud-roadmap.html</loc>
+        <lastmod>2026-07-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/best-aws-cloud-certifications.html</loc>
         <lastmod>2026-07-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -788,6 +806,24 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/blockchain-project-ideas.html</loc>
+        <lastmod>2026-07-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/beginner-to-blockchain-developer-roadmap.html</loc>
+        <lastmod>2026-07-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/best-blockchain-certifications.html</loc>
+        <lastmod>2026-07-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/what-does-a-blockchain-developer-do.html</loc>
         <lastmod>2026-07-26</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>

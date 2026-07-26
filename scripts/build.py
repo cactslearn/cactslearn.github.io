@@ -2958,6 +2958,19 @@ def build():
             f.write(reviews_content)
         print(f"Updated central reviews.html with all {len(all_reviews_schema_list)} reviews and injected LocalBusiness schema.")
 
+        # Automatically update aggregateRating reviewCount across index.html and neighborhood landing pages
+        site_pages_to_sync = ["index.html"] + [f for f in os.listdir(".") if f.startswith("software-training-institute-") and f.endswith(".html")]
+        for sp in site_pages_to_sync:
+            if os.path.exists(sp):
+                with open(sp, "r", encoding="utf-8") as f:
+                    sp_content = f.read()
+                sp_updated = re.sub(r'("aggregateRating":\s*\{\s*"@type":\s*"AggregateRating",\s*"ratingValue":\s*"4\.9",\s*"reviewCount":\s*")\d+(")',
+                                    rf'\g<1>{len(all_reviews_schema_list)}\g<2>', sp_content)
+                if sp_updated != sp_content:
+                    with open(sp, "w", encoding="utf-8") as f:
+                        f.write(sp_updated)
+
+
 
 def update_sitemap_html():
     sitemap_html_file = "sitemap.html"

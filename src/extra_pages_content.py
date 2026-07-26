@@ -2,6 +2,258 @@
 
 EXTRA_PAGES = [
     {
+        "category": "certifications",
+        "category_label": "Certifications",
+        "slug": "best-aws-cloud-certifications",
+        "seo_title": "Best AWS & Cloud Systems Certifications Guide | CACTS Pune",
+        "meta_description": "Compare top AWS & Cloud certifications. Learn AWS Solutions Architect, SysOps Administrator, and Cloud Practitioner exam requirements.",
+        "h1": "Best AWS & Cloud Systems Certifications",
+        "h2": "Industry Credentials to Validate Cloud Infrastructure & Serverless Architecture",
+        "related_course": "Cloud Training",
+        "related_course_slug": "cloud-training",
+        "key_takeaways": [
+                "Validates cloud infrastructure design, VPC networking, and security compliance.",
+                "Demonstrates expertise in EC2 compute sizing, S3 storage, and IAM access controls.",
+                "Increases interview eligibility for Cloud Engineer and DevOps specialist roles."
+        ],
+        "content_blocks": [
+                {
+                        "title": "1. AWS Certified Solutions Architect \u2013 Associate",
+                        "text": "The industry gold standard certification validating high-availability cloud architecture design, VPC subnet routing, and cost optimization."
+                },
+                {
+                        "title": "2. AWS Certified SysOps Administrator \u2013 Associate",
+                        "text": "Validates operational monitoring, CloudWatch metrics, automated backup policies, and system health management on AWS infrastructure."
+                },
+                {
+                        "title": "3. AWS Certified Developer \u2013 Associate",
+                        "text": "Tests serverless application development using AWS Lambda, DynamoDB, API Gateway, and SDK integration."
+                }
+        ],
+        "faqs": [
+                {
+                        "q": "Which AWS certification should I take first?",
+                        "a": "Start with AWS Certified Cloud Practitioner for foundational concepts, then proceed to AWS Solutions Architect Associate."
+                },
+                {
+                        "q": "Does CACTS provide hands-on AWS lab access?",
+                        "a": "Yes! CACTS 1-to-1 cloud training includes live AWS Free Tier lab configuration and VPC setup practice."
+                }
+        ]
+},
+    {
+        "category": "roadmap",
+        "category_label": "Career Roadmap",
+        "slug": "beginner-to-python-developer-roadmap",
+        "seo_title": "Beginner to Python Developer Career Roadmap | CACTS Pune",
+        "meta_description": "Step-by-step career roadmap to becoming a Python Developer. Master Core Python, web scrapers, Django/FastAPI, automation, and SQL databases.",
+        "h1": "Beginner to Python Developer Roadmap",
+        "h2": "The Structured Guide to Mastering Python Scripting, Web Frameworks & Automation",
+        "related_course": "Python Training",
+        "related_course_slug": "python-training",
+        "key_takeaways": [
+                "Learn Python data structures, OOP modules, file IO, and regular expressions.",
+                "Build web automation scrapers using BeautifulSoup and Selenium WebDriver.",
+                "Develop high-performance REST microservices with FastAPI or Django."
+        ],
+        "content_blocks": [
+                {
+                        "title": "Milestone 1: Core Python Syntax & Data Types",
+                        "text": "Master Python variables, lists, dictionaries, tuples, sets, control flow loops, functions, lambda expressions, and error exception handling."
+                },
+                {
+                        "title": "Milestone 2: Object-Oriented Programming & File I/O",
+                        "text": "Understand Python OOP classes, inheritance, decorators, module imports, virtual environments, and reading/writing CSV, JSON, and text files."
+                },
+                {
+                        "title": "Milestone 3: Web Scrapers & Automation Scripts",
+                        "text": "Extract structured data from web pages using Requests, BeautifulSoup, and Selenium. Automate repetitive spreadsheet and OS file management tasks."
+                },
+                {
+                        "title": "Milestone 4: REST API Microservices & SQL Integration",
+                        "text": "Build lightweight backend APIs using FastAPI or Flask, query relational databases using SQLAlchemy ORM, and host scripts on cloud servers."
+                }
+        ],
+        "faqs": [
+                {
+                        "q": "Is Python a good starting language for beginners?",
+                        "a": "Yes! Python's clean, readable syntax makes it the ideal first programming language for web development, automation, and data engineering."
+                },
+                {
+                        "q": "What career paths open after completing the Python roadmap?",
+                        "a": "Python skills lead to job roles as Python Backend Developers, Automation Engineers, Data Analysts, and AI/ML Specialists."
+                }
+        ]
+},
+    {
+        "category": "roadmap",
+        "category_label": "Career Roadmap",
+        "slug": "beginner-to-java-fullstack-developer-roadmap",
+        "seo_title": "Beginner to Java Fullstack Developer Roadmap | CACTS Pune",
+        "meta_description": "Step-by-step learning roadmap to becoming a Java Fullstack Developer. Master Core Java, Spring Boot microservices, React, SQL & staging deploys.",
+        "h1": "Beginner to Java Fullstack Developer Roadmap",
+        "h2": "The Structured Path to Mastering Enterprise Spring Boot & React Engineering",
+        "related_course": "Java Fullstack Training",
+        "related_course_slug": "java-fullstack-training",
+        "key_takeaways": [
+                "Master Java Core fundamentals, OOP concepts, collections, and multi-threading first.",
+                "Build enterprise REST APIs using Spring Boot, Hibernate ORM, and PostgreSQL.",
+                "Integrate React JS frontend components and configure CI/CD pipeline deployments."
+        ],
+        "content_blocks": [
+                {
+                        "title": "Milestone 1: Java Foundations & Data Structures",
+                        "text": "Learn Core Java syntax, Object-Oriented Design (inheritance, interfaces, polymorphism), exception handling, Java Collections Framework, and basic SQL query execution."
+                },
+                {
+                        "title": "Milestone 2: Backend Microservices with Spring Boot",
+                        "text": "Build scalable REST APIs with Spring Boot, manage database persistence using Hibernate/JPA, implement JWT token authentication, and write JUnit unit tests."
+                },
+                {
+                        "title": "Milestone 3: Modern Frontend Integration with React",
+                        "text": "Develop responsive user interfaces using HTML5, CSS Grid, JavaScript ES6, and React JS. Connect React state handlers to Spring Boot REST endpoints."
+                },
+                {
+                        "title": "Milestone 4: Staging Deployment & Git CI/CD",
+                        "text": "Containerize Spring Boot applications using Docker, automate builds with Maven, publish code to GitHub, and deploy backend APIs to cloud hosting."
+                }
+        ],
+        "faqs": [
+                {
+                        "q": "What is the timeline to complete the Java Fullstack roadmap?",
+                        "a": "At CACTS, individual 1-to-1 mentoring takes students from basic programming to enterprise full-stack readiness in 16 weeks."
+                },
+                {
+                        "q": "What is the average starting salary for Java Fullstack Developers in Pune?",
+                        "a": "Freshers and junior Java Fullstack Developers in Pune start between 4.5 LPA and 8 LPA."
+                }
+        ]
+},
+    {
+        "category": "certifications",
+        "category_label": "Certifications",
+        "slug": "best-blockchain-certifications",
+        "seo_title": "Best Web3 & Blockchain Certifications Guide 2026 | CACTS",
+        "meta_description": "Discover top industry certifications for Web3 & Blockchain Developers. Compare Certified Ethereum Developer, Solidity Audit & Hyperledger badges.",
+        "h1": "Best Web3 & Blockchain Certifications",
+        "h2": "Industry Credentials to Validate Smart Contract & Ethereum Engineering Skills",
+        "related_course": "Blockchain Training",
+        "related_course_slug": "blockchain-training",
+        "key_takeaways": [
+                "Validates smart contract development and EVM execution expertise.",
+                "Complements deployed GitHub code commits with recognized industry credentials.",
+                "Boosts interview callback rates for Web3 startups and enterprise blockchain teams."
+        ],
+        "content_blocks": [
+                {
+                        "title": "1. Certified Ethereum Developer (CED)",
+                        "text": "Focuses on Solidity syntax, Ethereum transaction structures, EVM gas optimization, and smart contract security best practices."
+                },
+                {
+                        "title": "2. Certified Blockchain Security Auditor",
+                        "text": "Tests capability to identify smart contract vulnerabilities, perform static code analysis with Slither, and prevent re-entrancy exploits."
+                },
+                {
+                        "title": "3. Linux Foundation Hyperledger Certified Developer",
+                        "text": "Validates enterprise permissioned blockchain architecture, chaincode development, and Hyperledger Fabric network configuration."
+                }
+        ],
+        "faqs": [
+                {
+                        "q": "Do certifications matter more than live GitHub projects in Web3?",
+                        "a": "No, verified GitHub contract deployments on Etherscan carry the most weight, but certifications validate foundational theory and security awareness."
+                },
+                {
+                        "q": "How does CACTS prepare students for Web3 certifications?",
+                        "a": "CACTS 1-to-1 training covers 100% of certification exam topics alongside real DApp project building."
+                }
+        ]
+},
+    {
+        "category": "career",
+        "category_label": "Career Guide",
+        "slug": "what-does-a-blockchain-developer-do",
+        "seo_title": "What Does a Blockchain Developer Do? Role & Skills | CACTS",
+        "meta_description": "Explore the daily responsibilities, skills, and salaries of Blockchain Developers. Learn smart contract programming, EVM, and Web3 frontend tools.",
+        "h1": "What Does a Blockchain Developer Do?",
+        "h2": "Daily Responsibilities, Smart Contract Workflows, and Web3 Salary Ranges",
+        "related_course": "Blockchain Training",
+        "related_course_slug": "blockchain-training",
+        "key_takeaways": [
+                "Architects decentralized protocols and gas-optimized Solidity smart contracts.",
+                "Integrates Ethereum web libraries (Ethers.js, Web3.js) into React applications.",
+                "Audits smart contracts against security exploits like re-entrancy attacks."
+        ],
+        "content_blocks": [
+                {
+                        "title": "Smart Contract Development & EVM Execution",
+                        "text": "Blockchain developers write on-chain business logic using Solidity or Vyper. They compile and execute smart contracts on Ethereum Virtual Machine (EVM) nodes, managing gas consumption and state updates."
+                },
+                {
+                        "title": "Web3 DApp Integration & Wallet Authentication",
+                        "text": "Developers connect frontend user interfaces to smart contracts using Ethers.js or Web3.js. They handle crypto wallet connections (MetaMask, WalletConnect) and transaction sign requests."
+                },
+                {
+                        "title": "Security Auditing & Testnet Deployment",
+                        "text": "Before deploying contracts to mainnet Ethereum or Polygon, developers perform unit testing in Hardhat or Foundry and audit code using tools like Slither."
+                }
+        ],
+        "faqs": [
+                {
+                        "q": "What skills are required for a Blockchain Developer?",
+                        "a": "Key skills include Solidity, JavaScript/TypeScript, React, Ethers.js, Hardhat, IPFS, and Ethereum EVM mechanics."
+                },
+                {
+                        "q": "What is the average starting salary for Blockchain Developers in Pune?",
+                        "a": "Junior Blockchain Developers in Pune start between 6 LPA and 12 LPA, with experienced remote Web3 engineers earning up to 25 LPA+."
+                }
+        ]
+},
+    {
+        "category": "roadmap",
+        "category_label": "Career Roadmap",
+        "slug": "beginner-to-blockchain-developer-roadmap",
+        "seo_title": "Blockchain Developer Roadmap & Learning Path | CACTS",
+        "meta_description": "Step-by-step career roadmap to becoming a Blockchain Developer. Learn cryptography, Solidity, EVM, smart contracts, and Web3 DApp deployment.",
+        "h1": "Beginner to Blockchain Developer Roadmap",
+        "h2": "The Structured Path to Mastering Smart Contracts, EVM & Web3 DApps",
+        "related_course": "Blockchain Training",
+        "related_course_slug": "blockchain-training",
+        "key_takeaways": [
+                "Build strong JavaScript/TypeScript and Web3 architecture foundations first.",
+                "Master gas-optimized Solidity smart contracts and EVM execution mechanics.",
+                "Establish deployment confidence by launching live DApps on Sepolia and Polygon testnets."
+        ],
+        "content_blocks": [
+                {
+                        "title": "Milestone 1: Web & Cryptography Foundations",
+                        "text": "Master JavaScript ES6, async/await promises, hashing algorithms (SHA-256), public-private key cryptography, digital signatures, and Ethereum transaction architecture."
+                },
+                {
+                        "title": "Milestone 2: Solidity & Smart Contract Engineering",
+                        "text": "Learn Solidity syntax, state variables, modifiers, event logs, OpenZeppelin contract standards (ERC-20, ERC-721), and gas optimization techniques."
+                },
+                {
+                        "title": "Milestone 3: Frameworks, Security & Testing",
+                        "text": "Use Hardhat and Foundry to compile, unit test, and deploy contracts. Perform static security auditing with Slither to catch re-entrancy and overflow vulnerabilities."
+                },
+                {
+                        "title": "Milestone 4: Full-Stack Web3 DApp Integration",
+                        "text": "Connect React frontends to Ethereum using Ethers.js / Web3.js, authenticate users with MetaMask, store assets on IPFS, and publish live DApps."
+                }
+        ],
+        "faqs": [
+                {
+                        "q": "How long does it take to become a Blockchain Developer?",
+                        "a": "With 1-to-1 dedicated mentoring at CACTS, students build solid smart contract and DApp development skills in 16 weeks."
+                },
+                {
+                        "q": "Are Web3 remote developer jobs available?",
+                        "a": "Yes! Web3 companies globally hire remote Solidity engineers, smart contract auditors, and Web3 frontend developers."
+                }
+        ]
+},
+    {
         "category": "projects",
         "category_label": "Project Ideas",
         "slug": "blockchain-project-ideas",
