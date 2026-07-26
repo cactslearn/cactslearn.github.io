@@ -1,6 +1,95 @@
 # subpages_content.py - Dynamic Content Data for CACTS Course Split Pages
 
 SUBPAGES_DATA = {
+    'blockchain-training': {
+        'fees_comparison': {
+            'cacts_value': 'Personalized 1-to-1 Web3 & Solidity smart contract debugging sessions with senior blockchain engineers at half typical corporate bootcamp prices.',
+            'pune_batch_size': '30 to 50 students',
+            'typical_pune_fees': '₹55,000 - ₹85,000',
+        },
+        'fees_faqs': [
+            {
+                'a': 'Blockchain training involves Ethereum EVM gas optimizations, security auditing setups, testnet faucet deployments, and decentralized storage (IPFS) configurations requiring intensive 1-to-1 mentor guidance.',
+                'q': 'Why is the Blockchain Development course priced at ₹24,999?',
+            },
+            {
+                'a': 'Yes. We guide you to deploy contracts on free Ethereum Sepolia and Polygon testnets without incurring real crypto costs.',
+                'q': 'Are testnet deployment and gas fees included?',
+            },
+        ],
+        'fees_structure': 'The Blockchain Development Course fee is ₹24,999 (all-inclusive). We offer an installment option of ₹12,500 × 2 months. Upfront full payment grants a 5% discount (₹23,749 total).',
+        'interview_faqs': [
+            {
+                'a': 'You will build and deploy 4 Web3 projects including an ERC-20 token protocol, an NFT minting dApp, a decentralized crowdfunding contract, and an IPFS frontend integration.',
+                'q': 'What Web3 smart contract portfolio will I build?',
+            },
+            {
+                'a': 'Yes, we prepare you for Solidity technical interviews, code auditing tests, and Web3 hackathons.',
+                'q': 'Do you assist with Web3 remote job and hackathon prep?',
+            },
+        ],
+        'interview_questions': [
+            {
+                'a': 'A re-entrancy attack occurs when an external contract calls back into the target contract before the first execution completes, draining funds. It is prevented by updating state variables BEFORE transferring ETH (Checks-Effects-Interactions pattern) or using OpenZeppelin ReentrancyGuard.',
+                'q': 'What is a Re-Entrancy Attack in Solidity and how do you prevent it?',
+            },
+            {
+                'a': 'Storage represents persistent data stored on the blockchain ledger (costly gas). Memory is temporary mutable data existing only during function execution. Calldata is non-modifiable temporary data used for function parameters, saving gas.',
+                'q': 'Explain the difference between Storage, Memory, and Calldata in Solidity.',
+            },
+            {
+                'a': 'The EVM (Ethereum Virtual Machine) executes smart contract bytecode across Ethereum nodes. Gas is the fee required to execute transactions, preventing infinite loops and spam by charging computational units per EVM opcode.',
+                'q': 'How does the Ethereum Virtual Machine (EVM) and Gas model work?',
+            },
+            {
+                'a': 'ERC-20 is the standard for fungible tokens (all tokens identical). ERC-721 is the standard for non-fungible tokens (NFTs with unique token IDs). ERC-1155 is a multi-token standard allowing fungible and non-fungible tokens in a single contract.',
+                'q': 'What is the difference between ERC-20, ERC-721, and ERC-1155 token standards?',
+            },
+            {
+                'a': 'Event logs emit data stored in Ethereum transaction receipts. Web3 frontends (using Ethers.js/Web3.js) listen to contract events to update UI states in real time without polling nodes continuously.',
+                'q': 'Why are Solidity Events used and how do Web3 frontends listen to them?',
+            },
+        ],
+        'roadmap_faqs': [
+            {
+                'a': 'Blockchain & Smart Contract Developers in Pune typically command starting salaries between ₹6.0 LPA and ₹10 LPA due to high demand and specialized skill scarcity.',
+                'q': 'What is the starting salary for a Blockchain Developer in Pune?',
+            },
+            {
+                'a': 'Yes. We start with fundamental JavaScript and Solidity syntax before building smart contracts and Web3 DApps.',
+                'q': 'Can I learn Blockchain Development without prior cryptography experience?',
+            },
+        ],
+        'roadmap_steps': [
+            {
+                'desc': 'Understand cryptography basics, SHA-256 hashing, digital signatures, transactions, and consensus protocols (Proof of Work vs Proof of Stake).',
+                'title': 'Step 1: Blockchain Architecture & Cryptography Fundamentals',
+            },
+            {
+                'desc': 'Master Solidity syntax, data structures, modifiers, inheritance, and build ERC-20 & ERC-721 smart contracts.',
+                'title': 'Step 2: Solidity & Ethereum Virtual Machine (EVM)',
+            },
+            {
+                'desc': 'Use Hardhat and Foundry frameworks to test contracts, perform static security audits with Slither, and optimize gas.',
+                'title': 'Step 3: Frameworks, Security Auditing & Testing',
+            },
+            {
+                'desc': 'Integrate React frontends with Ethers.js/Web3.js, MetaMask authentication, IPFS decentralized storage, and deploy live on Sepolia & Polygon.',
+                'title': 'Step 4: Full-Stack Web3 DApp Deployment',
+            },
+        ],
+        'syllabus_faqs': [
+            {
+                'a': 'The syllabus is divided into 4 modules over 16 weeks, spanning Blockchain Fundamentals, Solidity Engineering, Web3 Frameworks & Security, and DApp Deployment.',
+                'q': 'How is the 16-Week Blockchain curriculum structured?',
+            },
+            {
+                'a': 'Yes, our senior developers conduct daily 1-to-1 screen-sharing sessions to review your smart contracts line by line.',
+                'q': 'Will mentors review my Solidity code and contract deployments line-by-line?',
+            },
+        ],
+        'syllabus_intro': 'Explore our comprehensive 16-week Blockchain Development syllabus based on official roadmap.sh standards. Master Solidity, EVM, Smart Contract Security, Ethers.js, and live DApp deployment.'
+    },
     'ai-ml-training': {
         'fees_comparison': {
             'cacts_value': 'Personalized 1-to-1 math & code debugging sessions with a senior AI engineer at less than a third of typical institute costs.',

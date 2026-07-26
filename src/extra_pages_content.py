@@ -1,7 +1,41 @@
 # extra_pages_content.py - Content Database for CACTS Authority & Resource Pages
 
 EXTRA_PAGES = [
-    # ----------------------------------------------------
+    {
+        "category": "projects",
+        "category_label": "Project Ideas",
+        "slug": "blockchain-project-ideas",
+        "seo_title": "10 Production Web3 & Blockchain Project Ideas | CACTS Pune",
+        "meta_description": "Explore 10 production Web3 & blockchain project ideas for portfolio building. Learn ERC-20 token vaults, NFT minting, and DeFi smart contracts.",
+        "h1": "10 Production Web3 & Blockchain Project Ideas",
+        "h2": "Smart Contract & DApp Ideas Including ERC-20 Vaults, NFT Minting Platforms, and DeFi Protocols",
+        "related_course": "Blockchain Training",
+        "related_course_slug": "blockchain-training",
+        "key_takeaways": [
+            "Covers gas-optimized Solidity smart contract architecture and OpenZeppelin standards.",
+            "Includes full-stack Web3 frontend integration with React, Ethers.js, and MetaMask.",
+            "Features decentralized storage setups using IPFS and Pinata file pinning."
+        ],
+        "content_blocks": [
+            {
+                "title": "1. ERC-20 Token Staking & Yield Vault",
+                "text": "Build a custom ERC-20 utility token and staking vault smart contract. Users stake tokens to earn annual percentage yield (APY) rewards calculated directly on-chain using block timestamps and ReentrancyGuard safety."
+            },
+            {
+                "title": "2. Decentralized NFT Minting DApp (ERC-721)",
+                "text": "Develop an NFT collection smart contract with whitelist merkle tree proofs, dynamic metadata hosted on IPFS, and a React frontend allowing users to connect MetaMask wallets and mint NFTs."
+            },
+            {
+                "title": "3. Decentralized Governance & DAO Voting",
+                "text": "Create an on-chain DAO governance protocol where token holders propose and vote on community treasury allocations using Timelock and Governor contracts."
+            }
+        ],
+        "faqs": [
+            {"q": "What tools are needed to build these Web3 projects?", "a": "You will use Solidity, Hardhat, Foundry, Ethers.js, React, Remix IDE, and MetaMask on Sepolia/Polygon testnets."},
+            {"q": "How do Web3 projects help in developer interviews?", "a": "Verified GitHub commits, deployed smart contract addresses on Etherscan, and live Web3 DApp links serve as undeniable proof of Web3 engineering capability."}
+        ]
+    },
+# ----------------------------------------------------
     # 1. TECHNOLOGY GLOSSARY PAGES
     # ----------------------------------------------------
     {

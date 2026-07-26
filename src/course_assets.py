@@ -1,6 +1,48 @@
 # course_assets.py - Technical implementation previews (code snippets & schemas) for CACTS courses
 
 COURSE_ASSETS_DATA = {
+    "blockchain-training": {
+        "code_title": "Solidity Smart Contract with ERC-20 Token & Re-Entrancy Guard",
+        "lang": "solidity",
+        "code": """// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
+
+contract CactsTokenVault is ERC20, ReentrancyGuard {
+    mapping(address => uint256) public stakedBalances;
+
+    event TokensStaked(address indexed user, uint256 amount);
+    event TokensWithdrawn(address indexed user, uint256 amount);
+
+    constructor() ERC20("CACTS Web3 Token", "CACTS") {
+        _mint(msg.sender, 1000000 * 10**decimals());
+    }
+
+    function stakeTokens(uint256 amount) external nonReentrant {
+        require(amount > 0, "Cannot stake 0 tokens");
+        _transfer(msg.sender, address(this), amount);
+        stakedBalances[msg.sender] += amount;
+        emit TokensStaked(msg.sender, amount);
+    }
+}""",
+        "schema_title": "Full-Stack Web3 DApp Architecture",
+        "schema": """[Web3 User / Browser] --> (MetaMask Wallet / Provider)
+            |
+            v
+[React Frontend] (Ethers.js / Web3.js Interface)
+            |
+            +------------+------------+
+            |                         |
+            v                         v
+[Decentralized Storage]  [Ethereum / EVM Node]
+(IPFS / Pinata Assets)   (Alchemy / QuickNode Gateway)
+                              |
+                              v
+                   [Smart Contract Execution]
+                   (Solidity ERC-20 / ERC-721 Bytecode)"""
+    },
     "java-fullstack-training": {
         "code_title": "Spring Boot REST Controller with Security Integration",
         "lang": "java",

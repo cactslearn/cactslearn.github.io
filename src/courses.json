@@ -1362,5 +1362,103 @@
     ],
     "duration_iso": "P16W",
     "occupational_category": "Software Developer"
+  },
+  {
+    "slug": "blockchain-training",
+    "name": "Blockchain Training",
+    "price": "\u20b924,999",
+    "price_num": 24999,
+    "duration": "16 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "1-to-1 Blockchain Development training. Learn Blockchain Architecture, Solidity, Ethereum EVM, Smart Contracts, Web3.js, Hardhat & DApp deployment with live project internships.",
+    "seo_title": "Blockchain Training in Pune | Web3 & Solidity | CACTS",
+    "meta_description": "Master Blockchain Development in Pune with CACTS. 1-to-1 developer mentorship, Solidity, Ethereum EVM, Smart Contracts, Web3.js & live DApp internships.",
+    "h1": "Blockchain Development Training in Pune",
+    "h2": "Engineering Mentorship Lab: Build and deploy production Smart Contracts, ERC-20/721 tokens, and Web3 DApps. Individual developer seats.",
+    "skills": [
+      "Blockchain Architecture",
+      "Cryptography & Hashing",
+      "Solidity & EVM",
+      "Smart Contracts",
+      "Hardhat & Foundry",
+      "Web3.js & Ethers.js",
+      "ERC-20 & ERC-721 Tokens",
+      "DApp Development & IPFS"
+    ],
+    "overview": "Master decentralized application architecture and smart contract engineering from scratch based on the official roadmap.sh Blockchain Developer curriculum. Under senior Web3 developers, you will write gas-optimized Solidity smart contracts, conduct security audits, test using Hardhat/Foundry, and integrate Web3 frontends with Ethers.js and IPFS. Complete your 1-to-1 practical training by deploying live Decentralized Applications (DApps) on Ethereum testnets and Layer-2 networks.",
+    "modules": [
+      {
+        "title": "Module 1: Blockchain Fundamentals & Cryptography",
+        "duration": "4 Weeks",
+        "topics": [
+          "Distributed Ledger Technology (DLT) & Consensus Mechanisms (PoW, PoS)",
+          "SHA-256 Hashing, Asymmetric Cryptography & Digital Signatures",
+          "Block structure, Transactions, Mempools & Gas mechanics",
+          "Ethereum Architecture, EVM Execution Engine & Accounts vs Contracts"
+        ]
+      },
+      {
+        "title": "Module 2: Solidity Smart Contract Development",
+        "duration": "4 Weeks",
+        "topics": [
+          "Solidity syntax, Data Types, Control Structures & Functions",
+          "State Variables, Memory vs Storage, and Event Logs",
+          "Inheritance, Interfaces, Abstract Contracts & Libraries",
+          "ERC-20 Fungible Tokens & ERC-721 / ERC-1155 NFT Standards"
+        ]
+      },
+      {
+        "title": "Module 3: Web3 Frameworks & Security Auditing",
+        "duration": "4 Weeks",
+        "topics": [
+          "Testing & Compiling with Hardhat, Foundry & Remix IDE",
+          "Smart Contract Security: Re-entrancy, Overflow, and Slither Auditing",
+          "Gas Optimization techniques and Yul assembly basics",
+          "Oracle integration with Chainlink & Layer-2 Scaling (Arbitrum, Optimism)"
+        ]
+      },
+      {
+        "title": "Module 4: Full-Stack Web3 DApp Integration & Deployment",
+        "duration": "4 Weeks",
+        "topics": [
+          "Connecting React Frontends to Ethereum via Ethers.js / Web3.js",
+          "MetaMask Wallet authentication & transaction signing",
+          "Decentralized Storage integration with IPFS & Pinata",
+          "Deploying live DApps on Sepolia Testnet & Polygon Mainnet"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "What are the prerequisites for the Blockchain Development course?",
+        "a": "Basic knowledge of JavaScript or any programming language is helpful. We cover cryptography, Solidity, EVM, and Web3 frontend integration step-by-step."
+      },
+      {
+        "q": "Will I work on live Web3 projects and smart contracts?",
+        "a": "Yes! You will write, audit, and deploy production-ready ERC-20 token contracts, NFT minting dApps, and decentralized protocols under 1-to-1 mentor guidance."
+      },
+      {
+        "q": "Which tools and networks are covered in the Blockchain course?",
+        "a": "The curriculum includes Solidity, Ethereum EVM, Hardhat, Foundry, Ethers.js, Web3.js, React, IPFS, MetaMask, Chainlink Oracles, and Sepolia/Polygon testnets."
+      }
+    ],
+    "reviews": [
+      {
+        "name": "Aditya V.",
+        "role": "Smart Contract Developer",
+        "location": "Baner, Pune",
+        "text": "The 1-to-1 Web3 mentorship at CACTS was outstanding. Writing Solidity contracts, deploying on Sepolia testnet, and setting up ReentrancyGuard helped me land my first Web3 developer role.",
+        "rating": 5,
+        "date": "2026-06-12"
+      },
+      {
+        "name": "Pranav K.",
+        "role": "Blockchain Associate",
+        "location": "Aundh, Pune",
+        "text": "Building a full-stack DApp with React, Ethers.js, and MetaMask wallet integration under 1-to-1 mentor guidance gave me the practical confidence I needed. Real code reviews over generic theory!",
+        "rating": 5,
+        "date": "2026-06-28"
+      }
+    ]
   }
 ]

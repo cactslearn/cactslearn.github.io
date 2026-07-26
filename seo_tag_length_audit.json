@@ -1,12 +1,18 @@
 {
   "summary": {
-    "total_pages": 145,
+    "total_pages": 150,
     "title_warnings": [
       {
         "file": "googleadedb2cbaba8a8c6.html",
         "title": "",
         "len": 0,
         "type": "too_short"
+      },
+      {
+        "file": "what-does-a-data-engineer-do.html",
+        "title": "What Does a Data Engineer Do? | Job Description & Salaries | CACTS",
+        "len": 66,
+        "type": "too_long"
       }
     ],
     "meta_desc_warnings": [
@@ -15,12 +21,26 @@
         "desc": "",
         "len": 0,
         "type": "too_short"
+      },
+      {
+        "file": "what-is-docker.html",
+        "desc": "Learn what Docker is, how containerization works, and how it solves the",
+        "len": 71,
+        "type": "too_short"
       }
     ],
     "h1_warnings": [
       {
+        "file": "aws-vs-azure.html",
+        "issue": "H1 too short (12 chars)"
+      },
+      {
         "file": "googleadedb2cbaba8a8c6.html",
         "issue": "Missing <h1> tag"
+      },
+      {
+        "file": "java-vs-python.html",
+        "issue": "H1 too short (14 chars)"
       }
     ],
     "url_warnings": [
@@ -30,7 +50,7 @@
         "len": 76
       }
     ],
-    "passed_pages": 143
+    "passed_pages": 144
   },
   "results": [
     {
@@ -109,9 +129,11 @@
       "title_len": 59,
       "meta_desc_len": 143,
       "h1_count": 1,
-      "h1_len": 36,
+      "h1_len": 12,
       "canonical_len": 46,
-      "warnings": []
+      "warnings": [
+        "H1 too short (12 chars): 'AWS vs Azure'"
+      ]
     },
     {
       "file": "beginner-to-ai-engineer-roadmap.html",
@@ -211,6 +233,56 @@
       "h1_count": 1,
       "h1_len": 28,
       "canonical_len": 62,
+      "warnings": []
+    },
+    {
+      "file": "blockchain-course-fees.html",
+      "title": "Blockchain Training Course Fees & Tuition | CACTS Pune",
+      "title_len": 54,
+      "meta_desc_len": 135,
+      "h1_count": 1,
+      "h1_len": 31,
+      "canonical_len": 56,
+      "warnings": []
+    },
+    {
+      "file": "blockchain-interview-questions.html",
+      "title": "Blockchain Training Interview Questions & Answers | CACTS",
+      "title_len": 57,
+      "meta_desc_len": 137,
+      "h1_count": 1,
+      "h1_len": 41,
+      "canonical_len": 64,
+      "warnings": []
+    },
+    {
+      "file": "blockchain-roadmap.html",
+      "title": "Blockchain Training Career Roadmap & Guide | CACTS Pune",
+      "title_len": 55,
+      "meta_desc_len": 142,
+      "h1_count": 1,
+      "h1_len": 36,
+      "canonical_len": 52,
+      "warnings": []
+    },
+    {
+      "file": "blockchain-syllabus.html",
+      "title": "Blockchain Training Syllabus & Modules | CACTS Pune",
+      "title_len": 51,
+      "meta_desc_len": 140,
+      "h1_count": 1,
+      "h1_len": 38,
+      "canonical_len": 53,
+      "warnings": []
+    },
+    {
+      "file": "blockchain-training.html",
+      "title": "Blockchain Training in Pune | Web3 & Solidity | CACTS",
+      "title_len": 53,
+      "meta_desc_len": 152,
+      "h1_count": 1,
+      "h1_len": 39,
+      "canonical_len": 53,
       "warnings": []
     },
     {
@@ -805,9 +877,11 @@
       "title_len": 60,
       "meta_desc_len": 149,
       "h1_count": 1,
-      "h1_len": 38,
+      "h1_len": 14,
       "canonical_len": 48,
-      "warnings": []
+      "warnings": [
+        "H1 too short (14 chars): 'Java vs Python'"
+      ]
     },
     {
       "file": "jenkins-vs-github-actions.html",
@@ -1361,13 +1435,15 @@
     },
     {
       "file": "what-does-a-data-engineer-do.html",
-      "title": "What Does a Data Engineer Do? | Job Guide | CACTS",
-      "title_len": 49,
+      "title": "What Does a Data Engineer Do? | Job Description & Salaries | CACTS",
+      "title_len": 66,
       "meta_desc_len": 151,
       "h1_count": 1,
       "h1_len": 29,
       "canonical_len": 62,
-      "warnings": []
+      "warnings": [
+        "Title too long (66 chars - max 60-65 for Google SERP): 'What Does a Data Engineer Do? | Job Description & Salaries | CACTS'"
+      ]
     },
     {
       "file": "what-does-a-devops-engineer-do.html",
@@ -1423,11 +1499,13 @@
       "file": "what-is-docker.html",
       "title": "What is Docker? | Containerization Explained | CACTS Pune",
       "title_len": 57,
-      "meta_desc_len": 119,
+      "meta_desc_len": 71,
       "h1_count": 1,
       "h1_len": 15,
       "canonical_len": 48,
-      "warnings": []
+      "warnings": [
+        "Meta Description too short (71 chars): 'Learn what Docker is, how containerization works, and how it solves the'"
+      ]
     },
     {
       "file": "what-is-hadoop.html",
