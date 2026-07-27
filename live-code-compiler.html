@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-One Client-Side Skills & Syntax Validation Hub | CACTS</title>
+    <meta name="description"
+        content="Validate DevOps configs, execute Python Pyodide WASM, query SQL.js in-memory, & render React JSX live in browser. 100% client-side skills validator.">
+    <link rel="canonical" href="https://cactslearn.github.io/live-code-compiler.html">
+
+    <!-- CSS Design System -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- In-Memory Storage Polyfill for Strict Browser Tracking Prevention -->
+    <script>
+    (function() {
+        try {
+            window.localStorage.getItem('cacts_test');
+        } catch (e) {
+            const memoryStorage = {};
+            try {
+                Object.defineProperty(window, 'localStorage', {
+                    value: {
+                        getItem: function(key) { return memoryStorage[key] || null; },
+                        setItem: function(key, val) { memoryStorage[key] = String(val); },
+                        removeItem: function(key) { delete memoryStorage[key]; },
+                        clear: function() { Object.keys(memoryStorage).forEach(function(k) { delete memoryStorage[k]; }); }
+                    },
+                    configurable: true,
+                    writable: true
+                });
+            } catch (err) {}
+        }
+    })();
+    </script>
+
+    <!-- Client-Side Libraries (Loaded BEFORE Monaco AMD loader so they attach cleanly to window) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+
+    <!-- Monaco Editor AMD Loader CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+
+    <!-- JSON-LD Schemas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "All-in-One Client-Side Skills & Syntax Validation Hub",
+      "description": "Browser-based Monaco IDE engine for testing DevOps YAML, Python WASM, SQL database queries, and React JSX components.",
+      "url": "https://cactslearn.github.io/live-code-compiler.html",
+      "provider": {
+        "@type": "Organization",
+        "name": "CACTS - Centre of Advanced Computer Training and Studies",
+        "url": "https://cactslearn.github.io/"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://cactslearn.github.io/index.html"},
+        {"@type": "ListItem", "position": 2, "name": "Learning Portals", "item": "https://cactslearn.github.io/free-learning-resources.html"},
+        {"@type": "ListItem", "position": 3, "name": "Live Code & Syntax Validator", "item": "https://cactslearn.github.io/live-code-compiler.html"}
+      ]
+    }
+    </script>
+
+    <style>
+        /* Compiler Page Custom Layout */
+        .compiler-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 1rem;
+        }
+
+        .compiler-header {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .track-toolbar {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .track-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .track-btn {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .track-btn:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-primary);
+        }
+
+        .track-btn.active {
+            background: var(--primary-glow);
+            border-color: var(--primary-light);
+            color: var(--primary-light);
+        }
+
+        .toolbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .select-input {
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 0.45rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            outline: none;
+        }
+
+        .status-badge {
+            font-size: 0.8rem;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .status-info { background: rgba(99, 102, 241, 0.15); color: #818cf8; border: 1px solid rgba(99, 102, 241, 0.3); }
+        .status-success { background: rgba(20, 184, 166, 0.15); color: #2dd4bf; border: 1px solid rgba(20, 184, 166, 0.3); }
+        .status-warning { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .status-error { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+
+        /* Split Screen Workspace */
+        .workspace-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            min-height: 600px;
+        }
+
+        @media (max-width: 992px) {
+            .workspace-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .editor-pane, .output-pane-wrapper {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pane-header {
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid var(--border);
+            padding: 0.75rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .pane-title {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        #editor-container {
+            flex-grow: 1;
+            min-height: 520px;
+            width: 100%;
+        }
+
+        .output-tabs {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .output-tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            padding: 0.3rem 0.65rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .output-tab-btn.active {
+            background: var(--primary-glow);
+            color: var(--primary-light);
+            font-weight: 600;
+        }
+
+        .output-content-area {
+            flex-grow: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            background: #090d16;
+        }
+
+        .console-terminal {
+            font-family: 'Fira Code', Consolas, monospace;
+            font-size: 0.9rem;
+            color: #38bdf8;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+
+        /* SQL Table Result Styling */
+        .sql-result-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .sql-result-table th, .sql-result-table td {
+            border: 1px solid var(--border);
+            padding: 0.6rem 0.8rem;
+            text-align: left;
+        }
+
+        .sql-result-table th {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--primary-light);
+            font-weight: 700;
+        }
+
+        .sql-result-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        iframe.sandbox-preview {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            border: none;
+            border-radius: 6px;
+            background: #0b0f19;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Standard Header Matching Site Template -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span>CACTS</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="internship-on-live-projects.html">Live Internship</a>
+                <a href="one-to-one-software-training.html">1-to-1 Model</a>
+                <a href="free-career-guidance.html">Career Guidance</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faqs.html">FAQs</a>
+                <a href="contact.html" class="btn btn-accent" style="padding: 0.5rem 1rem; color: #0b0f19;">Book Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 8rem;">
+        <!-- Compiler Breadcrumbs -->
+        <div class="container">
+            <nav aria-label="Breadcrumb" style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
+                <a href="index.html" style="color: var(--accent);">Home</a> &gt; 
+                <a href="free-learning-resources.html" style="color: var(--accent);">Learning Portals</a> &gt; 
+                <span style="color: var(--text-primary);">Live Code &amp; Syntax Validator</span>
+            </nav>
+        </div>
+
+        <!-- Main Hub Container -->
+        <section class="compiler-container">
+            <div class="compiler-header">
+                <span style="display: inline-block; padding: 0.35rem 0.75rem; background: var(--primary-glow); border: 1px solid var(--primary-light); color: var(--primary-light); font-size: 0.85rem; font-weight: 600; border-radius: 20px; margin-bottom: 1rem;">
+                    In-Browser Execution Engine
+                </span>
+                <h1 style="font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 0.5rem;">
+                    All-in-One Client-Side Skills &amp; Syntax Validation Hub
+                </h1>
+                <p style="color: var(--text-secondary); max-width: 800px; margin: 0 auto; font-size: 1rem;">
+                    Test DevOps configs, execute Python WASM code, run SQLite queries, and render React JSX components live in browser memory. Powered by Monaco Editor engine.
+                </p>
+            </div>
+
+            <!-- Top Control Bar -->
+            <div class="track-toolbar">
+                <div class="track-buttons">
+                    <button class="track-btn active" data-track="devops">
+                        DevOps Configs
+                    </button>
+                    <button class="track-btn" data-track="python">
+                        AI &amp; Python (Pyodide WASM)
+                    </button>
+                    <button class="track-btn" data-track="sql">
+                        Database SQL
+                    </button>
+                    <button class="track-btn" data-track="web">
+                        React &amp; Web
+                    </button>
+                    <button class="track-btn" data-track="mobile">
+                        Mobile React Native
+                    </button>
+                </div>
+
+                <div class="toolbar-actions">
+                    <label style="font-size: 0.85rem; color: var(--text-secondary);">Template:</label>
+                    <select id="template-select" class="select-input">
+                        <option value="k8s-deploy">K8S DEPLOYMENT</option>
+                        <option value="dockerfile">DOCKERFILE</option>
+                        <option value="terraform">TERRAFORM HCL</option>
+                    </select>
+
+                    <button id="btn-run-code" class="btn btn-primary" style="padding: 0.45rem 1.25rem; font-size: 0.85rem;">
+                        Run / Validate Code
+                    </button>
+                    <button id="btn-clear-console" class="btn btn-secondary" style="padding: 0.45rem 0.85rem; font-size: 0.85rem; background: transparent; border-color: var(--border);">
+                        Clear Output
+                    </button>
+
+                    <span id="status-badge" class="status-badge status-info">Ready</span>
+                </div>
+            </div>
+
+            <!-- Monaco & Output Split Grid -->
+            <div class="workspace-grid">
+                <!-- Monaco Editor Pane -->
+                <div class="editor-pane">
+                    <div class="pane-header">
+                        <span class="pane-title">
+                            Monaco Code Editor
+                        </span>
+                        <span style="font-size: 0.75rem; color: var(--text-secondary);">Line Markers Enabled</span>
+                    </div>
+                    <div id="editor-container"></div>
+                </div>
+
+                <!-- Output Display Pane -->
+                <div class="output-pane-wrapper">
+                    <div class="pane-header">
+                        <span class="pane-title">
+                            Output &amp; Diagnostic Terminal
+                        </span>
+                        <div class="output-tabs">
+                            <button id="tab-console" class="output-tab-btn active" data-target="pane-console">Terminal Console</button>
+                            <button id="tab-table" class="output-tab-btn" data-target="pane-table" style="display: none;">SQL Data Table</button>
+                            <button id="tab-web" class="output-tab-btn" data-target="pane-web" style="display: none;">Live Web Preview</button>
+                            <button id="tab-snack" class="output-tab-btn" data-target="pane-snack" style="display: none;">Mobile Snack</button>
+                        </div>
+                    </div>
+
+                    <div class="output-content-area">
+                        <!-- 1. Console Terminal Pane -->
+                        <div id="pane-console" class="output-pane" style="display: block;">
+                            <div id="console-output" class="console-terminal">[INFO] CACTS Monaco Code Engine Initialized. Click 'Run / Validate Code' to execute.</div>
+                        </div>
+
+                        <!-- 2. SQL Table Pane -->
+                        <div id="pane-table" class="output-pane" style="display: none;">
+                            <div id="table-output-container">
+                                <p style="color: var(--text-secondary); text-align: center;">Execute an SQL query to populate SQLite results table.</p>
+                            </div>
+                        </div>
+
+                        <!-- 3. Web React Preview Pane -->
+                        <div id="pane-web" class="output-pane" style="display: none; height: 100%;">
+                            <iframe id="web-preview-iframe" class="sandbox-preview"></iframe>
+                        </div>
+
+                        <!-- 4. Mobile Snack Pane -->
+                        <div id="pane-snack" class="output-pane" style="display: none;">
+                            <div id="snack-iframe-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Information Guidance Section -->
+        <section class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+            <div style="background: rgba(99, 102, 241, 0.02); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2.5rem; text-align: center;">
+                <h3 style="font-family: var(--font-heading); margin-bottom: 1rem;">Want 1-to-1 Feedback on Your Real Code Commits?</h3>
+                <p style="color: var(--text-secondary); max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 0.95rem;">
+                    While this client-side validator checks syntax and executes scripts in browser memory, our 1-to-1 software engineering mentorship labs guide you on real company Git branches, PR code reviews, and staging deployments.
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="one-to-one-software-training.html" class="btn btn-primary">Explore 1-to-1 Mentoring Model</a>
+                    <a href="contact.html" class="btn btn-secondary" style="border-color: var(--accent); color: var(--text-primary); background: transparent;">Request Free Code Consultation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Navigation -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-programs-row">
+                <h4 style="color: var(--text-primary); margin-bottom: 1.5rem; font-size: 1rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Engineering Labs &amp; Programs</h4>
+                <ul class="footer-programs-grid">
+                    <li><a href="java-fullstack-training.html">Java Fullstack Training</a></li>
+                    <li><a href="full-stack-training.html">Full Stack Web (MERN)</a></li>
+                    <li><a href="react-js-training.html">React JS Development</a></li>
+                    <li><a href="react-native-training.html">React Native Mobile</a></li>
+                    <li><a href="ai-ml-training.html">AI &amp; Machine Learning</a></li>
+                    <li><a href="data-science-training.html">Data Science Analytics</a></li>
+                    <li><a href="data-engineering-training.html">Data Engineering ETL</a></li>
+                    <li><a href="python-training.html">Python Scripting Lab</a></li>
+                    <li><a href="devops-training.html">DevOps Engineering</a></li>
+                    <li><a href="cloud-training.html">Cloud Systems Architecture</a></li>
+                    <li><a href="power-bi-training.html">Power BI Analytics</a></li>
+                    <li><a href="software-testing-training.html">Software Testing Lab</a></li>
+                    <li><a href="cybersecurity-training.html">Cybersecurity Operations</a></li>
+                    <li><a href="blockchain-training.html">Blockchain Development</a></li>
+                    <li><a href="software-architect-training.html">Software Architect Lab</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-brand">
+                <a href="index.html" style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: white;">CACTS</a>
+                <p>Centre of Advanced Computer Training and Studies. Providing practical, one-to-one virtual software training and internships on real company projects since 2012.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Institutional Links</h4>
+                <ul style="list-style: none;">
+                    <li><a href="about.html">About CACTS</a></li>
+                    <li><a href="internship-on-live-projects.html">Live Projects Internship</a></li>
+                    <li><a href="one-to-one-software-training.html">1-to-1 Mentoring Model</a></li>
+                    <li><a href="cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a></li>
+                    <li><a href="free-career-guidance.html">Free Career Guidance</a></li>
+                    <li><a href="reviews.html">Success Reviews</a></li>
+                    <li><a href="faqs.html">Institutional FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="software-training-institute-pune.html">Software Training Pune</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Learning Portals</h4>
+                <ul style="list-style: none;">
+                    <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
+                    <li><a href="course-recommendation-quiz.html">Course Finder Quiz</a></li>
+                    <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
+                    <li><a href="student-projects.html">Student Projects</a></li>
+                    <li><a href="internship-showcase.html">Internship Showcase</a></li>
+                    <li><a href="project-portfolios.html">Project Portfolios</a></li>
+                    <li><a href="technology-comparisons.html">Tech Comparisons</a></li>
+                    <li><a href="free-learning-resources.html">Free Resources</a></li>
+                    <li><a href="technology-career-guides.html">Career Guides</a></li>
+                    <li><a href="live-code-compiler.html">Live Code &amp; Syntax Validator</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Live Compiler Engine Script -->
+    <script src="js/live-compiler.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
