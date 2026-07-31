@@ -56,6 +56,74 @@ from src.extra_pages_content import EXTRA_PAGES
 from src.resource_code_snippets import CODE_SNIPPETS_DATA
 from src.course_assets import COURSE_ASSETS_DATA
 
+import subprocess
+
+modified_files_this_run = set()
+
+def write_if_changed(filepath, new_content):
+    if os.path.exists(filepath):
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                existing = f.read()
+            if existing == new_content:
+                return False
+        except Exception:
+            pass
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(new_content)
+    modified_files_this_run.add(filepath)
+    return True
+
+def parse_existing_sitemap_lastmods(sitemap_path):
+    lastmods = {}
+    if os.path.exists(sitemap_path):
+        try:
+            import xml.etree.ElementTree as ET
+            tree = ET.parse(sitemap_path)
+            root = tree.getroot()
+            ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+            for url_elem in root.findall('sm:url', ns):
+                loc_elem = url_elem.find('sm:loc', ns)
+                lastmod_elem = url_elem.find('sm:lastmod', ns)
+                if loc_elem is not None and loc_elem.text and lastmod_elem is not None and lastmod_elem.text:
+                    url = loc_elem.text.strip()
+                    lastmods[url] = lastmod_elem.text.strip()
+        except Exception:
+            pass
+    return lastmods
+
+def get_git_modified_files():
+    modified = set()
+    try:
+        res = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, cwd=project_root)
+        if res.returncode == 0:
+            for line in res.stdout.splitlines():
+                if line.strip():
+                    filepath = line[3:].strip()
+                    filename = os.path.basename(filepath)
+                    modified.add(filepath)
+                    modified.add(filename)
+    except Exception:
+        pass
+    return modified
+
+def get_url_lastmod(url, relative_file_path, existing_lastmods, git_modified_files):
+    filename = os.path.basename(relative_file_path)
+    
+    if (relative_file_path in modified_files_this_run or 
+        relative_file_path in git_modified_files or 
+        filename in git_modified_files):
+        return datetime.now().strftime("%Y-%m-%d")
+    
+    if url in existing_lastmods:
+        return existing_lastmods[url]
+    
+    if os.path.exists(relative_file_path):
+        mtime = os.path.getmtime(relative_file_path)
+        return datetime.fromtimestamp(mtime).strftime("%Y-%m-%d")
+    
+    return datetime.now().strftime("%Y-%m-%d")
+
 def build():
     # Ensure current working directory is the project root
     os.chdir(project_root)
@@ -2375,8 +2443,7 @@ def build():
             breadcrumbs_comp = f'<a href="index.html" style="color: var(--accent);">Home</a> &gt; <a href="index.html#courses" style="color: var(--accent);">Courses</a> &gt; <a href="{slug}.html" style="color: var(--accent);">{name}</a> &gt; <span style="color: var(--text-primary);">Tech Comparison</span>'
             page_html9 = page_html9.replace("{{course_breadcrumbs}}", breadcrumbs_comp)
 
-            with open(f"{comp_slug}.html", "w", encoding="utf-8") as f:
-                f.write(page_html9)
+            write_if_changed(f"{comp_slug}.html", page_html9)
             generated_pages.append(comp_slug)
 
     # Generate Extra Resource Pages
@@ -2647,200 +2714,64 @@ def build():
         page_html = page_html.replace("{{related_course_encoded}}", urllib.parse.quote(related_course))
         page_html = page_html.replace("{{resource_tabs}}", resource_tabs_html)
 
-        with open(f"{slug}.html", "w", encoding="utf-8") as f:
-            f.write(page_html)
+        write_if_changed(f"{slug}.html", page_html)
         generated_pages.append(slug)
 
     # 5. Generate sitemap.xml
-    current_date = datetime.now().strftime("%Y-%m-%d")
-    sitemap_xml = f"""<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://cactslearn.github.io/</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/about.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/contact.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/internship-on-live-projects.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/one-to-one-software-training.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/free-career-guidance.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/reviews.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/faqs.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/sitemap.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/pune-it-salary-calculator.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/course-readiness-check.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/pune-it-salary-report.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/privacy-policy.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/terms-conditions.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/free-skill-assessment.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/course-recommendation-quiz.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/career-roadmaps.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/student-projects.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/internship-showcase.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/project-portfolios.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/technology-comparisons.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/cacts-vs-classroom-vs-ai.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/free-learning-resources.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/technology-career-guides.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/software-training-institute-pune.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/software-training-institute-shivane.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/software-training-institute-karvenagar.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/software-training-institute-warje.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/software-training-institute-kothrud.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/software-training-institute-sinhagad-road.html</loc>
-        <lastmod>{current_date}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+    existing_lastmods = parse_existing_sitemap_lastmods(sitemap_file)
+    git_modified_files = get_git_modified_files()
+    static_pages = [
+        ("https://cactslearn.github.io/", "index.html", "1.0", "monthly"),
+        ("https://cactslearn.github.io/about.html", "about.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/contact.html", "contact.html", "0.9", "monthly"),
+        ("https://cactslearn.github.io/internship-on-live-projects.html", "internship-on-live-projects.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/one-to-one-software-training.html", "one-to-one-software-training.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/free-career-guidance.html", "free-career-guidance.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/reviews.html", "reviews.html", "0.7", "monthly"),
+        ("https://cactslearn.github.io/faqs.html", "faqs.html", "0.7", "monthly"),
+        ("https://cactslearn.github.io/sitemap.html", "sitemap.html", "0.7", "monthly"),
+        ("https://cactslearn.github.io/pune-it-salary-calculator.html", "pune-it-salary-calculator.html", "0.9", "weekly"),
+        ("https://cactslearn.github.io/course-readiness-check.html", "course-readiness-check.html", "0.9", "weekly"),
+        ("https://cactslearn.github.io/pune-it-salary-report.html", "pune-it-salary-report.html", "0.9", "weekly"),
+        ("https://cactslearn.github.io/privacy-policy.html", "privacy-policy.html", "0.5", "monthly"),
+        ("https://cactslearn.github.io/terms-conditions.html", "terms-conditions.html", "0.5", "monthly"),
+        ("https://cactslearn.github.io/free-skill-assessment.html", "free-skill-assessment.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/course-recommendation-quiz.html", "course-recommendation-quiz.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/career-roadmaps.html", "career-roadmaps.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/student-projects.html", "student-projects.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/internship-showcase.html", "internship-showcase.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/project-portfolios.html", "project-portfolios.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/technology-comparisons.html", "technology-comparisons.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/cacts-vs-classroom-vs-ai.html", "cacts-vs-classroom-vs-ai.html", "0.9", "weekly"),
+        ("https://cactslearn.github.io/free-learning-resources.html", "free-learning-resources.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/technology-career-guides.html", "technology-career-guides.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/software-training-institute-pune.html", "software-training-institute-pune.html", "0.9", "monthly"),
+        ("https://cactslearn.github.io/software-training-institute-shivane.html", "software-training-institute-shivane.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/software-training-institute-karvenagar.html", "software-training-institute-karvenagar.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/software-training-institute-warje.html", "software-training-institute-warje.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/software-training-institute-kothrud.html", "software-training-institute-kothrud.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/software-training-institute-sinhagad-road.html", "software-training-institute-sinhagad-road.html", "0.8", "monthly"),
+        ("https://cactslearn.github.io/live-code-compiler.html", "live-code-compiler.html", "0.8", "monthly"),
+    ]
+
+    sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    for url, file_path, priority, changefreq in static_pages:
+        lastmod_val = get_url_lastmod(url, file_path, existing_lastmods, git_modified_files)
+        sitemap_xml += f"""    <url>
+        <loc>{url}</loc>
+        <lastmod>{lastmod_val}</lastmod>
+        <changefreq>{changefreq}</changefreq>
+        <priority>{priority}</priority>
     </url>
 """
 
     for pg in generated_pages:
+        filename = f"{pg}.html"
+        url = f"https://cactslearn.github.io/{filename}"
+        lastmod_val = get_url_lastmod(url, filename, existing_lastmods, git_modified_files)
         sitemap_xml += f"""    <url>
-        <loc>https://cactslearn.github.io/{pg}.html</loc>
-        <lastmod>{current_date}</lastmod>
+        <loc>{url}</loc>
+        <lastmod>{lastmod_val}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -2848,8 +2779,7 @@ def build():
 
     sitemap_xml += "</urlset>"
 
-    with open(sitemap_file, "w", encoding="utf-8") as f:
-        f.write(sitemap_xml)
+    write_if_changed(sitemap_file, sitemap_xml)
     print(f"Generated {sitemap_file}")
 
     # 6. Update central reviews.html with all compiled reviews
@@ -2954,8 +2884,7 @@ def build():
         replacement_schema = f"{schema_start}\n    {schema_script}\n    {schema_end}"
         reviews_content = re.sub(schema_pattern, replacement_schema, reviews_content, flags=re.DOTALL)
 
-        with open(reviews_page_path, "w", encoding="utf-8") as f:
-            f.write(reviews_content)
+        write_if_changed(reviews_page_path, reviews_content)
         print(f"Updated central reviews.html with all {len(all_reviews_schema_list)} reviews and injected LocalBusiness schema.")
 
         # Automatically update aggregateRating reviewCount across index.html and neighborhood landing pages
@@ -2967,8 +2896,7 @@ def build():
                 sp_updated = re.sub(r'("aggregateRating":\s*\{\s*"@type":\s*"AggregateRating",\s*"ratingValue":\s*"4\.9",\s*"reviewCount":\s*")\d+(")',
                                     rf'\g<1>{len(all_reviews_schema_list)}\g<2>', sp_content)
                 if sp_updated != sp_content:
-                    with open(sp, "w", encoding="utf-8") as f:
-                        f.write(sp_updated)
+                    write_if_changed(sp, sp_updated)
 
 
 
@@ -3015,11 +2943,20 @@ def update_sitemap_html():
             """
         with open(sitemap_html_file, "r", encoding="utf-8") as f:
             sm_content = f.read()
-        pattern = re.compile(r'(<div style="display: grid; grid-template-columns: repeat\(auto-fill, minmax\(320px, 1fr\)\); gap: 1\.5rem;" id="course-split-grid">)(.*?)(</div>\s*</div>)', re.DOTALL)
+
+        start_marker = "<!-- COURSE_SPLIT_GRID_START -->"
+        end_marker = "<!-- COURSE_SPLIT_GRID_END -->"
+        replacement = f'{start_marker}\n                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem;" id="course-split-grid">\n{split_links_html}\n                    </div>\n                    {end_marker}'
+
+        pattern = re.compile(rf'{re.escape(start_marker)}.*?{re.escape(end_marker)}', re.DOTALL)
         if pattern.search(sm_content):
-            sm_content = pattern.sub(r'\g<1>\n' + split_links_html + r'\n\g<3>', sm_content)
-            with open(sitemap_html_file, "w", encoding="utf-8") as f:
-                f.write(sm_content)
+            sm_content = pattern.sub(replacement, sm_content)
+        else:
+            old_pattern = re.compile(r'(<!-- Group 5: Split Pages Directory \(Hierarchical Course Tree\) -->\s*<div class="sitemap-group" style="grid-column: 1 / -1;">\s*<h3>.*?</h3>\s*<p>.*?</p>\s*)(<div style="display: grid; grid-template-columns: repeat\(auto-fill, minmax\(320px, 1fr\)\); gap: 1\.5rem;" id="course-split-grid">.*?</div>\s*</div>)', re.DOTALL)
+            if old_pattern.search(sm_content):
+                sm_content = old_pattern.sub(r'\g<1>' + replacement, sm_content)
+
+        write_if_changed(sitemap_html_file, sm_content)
         print(f"Automatically updated {sitemap_html_file} with hierarchical course split page directory!")
 
 if __name__ == "__main__":
