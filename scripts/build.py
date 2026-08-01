@@ -55,10 +55,59 @@ from src.subpages_content import SUBPAGES_DATA
 from src.extra_pages_content import EXTRA_PAGES
 from src.resource_code_snippets import CODE_SNIPPETS_DATA
 from src.course_assets import COURSE_ASSETS_DATA
+from src.jobs_data import JOBS_DATA
 
 import subprocess
 
 modified_files_this_run = set()
+
+def generate_job_pages():
+    jobs_dir = os.path.join(project_root, "jobs")
+    os.makedirs(jobs_dir, exist_ok=True)
+    
+    template_path = os.path.join(project_root, "src", "job_template.html")
+    if not os.path.exists(template_path):
+        print("Warning: src/job_template.html not found.")
+        return []
+
+    with open(template_path, "r", encoding="utf-8") as f:
+        template = f.read()
+
+    generated_job_files = []
+
+    for job in JOBS_DATA:
+        slug = job["slug"]
+        out_path = os.path.join(jobs_dir, f"{slug}.html")
+        rel_path = f"jobs/{slug}.html"
+
+        res_li = "".join([f"<li>{r}</li>" for r in job["responsibilities"]])
+        req_li = "".join([f"<li>{r}</li>" for r in job["requirements"]])
+
+        job_summary_json = job["summary"].replace('"', '\\"')
+        job_title_json = job["title"].replace('"', '\\"')
+
+        content = template
+        content = content.replace("{{JOB_SLUG}}", slug)
+        content = content.replace("{{JOB_TITLE}}", job["title"])
+        content = content.replace("{{JOB_TITLE_JSON}}", job_title_json)
+        content = content.replace("{{JOB_CATEGORY}}", job["category"])
+        content = content.replace("{{JOB_EXPERIENCE}}", job["experience"])
+        content = content.replace("{{JOB_LOCATION}}", job["location"])
+        content = content.replace("{{JOB_EMPLOYMENT_TYPE}}", job["employment_type"])
+        content = content.replace("{{JOB_STIPEND}}", job["stipend"])
+        content = content.replace("{{JOB_SUMMARY}}", job["summary"])
+        content = content.replace("{{JOB_SUMMARY_JSON}}", job_summary_json)
+        content = content.replace("{{JOB_RESPONSIBILITIES_LI}}", res_li)
+        content = content.replace("{{JOB_REQUIREMENTS_LI}}", req_li)
+        content = content.replace("{{BRIDGE_HEADLINE}}", job["bridge_headline"])
+        content = content.replace("{{BRIDGE_DESCRIPTION}}", job["bridge_description"])
+        content = content.replace("{{RELATED_COURSE_NAME}}", job["related_course_name"])
+        content = content.replace("{{RELATED_COURSE_SLUG}}", job["related_course_slug"])
+
+        write_if_changed(out_path, content)
+        generated_job_files.append((slug, rel_path, job["title"]))
+
+    return generated_job_files
 
 def write_if_changed(filepath, new_content):
     if os.path.exists(filepath):
@@ -2717,7 +2766,11 @@ def build():
         write_if_changed(f"{slug}.html", page_html)
         generated_pages.append(slug)
 
-    # 5. Generate sitemap.xml
+    # 5. Generate Job Pages
+    job_pages = generate_job_pages()
+    print(f"Generated {len(job_pages)} job posting pages in jobs/ directory.")
+
+    # 6. Generate sitemap.xml
     existing_lastmods = parse_existing_sitemap_lastmods(sitemap_file)
     git_modified_files = get_git_modified_files()
     static_pages = [
@@ -2769,6 +2822,17 @@ def build():
         filename = f"{pg}.html"
         url = f"https://cactslearn.github.io/{filename}"
         lastmod_val = get_url_lastmod(url, filename, existing_lastmods, git_modified_files)
+        sitemap_xml += f"""    <url>
+        <loc>{url}</loc>
+        <lastmod>{lastmod_val}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+"""
+
+    for slug, rel_path, title in job_pages:
+        url = f"https://cactslearn.github.io/{rel_path}"
+        lastmod_val = get_url_lastmod(url, rel_path, existing_lastmods, git_modified_files)
         sitemap_xml += f"""    <url>
         <loc>{url}</loc>
         <lastmod>{lastmod_val}</lastmod>
@@ -2900,6 +2964,269 @@ def build():
 
 
 
+def generate_careers_page():
+    job_cards_html = ""
+    job_item_list_schema = []
+
+    for idx, job in enumerate(JOBS_DATA, 1):
+        slug = job["slug"]
+        job_url = f"https://cactslearn.github.io/jobs/{slug}.html"
+        job_item_list_schema.append({
+            "@type": "ListItem",
+            "position": idx,
+            "name": job["title"],
+            "url": job_url
+        })
+
+        job_cards_html += f"""
+            <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                        <span style="background: var(--accent-glow); border: 1px solid var(--accent); color: var(--accent-light); font-size: 0.8rem; font-weight: 600; padding: 0.25rem 0.65rem; border-radius: 12px;">{job['category']}</span>
+                        <span style="background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); color: var(--text-secondary); font-size: 0.8rem; padding: 0.25rem 0.65rem; border-radius: 12px;">{job['experience']}</span>
+                    </div>
+                    <h3 style="font-size: 1.3rem; margin-bottom: 0.75rem; font-family: var(--font-heading); color: var(--text-primary);">
+                        <a href="jobs/{slug}.html" style="color: var(--text-primary); text-decoration: none;">{job['title']}</a>
+                    </h3>
+                    <p style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.6; margin-bottom: 1.25rem;">
+                        {job['summary']}
+                    </p>
+                    <div style="font-size: 0.88rem; color: var(--accent-light); font-weight: 700; margin-bottom: 1.5rem;">
+                        Stipend: {job['stipend']}
+                    </div>
+                </div>
+                <div>
+                    <a href="jobs/{slug}.html" class="btn btn-primary" style="width: 100%; text-align: center; display: block; margin-bottom: 1rem;">
+                        View Role &amp; Apply Direct &gt;
+                    </a>
+                    <div style="font-size: 0.82rem; color: var(--text-secondary); line-height: 1.4; border-top: 1px solid var(--border); padding-top: 0.75rem;">
+                        Need skill upgrade? <a href="{job['related_course_slug']}.html" style="color: var(--accent-light); font-weight: 600;">Explore {job['related_course_name']} &gt;</a>
+                    </div>
+                </div>
+            </div>
+        """
+
+    item_list_json = json.dumps({
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "CACTS Careers & Current Openings",
+        "numberOfItems": len(JOBS_DATA),
+        "itemListElement": job_item_list_schema
+    }, indent=2)
+
+    careers_html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Openings &amp; Job Opportunities | CACTS Pune</title>
+    <meta name="description" content="Browse current job openings, internships, and trainee positions for freshers, graduates, and career switchers at CACTS Pune across Full Stack, Java, Python, AI, Cloud, and DevOps.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://cactslearn.github.io/careers.html">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script type="application/ld+json">
+{item_list_json}
+    </script>
+    
+    <script type="application/ld+json">
+    {{
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {{
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cactslearn.github.io/"
+        }},
+        {{
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Current Openings",
+          "item": "https://cactslearn.github.io/careers.html"
+        }}
+      ]
+    }}
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span>CACTS</span>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <nav class="nav-links" aria-label="Main Navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="internship-on-live-projects.html">Live Internship</a>
+                <a href="one-to-one-software-training.html">1-to-1 Model</a>
+                <a href="free-career-guidance.html">Career Guidance</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="faqs.html">FAQs</a>
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <a href="contact.html" class="btn btn-accent" style="padding: 0.5rem 1rem; color: #0b0f19;">Book Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main style="padding-top: 8rem;">
+        <section class="tech-section">
+            <nav aria-label="Breadcrumb" style="margin-bottom: 1.5rem; font-size: 0.88rem; color: var(--text-secondary);">
+                <a href="index.html" style="color: var(--accent);">Home</a> &gt;
+                <span style="color: var(--text-primary);">Current Openings</span>
+            </nav>
+
+            <div style="max-width: 850px; margin-bottom: 3rem;">
+                <span style="display: inline-block; padding: 0.35rem 0.75rem; background: var(--accent-glow); border: 1px solid var(--accent); color: var(--accent-light); font-size: 0.85rem; font-weight: 600; border-radius: 20px; margin-bottom: 1rem;">
+                    CACTS Developer Team &amp; Live Project Positions
+                </span>
+                <h1 style="font-size: 2.8rem; line-height: 1.2; font-family: var(--font-heading); margin-bottom: 1rem;">
+                    Current Job Openings &amp; Internships in Pune
+                </h1>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+                    Explore genuine 1-to-1 developer trainee positions, software apprenticeships, and live project internships across Web Development, Java, Python, Data Science, AI, Cloud, and DevOps.
+                </p>
+            </div>
+
+            <div class="grid-3" style="gap: 1.75rem;">
+{job_cards_html}
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-programs-row">
+                <h4 style="color: var(--text-primary); margin-bottom: 1.5rem; font-size: 1rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;">Engineering Labs &amp; Programs</h4>
+                <ul class="footer-programs-grid">
+                    <li><a href="java-fullstack-training.html">Java Fullstack Training</a></li>
+                    <li><a href="full-stack-training.html">Full Stack Web (MERN)</a></li>
+                    <li><a href="react-js-training.html">React JS Development</a></li>
+                    <li><a href="react-native-training.html">React Native Mobile</a></li>
+                    <li><a href="ai-ml-training.html">AI &amp; Machine Learning</a></li>
+                    <li><a href="data-science-training.html">Data Science Analytics</a></li>
+                    <li><a href="data-engineering-training.html">Data Engineering ETL</a></li>
+                    <li><a href="python-training.html">Python Scripting Lab</a></li>
+                    <li><a href="devops-training.html">DevOps Engineering</a></li>
+                    <li><a href="cloud-training.html">Cloud Systems Architecture</a></li>
+                    <li><a href="power-bi-training.html">Power BI Analytics</a></li>
+                    <li><a href="software-testing-training.html">Software Testing Lab</a></li>
+                    <li><a href="cybersecurity-training.html">Cybersecurity Operations</a></li>
+                    <li><a href="blockchain-training.html">Blockchain Development</a></li>
+                    <li><a href="software-architect-training.html">Software Architect Lab</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-brand">
+                <a href="index.html"
+                    style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; color: white;">CACTS</a>
+                <p>Centre of Advanced Computer Training and Studies. Providing practical, one-to-one virtual software
+                    training and internships on real company projects since 2012.</p>
+                <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                    <a href="https://www.facebook.com/cactspune/" target="_blank" aria-label="Facebook" style="color: var(--text-secondary); transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 50%;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/cacts/" target="_blank" aria-label="LinkedIn" style="color: var(--text-secondary); transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 50%;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://www.instagram.com/cacts_pune/" target="_blank" aria-label="Instagram" style="color: var(--text-secondary); transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 50%;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Institutional Links</h4>
+                <ul style="list-style: none;">
+                    <li><a href="about.html">About CACTS</a></li>
+                    <li><a href="careers.html">Current Openings</a></li>
+                    <li><a href="internship-on-live-projects.html">Live Projects Internship</a></li>
+                    <li><a href="one-to-one-software-training.html">1-to-1 Mentoring Model</a></li>
+                    <li><a href="cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a></li>
+                    <li><a href="free-career-guidance.html">Free Career Guidance</a></li>
+                    <li><a href="reviews.html">Success Reviews</a></li>
+                    <li><a href="faqs.html">Institutional FAQs</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="software-training-institute-pune.html">Software Training Pune</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Learning Portals</h4>
+                <ul style="list-style: none;">
+                    <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
+                    <li><a href="course-recommendation-quiz.html">Course Finder Quiz</a></li>
+                    <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
+                    <li><a href="student-projects.html">Student Projects</a></li>
+                    <li><a href="internship-showcase.html">Internship Showcase</a></li>
+                    <li><a href="project-portfolios.html">Project Portfolios</a></li>
+                    <li><a href="technology-comparisons.html">Tech Comparisons</a></li>
+                    <li><a href="free-learning-resources.html">Free Resources</a></li>
+                    <li><a href="technology-career-guides.html">Career Guides</a></li>
+                    <li><a href="live-code-compiler.html">Live Code &amp; Syntax Validator</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact CACTS</h4>
+                <p style="margin-bottom: 0.5rem;">First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune, Maharashtra 411023</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Phone:</strong> +91 96655 66357</p>
+                <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
+            </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--border); padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem;">
+            <div style="color: var(--text-secondary); font-size: 0.85rem; line-height: 1.5;">
+                <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong> Our curricula and git code review models are designed in alignment with ISO 29993:2017 standards for non-formal education training and software engineering industry practices. *Self-declared alignment for educational service quality.
+            </div>
+            <div style="display: flex; gap: 1.5rem; align-items: center; opacity: 0.75; flex-wrap: wrap;">
+                <div title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers." style="display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; color: var(--accent-light); cursor: help;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> ISO 29993:2017 ALIGNED*
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; color: var(--primary-light);">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="2" y1="20" x2="22" y2="20"></line><line x1="12" y1="17" x2="12" y2="20"></line></svg> 100% DEVELOPER LED
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); padding: 0.4rem 0.75rem; border-radius: 8px; font-size: 0.75rem; font-weight: 700; color: var(--warning);">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="9" y2="16"></line><line x1="15" y1="22" x2="15" y2="16"></line><line x1="9" y1="16" x2="15" y2="16"></line><path d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm6-8h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"></path></svg> ESTD. 2012 IN PUNE
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div style="text-align: left;">
+                <p>&copy; <span id="footer-year">2026</span> CACTS - Centre of Advanced Computer Training and Studies. All rights reserved.</p>
+                <p style="margin-top: 0.25rem; font-size: 0.8rem; color: var(--text-secondary);">First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune, Maharashtra 411023</p>
+            </div>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <a href="careers.html" style="color: var(--accent-light); font-weight: 700;">Current Openings</a>
+                <span style="color: var(--border);">|</span>
+                <a href="sitemap.html" style="color: var(--text-secondary);">Sitemap</a>
+                <span style="color: var(--border);">|</span>
+                <a href="privacy-policy.html" style="color: var(--text-secondary);">Privacy Policy</a>
+                <span style="color: var(--border);">|</span>
+                <a href="terms-conditions.html" style="color: var(--text-secondary);">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+"""
+
+    write_if_changed("careers.html", careers_html)
+    
+    os.makedirs(os.path.join(project_root, "jobs"), exist_ok=True)
+    jobs_index_html = careers_html.replace('href="jobs/', 'href="').replace('href="css/', 'href="../css/').replace('href="js/', 'href="../js/').replace('href="', 'href="../').replace('href="../https://', 'href="https://')
+    write_if_changed(os.path.join(project_root, "jobs", "index.html"), jobs_index_html)
+    print("Generated central careers.html and jobs/index.html listing page.")
+
 def update_sitemap_html():
     sitemap_html_file = "sitemap.html"
     c_json_path = os.path.join("src", "courses.json")
@@ -2951,14 +3278,49 @@ def update_sitemap_html():
         pattern = re.compile(rf'{re.escape(start_marker)}.*?{re.escape(end_marker)}', re.DOTALL)
         if pattern.search(sm_content):
             sm_content = pattern.sub(replacement, sm_content)
+
+        # Update Careers section in sitemap.html
+        careers_links_html = ""
+        for job in JOBS_DATA:
+            careers_links_html += f"""
+                <li style="padding-left: 0.5rem;">
+                    <span class="sitemap-bullet" style="color: var(--accent);">•</span>
+                    <a href="jobs/{job['slug']}.html" style="font-weight: 600; color: var(--accent-light);">{job['title']}</a>
+                    <span style="font-size: 0.8rem; color: var(--text-secondary); margin-left: 0.5rem;">({job['category']} - {job['experience']})</span>
+                </li>
+            """
+
+        c_start_marker = "<!-- CAREERS_GRID_START -->"
+        c_end_marker = "<!-- CAREERS_GRID_END -->"
+        careers_replacement = f"""{c_start_marker}
+                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.5rem;" id="careers-jobs-grid">
+                        <h4 style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-heading);">
+                            Current Openings &amp; Trainee Opportunities ({len(JOBS_DATA)} Positions)
+                        </h4>
+                        <ul class="sitemap-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0.75rem;">
+{careers_links_html}
+                        </ul>
+                    </div>
+                    {c_end_marker}"""
+
+        c_pattern = re.compile(rf'{re.escape(c_start_marker)}.*?{re.escape(c_end_marker)}', re.DOTALL)
+        if c_pattern.search(sm_content):
+            sm_content = c_pattern.sub(careers_replacement, sm_content)
         else:
-            old_pattern = re.compile(r'(<!-- Group 5: Split Pages Directory \(Hierarchical Course Tree\) -->\s*<div class="sitemap-group" style="grid-column: 1 / -1;">\s*<h3>.*?</h3>\s*<p>.*?</p>\s*)(<div style="display: grid; grid-template-columns: repeat\(auto-fill, minmax\(320px, 1fr\)\); gap: 1\.5rem;" id="course-split-grid">.*?</div>\s*</div>)', re.DOTALL)
-            if old_pattern.search(sm_content):
-                sm_content = old_pattern.sub(r'\g<1>' + replacement, sm_content)
+            careers_group = f"""
+                <!-- Group 6: Careers & Current Openings -->
+                <div class="sitemap-group" style="grid-column: 1 / -1; margin-top: 1.5rem;">
+                    <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem; color: var(--accent); flex-shrink: 0;"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Careers &amp; Current Job Openings (<a href="careers.html" style="color: var(--accent-light); font-size: 0.95rem;">View All Openings &gt;</a>)</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">Explore live project internships, junior developer trainee positions, and developer apprenticeships at CACTS.</p>
+                    {careers_replacement}
+                </div>
+            """
+            sm_content = sm_content.replace('</main>', f'{careers_group}\n    </main>')
 
         write_if_changed(sitemap_html_file, sm_content)
-        print(f"Automatically updated {sitemap_html_file} with hierarchical course split page directory!")
+        print(f"Automatically updated {sitemap_html_file} with hierarchical course split page directory & careers section!")
 
 if __name__ == "__main__":
     build()
+    generate_careers_page()
     update_sitemap_html()
