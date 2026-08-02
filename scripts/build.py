@@ -2798,15 +2798,16 @@ def build():
         ("https://cactslearn.github.io/technology-comparisons.html", "technology-comparisons.html", "0.8", "monthly"),
         ("https://cactslearn.github.io/cacts-vs-classroom-vs-ai.html", "cacts-vs-classroom-vs-ai.html", "0.9", "weekly"),
         ("https://cactslearn.github.io/free-learning-resources.html", "free-learning-resources.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/technology-career-guides.html", "technology-career-guides.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/software-training-institute-pune.html", "software-training-institute-pune.html", "0.9", "monthly"),
-        ("https://cactslearn.github.io/software-training-institute-shivane.html", "software-training-institute-shivane.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/software-training-institute-karvenagar.html", "software-training-institute-karvenagar.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/software-training-institute-warje.html", "software-training-institute-warje.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/software-training-institute-kothrud.html", "software-training-institute-kothrud.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/software-training-institute-sinhagad-road.html", "software-training-institute-sinhagad-road.html", "0.8", "monthly"),
         ("https://cactslearn.github.io/live-code-compiler.html", "live-code-compiler.html", "0.8", "monthly"),
     ]
+
+    # Dynamically include all 34 location/neighborhood landing pages in sitemap.xml
+    loc_files = sorted([f for f in os.listdir(".") if f.startswith("software-training-institute-") and f.endswith(".html")])
+    for lf in loc_files:
+        url = f"https://cactslearn.github.io/{lf}"
+        priority = "0.9" if lf == "software-training-institute-pune.html" else "0.8"
+        if not any(item[1] == lf for item in static_pages):
+            static_pages.append((url, lf, priority, "monthly"))
 
     sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
     for url, file_path, priority, changefreq in static_pages:
@@ -3294,14 +3295,9 @@ def update_sitemap_html():
         c_start_marker = "<!-- CAREERS_GRID_START -->"
         c_end_marker = "<!-- CAREERS_GRID_END -->"
         careers_replacement = f"""{c_start_marker}
-                    <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.5rem;" id="careers-jobs-grid">
-                        <h4 style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1rem; font-family: var(--font-heading);">
-                            Current Openings &amp; Trainee Opportunities ({len(JOBS_DATA)} Positions)
-                        </h4>
-                        <ul class="sitemap-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0.75rem;">
+                    <ul class="sitemap-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0.75rem;">
 {careers_links_html}
-                        </ul>
-                    </div>
+                    </ul>
                     {c_end_marker}"""
 
         c_pattern = re.compile(rf'{re.escape(c_start_marker)}.*?{re.escape(c_end_marker)}', re.DOTALL)
@@ -3311,15 +3307,51 @@ def update_sitemap_html():
             careers_group = f"""
                 <!-- Group 6: Careers & Current Openings -->
                 <div class="sitemap-group" style="grid-column: 1 / -1; margin-top: 1.5rem;">
-                    <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem; color: var(--accent); flex-shrink: 0;"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Careers &amp; Current Job Openings (<a href="careers.html" style="color: var(--accent-light); font-size: 0.95rem;">View All Openings &gt;</a>)</h3>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">Explore live project internships, junior developer trainee positions, and developer apprenticeships at CACTS.</p>
+                    <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+                        <h3 style="margin-bottom: 0; display: flex; align-items: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem; color: var(--accent); flex-shrink: 0;"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>Careers &amp; Current Job Openings ({len(JOBS_DATA)} Positions)</h3>
+                        <a href="careers.html" style="color: var(--accent-light); font-size: 0.85rem; font-weight: 600; padding: 0.35rem 0.85rem; background: var(--accent-glow); border: 1px solid var(--accent); border-radius: 20px; text-decoration: none;">View All Openings &gt;</a>
+                    </div>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem;">Explore live project internships, junior developer trainee positions, and developer apprenticeships at CACTS.</p>
                     {careers_replacement}
                 </div>
             """
-            sm_content = sm_content.replace('</main>', f'{careers_group}\n    </main>')
+            sm_content = sm_content.replace('</div>\n    </main>', f'{careers_group}\n        </div>\n    </main>')
+
+        # Update Locations section in sitemap.html
+        from scripts.generate_neighborhood_pages import LOCATIONS_CONFIG
+        loc_links_html = ""
+        for loc in LOCATIONS_CONFIG:
+            loc_links_html += f"""
+                <li style="padding-left: 0.5rem;">
+                    <span class="sitemap-bullet" style="color: var(--accent);">•</span>
+                    <a href="{loc['slug']}.html" style="font-weight: 600; color: var(--accent-light);">{loc['h1']}</a>
+                </li>
+            """
+
+        l_start_marker = "<!-- LOCATIONS_GRID_START -->"
+        l_end_marker = "<!-- LOCATIONS_GRID_END -->"
+        loc_replacement = f"""{l_start_marker}
+                    <ul class="sitemap-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0.75rem;">
+{loc_links_html}
+                    </ul>
+                    {l_end_marker}"""
+
+        l_pattern = re.compile(rf'{re.escape(l_start_marker)}.*?{re.escape(l_end_marker)}', re.DOTALL)
+        if l_pattern.search(sm_content):
+            sm_content = l_pattern.sub(loc_replacement, sm_content)
+        else:
+            loc_group = f"""
+                <!-- Group 7: Pune & PCMC Location Training Hubs -->
+                <div class="sitemap-group" style="grid-column: 1 / -1; margin-top: 1.5rem;">
+                    <h3 style="margin-bottom: 0.5rem; display: flex; align-items: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem; color: var(--accent); flex-shrink: 0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Pune &amp; PCMC Location Training Hubs ({len(LOCATIONS_CONFIG)} Locations)</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem;">Direct 1-to-1 software training and developer mentorship hubs across all major Pune &amp; PCMC technology corridors.</p>
+                    {loc_replacement}
+                </div>
+            """
+            sm_content = sm_content.replace('</div>\n    </main>', f'{loc_group}\n        </div>\n    </main>')
 
         write_if_changed(sitemap_html_file, sm_content)
-        print(f"Automatically updated {sitemap_html_file} with hierarchical course split page directory & careers section!")
+        print(f"Automatically updated {sitemap_html_file} with hierarchical course split page directory, careers section, & 34 location hubs!")
 
 if __name__ == "__main__":
     build()
