@@ -3022,7 +3022,7 @@ def generate_careers_page():
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current Openings &amp; Job Opportunities | CACTS Pune</title>
-    <meta name="description" content="Browse current job openings, internships, and trainee positions for freshers, graduates, and career switchers at CACTS Pune across Full Stack, Java, Python, AI, Cloud, and DevOps.">
+    <meta name="description" content="Browse current job openings, internships, and trainee positions at CACTS Pune across Full Stack, Java, Python, AI, Cloud, and DevOps.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://cactslearn.github.io/careers.html">
     <link rel="stylesheet" href="css/style.css">
@@ -3350,8 +3350,94 @@ def update_sitemap_html():
             """
             sm_content = sm_content.replace('</div>\n    </main>', f'{loc_group}\n        </div>\n    </main>')
 
+        # Update Learning Guides & Tech Resources section in sitemap.html
+        resource_files = [
+            ("beginner-to-ai-engineer-roadmap.html", "Beginner to AI Engineer Roadmap"),
+            ("beginner-to-blockchain-developer-roadmap.html", "Beginner to Blockchain Developer Roadmap"),
+            ("beginner-to-cybersecurity-analyst-roadmap.html", "Beginner to Cybersecurity Analyst Roadmap"),
+            ("beginner-to-data-engineer-roadmap.html", "Beginner to Data Engineer Roadmap"),
+            ("beginner-to-devops-engineer-roadmap.html", "Beginner to DevOps Engineer Roadmap"),
+            ("beginner-to-java-fullstack-developer-roadmap.html", "Beginner to Java Fullstack Developer Roadmap"),
+            ("beginner-to-python-developer-roadmap.html", "Beginner to Python Developer Roadmap"),
+            ("beginner-to-react-js-roadmap.html", "Beginner to React JS Developer Roadmap"),
+            ("beginner-to-react-native-roadmap.html", "Beginner to React Native Developer Roadmap"),
+            ("best-aws-cloud-certifications.html", "Best AWS Cloud Certifications Guide"),
+            ("best-blockchain-certifications.html", "Best Blockchain Certifications Guide"),
+            ("best-cybersecurity-certifications.html", "Best Cybersecurity Certifications Guide"),
+            ("best-data-engineering-certifications.html", "Best Data Engineering Certifications Guide"),
+            ("best-devops-certifications.html", "Best DevOps Certifications Guide"),
+            ("best-power-bi-certifications.html", "Best Power BI Certifications Guide"),
+            ("blockchain-project-ideas.html", "Blockchain Project Ideas"),
+            ("cybersecurity-project-ideas.html", "Cybersecurity Project Ideas"),
+            ("data-engineering-project-ideas.html", "Data Engineering Project Ideas"),
+            ("data-science-project-ideas.html", "Data Science Project Ideas"),
+            ("devops-project-ideas.html", "DevOps Project Ideas"),
+            ("java-fullstack-project-ideas.html", "Java Fullstack Project Ideas"),
+            ("power-bi-dashboard-ideas.html", "Power BI Dashboard Ideas"),
+            ("react-js-project-ideas.html", "React JS Project Ideas"),
+            ("react-native-project-ideas.html", "React Native Project Ideas"),
+            ("aws-vs-azure.html", "AWS vs Azure Cloud Comparison"),
+            ("docker-vs-kubernetes.html", "Docker vs Kubernetes Comparison"),
+            ("java-vs-python.html", "Java vs Python Comparison"),
+            ("jenkins-vs-github-actions.html", "Jenkins vs GitHub Actions Comparison"),
+            ("power-bi-vs-tableau.html", "Power BI vs Tableau Comparison"),
+            ("react-native-vs-flutter.html", "React Native vs Flutter Comparison"),
+            ("react-vs-angular.html", "React vs Angular Comparison"),
+            ("spark-vs-hadoop.html", "Spark vs Hadoop Comparison"),
+            ("how-ai-is-used-in-healthcare.html", "How AI is Used in Healthcare"),
+            ("how-data-engineering-is-used-in-e-commerce.html", "How Data Engineering is Used in E-Commerce"),
+            ("how-devops-is-used-in-software-companies.html", "How DevOps is Used in Software Companies"),
+            ("how-power-bi-is-used-in-manufacturing.html", "How Power BI is Used in Manufacturing"),
+            ("what-does-a-blockchain-developer-do.html", "What Does a Blockchain Developer Do?"),
+            ("what-does-a-data-engineer-do.html", "What Does a Data Engineer Do?"),
+            ("what-does-a-devops-engineer-do.html", "What Does a DevOps Engineer Do?"),
+            ("what-does-a-power-bi-developer-do.html", "What Does a Power BI Developer Do?"),
+            ("what-does-a-soc-analyst-do.html", "What Does a SOC Analyst Do?"),
+            ("what-does-an-ai-engineer-do.html", "What Does an AI Engineer Do?"),
+            ("what-is-apache-spark.html", "What is Apache Spark?"),
+            ("what-is-docker.html", "What is Docker?"),
+            ("what-is-hadoop.html", "What is Hadoop?"),
+            ("what-is-jenkins.html", "What is Jenkins?"),
+            ("what-is-kafka.html", "What is Kafka?"),
+            ("what-is-kubernetes.html", "What is Kubernetes?"),
+            ("what-is-power-bi.html", "What is Power BI?"),
+            ("what-is-terraform.html", "What is Terraform?"),
+            ("jobs/index.html", "CACTS Developer Job & Internship Directory")
+        ]
+
+        res_links_html = ""
+        for href, label in resource_files:
+            res_links_html += f"""
+                <li style="padding-left: 0.5rem;">
+                    <span class="sitemap-bullet" style="color: var(--accent);">•</span>
+                    <a href="{href}" style="font-weight: 600; color: var(--accent-light);">{label}</a>
+                </li>
+            """
+
+        r_start_marker = "<!-- RESOURCE_GUIDES_GRID_START -->"
+        r_end_marker = "<!-- RESOURCE_GUIDES_GRID_END -->"
+        res_replacement = f"""{r_start_marker}
+                    <ul class="sitemap-list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0.75rem;">
+{res_links_html}
+                    </ul>
+                    {r_end_marker}"""
+
+        r_pattern = re.compile(rf'{re.escape(r_start_marker)}.*?{re.escape(r_end_marker)}', re.DOTALL)
+        if r_pattern.search(sm_content):
+            sm_content = r_pattern.sub(res_replacement, sm_content)
+        else:
+            res_group = f"""
+                <!-- Group 8: Learning Guides & Tech Resources -->
+                <div class="sitemap-group" style="grid-column: 1 / -1; margin-top: 1.5rem;">
+                    <h3 style="margin-bottom: 0.5rem; display: flex; align-items: center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 0.5rem; color: var(--accent); flex-shrink: 0;"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>Learning Guides &amp; Tech Resources ({len(resource_files)} Guides)</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.25rem;">In-depth tech career roadmaps, industry certifications, project ideas, comparisons, and role breakdowns.</p>
+                    {res_replacement}
+                </div>
+            """
+            sm_content = sm_content.replace('</div>\n    </main>', f'{res_group}\n        </div>\n    </main>')
+
         write_if_changed(sitemap_html_file, sm_content)
-        print(f"Automatically updated {sitemap_html_file} with hierarchical course split page directory, careers section, & 34 location hubs!")
+        print(f"Automatically updated {sitemap_html_file} with hierarchical course split page directory, careers section, 34 location hubs, & 51 learning guides!")
 
 if __name__ == "__main__":
     build()
