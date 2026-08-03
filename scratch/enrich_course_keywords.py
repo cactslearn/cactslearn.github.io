@@ -38,7 +38,7 @@ def enrich_courses():
         },
         "data-science-training": {
             "seo_title": "Data Science & Analytics Course in Pune | CACTS Training",
-            "meta_description": "Top Data Science course & Python analytics coaching near you in Pune. Learn SQL, Machine Learning, Power BI with live company internship & placement guidance.",
+            "meta_description": "Top Data Science course & Python analytics coaching near you in Pune. Learn SQL, Machine Learning, Power BI with live company internship & technical portfolio building.",
             "h1": "Data Science & Machine Learning Course in Pune",
             "h2": "Hands-On Analytics & Data Coding Bootcamp: Master pandas, ML algorithms & predictive modeling with real-world internship and career readiness."
         },
@@ -50,7 +50,7 @@ def enrich_courses():
         },
         "devops-training": {
             "seo_title": "DevOps & Cloud Engineering Course in Pune | CACTS Training",
-            "meta_description": "Master DevOps & Cloud infrastructure in Pune. Docker, Kubernetes, Jenkins, Terraform & AWS coding bootcamp with 1-to-1 coaching & internship placement.",
+            "meta_description": "Master DevOps & Cloud infrastructure in Pune. Docker, Kubernetes, Jenkins, Terraform & AWS coding bootcamp with 1-to-1 coaching & live project internship.",
             "h1": "DevOps & Cloud Engineering Course in Pune",
             "h2": "Automated Cloud & DevOps Development Bootcamp: Deploy CI/CD pipelines & Docker clusters with guaranteed live project internship and technical competence near you."
         },

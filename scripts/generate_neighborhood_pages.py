@@ -49,7 +49,7 @@ LOCATION_DETAILS = {
         "pain_point": "Students near Cummins College and Karve Nagar face heavy traffic congestion when attempting to travel to distant commercial institutes.",
         "solution": "Our 1-to-1 screenshare lab model enables Karve Nagar students to learn directly from top software developers right from their hostels or rooms.",
         "faq_q1": "Why is 1-to-1 software coaching popular among Cummins College Karve Nagar students?",
-        "faq_a1": "Cummins engineering students prefer our 1-to-1 mentoring because it fits around rigorous academic schedules. Mentors customize syllabus speed and help build real-world GitHub project portfolios for campus placements.",
+        "faq_a1": "Cummins engineering students prefer our 1-to-1 mentoring because it fits around rigorous academic schedules. Mentors customize syllabus speed and help build real-world GitHub project portfolios for technical hiring.",
         "faq_q2": "How far is CACTS physical campus from Karve Nagar?",
         "faq_a2": "Our flagship lab in Shivane is just 7 minutes from Karve Nagar via Rajaram Bridge and NDA Road. Students can attend physical lab sessions or learn virtually 1-to-1.",
         "faq_q3": "Can beginners from Karve Nagar with non-CS backgrounds learn Full Stack or Data Science?",
@@ -155,7 +155,7 @@ LOCATION_DETAILS = {
         "faq_q2": "Is Deccan Gymkhana Metro Station convenient for reaching CACTS mentors?",
         "faq_a2": "Yes. You can connect virtually from anywhere in Deccan or use Metro Line 2 to visit our physical facilities.",
         "faq_q3": "Which courses are recommended for BCA and BCS students near JM Road?",
-        "faq_a3": "Java Fullstack, MERN Web Development, Software Testing Automation, and Data Analytics offer top placement opportunities.",
+        "faq_a3": "Java Fullstack, MERN Web Development, Software Testing Automation, and Data Analytics offer top career opportunities.",
         "faq_q4": "How does CACTS verify live project code contributions?",
         "faq_a4": "Mentors review your code via Git pull requests on active company staging servers before merging into deployment."
     },
@@ -173,7 +173,7 @@ LOCATION_DETAILS = {
         "faq_a2": "Yes, taking Metro Line 2 from Nal Stop to Vanaz makes visiting our NDA Road Shivane lab quick and effortless.",
         "faq_q3": "Do Karve Road candidates learn modern frameworks like React and Spring Boot?",
         "faq_a3": "Yes. Our curricula cover up-to-date technologies including React 18, Node.js, Spring Boot 3, AWS Cloud, and Docker.",
-        "faq_q4": "What placement preparation support is included?",
+        "faq_q4": "What career readiness support is included?",
         "faq_a4": "1-on-1 resume structuring, ATS optimization, technical mock interviews, and direct referral connections."
     },
     "software-training-institute-erandwane": {
@@ -205,7 +205,7 @@ LOCATION_DETAILS = {
         "faq_a1": "Swargate is a central transit hub. Our virtual 1-to-1 lab saves hours of bus commuting while delivering elite developer instruction.",
         "faq_q2": "Can candidates from TMV and SP College join weekend batch slots?",
         "faq_a2": "Yes. We offer flexible weekend and evening 1-to-1 slots tailored for college students and working professionals.",
-        "faq_q3": "Which courses have high placement demand for Swargate freshers?",
+        "faq_q3": "Which courses have high industry demand for Swargate freshers?",
         "faq_a3": "Java Fullstack, Python Data Science, Software Testing Automation, and Cloud Engineering.",
         "faq_q4": "Do you provide guidance for IT salary negotiations in Pune?",
         "faq_a4": "Yes! Our mentors guide you through market compensation standards using our Pune IT Salary Insights database."
@@ -394,7 +394,7 @@ LOCATION_DETAILS = {
         "faq_a2": "Yes! Moze college students build real GitHub portfolios through our live staging internship program.",
         "faq_q3": "What core technologies are covered in Full Stack tracks?",
         "faq_a3": "React 18, Node.js, Express, MongoDB, Java 17, Spring Boot 3, PostgreSQL, and REST APIs.",
-        "faq_q4": "How does CACTS support job placements in Balewadi & Baner IT hubs?",
+        "faq_q4": "How does CACTS support developer careers in Balewadi & Baner IT hubs?",
         "faq_a4": "Through 1-on-1 resume structuring, GitHub code portfolio audits, and direct company referral drives."
     },
     "software-training-institute-kharadi": {
@@ -446,7 +446,7 @@ LOCATION_DETAILS = {
         "faq_q3": "Do Hadapsar trainees get hands-on experience in Java and SQL databases?",
         "faq_a3": "Yes! You build real database schemas, write complex SQL queries, and build REST APIs 1-on-1.",
         "faq_q4": "What technical readiness is provided for Hadapsar job seekers?",
-        "faq_a4": "1-on-1 resume building, GitHub portfolio setup, technical mock interviews, and Pune placement drives."
+        "faq_a4": "1-on-1 resume building, GitHub portfolio setup, technical mock interviews, and Pune developer hiring referrals."
     },
     "software-training-institute-magarpatta-city": {
         "landmarks": "Magarpatta Cybercity Towers, Seasons Mall, Amanora Town Centre, and Destination Centre",
@@ -514,7 +514,7 @@ LOCATION_DETAILS = {
         "faq_q3": "Are non-technical background students eligible for Nagar Road courses?",
         "faq_a3": "Yes! 1-to-1 mentors guide you step by step from fundamental programming to advanced web development.",
         "faq_q4": "What technical readiness is provided?",
-        "faq_a4": "Resume auditing, GitHub portfolio optimization, technical mock interviews, and Pune placement drives."
+        "faq_a4": "Resume auditing, GitHub portfolio optimization, technical mock interviews, and Pune developer hiring referrals."
     },
     "software-training-institute-akurdi": {
         "landmarks": "DY Patil Educational Complex Akurdi, Akurdi Railway Station, Pradhikaran Sector 24, and Khandoba Mandir",
@@ -525,7 +525,7 @@ LOCATION_DETAILS = {
         "pain_point": "DY Patil Akurdi students face long travel times if trying to reach central Pune coaching institutes.",
         "solution": "Get elite 1-to-1 developer mentoring right in Akurdi PCMC, either virtually or through convenient scheduling.",
         "faq_q1": "Why do DY Patil Akurdi engineering students select CACTS 1-to-1 software training?",
-        "faq_a1": "DY Patil Akurdi students choose CACTS because our 1-to-1 mentors deliver hands-on code reviews, Data Structure preparation, and live Git staging internships for campus placements.",
+        "faq_a1": "DY Patil Akurdi students choose CACTS because our 1-to-1 mentors deliver hands-on code reviews, Data Structure preparation, and live Git staging internships for technical hiring.",
         "faq_q2": "How close is Akurdi Railway Station for PCMC commuters?",
         "faq_a2": "Akurdi Station provides direct local train connectivity across PCMC and Pune, while our 1-to-1 virtual screenshare lab allows instant home access.",
         "faq_q3": "Can Akurdi MCA and BE students build live company project portfolios?",
