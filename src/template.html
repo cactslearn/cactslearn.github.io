@@ -8,20 +8,21 @@
     <meta name="description" content="{{meta_description}}">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{canonical}}">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="{{seo_title}}">
-    <meta property="og:description" content="{{meta_description}}">
-    <meta property="og:url" content="{{canonical}}">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-
     <!-- CSS Links -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/course-details.css">
 
     <!-- Structured JSON-LD Schema Markup -->
-    {{schema_markup}}
+    {{schema_markup}}    <!-- Open Graph (OG) & Twitter Card Social Tags -->
+    <meta property="og:title" content="{{seo_title}}">
+    <meta property="og:description" content="{{meta_description}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cactslearn.github.io/src/template.html">
+    <meta property="og:image" content="https://cactslearn.github.io/images/cacts-og-banner.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{seo_title}}">
+    <meta name="twitter:description" content="{{meta_description}}">
+    <meta name="twitter:image" content="https://cactslearn.github.io/images/cacts-og-banner.jpg">
 </head>
 
 <body>

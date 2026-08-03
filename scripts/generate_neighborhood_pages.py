@@ -593,9 +593,9 @@ LOCATIONS_CONFIG = [
         "area_served": "Pune, Maharashtra",
         "badge": "Central Engineering Hub | Pune",
         "meta_title": "Software Training Institute Pune | CACTS 1-to-1 Training",
-        "meta_description": "Software training institute in Pune offering 1-to-1 developer mentorship, live project internships, and 100% practical software engineering labs.",
+        "meta_description": "Software & IT training institute in Pune offering 1-to-1 developer mentorship, live project internships, and 100% practical software engineering labs.",
         "h1": "Software Training Institute in Pune",
-        "hero_p": "Welcome to CACTS, Pune's premier software training institute for <strong>1-to-1 developer mentorship</strong> and live project internships. Whether you are a college graduate or working professional in Pune, our 1-to-1 virtual lab model ensures you write production code and get live Git pull request feedback directly from senior engineers.",
+        "hero_p": "Welcome to CACTS, Pune's premier software & IT training institute for <strong>1-to-1 developer mentorship</strong> and live project internships. Whether you are a college graduate or working professional in Pune, our 1-to-1 virtual lab model ensures you write production code and get live Git pull request feedback directly from senior engineers.",
         "pillar_subtitle": "Why engineering students and working developers across Pune choose our 1-to-1 practical mentorship."
     },
     {
@@ -604,7 +604,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Shivane, Pune",
         "badge": "Physical Mentorship Lab & HQ | Shivane",
         "meta_title": "Software Training Institute in Shivane Pune | CACTS HQ",
-        "meta_description": "Software training institute in Shivane, Pune. Direct 1-to-1 software engineering lab, live project internships, and senior developer mentorship.",
+        "meta_description": "Software & IT training institute in Shivane, Pune. Direct 1-to-1 software engineering lab, live project internships, and senior developer mentorship.",
         "h1": "Software Training Institute in Shivane, Pune (CACTS HQ)",
         "hero_p": "Located on NDA Road in Shivane, CACTS is the central physical and virtual headquarters for <strong>1-to-1 software classes in Shivane</strong>. Students from NDA Road, Deshmukh Nagar, Uttam Nagar, and Kondhwa Road join our 1-on-1 lab sessions to work on active company repositories.",
         "pillar_subtitle": "Why Shivane, NDA Road, and Uttam Nagar students choose our flagship 1-to-1 engineering lab."
@@ -615,7 +615,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Karve Nagar, Pune",
         "badge": "Cummins College & Rajaram Bridge Corridor | Karve Nagar",
         "meta_title": "Software Training Institute Karve Nagar | CACTS Pune",
-        "meta_description": "Software training institute near Karve Nagar, Pune. 1-to-1 developer mentorship, live company project internships & flexible learning slots.",
+        "meta_description": "Software & IT training institute near Karve Nagar, Pune. 1-to-1 developer mentorship, live company project internships & flexible learning slots.",
         "h1": "Software Training Institute in Karve Nagar, Pune",
         "hero_p": "CACTS provides personalized <strong>software classes near Karve Nagar</strong> for engineering students and freshers. Just 5 minutes from Karve Nagar via Rajaram Bridge, our 1-to-1 virtual lab eliminates commute delays while guaranteeing hands-on Git code reviews and live staging deployment experience.",
         "pillar_subtitle": "Why Cummins College students and Karve Nagar freshers choose our 1-to-1 mentor model."
@@ -626,7 +626,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Warje, Pune",
         "badge": "Mumbai-Bangalore Highway Corridor | Warje",
         "meta_title": "Software Training Institute in Warje | CACTS Pune",
-        "meta_description": "Software training institute near Warje, Pune. 1-to-1 developer mentorship, live company project internships & practical coding labs.",
+        "meta_description": "Software & IT training institute near Warje, Pune. 1-to-1 developer mentorship, live company project internships & practical coding labs.",
         "h1": "Software Training Institute in Warje, Pune",
         "hero_p": "Looking for the top <strong>software institute in Warje</strong>? CACTS offers 1-to-1 software training and live project internships just minutes away from Warje Flyover on NDA Road. Master Full Stack, Java, Python, Data Science, and DevOps with direct mentor guidance.",
         "pillar_subtitle": "Why Warje Malwadi and Highway corridor candidates choose our 1-to-1 practical training."
@@ -637,7 +637,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Kothrud, Pune",
         "badge": "MIT-WPU & Deccan Corridor | Kothrud",
         "meta_title": "Software Training Institute Kothrud | CACTS Pune",
-        "meta_description": "Software training institute near Kothrud, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
+        "meta_description": "Software & IT training institute near Kothrud, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
         "h1": "Software Training Institute in Kothrud, Pune",
         "hero_p": "Welcome to CACTS, a dedicated center for 1-to-1 <strong>software classes in Kothrud</strong>. We specialize in One-to-One Software Training for MIT-WPU engineering students and Kothrud residents without traffic delays on Karve Road.",
         "pillar_subtitle": "Why Kothrud engineering graduates and MIT-WPU students choose our 1-to-1 virtual mentoring."
@@ -648,7 +648,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Sinhagad Road, Pune",
         "badge": "Vadgaon & Dhayari Corridor | Sinhagad Road",
         "meta_title": "Software Training Institute Sinhagad Road | CACTS Pune",
-        "meta_description": "Software training institute near Sinhagad Road, Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
+        "meta_description": "Software & IT training institute near Sinhagad Road, Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
         "h1": "Software Training Institute in Sinhagad Road, Pune",
         "hero_p": "Serving candidates across Vadgaon Budruk, Dhayari, Anand Nagar, and Hingne Khurd, CACTS offers <strong>1-to-1 software classes along Sinhagad Road</strong>. Skip Sinhagad Road flyover traffic jams and learn directly with a dedicated developer mentor.",
         "pillar_subtitle": "Why Sinhagad Road and Dhayari engineering students choose our 1-to-1 developer lab."
@@ -659,7 +659,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Shivaji Nagar, Pune",
         "badge": "COEP & District Court Hub | Shivaji Nagar",
         "meta_title": "Software Training Institute Shivaji Nagar | CACTS Pune",
-        "meta_description": "Software training institute near Shivaji Nagar, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
+        "meta_description": "Software & IT training institute near Shivaji Nagar, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
         "h1": "Software Training Institute in Shivaji Nagar, Pune",
         "hero_p": "Conveniently located near COEP Technological University and Shivaji Nagar Railway Hub, CACTS offers <strong>1-to-1 software training in Shivaji Nagar</strong>. Master Java, Python, MERN, AI, and Cloud Architecture with direct 1-on-1 screenshare mentorship.",
         "pillar_subtitle": "Why COEP students and Shivaji Nagar job seekers prefer our private 1-to-1 mentorship."
@@ -670,7 +670,7 @@ LOCATIONS_CONFIG = [
         "area_served": "FC Road, Fergusson College Road, Pune",
         "badge": "Fergusson College Education Zone | FC Road",
         "meta_title": "Software Training Institute FC Road | CACTS Pune",
-        "meta_description": "Software training institute near FC Road (Fergusson College Road), Pune. 1-to-1 developer mentorship & live project internships.",
+        "meta_description": "Software & IT training institute near FC Road (Fergusson College Road), Pune. 1-to-1 developer mentorship & live project internships.",
         "h1": "Software Training Institute on FC Road, Pune",
         "hero_p": "Targeting students and freshers along Fergusson College Road, CACTS delivers <strong>1-to-1 software coaching near FC Road</strong>. Bypass crowded commercial batch classes and build real apps on live company Git staging branches.",
         "pillar_subtitle": "Why FC Road college students choose CACTS 1-to-1 practical mentorship."
@@ -681,7 +681,7 @@ LOCATIONS_CONFIG = [
         "area_served": "JM Road, Jangali Maharaj Road, Pune",
         "badge": "Deccan Gymkhana & Modern College Hub | JM Road",
         "meta_title": "Software Training Institute JM Road | CACTS Pune",
-        "meta_description": "Software training institute near JM Road (Jangali Maharaj Road), Pune. 1-to-1 developer mentorship & live project internships.",
+        "meta_description": "Software & IT training institute near JM Road (Jangali Maharaj Road), Pune. 1-to-1 developer mentorship & live project internships.",
         "h1": "Software Training Institute on JM Road, Pune",
         "hero_p": "Located right next to Deccan Gymkhana, CACTS provides <strong>1-to-1 software classes near JM Road</strong>. Perfect for Modern College and Deccan area students seeking 100% practical coding, Git reviews, and live project internships.",
         "pillar_subtitle": "Why JM Road and Deccan students choose our developer-led 1-to-1 training."
@@ -703,7 +703,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Erandwane, Pune",
         "badge": "Film Institute & Mehendale Garage Belt | Erandwane",
         "meta_title": "Software Training Institute Erandwane | CACTS Pune",
-        "meta_description": "Software training institute near Erandwane, Pune. 1-to-1 developer mentorship, live company project internships & practical coding labs.",
+        "meta_description": "Software & IT training institute near Erandwane, Pune. 1-to-1 developer mentorship, live company project internships & practical coding labs.",
         "h1": "Software Training Institute in Erandwane, Pune",
         "hero_p": "Serving Erandwane, Prabhat Road, and Law College Road, CACTS brings <strong>1-to-1 software coaching to Erandwane</strong>. Build industry-grade project portfolios in Java, Python, AI, React, and DevOps with senior developer oversight.",
         "pillar_subtitle": "Why Erandwane and Prabhat Road graduates select our 1-to-1 software mentorship."
@@ -714,7 +714,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Swargate, Pune",
         "badge": "Central MSRTC & Metro Interchange | Swargate",
         "meta_title": "Software Training Institute Swargate | CACTS Pune",
-        "meta_description": "Software training institute near Swargate, Pune. 1-to-1 developer mentorship, live company project internships & flexible schedules.",
+        "meta_description": "Software & IT training institute near Swargate, Pune. 1-to-1 developer mentorship, live company project internships & flexible schedules.",
         "h1": "Software Training Institute in Swargate, Pune",
         "hero_p": "Easily accessible from Swargate Metro and Bus Station, CACTS provides <strong>1-to-1 software training in Swargate</strong>. Transition into software engineering with customized 1-on-1 pacing, resume audits, and live Git project experience.",
         "pillar_subtitle": "Why Swargate commuters and central Pune students choose our 1-to-1 training model."
@@ -725,7 +725,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Katraj, Pune",
         "badge": "Bharati Vidyapeeth & Zoo Campus | Katraj",
         "meta_title": "Software Training Institute Katraj | CACTS Pune",
-        "meta_description": "Software training institute near Katraj, Pune. 1-to-1 developer mentorship, live company project internships & flexible schedules.",
+        "meta_description": "Software & IT training institute near Katraj, Pune. 1-to-1 developer mentorship, live company project internships & flexible schedules.",
         "h1": "Software Training Institute in Katraj, Pune",
         "hero_p": "Serving Bharati Vidyapeeth students and Katraj job seekers, CACTS offers <strong>1-to-1 software classes in Katraj</strong>. Gain practical software engineering skills in Java, Full Stack, Data Science, and Cybersecurity without batch class crowds.",
         "pillar_subtitle": "Why Bharati Vidyapeeth students and Katraj freshers choose our 1-to-1 mentorship."
@@ -736,7 +736,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Dhankawadi, Pune",
         "badge": "PICT College & Padmavati Zone | Dhankawadi",
         "meta_title": "Software Training Institute Dhankawadi | CACTS Pune",
-        "meta_description": "Software training institute near Dhankawadi, Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
+        "meta_description": "Software & IT training institute near Dhankawadi, Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
         "h1": "Software Training Institute in Dhankawadi, Pune",
         "hero_p": "Located right next to PICT Pune and Padmavati, CACTS offers <strong>1-to-1 software coaching in Dhankawadi</strong>. Learn production algorithms, SQL databases, and cloud deployment pipelines under direct senior developer supervision.",
         "pillar_subtitle": "Why PICT students and Dhankawadi graduates prefer our 1-to-1 practical coding sessions."
@@ -747,7 +747,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Wakad, PCMC, Pune",
         "badge": "Dange Chowk & Bhumkar Chowk Belt | Wakad",
         "meta_title": "Software Training Institute Wakad PCMC | CACTS Pune",
-        "meta_description": "Software training institute near Wakad & PCMC, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
+        "meta_description": "Software & IT training institute near Wakad & PCMC, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
         "h1": "Software Training Institute in Wakad, Pune",
         "hero_p": "CACTS provides <strong>1-to-1 software classes in Wakad</strong> for IT professionals and college graduates living near Dange Chowk and Bhumkar Chowk. Learn full stack web development, Java Spring Boot, and Cloud DevOps with 1-on-1 live mentoring.",
         "pillar_subtitle": "Why Wakad IT employees and engineering freshers choose CACTS 1-to-1 mentorship."
@@ -758,7 +758,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Pimple Saudagar, PCMC, Pune",
         "badge": "Govind Garden & Jagtap Dairy Belt | Pimple Saudagar",
         "meta_title": "Software Training Institute Pimple Saudagar | CACTS",
-        "meta_description": "Software training institute near Pimple Saudagar, PCMC Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
+        "meta_description": "Software & IT training institute near Pimple Saudagar, PCMC Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
         "h1": "Software Training Institute in Pimple Saudagar, PCMC",
         "hero_p": "Serving Pimple Saudagar and Rahatani, CACTS offers elite <strong>1-to-1 software training in Pimple Saudagar</strong>. Master React, Python, Data Science, and AWS Cloud via personalized 1-on-1 virtual screenshares and live project internships.",
         "pillar_subtitle": "Why Pimple Saudagar residents and PCMC developers prefer our private 1-to-1 coaching."
@@ -769,7 +769,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Rahatani, PCMC, Pune",
         "badge": "Kalewadi Phata & Rahatani Belt | Rahatani",
         "meta_title": "Software Training Institute Rahatani | CACTS Pune",
-        "meta_description": "Software training institute near Rahatani & Kalewadi, PCMC. 1-to-1 developer mentorship & live company project internships.",
+        "meta_description": "Software & IT training institute near Rahatani & Kalewadi, PCMC. 1-to-1 developer mentorship & live company project internships.",
         "h1": "Software Training Institute in Rahatani, PCMC",
         "hero_p": "Convenient for Rahatani and Kalewadi candidates, CACTS delivers <strong>1-to-1 software classes in Rahatani</strong>. Skip generic classroom lectures and get direct line-by-line code review from working software developers.",
         "pillar_subtitle": "Why Rahatani and Kalewadi students choose CACTS 1-to-1 developer mentorship."
@@ -780,7 +780,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Hinjewadi Phase 1, Rajiv Gandhi IT Park, Pune",
         "badge": "Rajiv Gandhi IT Park | Hinjewadi Phase 1",
         "meta_title": "Software Training Institute Hinjewadi Phase 1",
-        "meta_description": "Software training institute near Hinjewadi Phase 1 IT Park, Pune. 1-to-1 developer mentorship & live project internships.",
+        "meta_description": "Software & IT training institute near Hinjewadi Phase 1 IT Park, Pune. 1-to-1 developer mentorship & live project internships.",
         "h1": "Software Training Institute in Hinjewadi Phase 1",
         "hero_p": "Located right at the doorstep of Rajiv Gandhi IT Park Phase 1, CACTS provides <strong>1-to-1 software training in Hinjewadi Phase 1</strong>. Ideal for IT workers, tech support agents, and freshers aiming to upskill into Full Stack, AI, or Cloud Engineering.",
         "pillar_subtitle": "Why Hinjewadi Phase 1 IT workers choose our flexible 1-to-1 mentorship model."
@@ -791,7 +791,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Hinjewadi Phase 2, Tech Zone, Pune",
         "badge": "Tech Zone & Wipro Circle | Hinjewadi Phase 2",
         "meta_title": "Software Training Institute Hinjewadi Phase 2",
-        "meta_description": "Software training institute near Hinjewadi Phase 2 Tech Zone, Pune. 1-to-1 developer mentorship & live project internships.",
+        "meta_description": "Software & IT training institute near Hinjewadi Phase 2 Tech Zone, Pune. 1-to-1 developer mentorship & live project internships.",
         "h1": "Software Training Institute in Hinjewadi Phase 2",
         "hero_p": "Serving IT professionals around Wipro Circle and Tech Zone Phase 2, CACTS offers <strong>1-to-1 software courses in Hinjewadi Phase 2</strong>. Upgrade your tech stack with evening and weekend 1-on-1 mentor sessions.",
         "pillar_subtitle": "Why Hinjewadi Phase 2 tech engineers choose CACTS 1-to-1 developer coaching."
@@ -802,7 +802,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Hinjewadi Phase 3, Megapolis, Pune",
         "badge": "Megapolis & TCS Campus | Hinjewadi Phase 3",
         "meta_title": "Software Training Institute Hinjewadi Phase 3",
-        "meta_description": "Software training institute near Hinjewadi Phase 3 Megapolis, Pune. 1-to-1 developer mentorship & live project internships.",
+        "meta_description": "Software & IT training institute near Hinjewadi Phase 3 Megapolis, Pune. 1-to-1 developer mentorship & live project internships.",
         "h1": "Software Training Institute in Hinjewadi Phase 3",
         "hero_p": "Targeting Megapolis residents and Tech Mahindra/TCS Phase 3 employees, CACTS brings <strong>1-to-1 software classes to Hinjewadi Phase 3</strong>. Learn high-demand skills like Microservices, DevOps pipelines, and AI ML 1-to-1.",
         "pillar_subtitle": "Why Megapolis and Hinjewadi Phase 3 residents prefer our 1-to-1 virtual lab."
@@ -813,7 +813,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Aundh, Pune",
         "badge": "Westend Mall & Parihar Chowk Belt | Aundh",
         "meta_title": "Software Training Institute Aundh | CACTS Pune",
-        "meta_description": "Software training institute near Aundh, Pune. 1-to-1 developer mentorship, live company project internships & flexible schedules.",
+        "meta_description": "Software & IT training institute near Aundh, Pune. 1-to-1 developer mentorship, live company project internships & flexible schedules.",
         "h1": "Software Training Institute in Aundh, Pune",
         "hero_p": "Convenient for Aundh and Bremen Chowk residents, CACTS offers <strong>1-to-1 software training in Aundh</strong>. Master Java Fullstack, Python Scripting, React Native, and Data Engineering with personal developer mentoring.",
         "pillar_subtitle": "Why Aundh freshers and career switchers choose CACTS 1-to-1 software institute."
@@ -824,7 +824,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Baner, Pune",
         "badge": "Baner Road & Primrose Mall Zone | Baner",
         "meta_title": "Software Training Institute Baner | CACTS Pune",
-        "meta_description": "Software training institute near Baner, Pune. 1-to-1 developer mentorship, live company project internships & flexible schedules.",
+        "meta_description": "Software & IT training institute near Baner, Pune. 1-to-1 developer mentorship, live company project internships & flexible schedules.",
         "h1": "Software Training Institute in Baner, Pune",
         "hero_p": "Serving Baner Road, Pan Card Club Road, and Cummins IT hub, CACTS delivers <strong>1-to-1 software classes in Baner</strong>. Learn modern software architecture and commit live code to company staging environments.",
         "pillar_subtitle": "Why Baner tech professionals and graduates choose our 1-to-1 developer lab."
@@ -835,7 +835,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Balewadi, High Street, Pune",
         "badge": "Balewadi High Street & Sports Complex | Balewadi",
         "meta_title": "Software Training Institute Balewadi | CACTS Pune",
-        "meta_description": "Software training institute near Balewadi High Street, Pune. 1-to-1 developer mentorship & live project internships.",
+        "meta_description": "Software & IT training institute near Balewadi High Street, Pune. 1-to-1 developer mentorship & live project internships.",
         "h1": "Software Training Institute in Balewadi, Pune",
         "hero_p": "Located near Balewadi High Street tech companies, CACTS provides <strong>1-to-1 software coaching in Balewadi</strong>. Gain practical coding proficiency in MERN, Cloud, and Data Analytics through 1-on-1 screen share sessions.",
         "pillar_subtitle": "Why Balewadi High Street job seekers choose CACTS 1-to-1 software mentorship."
@@ -846,7 +846,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Kharadi, EON Free Zone, Pune",
         "badge": "EON Free Zone & World Trade Center | Kharadi",
         "meta_title": "Software Training Institute Kharadi | CACTS Pune",
-        "meta_description": "Software training institute near Kharadi EON Free Zone, Pune. 1-to-1 developer mentorship & live project internships.",
+        "meta_description": "Software & IT training institute near Kharadi EON Free Zone, Pune. 1-to-1 developer mentorship & live project internships.",
         "h1": "Software Training Institute in Kharadi, Pune",
         "hero_p": "Serving IT employees near EON Free Zone and World Trade Center Kharadi, CACTS offers <strong>1-to-1 software classes in Kharadi</strong>. Upgrade your career with 1-on-1 expert developer guidance in DevOps, AI, and Full Stack.",
         "pillar_subtitle": "Why EON Kharadi IT professionals select CACTS 1-to-1 practical software training."
@@ -857,7 +857,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Viman Nagar, Pune",
         "badge": "Symbiosis Campus & Phoenix Marketcity | Viman Nagar",
         "meta_title": "Software Training Institute Viman Nagar | CACTS",
-        "meta_description": "Software training institute near Viman Nagar, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
+        "meta_description": "Software & IT training institute near Viman Nagar, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
         "h1": "Software Training Institute in Viman Nagar, Pune",
         "hero_p": "Targeting Symbiosis students and Viman Nagar residents, CACTS provides <strong>1-to-1 software coaching in Viman Nagar</strong>. Build production software skills with live Git code reviews and dedicated developer support.",
         "pillar_subtitle": "Why Viman Nagar students and tech freshers choose CACTS 1-to-1 software coaching."
@@ -868,7 +868,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Hadapsar, Pune",
         "badge": "Gadital & Solapur Highway Corridor | Hadapsar",
         "meta_title": "Software Training Institute Hadapsar | CACTS Pune",
-        "meta_description": "Software training institute near Hadapsar, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
+        "meta_description": "Software & IT training institute near Hadapsar, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
         "h1": "Software Training Institute in Hadapsar, Pune",
         "hero_p": "Serving Hadapsar Gadital, Solapur Road, and Gliding Centre area, CACTS offers <strong>1-to-1 software courses in Hadapsar</strong>. Learn Java, Python, React, and Data Science 1-on-1 with live company project internships.",
         "pillar_subtitle": "Why Hadapsar engineering graduates choose CACTS 1-to-1 developer mentorship."
@@ -879,7 +879,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Magarpatta City, Cybercity, Hadapsar, Pune",
         "badge": "Cybercity Towers & Seasons Mall | Magarpatta",
         "meta_title": "Software Training Institute Magarpatta City",
-        "meta_description": "Software training institute near Magarpatta Cybercity, Hadapsar Pune. 1-to-1 developer mentorship & live project internships.",
+        "meta_description": "Software & IT training institute near Magarpatta Cybercity, Hadapsar Pune. 1-to-1 developer mentorship & live project internships.",
         "h1": "Software Training Institute in Magarpatta City, Pune",
         "hero_p": "Located right next to Magarpatta Cybercity Towers, CACTS delivers <strong>1-to-1 software training in Magarpatta City</strong>. Master cloud architectures, automated QA testing, and backend microservices with a personal mentor.",
         "pillar_subtitle": "Why Magarpatta Cybercity tech workers choose CACTS 1-to-1 developer training."
@@ -890,7 +890,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Mundhwa, Pune",
         "badge": "Keshav Nagar & Passport Office Belt | Mundhwa",
         "meta_title": "Software Training Institute Mundhwa | CACTS Pune",
-        "meta_description": "Software training institute near Mundhwa, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
+        "meta_description": "Software & IT training institute near Mundhwa, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
         "h1": "Software Training Institute in Mundhwa, Pune",
         "hero_p": "Convenient for Mundhwa and Keshav Nagar candidates, CACTS offers <strong>1-to-1 software classes in Mundhwa</strong>. Skip crowded mass-batch lecture halls and build verified GitHub contribution graphs.",
         "pillar_subtitle": "Why Mundhwa and Keshav Nagar freshers select CACTS 1-to-1 practical training."
@@ -901,7 +901,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Wagholi, Pune",
         "badge": "GH Raisoni & Lexicon College Belt | Wagholi",
         "meta_title": "Software Training Institute Wagholi | CACTS Pune",
-        "meta_description": "Software training institute near Wagholi, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
+        "meta_description": "Software & IT training institute near Wagholi, Pune. 1-to-1 developer mentorship, live company project internships & flexible slots.",
         "h1": "Software Training Institute in Wagholi, Pune",
         "hero_p": "Serving engineering students along Nagar Road in Wagholi, CACTS brings <strong>1-to-1 software coaching to Wagholi</strong>. Enjoy 100% practical screenshare lab sessions and live staging internships without traveling across town.",
         "pillar_subtitle": "Why Wagholi college students choose CACTS 1-to-1 developer mentorship."
@@ -923,7 +923,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Akurdi, PCMC, Pune",
         "badge": "DY Patil Educational Complex | Akurdi PCMC",
         "meta_title": "Software Training Institute Akurdi PCMC | CACTS",
-        "meta_description": "Software training institute near Akurdi, PCMC Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
+        "meta_description": "Software & IT training institute near Akurdi, PCMC Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
         "h1": "Software Training Institute in Akurdi, PCMC",
         "hero_p": "Serving DY Patil Akurdi students and PCMC freshers, CACTS provides <strong>1-to-1 software classes in Akurdi</strong>. Learn Core Java, Spring Boot, React, AI, and DevOps under direct 1-on-1 developer guidance.",
         "pillar_subtitle": "Why DY Patil Akurdi students and PCMC freshers choose CACTS 1-to-1 mentorship."
@@ -934,7 +934,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Chinchwad, PCMC, Pune",
         "badge": "Chinchwad Station & Auto Cluster Zone | Chinchwad",
         "meta_title": "Software Training Institute Chinchwad PCMC | CACTS",
-        "meta_description": "Software training institute near Chinchwad, PCMC Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
+        "meta_description": "Software & IT training institute near Chinchwad, PCMC Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
         "h1": "Software Training Institute in Chinchwad, PCMC",
         "hero_p": "Located near Chinchwad Station and Auto Cluster, CACTS offers <strong>1-to-1 software training in Chinchwad</strong>. Master software development, Git pull requests, and staging deployment via direct mentor screen sharing.",
         "pillar_subtitle": "Why Chinchwad engineering graduates select CACTS 1-to-1 software lab."
@@ -945,7 +945,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Nigdi, Pradhikaran, PCMC, Pune",
         "badge": "Pradhikaran & Bhakti Shakti Chowk | Nigdi PCMC",
         "meta_title": "Software Training Institute Nigdi PCMC | CACTS",
-        "meta_description": "Software training institute near Nigdi Pradhikaran, PCMC. 1-to-1 developer mentorship & live company project internships.",
+        "meta_description": "Software & IT training institute near Nigdi Pradhikaran, PCMC. 1-to-1 developer mentorship & live company project internships.",
         "h1": "Software Training Institute in Nigdi, PCMC",
         "hero_p": "Serving Nigdi Pradhikaran and Yamuna Nagar, CACTS brings <strong>1-to-1 software coaching to Nigdi</strong>. Build real production software projects with private 1-on-1 developer attention.",
         "pillar_subtitle": "Why Nigdi Pradhikaran students choose CACTS 1-to-1 developer training."
@@ -956,7 +956,7 @@ LOCATIONS_CONFIG = [
         "area_served": "Pimpri, PCMC, Pune",
         "badge": "Pimpri Metro Station & Finolex Chowk | Pimpri",
         "meta_title": "Software Training Institute Pimpri PCMC | CACTS",
-        "meta_description": "Software training institute near Pimpri, PCMC Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
+        "meta_description": "Software & IT training institute near Pimpri, PCMC Pune. 1-to-1 developer mentorship, live company project internships & practical labs.",
         "h1": "Software Training Institute in Pimpri, PCMC",
         "hero_p": "Serving Pimpri Metro Chowk and Nehrunagar, CACTS offers <strong>1-to-1 software classes in Pimpri</strong>. Transition into high-paying IT roles with customized 1-on-1 coding instruction and staging internships.",
         "pillar_subtitle": "Why Pimpri PCMC freshers and job seekers choose CACTS 1-to-1 software institute."
