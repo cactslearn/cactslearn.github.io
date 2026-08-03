@@ -3147,7 +3147,7 @@ def generate_careers_page():
                 <p>Centre of Advanced Computer Training and Studies. Providing practical, one-to-one virtual software
                     training and internships on real company projects since 2012.</p>
                 <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                    <a href="https://www.facebook.com/cactspune/ target="_blank" aria-label="Facebook" style="color: var(--text-secondary); transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 50%;">
+                    <a href="https://www.facebook.com/cactspune/" target="_blank" aria-label="Facebook" style="color: var(--text-secondary); transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 50%;">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                     </a>
                     <a href="https://www.linkedin.com/company/cacts/" target="_blank" aria-label="LinkedIn" style="color: var(--text-secondary); transition: var(--transition); display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 50%;">
