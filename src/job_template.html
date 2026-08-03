@@ -13,7 +13,7 @@
       "@context": "https://schema.org/",
       "@type": "JobPosting",
       "title": "{{JOB_TITLE_JSON}}",
-      "description": "{{JOB_SUMMARY_JSON}}",
+      "description": {{JOB_FULL_DESCRIPTION_JSON}},
       "identifier": {
         "@type": "PropertyValue",
         "name": "CACTS",
@@ -35,7 +35,7 @@
           "@type": "PostalAddress",
           "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
           "addressLocality": "Pune",
-          "addressRegion": "MH",
+          "addressRegion": "Maharashtra",
           "postalCode": "411023",
           "addressCountry": "IN"
         }
@@ -50,7 +50,8 @@
         "currency": "INR",
         "value": {
           "@type": "QuantitativeValue",
-          "value": 15000,
+          "minValue": {{JOB_STIPEND_MIN}},
+          "maxValue": {{JOB_STIPEND_MAX}},
           "unitText": "MONTH"
         }
       }

@@ -86,6 +86,16 @@ def generate_job_pages():
         job_summary_json = job["summary"].replace('"', '\\"')
         job_title_json = job["title"].replace('"', '\\"')
 
+        # Construct Google Jobs compliant full HTML description
+        full_desc_html = f"""<p><strong>Role Overview:</strong> {job['summary']}</p><p>CACTS (Centre of Advanced Computer Training and Studies) Pune is inviting applications for the position of <strong>{job['title']}</strong> ({job['category']} - {job['experience']}).</p><h3>Key Responsibilities:</h3><ul>{res_li}</ul><h3>Candidate Requirements &amp; Qualifications:</h3><ul>{req_li}</ul><h3>Stipend &amp; Working Environment:</h3><p><strong>Stipend:</strong> {job['stipend']}</p><p>Trainees work on active company software applications under 1-to-1 senior mentor code reviews, Git staging commits, and production software engineering practices at CACTS Pune HQ / Remote.</p>"""
+        job_full_desc_json = json.dumps(full_desc_html)
+
+        # Parse numeric stipend range for baseSalary schema
+        stipend_nums = re.findall(r'(\d+[\d,]*)', job["stipend"])
+        clean_nums = [int(n.replace(',', '')) for n in stipend_nums if int(n.replace(',', '')) > 100]
+        stipend_min = clean_nums[0] if len(clean_nums) > 0 else 12000
+        stipend_max = clean_nums[1] if len(clean_nums) > 1 else stipend_min + 5000
+
         content = template
         content = content.replace("{{JOB_SLUG}}", slug)
         content = content.replace("{{JOB_TITLE}}", job["title"])
@@ -98,6 +108,9 @@ def generate_job_pages():
         content = content.replace("{{JOB_META_DESCRIPTION}}", job["meta_description"])
         content = content.replace("{{JOB_SUMMARY}}", job["summary"])
         content = content.replace("{{JOB_SUMMARY_JSON}}", job_summary_json)
+        content = content.replace("{{JOB_FULL_DESCRIPTION_JSON}}", job_full_desc_json)
+        content = content.replace("{{JOB_STIPEND_MIN}}", str(stipend_min))
+        content = content.replace("{{JOB_STIPEND_MAX}}", str(stipend_max))
         content = content.replace("{{JOB_RESPONSIBILITIES_LI}}", res_li)
         content = content.replace("{{JOB_REQUIREMENTS_LI}}", req_li)
         content = content.replace("{{BRIDGE_HEADLINE}}", job["bridge_headline"])
