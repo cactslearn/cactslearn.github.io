@@ -20,7 +20,7 @@ LOCATION_DETAILS = {
         "faq_a2": "Yes. We offer morning, evening, and weekend 1-to-1 slots. Students from COEP, MIT, PICT, and PCMC colleges build real company microservices and commit code to live Git staging branches without missing college lectures.",
         "faq_q3": "How do working professionals in Pune manage 1-to-1 upskilling around office hours?",
         "faq_a3": "Working developers in Hinjewadi, Kharadi, or Magarpatta schedule flexible 1-on-1 mentor sessions before or after shift hours. You get direct mentorship in Java Spring Boot, React, Data Engineering, or Cloud DevOps.",
-        "faq_q4": "Does CACTS provide placement assistance for software jobs in Pune?",
+        "faq_q4": "Does CACTS provide technical readiness for software jobs in Pune?",
         "faq_a4": "Yes. We provide 1-on-1 resume optimization, real GitHub project portfolio building, mock technical interviews, and referral connections to Pune's leading IT companies and tech startups."
     },
     "software-training-institute-shivane": {
@@ -445,7 +445,7 @@ LOCATION_DETAILS = {
         "faq_a2": "Yes. 1-to-1 session timings are flexible and adjust around your college timetable.",
         "faq_q3": "Do Hadapsar trainees get hands-on experience in Java and SQL databases?",
         "faq_a3": "Yes! You build real database schemas, write complex SQL queries, and build REST APIs 1-on-1.",
-        "faq_q4": "What placement assistance is provided for Hadapsar job seekers?",
+        "faq_q4": "What technical readiness is provided for Hadapsar job seekers?",
         "faq_a4": "1-on-1 resume building, GitHub portfolio setup, technical mock interviews, and Pune placement drives."
     },
     "software-training-institute-magarpatta-city": {
@@ -513,7 +513,7 @@ LOCATION_DETAILS = {
         "faq_a2": "Ramwadi Metro provides fast transit across Pune, while our virtual 1-to-1 lab enables instant home learning.",
         "faq_q3": "Are non-technical background students eligible for Nagar Road courses?",
         "faq_a3": "Yes! 1-to-1 mentors guide you step by step from fundamental programming to advanced web development.",
-        "faq_q4": "What placement assistance is provided?",
+        "faq_q4": "What technical readiness is provided?",
         "faq_a4": "Resume auditing, GitHub portfolio optimization, technical mock interviews, and Pune placement drives."
     },
     "software-training-institute-akurdi": {
@@ -581,7 +581,7 @@ LOCATION_DETAILS = {
         "faq_a2": "Pimpri Metro Line 1 offers rapid transit across PCMC, while our 1-to-1 virtual lab enables instant home learning.",
         "faq_q3": "Are live project internships included for Pimpri freshers?",
         "faq_a3": "Yes. All trainees commit code to active company staging branches under senior mentor supervision.",
-        "faq_q4": "What placement assistance is provided in Pimpri PCMC?",
+        "faq_q4": "What technical readiness is provided in Pimpri PCMC?",
         "faq_a4": "1-on-1 resume optimization, GitHub portfolio review, technical mock interviews, and Pune/PCMC referral drives."
     }
 }
