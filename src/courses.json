@@ -7,10 +7,10 @@
     "duration": "16 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 Java Fullstack training. Learn Core/Advanced Java, Spring Boot, Hibernate, React, and SQL with hands-on coding and real-world internships.",
-    "seo_title": "Java Fullstack Training in Pune | 1-to-1 Lab | CACTS",
-    "meta_description": "Master Java Fullstack training in Pune with CACTS. 1-to-1 developer mentorship, Spring Boot, React JS, SQL & live company project internships.",
-    "h1": "Java Fullstack Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship Spring Boot, React, and SQL enterprise backend code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "Java Fullstack Course & Coding Training in Pune | CACTS",
+    "meta_description": "Master Java Fullstack coding & Spring Boot development in Pune with CACTS. 1-to-1 developer coaching, real project internship & 100% placement support.",
+    "h1": "Java Fullstack Course & Development Training in Pune",
+    "h2": "Hands-On Coding & Development Bootcamp: Build Spring Boot, React & SQL microservices under 1-to-1 coaching with a guaranteed internship project near you in Pune.",
     "skills": [
       "Core Java",
       "Advanced Java",
@@ -21,7 +21,7 @@
       "MySQL",
       "Git & GitHub"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Spring Boot, React, and SQL enterprise backend systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Spring Boot, React, and SQL enterprise backend systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Java Core Fundamentals",
@@ -111,10 +111,10 @@
     "duration": "14 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Individual Full Stack Web Development course. Cover HTML, CSS, JavaScript, React, Node.js, and Express. Includes live project internship.",
-    "seo_title": "Full Stack Web Training Pune | MERN 1-to-1 | CACTS",
-    "meta_description": "Join 1-to-1 MERN Full Stack Web training in Pune. Build Node.js, Express, React & MongoDB production apps with senior developer mentorship.",
-    "h1": "Full Stack Web Development Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship MERN (MongoDB, Express, React, Node.js) web application code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "Full Stack MERN Web Development Course in Pune | CACTS",
+    "meta_description": "Join MERN Full Stack coding classes & web development training in Pune. Hands-on coding bootcamp, live project internship, & placement coaching near you.",
+    "h1": "MERN Full Stack Web Development Course in Pune",
+    "h2": "Professional Web Development & Coding Bootcamp: Build React & Node.js web apps with guaranteed live project internship and placement assistance near you.",
     "skills": [
       "HTML5 & CSS3",
       "Modern JavaScript (ES6+)",
@@ -125,7 +125,7 @@
       "RESTful API",
       "GitHub"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual MERN (MongoDB, Express, React, Node.js) web application systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual MERN (MongoDB, Express, React, Node.js) web application systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Modern Front-end Architecture",
@@ -211,10 +211,10 @@
     "duration": "16 Weeks",
     "gbp_category": "Training Centre",
     "gbp_description": "Master Machine Learning algorithms, Deep Learning, NLP, and computer vision with personalized 1-on-1 sessions. Internship on active company projects.",
-    "seo_title": "AI & Machine Learning Course Pune | 1-to-1 Lab | CACTS",
-    "meta_description": "Master AI & Machine Learning in Pune with CACTS. Learn Python, PyTorch, Scikit-Learn, LLM fine-tuning & RAG pipelines in 1-to-1 practical sessions.",
-    "h1": "AI & ML Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship Predictive Models, Neural Networks, and NLP code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "AI & Machine Learning Engineering Course in Pune | CACTS",
+    "meta_description": "Advanced AI & ML course with Python coding in Pune. Master PyTorch, LLMs & Deep Learning with 1-to-1 coaching, live project internship & placement assistance.",
+    "h1": "AI & Machine Learning Engineer Course in Pune",
+    "h2": "Advanced AI Coding & Development Bootcamp: Build neural networks & LLM applications under 1-to-1 developer coaching with real-world internship project.",
     "skills": [
       "Python for ML",
       "Scikit-Learn",
@@ -224,7 +224,7 @@
       "NLP & Computer Vision",
       "Supervised Learning"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Predictive Models, Neural Networks, and NLP systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Predictive Models, Neural Networks, and NLP systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Mathematical Foundations & Python for ML",
@@ -310,10 +310,10 @@
     "duration": "14 Weeks",
     "gbp_category": "Training Centre",
     "gbp_description": "1-to-1 Data Science training. Includes Statistics, Python, Pandas, Numpy, data visualization, and predictive modeling. Built around live company tasks.",
-    "seo_title": "Data Science Course in Pune | 1-to-1 Analytics | CACTS",
-    "meta_description": "Learn Data Science in Pune with CACTS. Master Python, Pandas, Machine Learning algorithms & SQL database analytics in 1-to-1 mentor sessions.",
-    "h1": "Data Science Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship SQL Databases, Pandas Analytics, and business intelligence code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "Data Science & Analytics Course in Pune | CACTS Training",
+    "meta_description": "Top Data Science course & Python analytics coaching near you in Pune. Learn SQL, Machine Learning, Power BI with live company internship & placement guidance.",
+    "h1": "Data Science & Machine Learning Course in Pune",
+    "h2": "Hands-On Analytics & Data Coding Bootcamp: Master pandas, ML algorithms & predictive modeling with real-world internship and placement coaching.",
     "skills": [
       "Statistics",
       "Python Data Science",
@@ -323,7 +323,7 @@
       "Machine Learning Core",
       "Data Visualization"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual SQL Databases, Pandas Analytics, and business intelligence systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual SQL Databases, Pandas Analytics, and business intelligence systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Descriptive & Inferential Statistics",
@@ -409,10 +409,10 @@
     "duration": "16 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Professional Data Engineering course covering ETL pipelines, SQL, Apache Spark, Hadoop, and cloud data warehouses. 1-to-1 guidance, no batch constraints.",
-    "seo_title": "Data Engineering Course Pune | PySpark & ETL | CACTS",
-    "meta_description": "Master Data Engineering in Pune with CACTS. Learn Apache Spark, Hadoop, SQL, PySpark & data pipeline architecture in 1-to-1 practical labs.",
-    "h1": "Data Engineering Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship ETL pipelines, Apache Spark streaming, and AWS data maps code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "Data Engineering Course & ETL Training in Pune | CACTS",
+    "meta_description": "Become a Data Engineer in Pune. Learn SQL, Python ETL, Apache Spark & Cloud Pipelines with 1-to-1 coding coaching, live internship project & placement help.",
+    "h1": "Data Engineering & Big Data Course in Pune",
+    "h2": "Production Data Pipeline & Coding Bootcamp: Build PySpark ETL pipelines & cloud data lakes with real project internship and career placement support.",
     "skills": [
       "ETL Pipelines",
       "Apache Spark",
@@ -422,7 +422,7 @@
       "Cloud Data Lakes",
       "Python Scripting"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual ETL pipelines, Apache Spark streaming, and AWS data maps systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual ETL pipelines, Apache Spark streaming, and AWS data maps systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Advanced SQL & Data Architecture",
@@ -508,10 +508,10 @@
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Essential Python from variables to advanced object-oriented code, data structures, and script automation. Personalized training since 2012.",
-    "seo_title": "Python Scripting Course Pune | 1-to-1 Coding | CACTS",
-    "meta_description": "Learn Python programming & automation in Pune with CACTS. Master core Python, Django, Web Scraping & REST APIs in 1-to-1 developer sessions.",
-    "h1": "Python Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship Advanced Scripting, OOP, and automation code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "Python Developer Course & Coding Classes in Pune | CACTS",
+    "meta_description": "Premier Python programming course & development training in Pune. 1-to-1 coding coaching, Django/Flask projects, live internship & placement support.",
+    "h1": "Python Development Course & Coding Training in Pune",
+    "h2": "Practical Python Coding Bootcamp: Learn backend development, REST APIs & data scripting with live company project internship and career placement coaching near you.",
     "skills": [
       "Python Syntax",
       "OOP Concepts",
@@ -521,7 +521,7 @@
       "SQL Connection",
       "Script Automation"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Advanced Scripting, OOP, and automation systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Advanced Scripting, OOP, and automation systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Python Core Foundations",
@@ -598,10 +598,10 @@
     "duration": "6 Weeks",
     "gbp_category": "Training Centre",
     "gbp_description": "Comprehensive Power BI dashboard creation, DAX functions, data modeling, and reporting. Hands-on learning with corporate dashboard projects.",
-    "seo_title": "Power BI Analytics Course Pune | DAX & BI Lab | CACTS",
-    "meta_description": "Master Power BI analytics & DAX modeling in Pune with CACTS. Build interactive business dashboards with real company data in 1-to-1 sessions.",
-    "h1": "Power BI Dashboard Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship DAX expressions, data relationships, and dashboard structures code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "Power BI & Business Analytics Course in Pune | CACTS",
+    "meta_description": "Best Power BI analytics course near you in Pune. Learn DAX modeling, SQL & dashboard design with 1-to-1 coaching, live internship & placement assistance.",
+    "h1": "Power BI Analytics & Dashboard Course in Pune",
+    "h2": "Business Intelligence & Data Visualization Bootcamp: Design enterprise Power BI dashboards with real company dataset internships and placement help.",
     "skills": [
       "Power BI Desktop",
       "DAX Functions",
@@ -610,7 +610,7 @@
       "Interactive Dashboards",
       "Data Transformation"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual DAX expressions, data relationships, and dashboard structures systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual DAX expressions, data relationships, and dashboard structures systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Data Connection & Power Query Transformation",
@@ -687,10 +687,10 @@
     "duration": "10 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Master AWS and Azure services, cloud architecture, and security. 1-on-1 virtual sessions with real-world deployments.",
-    "seo_title": "Cloud Systems Architecture Course Pune | AWS Lab | CACTS",
-    "meta_description": "Learn Cloud Systems Architecture & AWS in Pune with CACTS. Master VPC, EC2, S3, IAM & serverless cloud infrastructure in 1-to-1 lab sessions.",
-    "h1": "Cloud Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship AWS infrastructure, EC2 scaling clusters, and VPC networks code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "AWS Cloud Architecture & Systems Course in Pune | CACTS",
+    "meta_description": "AWS & Multi-Cloud engineering course in Pune. Learn EC2, S3, IAM, Serverless & Terraform with hands-on coding lab, live internship & placement coaching.",
+    "h1": "AWS Cloud Architecture & Systems Course in Pune",
+    "h2": "Enterprise Cloud Systems Development Bootcamp: Architect scalable AWS cloud infrastructure with real-world company project internship near you.",
     "skills": [
       "AWS Infrastructure",
       "Azure Core Services",
@@ -700,7 +700,7 @@
       "Storage Solutions",
       "Identity Access (IAM)"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual AWS infrastructure, EC2 scaling clusters, and VPC networks systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual AWS infrastructure, EC2 scaling clusters, and VPC networks systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Cloud Architecture Foundations & Networking",
@@ -778,10 +778,10 @@
     "duration": "12 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 DevOps engineering. Master CI/CD pipelines, Docker, Kubernetes, Ansible, and Git. Real company environment internship integration.",
-    "seo_title": "DevOps Engineering Course Pune | Docker & K8s | CACTS",
-    "meta_description": "Master Cloud Native DevOps in Pune with CACTS. Learn Docker, Kubernetes, CI/CD pipelines, Terraform & Ansible with senior DevOps engineers.",
-    "h1": "DevOps Engineering Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship Docker containerization, Kubernetes orchestration, and CI/CD release pipeline code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "DevOps & Cloud Engineering Course in Pune | CACTS Training",
+    "meta_description": "Master DevOps & Cloud infrastructure in Pune. Docker, Kubernetes, Jenkins, Terraform & AWS coding bootcamp with 1-to-1 coaching & internship placement.",
+    "h1": "DevOps & Cloud Engineering Course in Pune",
+    "h2": "Automated Cloud & DevOps Development Bootcamp: Deploy CI/CD pipelines & Docker clusters with guaranteed live project internship and placement support near you.",
     "skills": [
       "CI/CD Pipelines",
       "Docker Containers",
@@ -791,7 +791,7 @@
       "Git Version Control",
       "Monitoring Tools"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Docker containerization, Kubernetes orchestration, and CI/CD release pipeline systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Docker containerization, Kubernetes orchestration, and CI/CD release pipeline systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Linux Operations & Version Control",
@@ -877,10 +877,10 @@
     "duration": "10 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Manual and Automation software testing. Covers Selenium WebDriver, JUnit, TestNG, API testing, and bug tracking. 1-to-1 personalized guidance.",
-    "seo_title": "Software Testing Course Pune | SDET & Selenium | CACTS",
-    "meta_description": "Master Software Testing & SDET automation in Pune with CACTS. Learn Manual Testing, Selenium, Java, TestNG & API testing in 1-to-1 sessions.",
-    "h1": "Software Testing Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship manual verification and Selenium automation testing code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "Software Testing & Automation Course in Pune | CACTS",
+    "meta_description": "Best Software Testing course near you in Pune. Learn Manual testing, Selenium Java automation, API testing with live internship project & 100% placement support.",
+    "h1": "Software Testing & QA Automation Course in Pune",
+    "h2": "QA Automation & Test Development Bootcamp: Master Selenium, JUnit & REST Assured with real company staging server internship near you in Pune.",
     "skills": [
       "Manual Testing",
       "Selenium WebDriver",
@@ -890,7 +890,7 @@
       "Jira & Bug Tracking",
       "SQL for Database Testing"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual manual verification and Selenium automation testing systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual manual verification and Selenium automation testing systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Manual Testing & QA Processes",
@@ -976,10 +976,10 @@
     "duration": "12 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "Learn ethical hacking, network security, penetration testing, and cryptography. Direct individual support and practical lab implementation.",
-    "seo_title": "Cybersecurity Course in Pune | Network Defense | CACTS",
-    "meta_description": "Learn Cybersecurity operations & ethical hacking in Pune with CACTS. Master SOC analytics, Wireshark, SIEM & network defense in 1-to-1 labs.",
-    "h1": "Cybersecurity & Ethical Hacking Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship vulnerability analysis, network socket tracing, and firewall defense code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "Cybersecurity & Ethical Hacking Course in Pune | CACTS",
+    "meta_description": "Cybersecurity & SOC Analyst training course in Pune. Learn network security, penetration testing & SIEM with 1-to-1 coaching, live internship & placement support.",
+    "h1": "Cybersecurity Operations & Defense Course in Pune",
+    "h2": "Information Security & SOC Analyst Development Bootcamp: Master vulnerability assessment & incident response with live company project internship.",
     "skills": [
       "Ethical Hacking",
       "Network Security",
@@ -989,7 +989,7 @@
       "Linux Security",
       "OWASP Top 10"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual vulnerability analysis, network socket tracing, and firewall defense systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual vulnerability analysis, network socket tracing, and firewall defense systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Networking Basics & Linux Security",
@@ -1075,10 +1075,10 @@
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 React JS training in Pune. Master modern components, React Hooks, Redux Toolkit, Axios, TailwindCSS, and complete a live frontend internship.",
-    "seo_title": "React JS Training in Pune | 1-to-1 Frontend Lab | CACTS",
-    "meta_description": "Learn React JS development in Pune with CACTS. Master React 19, Redux Toolkit, Next.js & REST API integration in 1-to-1 practical lab sessions.",
-    "h1": "React JS Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship React Hooks, Redux Toolkit, and REST API integration code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "React JS Frontend Development Course in Pune | CACTS",
+    "meta_description": "Master React 18 & JavaScript frontend coding in Pune. 1-to-1 web development training, Redux Toolkit, live company internship & placement assistance.",
+    "h1": "React JS Frontend Coding Course in Pune",
+    "h2": "Modern Frontend Development & React Bootcamp: Build high-performance web UIs with guaranteed live company project internship and career coaching near you.",
     "skills": [
       "JavaScript ES6+",
       "ReactJS Components",
@@ -1089,7 +1089,7 @@
       "TailwindCSS",
       "Git & GitHub"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual React Hooks, Redux Toolkit, and REST API integration systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual React Hooks, Redux Toolkit, and REST API integration systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Advanced JS & Layouts",
@@ -1179,10 +1179,10 @@
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 React Native mobile developer training in Pune. Master cross-platform iOS & Android apps, Expo CLI, navigation, SQLite, and deploy to app stores.",
-    "seo_title": "React Native Training in Pune | Mobile App Lab | CACTS",
-    "meta_description": "Build cross-platform iOS & Android mobile apps with React Native training in Pune. Daily 1-to-1 virtual code reviews with senior app developers.",
-    "h1": "React Native Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship cross-platform iOS and Android mobile app code. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "React Native Mobile App Development Course in Pune | CACTS",
+    "meta_description": "Learn React Native mobile app development in Pune. Build cross-platform iOS & Android apps with 1-to-1 coding coaching, live internship & placement support.",
+    "h1": "React Native Mobile App Development Course in Pune",
+    "h2": "Cross-Platform Mobile Coding & Development Bootcamp: Ship iOS & Android mobile apps with real company project internship near you in Pune.",
     "skills": [
       "React Native",
       "Expo CLI",
@@ -1193,7 +1193,7 @@
       "App Store & Google Play",
       "Git & GitHub"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual cross-platform iOS and Android mobile app systems from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual cross-platform iOS and Android mobile app systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Mobile UI & Expo Layouts",
@@ -1283,10 +1283,10 @@
     "duration": "16 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 Software Architect training. Master system design, distributed caching, event-driven architectures, and cloud scaling under developer mentorship.",
-    "seo_title": "Software Architect Course Pune | System Design | CACTS",
-    "meta_description": "Master Software Architecture & Distributed Systems in Pune with CACTS. Learn microservices design, caching, queueing & high-scale patterns.",
-    "h1": "Software Architect Training in Pune",
-    "h2": "Engineering Mentorship Lab: Ship distributed systems architecture. Individual developer seats. Code commits over paper certificates.",
+    "seo_title": "Software Architect & Systems Design Course in Pune | CACTS",
+    "meta_description": "Advanced Software Architect & High-Scale System Design course in Pune. Master microservices, distributed systems & clean coding with 1-to-1 senior coaching.",
+    "h1": "Software Architecture & Systems Design Course in Pune",
+    "h2": "Senior System Design & Enterprise Architecture Bootcamp: Design fault-tolerant microservices & cloud systems with live project internship & placement coaching.",
     "skills": [
       "System Design",
       "Microservices",
@@ -1297,7 +1297,7 @@
       "Prometheus & Grafana",
       "Git & CI/CD"
     ],
-    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual distributed systems architecture from day one, completing your technical milestones by committing code to live company repositories.",
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual distributed systems architecture from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career placement coaching.",
     "modules": [
       {
         "title": "Module 1: Enterprise System Design & Domain-Driven Design (DDD)",
@@ -1387,10 +1387,10 @@
     "duration": "16 Weeks",
     "gbp_category": "Computer Training School",
     "gbp_description": "1-to-1 Blockchain Development training. Learn Blockchain Architecture, Solidity, Ethereum EVM, Smart Contracts, Web3.js, Hardhat & DApp deployment with live project internships.",
-    "seo_title": "Blockchain Training in Pune | Web3 & Solidity | CACTS",
-    "meta_description": "Master Blockchain Development in Pune with CACTS. 1-to-1 developer mentorship, Solidity, Ethereum EVM, Smart Contracts, Web3.js & live DApp internships.",
-    "h1": "Blockchain Development Training in Pune",
-    "h2": "Engineering Mentorship Lab: Build and deploy production Smart Contracts, ERC-20/721 tokens, and Web3 DApps. Individual developer seats.",
+    "seo_title": "Blockchain & Smart Contract Developer Course in Pune | CACTS",
+    "meta_description": "Learn Blockchain development in Pune. Master Solidity, Ethereum & Web3.js coding with 1-to-1 coaching, live company project internship & placement assistance.",
+    "h1": "Blockchain Development & Web3 Course in Pune",
+    "h2": "Decentralized Smart Contract Coding Bootcamp: Build dApps & ERC-20 tokens on Ethereum testnets with live company project internship support near you.",
     "skills": [
       "Blockchain Architecture",
       "Cryptography & Hashing",
@@ -1401,7 +1401,7 @@
       "ERC-20 & ERC-721 Tokens",
       "DApp Development & IPFS"
     ],
-    "overview": "Master decentralized application architecture and smart contract engineering from scratch based on the official roadmap.sh Blockchain Developer curriculum. Under senior Web3 developers, you will write gas-optimized Solidity smart contracts, conduct security audits, test using Hardhat/Foundry, and integrate Web3 frontends with Ethers.js and IPFS. Complete your 1-to-1 practical training by deploying live Decentralized Applications (DApps) on Ethereum testnets and Layer-2 networks.",
+    "overview": "Looking for a practical software development course or IT training near you in Pune? Master decentralized application architecture and smart contract engineering from scratch based on the official roadmap.sh Blockchain Developer curriculum. Under senior Web3 developers, you will write gas-optimized Solidity smart contracts, conduct security audits, test using Hardhat/Foundry, and integrate Web3 frontends with Ethers.js and IPFS. Complete your 1-to-1 practical training by deploying live Decentralized Applications (DApps) on Ethereum testnets and Layer-2 networks. Our hands-on coding bootcamp combines 1-to-1 developer coaching with guaranteed live company project internships and 100% dedicated placement assistance.",
     "modules": [
       {
         "title": "Module 1: Blockchain Fundamentals & Cryptography",
