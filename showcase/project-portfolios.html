@@ -1,0 +1,1972 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+      Student Case Study Portfolios &amp; Systems Architecture | CACTS
+    </title>
+    <meta
+      content="Browse detailed architectural case studies of portfolios built by CACTS mentees. See database schemas, REST systems, and staging logs."
+      name="description"
+    />
+    <meta content="index, follow" name="robots" />
+    <link
+      href="https://cactslearn.github.io/showcase/project-portfolios.html"
+      rel="canonical"
+    />
+    <link href="../css/style.css" rel="stylesheet" />
+    <style>
+      .portfolio-list {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+        margin-top: 3.5rem;
+      }
+
+      .portfolio-item {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--border-radius);
+        padding: 3rem;
+        transition: var(--transition);
+      }
+
+      .portfolio-item:hover {
+        border-color: var(--border-hover);
+        background: var(--bg-card-hover);
+        box-shadow: 0 10px 30px rgba(20, 184, 166, 0.08);
+      }
+
+      .portfolio-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .portfolio-tag {
+        padding: 0.25rem 0.75rem;
+        background: var(--primary-glow);
+        border: 1px solid var(--primary-light);
+        color: var(--primary-light);
+        font-size: 0.8rem;
+        font-weight: 600;
+        border-radius: 20px;
+        text-transform: uppercase;
+      }
+
+      .diagram-box {
+        background: #030712;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 1.5rem;
+        font-family: monospace;
+        font-size: 0.88rem;
+        color: #10b981;
+        margin: 1.5rem 0;
+        overflow-x: auto;
+        line-height: 1.4;
+      }
+
+      .portfolio-specs {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2rem;
+        border-top: 1px solid var(--border);
+        padding-top: 1.5rem;
+      }
+
+      .spec-item h4 {
+        color: var(--accent-light);
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+
+      .spec-item p {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cactslearn.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Systems Architecture Case Studies",
+            "item": "https://cactslearn.github.io/showcase/project-portfolios.html"
+          }
+        ]
+      }
+    </script>
+    <!-- Open Graph (OG) & Twitter Card Social Tags -->
+    <meta
+      content="Student Case Study Portfolios &amp; Systems Architecture | CACTS"
+      property="og:title"
+    />
+    <meta
+      content="Browse detailed architectural case studies of portfolios built by CACTS mentees. See database schemas, REST systems, and staging logs."
+      property="og:description"
+    />
+    <meta content="website" property="og:type" />
+    <meta
+      content="https://cactslearn.github.io/showcase/project-portfolios.html"
+      property="og:url"
+    />
+    <meta
+      content="https://cactslearn.github.io/images/cacts-og-banner.jpg"
+      property="og:image"
+    />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta
+      content="Student Case Study Portfolios &amp; Systems Architecture | CACTS"
+      name="twitter:title"
+    />
+    <meta
+      content="Browse detailed architectural case studies of portfolios built by CACTS mentees. See database schemas, REST systems, and staging logs."
+      name="twitter:description"
+    />
+    <meta
+      content="https://cactslearn.github.io/images/cacts-og-banner.jpg"
+      name="twitter:image"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="../index.html">
+            <span>CACTS</span>
+          </a>
+        </div>
+        <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
+          <svg
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            style="vertical-align: middle"
+            viewbox="0 0 24 24"
+            width="24"
+          >
+            <line x1="3" x2="21" y1="12" y2="12"></line>
+            <line x1="3" x2="21" y1="6" y2="6"></line>
+            <line x1="3" x2="21" y1="18" y2="18"></line>
+          </svg>
+        </button>
+        <nav aria-label="Main Navigation" class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../about.html">About</a>
+          <a href="internship-on-live-projects.html">Live Internship</a>
+          <a href="../courses/index.html">1-to-1 Model</a>
+          <a href="../tools/free-career-guidance.html">Career Guidance</a>
+          <a href="../reviews.html">Reviews</a>
+          <a href="../faqs.html">FAQs</a>
+          <button
+            aria-label="Toggle Theme"
+            class="theme-toggle-btn"
+            id="theme-toggle"
+          >
+            <svg
+              class="sun-icon"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="display: block"
+              viewbox="0 0 24 24"
+              width="20"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" x2="12" y1="1" y2="3"></line>
+              <line x1="12" x2="12" y1="21" y2="23"></line>
+              <line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+              <line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+              <line x1="1" x2="3" y1="12" y2="12"></line>
+              <line x1="21" x2="23" y1="12" y2="12"></line>
+              <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+              <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+            </svg>
+            <svg
+              class="moon-icon"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="display: none"
+              viewbox="0 0 24 24"
+              width="20"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <a
+            class="btn btn-accent"
+            href="../contact.html"
+            style="padding: 0.5rem 1rem; color: #0b0f19"
+            >Book Demo</a
+          >
+        </nav>
+      </div>
+    </header>
+    <main style="padding-top: 8rem">
+      <section aria-labelledby="portfolio-h1" class="tech-section">
+        <nav
+          aria-label="Breadcrumb"
+          style="
+            margin-bottom: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+          "
+        >
+          <a href="../index.html" style="color: var(--accent)">Home</a> &gt;
+          <span style="color: var(--text-primary)"
+            >Systems Architecture Case Studies</span
+          >
+        </nav>
+        <h1 class="section-title" id="portfolio-h1">
+          Systems Architecture Case Studies
+        </h1>
+        <p class="section-subtitle">
+          Read detailed architectural profiles of systems built by our
+          candidates. We focus on low-level structures, network scaling
+          patterns, and validation loops.
+        </p>
+        <div class="portfolio-list">
+          <!-- Case Study 1 -->
+          <div class="portfolio-item">
+            <div class="portfolio-header">
+              <div>
+                <span class="portfolio-tag">Java Fullstack</span>
+                <h2 style="margin-top: 0.5rem; color: var(--text-primary)">
+                  Distributed E-Commerce Core API
+                </h2>
+              </div>
+              <a
+                class="btn btn-accent"
+                href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20building%20Java%20Microservices%20like%20the%20E-Commerce%20Core%20API."
+                style="color: #0b0f19"
+                target="_blank"
+                >Discuss Architecture</a
+              >
+            </div>
+            <p style="color: var(--text-secondary); line-height: 1.6">
+              A multi-database microservice architecture designed to handle
+              transaction volumes. Integrates token authorization modules,
+              custom Spring gateway filters, and transactional integrity
+              guarantees across services, engineered during our
+              <a href="../courses/java-fullstack/" style="color: var(--accent)"
+                >Java Fullstack Training</a
+              >.
+            </p>
+            <div
+              class="diagram-box"
+              style="
+                padding: 1rem;
+                background: #030712;
+                display: flex;
+                justify-content: center;
+              "
+            >
+              <svg
+                fill="none"
+                height="250"
+                style="display: block"
+                viewbox="0 0 600 250"
+                width="100%"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <!-- Grids & Glowing Defs -->
+                <defs>
+                  <lineargradient
+                    id="glow-grad"
+                    x1="0%"
+                    x2="100%"
+                    y1="0%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      stop-color="#6366f1"
+                      stop-opacity="0.15"
+                    ></stop>
+                    <stop
+                      offset="100%"
+                      stop-color="#14b8a6"
+                      stop-opacity="0.15"
+                    ></stop>
+                  </lineargradient>
+                  <lineargradient
+                    id="line-grad"
+                    x1="0%"
+                    x2="100%"
+                    y1="0%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stop-color="#6366f1"></stop>
+                    <stop offset="100%" stop-color="#14b8a6"></stop>
+                  </lineargradient>
+                  <filter
+                    height="120%"
+                    id="glow-effect"
+                    width="120%"
+                    x="-10%"
+                    y="-10%"
+                  >
+                    <fegaussianblur
+                      result="blur"
+                      stddeviation="3"
+                    ></fegaussianblur>
+                    <fecomposite
+                      in="SourceGraphic"
+                      in2="blur"
+                      operator="over"
+                    ></fecomposite>
+                  </filter>
+                </defs>
+                <!-- Background Grid Pattern -->
+                <path
+                  d="M 0,25 H 600 M 0,50 H 600 M 0,75 H 600 M 0,100 H 600 M 0,125 H 600 M 0,150 H 600 M 0,175 H 600 M 0,200 H 600 M 0,225 H 600"
+                  stroke="rgba(255,255,255,0.01)"
+                  stroke-width="1"
+                ></path>
+                <path
+                  d="M 50,0 V 250 M 100,0 V 250 M 150,0 V 250 M 200,0 V 250 M 250,0 V 250 M 300,0 V 250 M 350,0 V 250 M 400,0 V 250 M 450,0 V 250 M 500,0 V 250 M 550,0 V 250"
+                  stroke="rgba(255,255,255,0.01)"
+                  stroke-width="1"
+                ></path>
+                <!-- Node: Client Web Browser -->
+                <rect
+                  fill="#0b0f19"
+                  filter="url(#glow-effect)"
+                  height="40"
+                  rx="6"
+                  stroke="#6366f1"
+                  stroke-width="1.5"
+                  width="110"
+                  x="20"
+                  y="100"
+                ></rect>
+                <text
+                  fill="#f8fafc"
+                  font-family="monospace"
+                  font-size="9"
+                  font-weight="600"
+                  x="32"
+                  y="124"
+                >
+                  Client Browser
+                </text>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="7"
+                  x="32"
+                  y="134"
+                >
+                  HTTP / JWT Header
+                </text>
+                <!-- Connection: Client -> Gateway -->
+                <path
+                  d="M 130,120 H 170"
+                  marker-end="url(#arrow)"
+                  stroke="url(#line-grad)"
+                  stroke-width="1.5"
+                ></path>
+                <!-- Node: Spring Cloud API Gateway -->
+                <rect
+                  fill="#0b0f19"
+                  height="80"
+                  rx="6"
+                  stroke="#818cf8"
+                  stroke-width="1.5"
+                  width="130"
+                  x="170"
+                  y="80"
+                ></rect>
+                <text
+                  fill="#a5b4fc"
+                  font-family="monospace"
+                  font-size="10"
+                  font-weight="700"
+                  x="180"
+                  y="104"
+                >
+                  Spring Gateway
+                </text>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="7"
+                  x="180"
+                  y="120"
+                >
+                  Auth &amp; Route Filters
+                </text>
+                <rect
+                  fill="rgba(20, 184, 166, 0.05)"
+                  height="18"
+                  rx="3"
+                  stroke="rgba(20, 184, 166, 0.2)"
+                  width="110"
+                  x="180"
+                  y="132"
+                ></rect>
+                <text
+                  fill="#2dd4bf"
+                  font-family="monospace"
+                  font-size="8"
+                  x="186"
+                  y="143"
+                >
+                  JWT Validation
+                </text>
+                <!-- Connection: Gateway -> Auth -->
+                <path
+                  d="M 300,100 Q 340,40 380,40"
+                  fill="none"
+                  marker-end="url(#arrow)"
+                  stroke="#64748b"
+                  stroke-dasharray="2"
+                  stroke-width="1.5"
+                ></path>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="7"
+                  x="315"
+                  y="60"
+                >
+                  Verify Token
+                </text>
+                <!-- Node: Auth Microservice -->
+                <rect
+                  fill="#0b0f19"
+                  height="40"
+                  rx="6"
+                  stroke="#6366f1"
+                  stroke-width="1.5"
+                  width="110"
+                  x="380"
+                  y="20"
+                ></rect>
+                <text
+                  fill="#a5b4fc"
+                  font-family="monospace"
+                  font-size="9"
+                  font-weight="600"
+                  x="390"
+                  y="44"
+                >
+                  Auth Service
+                </text>
+                <!-- Connection: Auth -> Session Cluster -->
+                <path
+                  d="M 490,40 H 510"
+                  marker-end="url(#arrow)"
+                  stroke="#64748b"
+                  stroke-width="1.5"
+                ></path>
+                <!-- Database Node: PostgreSQL Session Cluster -->
+                <path
+                  d="M 510,25 C 510,22 535,22 535,22 C 535,22 560,22 560,25 V 55 C 560,58 535,58 535,58 C 535,58 510,58 510,55 Z"
+                  fill="#0b0f19"
+                  stroke="#10b981"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M 510,33 C 510,30 535,30 535,30 C 535,30 560,30 560,33"
+                  fill="none"
+                  stroke="#10b981"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M 510,41 C 510,38 535,38 535,38 C 535,38 560,38 560,41"
+                  fill="none"
+                  stroke="#10b981"
+                  stroke-width="1.5"
+                ></path>
+                <text
+                  fill="#34d399"
+                  font-family="monospace"
+                  font-size="6"
+                  font-weight="700"
+                  x="515"
+                  y="47"
+                >
+                  PG Session
+                </text>
+                <!-- Connection: Gateway -> Catalog -->
+                <path
+                  d="M 300,120 H 380"
+                  marker-end="url(#arrow)"
+                  stroke="#64748b"
+                  stroke-width="1.5"
+                ></path>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="7"
+                  x="325"
+                  y="115"
+                >
+                  GET /catalog
+                </text>
+                <!-- Node: Catalog Microservice -->
+                <rect
+                  fill="#0b0f19"
+                  height="40"
+                  rx="6"
+                  stroke="#6366f1"
+                  stroke-width="1.5"
+                  width="110"
+                  x="380"
+                  y="100"
+                ></rect>
+                <text
+                  fill="#a5b4fc"
+                  font-family="monospace"
+                  font-size="9"
+                  font-weight="600"
+                  x="390"
+                  y="124"
+                >
+                  Catalog Service
+                </text>
+                <!-- Connection: Catalog -> Read-Replica SQL -->
+                <path
+                  d="M 490,120 H 510"
+                  marker-end="url(#arrow)"
+                  stroke="#64748b"
+                  stroke-width="1.5"
+                ></path>
+                <!-- Database Node: Read-Replica SQL -->
+                <path
+                  d="M 510,105 C 510,102 535,102 535,102 C 535,102 560,102 560,105 V 135 C 560,138 535,138 535,138 C 535,138 510,138 510,135 Z"
+                  fill="#0b0f19"
+                  stroke="#10b981"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M 510,113 C 510,110 535,110 535,110 C 535,110 560,110 560,113"
+                  fill="none"
+                  stroke="#10b981"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M 510,121 C 510,118 535,118 535,118 C 535,118 560,118 560,121"
+                  fill="none"
+                  stroke="#10b981"
+                  stroke-width="1.5"
+                ></path>
+                <text
+                  fill="#34d399"
+                  font-family="monospace"
+                  font-size="6"
+                  font-weight="700"
+                  x="516"
+                  y="127"
+                >
+                  Replica SQL
+                </text>
+                <!-- Connection: Gateway -> Order -->
+                <path
+                  d="M 300,140 Q 340,200 380,200"
+                  fill="none"
+                  marker-end="url(#arrow)"
+                  stroke="#64748b"
+                  stroke-width="1.5"
+                ></path>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="7"
+                  x="310"
+                  y="180"
+                >
+                  POST /orders
+                </text>
+                <!-- Node: Order Processing API -->
+                <rect
+                  fill="#0b0f19"
+                  filter="url(#glow-effect)"
+                  height="48"
+                  rx="6"
+                  stroke="#14b8a6"
+                  stroke-width="1.5"
+                  width="110"
+                  x="380"
+                  y="180"
+                ></rect>
+                <text
+                  fill="#2dd4bf"
+                  font-family="monospace"
+                  font-size="9"
+                  font-weight="600"
+                  x="390"
+                  y="202"
+                >
+                  Order Service
+                </text>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="7"
+                  x="390"
+                  y="214"
+                >
+                  Spring Data JPA
+                </text>
+                <!-- Connection: Order -> MySQL Write DB -->
+                <path
+                  d="M 490,195 Q 500,195 510,185"
+                  fill="none"
+                  marker-end="url(#arrow)"
+                  stroke="#64748b"
+                  stroke-width="1.5"
+                ></path>
+                <!-- Database Node: MySQL Write DB -->
+                <path
+                  d="M 510,165 C 510,162 535,162 535,162 C 535,162 560,162 560,165 V 195 C 560,198 535,198 535,198 C 535,198 510,198 510,195 Z"
+                  fill="#0b0f19"
+                  stroke="#f59e0b"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M 510,173 C 510,170 535,170 535,170 C 535,170 560,170 560,173"
+                  fill="none"
+                  stroke="#f59e0b"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M 510,181 C 510,178 535,178 535,178 C 535,178 560,178 560,181"
+                  fill="none"
+                  stroke="#f59e0b"
+                  stroke-width="1.5"
+                ></path>
+                <text
+                  fill="#f59e0b"
+                  font-family="monospace"
+                  font-size="6"
+                  font-weight="700"
+                  x="519"
+                  y="187"
+                >
+                  Write DB
+                </text>
+                <!-- Connection: Order -> Redis Cache -->
+                <path
+                  d="M 490,215 Q 500,215 510,225"
+                  fill="none"
+                  marker-end="url(#arrow)"
+                  stroke="#64748b"
+                  stroke-width="1.5"
+                ></path>
+                <!-- Database Node: Redis Cache -->
+                <path
+                  d="M 510,205 C 510,202 535,202 535,202 C 535,202 560,202 560,205 V 235 C 560,238 535,238 535,238 C 535,238 510,238 510,235 Z"
+                  fill="#0b0f19"
+                  stroke="#ef4444"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M 510,213 C 510,210 535,210 535,210 C 535,210 560,210 560,213"
+                  fill="none"
+                  stroke="#ef4444"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  d="M 510,221 C 510,218 535,218 535,218 C 535,218 560,218 560,221"
+                  fill="none"
+                  stroke="#ef4444"
+                  stroke-width="1.5"
+                ></path>
+                <text
+                  fill="#ef4444"
+                  font-family="monospace"
+                  font-size="6"
+                  font-weight="700"
+                  x="517"
+                  y="227"
+                >
+                  Redis Cache
+                </text>
+                <!-- Marker Definitions -->
+                <defs>
+                  <marker
+                    id="arrow"
+                    markerheight="4"
+                    markerwidth="4"
+                    orient="auto-start-reverse"
+                    refx="6"
+                    refy="5"
+                    viewbox="0 0 10 10"
+                  >
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"></path>
+                  </marker>
+                </defs>
+              </svg>
+            </div>
+            <div class="portfolio-specs">
+              <div class="spec-item">
+                <h4>Database Schemas</h4>
+                <p>
+                  3NF normalization, foreign keys indices, partitioned billing
+                  records
+                </p>
+              </div>
+              <div class="spec-item">
+                <h4>Caching Strategy</h4>
+                <p>
+                  Redis caching wrapping catalog details to minimize database
+                  locks
+                </p>
+              </div>
+              <div class="spec-item">
+                <h4>Verification Staging</h4>
+                <p>
+                  Staging environment verifying JSON payloads and route
+                  redirections
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Case Study 2 -->
+          <div class="portfolio-item">
+            <div class="portfolio-header">
+              <div>
+                <span class="portfolio-tag">MERN Full Stack</span>
+                <h2 style="margin-top: 0.5rem; color: var(--text-primary)">
+                  Real-Time Collaborative Code Editor
+                </h2>
+              </div>
+              <a
+                class="btn btn-accent"
+                href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20building%20React/Socket.io%20apps%20like%20the%20Collaborative%20Code%20Editor."
+                style="color: #0b0f19"
+                target="_blank"
+                >Discuss Architecture</a
+              >
+            </div>
+            <p style="color: var(--text-secondary); line-height: 1.6">
+              A web application synchronizing document states across multiple
+              users. Implements room connection limits, WebSocket message
+              validations, and asynchronous database writing queues, developed
+              in our
+              <a href="../courses/full-stack/" style="color: var(--accent)"
+                >Full Stack Training</a
+              >.
+            </p>
+            <div
+              class="diagram-box"
+              style="
+                padding: 1rem;
+                background: #030712;
+                display: flex;
+                justify-content: center;
+              "
+            >
+              <svg
+                fill="none"
+                height="250"
+                style="display: block"
+                viewbox="0 0 600 250"
+                width="100%"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <lineargradient
+                    id="glow-grad2"
+                    x1="0%"
+                    x2="100%"
+                    y1="0%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      stop-color="#14b8a6"
+                      stop-opacity="0.15"
+                    ></stop>
+                    <stop
+                      offset="100%"
+                      stop-color="#38bdf8"
+                      stop-opacity="0.15"
+                    ></stop>
+                  </lineargradient>
+                  <lineargradient
+                    id="line-grad2"
+                    x1="0%"
+                    x2="0%"
+                    y1="0%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#38bdf8"></stop>
+                    <stop offset="100%" stop-color="#14b8a6"></stop>
+                  </lineargradient>
+                  <filter
+                    height="120%"
+                    id="glow-effect2"
+                    width="120%"
+                    x="-10%"
+                    y="-10%"
+                  >
+                    <fegaussianblur
+                      result="blur"
+                      stddeviation="3"
+                    ></fegaussianblur>
+                    <fecomposite
+                      in="SourceGraphic"
+                      in2="blur"
+                      operator="over"
+                    ></fecomposite>
+                  </filter>
+                </defs>
+                <!-- Grid Pattern -->
+                <path
+                  d="M 0,25 H 600 M 0,50 H 600 M 0,75 H 600 M 0,100 H 600 M 0,125 H 600 M 0,150 H 600 M 0,175 H 600 M 0,200 H 600 M 0,225 H 600"
+                  stroke="rgba(255,255,255,0.01)"
+                  stroke-width="1"
+                ></path>
+                <path
+                  d="M 50,0 V 250 M 100,0 V 250 M 150,0 V 250 M 200,0 V 250 M 250,0 V 250 M 300,0 V 250 M 350,0 V 250 M 400,0 V 250 M 450,0 V 250 M 500,0 V 250 M 550,0 V 250"
+                  stroke="rgba(255,255,255,0.01)"
+                  stroke-width="1"
+                ></path>
+                <!-- React Clients -->
+                <rect
+                  fill="#0b0f19"
+                  height="35"
+                  rx="5"
+                  stroke="#38bdf8"
+                  stroke-width="1.2"
+                  width="90"
+                  x="20"
+                  y="30"
+                ></rect>
+                <text
+                  fill="#f8fafc"
+                  font-family="monospace"
+                  font-size="8"
+                  font-weight="600"
+                  x="28"
+                  y="52"
+                >
+                  React Client 1
+                </text>
+                <rect
+                  fill="#0b0f19"
+                  height="35"
+                  rx="5"
+                  stroke="#38bdf8"
+                  stroke-width="1.2"
+                  width="90"
+                  x="20"
+                  y="100"
+                ></rect>
+                <text
+                  fill="#f8fafc"
+                  font-family="monospace"
+                  font-size="8"
+                  font-weight="600"
+                  x="28"
+                  y="122"
+                >
+                  React Client 2
+                </text>
+                <rect
+                  fill="#0b0f19"
+                  height="35"
+                  opacity="0.6"
+                  rx="5"
+                  stroke="#38bdf8"
+                  stroke-width="1.2"
+                  width="90"
+                  x="20"
+                  y="170"
+                ></rect>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="8"
+                  font-weight="600"
+                  x="28"
+                  y="192"
+                >
+                  React Client N
+                </text>
+                <!-- WS TCP connections -->
+                <path
+                  d="M 110,48 Q 160,48 210,105"
+                  fill="none"
+                  marker-end="url(#arrow2)"
+                  stroke="#38bdf8"
+                  stroke-dasharray="3"
+                  stroke-width="1.2"
+                ></path>
+                <path
+                  d="M 110,117 H 210"
+                  marker-end="url(#arrow2)"
+                  stroke="#38bdf8"
+                  stroke-width="1.2"
+                ></path>
+                <path
+                  d="M 110,188 Q 160,188 210,135"
+                  fill="none"
+                  marker-end="url(#arrow2)"
+                  stroke="#38bdf8"
+                  stroke-dasharray="3"
+                  stroke-width="1.2"
+                ></path>
+                <text
+                  fill="#38bdf8"
+                  font-family="monospace"
+                  font-size="7"
+                  x="120"
+                  y="95"
+                >
+                  WebSockets TCP
+                </text>
+                <!-- Node.js Server -->
+                <rect
+                  fill="#0b0f19"
+                  filter="url(#glow-effect2)"
+                  height="60"
+                  rx="6"
+                  stroke="#14b8a6"
+                  stroke-width="1.5"
+                  width="140"
+                  x="210"
+                  y="90"
+                ></rect>
+                <text
+                  fill="#2dd4bf"
+                  font-family="monospace"
+                  font-size="10"
+                  font-weight="700"
+                  x="220"
+                  y="115"
+                >
+                  Node.js Server
+                </text>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="7"
+                  x="220"
+                  y="130"
+                >
+                  Express &amp; Socket.io
+                </text>
+                <!-- Connection: Server -> Socket Room Hub -->
+                <path
+                  d="M 350,110 Q 390,70 430,70"
+                  fill="none"
+                  marker-end="url(#arrow2)"
+                  stroke="#64748b"
+                  stroke-width="1.2"
+                ></path>
+                <!-- Node: Socket Room Hub -->
+                <rect
+                  fill="#0b0f19"
+                  height="40"
+                  rx="5"
+                  stroke="#818cf8"
+                  stroke-width="1.2"
+                  width="130"
+                  x="430"
+                  y="50"
+                ></rect>
+                <text
+                  fill="#a5b4fc"
+                  font-family="monospace"
+                  font-size="8"
+                  font-weight="600"
+                  x="440"
+                  y="70"
+                >
+                  Socket Room Hub
+                </text>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="6"
+                  x="440"
+                  y="80"
+                >
+                  In-Memory Room State Map
+                </text>
+                <!-- Connection: Server -> Redis Pub/Sub -->
+                <path
+                  d="M 350,120 H 430"
+                  marker-end="url(#arrow2)"
+                  stroke="#64748b"
+                  stroke-width="1.2"
+                ></path>
+                <!-- Node: Redis Pub/Sub -->
+                <rect
+                  fill="#0b0f19"
+                  height="40"
+                  rx="5"
+                  stroke="#ef4444"
+                  stroke-width="1.2"
+                  width="130"
+                  x="430"
+                  y="105"
+                ></rect>
+                <text
+                  fill="#f87171"
+                  font-family="monospace"
+                  font-size="8"
+                  font-weight="600"
+                  x="440"
+                  y="125"
+                >
+                  Redis Pub/Sub
+                </text>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="6"
+                  x="440"
+                  y="135"
+                >
+                  Distribute Edits Globally
+                </text>
+                <!-- Connection: Server -> Queue Worker -->
+                <path
+                  d="M 350,130 Q 390,170 430,170"
+                  fill="none"
+                  marker-end="url(#arrow2)"
+                  stroke="#64748b"
+                  stroke-width="1.2"
+                ></path>
+                <!-- Node: Queue Worker & DB -->
+                <rect
+                  fill="#0b0f19"
+                  height="50"
+                  rx="5"
+                  stroke="#10b981"
+                  stroke-width="1.2"
+                  width="130"
+                  x="430"
+                  y="160"
+                ></rect>
+                <text
+                  fill="#34d399"
+                  font-family="monospace"
+                  font-size="8"
+                  font-weight="600"
+                  x="440"
+                  y="180"
+                >
+                  Async DB Worker
+                </text>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="7"
+                  x="440"
+                  y="195"
+                >
+                  MongoDB Cluster Store
+                </text>
+                <defs>
+                  <marker
+                    id="arrow2"
+                    markerheight="4"
+                    markerwidth="4"
+                    orient="auto-start-reverse"
+                    refx="6"
+                    refy="5"
+                    viewbox="0 0 10 10"
+                  >
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"></path>
+                  </marker>
+                </defs>
+              </svg>
+            </div>
+            <div class="portfolio-specs">
+              <div class="spec-item">
+                <h4>Network Protocol</h4>
+                <p>
+                  WebSockets running over persistent TCP channels with
+                  heartbeats
+                </p>
+              </div>
+              <div class="spec-item">
+                <h4>State Management</h4>
+                <p>
+                  React context API syncing editor states with validation checks
+                </p>
+              </div>
+              <div class="spec-item">
+                <h4>Staging Deployment</h4>
+                <p>
+                  Deployed with environment variable boundaries separating
+                  client-server keys
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Case Study 3 -->
+          <div class="portfolio-item">
+            <div class="portfolio-header">
+              <div>
+                <span class="portfolio-tag">Data Engineering</span>
+                <h2 style="margin-top: 0.5rem; color: var(--text-primary)">
+                  Stock Price ETL Streaming Pipeline
+                </h2>
+              </div>
+              <a
+                class="btn btn-accent"
+                href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20building%20ETL%20Data%20Pipelines%20like%20the%20Stock%20Streaming%20system."
+                style="color: #0b0f19"
+                target="_blank"
+                >Discuss Architecture</a
+              >
+            </div>
+            <p style="color: var(--text-secondary); line-height: 1.6">
+              A streaming ETL data pipeline loading parsed API messages into
+              database warehouses. Built using Spark structured streaming and
+              schedulers, designed as part of our
+              <a
+                href="../courses/data-engineering/"
+                style="color: var(--accent)"
+                >Data Engineering Training</a
+              >.
+            </p>
+            <div
+              class="diagram-box"
+              style="
+                padding: 1rem;
+                background: #030712;
+                display: flex;
+                justify-content: center;
+              "
+            >
+              <svg
+                fill="none"
+                height="250"
+                style="display: block"
+                viewbox="0 0 600 250"
+                width="100%"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <lineargradient
+                    id="glow-grad3"
+                    x1="0%"
+                    x2="100%"
+                    y1="0%"
+                    y2="100%"
+                  >
+                    <stop
+                      offset="0%"
+                      stop-color="#f59e0b"
+                      stop-opacity="0.15"
+                    ></stop>
+                    <stop
+                      offset="100%"
+                      stop-color="#10b981"
+                      stop-opacity="0.15"
+                    ></stop>
+                  </lineargradient>
+                  <lineargradient
+                    id="line-grad3"
+                    x1="0%"
+                    x2="100%"
+                    y1="0%"
+                    y2="0%"
+                  >
+                    <stop offset="0%" stop-color="#f59e0b"></stop>
+                    <stop offset="100%" stop-color="#10b981"></stop>
+                  </lineargradient>
+                  <filter
+                    height="120%"
+                    id="glow-effect3"
+                    width="120%"
+                    x="-10%"
+                    y="-10%"
+                  >
+                    <fegaussianblur
+                      result="blur"
+                      stddeviation="3"
+                    ></fegaussianblur>
+                    <fecomposite
+                      in="SourceGraphic"
+                      in2="blur"
+                      operator="over"
+                    ></fecomposite>
+                  </filter>
+                </defs>
+                <!-- Grid Pattern -->
+                <path
+                  d="M 0,25 H 600 M 0,50 H 600 M 0,75 H 600 M 0,100 H 600 M 0,125 H 600 M 0,150 H 600 M 0,175 H 600 M 0,200 H 600 M 0,225 H 600"
+                  stroke="rgba(255,255,255,0.01)"
+                  stroke-width="1"
+                ></path>
+                <path
+                  d="M 50,0 V 250 M 100,0 V 250 M 150,0 V 250 M 200,0 V 250 M 250,0 V 250 M 300,0 V 250 M 350,0 V 250 M 400,0 V 250 M 450,0 V 250 M 500,0 V 250 M 550,0 V 250"
+                  stroke="rgba(255,255,255,0.01)"
+                  stroke-width="1"
+                ></path>
+                <!-- API Stream -->
+                <rect
+                  fill="#0b0f19"
+                  filter="url(#glow-effect3)"
+                  height="40"
+                  rx="5"
+                  stroke="#f59e0b"
+                  stroke-width="1.5"
+                  width="100"
+                  x="20"
+                  y="100"
+                ></rect>
+                <text
+                  fill="#fdba74"
+                  font-family="monospace"
+                  font-size="9"
+                  font-weight="600"
+                  x="28"
+                  y="120"
+                >
+                  API Data Stream
+                </text>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="7"
+                  x="28"
+                  y="132"
+                >
+                  Raw JSON Payloads
+                </text>
+                <!-- Connection: API -> Kafka -->
+                <path
+                  d="M 120,120 H 160"
+                  marker-end="url(#arrow3)"
+                  stroke="url(#line-grad3)"
+                  stroke-width="1.5"
+                ></path>
+                <!-- Apache Kafka Message Broker -->
+                <rect
+                  fill="#0b0f19"
+                  height="60"
+                  rx="6"
+                  stroke="#f59e0b"
+                  stroke-width="1.5"
+                  width="120"
+                  x="160"
+                  y="90"
+                ></rect>
+                <text
+                  fill="#fdba74"
+                  font-family="monospace"
+                  font-size="10"
+                  font-weight="700"
+                  x="170"
+                  y="115"
+                >
+                  Apache Kafka
+                </text>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="7"
+                  x="170"
+                  y="130"
+                >
+                  Topic Message Buffer
+                </text>
+                <!-- Connection: Kafka -> Spark -->
+                <path
+                  d="M 280,120 H 320"
+                  marker-end="url(#arrow3)"
+                  stroke="#10b981"
+                  stroke-width="1.5"
+                ></path>
+                <!-- PySpark Streaming Engine -->
+                <rect
+                  fill="#0b0f19"
+                  filter="url(#glow-effect3)"
+                  height="60"
+                  rx="6"
+                  stroke="#10b981"
+                  stroke-width="1.5"
+                  width="130"
+                  x="320"
+                  y="90"
+                ></rect>
+                <text
+                  fill="#34d399"
+                  font-family="monospace"
+                  font-size="10"
+                  font-weight="700"
+                  x="330"
+                  y="115"
+                >
+                  Spark Streaming
+                </text>
+                <text
+                  fill="#64748b"
+                  font-family="monospace"
+                  font-size="7"
+                  x="330"
+                  y="130"
+                >
+                  Cast &amp; Filter Pipeline
+                </text>
+                <!-- Connection: Spark -> PG Analytics (top) -->
+                <path
+                  d="M 450,110 Q 480,60 510,60"
+                  fill="none"
+                  marker-end="url(#arrow3)"
+                  stroke="#64748b"
+                  stroke-width="1.2"
+                ></path>
+                <!-- Database Node: PG Analytics -->
+                <path
+                  d="M 510,45 C 510,42 535,42 535,42 C 535,42 560,42 560,45 V 75 C 560,78 535,78 535,78 C 535,78 510,78 510,75 Z"
+                  fill="#0b0f19"
+                  stroke="#38bdf8"
+                  stroke-width="1.2"
+                ></path>
+                <path
+                  d="M 510,53 C 510,50 535,50 535,50 C 535,50 560,50 560,53"
+                  fill="none"
+                  stroke="#38bdf8"
+                  stroke-width="1.2"
+                ></path>
+                <path
+                  d="M 510,61 C 510,58 535,58 535,58 C 535,58 560,58 560,61"
+                  fill="none"
+                  stroke="#38bdf8"
+                  stroke-width="1.2"
+                ></path>
+                <text
+                  fill="#38bdf8"
+                  font-family="monospace"
+                  font-size="6"
+                  font-weight="700"
+                  x="515"
+                  y="67"
+                >
+                  PG Analytics
+                </text>
+                <!-- Connection: PG Analytics -> Power BI -->
+                <path
+                  d="M 535,78 V 105"
+                  marker-end="url(#arrow3)"
+                  stroke="#38bdf8"
+                  stroke-dasharray="2"
+                  stroke-width="1.2"
+                ></path>
+                <!-- Node: Power BI Dashboard -->
+                <rect
+                  fill="#0b0f19"
+                  height="30"
+                  rx="3"
+                  stroke="#f59e0b"
+                  stroke-width="1.2"
+                  width="70"
+                  x="500"
+                  y="105"
+                ></rect>
+                <text
+                  fill="#f59e0b"
+                  font-family="monospace"
+                  font-size="7"
+                  font-weight="600"
+                  x="507"
+                  y="123"
+                >
+                  Power BI
+                </text>
+                <!-- Connection: Spark -> AWS S3 (bottom) -->
+                <path
+                  d="M 450,130 Q 480,180 510,180"
+                  fill="none"
+                  marker-end="url(#arrow3)"
+                  stroke="#64748b"
+                  stroke-width="1.2"
+                ></path>
+                <!-- Node: Cold Storage AWS S3 -->
+                <rect
+                  fill="#0b0f19"
+                  height="30"
+                  rx="4"
+                  stroke="#a78bfa"
+                  stroke-width="1.2"
+                  width="60"
+                  x="510"
+                  y="165"
+                ></rect>
+                <text
+                  fill="#c084fc"
+                  font-family="monospace"
+                  font-size="7"
+                  font-weight="600"
+                  x="516"
+                  y="183"
+                >
+                  AWS S3 Cold
+                </text>
+                <defs>
+                  <marker
+                    id="arrow3"
+                    markerheight="4"
+                    markerwidth="4"
+                    orient="auto-start-reverse"
+                    refx="6"
+                    refy="5"
+                    viewbox="0 0 10 10"
+                  >
+                    <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748b"></path>
+                  </marker>
+                </defs>
+              </svg>
+            </div>
+            <div class="portfolio-specs">
+              <div class="spec-item">
+                <h4>Stream Parsing</h4>
+                <p>
+                  Pyspark structuring casting schemas and filtering timestamp
+                  exceptions
+                </p>
+              </div>
+              <div class="spec-item">
+                <h4>Storage Partitioning</h4>
+                <p>
+                  AWS S3 data folder partition maps matching calendar year/month
+                  paths
+                </p>
+              </div>
+              <div class="spec-item">
+                <h4>Workflow Controller</h4>
+                <p>
+                  Scheduled data verification pipelines managing database upsert
+                  updates
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Call to Action -->
+        <div
+          style="
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            text-align: center;
+            margin-top: 5rem;
+          "
+        >
+          <h2>Interested in Engineering Professional Systems?</h2>
+          <p
+            style="
+              color: var(--text-secondary);
+              max-width: 600px;
+              margin: 1rem auto 2rem auto;
+              font-size: 1.05rem;
+            "
+          >
+            Our trainees don't copy-paste basic syntax. They configure systems,
+            design API routing layouts, and write code.
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a class="btn btn-primary" href="../contact.html"
+              >Book Free Trial Session</a
+            >
+            <a
+              class="btn btn-accent"
+              href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20reviewing%20the%20student%20portfolio%20architectures%20and%20want%20to%20know%20how%20to%20learn%20this."
+              style="color: #0b0f19"
+              target="_blank"
+              >Discuss Portfolios on WhatsApp</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-programs-row">
+          <h4
+            style="
+              color: var(--text-primary);
+              margin-bottom: 1.5rem;
+              font-size: 1rem;
+              font-weight: 700;
+              letter-spacing: 0.5px;
+              text-transform: uppercase;
+            "
+          >
+            Engineering Labs &amp; Programs
+          </h4>
+          <ul class="footer-programs-grid">
+            <li>
+              <a href="../courses/java-fullstack/">Java Fullstack Training</a>
+            </li>
+            <li><a href="../courses/full-stack/">Full Stack Web (MERN)</a></li>
+            <li><a href="../courses/react-js/">React JS Development</a></li>
+            <li><a href="../courses/react-native/">React Native Mobile</a></li>
+            <li><a href="../courses/ai-ml/">AI &amp; Machine Learning</a></li>
+            <li>
+              <a href="../courses/data-science/">Data Science Analytics</a>
+            </li>
+            <li>
+              <a href="../courses/data-engineering/">Data Engineering ETL</a>
+            </li>
+            <li><a href="../courses/python/">Python Scripting Lab</a></li>
+            <li><a href="../courses/devops/">DevOps Engineering</a></li>
+            <li><a href="../courses/cloud/">Cloud Systems Architecture</a></li>
+            <li><a href="../courses/power-bi/">Power BI Analytics</a></li>
+            <li>
+              <a href="../courses/software-testing/">Software Testing Lab</a>
+            </li>
+            <li>
+              <a href="../courses/cybersecurity/">Cybersecurity Operations</a>
+            </li>
+            <li><a href="../courses/blockchain/">Blockchain Development</a></li>
+            <li>
+              <a href="../courses/software-architect/"
+                >Software Architect Lab</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-brand">
+          <a
+            href="../index.html"
+            style="
+              font-family: var(--font-heading);
+              font-size: 1.5rem;
+              font-weight: 800;
+              color: white;
+            "
+            >CACTS</a
+          >
+          <p>
+            Centre of Advanced Computer Training and Studies. Providing
+            practical, one-to-one virtual software training and internships on
+            real company projects since 2012.
+          </p>
+          <div
+            class="footer-social"
+            style="margin-top: 1.5rem; display: flex; gap: 1rem"
+          >
+            <a
+              aria-label="Facebook"
+              href="https://www.facebook.com/cactspune/"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              aria-label="LinkedIn"
+              href="https://www.linkedin.com/company/cacts/"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect height="12" width="4" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a
+              aria-label="Instagram"
+              href="https://www.instagram.com/cacts_pune/"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a
+              aria-label="YouTube"
+              href="https://www.youtube.com/@CACTSPune"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                ></path>
+                <polygon
+                  points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                ></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Institutional Links</h4>
+          <ul style="list-style: none">
+            <li><a href="../about.html">About CACTS</a></li>
+            <li><a href="../jobs/index.html">Current Openings</a></li>
+            <li>
+              <a href="internship-on-live-projects.html"
+                >Live Projects Internship</a
+              >
+            </li>
+            <li><a href="../courses/index.html">1-to-1 Mentoring Model</a></li>
+            <li>
+              <a href="../comparisons/cacts-vs-classroom-vs-ai.html"
+                >CACTS vs Classroom vs AI</a
+              >
+            </li>
+            <li>
+              <a href="../tools/free-career-guidance.html"
+                >Free Career Guidance</a
+              >
+            </li>
+            <li><a href="../reviews.html">Success Reviews</a></li>
+            <li><a href="../faqs.html">Institutional FAQs</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../locations/pune.html">Software Training Pune</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Learning Portals</h4>
+          <ul style="list-style: none">
+            <li>
+              <a href="../tools/free-skill-assessment.html">Skill Assessment</a>
+            </li>
+            <li>
+              <a href="../tools/course-recommendation-quiz.html"
+                >Course Finder Quiz</a
+              >
+            </li>
+            <li><a href="../tools/career-roadmaps.html">Career Roadmaps</a></li>
+            <li><a href="student-projects.html">Student Projects</a></li>
+            <li><a href="internship-showcase.html">Internship Showcase</a></li>
+            <li><a href="project-portfolios.html">Project Portfolios</a></li>
+            <li>
+              <a href="../comparisons/technology-comparisons.html"
+                >Tech Comparisons</a
+              >
+            </li>
+            <li>
+              <a href="../tools/free-learning-resources.html">Free Resources</a>
+            </li>
+            <li>
+              <a href="../guides/technology-career-guides.html"
+                >Career Guides</a
+              >
+            </li>
+            <li>
+              <a href="../tools/live-code-compiler.html"
+                >Live Code &amp; Syntax Validator</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact CACTS</h4>
+          <p style="margin-bottom: 0.5rem">
+            First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+            Maharashtra 411023
+          </p>
+          <p style="margin-bottom: 0.5rem">
+            <strong>Phone:</strong> +91 96655 66357
+          </p>
+          <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
+        </div>
+      </div>
+      <!-- Trust Credentials & Accreditations -->
+      <div
+        style="
+          border-top: 1px solid var(--border);
+          padding: 1.5rem 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 2rem;
+          flex-wrap: wrap;
+          margin-top: 2rem;
+        "
+      >
+        <div
+          style="
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+          "
+        >
+          <strong
+            >Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong
+          >
+          Our curricula and git code review models are designed in alignment
+          with ISO 29993:2017 standards for non-formal education training and
+          software engineering industry practices. *Self-declared alignment for
+          educational service quality.
+        </div>
+        <div
+          style="
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            opacity: 0.75;
+            flex-wrap: wrap;
+          "
+        >
+          <!-- ISO Compliant Badge -->
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--accent-light);
+              cursor: help;
+            "
+            title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers."
+          >
+            <svg
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="flex-shrink: 0"
+              viewbox="0 0 24 24"
+              width="14"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            ISO 29993:2017 ALIGNED*
+          </div>
+          <!-- Developer Led Badge -->
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--primary-light);
+            "
+          >
+            <svg
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="flex-shrink: 0"
+              viewbox="0 0 24 24"
+              width="14"
+            >
+              <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
+              <line x1="2" x2="22" y1="20" y2="20"></line>
+              <line x1="12" x2="12" y1="17" y2="20"></line>
+            </svg>
+            100% DEVELOPER LED
+          </div>
+          <!-- Reg Badge -->
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--warning);
+            "
+          >
+            <svg
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="flex-shrink: 0"
+              viewbox="0 0 24 24"
+              width="14"
+            >
+              <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
+              <line x1="9" x2="9" y1="22" y2="16"></line>
+              <line x1="15" x2="15" y1="22" y2="16"></line>
+              <line x1="9" x2="15" y1="16" y2="16"></line>
+              <path
+                d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm6-8h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"
+              ></path>
+            </svg>
+            ESTD. 2012 IN PUNE
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div style="text-align: left">
+          <p>
+            © <span id="footer-year">2026</span> CACTS - Centre of Advanced
+            Computer Training and Studies. All rights reserved.
+          </p>
+          <p
+            style="
+              margin-top: 0.25rem;
+              font-size: 0.8rem;
+              color: var(--text-secondary);
+            "
+          >
+            First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+            Maharashtra 411023
+          </p>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a href="../sitemap.html" style="color: var(--text-secondary)"
+            >Sitemap</a
+          >
+          <span style="color: var(--border)">|</span>
+          <a href="../privacy-policy.html" style="color: var(--text-secondary)"
+            >Privacy Policy</a
+          >
+          <span style="color: var(--border)">|</span>
+          <a
+            href="../terms-conditions.html"
+            style="color: var(--text-secondary)"
+            >Terms &amp; Conditions</a
+          >
+        </div>
+      </div>
+    </footer>
+    <div class="floating-ctas"></div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

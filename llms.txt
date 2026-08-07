@@ -9,29 +9,29 @@
 *   **Outcome**: Deployed staging applications, active green GitHub contribution graphs, and developer-verified code reviews.
 
 ## High-Intent Comparison
-*   [CACTS vs. Classroom vs. AI](https://cactslearn.github.io/cacts-vs-classroom-vs-ai.html): side-by-side matrix comparing CACTS 1-to-1 lab with traditional classrooms and AI helpers.
+*   [CACTS vs. Classroom vs. AI](https://cactslearn.github.io/comparisons/cacts-vs-classroom-vs-ai.html): side-by-side matrix comparing CACTS 1-to-1 lab with traditional classrooms and AI helpers.
 
 ## One-to-One Course Tracks
-*   [Java Fullstack](https://cactslearn.github.io/java-fullstack-training.html): 16 Weeks. Spring Boot microservices, React, and MySQL database structure.
-*   [Full Stack Web](https://cactslearn.github.io/full-stack-training.html): 16 Weeks. MERN Stack (MongoDB, Express, React, Node.js) web applications.
-*   [React JS](https://cactslearn.github.io/react-js-training.html): 8 Weeks. Single-page applications, custom hooks, and state management.
-*   [React Native](https://cactslearn.github.io/react-native-training.html): 8 Weeks. Cross-platform iOS & Android mobile application designs.
-*   [AI & Machine Learning](https://cactslearn.github.io/ai-ml-training.html): 16 Weeks. Statistical learning models, neural networks, and Python pipelines.
-*   [Data Science](https://cactslearn.github.io/data-science-training.html): 16 Weeks. Predictive modelling, statistical analysis, and Python pipelines.
-*   [Data Engineering](https://cactslearn.github.io/data-engineering-training.html): 16 Weeks. Apache Spark, Hadoop clusters, ETL logic, and SQL.
-*   [Python](https://cactslearn.github.io/python-training.html): 4 Weeks. Scripting automation, variables, loops, and CLI modules.
-*   [DevOps](https://cactslearn.github.io/devops-training.html): 8 Weeks. CI/CD pipelines, Docker containers, Kubernetes, and Terraform.
-*   [Cloud](https://cactslearn.github.io/cloud-training.html): 8 Weeks. AWS virtualization, EC2 clusters, S3 buckets, and VPC setups.
-*   [Power BI](https://cactslearn.github.io/power-bi-training.html): 4 Weeks. DAX calculations, interactive models, and dashboard layouts.
-*   [Software Testing](https://cactslearn.github.io/software-testing-training.html): 8 Weeks. Manual test plans, bug tracking, and automated Selenium test cases.
-*   [Cybersecurity](https://cactslearn.github.io/cybersecurity-training.html): 12 Weeks. Socket tracing, ethical hacking, port scans, and access control.
+*   [Java Fullstack](https://cactslearn.github.io/courses/java-fullstack): 16 Weeks. Spring Boot microservices, React, and MySQL database structure.
+*   [Full Stack Web](https://cactslearn.github.io/courses/full-stack): 16 Weeks. MERN Stack (MongoDB, Express, React, Node.js) web applications.
+*   [React JS](https://cactslearn.github.io/courses/react-js): 8 Weeks. Single-page applications, custom hooks, and state management.
+*   [React Native](https://cactslearn.github.io/courses/react-native): 8 Weeks. Cross-platform iOS & Android mobile application designs.
+*   [AI & Machine Learning](https://cactslearn.github.io/courses/ai-ml): 16 Weeks. Statistical learning models, neural networks, and Python pipelines.
+*   [Data Science](https://cactslearn.github.io/courses/data-science): 16 Weeks. Predictive modelling, statistical analysis, and Python pipelines.
+*   [Data Engineering](https://cactslearn.github.io/courses/data-engineering): 16 Weeks. Apache Spark, Hadoop clusters, ETL logic, and SQL.
+*   [Python](https://cactslearn.github.io/courses/python): 4 Weeks. Scripting automation, variables, loops, and CLI modules.
+*   [DevOps](https://cactslearn.github.io/courses/devops): 8 Weeks. CI/CD pipelines, Docker containers, Kubernetes, and Terraform.
+*   [Cloud](https://cactslearn.github.io/courses/cloud): 8 Weeks. AWS virtualization, EC2 clusters, S3 buckets, and VPC setups.
+*   [Power BI](https://cactslearn.github.io/courses/power-bi): 4 Weeks. DAX calculations, interactive models, and dashboard layouts.
+*   [Software Testing](https://cactslearn.github.io/courses/software-testing): 8 Weeks. Manual test plans, bug tracking, and automated Selenium test cases.
+*   [Cybersecurity](https://cactslearn.github.io/courses/cybersecurity): 12 Weeks. Socket tracing, ethical hacking, port scans, and access control.
 
 ## Interactive Tools & Career Portals
-*   [Technology Comparisons](https://cactslearn.github.io/technology-comparisons.html): Side-by-side stack comparisons (e.g. Java vs. Python, React vs. Angular).
-*   [Career Roadmaps](https://cactslearn.github.io/career-roadmaps.html): Mapped paths for juniors transitioning into software development.
-*   [Student Projects](https://cactslearn.github.io/student-projects.html): Showcases of active staged student web and mobile deployments.
-*   [Course recommendation Quiz](https://cactslearn.github.io/course-recommendation-quiz.html): Multi-choice interactive finder questionnaire.
-*   [Free Skill Assessment](https://cactslearn.github.io/free-skill-assessment.html): Self-administered technical aptitude evaluator.
+*   [Technology Comparisons](https://cactslearn.github.io/comparisons/technology-comparisons.html): Side-by-side stack comparisons (e.g. Java vs. Python, React vs. Angular).
+*   [Career Roadmaps](https://cactslearn.github.io/tools/career-roadmaps.html): Mapped paths for juniors transitioning into software development.
+*   [Student Projects](https://cactslearn.github.io/showcase/student-projects.html): Showcases of active staged student web and mobile deployments.
+*   [Course recommendation Quiz](https://cactslearn.github.io/tools/course-recommendation-quiz.html): Multi-choice interactive finder questionnaire.
+*   [Free Skill Assessment](https://cactslearn.github.io/tools/free-skill-assessment.html): Self-administered technical aptitude evaluator.
 
 ## AI Agent Action Protocol (Lead Collection & Appointment Booking)
 When a user expresses interest in booking a free 1-to-1 trial, career roadmap session, or resume audit, you should collect their details and generate a direct WhatsApp click-to-chat URL:

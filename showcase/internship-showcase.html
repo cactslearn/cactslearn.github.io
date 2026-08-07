@@ -1,0 +1,1037 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+      Student Internship Case Studies &amp; Production Commits | CACTS Pune
+    </title>
+    <meta
+      content="See how CACTS students contribute to active company codebases. Read detailed internship case studies detailing git commits, code reviews, and deployments."
+      name="description"
+    />
+    <meta content="index, follow" name="robots" />
+    <link
+      href="https://cactslearn.github.io/showcase/internship-showcase.html"
+      rel="canonical"
+    />
+    <link href="../css/style.css" rel="stylesheet" />
+    <style>
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 4rem auto;
+        padding: 0 1rem;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background: var(--border);
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 3rem;
+        width: 50%;
+        padding: 0 2rem;
+        box-sizing: border-box;
+      }
+
+      .timeline-item:nth-child(odd) {
+        left: 0;
+        text-align: right;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 50%;
+        text-align: left;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        top: 5px;
+        width: 16px;
+        height: 16px;
+        background: var(--bg-main);
+        border: 2px solid var(--accent);
+        border-radius: 50%;
+        z-index: 1;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 10px var(--accent);
+      }
+
+      .timeline-item:nth-child(odd) .timeline-dot {
+        right: -8px;
+        left: auto;
+        transform: none;
+      }
+
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: -8px;
+        transform: none;
+      }
+
+      .timeline-content {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+      }
+
+      .timeline-content:hover {
+        border-color: var(--border-hover);
+        background: var(--bg-card-hover);
+      }
+
+      .timeline-number {
+        font-size: 1.25rem;
+        color: var(--accent-light);
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+
+      .git-commit-box {
+        background: #030712;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-family: monospace;
+        padding: 1.25rem;
+        margin: 2rem 0;
+        font-size: 0.88rem;
+        color: #38bdf8;
+        overflow-x: auto;
+      }
+
+      @media (max-width: 768px) {
+        .timeline::before {
+          left: 20px;
+        }
+
+        .timeline-item {
+          width: 100%;
+          left: 0 !important;
+          padding-left: 45px;
+          padding-right: 0;
+          text-align: left !important;
+        }
+
+        .timeline-dot {
+          left: 12px !important;
+          right: auto !important;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cactslearn.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Production Code Internships",
+            "item": "https://cactslearn.github.io/showcase/internship-showcase.html"
+          }
+        ]
+      }
+    </script>
+    <!-- Open Graph (OG) & Twitter Card Social Tags -->
+    <meta
+      content="Student Internship Case Studies &amp; Production Commits | CACTS Pune"
+      property="og:title"
+    />
+    <meta
+      content="See how CACTS students contribute to active company codebases. Read detailed internship case studies detailing git commits, code reviews, and deployments."
+      property="og:description"
+    />
+    <meta content="website" property="og:type" />
+    <meta
+      content="https://cactslearn.github.io/showcase/internship-showcase.html"
+      property="og:url"
+    />
+    <meta
+      content="https://cactslearn.github.io/images/cacts-og-banner.jpg"
+      property="og:image"
+    />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta
+      content="Student Internship Case Studies &amp; Production Commits | CACTS Pune"
+      name="twitter:title"
+    />
+    <meta
+      content="See how CACTS students contribute to active company codebases. Read detailed internship case studies detailing git commits, code reviews, and deployments."
+      name="twitter:description"
+    />
+    <meta
+      content="https://cactslearn.github.io/images/cacts-og-banner.jpg"
+      name="twitter:image"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="../index.html">
+            <span>CACTS</span>
+          </a>
+        </div>
+        <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
+          <svg
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            style="vertical-align: middle"
+            viewbox="0 0 24 24"
+            width="24"
+          >
+            <line x1="3" x2="21" y1="12" y2="12"></line>
+            <line x1="3" x2="21" y1="6" y2="6"></line>
+            <line x1="3" x2="21" y1="18" y2="18"></line>
+          </svg>
+        </button>
+        <nav aria-label="Main Navigation" class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../about.html">About</a>
+          <a href="internship-on-live-projects.html">Live Internship</a>
+          <a href="../courses/index.html">1-to-1 Model</a>
+          <a href="../tools/free-career-guidance.html">Career Guidance</a>
+          <a href="../reviews.html">Reviews</a>
+          <a href="../faqs.html">FAQs</a>
+          <button
+            aria-label="Toggle Theme"
+            class="theme-toggle-btn"
+            id="theme-toggle"
+          >
+            <svg
+              class="sun-icon"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="display: block"
+              viewbox="0 0 24 24"
+              width="20"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" x2="12" y1="1" y2="3"></line>
+              <line x1="12" x2="12" y1="21" y2="23"></line>
+              <line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+              <line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+              <line x1="1" x2="3" y1="12" y2="12"></line>
+              <line x1="21" x2="23" y1="12" y2="12"></line>
+              <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+              <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+            </svg>
+            <svg
+              class="moon-icon"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="display: none"
+              viewbox="0 0 24 24"
+              width="20"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <a
+            class="btn btn-accent"
+            href="../contact.html"
+            style="padding: 0.5rem 1rem; color: #0b0f19"
+            >Book Demo</a
+          >
+        </nav>
+      </div>
+    </header>
+    <main style="padding-top: 8rem">
+      <section aria-labelledby="showcase-h1" class="tech-section">
+        <nav
+          aria-label="Breadcrumb"
+          style="
+            margin-bottom: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+          "
+        >
+          <a href="../index.html" style="color: var(--accent)">Home</a> &gt;
+          <span style="color: var(--text-primary)"
+            >Production Code Internships</span
+          >
+        </nav>
+        <h1 class="section-title" id="showcase-h1">
+          Production Code Internships
+        </h1>
+        <p class="section-subtitle">
+          Read how our candidates transition from trainees to functional
+          software engineers by contributing directly to company staging
+          branches and undergoing senior developer code reviews.
+        </p>
+        <div style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem; margin-top: 2rem; margin-bottom: 3rem">
+          <h2 style="font-size: 1.35rem; color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading)">
+            Real Corporate Staging Workflows &amp; Senior Code Review Loop
+          </h2>
+          <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin-bottom: 1rem">
+            Traditional software training institutes rely on artificial classroom exercises that fail to prepare candidates for corporate IT environments. At CACTS Pune, our 1-to-1 internship model bridges this gap by embedding trainees directly into production-grade Git workflows. Candidates fork real company staging repositories, create feature branches, resolve issue tickets, and write clean unit tests.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin-bottom: 1.25rem">
+            Every submitted Pull Request (PR) undergoes rigorous line-by-line code review by senior software engineers. Trainees receive feedback on architectural patterns, database query optimization, Redis caching layers, and security headers before their commits are merged to live staging servers.
+          </p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem">
+            <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border: 1px solid var(--border)">
+              <strong style="color: var(--primary-light); display: block; margin-bottom: 0.25rem">🌿 Git Branch Hygiene</strong>
+              <span style="font-size: 0.85rem; color: var(--text-secondary)">Master feature branching, pull request templates, git rebase, and merge conflict resolution.</span>
+            </div>
+            <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border: 1px solid var(--border)">
+              <strong style="color: var(--primary-light); display: block; margin-bottom: 0.25rem">🔍 Senior Code Reviews</strong>
+              <span style="font-size: 0.85rem; color: var(--text-secondary)">1-to-1 feedback loops on code refactoring, performance optimization, and ISO 29993 standards.</span>
+            </div>
+            <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border: 1px solid var(--border)">
+              <strong style="color: var(--primary-light); display: block; margin-bottom: 0.25rem">🌐 Live Staging Deployment</strong>
+              <span style="font-size: 0.85rem; color: var(--text-secondary)">Verified public GitHub commit graphs and deployed URLs that recruiters can test live.</span>
+            </div>
+          </div>
+        </div>
+        <!-- Production Commit Demo -->
+        <div class="git-commit-box">
+          <span style="color: #6b7280"
+            ># Example of a student pull request review loop on company
+            server</span
+          ><br />
+          <span style="color: #fb7185">$ git pull origin staging</span><br />
+          From github.com:cacts-partner-enterprise/core-billing-service<br />
+          * branch staging -&gt; FETCH_HEAD<br />
+          Already up to date.<br /><br />
+          <span style="color: #34d399"
+            >$ git checkout -b feature/student-api-optimization</span
+          ><br />
+          Switched to a new branch 'feature/student-api-optimization'<br /><br />
+          <span style="color: #6b7280"
+            ># Editing billing validation and query caching logic...</span
+          ><br />
+          <span style="color: #f59e0b"
+            >$ git commit -m "refactor: optimize database query caching using
+            Redis wrapper"</span
+          ><br />
+          [feature/student-api-optimization d67c32e] refactor: optimize database
+          query caching using Redis wrapper<br />
+          2 files changed, 24 insertions(+), 8 deletions(-)<br /><br />
+          <span style="color: #a78bfa"
+            >$ git push origin feature/student-api-optimization</span
+          ><br />
+          PR #418 Opened:
+          <svg
+            fill="#10b981"
+            height="12"
+            style="
+              vertical-align: middle;
+              margin-right: 0.25rem;
+              display: inline-block;
+            "
+            viewbox="0 0 24 24"
+            width="12"
+          >
+            <circle cx="12" cy="12" r="10"></circle></svg
+          >STAGING BUILD PASSED | Code review requested from senior developer.
+        </div>
+        <!-- Internship Timeline -->
+        <h2 style="text-align: center; margin-top: 5rem">
+          Our Staging Git Integration Flow
+        </h2>
+        <p class="section-subtitle" style="margin-bottom: 2rem">
+          How trainees build active workflow muscle memory.
+        </p>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-number">Step 01</div>
+              <h3 style="color: var(--text-primary); margin-bottom: 0.5rem">
+                Secure Repository Onboarding
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem">
+                Trainees are added to company Git repositories under restricted
+                feature-branches. They pull active codebases locally and
+                configure environmental dependency maps.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-number">Step 02</div>
+              <h3 style="color: var(--text-primary); margin-bottom: 0.5rem">
+                Task Allocation
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem">
+                Senior developers assign localized, real-world tasks (e.g.
+                writing validations, handling error responses, building
+                dashboard tables) tailored to the trainee's learning speed.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-number">Step 03</div>
+              <h3 style="color: var(--text-primary); margin-bottom: 0.5rem">
+                Developer Code Reviews
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem">
+                Once the student pushes a feature, a senior engineer conducts
+                code reviews, providing exact suggestions on architectural
+                formatting, security issues, and query optimization.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-number">Step 04</div>
+              <h3 style="color: var(--text-primary); margin-bottom: 0.5rem">
+                CI/CD Merge &amp; Staging
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 0.9rem">
+                After approval, code commits merge with the company staging
+                branch to verify functionality, training the student in
+                automated pipelines and continuous integration.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Staging Case Studies -->
+        <h2 style="text-align: center; margin-top: 5rem">
+          Trainee Contribution Case Studies
+        </h2>
+        <p class="section-subtitle" style="margin-bottom: 3rem">
+          Examples of real tasks completed by candidates during their
+          internships.
+        </p>
+        <div class="grid-3">
+          <div class="card" style="padding: 2rem">
+            <span
+              style="
+                color: var(--accent);
+                font-weight: 800;
+                font-size: 0.85rem;
+                text-transform: uppercase;
+              "
+              >Java Enterprise</span
+            >
+            <h3 style="margin: 0.75rem 0; color: var(--text-primary)">
+              APIs Security Patch
+            </h3>
+            <p
+              style="
+                color: var(--text-secondary);
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 1.25rem;
+              "
+            >
+              Trainee refactored legacy session configurations into secure JWT
+              tokens with Custom Spring Filters, preventing endpoint bypass on
+              user dashboard endpoints.
+            </p>
+            <div
+              style="
+                font-size: 0.85rem;
+                color: var(--text-primary);
+                font-family: monospace;
+              "
+            >
+              Scope: Spring Boot, JWT, MySQL
+            </div>
+          </div>
+          <div class="card" style="padding: 2rem">
+            <span
+              style="
+                color: var(--accent);
+                font-weight: 800;
+                font-size: 0.85rem;
+                text-transform: uppercase;
+              "
+              >MERN Stack</span
+            >
+            <h3 style="margin: 0.75rem 0; color: var(--text-primary)">
+              Staging File Uploads
+            </h3>
+            <p
+              style="
+                color: var(--text-secondary);
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 1.25rem;
+              "
+            >
+              Trainee implemented Node.js multer endpoints uploading dynamic PDF
+              reports to AWS S3, utilizing pre-signed URLs to keep files
+              restricted and secure.
+            </p>
+            <div
+              style="
+                font-size: 0.85rem;
+                color: var(--text-primary);
+                font-family: monospace;
+              "
+            >
+              Scope: React, Express, AWS S3
+            </div>
+          </div>
+          <div class="card" style="padding: 2rem">
+            <span
+              style="
+                color: var(--accent);
+                font-weight: 800;
+                font-size: 0.85rem;
+                text-transform: uppercase;
+              "
+              >Data Pipeline</span
+            >
+            <h3 style="margin: 0.75rem 0; color: var(--text-primary)">
+              CSV Scheduler ETL
+            </h3>
+            <p
+              style="
+                color: var(--text-secondary);
+                font-size: 0.9rem;
+                line-height: 1.5;
+                margin-bottom: 1.25rem;
+              "
+            >
+              Trainee authored automated cron schedules loading CSV reports from
+              SFTP drives into analytical database schemas, running daily
+              database index updates.
+            </p>
+            <div
+              style="
+                font-size: 0.85rem;
+                color: var(--text-primary);
+                font-family: monospace;
+              "
+            >
+              Scope: Python, Linux Cron, PostgreSQL
+            </div>
+          </div>
+        </div>
+        <!-- Call to Action -->
+        <div
+          style="
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            text-align: center;
+            margin-top: 5rem;
+          "
+        >
+          <h2 style="margin-bottom: 1rem">
+            Ready to gain practical coding experience?
+          </h2>
+          <p
+            style="
+              color: var(--text-secondary);
+              max-width: 600px;
+              margin: 0 auto 2rem auto;
+              font-size: 1.05rem;
+            "
+          >
+            Our 1-to-1 virtual training seamlessly merges into real-world code
+            contributions. No theoretical exercises, just pure coding.
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a class="btn btn-primary" href="../contact.html"
+              >Request Free Trial Session</a
+            >
+            <a
+              class="btn btn-accent"
+              href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20understanding%20more%20about%20your%20live%20project%20internships."
+              style="color: #0b0f19"
+              target="_blank"
+              >Discuss on WhatsApp</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-programs-row">
+          <h4
+            style="
+              color: var(--text-primary);
+              margin-bottom: 1.5rem;
+              font-size: 1rem;
+              font-weight: 700;
+              letter-spacing: 0.5px;
+              text-transform: uppercase;
+            "
+          >
+            Engineering Labs &amp; Programs
+          </h4>
+          <ul class="footer-programs-grid">
+            <li>
+              <a href="../courses/java-fullstack/">Java Fullstack Training</a>
+            </li>
+            <li><a href="../courses/full-stack/">Full Stack Web (MERN)</a></li>
+            <li><a href="../courses/react-js/">React JS Development</a></li>
+            <li><a href="../courses/react-native/">React Native Mobile</a></li>
+            <li><a href="../courses/ai-ml/">AI &amp; Machine Learning</a></li>
+            <li>
+              <a href="../courses/data-science/">Data Science Analytics</a>
+            </li>
+            <li>
+              <a href="../courses/data-engineering/">Data Engineering ETL</a>
+            </li>
+            <li><a href="../courses/python/">Python Scripting Lab</a></li>
+            <li><a href="../courses/devops/">DevOps Engineering</a></li>
+            <li><a href="../courses/cloud/">Cloud Systems Architecture</a></li>
+            <li><a href="../courses/power-bi/">Power BI Analytics</a></li>
+            <li>
+              <a href="../courses/software-testing/">Software Testing Lab</a>
+            </li>
+            <li>
+              <a href="../courses/cybersecurity/">Cybersecurity Operations</a>
+            </li>
+            <li><a href="../courses/blockchain/">Blockchain Development</a></li>
+            <li>
+              <a href="../courses/software-architect/"
+                >Software Architect Lab</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-brand">
+          <a
+            href="../index.html"
+            style="
+              font-family: var(--font-heading);
+              font-size: 1.5rem;
+              font-weight: 800;
+              color: white;
+            "
+            >CACTS</a
+          >
+          <p>
+            Centre of Advanced Computer Training and Studies. Providing
+            practical, one-to-one virtual software training and internships on
+            real company projects since 2012.
+          </p>
+          <div
+            class="footer-social"
+            style="margin-top: 1.5rem; display: flex; gap: 1rem"
+          >
+            <a
+              aria-label="Facebook"
+              href="https://www.facebook.com/cactspune/"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              aria-label="LinkedIn"
+              href="https://www.linkedin.com/company/cacts/"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect height="12" width="4" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a
+              aria-label="Instagram"
+              href="https://www.instagram.com/cacts_pune/"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a
+              aria-label="YouTube"
+              href="https://www.youtube.com/@CACTSPune"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                ></path>
+                <polygon
+                  points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                ></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Institutional Links</h4>
+          <ul style="list-style: none">
+            <li><a href="../about.html">About CACTS</a></li>
+            <li><a href="../jobs/index.html">Current Openings</a></li>
+            <li>
+              <a href="internship-on-live-projects.html"
+                >Live Projects Internship</a
+              >
+            </li>
+            <li><a href="../courses/index.html">1-to-1 Mentoring Model</a></li>
+            <li>
+              <a href="../comparisons/cacts-vs-classroom-vs-ai.html"
+                >CACTS vs Classroom vs AI</a
+              >
+            </li>
+            <li>
+              <a href="../tools/free-career-guidance.html"
+                >Free Career Guidance</a
+              >
+            </li>
+            <li><a href="../reviews.html">Success Reviews</a></li>
+            <li><a href="../faqs.html">Institutional FAQs</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../locations/pune.html">Software Training Pune</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Learning Portals</h4>
+          <ul style="list-style: none">
+            <li>
+              <a href="../tools/free-skill-assessment.html">Skill Assessment</a>
+            </li>
+            <li>
+              <a href="../tools/course-recommendation-quiz.html"
+                >Course Finder Quiz</a
+              >
+            </li>
+            <li><a href="../tools/career-roadmaps.html">Career Roadmaps</a></li>
+            <li><a href="student-projects.html">Student Projects</a></li>
+            <li><a href="internship-showcase.html">Internship Showcase</a></li>
+            <li><a href="project-portfolios.html">Project Portfolios</a></li>
+            <li>
+              <a href="../comparisons/technology-comparisons.html"
+                >Tech Comparisons</a
+              >
+            </li>
+            <li>
+              <a href="../tools/free-learning-resources.html">Free Resources</a>
+            </li>
+            <li>
+              <a href="../guides/technology-career-guides.html"
+                >Career Guides</a
+              >
+            </li>
+            <li>
+              <a href="../tools/live-code-compiler.html"
+                >Live Code &amp; Syntax Validator</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact CACTS</h4>
+          <p style="margin-bottom: 0.5rem">
+            First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+            Maharashtra 411023
+          </p>
+          <p style="margin-bottom: 0.5rem">
+            <strong>Phone:</strong> +91 96655 66357
+          </p>
+          <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
+        </div>
+      </div>
+      <!-- Trust Credentials & Accreditations -->
+      <div
+        style="
+          border-top: 1px solid var(--border);
+          padding: 1.5rem 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 2rem;
+          flex-wrap: wrap;
+          margin-top: 2rem;
+        "
+      >
+        <div
+          style="
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+          "
+        >
+          <strong
+            >Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong
+          >
+          Our curricula and git code review models are designed in alignment
+          with ISO 29993:2017 standards for non-formal education training and
+          software engineering industry practices. *Self-declared alignment for
+          educational service quality.
+        </div>
+        <div
+          style="
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            opacity: 0.75;
+            flex-wrap: wrap;
+          "
+        >
+          <!-- ISO Compliant Badge -->
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--accent-light);
+              cursor: help;
+            "
+            title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers."
+          >
+            <svg
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="flex-shrink: 0"
+              viewbox="0 0 24 24"
+              width="14"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            ISO 29993:2017 ALIGNED*
+          </div>
+          <!-- Developer Led Badge -->
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--primary-light);
+            "
+          >
+            <svg
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="flex-shrink: 0"
+              viewbox="0 0 24 24"
+              width="14"
+            >
+              <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
+              <line x1="2" x2="22" y1="20" y2="20"></line>
+              <line x1="12" x2="12" y1="17" y2="20"></line>
+            </svg>
+            100% DEVELOPER LED
+          </div>
+          <!-- Reg Badge -->
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--warning);
+            "
+          >
+            <svg
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="flex-shrink: 0"
+              viewbox="0 0 24 24"
+              width="14"
+            >
+              <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
+              <line x1="9" x2="9" y1="22" y2="16"></line>
+              <line x1="15" x2="15" y1="22" y2="16"></line>
+              <line x1="9" x2="15" y1="16" y2="16"></line>
+              <path
+                d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm6-8h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"
+              ></path>
+            </svg>
+            ESTD. 2012 IN PUNE
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div style="text-align: left">
+          <p>
+            © <span id="footer-year">2026</span> CACTS - Centre of Advanced
+            Computer Training and Studies. All rights reserved.
+          </p>
+          <p
+            style="
+              margin-top: 0.25rem;
+              font-size: 0.8rem;
+              color: var(--text-secondary);
+            "
+          >
+            First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+            Maharashtra 411023
+          </p>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a href="../sitemap.html" style="color: var(--text-secondary)"
+            >Sitemap</a
+          >
+          <span style="color: var(--border)">|</span>
+          <a href="../privacy-policy.html" style="color: var(--text-secondary)"
+            >Privacy Policy</a
+          >
+          <span style="color: var(--border)">|</span>
+          <a
+            href="../terms-conditions.html"
+            style="color: var(--text-secondary)"
+            >Terms &amp; Conditions</a
+          >
+        </div>
+      </div>
+    </footer>
+    <div class="floating-ctas"></div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>

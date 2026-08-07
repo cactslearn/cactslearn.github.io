@@ -1,0 +1,1185 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+      IT Technology Stack Comparisons &amp; Career Paths | CACTS Pune
+    </title>
+    <meta
+      content="Unsure which technology stack to choose? Compare Java Fullstack vs MERN Web Development, Data Science vs Data Engineering, and DevOps vs Cloud."
+      name="description"
+    />
+    <meta content="index, follow" name="robots" />
+    <link
+      href="https://cactslearn.github.io/comparisons/technology-comparisons.html"
+      rel="canonical"
+    />
+    <link href="../css/style.css" rel="stylesheet" />
+    <style>
+      .comparison-section-item {
+        margin-bottom: 5rem;
+      }
+      .resources-list-links a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: var(--transition);
+        display: inline-block;
+      }
+      .resources-list-links a:hover {
+        color: var(--accent-light) !important;
+        transform: translateX(4px);
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cactslearn.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tech Comparisons",
+            "item": "https://cactslearn.github.io/comparisons/technology-comparisons.html"
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Technology Stack Comparisons",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://cactslearn.github.io/react-vs-angular.html",
+            "name": "React JS vs Angular"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://cactslearn.github.io/docker-vs-kubernetes.html",
+            "name": "Docker vs Kubernetes"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://cactslearn.github.io/aws-vs-azure.html",
+            "name": "AWS vs Azure Cloud"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "url": "https://cactslearn.github.io/java-vs-python.html",
+            "name": "Java vs Python"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "url": "https://cactslearn.github.io/power-bi-vs-tableau.html",
+            "name": "Power BI vs Tableau"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "url": "https://cactslearn.github.io/react-native-vs-flutter.html",
+            "name": "React Native vs Flutter"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "url": "https://cactslearn.github.io/jenkins-vs-github-actions.html",
+            "name": "Jenkins vs GitHub Actions"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "url": "https://cactslearn.github.io/spark-vs-hadoop.html",
+            "name": "Apache Spark vs Hadoop"
+          }
+        ]
+      }
+    </script>
+    <!-- Open Graph (OG) & Twitter Card Social Tags -->
+    <meta
+      content="IT Technology Stack Comparisons &amp; Career Paths | CACTS Pune"
+      property="og:title"
+    />
+    <meta
+      content="Unsure which technology stack to choose? Compare Java Fullstack vs MERN Web Development, Data Science vs Data Engineering, and DevOps vs Cloud."
+      property="og:description"
+    />
+    <meta content="website" property="og:type" />
+    <meta
+      content="https://cactslearn.github.io/comparisons/technology-comparisons.html"
+      property="og:url"
+    />
+    <meta
+      content="https://cactslearn.github.io/images/cacts-og-banner.jpg"
+      property="og:image"
+    />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta
+      content="IT Technology Stack Comparisons &amp; Career Paths | CACTS Pune"
+      name="twitter:title"
+    />
+    <meta
+      content="Unsure which technology stack to choose? Compare Java Fullstack vs MERN Web Development, Data Science vs Data Engineering, and DevOps vs Cloud."
+      name="twitter:description"
+    />
+    <meta
+      content="https://cactslearn.github.io/images/cacts-og-banner.jpg"
+      name="twitter:image"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="nav-container">
+        <div class="logo">
+          <a href="../index.html">
+            <span>CACTS</span>
+          </a>
+        </div>
+        <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
+          <svg
+            fill="none"
+            height="24"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            style="vertical-align: middle"
+            viewbox="0 0 24 24"
+            width="24"
+          >
+            <line x1="3" x2="21" y1="12" y2="12"></line>
+            <line x1="3" x2="21" y1="6" y2="6"></line>
+            <line x1="3" x2="21" y1="18" y2="18"></line>
+          </svg>
+        </button>
+        <nav aria-label="Main Navigation" class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../about.html">About</a>
+          <a href="../showcase/internship-on-live-projects.html"
+            >Live Internship</a
+          >
+          <a href="../courses/index.html">1-to-1 Model</a>
+          <a href="../tools/free-career-guidance.html">Career Guidance</a>
+          <a href="../reviews.html">Reviews</a>
+          <a href="../faqs.html">FAQs</a>
+          <button
+            aria-label="Toggle Theme"
+            class="theme-toggle-btn"
+            id="theme-toggle"
+          >
+            <svg
+              class="sun-icon"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="display: block"
+              viewbox="0 0 24 24"
+              width="20"
+            >
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" x2="12" y1="1" y2="3"></line>
+              <line x1="12" x2="12" y1="21" y2="23"></line>
+              <line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+              <line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+              <line x1="1" x2="3" y1="12" y2="12"></line>
+              <line x1="21" x2="23" y1="12" y2="12"></line>
+              <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+              <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+            </svg>
+            <svg
+              class="moon-icon"
+              fill="none"
+              height="20"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="display: none"
+              viewbox="0 0 24 24"
+              width="20"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <a
+            class="btn btn-accent"
+            href="../contact.html"
+            style="padding: 0.5rem 1rem; color: #0b0f19"
+            >Book Demo</a
+          >
+        </nav>
+      </div>
+    </header>
+    <main style="padding-top: 8rem">
+      <section aria-labelledby="comparison-h1" class="tech-section">
+        <nav
+          aria-label="Breadcrumb"
+          style="
+            margin-bottom: 2rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+          "
+        >
+          <a href="../index.html" style="color: var(--accent)">Home</a> &gt;
+          <span style="color: var(--text-primary)">Tech Comparisons</span>
+        </nav>
+        <h1 class="section-title" id="comparison-h1">
+          IT Technology Stack Comparisons
+        </h1>
+        <p class="section-subtitle">
+          Struggling to select the right coding path? We compare core enterprise
+          ecosystems side-by-side to clarify Pune market hiring scopes,
+          framework requirements, and career directions.
+        </p>
+        <!-- High-Intent Debate CTA -->
+        <div
+          style="
+            background: linear-gradient(
+              135deg,
+              rgba(20, 184, 166, 0.05) 0%,
+              rgba(99, 102, 241, 0.05) 100%
+            );
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            margin-bottom: 3.5rem;
+            text-align: center;
+          "
+        >
+          <h3
+            style="
+              color: var(--text-primary);
+              margin-bottom: 0.5rem;
+              font-family: var(--font-heading);
+              font-size: 1.35rem;
+            "
+          >
+            The Software Training Model Debate
+          </h3>
+          <p
+            style="
+              color: var(--text-secondary);
+              font-size: 0.95rem;
+              margin-bottom: 1.5rem;
+              max-width: 750px;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            Before choosing your technology stack, choose the right training
+            model. Discover why traditional 50-student batch classrooms and
+            isolated raw AI tools are fundamentally broken.
+          </p>
+          <a
+            class="btn btn-accent"
+            href="cacts-vs-classroom-vs-ai.html"
+            style="
+              color: #0b0f19;
+              font-weight: 700;
+              font-size: 0.95rem;
+              padding: 0.6rem 1.75rem;
+            "
+            >View CACTS vs. Classroom vs. AI Matrix &gt;</a
+          >
+        </div>
+        <!-- Comparison 1: Java Fullstack vs MERN Web Developer -->
+        <div class="comparison-section-item">
+          <h2
+            style="
+              color: var(--text-primary);
+              border-left: 4px solid var(--primary);
+              padding-left: 1rem;
+              margin-bottom: 1.5rem;
+            "
+          >
+            Ecosystem 01: Java Fullstack vs. MERN Web Developer
+          </h2>
+          <p style="color: var(--text-secondary); line-height: 1.6">
+            Enterprise companies favor structured frameworks like Java Spring
+            Boot for stability (which we cover in our 1-to-1
+            <a href="../courses/java-fullstack/" style="color: var(--accent)"
+              >Java Fullstack Training</a
+            >), while startups and product platforms scale quickly using
+            JavaScript/MERN stacks (taught in our
+            <a href="../courses/full-stack/" style="color: var(--accent)"
+              >Full Stack Training</a
+            >).
+          </p>
+          <div class="table-container">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Java Fullstack</th>
+                  <th>MERN Full Stack Developer</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Feature"><strong>Core Focus</strong></td>
+                  <td data-label="Java Fullstack">
+                    Enterprise architecture, robust backend APIs, database
+                    connections
+                  </td>
+                  <td data-label="MERN Full Stack Developer">
+                    Single-page interactive apps, unified JS stack, rapid
+                    prototyping
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature"><strong>Frameworks</strong></td>
+                  <td data-label="Java Fullstack">
+                    Java, Spring Boot, Hibernate, SQL (PostgreSQL/MySQL),
+                    Angular/React
+                  </td>
+                  <td data-label="MERN Full Stack Developer">
+                    MongoDB, Express.js, React.js, Node.js,
+                    JavaScript/TypeScript
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature">
+                    <strong>Pune Hiring Scope</strong>
+                  </td>
+                  <td data-label="Java Fullstack">
+                    Excellent (MNCs, banking portals, retail systems, and
+                    finance services)
+                  </td>
+                  <td data-label="MERN Full Stack Developer">
+                    Strong (Agencies, SaaS startups, product engineering squads)
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature"><strong>Prerequisites</strong></td>
+                  <td data-label="Java Fullstack">
+                    Object-Oriented Logic (OOPs), basic database structuring
+                  </td>
+                  <td data-label="MERN Full Stack Developer">
+                    Basic scripting knowledge, logical flow, DOM interaction
+                    concepts
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature"><strong>CACTS Fit</strong></td>
+                  <td data-label="Java Fullstack">
+                    Recommended for freshers aiming for MNC entries &amp;
+                    structured systems
+                  </td>
+                  <td data-label="MERN Full Stack Developer">
+                    Ideal for career changers and engineers targeting startup
+                    environments
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Comparison 2: Data Science vs Data Engineering -->
+        <div class="comparison-section-item">
+          <h2
+            style="
+              color: var(--text-primary);
+              border-left: 4px solid var(--accent);
+              padding-left: 1rem;
+              margin-bottom: 1.5rem;
+            "
+          >
+            Ecosystem 02: Data Science vs. Data Engineering
+          </h2>
+          <p style="color: var(--text-secondary); line-height: 1.6">
+            Data Scientists build statistical predictions and predictive
+            algorithms (mastered in our
+            <a href="../courses/data-science/" style="color: var(--accent)"
+              >Data Science Training</a
+            >), while Data Engineers construct the underlying pipelines and
+            systems to feed raw data securely (focused on in our
+            <a href="../courses/data-engineering/" style="color: var(--accent)"
+              >Data Engineering Training</a
+            >).
+          </p>
+          <div class="table-container">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Data Science / Analyst</th>
+                  <th>Data Engineering</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Feature"><strong>Core Focus</strong></td>
+                  <td data-label="Data Science / Analyst">
+                    Statistical modeling, prediction graphs, business trends
+                    exploration
+                  </td>
+                  <td data-label="Data Engineering">
+                    Data pipeline extraction (ETL), data cleaning pipelines,
+                    data lake architecture
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature"><strong>Frameworks</strong></td>
+                  <td data-label="Data Science / Analyst">
+                    Python, Pandas, NumPy, Scikit-Learn, Power BI, SQL
+                  </td>
+                  <td data-label="Data Engineering">
+                    Python, SQL, Apache Spark, Airflow, Snowflake, AWS Glue,
+                    PySpark
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature">
+                    <strong>Pune Hiring Scope</strong>
+                  </td>
+                  <td data-label="Data Science / Analyst">
+                    Good (Analytics departments, marketing systems, consulting
+                    firms)
+                  </td>
+                  <td data-label="Data Engineering">
+                    Excellent (Enterprise storage migrations, data warehouses)
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature">
+                    <strong>Math/Stats Needed</strong>
+                  </td>
+                  <td data-label="Data Science / Analyst">
+                    High (Requires linear algebra, hypothesis testing,
+                    probability concepts)
+                  </td>
+                  <td data-label="Data Engineering">
+                    Moderate (Requires logical mapping and relational database
+                    theory)
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature"><strong>CACTS Fit</strong></td>
+                  <td data-label="Data Science / Analyst">
+                    Best for candidates with analytical backgrounds or MBA/Stats
+                    degrees
+                  </td>
+                  <td data-label="Data Engineering">
+                    Best for programmers wanting a pure-coding backend database
+                    track
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Comparison 3: DevOps vs Cloud Administration -->
+        <div class="comparison-section-item">
+          <h2
+            style="
+              color: var(--text-primary);
+              border-left: 4px solid var(--warning);
+              padding-left: 1rem;
+              margin-bottom: 1.5rem;
+            "
+          >
+            Ecosystem 03: DevOps Engineering vs. Cloud
+          </h2>
+          <p style="color: var(--text-secondary); line-height: 1.6">
+            DevOps is a pipeline methodology focusing on software building
+            cycles (the focus of our
+            <a href="../courses/devops/" style="color: var(--accent)"
+              >DevOps Engineering Training</a
+            >), whereas Cloud Administrators manage and provision cloud
+            environments (covered in our
+            <a href="../courses/cloud/" style="color: var(--accent)"
+              >Cloud Training</a
+            >).
+          </p>
+          <div class="table-container">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>DevOps Engineer</th>
+                  <th>Cloud Administrator</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Feature"><strong>Core Focus</strong></td>
+                  <td data-label="DevOps Engineer">
+                    Automating continuous builds (CI/CD), containers, code
+                    deployments
+                  </td>
+                  <td data-label="Cloud Administrator">
+                    Monitoring cloud health, pricing architectures, IAM
+                    authorization rules
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature"><strong>Tools</strong></td>
+                  <td data-label="DevOps Engineer">
+                    Docker, Kubernetes, Git, Jenkins/GitHub Actions, Terraform
+                  </td>
+                  <td data-label="Cloud Administrator">
+                    AWS/Azure consoles, CloudWatch, VPC configurations, IAM,
+                    Billing logs
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature">
+                    <strong>Pune Hiring Scope</strong>
+                  </td>
+                  <td data-label="DevOps Engineer">
+                    Extremely High (Continuous deployment automation across tech
+                    teams)
+                  </td>
+                  <td data-label="Cloud Administrator">
+                    Very Good (Infrastructure management squads, remote support)
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature"><strong>Prerequisites</strong></td>
+                  <td data-label="DevOps Engineer">
+                    Linux command-line, Git understanding, basic programming
+                    logic
+                  </td>
+                  <td data-label="Cloud Administrator">
+                    Networking principles, storage structures, security
+                    permissions
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Feature"><strong>CACTS Fit</strong></td>
+                  <td data-label="DevOps Engineer">
+                    Recommended for developers who want to specialize in release
+                    cycles
+                  </td>
+                  <td data-label="Cloud Administrator">
+                    Best for system administrators transitioning to cloud
+                    operations
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Detailed Side-by-Side Comparison Guides -->
+        <div style="margin-top: 5rem; margin-bottom: 5rem">
+          <h2
+            style="
+              font-family: var(--font-heading);
+              margin-bottom: 2.5rem;
+              text-align: center;
+            "
+          >
+            Deep-Dive Tool &amp; Platform Comparisons
+          </h2>
+          <div
+            style="
+              background: var(--bg-card);
+              border: 1px solid var(--border);
+              border-radius: var(--border-radius);
+              padding: 2.5rem;
+            "
+          >
+            <div class="grid-3" style="gap: 2rem">
+              <ul
+                class="resources-list-links"
+                style="
+                  list-style: none;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.8rem;
+                  font-size: 0.95rem;
+                "
+              >
+                <li>
+                  <a href="../courses/java-fullstack/comparison.html"
+                    >Java vs Python Comparison</a
+                  >
+                </li>
+                <li>
+                  <a href="../courses/power-bi/comparison.html"
+                    >Power BI vs Tableau Comparison</a
+                  >
+                </li>
+                <li>
+                  <a href="../courses/react-js/comparison.html"
+                    >React JS vs Angular Comparison</a
+                  >
+                </li>
+              </ul>
+              <ul
+                class="resources-list-links"
+                style="
+                  list-style: none;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.8rem;
+                  font-size: 0.95rem;
+                "
+              >
+                <li>
+                  <a href="../courses/devops/comparison.html"
+                    >Docker vs Kubernetes Comparison</a
+                  >
+                </li>
+                <li>
+                  <a href="../courses/ai-ml/comparison.html"
+                    >Spark vs Hadoop Comparison</a
+                  >
+                </li>
+                <li>
+                  <a href="../courses/react-native/comparison.html"
+                    >React Native vs Flutter Comparison</a
+                  >
+                </li>
+              </ul>
+              <ul
+                class="resources-list-links"
+                style="
+                  list-style: none;
+                  padding: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.8rem;
+                  font-size: 0.95rem;
+                "
+              >
+                <li>
+                  <a href="../courses/cloud/comparison.html"
+                    >AWS vs Azure Cloud Comparison</a
+                  >
+                </li>
+                <li>
+                  <a href="../courses/software-testing/comparison.html"
+                    >Jenkins vs GitHub Actions Comparison</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- FAQ/Consultation CTA -->
+        <div
+          style="
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            text-align: center;
+            margin-top: 5rem;
+          "
+        >
+          <h2 style="margin-bottom: 1rem">
+            Still Unsure Which Technology Stack Fits Your Aptitude?
+          </h2>
+          <p
+            style="
+              color: var(--text-secondary);
+              max-width: 600px;
+              margin: 0 auto 2rem auto;
+              font-size: 1.05rem;
+            "
+          >
+            Schedule a free 1-to-1 virtual session with our senior developers.
+            We evaluate your goals and aptitude to advise on the best track.
+          </p>
+          <div
+            style="
+              display: flex;
+              gap: 1rem;
+              justify-content: center;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              class="btn btn-primary"
+              href="../tools/free-skill-assessment.html"
+              >Book Free Assessment</a
+            >
+            <a
+              class="btn btn-accent"
+              href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20comparing%20different%20software%20training%20tracks%20and%20want%20some%20advice."
+              style="color: #0b0f19"
+              target="_blank"
+              >Get Developer Advice</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="footer-programs-row">
+          <h4
+            style="
+              color: var(--text-primary);
+              margin-bottom: 1.5rem;
+              font-size: 1rem;
+              font-weight: 700;
+              letter-spacing: 0.5px;
+              text-transform: uppercase;
+            "
+          >
+            Engineering Labs &amp; Programs
+          </h4>
+          <ul class="footer-programs-grid">
+            <li>
+              <a href="../courses/java-fullstack/">Java Fullstack Training</a>
+            </li>
+            <li><a href="../courses/full-stack/">Full Stack Web (MERN)</a></li>
+            <li><a href="../courses/react-js/">React JS Development</a></li>
+            <li><a href="../courses/react-native/">React Native Mobile</a></li>
+            <li><a href="../courses/ai-ml/">AI &amp; Machine Learning</a></li>
+            <li>
+              <a href="../courses/data-science/">Data Science Analytics</a>
+            </li>
+            <li>
+              <a href="../courses/data-engineering/">Data Engineering ETL</a>
+            </li>
+            <li><a href="../courses/python/">Python Scripting Lab</a></li>
+            <li><a href="../courses/devops/">DevOps Engineering</a></li>
+            <li><a href="../courses/cloud/">Cloud Systems Architecture</a></li>
+            <li><a href="../courses/power-bi/">Power BI Analytics</a></li>
+            <li>
+              <a href="../courses/software-testing/">Software Testing Lab</a>
+            </li>
+            <li>
+              <a href="../courses/cybersecurity/">Cybersecurity Operations</a>
+            </li>
+            <li><a href="../courses/blockchain/">Blockchain Development</a></li>
+            <li>
+              <a href="../courses/software-architect/"
+                >Software Architect Lab</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-brand">
+          <a
+            href="../index.html"
+            style="
+              font-family: var(--font-heading);
+              font-size: 1.5rem;
+              font-weight: 800;
+              color: white;
+            "
+            >CACTS</a
+          >
+          <p>
+            Centre of Advanced Computer Training and Studies. Providing
+            practical, one-to-one virtual software training and internships on
+            real company projects since 2012.
+          </p>
+          <div
+            class="footer-social"
+            style="margin-top: 1.5rem; display: flex; gap: 1rem"
+          >
+            <a
+              aria-label="Facebook"
+              href="https://www.facebook.com/cactspune/"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              aria-label="LinkedIn"
+              href="https://www.linkedin.com/company/cacts/"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect height="12" width="4" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a
+              aria-label="Instagram"
+              href="https://www.instagram.com/cacts_pune/"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a
+              aria-label="YouTube"
+              href="https://www.youtube.com/@CACTSPune"
+              style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              "
+              target="_blank"
+            >
+              <svg
+                fill="none"
+                height="18"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewbox="0 0 24 24"
+                width="18"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                ></path>
+                <polygon
+                  points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                ></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Institutional Links</h4>
+          <ul style="list-style: none">
+            <li><a href="../about.html">About CACTS</a></li>
+            <li><a href="../jobs/index.html">Current Openings</a></li>
+            <li>
+              <a href="../showcase/internship-on-live-projects.html"
+                >Live Projects Internship</a
+              >
+            </li>
+            <li><a href="../courses/index.html">1-to-1 Mentoring Model</a></li>
+            <li>
+              <a href="cacts-vs-classroom-vs-ai.html"
+                >CACTS vs Classroom vs AI</a
+              >
+            </li>
+            <li>
+              <a href="../tools/free-career-guidance.html"
+                >Free Career Guidance</a
+              >
+            </li>
+            <li><a href="../reviews.html">Success Reviews</a></li>
+            <li><a href="../faqs.html">Institutional FAQs</a></li>
+            <li><a href="../contact.html">Contact Us</a></li>
+            <li><a href="../locations/pune.html">Software Training Pune</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Learning Portals</h4>
+          <ul style="list-style: none">
+            <li>
+              <a href="../tools/free-skill-assessment.html">Skill Assessment</a>
+            </li>
+            <li>
+              <a href="../tools/course-recommendation-quiz.html"
+                >Course Finder Quiz</a
+              >
+            </li>
+            <li><a href="../tools/career-roadmaps.html">Career Roadmaps</a></li>
+            <li>
+              <a href="../showcase/student-projects.html">Student Projects</a>
+            </li>
+            <li>
+              <a href="../showcase/internship-showcase.html"
+                >Internship Showcase</a
+              >
+            </li>
+            <li>
+              <a href="../showcase/project-portfolios.html"
+                >Project Portfolios</a
+              >
+            </li>
+            <li><a href="technology-comparisons.html">Tech Comparisons</a></li>
+            <li>
+              <a href="../tools/free-learning-resources.html">Free Resources</a>
+            </li>
+            <li>
+              <a href="../guides/technology-career-guides.html"
+                >Career Guides</a
+              >
+            </li>
+            <li>
+              <a href="../tools/live-code-compiler.html"
+                >Live Code &amp; Syntax Validator</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact CACTS</h4>
+          <p style="margin-bottom: 0.5rem">
+            First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+            Maharashtra 411023
+          </p>
+          <p style="margin-bottom: 0.5rem">
+            <strong>Phone:</strong> +91 96655 66357
+          </p>
+          <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
+        </div>
+      </div>
+      <!-- Trust Credentials & Accreditations -->
+      <div
+        style="
+          border-top: 1px solid var(--border);
+          padding: 1.5rem 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 2rem;
+          flex-wrap: wrap;
+          margin-top: 2rem;
+        "
+      >
+        <div
+          style="
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+          "
+        >
+          <strong
+            >Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong
+          >
+          Our curricula and git code review models are designed in alignment
+          with ISO 29993:2017 standards for non-formal education training and
+          software engineering industry practices. *Self-declared alignment for
+          educational service quality.
+        </div>
+        <div
+          style="
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            opacity: 0.75;
+            flex-wrap: wrap;
+          "
+        >
+          <!-- ISO Compliant Badge -->
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--accent-light);
+              cursor: help;
+            "
+            title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers."
+          >
+            <svg
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="flex-shrink: 0"
+              viewbox="0 0 24 24"
+              width="14"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            ISO 29993:2017 ALIGNED*
+          </div>
+          <!-- Developer Led Badge -->
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--primary-light);
+            "
+          >
+            <svg
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="flex-shrink: 0"
+              viewbox="0 0 24 24"
+              width="14"
+            >
+              <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
+              <line x1="2" x2="22" y1="20" y2="20"></line>
+              <line x1="12" x2="12" y1="17" y2="20"></line>
+            </svg>
+            100% DEVELOPER LED
+          </div>
+          <!-- Reg Badge -->
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--warning);
+            "
+          >
+            <svg
+              fill="none"
+              height="14"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              style="flex-shrink: 0"
+              viewbox="0 0 24 24"
+              width="14"
+            >
+              <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
+              <line x1="9" x2="9" y1="22" y2="16"></line>
+              <line x1="15" x2="15" y1="22" y2="16"></line>
+              <line x1="9" x2="15" y1="16" y2="16"></line>
+              <path
+                d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm6-8h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"
+              ></path>
+            </svg>
+            ESTD. 2012 IN PUNE
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div style="text-align: left">
+          <p>
+            © <span id="footer-year">2026</span> CACTS - Centre of Advanced
+            Computer Training and Studies. All rights reserved.
+          </p>
+          <p
+            style="
+              margin-top: 0.25rem;
+              font-size: 0.8rem;
+              color: var(--text-secondary);
+            "
+          >
+            First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+            Maharashtra 411023
+          </p>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <a href="../sitemap.html" style="color: var(--text-secondary)"
+            >Sitemap</a
+          >
+          <span style="color: var(--border)">|</span>
+          <a href="../privacy-policy.html" style="color: var(--text-secondary)"
+            >Privacy Policy</a
+          >
+          <span style="color: var(--border)">|</span>
+          <a
+            href="../terms-conditions.html"
+            style="color: var(--text-secondary)"
+            >Terms &amp; Conditions</a
+          >
+        </div>
+      </div>
+    </footer>
+    <div class="floating-ctas"></div>
+    <script src="../js/main.js"></script>
+  </body>
+</html>
