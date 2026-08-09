@@ -247,16 +247,22 @@ if (mcpContext && typeof mcpContext.registerTool === "function") {
     const resCtaLink = document.getElementById('res-cta-link');
 
     const trackData = {
-        'java': { base: 4.5, expMult: 1.8, name: 'Java Fullstack', link: 'java-fullstack-training.html', pos: 'Fullstack Spring Boot & React Microservices Engineer', outlook: '+18% YOY' },
-        'python': { base: 4.0, expMult: 1.6, name: 'Python Automation', link: 'python-training.html', pos: 'Python Developer & Automation Scripting Specialist', outlook: '+15% YOY' },
-        'react': { base: 4.2, expMult: 1.7, name: 'React JS', link: 'react-js-training.html', pos: 'Modern Frontend & React 19 Application Developer', outlook: '+16% YOY' },
-        'mobile': { base: 4.8, expMult: 1.9, name: 'React Native', link: 'react-native-training.html', pos: 'Cross-Platform iOS & Android Mobile Engineer', outlook: '+20% YOY' },
-        'ai': { base: 6.0, expMult: 2.4, name: 'AI & Machine Learning', link: 'ai-ml-training.html', pos: 'AI Application & RAG Pipeline Engineer', outlook: '+34% YOY' },
-        'data-eng': { base: 5.5, expMult: 2.2, name: 'Data Engineering', link: 'data-engineering-training.html', pos: 'Apache Spark & Data Lake Pipeline Architect', outlook: '+28% YOY' },
-        'devops': { base: 5.2, expMult: 2.1, name: 'DevOps & Cloud', link: 'devops-training.html', pos: 'Cloud Native Kubernetes & Terraform DevOps Architect', outlook: '+22% YOY' },
-        'powerbi': { base: 4.0, expMult: 1.5, name: 'Power BI Analytics', link: 'power-bi-training.html', pos: 'BI Analytics & DAX Dashboard Specialist', outlook: '+14% YOY' },
-        'testing': { base: 3.8, expMult: 1.5, name: 'Software Testing', link: 'software-testing-training.html', pos: 'SDET & Selenium Test Automation Engineer', outlook: '+12% YOY' },
-        'architect': { base: 12.0, expMult: 2.8, name: 'Software Architecture', link: 'software-architect-training.html', pos: 'Enterprise Distributed Systems Architect', outlook: '+25% YOY' }
+        'java': { base: 4.5, expMult: 1.8, name: 'Java Fullstack', link: '../courses/java-fullstack/', pos: 'Fullstack Spring Boot & React Microservices Engineer', outlook: '+18% YOY' },
+        'full-stack': { base: 4.5, expMult: 1.8, name: 'MERN Full Stack', link: '../courses/full-stack/', pos: 'Fullstack Node.js & React Developer', outlook: '+18% YOY' },
+        'python': { base: 4.0, expMult: 1.6, name: 'Python Automation', link: '../courses/python/', pos: 'Python Developer & Automation Scripting Specialist', outlook: '+15% YOY' },
+        'react': { base: 4.2, expMult: 1.7, name: 'React JS', link: '../courses/react-js/', pos: 'Modern Frontend & React 19 Application Developer', outlook: '+16% YOY' },
+        'mobile': { base: 4.8, expMult: 1.9, name: 'React Native', link: '../courses/react-native/', pos: 'Cross-Platform iOS & Android Mobile Engineer', outlook: '+20% YOY' },
+        'ai': { base: 6.0, expMult: 2.4, name: 'AI & Machine Learning', link: '../courses/ai-ml/', pos: 'AI Application & RAG Pipeline Engineer', outlook: '+34% YOY' },
+        'ai-red-teaming': { base: 6.5, expMult: 2.5, name: 'AI Red Teaming & Security', link: '../courses/ai-red-teaming/', pos: 'AI Red Teamer & LLM Security Specialist', outlook: '+38% YOY' },
+        'data-science': { base: 5.5, expMult: 2.2, name: 'Data Science', link: '../courses/data-science/', pos: 'Data Scientist & Predictive Analytics Engineer', outlook: '+26% YOY' },
+        'data-eng': { base: 5.5, expMult: 2.2, name: 'Data Engineering', link: '../courses/data-engineering/', pos: 'Apache Spark & Data Lake Pipeline Architect', outlook: '+28% YOY' },
+        'devops': { base: 5.2, expMult: 2.1, name: 'DevOps & Cloud', link: '../courses/devops/', pos: 'Cloud Native Kubernetes & Terraform DevOps Architect', outlook: '+22% YOY' },
+        'cloud': { base: 5.5, expMult: 2.2, name: 'Cloud Architecture', link: '../courses/cloud/', pos: 'Multi-Cloud AWS & Azure Solutions Architect', outlook: '+24% YOY' },
+        'powerbi': { base: 4.0, expMult: 1.5, name: 'Power BI Analytics', link: '../courses/power-bi/', pos: 'BI Analytics & DAX Dashboard Specialist', outlook: '+14% YOY' },
+        'testing': { base: 3.8, expMult: 1.5, name: 'Software Testing', link: '../courses/software-testing/', pos: 'SDET & Selenium Test Automation Engineer', outlook: '+12% YOY' },
+        'cybersecurity': { base: 5.0, expMult: 2.0, name: 'Cybersecurity Operations', link: '../courses/cybersecurity/', pos: 'Cybersecurity Analyst & SOC Operations Engineer', outlook: '+22% YOY' },
+        'blockchain': { base: 6.2, expMult: 2.4, name: 'Blockchain Development', link: '../courses/blockchain/', pos: 'Web3 & Solidity Smart Contract Developer', outlook: '+30% YOY' },
+        'architect': { base: 12.0, expMult: 2.8, name: 'Software Architecture', link: '../courses/software-architect/', pos: 'Enterprise Distributed Systems Architect', outlook: '+25% YOY' }
     };
 
     function updateSalaryCalculator() {
