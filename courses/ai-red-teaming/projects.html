@@ -1,0 +1,1182 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>
+    AI Red Teaming Project Ideas | Network Defense &amp; Logs | CACTS
+  </title>
+  <meta
+    content="Explore practical AI Red Teaming project ideas for students. Learn to configure firewall security policies, monitor LLM prompt interaction logs, and detect attacks."
+    name="description" />
+  <meta content="index, follow" name="robots" />
+  <link href="https://cactslearn.github.io/courses/ai-red-teaming/projects.html" rel="canonical" />
+  <!-- CSS Links -->
+  <link href="../../css/style.css" rel="stylesheet" />
+  <link href="../../css/course-details.css" rel="stylesheet" />
+  <!-- Structured JSON-LD Schema Markup -->
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI Red Teaming Project Ideas | Network Defense & Logs | CACTS",
+        "description": "Explore practical AI Red Teaming project ideas for students. Learn to configure firewall security policies, monitor LLM prompt interaction logs, and detect attacks.",
+        "author": {
+          "@type": "Person",
+          "name": "Hambirrao P",
+          "url": "https://cactslearn.github.io/about.html#hambirrao",
+          "sameAs": ["https://www.linkedin.com/in/hambirrao/"]
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "CACTS - Centre of Advanced Computer Training and Studies",
+          "alternateName": [
+            "CACTS",
+            "CACTS Institute",
+            "CACTS Software Training",
+            "CACTS Pune",
+            "CACTS Learning",
+            "CACTS IT Academy",
+            "Centre of Advanced Computer Training and Studies"
+          ],
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://cactslearn.github.io/images/cacts-logo.png"
+          }
+        },
+        "mainEntityOfPage": "https://cactslearn.github.io/courses/ai-red-teaming/projects.html"
+      }
+    </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What real production projects will I build during the AI Red Teaming lab?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You will build end-to-end production systems using Microsoft PyRIT, OWASP LLM Top 10, NVIDIA Garak, NeMo Guardrails, Prompt Injection, Python, starting from architecture blueprints to live staging server deployments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are student projects deployed on live cloud servers with public links?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every project is committed to your personal public GitHub portfolio and deployed to live staging environments so recruiters can verify your working application."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do portfolio projects help in clearing technical screening interviews?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Live project links and clean GitHub commit graphs serve as undeniable proof of engineering capability, allowing you to walk interviewers through actual production code during technical discussions."
+      }
+    }
+  ]
+}
+</script>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://cactslearn.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Courses",
+            "item": "https://cactslearn.github.io/courses/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AI Red Teaming Training",
+            "item": "https://cactslearn.github.io/courses/ai-red-teaming/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Project Ideas",
+            "item": "https://cactslearn.github.io/courses/ai-red-teaming/projects.html"
+          }
+        ]
+      }
+    </script>
+  <!-- Open Graph (OG) & Twitter Card Social Tags -->
+  <meta content="AI Red Teaming Project Ideas | Network Defense &amp; Logs | CACTS" property="og:title" />
+  <meta
+    content="Explore practical AI Red Teaming project ideas for students. Learn to configure firewall security policies, monitor LLM prompt interaction logs, and detect attacks."
+    property="og:description" />
+  <meta content="website" property="og:type" />
+  <meta content="https://cactslearn.github.io/courses/ai-red-teaming/projects.html" property="og:url" />
+  <meta content="https://cactslearn.github.io/images/cacts-og-banner.jpg" property="og:image" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="AI Red Teaming Project Ideas | Network Defense &amp; Logs | CACTS" name="twitter:title" />
+  <meta
+    content="Explore practical AI Red Teaming project ideas for students. Learn to configure firewall security policies, monitor LLM prompt interaction logs, and detect attacks."
+    name="twitter:description" />
+  <meta content="https://cactslearn.github.io/images/cacts-og-banner.jpg" name="twitter:image" />
+</head>
+
+<body>
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="../../index.html">
+          <span>CACTS</span>
+        </a>
+      </div>
+      <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
+        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" style="vertical-align: middle" viewbox="0 0 24 24" width="24">
+          <line x1="3" x2="21" y1="12" y2="12"></line>
+          <line x1="3" x2="21" y1="6" y2="6"></line>
+          <line x1="3" x2="21" y1="18" y2="18"></line>
+        </svg>
+      </button>
+      <nav aria-label="Main Navigation" class="nav-links">
+        <a href="../../index.html">Home</a>
+        <a href="../../about.html">About</a>
+        <a href="../../showcase/internship-on-live-projects.html">Live Internship</a>
+        <a href="../../courses/index.html">1-to-1 Model</a>
+        <a href="../../tools/free-career-guidance.html">Career Guidance</a>
+        <a href="../../reviews.html">Reviews</a>
+        <a href="../../faqs.html">FAQs</a>
+        <button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle">
+          <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" style="display: block" viewbox="0 0 24 24" width="20">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" x2="12" y1="1" y2="3"></line>
+            <line x1="12" x2="12" y1="21" y2="23"></line>
+            <line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+            <line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+            <line x1="1" x2="3" y1="12" y2="12"></line>
+            <line x1="21" x2="23" y1="12" y2="12"></line>
+            <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+            <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" style="display: none" viewbox="0 0 24 24" width="20">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a class="btn btn-accent" href="../../contact.html" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
+      </nav>
+    </div>
+  </header>
+  <!-- Main Content -->
+  <main>
+    <!-- Course Hero Section -->
+    <section aria-labelledby="course-h1" class="course-hero">
+      <nav aria-label="Breadcrumb" style="
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+          ">
+        <a href="../../index.html" style="color: var(--accent)">Home</a> &gt;
+        <a href="../index.html" style="color: var(--accent)">Courses</a> &gt;
+        <a href="index.html" style="color: var(--accent)">AI Red Teaming</a>
+        &gt; <span style="color: var(--text-primary)">Project Ideas</span>
+      </nav>
+      <div class="grid-2">
+        <div>
+          <span class="course-badge">1-to-1 Personal Mentorship</span>
+          <h1 id="course-h1">AI Red Teaming Project Ideas</h1>
+          <p style="
+                font-size: 1.2rem;
+                color: var(--text-secondary);
+                margin-top: 1rem;
+              ">
+            Defending Systems: Configuring Firewalls, Network Monitoring, and
+            Log Analysis
+          </p>
+          <div class="course-meta-tags">
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>12 Weeks</span>
+            </div>
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>₹34,999 (Value-Driven Pricing)</span>
+            </div>
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                </path>
+              </svg>
+              <span>Shivane, Pune &amp; Online</span>
+            </div>
+          </div>
+          <!-- AEO Answer-First Callout (Optimized for AI Search Engines) -->
+          <div style="
+                background: rgba(255, 255, 255, 0.03);
+                border-left: 3px solid var(--accent);
+                padding: 0.85rem 1.25rem;
+                border-radius: 4px;
+                margin: 1.5rem 0;
+                font-size: 0.92rem;
+                line-height: 1.5;
+                color: var(--text-secondary);
+              ">
+            <strong>Lab Overview:</strong> Everyone is selling AI magic. We
+            teach the code that makes AI possible. If you want a classroom
+            with a certificate, the traditional institutes are waiting for
+            you. If you want to ship production code, you come here. Reserve a
+            seat in the lab. We bypass mass-classroom lecture batches to focus
+            on 1-to-1 code execution.
+          </div>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+            <a class="btn btn-accent"
+              href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20the%201-to-1%20AI Red Teaming%20Training%20training."
+              target="_blank">
+              WhatsApp Inquiry
+            </a>
+            <a class="btn btn-secondary"
+              href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20request%20a%20call%20back%20regarding%20the%201-to-1%20AI Red Teaming%20Training%20training."
+              target="_blank">Request Staging Project Review</a>
+          </div>
+        </div>
+        <div class="lead-form-container" id="register">
+          <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading)">
+            Apply for a Seat in the Lab
+          </h3>
+          <form class="lead-form" toolaction="submit"
+            tooldescription="Submits student name, phone, and course to book a free 1-to-1 demo."
+            toolname="book_one_to_one_trial">
+            <input name="course" type="hidden" value="AI Red Teaming Training" />
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input id="name" name="name" placeholder="John Doe" required="" type="text" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address (Optional)</label>
+              <input id="email" name="email" placeholder="john@example.com" type="email" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="phone" placeholder="+91 96655 66357" required="" type="tel" />
+            </div>
+            <div class="form-group">
+              <label for="experience">Your Experience Level</label>
+              <select id="experience" name="experience">
+                <option value="Student">Student / Fresher</option>
+                <option value="Working Professional">
+                  Working Professional
+                </option>
+                <option value="Career Switcher">Career Switcher</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" style="width: 100%" type="submit">
+              Submit Code Assessment Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- Course Sub-navigation Tabs -->
+    <div class="course-tabs-container">
+      <a class="tab-link" href="index.html">Overview</a><a class="tab-link" href="syllabus.html">Syllabus</a><a
+        class="tab-link" href="fees.html">Fees &amp; Options</a><a class="tab-link"
+        href="interview-questions.html">Interview Qs</a><a class="tab-link" href="roadmap.html">Roadmap</a><a
+        class="tab-link active" href="projects.html">Project Ideas</a><a class="tab-link" href="beginner.html">Beginner
+        Guide</a><a class="tab-link" href="certifications.html">Certifications</a><a class="tab-link"
+        href="comparison.html">Comparison</a>
+    </div>
+    <!-- Course Content & Info -->
+    <section aria-labelledby="details-heading" style="border-top: 1px solid var(--border)">
+      <div class="course-layout">
+        <div>
+          <h2 style="margin-bottom: 1.5rem">
+            Project Implementation Portfolios
+          </h2>
+          <p style="
+                font-size: 1.1rem;
+                color: var(--text-secondary);
+                margin-bottom: 2.5rem;
+              ">
+            Browse our structured blueprints and developer checklists for
+            building enterprise AI Red Teaming Training systems. Mapped
+            directly to CACTS 1-to-1 mentoring.
+          </p>
+          <div style="
+                background: rgba(20, 184, 166, 0.05);
+                border: 1px solid var(--accent);
+                border-radius: var(--border-radius);
+                padding: 2rem;
+                margin-top: 1rem;
+                margin-bottom: 3rem;
+              ">
+            <h3 style="
+                  color: var(--accent-light);
+                  margin-bottom: 1rem;
+                  font-family: var(--font-heading);
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                ">
+              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="20">
+                <path
+                  d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .5 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5">
+                </path>
+                <line x1="9" x2="15" y1="18" y2="18"></line>
+                <line x1="10" x2="14" y1="22" y2="22"></line>
+              </svg>Key Takeaways
+            </h3>
+            <ul style="
+                  color: var(--text-secondary);
+                  margin-left: 1.5rem;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.75rem;
+                ">
+              <li>
+                Use automated probing frameworks like PyRIT and NVIDIA Garak to test and
+                analyze LLM prompt interaction.
+              </li>
+              <li>
+                Set up open-source LLM Moderation Middleware platforms to aggregate and search
+                server security logs.
+              </li>
+              <li>
+                Configure firewalls and network access controls to enforce
+                defensive architectures.
+              </li>
+            </ul>
+          </div>
+          <div style="
+                margin-bottom: 2.5rem;
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: var(--border-radius);
+                padding: 2rem;
+              ">
+            <h3 style="
+                  font-size: 1.4rem;
+                  color: var(--text-primary);
+                  margin-bottom: 1rem;
+                  font-family: var(--font-heading);
+                ">
+              Project 1: Direct & Indirect Prompt Injection Audit
+            </h3>
+            <p style="
+                  color: var(--text-secondary);
+                  line-height: 1.7;
+                  font-size: 1rem;
+                  margin: 0;
+                ">
+              Execute direct and indirect prompt injection attacks to bypass LLM system instructions.
+              Identify unencrypted HTTP requests, trace DNS queries, and
+              detect unauthorized LLM vulnerability probing actions. Write a report
+              detailing how to secure the network against these
+              vulnerabilities.
+            </p>
+          </div>
+          <div style="
+                margin-bottom: 2.5rem;
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: var(--border-radius);
+                padding: 2rem;
+              ">
+            <h3 style="
+                  font-size: 1.4rem;
+                  color: var(--text-primary);
+                  margin-bottom: 1rem;
+                  font-family: var(--font-heading);
+                ">
+              Project 2: Automated AI Red Teaming Scans with PyRIT &amp; Garak
+            </h3>
+            <p style="
+                  color: var(--text-secondary);
+                  line-height: 1.7;
+                  font-size: 1rem;
+                  margin: 0;
+                ">
+              Configure a secure Linux (Ubuntu) server. Disable unused
+              services, configure UFW (Uncomplicated Firewall) rules, change
+              default SSH ports, and implement SSH key-based authentication.
+              Set up fail2ban to block IP addresses with repeated failed login
+              attempts.
+            </p>
+          </div>
+          <div style="
+                margin-bottom: 2.5rem;
+                background: var(--bg-card);
+                border: 1px solid var(--border);
+                border-radius: var(--border-radius);
+                padding: 2rem;
+              ">
+            <h3 style="
+                  font-size: 1.4rem;
+                  color: var(--text-primary);
+                  margin-bottom: 1rem;
+                  font-family: var(--font-heading);
+                ">
+              Project 3: GenAI Moderation Middleware &amp; NeMo Guardrails Setup
+            </h3>
+            <p style="
+                  color: var(--text-secondary);
+                  line-height: 1.7;
+                  font-size: 1rem;
+                  margin: 0;
+                ">
+              Install an open-source LLM Moderation Middleware tool (like Elastic Stack/Wazuh).
+              Direct system logs, authentication events, and firewall alerts
+              from separate virtual machines to the LLM Moderation Middleware dashboard, and write
+              alerts to trigger on unauthorized root logins.
+            </p>
+          </div>
+          <div style="margin-top: 4rem">
+            <h2 style="margin-bottom: 1.5rem">Project &amp; Syllabus FAQs</h2>
+            <div class="course-faqs-accordion">
+              <div class="curriculum-module">
+                <div class="module-header faq-header">
+                  <h4>What real production projects will I build during the AI Red Teaming lab?</h4>
+                  <span class="accordion-icon">+</span>
+                </div>
+                <div class="faq-content module-content">
+                  <div class="module-content-inner">
+                    <p style="color: var(--text-secondary); font-size: 0.95rem">
+                      You will build end-to-end production systems using PyRIT, OWASP LLM Top 10, NVIDIA Garak, NeMo
+                      Guardrails, Burp Suite,
+                      NeMo Guardrails, Linux, starting from architecture blueprints to live staging server deployments.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="curriculum-module">
+                <div class="module-header faq-header">
+                  <h4>Are student projects deployed on live cloud servers with public links?</h4>
+                  <span class="accordion-icon">+</span>
+                </div>
+                <div class="faq-content module-content">
+                  <div class="module-content-inner">
+                    <p style="color: var(--text-secondary); font-size: 0.95rem">
+                      Yes. Every project is committed to your personal public GitHub portfolio and deployed to live
+                      staging environments so recruiters can verify your working application.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="curriculum-module">
+                <div class="module-header faq-header">
+                  <h4>How do portfolio projects help in clearing technical screening interviews?</h4>
+                  <span class="accordion-icon">+</span>
+                </div>
+                <div class="faq-content module-content">
+                  <div class="module-content-inner">
+                    <p style="color: var(--text-secondary); font-size: 0.95rem">
+                      Live project links and clean GitHub commit graphs serve as undeniable proof of engineering
+                      capability, allowing you to walk interviewers through actual production code during technical
+                      discussions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <aside class="pricing-sidebar-card">
+          <div class="price-display">
+            <span class="price-label">Program Fee (All-inclusive)</span>
+            <div class="price-value">₹34,999</div>
+            <span class="price-sub">Value-Driven &amp; Affordable IT Training</span>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>1-to-1 Live Virtual Mentorship</span>
+            </li>
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Personalized Dynamic Pace</span>
+            </li>
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Direct Trainer Screensharing</span>
+            </li>
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Real Company Project Internship</span>
+            </li>
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>No Rigid Batch Bindings</span>
+            </li>
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>Individual Project Review Loop</span>
+            </li>
+          </ul>
+          <div class="pricing-cta">
+            <a class="btn btn-accent"
+              href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20enrolling%20for%201-to-1%20AI Red Teaming%20Training%20training."
+              style="width: 100%; text-align: center; color: #0b0f19" target="_blank">
+              Enroll via WhatsApp
+            </a>
+            <a class="btn btn-secondary" href="../../contact.html?course=AI Red Teaming%20Training"
+              style="width: 100%; text-align: center; margin-top: 0.75rem">
+              Request Free Trial Demo
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+    <!-- Student Testimonials / Reviews -->
+    <section aria-labelledby="reviews-heading" style="border-top: 1px solid var(--border); padding-top: 3rem">
+      <h2 class="section-title" id="reviews-heading">
+        Student Success Stories
+      </h2>
+      <p class="section-subtitle">
+        Real feedback from students who completed our 1-to-1 virtual
+        AI Red Teaming Training training.
+      </p>
+      <div class="grid-3" style="margin-top: 3rem">
+        <div class="card" style="
+              padding: 2rem;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            ">
+          <div style="
+                display: flex;
+                gap: 0.25rem;
+                align-items: center;
+                margin-bottom: 1rem;
+              ">
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+          </div>
+          <p style="
+                font-style: italic;
+                color: var(--text-secondary);
+                margin-bottom: 1.5rem;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                flex-grow: 1;
+              ">
+            "The AI Red Teaming lab at CACTS is outstanding. The 1-to-1 virtual session format allowed me to execute
+            direct and indirect prompt injection attacks, bypass LLM guardrails like NeMo, and test OWASP Top 10 for LLM
+            vulnerabilities on active staging applications."
+          </p>
+          <div style="
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+              ">
+            <div>
+              <h4 style="
+                    color: var(--primary-light);
+                    margin: 0;
+                    font-size: 1rem;
+                  ">
+                Akash P.
+              </h4>
+              <span style="font-size: 0.8rem; color: var(--text-secondary)">AI Security Analyst, Kharadi, Pune</span>
+            </div>
+            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" style="
+                  color: var(--accent);
+                  text-decoration: none;
+                  font-size: 0.75rem;
+                  font-weight: 500;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 0.25rem;
+                  white-space: nowrap;
+                " target="_blank">
+              Verify Review ↗
+            </a>
+          </div>
+        </div>
+        <div class="card" style="
+              padding: 2rem;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            ">
+          <div style="
+                display: flex;
+                gap: 0.25rem;
+                align-items: center;
+                margin-bottom: 1rem;
+              ">
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+          </div>
+          <p style="
+                font-style: italic;
+                color: var(--text-secondary);
+                margin-bottom: 1.5rem;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                flex-grow: 1;
+              ">
+            "Learned offensive AI security, prompt injection payloads, and RAG data exfiltration defense in a practical
+            1-to-1 environment. My mentor demonstrated how to hijack multi-agent workflows and build custom moderation
+            guardrails line-by-line."
+          </p>
+          <div style="
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+              ">
+            <div>
+              <h4 style="
+                    color: var(--primary-light);
+                    margin: 0;
+                    font-size: 1rem;
+                  ">
+                Tanvi S.
+              </h4>
+              <span style="font-size: 0.8rem; color: var(--text-secondary)">LLM Security Researcher, Baner, Pune</span>
+            </div>
+            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" style="
+                  color: var(--accent);
+                  text-decoration: none;
+                  font-size: 0.75rem;
+                  font-weight: 500;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 0.25rem;
+                  white-space: nowrap;
+                " target="_blank">
+              Verify Review ↗
+            </a>
+          </div>
+        </div>
+        <div class="card" style="
+              padding: 2rem;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+            ">
+          <div style="
+                display: flex;
+                gap: 0.25rem;
+                align-items: center;
+                margin-bottom: 1rem;
+              ">
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+              viewbox="0 0 24 24" width="14">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
+            </svg>
+          </div>
+          <p style="
+                font-style: italic;
+                color: var(--text-secondary);
+                margin-bottom: 1.5rem;
+                font-size: 0.95rem;
+                line-height: 1.6;
+                flex-grow: 1;
+              ">
+            "I needed hands-on experience auditing GenAI applications and AI agents. We used Microsoft PyRIT and NVIDIA
+            Garak to automate vulnerability scans and build defense middleware. The trainer's practical AI security
+            experience was evident throughout."
+          </p>
+          <div style="
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+              ">
+            <div>
+              <h4 style="
+                    color: var(--primary-light);
+                    margin: 0;
+                    font-size: 1rem;
+                  ">
+                Gaurav H.
+              </h4>
+              <span style="font-size: 0.8rem; color: var(--text-secondary)">Application Security Audit Specialist,
+                Kothrud, Pune</span>
+            </div>
+            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" style="
+                  color: var(--accent);
+                  text-decoration: none;
+                  font-size: 0.75rem;
+                  font-weight: 500;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 0.25rem;
+                  white-space: nowrap;
+                " target="_blank">
+              Verify Review ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-programs-row">
+        <h4 style="
+              color: var(--text-primary);
+              margin-bottom: 1.5rem;
+              font-size: 1rem;
+              font-weight: 700;
+              letter-spacing: 0.5px;
+              text-transform: uppercase;
+            ">
+          Engineering Labs &amp; Programs
+        </h4>
+        <ul class="footer-programs-grid">
+          <li>
+            <a href="../java-fullstack/index.html">Java Fullstack Training</a>
+          </li>
+          <li>
+            <a href="../full-stack/index.html">Full Stack Web (MERN)</a>
+          </li>
+          <li><a href="../react-js/index.html">React JS Development</a></li>
+          <li>
+            <a href="../react-native/index.html">React Native Mobile</a>
+          </li>
+          <li><a href="../ai-ml/index.html">AI &amp; Machine Learning</a></li>
+          <li>
+            <a href="../data-science/index.html">Data Science Analytics</a>
+          </li>
+          <li>
+            <a href="../data-engineering/index.html">Data Engineering ETL</a>
+          </li>
+          <li><a href="../python/index.html">Python Scripting Lab</a></li>
+          <li><a href="../devops/index.html">DevOps Engineering</a></li>
+          <li>
+            <a href="../cloud/index.html">Cloud Systems Architecture</a>
+          </li>
+          <li><a href="../power-bi/index.html">Power BI Analytics</a></li>
+          <li>
+            <a href="../software-testing/index.html">Software Testing Lab</a>
+          </li>
+          <li><a href="index.html">AI Red Teaming</a></li>
+          <li>
+            <a href="../blockchain/index.html">Blockchain Development</a>
+          </li>
+          <li>
+            <a href="../software-architect/index.html">Software Architect Lab</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-brand">
+        <a href="../../index.html" style="
+              font-family: var(--font-heading);
+              font-size: 1.5rem;
+              font-weight: 800;
+              color: white;
+            ">CACTS</a>
+        <p>
+          Centre of Advanced Computer Training and Studies. Providing
+          practical, one-to-one virtual software training and internships on
+          real company projects since 2012.
+        </p>
+        <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem">
+          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect height="12" width="4" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+              </path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Institutional Links</h4>
+        <ul style="list-style: none">
+          <li><a href="../../about.html">About CACTS</a></li>
+          <li><a href="../../jobs/index.html">Current Openings</a></li>
+          <li>
+            <a href="../../showcase/internship-on-live-projects.html">Live Projects Internship</a>
+          </li>
+          <li>
+            <a href="../../courses/index.html">1-to-1 Mentoring Model</a>
+          </li>
+          <li>
+            <a href="../../comparisons/cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a>
+          </li>
+          <li>
+            <a href="../../tools/free-career-guidance.html">Free Career Guidance</a>
+          </li>
+          <li><a href="../../reviews.html">Success Reviews</a></li>
+          <li><a href="../../faqs.html">Institutional FAQs</a></li>
+          <li><a href="../../contact.html">Contact Us</a></li>
+          <li>
+            <a href="../../locations/pune.html">Software Training Pune</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Learning Portals</h4>
+        <ul style="list-style: none">
+          <li>
+            <a href="../../tools/free-skill-assessment.html">Skill Assessment</a>
+          </li>
+          <li>
+            <a href="../../tools/course-recommendation-quiz.html">Course Finder Quiz</a>
+          </li>
+          <li>
+            <a href="../../tools/career-roadmaps.html">Career Roadmaps</a>
+          </li>
+          <li>
+            <a href="../../showcase/student-projects.html">Student Projects</a>
+          </li>
+          <li>
+            <a href="../../showcase/internship-showcase.html">Internship Showcase</a>
+          </li>
+          <li>
+            <a href="../../showcase/project-portfolios.html">Project Portfolios</a>
+          </li>
+          <li>
+            <a href="../../comparisons/technology-comparisons.html">Tech Comparisons</a>
+          </li>
+          <li>
+            <a href="../../tools/free-learning-resources.html">Free Resources</a>
+          </li>
+          <li>
+            <a href="../../guides/technology-career-guides.html">Career Guides</a>
+          </li>
+          <li>
+            <a href="../../tools/live-code-compiler.html">Live Code &amp; Syntax Validator</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact CACTS</h4>
+        <p style="margin-bottom: 0.5rem">
+          First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+          Maharashtra 411023
+        </p>
+        <p style="margin-bottom: 0.5rem">
+          <strong>Phone:</strong> +91 96655 66357
+        </p>
+        <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
+      </div>
+    </div>
+    <!-- Trust Credentials & Accreditations -->
+    <div style="
+          border-top: 1px solid var(--border);
+          padding: 1.5rem 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 2rem;
+          flex-wrap: wrap;
+          margin-top: 2rem;
+        ">
+      <div style="
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+          ">
+        <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong>
+        Our curricula and git code review models are designed in alignment
+        with ISO 29993:2017 standards for non-formal education training and
+        software engineering industry practices. *Self-declared alignment for
+        educational service quality.
+      </div>
+      <div style="
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            opacity: 0.75;
+            flex-wrap: wrap;
+          ">
+        <!-- ISO Compliant Badge -->
+        <div style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--accent-light);
+              cursor: help;
+            "
+          title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers.">
+          <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          ISO 29993:2017 ALIGNED*
+        </div>
+        <!-- Developer Led Badge -->
+        <div style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--primary-light);
+            ">
+          <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
+            <line x1="2" x2="22" y1="20" y2="20"></line>
+            <line x1="12" x2="12" y1="17" y2="20"></line>
+          </svg>
+          100% DEVELOPER LED
+        </div>
+        <!-- Reg Badge -->
+        <div style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--warning);
+            ">
+          <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
+            <line x1="9" x2="9" y1="22" y2="16"></line>
+            <line x1="15" x2="15" y1="22" y2="16"></line>
+            <line x1="9" x2="15" y1="16" y2="16"></line>
+            <path d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm6-8h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"></path>
+          </svg>
+          ESTD. 2012 IN PUNE
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="text-align: left">
+        <p>
+          © <span id="footer-year">2026</span> CACTS - Centre of Advanced
+          Computer Training and Studies. All rights reserved.
+        </p>
+        <p style="
+              margin-top: 0.25rem;
+              font-size: 0.8rem;
+              color: var(--text-secondary);
+            ">
+          First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+          Maharashtra 411023
+        </p>
+      </div>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+        <a href="../../sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
+        <span style="color: var(--border)">|</span>
+        <a href="../../privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
+        <span style="color: var(--border)">|</span>
+        <a href="../../terms-conditions.html" style="color: var(--text-secondary)">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating Contacts -->
+  <div class="floating-ctas">
+    <a aria-label="Chat on WhatsApp" class="cta-circle cta-whatsapp"
+      href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20have%20an%20inquiry%20regarding%20the%201-to-1%20AI Red Teaming%20Training%20training."
+      target="_blank">
+      <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+        stroke-width="2.5" style="vertical-align: middle; transform: translateY(-1px)" viewbox="0 0 24 24" width="24">
+        <path
+          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+        </path>
+      </svg>
+    </a>
+    <a aria-label="Call CACTS" class="cta-circle cta-call" href="tel:+919665566357">
+      <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+        stroke-width="2.5" style="vertical-align: middle" viewbox="0 0 24 24" width="20">
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+        </path>
+      </svg>
+    </a>
+  </div>
+  <!-- Script Links -->
+  <script src="../../js/main.js"></script>
+</body>
+
+</html>

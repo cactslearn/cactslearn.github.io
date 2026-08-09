@@ -1,163 +1,161 @@
 <!doctype html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Software Career Reality &amp; Skill Diagnostic | CACTS Pune</title>
-    <meta
-      content="Take our free 3-minute diagnostic to assess your logic readiness, math background, and time commitment for software development careers."
-      name="description"
-    />
-    <meta content="index, follow" name="robots" />
-    <link
-      href="https://cactslearn.github.io/tools/course-readiness-check.html"
-      rel="canonical"
-    />
-    <link href="../css/style.css" rel="stylesheet" />
-    <style>
-      .quiz-container {
-        max-width: 650px;
-        margin: 3rem auto;
-        background: var(--bg-card);
-        border: 1px solid var(--border);
-        border-radius: var(--border-radius);
-        padding: 2.5rem;
-        position: relative;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Software Career Reality &amp; Skill Diagnostic | CACTS Pune</title>
+  <meta
+    content="Take our free 3-minute diagnostic to assess your logic readiness, math background, and time commitment for software development careers."
+    name="description" />
+  <meta content="index, follow" name="robots" />
+  <link href="https://cactslearn.github.io/tools/course-readiness-check.html" rel="canonical" />
+  <link href="../css/style.css" rel="stylesheet" />
+  <style>
+    .quiz-container {
+      max-width: 650px;
+      margin: 3rem auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 2.5rem;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .quiz-progress-bar {
+      height: 4px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      width: 20%;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      transition: width 0.4s ease;
+    }
+
+    .quiz-step {
+      display: none;
+    }
+
+    .quiz-step.active {
+      display: block;
+      animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
       }
 
-      .quiz-progress-bar {
-        height: 4px;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 2px;
-        margin-bottom: 2rem;
-        overflow: hidden;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      .quiz-progress-fill {
-        height: 100%;
-        width: 20%;
-        background: linear-gradient(90deg, var(--primary), var(--accent));
-        transition: width 0.4s ease;
-      }
+    .quiz-question {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      font-family: var(--font-heading);
+    }
 
-      .quiz-step {
-        display: none;
-      }
+    .quiz-options {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
 
-      .quiz-step.active {
-        display: block;
-        animation: fadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      }
+    .quiz-option {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem 1.5rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--text-secondary);
+    }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-          transform: translateY(10px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
+    .quiz-option:hover {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: var(--border-hover);
+      color: var(--text-primary);
+    }
 
-      .quiz-question {
-        font-size: 1.4rem;
-        margin-bottom: 1.5rem;
-        color: var(--text-primary);
-        font-family: var(--font-heading);
-      }
+    .quiz-option.selected {
+      background: var(--accent-glow);
+      border-color: var(--accent);
+      color: var(--text-primary);
+      box-shadow: inset 0 0 10px rgba(20, 184, 166, 0.05);
+    }
 
-      .quiz-options {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-      }
+    .quiz-option-radio {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
 
-      .quiz-option {
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 1.1rem 1.5rem;
-        cursor: pointer;
-        transition: var(--transition);
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        color: var(--text-secondary);
-      }
+    .quiz-option.selected .quiz-option-radio {
+      border-color: var(--accent);
+      background: var(--accent);
+    }
 
-      .quiz-option:hover {
-        background: rgba(255, 255, 255, 0.04);
-        border-color: var(--border-hover);
-        color: var(--text-primary);
-      }
+    .quiz-option-radio::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: var(--bg-main);
+      border-radius: 50%;
+      display: none;
+    }
 
-      .quiz-option.selected {
-        background: var(--accent-glow);
-        border-color: var(--accent);
-        color: var(--text-primary);
-        box-shadow: inset 0 0 10px rgba(20, 184, 166, 0.05);
-      }
+    .quiz-option.selected .quiz-option-radio::after {
+      display: block;
+    }
 
-      .quiz-option-radio {
-        width: 20px;
-        height: 20px;
-        border: 2px solid var(--border);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-      }
+    .quiz-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+    }
 
-      .quiz-option.selected .quiz-option-radio {
-        border-color: var(--accent);
-        background: var(--accent);
-      }
+    .quiz-results-card {
+      display: none;
+      text-align: center;
+      animation: fadeIn 0.6s ease forwards;
+    }
 
-      .quiz-option-radio::after {
-        content: "";
-        width: 8px;
-        height: 8px;
-        background: var(--bg-main);
-        border-radius: 50%;
-        display: none;
-      }
-
-      .quiz-option.selected .quiz-option-radio::after {
-        display: block;
-      }
-
-      .quiz-buttons {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 2rem;
-        border-top: 1px solid var(--border);
-        padding-top: 1.5rem;
-      }
-
-      .quiz-results-card {
-        display: none;
-        text-align: center;
-        animation: fadeIn 0.6s ease forwards;
-      }
-
-      .results-badge {
-        display: inline-block;
-        padding: 0.35rem 0.75rem;
-        background: var(--accent-glow);
-        border: 1px solid var(--accent);
-        color: var(--accent-light);
-        font-size: 0.85rem;
-        font-weight: 600;
-        border-radius: 20px;
-        margin-bottom: 1.5rem;
-      }
-    </style>
-    <script type="application/ld+json">
+    .results-badge {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      background: var(--accent-glow);
+      border: 1px solid var(--accent);
+      color: var(--accent-light);
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebApplication",
@@ -183,38 +181,21 @@
         "alternateName": ["Software Career Reality & Skill Diagnostic"]
       }
     </script>
-    <!-- Open Graph (OG) & Twitter Card Social Tags -->
-    <meta
-      content="Software Career Reality &amp; Skill Diagnostic | CACTS Pune"
-      property="og:title"
-    />
-    <meta
-      content="Take our free 3-minute diagnostic to assess your logic readiness, math background, and time commitment for software development careers."
-      property="og:description"
-    />
-    <meta content="website" property="og:type" />
-    <meta
-      content="https://cactslearn.github.io/tools/course-readiness-check.html"
-      property="og:url"
-    />
-    <meta
-      content="https://cactslearn.github.io/images/cacts-og-banner.jpg"
-      property="og:image"
-    />
-    <meta content="summary_large_image" name="twitter:card" />
-    <meta
-      content="Software Career Reality &amp; Skill Diagnostic | CACTS Pune"
-      name="twitter:title"
-    />
-    <meta
-      content="Take our free 3-minute diagnostic to assess your logic readiness, math background, and time commitment for software development careers."
-      name="twitter:description"
-    />
-    <meta
-      content="https://cactslearn.github.io/images/cacts-og-banner.jpg"
-      name="twitter:image"
-    />
-    <script type="application/ld+json">
+  <!-- Open Graph (OG) & Twitter Card Social Tags -->
+  <meta content="Software Career Reality &amp; Skill Diagnostic | CACTS Pune" property="og:title" />
+  <meta
+    content="Take our free 3-minute diagnostic to assess your logic readiness, math background, and time commitment for software development careers."
+    property="og:description" />
+  <meta content="website" property="og:type" />
+  <meta content="https://cactslearn.github.io/tools/course-readiness-check.html" property="og:url" />
+  <meta content="https://cactslearn.github.io/images/cacts-og-banner.jpg" property="og:image" />
+  <meta content="summary_large_image" name="twitter:card" />
+  <meta content="Software Career Reality &amp; Skill Diagnostic | CACTS Pune" name="twitter:title" />
+  <meta
+    content="Take our free 3-minute diagnostic to assess your logic readiness, math background, and time commitment for software development careers."
+    name="twitter:description" />
+  <meta content="https://cactslearn.github.io/images/cacts-og-banner.jpg" name="twitter:image" />
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -234,406 +215,295 @@
         ]
       }
     </script>
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="nav-container">
-        <div class="logo">
-          <a href="../index.html">
-            <span>CACTS</span>
-          </a>
-        </div>
-        <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
-          <svg
-            fill="none"
-            height="24"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            style="vertical-align: middle"
-            viewbox="0 0 24 24"
-            width="24"
-          >
-            <line x1="3" x2="21" y1="12" y2="12"></line>
-            <line x1="3" x2="21" y1="6" y2="6"></line>
-            <line x1="3" x2="21" y1="18" y2="18"></line>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="../index.html">
+          <span>CACTS</span>
+        </a>
+      </div>
+      <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
+        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" style="vertical-align: middle" viewbox="0 0 24 24" width="24">
+          <line x1="3" x2="21" y1="12" y2="12"></line>
+          <line x1="3" x2="21" y1="6" y2="6"></line>
+          <line x1="3" x2="21" y1="18" y2="18"></line>
+        </svg>
+      </button>
+      <nav aria-label="Main Navigation" class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../showcase/internship-on-live-projects.html">Live Internship</a>
+        <a href="../courses/index.html">1-to-1 Model</a>
+        <a href="free-career-guidance.html">Career Guidance</a>
+        <a href="../reviews.html">Reviews</a>
+        <a href="../faqs.html">FAQs</a>
+        <button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle">
+          <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" style="display: block" viewbox="0 0 24 24" width="20">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" x2="12" y1="1" y2="3"></line>
+            <line x1="12" x2="12" y1="21" y2="23"></line>
+            <line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+            <line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+            <line x1="1" x2="3" y1="12" y2="12"></line>
+            <line x1="21" x2="23" y1="12" y2="12"></line>
+            <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+            <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" style="display: none" viewbox="0 0 24 24" width="20">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <nav aria-label="Main Navigation" class="nav-links">
-          <a href="../index.html">Home</a>
-          <a href="../about.html">About</a>
-          <a href="../showcase/internship-on-live-projects.html"
-            >Live Internship</a
-          >
-          <a href="../courses/index.html">1-to-1 Model</a>
-          <a href="free-career-guidance.html">Career Guidance</a>
-          <a href="../reviews.html">Reviews</a>
-          <a href="../faqs.html">FAQs</a>
-          <button
-            aria-label="Toggle Theme"
-            class="theme-toggle-btn"
-            id="theme-toggle"
-          >
-            <svg
-              class="sun-icon"
-              fill="none"
-              height="20"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              style="display: block"
-              viewbox="0 0 24 24"
-              width="20"
-            >
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" x2="12" y1="1" y2="3"></line>
-              <line x1="12" x2="12" y1="21" y2="23"></line>
-              <line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
-              <line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
-              <line x1="1" x2="3" y1="12" y2="12"></line>
-              <line x1="21" x2="23" y1="12" y2="12"></line>
-              <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
-              <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
-            </svg>
-            <svg
-              class="moon-icon"
-              fill="none"
-              height="20"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              style="display: none"
-              viewbox="0 0 24 24"
-              width="20"
-            >
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button>
-          <a
-            class="btn btn-accent"
-            href="../contact.html"
-            style="padding: 0.5rem 1rem; color: #0b0f19"
-            >Book Demo</a
-          >
-        </nav>
-      </div>
-    </header>
-    <main style="padding-top: 8rem">
-      <section aria-labelledby="readiness-h1" class="tech-section">
-        <nav
-          aria-label="Breadcrumb"
-          style="
+        <a class="btn btn-accent" href="../contact.html" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
+      </nav>
+    </div>
+  </header>
+  <main style="padding-top: 8rem">
+    <section aria-labelledby="readiness-h1" class="tech-section">
+      <nav aria-label="Breadcrumb" style="
             margin-bottom: 2rem;
             font-size: 0.85rem;
             color: var(--text-secondary);
-          "
-        >
-          <a href="../index.html" style="color: var(--accent)">Home</a> &gt;
-          <span style="color: var(--text-primary)"
-            >Software Career Reality &amp; Skill Diagnostic</span
-          >
-        </nav>
-        <h1 class="section-title">
-          Software Career Reality &amp; Skill Diagnostic
-        </h1>
-        <p class="section-subtitle">
-          Take our 5-minute interactive diagnostic tool to evaluate your logic
-          baseline, debugging persistence, and weekly learning commitment.
-          Grounded in World Economic Forum Future of Jobs standards.
-        </p>
-        <div class="quiz-container">
-          <div class="quiz-progress-bar" id="progress-bar-container">
-            <div
-              class="quiz-progress-fill"
-              id="quiz-progress-fill"
-              style="width: 20%"
-            ></div>
+          ">
+        <a href="../index.html" style="color: var(--accent)">Home</a> &gt;
+        <span style="color: var(--text-primary)">Software Career Reality &amp; Skill Diagnostic</span>
+      </nav>
+      <h1 class="section-title">
+        Software Career Reality &amp; Skill Diagnostic
+      </h1>
+      <p class="section-subtitle">
+        Take our 5-minute interactive diagnostic tool to evaluate your logic
+        baseline, debugging persistence, and weekly learning commitment.
+        Grounded in World Economic Forum Future of Jobs standards.
+      </p>
+      <div class="quiz-container">
+        <div class="quiz-progress-bar" id="progress-bar-container">
+          <div class="quiz-progress-fill" id="quiz-progress-fill" style="width: 20%"></div>
+        </div>
+        <!-- Step 1 -->
+        <div class="quiz-step active" data-step="1">
+          <div class="quiz-question">
+            Q1: When your code crashes with an unexpected stack trace or error
+            log, what is your initial reaction?
           </div>
-          <!-- Step 1 -->
-          <div class="quiz-step active" data-step="1">
-            <div class="quiz-question">
-              Q1: When your code crashes with an unexpected stack trace or error
-              log, what is your initial reaction?
+          <div class="quiz-options">
+            <div class="quiz-option" data-value="3">
+              <div class="quiz-option-radio"></div>
+              <span>I read the stack trace line number, inspect variable states,
+                and debug step-by-step until fixed.</span>
             </div>
-            <div class="quiz-options">
-              <div class="quiz-option" data-value="3">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >I read the stack trace line number, inspect variable states,
-                  and debug step-by-step until fixed.</span
-                >
-              </div>
-              <div class="quiz-option" data-value="2">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >I search Stack Overflow or Google the exact error message to
-                  find working solutions.</span
-                >
-              </div>
-              <div class="quiz-option" data-value="1">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >I feel stuck, copy-paste AI prompt code blindly, or ask
-                  someone else to fix it immediately.</span
-                >
-              </div>
+            <div class="quiz-option" data-value="2">
+              <div class="quiz-option-radio"></div>
+              <span>I search Stack Overflow or Google the exact error message to
+                find working solutions.</span>
+            </div>
+            <div class="quiz-option" data-value="1">
+              <div class="quiz-option-radio"></div>
+              <span>I feel stuck, copy-paste AI prompt code blindly, or ask
+                someone else to fix it immediately.</span>
             </div>
           </div>
-          <!-- Step 2 -->
-          <div class="quiz-step" data-step="2">
-            <div class="quiz-question">
-              Q2: How many dedicated hands-on hours per week can you
-              consistently commit to writing and debugging code?
+        </div>
+        <!-- Step 2 -->
+        <div class="quiz-step" data-step="2">
+          <div class="quiz-question">
+            Q2: How many dedicated hands-on hours per week can you
+            consistently commit to writing and debugging code?
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-option" data-value="3">
+              <div class="quiz-option-radio"></div>
+              <span>15+ Hours / Week (Daily coding sessions, deep focus, active
+                keyboard practice)</span>
             </div>
-            <div class="quiz-options">
-              <div class="quiz-option" data-value="3">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >15+ Hours / Week (Daily coding sessions, deep focus, active
-                  keyboard practice)</span
-                >
-              </div>
-              <div class="quiz-option" data-value="2">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >8 to 14 Hours / Week (Weekend practice sessions + 1 hour
-                  daily coding)</span
-                >
-              </div>
-              <div class="quiz-option" data-value="1">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >Less than 5 Hours / Week (Only passive video watching,
-                  minimal keyboard time)</span
-                >
-              </div>
+            <div class="quiz-option" data-value="2">
+              <div class="quiz-option-radio"></div>
+              <span>8 to 14 Hours / Week (Weekend practice sessions + 1 hour
+                daily coding)</span>
+            </div>
+            <div class="quiz-option" data-value="1">
+              <div class="quiz-option-radio"></div>
+              <span>Less than 5 Hours / Week (Only passive video watching,
+                minimal keyboard time)</span>
             </div>
           </div>
-          <!-- Step 3 -->
-          <div class="quiz-step" data-step="3">
-            <div class="quiz-question">
-              Q3: What is your primary milestone for enrolling in a software
-              mentorship program?
+        </div>
+        <!-- Step 3 -->
+        <div class="quiz-step" data-step="3">
+          <div class="quiz-question">
+            Q3: What is your primary milestone for enrolling in a software
+            mentorship program?
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-option" data-value="3">
+              <div class="quiz-option-radio"></div>
+              <span>To build a verified GitHub code commit portfolio and receive
+                line-by-line PR code reviews.</span>
             </div>
-            <div class="quiz-options">
-              <div class="quiz-option" data-value="3">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >To build a verified GitHub code commit portfolio and receive
-                  line-by-line PR code reviews.</span
-                >
-              </div>
-              <div class="quiz-option" data-value="2">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >To upgrade my technical skills for better career growth and
-                  higher compensation.</span
-                >
-              </div>
-              <div class="quiz-option" data-value="1">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >To collect a paper certificate and rely on technical
-                  competence promises.</span
-                >
-              </div>
+            <div class="quiz-option" data-value="2">
+              <div class="quiz-option-radio"></div>
+              <span>To upgrade my technical skills for better career growth and
+                higher compensation.</span>
+            </div>
+            <div class="quiz-option" data-value="1">
+              <div class="quiz-option-radio"></div>
+              <span>To collect a paper certificate and rely on technical
+                competence promises.</span>
             </div>
           </div>
-          <!-- Step 4 -->
-          <div class="quiz-step" data-step="4">
-            <div class="quiz-question">
-              Q4: What is your current educational or technical background?
+        </div>
+        <!-- Step 4 -->
+        <div class="quiz-step" data-step="4">
+          <div class="quiz-question">
+            Q4: What is your current educational or technical background?
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-option" data-value="3">
+              <div class="quiz-option-radio"></div>
+              <span>CS/IT Student or Developer (Understand functions, loops, OOP,
+                basic SQL &amp; Git)</span>
             </div>
-            <div class="quiz-options">
-              <div class="quiz-option" data-value="3">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >CS/IT Student or Developer (Understand functions, loops, OOP,
-                  basic SQL &amp; Git)</span
-                >
-              </div>
-              <div class="quiz-option" data-value="2">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >Non-IT Engineer / STEM Graduate (Strong analytical mindset,
-                  basic exposure to logic)</span
-                >
-              </div>
-              <div class="quiz-option" data-value="1">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >Complete Beginner / Non-Tech Degree (No prior coding
-                  experience)</span
-                >
-              </div>
+            <div class="quiz-option" data-value="2">
+              <div class="quiz-option-radio"></div>
+              <span>Non-IT Engineer / STEM Graduate (Strong analytical mindset,
+                basic exposure to logic)</span>
+            </div>
+            <div class="quiz-option" data-value="1">
+              <div class="quiz-option-radio"></div>
+              <span>Complete Beginner / Non-Tech Degree (No prior coding
+                experience)</span>
             </div>
           </div>
-          <!-- Step 5 -->
-          <div class="quiz-step" data-step="5">
-            <div class="quiz-question">
-              Q5: Which engineering domain aligns best with your career goals?
+        </div>
+        <!-- Step 5 -->
+        <div class="quiz-step" data-step="5">
+          <div class="quiz-question">
+            Q5: Which engineering domain aligns best with your career goals?
+          </div>
+          <div class="quiz-options">
+            <div class="quiz-option" data-value="java-fullstack">
+              <div class="quiz-option-radio"></div>
+              <span>Java Fullstack Engineering (Spring Boot 3, React JS, SQL
+                Microservices)</span>
             </div>
-            <div class="quiz-options">
-              <div class="quiz-option" data-value="java-fullstack">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >Java Fullstack Engineering (Spring Boot 3, React JS, SQL
-                  Microservices)</span
-                >
-              </div>
-              <div class="quiz-option" data-value="ai-ml">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >AI &amp; Machine Learning Engineering (PyTorch, RAG
-                  Pipelines, Vector DBs)</span
-                >
-              </div>
-              <div class="quiz-option" data-value="devops">
-                <div class="quiz-option-radio"></div>
-                <span
-                  >DevOps &amp; Cloud Native Architecture (Kubernetes, Docker,
-                  Terraform)</span
-                >
-              </div>
+            <div class="quiz-option" data-value="ai-ml">
+              <div class="quiz-option-radio"></div>
+              <span>AI &amp; Machine Learning Engineering (PyTorch, RAG
+                Pipelines, Vector DBs)</span>
+            </div>
+            <div class="quiz-option" data-value="devops">
+              <div class="quiz-option-radio"></div>
+              <span>DevOps &amp; Cloud Native Architecture (Kubernetes, Docker,
+                Terraform)</span>
             </div>
           </div>
-          <!-- Quiz Buttons -->
-          <div class="quiz-buttons" id="quiz-navigation">
-            <button
-              class="btn btn-secondary"
-              id="btn-back"
-              style="visibility: hidden"
-            >
-              Back
-            </button>
-            <button class="btn btn-primary" disabled="" id="btn-next">
-              Next Question
-            </button>
-          </div>
-          <!-- Results Card -->
-          <div class="quiz-results-card" id="quiz-results">
-            <span class="results-badge">UPDATED JULY 2026 ASSESSMENT</span>
-            <h2
-              id="recommended-title"
-              style="
+        </div>
+        <!-- Quiz Buttons -->
+        <div class="quiz-buttons" id="quiz-navigation">
+          <button class="btn btn-secondary" id="btn-back" style="visibility: hidden">
+            Back
+          </button>
+          <button class="btn btn-primary" disabled="" id="btn-next">
+            Next Question
+          </button>
+        </div>
+        <!-- Results Card -->
+        <div class="quiz-results-card" id="quiz-results">
+          <span class="results-badge">UPDATED JULY 2026 ASSESSMENT</span>
+          <h2 id="recommended-title" style="
                 font-size: 2rem;
                 color: var(--accent-light);
                 margin-bottom: 1rem;
-              "
-            >
-              85% High Developer Readiness
-            </h2>
-            <p
-              id="recommended-description"
-              style="
+              ">
+            85% High Developer Readiness
+          </h2>
+          <p id="recommended-description" style="
                 color: var(--text-secondary);
                 line-height: 1.6;
                 margin-bottom: 2rem;
-              "
-            >
-              You possess a solid analytical mindset and strong debugging
-              commitment. You are well-positioned for 1-to-1 intensive developer
-              lab mentorship.
-            </p>
-            <div
-              style="
+              ">
+            You possess a solid analytical mindset and strong debugging
+            commitment. You are well-positioned for 1-to-1 intensive developer
+            lab mentorship.
+          </p>
+          <div style="
                 display: flex;
                 gap: 1rem;
                 justify-content: center;
                 flex-wrap: wrap;
-              "
-            >
-              <a
-                class="btn btn-primary"
-                href="../courses/java-fullstack/"
-                id="course-page-link"
-                >View Recommended Program</a
-              >
-            </div>
-            <button
-              class="btn btn-secondary"
-              id="btn-reset"
-              style="margin-top: 2rem; font-size: 0.85rem"
-            >
-              Retake Diagnostic
-            </button>
+              ">
+            <a class="btn btn-primary" href="../courses/java-fullstack/" id="course-page-link">View Recommended
+              Program</a>
           </div>
+          <button class="btn btn-secondary" id="btn-reset" style="margin-top: 2rem; font-size: 0.85rem">
+            Retake Diagnostic
+          </button>
         </div>
-      </section>
-    </main>
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-programs-row">
-          <h4
-            style="
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-programs-row">
+        <h4 style="
               color: var(--text-primary);
               margin-bottom: 1.5rem;
               font-size: 1rem;
               font-weight: 700;
               letter-spacing: 0.5px;
               text-transform: uppercase;
-            "
-          >
-            Engineering Labs &amp; Programs
-          </h4>
-          <ul class="footer-programs-grid">
-            <li>
-              <a href="../courses/java-fullstack/">Java Fullstack Training</a>
-            </li>
-            <li><a href="../courses/full-stack/">Full Stack Web (MERN)</a></li>
-            <li><a href="../courses/react-js/">React JS Development</a></li>
-            <li><a href="../courses/react-native/">React Native Mobile</a></li>
-            <li><a href="../courses/ai-ml/">AI &amp; Machine Learning</a></li>
-            <li>
-              <a href="../courses/data-science/">Data Science Analytics</a>
-            </li>
-            <li>
-              <a href="../courses/data-engineering/">Data Engineering ETL</a>
-            </li>
-            <li><a href="../courses/python/">Python Scripting Lab</a></li>
-            <li><a href="../courses/devops/">DevOps Engineering</a></li>
-            <li><a href="../courses/cloud/">Cloud Systems Architecture</a></li>
-            <li><a href="../courses/power-bi/">Power BI Analytics</a></li>
-            <li>
-              <a href="../courses/software-testing/">Software Testing Lab</a>
-            </li>
-            <li>
-              <a href="../courses/cybersecurity/">Cybersecurity Operations</a>
-            </li>
-            <li>
-              <a href="../courses/software-architect/"
-                >Software Architect Lab</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-brand">
-          <a
-            href="../index.html"
-            style="
+            ">
+          Engineering Labs &amp; Programs
+        </h4>
+        <ul class="footer-programs-grid">
+          <li>
+            <a href="../courses/java-fullstack/">Java Fullstack Training</a>
+          </li>
+          <li><a href="../courses/full-stack/">Full Stack Web (MERN)</a></li>
+          <li><a href="../courses/react-js/">React JS Development</a></li>
+          <li><a href="../courses/react-native/">React Native Mobile</a></li>
+          <li><a href="../courses/ai-ml/">AI &amp; Machine Learning</a></li>
+          <li><a href="../courses/ai-red-teaming/">AI Red Teaming</a></li>
+          <li>
+            <a href="../courses/data-science/">Data Science Analytics</a>
+          </li>
+          <li>
+            <a href="../courses/data-engineering/">Data Engineering ETL</a>
+          </li>
+          <li><a href="../courses/python/">Python Scripting Lab</a></li>
+          <li><a href="../courses/devops/">DevOps Engineering</a></li>
+          <li><a href="../courses/cloud/">Cloud Systems Architecture</a></li>
+          <li><a href="../courses/power-bi/">Power BI Analytics</a></li>
+          <li>
+            <a href="../courses/software-testing/">Software Testing Lab</a>
+          </li>
+          <li>
+            <a href="../courses/cybersecurity/">Cybersecurity Operations</a>
+          </li>
+          <li>
+            <a href="../courses/software-architect/">Software Architect Lab</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-brand">
+        <a href="../index.html" style="
               font-family: var(--font-heading);
               font-size: 1.5rem;
               font-weight: 800;
               color: white;
-            "
-            >CACTS</a
-          >
-          <p>
-            Centre of Advanced Computer Training and Studies. Providing
-            practical, one-to-one virtual software training and internships on
-            real company projects since 2012.
-          </p>
-          <div
-            class="footer-social"
-            style="margin-top: 1.5rem; display: flex; gap: 1rem"
-          >
-            <a
-              aria-label="Facebook"
-              href="https://www.facebook.com/cactspune/"
-              style="
+            ">CACTS</a>
+        <p>
+          Centre of Advanced Computer Training and Studies. Providing
+          practical, one-to-one virtual software training and internships on
+          real company projects since 2012.
+        </p>
+        <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem">
+          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" style="
                 color: var(--text-secondary);
                 transition: var(--transition);
                 display: inline-flex;
@@ -644,28 +514,13 @@
                 background: rgba(255, 255, 255, 0.02);
                 border: 1px solid var(--border);
                 border-radius: 50%;
-              "
-              target="_blank"
-            >
-              <svg
-                fill="none"
-                height="18"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewbox="0 0 24 24"
-                width="18"
-              >
-                <path
-                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                ></path>
-              </svg>
-            </a>
-            <a
-              aria-label="LinkedIn"
-              href="https://www.linkedin.com/company/cacts/"
-              style="
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" style="
                 color: var(--text-secondary);
                 transition: var(--transition);
                 display: inline-flex;
@@ -676,30 +531,15 @@
                 background: rgba(255, 255, 255, 0.02);
                 border: 1px solid var(--border);
                 border-radius: 50%;
-              "
-              target="_blank"
-            >
-              <svg
-                fill="none"
-                height="18"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewbox="0 0 24 24"
-                width="18"
-              >
-                <path
-                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                ></path>
-                <rect height="12" width="4" x="2" y="9"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-            <a
-              aria-label="Instagram"
-              href="https://www.instagram.com/cacts_pune/"
-              style="
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect height="12" width="4" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" style="
                 color: var(--text-secondary);
                 transition: var(--transition);
                 display: inline-flex;
@@ -710,30 +550,15 @@
                 background: rgba(255, 255, 255, 0.02);
                 border: 1px solid var(--border);
                 border-radius: 50%;
-              "
-              target="_blank"
-            >
-              <svg
-                fill="none"
-                height="18"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewbox="0 0 24 24"
-                width="18"
-              >
-                <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
-                <path
-                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                ></path>
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
-              </svg>
-            </a>
-            <a
-              aria-label="YouTube"
-              href="https://www.youtube.com/@CACTSPune"
-              style="
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" style="
                 color: var(--text-secondary);
                 transition: var(--transition);
                 display: inline-flex;
@@ -744,108 +569,81 @@
                 background: rgba(255, 255, 255, 0.02);
                 border: 1px solid var(--border);
                 border-radius: 50%;
-              "
-              target="_blank"
-            >
-              <svg
-                fill="none"
-                height="18"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                viewbox="0 0 24 24"
-                width="18"
-              >
-                <path
-                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
-                ></path>
-                <polygon
-                  points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
-                ></polygon>
-              </svg>
-            </a>
-          </div>
-        </div>
-        <div class="footer-links">
-          <h4>Institutional Links</h4>
-          <ul style="list-style: none">
-            <li><a href="../about.html">About CACTS</a></li>
-            <li><a href="../jobs/index.html">Current Openings</a></li>
-            <li>
-              <a href="../showcase/internship-on-live-projects.html"
-                >Live Projects Internship</a
-              >
-            </li>
-            <li><a href="../courses/index.html">1-to-1 Mentoring Model</a></li>
-            <li>
-              <a href="../comparisons/cacts-vs-classroom-vs-ai.html"
-                >CACTS vs Classroom vs AI</a
-              >
-            </li>
-            <li>
-              <a href="free-career-guidance.html">Free Career Guidance</a>
-            </li>
-            <li><a href="../reviews.html">Success Reviews</a></li>
-            <li><a href="../faqs.html">Institutional FAQs</a></li>
-            <li><a href="../contact.html">Contact Us</a></li>
-            <li><a href="../locations/pune.html">Software Training Pune</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h4>Learning Portals</h4>
-          <ul style="list-style: none">
-            <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
-            <li>
-              <a href="course-recommendation-quiz.html">Course Finder Quiz</a>
-            </li>
-            <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
-            <li>
-              <a href="../showcase/student-projects.html">Student Projects</a>
-            </li>
-            <li>
-              <a href="../showcase/internship-showcase.html"
-                >Internship Showcase</a
-              >
-            </li>
-            <li>
-              <a href="../showcase/project-portfolios.html"
-                >Project Portfolios</a
-              >
-            </li>
-            <li>
-              <a href="../comparisons/technology-comparisons.html"
-                >Tech Comparisons</a
-              >
-            </li>
-            <li><a href="free-learning-resources.html">Free Resources</a></li>
-            <li>
-              <a href="../guides/technology-career-guides.html"
-                >Career Guides</a
-              >
-            </li>
-            <li>
-              <a href="live-code-compiler.html"
-                >Live Code &amp; Syntax Validator</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h4>Contact CACTS</h4>
-          <p style="margin-bottom: 0.5rem">
-            First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
-            Maharashtra 411023
-          </p>
-          <p style="margin-bottom: 0.5rem">
-            <strong>Phone:</strong> +91 96655 66357
-          </p>
-          <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+              </path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
         </div>
       </div>
-      <!-- Trust Credentials & Accreditations -->
-      <div
-        style="
+      <div class="footer-links">
+        <h4>Institutional Links</h4>
+        <ul style="list-style: none">
+          <li><a href="../about.html">About CACTS</a></li>
+          <li><a href="../jobs/index.html">Current Openings</a></li>
+          <li>
+            <a href="../showcase/internship-on-live-projects.html">Live Projects Internship</a>
+          </li>
+          <li><a href="../courses/index.html">1-to-1 Mentoring Model</a></li>
+          <li>
+            <a href="../comparisons/cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a>
+          </li>
+          <li>
+            <a href="free-career-guidance.html">Free Career Guidance</a>
+          </li>
+          <li><a href="../reviews.html">Success Reviews</a></li>
+          <li><a href="../faqs.html">Institutional FAQs</a></li>
+          <li><a href="../contact.html">Contact Us</a></li>
+          <li><a href="../locations/pune.html">Software Training Pune</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Learning Portals</h4>
+        <ul style="list-style: none">
+          <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
+          <li>
+            <a href="course-recommendation-quiz.html">Course Finder Quiz</a>
+          </li>
+          <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
+          <li>
+            <a href="../showcase/student-projects.html">Student Projects</a>
+          </li>
+          <li>
+            <a href="../showcase/internship-showcase.html">Internship Showcase</a>
+          </li>
+          <li>
+            <a href="../showcase/project-portfolios.html">Project Portfolios</a>
+          </li>
+          <li>
+            <a href="../comparisons/technology-comparisons.html">Tech Comparisons</a>
+          </li>
+          <li><a href="free-learning-resources.html">Free Resources</a></li>
+          <li>
+            <a href="../guides/technology-career-guides.html">Career Guides</a>
+          </li>
+          <li>
+            <a href="live-code-compiler.html">Live Code &amp; Syntax Validator</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact CACTS</h4>
+        <p style="margin-bottom: 0.5rem">
+          First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+          Maharashtra 411023
+        </p>
+        <p style="margin-bottom: 0.5rem">
+          <strong>Phone:</strong> +91 96655 66357
+        </p>
+        <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
+      </div>
+    </div>
+    <!-- Trust Credentials & Accreditations -->
+    <div style="
           border-top: 1px solid var(--border);
           padding: 1.5rem 0;
           display: flex;
@@ -854,35 +652,27 @@
           gap: 2rem;
           flex-wrap: wrap;
           margin-top: 2rem;
-        "
-      >
-        <div
-          style="
+        ">
+      <div style="
             color: var(--text-secondary);
             font-size: 0.85rem;
             line-height: 1.5;
-          "
-        >
-          <strong
-            >Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong
-          >
-          Our curricula and git code review models are designed in alignment
-          with ISO 29993:2017 standards for non-formal education training and
-          software engineering industry practices. *Self-declared alignment for
-          educational service quality.
-        </div>
-        <div
-          style="
+          ">
+        <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong>
+        Our curricula and git code review models are designed in alignment
+        with ISO 29993:2017 standards for non-formal education training and
+        software engineering industry practices. *Self-declared alignment for
+        educational service quality.
+      </div>
+      <div style="
             display: flex;
             gap: 1.5rem;
             align-items: center;
             opacity: 0.75;
             flex-wrap: wrap;
-          "
-        >
-          <!-- ISO Compliant Badge -->
-          <div
-            style="
+          ">
+        <!-- ISO Compliant Badge -->
+        <div style="
               display: flex;
               align-items: center;
               gap: 0.5rem;
@@ -894,26 +684,15 @@
               color: var(--accent-light);
               cursor: help;
             "
-            title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers."
-          >
-            <svg
-              fill="none"
-              height="14"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              style="flex-shrink: 0"
-              viewbox="0 0 24 24"
-              width="14"
-            >
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            </svg>
-            ISO 29993:2017 ALIGNED*
-          </div>
-          <!-- Developer Led Badge -->
-          <div
-            style="
+          title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers.">
+          <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          ISO 29993:2017 ALIGNED*
+        </div>
+        <!-- Developer Led Badge -->
+        <div style="
               display: flex;
               align-items: center;
               gap: 0.5rem;
@@ -923,28 +702,17 @@
               font-size: 0.75rem;
               font-weight: 700;
               color: var(--primary-light);
-            "
-          >
-            <svg
-              fill="none"
-              height="14"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              style="flex-shrink: 0"
-              viewbox="0 0 24 24"
-              width="14"
-            >
-              <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
-              <line x1="2" x2="22" y1="20" y2="20"></line>
-              <line x1="12" x2="12" y1="17" y2="20"></line>
-            </svg>
-            100% DEVELOPER LED
-          </div>
-          <!-- Reg Badge -->
-          <div
-            style="
+            ">
+          <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
+            <line x1="2" x2="22" y1="20" y2="20"></line>
+            <line x1="12" x2="12" y1="17" y2="20"></line>
+          </svg>
+          100% DEVELOPER LED
+        </div>
+        <!-- Reg Badge -->
+        <div style="
               display: flex;
               align-items: center;
               gap: 0.5rem;
@@ -954,202 +722,181 @@
               font-size: 0.75rem;
               font-weight: 700;
               color: var(--warning);
-            "
-          >
-            <svg
-              fill="none"
-              height="14"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              style="flex-shrink: 0"
-              viewbox="0 0 24 24"
-              width="14"
-            >
-              <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
-              <line x1="9" x2="9" y1="22" y2="16"></line>
-              <line x1="15" x2="15" y1="22" y2="16"></line>
-              <line x1="9" x2="15" y1="16" y2="16"></line>
-              <path
-                d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm6-8h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"
-              ></path>
-            </svg>
-            ESTD. 2012 IN PUNE
-          </div>
+            ">
+          <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
+            <line x1="9" x2="9" y1="22" y2="16"></line>
+            <line x1="15" x2="15" y1="22" y2="16"></line>
+            <line x1="9" x2="15" y1="16" y2="16"></line>
+            <path d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm6-8h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"></path>
+          </svg>
+          ESTD. 2012 IN PUNE
         </div>
       </div>
-      <div class="footer-bottom">
-        <div style="text-align: left">
-          <p>
-            © <span id="footer-year">2026</span> CACTS - Centre of Advanced
-            Computer Training and Studies. All rights reserved.
-          </p>
-          <p
-            style="
+    </div>
+    <div class="footer-bottom">
+      <div style="text-align: left">
+        <p>
+          © <span id="footer-year">2026</span> CACTS - Centre of Advanced
+          Computer Training and Studies. All rights reserved.
+        </p>
+        <p style="
               margin-top: 0.25rem;
               font-size: 0.8rem;
               color: var(--text-secondary);
-            "
-          >
-            First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
-            Maharashtra 411023
-          </p>
-        </div>
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-          <a href="../sitemap.html" style="color: var(--text-secondary)"
-            >Sitemap</a
-          >
-          <span style="color: var(--border)">|</span>
-          <a href="../privacy-policy.html" style="color: var(--text-secondary)"
-            >Privacy Policy</a
-          >
-          <span style="color: var(--border)">|</span>
-          <a
-            href="../terms-conditions.html"
-            style="color: var(--text-secondary)"
-            >Terms &amp; Conditions</a
-          >
-        </div>
+            ">
+          First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+          Maharashtra 411023
+        </p>
       </div>
-    </footer>
-    <div class="floating-ctas"></div>
-    <script src="../js/main.js"></script>
-    <script>
-      const answers = {};
-      let currentStep = 1;
-      const totalSteps = 5;
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+        <a href="../sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
+        <span style="color: var(--border)">|</span>
+        <a href="../privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
+        <span style="color: var(--border)">|</span>
+        <a href="../terms-conditions.html" style="color: var(--text-secondary)">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </footer>
+  <div class="floating-ctas"></div>
+  <script src="../js/main.js"></script>
+  <script>
+    const answers = {};
+    let currentStep = 1;
+    const totalSteps = 5;
 
-      const steps = document.querySelectorAll(".quiz-step");
-      const nextBtn = document.getElementById("btn-next");
-      const backBtn = document.getElementById("btn-back");
-      const progressFill = document.getElementById("quiz-progress-fill");
-      const quizNav = document.getElementById("quiz-navigation");
-      const progressBarContainer = document.getElementById(
-        "progress-bar-container",
-      );
-      const resultsCard = document.getElementById("quiz-results");
+    const steps = document.querySelectorAll(".quiz-step");
+    const nextBtn = document.getElementById("btn-next");
+    const backBtn = document.getElementById("btn-back");
+    const progressFill = document.getElementById("quiz-progress-fill");
+    const quizNav = document.getElementById("quiz-navigation");
+    const progressBarContainer = document.getElementById(
+      "progress-bar-container",
+    );
+    const resultsCard = document.getElementById("quiz-results");
 
-      document.querySelectorAll(".quiz-option").forEach((option) => {
-        option.addEventListener("click", function () {
-          const parent = this.parentElement;
-          parent
-            .querySelectorAll(".quiz-option")
-            .forEach((opt) => opt.classList.remove("selected"));
-          this.classList.add("selected");
-          nextBtn.removeAttribute("disabled");
-        });
-      });
-
-      nextBtn.addEventListener("click", () => {
-        const activeStep = document.querySelector(".quiz-step.active");
-        const selectedOpt = activeStep.querySelector(".quiz-option.selected");
-        const stepNum = parseInt(activeStep.getAttribute("data-step"), 10);
-
-        answers[stepNum] = selectedOpt.getAttribute("data-value");
-
-        if (currentStep < totalSteps) {
-          activeStep.classList.remove("active");
-          currentStep++;
-          const nextStep = document.querySelector(
-            `.quiz-step[data-step="${currentStep}"]`,
-          );
-          nextStep.classList.add("active");
-
-          backBtn.style.visibility = "visible";
-
-          const nextSelected = nextStep.querySelector(".quiz-option.selected");
-          if (!nextSelected) {
-            nextBtn.setAttribute("disabled", "true");
-          } else {
-            nextBtn.removeAttribute("disabled");
-          }
-
-          if (currentStep === totalSteps) {
-            nextBtn.textContent = "Calculate Readiness Score";
-          }
-
-          progressFill.style.width = `${(currentStep / totalSteps) * 100}%`;
-        } else {
-          showResults();
-        }
-      });
-
-      backBtn.addEventListener("click", () => {
-        if (currentStep > 1) {
-          const activeStep = document.querySelector(".quiz-step.active");
-          activeStep.classList.remove("active");
-          currentStep--;
-          const prevStep = document.querySelector(
-            `.quiz-step[data-step="${currentStep}"]`,
-          );
-          prevStep.classList.add("active");
-
-          if (currentStep === 1) {
-            backBtn.style.visibility = "hidden";
-          }
-
-          nextBtn.textContent = "Next Question";
-          nextBtn.removeAttribute("disabled");
-          progressFill.style.width = `${(currentStep / totalSteps) * 100}%`;
-        }
-      });
-
-      function showResults() {
-        steps.forEach((s) => s.classList.remove("active"));
-        quizNav.style.display = "none";
-        progressBarContainer.style.display = "none";
-
-        let score = 0;
-        for (let i = 1; i <= 4; i++) {
-          score += parseInt(answers[i] || 2, 10);
-        }
-        const track = answers[5] || "java-fullstack";
-        const pct = Math.round((score / 12) * 100);
-
-        let title = `${pct}% High Developer Readiness`;
-        let desc =
-          "You possess a solid analytical mindset and strong debugging commitment. You are well-positioned for 1-to-1 intensive developer lab mentorship.";
-        let slug = "../courses/java-fullstack/index.html";
-
-        if (track === "ai-ml") {
-          slug = "../courses/ai-ml/index.html";
-        } else if (track === "devops") {
-          slug = "../courses/devops/index.html";
-        }
-
-        document.getElementById("recommended-title").textContent = title;
-        document.getElementById("recommended-description").textContent = desc;
-        document.getElementById("course-page-link").setAttribute("href", slug);
-
-        resultsCard.style.display = "block";
-      }
-
-      document.getElementById("btn-reset").addEventListener("click", () => {
-        currentStep = 1;
-        answers[1] = null;
-        answers[2] = null;
-        answers[3] = null;
-        answers[4] = null;
-        answers[5] = null;
-
-        document
+    document.querySelectorAll(".quiz-option").forEach((option) => {
+      option.addEventListener("click", function () {
+        const parent = this.parentElement;
+        parent
           .querySelectorAll(".quiz-option")
           .forEach((opt) => opt.classList.remove("selected"));
-        nextBtn.setAttribute("disabled", "true");
-        nextBtn.textContent = "Next Question";
-        backBtn.style.visibility = "hidden";
-
-        resultsCard.style.display = "none";
-        progressBarContainer.style.display = "block";
-        progressFill.style.width = "20%";
-        quizNav.style.display = "flex";
-
-        steps.forEach((s) => s.classList.remove("active"));
-        document
-          .querySelector('.quiz-step[data-step="1"]')
-          .classList.add("active");
+        this.classList.add("selected");
+        nextBtn.removeAttribute("disabled");
       });
-    </script>
-  </body>
+    });
+
+    nextBtn.addEventListener("click", () => {
+      const activeStep = document.querySelector(".quiz-step.active");
+      const selectedOpt = activeStep.querySelector(".quiz-option.selected");
+      const stepNum = parseInt(activeStep.getAttribute("data-step"), 10);
+
+      answers[stepNum] = selectedOpt.getAttribute("data-value");
+
+      if (currentStep < totalSteps) {
+        activeStep.classList.remove("active");
+        currentStep++;
+        const nextStep = document.querySelector(
+          `.quiz-step[data-step="${currentStep}"]`,
+        );
+        nextStep.classList.add("active");
+
+        backBtn.style.visibility = "visible";
+
+        const nextSelected = nextStep.querySelector(".quiz-option.selected");
+        if (!nextSelected) {
+          nextBtn.setAttribute("disabled", "true");
+        } else {
+          nextBtn.removeAttribute("disabled");
+        }
+
+        if (currentStep === totalSteps) {
+          nextBtn.textContent = "Calculate Readiness Score";
+        }
+
+        progressFill.style.width = `${(currentStep / totalSteps) * 100}%`;
+      } else {
+        showResults();
+      }
+    });
+
+    backBtn.addEventListener("click", () => {
+      if (currentStep > 1) {
+        const activeStep = document.querySelector(".quiz-step.active");
+        activeStep.classList.remove("active");
+        currentStep--;
+        const prevStep = document.querySelector(
+          `.quiz-step[data-step="${currentStep}"]`,
+        );
+        prevStep.classList.add("active");
+
+        if (currentStep === 1) {
+          backBtn.style.visibility = "hidden";
+        }
+
+        nextBtn.textContent = "Next Question";
+        nextBtn.removeAttribute("disabled");
+        progressFill.style.width = `${(currentStep / totalSteps) * 100}%`;
+      }
+    });
+
+    function showResults() {
+      steps.forEach((s) => s.classList.remove("active"));
+      quizNav.style.display = "none";
+      progressBarContainer.style.display = "none";
+
+      let score = 0;
+      for (let i = 1; i <= 4; i++) {
+        score += parseInt(answers[i] || 2, 10);
+      }
+      const track = answers[5] || "java-fullstack";
+      const pct = Math.round((score / 12) * 100);
+
+      let title = `${pct}% High Developer Readiness`;
+      let desc =
+        "You possess a solid analytical mindset and strong debugging commitment. You are well-positioned for 1-to-1 intensive developer lab mentorship.";
+      let slug = "../courses/java-fullstack/index.html";
+
+      if (track === "ai-ml") {
+        slug = "../courses/ai-ml/index.html";
+      } else if (track === "devops") {
+        slug = "../courses/devops/index.html";
+      }
+
+      document.getElementById("recommended-title").textContent = title;
+      document.getElementById("recommended-description").textContent = desc;
+      document.getElementById("course-page-link").setAttribute("href", slug);
+
+      resultsCard.style.display = "block";
+    }
+
+    document.getElementById("btn-reset").addEventListener("click", () => {
+      currentStep = 1;
+      answers[1] = null;
+      answers[2] = null;
+      answers[3] = null;
+      answers[4] = null;
+      answers[5] = null;
+
+      document
+        .querySelectorAll(".quiz-option")
+        .forEach((opt) => opt.classList.remove("selected"));
+      nextBtn.setAttribute("disabled", "true");
+      nextBtn.textContent = "Next Question";
+      backBtn.style.visibility = "hidden";
+
+      resultsCard.style.display = "none";
+      progressBarContainer.style.display = "block";
+      progressFill.style.width = "20%";
+      quizNav.style.display = "flex";
+
+      steps.forEach((s) => s.classList.remove("active"));
+      document
+        .querySelector('.quiz-step[data-step="1"]')
+        .classList.add("active");
+    });
+  </script>
+</body>
+
 </html>
