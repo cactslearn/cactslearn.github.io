@@ -1,42 +1,61 @@
 
-def get_course_alternate_names(slug, name):
-    base = [
-        f"{name} Course",
-        f"{name} Training",
-        f"{name} Class",
-        f"CACTS {name} Academy",
-        f"{name} Course Pune",
-        f"{name} Training in Pune"
-    ]
-    if "java" in slug:
-        base.extend(["Java Full Stack Development Training", "Spring Boot Microservices Course", "Java React Fullstack Academy Pune"])
-    elif "python" in slug:
-        base.extend(["Python Scripting Course", "Python Automation Training", "CACTS Python Lab Pune"])
-    elif "react-js" in slug:
-        base.extend(["React 19 Training", "Frontend Web Development Course", "React JS Lab Pune"])
-    elif "react-native" in slug:
-        base.extend(["React Native Mobile App Development", "Cross-Platform Mobile Engineering Training"])
-    elif "ai-ml" in slug:
-        base.extend(["AI & Machine Learning Engineering", "Artificial Intelligence Course Pune", "PyTorch & RAG Pipeline Training"])
-    elif "data-science" in slug:
-        base.extend(["Data Science Analytics Course", "Python Data Science Training Pune"])
-    elif "data-engineering" in slug:
-        base.extend(["Data Engineering ETL Course", "Apache Spark & Data Lake Training Pune"])
-    elif "devops" in slug:
-        base.extend(["DevOps & Cloud Native Architecture", "Kubernetes & Terraform Training Pune"])
-    elif "cloud" in slug:
-        base.extend(["Cloud Systems Architecture Training", "AWS & Cloud Engineering Course Pune"])
-    elif "power-bi" in slug:
-        base.extend(["Power BI Analytics Training", "Business Intelligence & DAX Course Pune"])
-    elif "software-testing" in slug:
-        base.extend(["SDET & Selenium Automation Course", "Software Quality Assurance Training Pune"])
-    elif "cybersecurity" in slug:
-        base.extend(["Cybersecurity Operations Training", "Ethical Hacking & Network Defense Course Pune"])
-    elif "software-architect" in slug:
-        base.extend(["Software Architecture & System Design", "Distributed Systems Architect Course Pune"])
-    elif "full-stack" in slug:
-        base.extend(["MERN Stack Development Course", "Full Stack Web Developer Training Pune"])
-    return list(dict.fromkeys(base))
+def get_course_alternate_names(slug, name, page_type="index"):
+    topic = name.replace(" Training", "").replace(" Course", "").replace(" Developer", "").strip()
+    if page_type == "fees":
+        return [
+            f"{topic} Classes Fees",
+            f"{topic} Course Fees",
+            f"{topic} Training Fees",
+            f"{topic} Certification Fees",
+            f"{topic} Online Classes Fees",
+            f"{topic} Course Fee Structure",
+            f"{topic} Training Cost in Pune",
+            f"{topic} Coaching Fees"
+        ]
+    elif page_type == "syllabus":
+        return [
+            f"{topic} Syllabus",
+            f"{topic} Course Syllabus",
+            f"{topic} Training Syllabus",
+            f"{topic} Curriculum",
+            f"{topic} Learning Modules",
+            f"{topic} Course Outline",
+            f"{topic} Training Topics",
+            f"{topic} Syllabus PDF"
+        ]
+    elif page_type == "roadmap":
+        return [
+            f"{topic} Career Roadmap",
+            f"{topic} Learning Roadmap",
+            f"{topic} Developer Roadmap",
+            f"{topic} Learning Path",
+            f"{topic} Career Guide",
+            f"{topic} Skill Roadmap",
+            f"{topic} Step-by-Step Learning Guide"
+        ]
+    elif page_type == "interview-questions":
+        return [
+            f"{topic} Interview Questions",
+            f"{topic} Interview Questions and Answers",
+            f"{topic} Technical Interview Prep",
+            f"{topic} Coding Interview Questions",
+            f"{topic} Developer Interview Answers",
+            f"{topic} Mock Interview Practice"
+        ]
+    else:
+        return [
+            f"{topic} Training",
+            f"{topic} Classes",
+            f"{topic} Course",
+            f"{topic} Online Course",
+            f"{topic} Certification",
+            f"{topic} Certification Course",
+            f"{topic} Training in Pune",
+            f"{topic} Classes in Pune",
+            f"{topic} Online Classes",
+            f"{topic} Coaching Institute Pune",
+            f"{topic} Learning Path"
+        ]
 
 import json
 import os
@@ -732,7 +751,12 @@ def build():
             "hasCourseInstance": [
                 {
                     "@type": "CourseInstance",
-                    "courseMode": "onsite",
+                    "courseMode": [
+                        "onsite",
+                        "synchronous",
+                        "full-time",
+                        "part-time"
+                    ],
                     "duration": duration_iso,
                     "instructor": {
                         "@type": "Person",
@@ -754,7 +778,12 @@ def build():
                 },
                 {
                     "@type": "CourseInstance",
-                    "courseMode": "online",
+                    "courseMode": [
+                        "online",
+                        "synchronous",
+                        "full-time",
+                        "part-time"
+                    ],
                     "duration": duration_iso,
                     "instructor": {
                         "@type": "Person",
@@ -765,6 +794,35 @@ def build():
                         "@type": "VirtualLocation",
                         "name": "CACTS 1-to-1 Virtual Classroom Lab",
                         "url": "https://cactslearn.github.io/one-to-one-software-training.html"
+                    }
+                },
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": [
+                        "blended",
+                        "online",
+                        "onsite",
+                        "asynchronous",
+                        "synchronous",
+                        "part-time"
+                    ],
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "name": "CACTS Shivane Training Lab & Virtual Classroom",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                            "addressLocality": "Pune",
+                            "addressRegion": "Maharashtra",
+                            "postalCode": "411023",
+                            "addressCountry": "IN"
+                        }
                     }
                 }
             ]
@@ -1001,7 +1059,12 @@ def build():
             "hasCourseInstance": [
                 {
                     "@type": "CourseInstance",
-                    "courseMode": "onsite",
+                    "courseMode": [
+                        "onsite",
+                        "synchronous",
+                        "full-time",
+                        "part-time"
+                    ],
                     "duration": duration_iso,
                     "instructor": {
                         "@type": "Person",
@@ -1023,7 +1086,12 @@ def build():
                 },
                 {
                     "@type": "CourseInstance",
-                    "courseMode": "online",
+                    "courseMode": [
+                        "online",
+                        "synchronous",
+                        "full-time",
+                        "part-time"
+                    ],
                     "duration": duration_iso,
                     "instructor": {
                         "@type": "Person",
@@ -1034,6 +1102,35 @@ def build():
                         "@type": "VirtualLocation",
                         "name": "CACTS 1-to-1 Virtual Classroom Lab",
                         "url": "https://cactslearn.github.io/one-to-one-software-training.html"
+                    }
+                },
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": [
+                        "blended",
+                        "online",
+                        "onsite",
+                        "asynchronous",
+                        "synchronous",
+                        "part-time"
+                    ],
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "name": "CACTS Shivane Training Lab & Virtual Classroom",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                            "addressLocality": "Pune",
+                            "addressRegion": "Maharashtra",
+                            "postalCode": "411023",
+                            "addressCountry": "IN"
+                        }
                     }
                 }
             ],
@@ -1214,7 +1311,12 @@ def build():
             "hasCourseInstance": [
                 {
                     "@type": "CourseInstance",
-                    "courseMode": "onsite",
+                    "courseMode": [
+                        "onsite",
+                        "synchronous",
+                        "full-time",
+                        "part-time"
+                    ],
                     "duration": duration_iso,
                     "instructor": {
                         "@type": "Person",
@@ -1236,7 +1338,12 @@ def build():
                 },
                 {
                     "@type": "CourseInstance",
-                    "courseMode": "online",
+                    "courseMode": [
+                        "online",
+                        "synchronous",
+                        "full-time",
+                        "part-time"
+                    ],
                     "duration": duration_iso,
                     "instructor": {
                         "@type": "Person",
@@ -1247,6 +1354,35 @@ def build():
                         "@type": "VirtualLocation",
                         "name": "CACTS 1-to-1 Virtual Classroom Lab",
                         "url": "https://cactslearn.github.io/one-to-one-software-training.html"
+                    }
+                },
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": [
+                        "blended",
+                        "online",
+                        "onsite",
+                        "asynchronous",
+                        "synchronous",
+                        "part-time"
+                    ],
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "name": "CACTS Shivane Training Lab & Virtual Classroom",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                            "addressLocality": "Pune",
+                            "addressRegion": "Maharashtra",
+                            "postalCode": "411023",
+                            "addressCountry": "IN"
+                        }
                     }
                 }
             ]
@@ -1414,7 +1550,12 @@ def build():
             "hasCourseInstance": [
                 {
                     "@type": "CourseInstance",
-                    "courseMode": "onsite",
+                    "courseMode": [
+                        "onsite",
+                        "synchronous",
+                        "full-time",
+                        "part-time"
+                    ],
                     "duration": duration_iso,
                     "instructor": {
                         "@type": "Person",
@@ -1436,7 +1577,12 @@ def build():
                 },
                 {
                     "@type": "CourseInstance",
-                    "courseMode": "online",
+                    "courseMode": [
+                        "online",
+                        "synchronous",
+                        "full-time",
+                        "part-time"
+                    ],
                     "duration": duration_iso,
                     "instructor": {
                         "@type": "Person",
@@ -1447,6 +1593,35 @@ def build():
                         "@type": "VirtualLocation",
                         "name": "CACTS 1-to-1 Virtual Classroom Lab",
                         "url": "https://cactslearn.github.io/one-to-one-software-training.html"
+                    }
+                },
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": [
+                        "blended",
+                        "online",
+                        "onsite",
+                        "asynchronous",
+                        "synchronous",
+                        "part-time"
+                    ],
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "name": "CACTS Shivane Training Lab & Virtual Classroom",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                            "addressLocality": "Pune",
+                            "addressRegion": "Maharashtra",
+                            "postalCode": "411023",
+                            "addressCountry": "IN"
+                        }
                     }
                 }
             ]
@@ -1624,7 +1799,12 @@ def build():
             "hasCourseInstance": [
                 {
                     "@type": "CourseInstance",
-                    "courseMode": "onsite",
+                    "courseMode": [
+                        "onsite",
+                        "synchronous",
+                        "full-time",
+                        "part-time"
+                    ],
                     "duration": duration_iso,
                     "instructor": {
                         "@type": "Person",
@@ -1646,7 +1826,12 @@ def build():
                 },
                 {
                     "@type": "CourseInstance",
-                    "courseMode": "online",
+                    "courseMode": [
+                        "online",
+                        "synchronous",
+                        "full-time",
+                        "part-time"
+                    ],
                     "duration": duration_iso,
                     "instructor": {
                         "@type": "Person",
@@ -1657,6 +1842,35 @@ def build():
                         "@type": "VirtualLocation",
                         "name": "CACTS 1-to-1 Virtual Classroom Lab",
                         "url": "https://cactslearn.github.io/one-to-one-software-training.html"
+                    }
+                },
+                {
+                    "@type": "CourseInstance",
+                    "courseMode": [
+                        "blended",
+                        "online",
+                        "onsite",
+                        "asynchronous",
+                        "synchronous",
+                        "part-time"
+                    ],
+                    "duration": duration_iso,
+                    "instructor": {
+                        "@type": "Person",
+                        "name": "Hambirrao P",
+                        "jobTitle": "Lead Technology Trainer"
+                    },
+                    "location": {
+                        "@type": "Place",
+                        "name": "CACTS Shivane Training Lab & Virtual Classroom",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+                            "addressLocality": "Pune",
+                            "addressRegion": "Maharashtra",
+                            "postalCode": "411023",
+                            "addressCountry": "IN"
+                        }
                     }
                 }
             ]
