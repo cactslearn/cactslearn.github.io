@@ -14,64 +14,122 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- JSON-LD Structured Data for Organization & LocalBusiness -->
   <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": ["LocalBusiness", "EducationalOrganization", "Organization"],
-        "name": "CACTS - Centre of Advanced Computer Training and Studies",
-        "url": "https://cactslearn.github.io/",
-        "logo": "https://cactslearn.github.io/images/cacts-logo.png",
-        "image": "https://cactslearn.github.io/images/cacts-logo.png",
-        "description": "Centre of Advanced Computer Training and Studies (CACTS) provides practical, one-to-one virtual software training and live project internships in Pune, Maharashtra, India. Established in 2012.",
-        "foundingDate": "2012",
-        "sameAs": [
-          "https://www.facebook.com/cactspune/",
-          "https://www.linkedin.com/company/cacts/",
-          "https://www.instagram.com/cacts_pune/",
-          "https://www.youtube.com/@CACTSPune"
-        ],
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
-          "addressLocality": "Pune",
-          "addressRegion": "Maharashtra",
-          "postalCode": "411023",
-          "addressCountry": "IN"
-        },
-        "telephone": "+919665566357",
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "18.46655",
-          "longitude": "73.77834"
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
-          "opens": "08:00",
-          "closes": "22:00"
-        },
-        "knowsAbout": [
-          "Java Fullstack Training",
-          "Full Stack Web Development (MERN)",
-          "AI & ML",
-          "Data Science",
-          "Data Engineering",
-          "Python",
-          "Power BI Analytics",
-          "Cloud",
-          "DevOps Engineering",
-          "Software Testing",
-          "Cybersecurity"
-        ]
-      }
-    </script>
+{
+      "@context": "https://schema.org",
+      "@type": [
+            "LocalBusiness",
+            "EducationalOrganization",
+            "Organization"
+      ],
+      "name": "CACTS - Centre of Advanced Computer Training and Studies",
+      "url": "https://cactslearn.github.io/",
+      "logo": "https://cactslearn.github.io/images/cacts-logo.png",
+      "image": "https://cactslearn.github.io/images/cacts-logo.png",
+      "description": "Centre of Advanced Computer Training and Studies (CACTS) provides practical, one-to-one virtual software training and live project internships in Pune, Maharashtra, India. Established in 2012.",
+      "foundingDate": "2012",
+      "sameAs": [
+            "https://www.facebook.com/cactspune/",
+            "https://www.linkedin.com/company/cacts/",
+            "https://www.instagram.com/cacts_pune/",
+            "https://www.youtube.com/@CACTSPune"
+      ],
+      "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+            "addressLocality": "Pune",
+            "addressRegion": "Maharashtra",
+            "postalCode": "411023",
+            "addressCountry": "IN"
+      },
+      "telephone": "+919665566357",
+      "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "18.46655",
+            "longitude": "73.77834"
+      },
+      "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                  "Sunday"
+            ],
+            "opens": "08:00",
+            "closes": "22:00"
+      },
+      "knowsAbout": [
+            "Java Fullstack Training",
+            "Full Stack Web Development (MERN)",
+            "AI & ML",
+            "Data Science",
+            "Data Engineering",
+            "Python",
+            "Power BI Analytics",
+            "Cloud",
+            "DevOps Engineering",
+            "Software Testing",
+            "Cybersecurity"
+      ],
+      "potentialAction": [
+            {
+                  "@type": "RegisterAction",
+                  "name": "Submit Institute Admission Inquiry",
+                  "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://cactslearn.github.io/contact.html#lead-form",
+                        "actionPlatform": [
+                              "http://schema.org/DesktopWebPlatform",
+                              "http://schema.org/MobileWebPlatform"
+                        ]
+                  }
+            },
+            {
+                  "@type": "CommunicateAction",
+                  "name": "WhatsApp Front Desk Chat",
+                  "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "https://wa.me/919665566357?text=Hello%20CACTS%20Pune%2C%20I%20have%20a%20training%20query.",
+                        "actionPlatform": [
+                              "http://schema.org/DesktopWebPlatform",
+                              "http://schema.org/MobileWebPlatform",
+                              "http://schema.org/AndroidPlatform",
+                              "http://schema.org/IOSPlatform"
+                        ]
+                  }
+            },
+            {
+                  "@type": "CommunicateAction",
+                  "name": "Call Training Office",
+                  "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "tel:+919665566357",
+                        "actionPlatform": [
+                              "http://schema.org/MobileWebPlatform",
+                              "http://schema.org/AndroidPlatform",
+                              "http://schema.org/IOSPlatform"
+                        ]
+                  }
+            },
+            {
+                  "@type": "CommunicateAction",
+                  "name": "Send SMS Inquiry to Office",
+                  "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "sms:+919665566357?body=Hi%20CACTS%2C%20I%20have%20an%20inquiry.",
+                        "actionPlatform": [
+                              "http://schema.org/MobileWebPlatform",
+                              "http://schema.org/AndroidPlatform",
+                              "http://schema.org/IOSPlatform"
+                        ]
+                  }
+            }
+      ]
+}
+  </script>
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",

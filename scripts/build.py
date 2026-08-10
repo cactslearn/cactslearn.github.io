@@ -57,6 +57,66 @@ def get_course_alternate_names(slug, name, page_type="index"):
             f"{topic} Learning Path"
         ]
 
+
+def get_course_potential_actions(slug, name):
+    encoded_name = name.replace('&', '%26').replace(' ', '%20')
+    return [
+        {
+            "@type": "RegisterAction",
+            "name": f"Enroll & Book Free 1-to-1 {name} Mentoring Session",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": f"https://cactslearn.github.io/contact.html?course={slug}#register",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform"
+                ],
+                "inLanguage": "en"
+            }
+        },
+        {
+            "@type": "CommunicateAction",
+            "name": f"Direct WhatsApp {name} Mentor Chat",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": f"https://wa.me/919665566357?text=Hello%20CACTS%2C%20I%20want%20information%20about%20{encoded_name}.",
+                "actionPlatform": [
+                    "http://schema.org/DesktopWebPlatform",
+                    "http://schema.org/MobileWebPlatform",
+                    "http://schema.org/AndroidPlatform",
+                    "http://schema.org/IOSPlatform"
+                ],
+                "inLanguage": "en"
+            }
+        },
+        {
+            "@type": "CommunicateAction",
+            "name": "Direct Phone Call to Training Lab",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "tel:+919665566357",
+                "actionPlatform": [
+                    "http://schema.org/MobileWebPlatform",
+                    "http://schema.org/AndroidPlatform",
+                    "http://schema.org/IOSPlatform"
+                ]
+            }
+        },
+        {
+            "@type": "CommunicateAction",
+            "name": f"Direct SMS {name} Course Inquiry",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": f"sms:+919665566357?body=Hi%20CACTS%2C%20please%20send%20details%20for%20{encoded_name}.",
+                "actionPlatform": [
+                    "http://schema.org/MobileWebPlatform",
+                    "http://schema.org/AndroidPlatform",
+                    "http://schema.org/IOSPlatform"
+                ]
+            }
+        }
+    ]
+
 import json
 import os
 import sys
@@ -715,6 +775,7 @@ def build():
             "@id": f"https://cactslearn.github.io/{slug}.html#course",
             "name": name,
             "alternateName": get_course_alternate_names(slug, name),
+            "potentialAction": get_course_potential_actions(slug, name),
             "description": meta_description,
             "url": f"https://cactslearn.github.io/{slug}.html",
             "provider": {
@@ -1023,6 +1084,7 @@ def build():
             "@id": f"https://cactslearn.github.io/{base_slug}-syllabus.html#course",
             "name": f"{name} Syllabus",
             "alternateName": get_course_alternate_names(base_slug, name),
+            "potentialAction": get_course_potential_actions(base_slug, name),
             "description": f"Detailed topic-by-topic Syllabus for {name} in Pune.",
             "url": f"https://cactslearn.github.io/{base_slug}-syllabus.html",
             "provider": {
