@@ -1,0 +1,160 @@
+{
+  "20260812001": {
+    "id": "20260812001",
+    "studentName": "Hambirrao P",
+    "programType": "Training & Internship",
+    "certificateTitle": "CERTIFICATE OF PROFESSIONAL TRAINING & INTERNSHIP",
+    "courseName": "Python Developer & Software Architecture",
+    "issueDate": "August 12, 2026",
+    "completionDate": "August 10, 2026",
+    "duration": "16 Weeks (Professional Training + Staging Internship)",
+    "grade": "Distinction (A+)",
+    "status": "VALID",
+    "issueYear": 2026,
+    "issueMonth": 8,
+    "sha256Hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "skills": [
+      "Python 3.12",
+      "FastAPI & Django",
+      "Software Architecture",
+      "PostgreSQL & ORM",
+      "Docker & CI/CD",
+      "RESTful APIs",
+      "1-to-1 Code Review"
+    ],
+    "projects": [
+      {
+        "name": "Live Enterprise Microservices Gateway",
+        "description": "Production-grade asynchronous Python gateway with JWT authentication & rate limiting.",
+        "url": "https://github.com/cactslearn/python-enterprise-gateway"
+      },
+      {
+        "name": "Automated Code Review & Staging Pipeline",
+        "description": "Custom CI/CD runner enforcing PEP-8 and security static analysis.",
+        "url": "https://github.com/cactslearn/code-review-runner"
+      }
+    ],
+    "institute": "CACTS - Centre of Advanced Computer Training and Studies",
+    "signees": {
+      "director": "Sheetal Shinde",
+      "directorTitle": "Managing Director & CEO",
+      "trainer": "Hambirrao P",
+      "trainerTitle": "Lead Technology Trainer"
+    }
+  },
+  "20260812002": {
+    "id": "20260812002",
+    "studentName": "Rahul M. Sharma",
+    "programType": "Internship",
+    "certificateTitle": "CERTIFICATE OF LIVE PROJECT INTERNSHIP",
+    "courseName": "Java Fullstack & Microservices Development",
+    "issueDate": "August 12, 2026",
+    "completionDate": "August 11, 2026",
+    "duration": "12 Weeks (Staging Project Internship)",
+    "grade": "Excellence (A)",
+    "status": "VALID",
+    "issueYear": 2026,
+    "issueMonth": 8,
+    "sha256Hash": "4f8a3c9b7e1d5a2f8c4e6b0d9a3f7e1c5b8a2d4e6f0a3c9b7e1d5a2f8c4e6b0d",
+    "skills": [
+      "Java 21 & Spring Boot",
+      "Microservices & Kafka",
+      "React JS Frontend",
+      "MySQL Database Design",
+      "Docker & Kubernetes"
+    ],
+    "projects": [
+      {
+        "name": "Banking Microservices Platform",
+        "description": "Distributed Spring Boot microservices with event-driven Kafka messaging.",
+        "url": "https://github.com/cactslearn/java-banking-platform"
+      }
+    ],
+    "institute": "CACTS - Centre of Advanced Computer Training and Studies",
+    "signees": {
+      "director": "Sheetal Shinde",
+      "directorTitle": "Managing Director & CEO",
+      "trainer": "Hambirrao P",
+      "trainerTitle": "Lead Technology Trainer"
+    }
+  },
+  "20260812003": {
+    "id": "20260812003",
+    "studentName": "Pooja D. Kulkarni",
+    "programType": "Training",
+    "certificateTitle": "CERTIFICATE OF TRAINING COMPLETION",
+    "courseName": "AI & Machine Learning Engineering",
+    "issueDate": "August 12, 2026",
+    "completionDate": "August 08, 2026",
+    "duration": "16 Weeks (Advanced AI Track)",
+    "grade": "Distinction (A+)",
+    "status": "VALID",
+    "issueYear": 2026,
+    "issueMonth": 8,
+    "sha256Hash": "b2c4d6e8f0a2c4e6b8d0f2a4c6e8f0a2c4e6b8d0f2a4c6e8f0a2c4e6b8d0f2a4",
+    "skills": [
+      "PyTorch & TensorFlow",
+      "Computer Vision & NLP",
+      "LLM Fine-Tuning",
+      "MLOps & Deployment",
+      "Data Pipeline ETL"
+    ],
+    "projects": [
+      {
+        "name": "Predictive Analytics & LLM RAG System",
+        "description": "Retrieval-Augmented Generation pipeline built with LangChain and Vector DB.",
+        "url": "https://github.com/cactslearn/ai-rag-system"
+      }
+    ],
+    "institute": "CACTS - Centre of Advanced Computer Training and Studies",
+    "signees": {
+      "director": "Sheetal Shinde",
+      "directorTitle": "Managing Director & CEO",
+      "trainer": "Hambirrao P",
+      "trainerTitle": "Lead Technology Trainer"
+    }
+  },
+  "20260812004": {
+    "id": "20260812004",
+    "studentName": "Samarth Mhetre",
+    "programType": "Training & Internship",
+    "certificateTitle": "CERTIFICATE OF PROFESSIONAL TRAINING & INTERNSHIP",
+    "courseName": "Data Science & Machine Learning Analytics",
+    "issueDate": "August 12, 2026",
+    "completionDate": "August 12, 2026",
+    "duration": "16 Weeks (Professional Training + Staging Internship)",
+    "grade": "Distinction (A+)",
+    "status": "VALID",
+    "issueYear": 2026,
+    "issueMonth": 8,
+    "sha256Hash": "7c9e1f3a5b7d9c1e3f5a7b9c1e3f5a7b9c1e3f5a7b9c1e3f5a7b9c1e3f5a7b9c",
+    "skills": [
+      "Python & Data Science",
+      "Pandas & NumPy Analytics",
+      "Scikit-Learn ML",
+      "Exploratory Data Analysis",
+      "Feature Engineering & ETL",
+      "SQL & Data Warehousing",
+      "Power BI Visualization"
+    ],
+    "projects": [
+      {
+        "name": "Predictive Customer Churn Analytics Platform",
+        "description": "End-to-end data science pipeline with exploratory analysis, feature engineering, and model staging.",
+        "url": "https://github.com/cactslearn/data-science-churn-analytics"
+      },
+      {
+        "name": "Automated ETL & Business Intelligence Dashboard",
+        "description": "Interactive data dashboard connecting PostgreSQL warehouse with automated data pipeline.",
+        "url": "https://github.com/cactslearn/data-etl-dashboard"
+      }
+    ],
+    "institute": "CACTS - Centre of Advanced Computer Training and Studies",
+    "signees": {
+      "director": "Sheetal Shinde",
+      "directorTitle": "Managing Director & CEO",
+      "trainer": "Hambirrao P",
+      "trainerTitle": "Lead Technology Trainer"
+    }
+  }
+}
