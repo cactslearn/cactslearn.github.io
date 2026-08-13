@@ -107,6 +107,20 @@
   ]
 }
 </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Ai Ml - Comparison Track | CACTS Pune",
+  "description": "Specialized Comparison training track for Ai Ml at CACTS Pune with 1-to-1 developer mentoring.",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "CACTS - Centre of Advanced Computer Training and Studies",
+    "sameAs": "https://cactslearn.github.io/"
+  }
+}
+  </script>
 </head>
 
 <body>
@@ -251,6 +265,48 @@
                 <option value="Career Switcher">Career Switcher</option>
               </select>
             </div>
+            <!-- Data Privacy Consent & Multilingual Switcher -->
+            <div class="dpdp-consent-container"
+              style="margin: 1.25rem 0 1rem 0; padding: 0.85rem; background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border); border-radius: 8px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span
+                  style="font-size: 0.72rem; font-weight: 700; color: var(--accent-light); text-transform: uppercase; letter-spacing: 0.5px;">Data
+                  Privacy &amp; Consent Notice</span>
+                <select class="dpdp-lang-select" onchange="toggleDpdpLang(this)"
+                  style="font-size: 0.72rem; padding: 2px 6px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px; cursor: pointer;">
+                  <option value="en">English</option>
+                  <option value="mr">मराठी (Marathi)</option>
+                  <option value="hi">हिंदी (Hindi)</option>
+                </select>
+              </div>
+              <label
+                style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.8rem; color: var(--text-secondary); cursor: pointer; line-height: 1.4;">
+                <input type="checkbox" id="dpdp_consent" name="dpdp_consent" required
+                  style="margin-top: 3px; accent-color: var(--accent);" />
+                <span class="dpdp-text-en">
+                  I consent to CACTS processing my name and contact details to schedule a free 1-to-1 demo session as
+                  per the
+                  <a href="privacy-policy.html#privacy-notice" target="_blank"
+                    style="color: var(--accent); text-decoration: underline;">Privacy &amp; Data Protection Notice</a>.
+                  I understand I can withdraw consent at any time.
+                </span>
+                <span class="dpdp-text-mr" style="display: none;">
+                  मी <a href="privacy-policy.html#privacy-notice" target="_blank"
+                    style="color: var(--accent); text-decoration: underline;">गोपनीयता व डेटा संरक्षण सूचनेनुसार</a>
+                  विनामूल्य १-टू-१ डेमो सत्र
+                  आणि समुपदेशनासाठी माझे नाव आणि संपर्क
+                  तपशील प्रक्रिया करण्यास संमती देतो/देते.
+                  मी माझी संमती कोणत्याही वेळी मागे घेऊ शकतो/शकते.
+                </span>
+                <span class="dpdp-text-hi" style="display: none;">
+                  मैं <a href="privacy-policy.html#privacy-notice" target="_blank"
+                    style="color: var(--accent); text-decoration: underline;">गोपनीयता एवं डेटा संरक्षण नोटिस</a> के
+                  अनुसार मुफ्त 1-टू-1 डेमो सत्र और परामर्श के लिए अपना नाम और
+                  संपर्क विवरण संसाधित करने के लिए सहमति देता/देती हूं।
+                  मैं किसी भी समय सहमति वापस ले सकता/सकती हूं।
+                </span>
+              </label>
+            </div>
             <button class="btn btn-primary" style="width: 100%" type="submit">
               Submit Code Assessment Request
             </button>
@@ -259,7 +315,12 @@
       </div>
     </section>
     <div class="course-tabs-container">
-      <a class="tab-link" href="index.html">Overview</a><a class="tab-link" href="syllabus.html">Syllabus</a><a class="tab-link" href="fees.html">Fees &amp; Options</a><a class="tab-link" href="interview-questions.html">Interview Qs</a><a class="tab-link" href="roadmap.html">Roadmap</a><a class="tab-link" href="projects.html">Project Ideas</a><a class="tab-link" href="beginner.html">Beginner Guide</a><a class="tab-link" href="certifications.html">Certifications</a><a class="tab-link active" href="comparison.html">Comparison</a>
+      <a class="tab-link" href="index.html">Overview</a><a class="tab-link" href="syllabus.html">Syllabus</a><a
+        class="tab-link" href="fees.html">Fees &amp; Options</a><a class="tab-link"
+        href="interview-questions.html">Interview Qs</a><a class="tab-link" href="roadmap.html">Roadmap</a><a
+        class="tab-link" href="projects.html">Project Ideas</a><a class="tab-link" href="beginner.html">Beginner
+        Guide</a><a class="tab-link" href="certifications.html">Certifications</a><a class="tab-link active"
+        href="comparison.html">Comparison</a>
     </div>
     <section aria-labelledby="details-heading" style="border-top: 1px solid var(--border)">
       <div class="course-layout">
@@ -388,55 +449,55 @@
           </div>
         </div>
         <aside class="pricing-sidebar-card">
-            <div class="price-display">
-              <span class="price-label">Program Fee (All-inclusive)</span>
-              <div class="price-value">₹24,999</div>
-              <span class="price-sub">Value-Driven &amp; Affordable IT Training</span>
-            </div>
-            <ul class="pricing-features">
-              <li>
-                <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg><span>1-to-1 Live Virtual Mentorship</span>
-              </li>
-              <li>
-                <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg><span>Personalized Dynamic Pace</span>
-              </li>
-              <li>
-                <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg><span>Direct Trainer Screensharing</span>
-              </li>
-              <li>
-                <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg><span>Real Company Project Internship</span>
-              </li>
-              <li>
-                <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg><span>No Rigid Batch Bindings</span>
-              </li>
-              <li>
-                <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg><span>Individual Project Review Loop</span>
-              </li>
-            </ul>
-            <a class="btn btn-accent" href="#register" style="width: 100%; text-align: center; margin-top: 1.5rem">Apply
-              for Seat</a>
-            <p style="
+          <div class="price-display">
+            <span class="price-label">Program Fee (All-inclusive)</span>
+            <div class="price-value">₹24,999</div>
+            <span class="price-sub">Value-Driven &amp; Affordable IT Training</span>
+          </div>
+          <ul class="pricing-features">
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg><span>1-to-1 Live Virtual Mentorship</span>
+            </li>
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg><span>Personalized Dynamic Pace</span>
+            </li>
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg><span>Direct Trainer Screensharing</span>
+            </li>
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg><span>Real Company Project Internship</span>
+            </li>
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg><span>No Rigid Batch Bindings</span>
+            </li>
+            <li>
+              <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg><span>Individual Project Review Loop</span>
+            </li>
+          </ul>
+          <a class="btn btn-accent" href="#register" style="width: 100%; text-align: center; margin-top: 1.5rem">Apply
+            for Seat</a>
+          <p style="
                 text-align: center;
                 font-size: 0.8rem;
                 color: var(--text-secondary);
                 margin-top: 0.75rem;
               ">
-              1-to-1 Personal Coaching Model
-            </p>
-          </aside>
-        </div>
+            1-to-1 Personal Coaching Model
+          </p>
+        </aside>
+      </div>
     </section>
     <!-- Student Testimonials / Reviews -->
     <section aria-labelledby="reviews-heading" style="border-top: 1px solid var(--border); padding-top: 3rem">

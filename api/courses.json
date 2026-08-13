@@ -1,0 +1,146 @@
+[
+  {
+    "id": "java-fullstack",
+    "name": "Java Fullstack Training",
+    "url": "https://cactslearn.github.io/courses/java-fullstack/",
+    "path": "courses/java-fullstack/",
+    "duration": "16 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Comprehensive Java 21, Spring Boot, Microservices, React JS, MySQL & Docker development."
+  },
+  {
+    "id": "full-stack",
+    "name": "Full Stack Web Development (MERN)",
+    "url": "https://cactslearn.github.io/courses/full-stack/",
+    "path": "courses/full-stack/",
+    "duration": "16 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Master MongoDB, Express.js, React.js, and Node.js with live staging code reviews."
+  },
+  {
+    "id": "react-js",
+    "name": "React JS Development",
+    "url": "https://cactslearn.github.io/courses/react-js/",
+    "path": "courses/react-js/",
+    "duration": "12 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Modern React 18, Redux Toolkit, Next.js, and TypeScript frontend engineering."
+  },
+  {
+    "id": "react-native",
+    "name": "React Native Mobile Development",
+    "url": "https://cactslearn.github.io/courses/react-native/",
+    "path": "courses/react-native/",
+    "duration": "12 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Cross-platform iOS & Android mobile application development with Expo and React Native."
+  },
+  {
+    "id": "ai-ml",
+    "name": "AI & Machine Learning Engineering",
+    "url": "https://cactslearn.github.io/courses/ai-ml/",
+    "path": "courses/ai-ml/",
+    "duration": "16 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Deep learning, PyTorch, TensorFlow, Computer Vision, NLP, LLM Fine-Tuning & MLOps."
+  },
+  {
+    "id": "ai-red-teaming",
+    "name": "AI Red Teaming & Security",
+    "url": "https://cactslearn.github.io/courses/ai-red-teaming/",
+    "path": "courses/ai-red-teaming/",
+    "duration": "12 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Adversarial prompt injection, LLM security auditing, model robustness & red teaming."
+  },
+  {
+    "id": "data-science",
+    "name": "Data Science & Analytics",
+    "url": "https://cactslearn.github.io/courses/data-science/",
+    "path": "courses/data-science/",
+    "duration": "16 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Statistical modeling, Python, Pandas, NumPy, Scikit-Learn, SQL, and Power BI dashboards."
+  },
+  {
+    "id": "data-engineering",
+    "name": "Data Engineering & ETL Pipelines",
+    "url": "https://cactslearn.github.io/courses/data-engineering/",
+    "path": "courses/data-engineering/",
+    "duration": "16 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Apache Spark, PySpark, Airflow, SQL data warehousing, ETL pipelines, and Snowflake."
+  },
+  {
+    "id": "python",
+    "name": "Python Scripting & Architecture Lab",
+    "url": "https://cactslearn.github.io/courses/python/",
+    "path": "courses/python/",
+    "duration": "16 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Advanced Python 3.12, FastAPI, Django, asynchronous programming, and software architecture."
+  },
+  {
+    "id": "devops",
+    "name": "DevOps Engineering & Automation",
+    "url": "https://cactslearn.github.io/courses/devops/",
+    "path": "courses/devops/",
+    "duration": "16 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "CI/CD pipelines, Docker containerization, Kubernetes orchestration, Terraform & Ansible."
+  },
+  {
+    "id": "cloud",
+    "name": "Cloud Systems Architecture (AWS/Azure)",
+    "url": "https://cactslearn.github.io/courses/cloud/",
+    "path": "courses/cloud/",
+    "duration": "16 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Cloud infrastructure, AWS Solutions Architecture, Azure Cloud, IAM, serverless & VPC."
+  },
+  {
+    "id": "power-bi",
+    "name": "Power BI & Business Intelligence",
+    "url": "https://cactslearn.github.io/courses/power-bi/",
+    "path": "courses/power-bi/",
+    "duration": "10 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Interactive data modeling, DAX queries, Power Query ETL, and executive BI reporting."
+  },
+  {
+    "id": "software-testing",
+    "name": "Software Testing & Automation Lab",
+    "url": "https://cactslearn.github.io/courses/software-testing/",
+    "path": "courses/software-testing/",
+    "duration": "12 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Manual testing QA, Selenium WebDriver, Playwright, API Testing (Postman/RestAssured), and TestNG."
+  },
+  {
+    "id": "cybersecurity",
+    "name": "Cybersecurity Operations & Defense",
+    "url": "https://cactslearn.github.io/courses/cybersecurity/",
+    "path": "courses/cybersecurity/",
+    "duration": "16 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Network security, ethical hacking, SOC operations, SIEM monitoring, and vulnerability assessment."
+  },
+  {
+    "id": "blockchain",
+    "name": "Blockchain & Smart Contract Development",
+    "url": "https://cactslearn.github.io/courses/blockchain/",
+    "path": "courses/blockchain/",
+    "duration": "16 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "Solidity, Ethereum smart contracts, Web3.js, Hardhat, DeFi protocols, and decentralized apps."
+  },
+  {
+    "id": "software-architect",
+    "name": "Software Architect Engineering Lab",
+    "url": "https://cactslearn.github.io/courses/software-architect/",
+    "path": "courses/software-architect/",
+    "duration": "16 Weeks",
+    "model": "1-to-1 Mentorship & Staging Internship",
+    "description": "High-level system design, distributed systems, microservices patterns, domain-driven design & trade-offs."
+  }
+]

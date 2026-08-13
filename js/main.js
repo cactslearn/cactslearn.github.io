@@ -1,3 +1,17 @@
+// Global Data Privacy Consent Notice Language Switcher (EN, MR, HI)
+window.toggleDpdpLang = function(selectElem) {
+    if (!selectElem) return;
+    const container = selectElem.closest('.dpdp-consent-container');
+    if (!container) return;
+    const lang = selectElem.value;
+    const enText = container.querySelector('.dpdp-text-en');
+    const mrText = container.querySelector('.dpdp-text-mr');
+    const hiText = container.querySelector('.dpdp-text-hi');
+    if (enText) enText.style.display = lang === 'en' ? 'inline' : 'none';
+    if (mrText) mrText.style.display = lang === 'mr' ? 'inline' : 'none';
+    if (hiText) hiText.style.display = lang === 'hi' ? 'inline' : 'none';
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     // Theme Switcher Logic
     const body = document.body;

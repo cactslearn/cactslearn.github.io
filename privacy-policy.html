@@ -97,174 +97,175 @@
       </nav>
     </div>
   </header>
-  <main style="
-        padding-top: 8rem;
-        padding-bottom: 5rem;
-        max-width: 800px;
-        margin: 0 auto;
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      ">
-    <nav aria-label="Breadcrumb" style="
-          margin-bottom: 2rem;
-          font-size: 0.85rem;
-          color: var(--text-secondary);
-        ">
-      <a href="index.html" style="color: var(--accent)">Home</a> &gt;
-      <span style="color: var(--text-primary)">Privacy Policy</span>
-    </nav>
-    <h1 class="section-title">
-      Privacy Policy - CACTS Software Training Institute
-    </h1>
-    <p style="
-          color: var(--text-secondary);
-          margin-bottom: 2rem;
-          font-size: 0.95rem;
-        ">
-      Last updated: June 9, 2026
-    </p>
-    <div style="
-          display: flex;
-          flex-direction: column;
-          gap: 2rem;
-          color: var(--text-secondary);
-          line-height: 1.75;
-        ">
-      <section aria-labelledby="section-intro" style="padding: 0">
-        <p>
-          At CACTS (Centre of Advanced Computer Training and Studies), we
-          respect your privacy and are committed to protecting any personally
-          identifiable information you may provide us through our website.
-          This Privacy Policy explains what information may be collected on
-          our website, how we use this information, and under what
-          circumstances we may disclose the information to third parties.
+  <!-- Main Content Area -->
+  <main style="padding-top: 8rem">
+    <section aria-labelledby="privacy-h1" class="tech-section" style="max-width: 950px; margin: 0 auto;">
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
+        <a href="index.html" style="color: var(--accent)">Home</a> &gt;
+        <span style="color: var(--text-primary)">Privacy Policy</span>
+      </nav>
+
+      <h1 class="section-title" id="privacy-h1">Privacy Policy</h1>
+      <p class="section-subtitle" style="margin-bottom: 2.5rem;">
+        Official Data Protection &amp; Privacy Policy &bull; Last updated: June 9, 2026
+      </p>
+
+      <div style="
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            color: var(--text-secondary);
+            line-height: 1.75;
+          ">
+      <!-- Section Intro & Multilingual Notice -->
+      <section aria-labelledby="section-intro" style="padding: 1.75rem 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius);">
+        <p style="margin-bottom: 0.75rem;">
+          At CACTS (Centre of Advanced Computer Training and Studies), we respect your privacy. We only collect and process your personal details when you give us explicit permission, and we use them solely to support your software training journey and candidate verification.
         </p>
+        <div style="margin-top: 0.85rem; padding: 1rem 1.25rem; background: rgba(99, 102, 241, 0.08); border-left: 3px solid var(--accent); border-radius: 6px; font-size: 0.9rem;">
+          <strong>Need this policy in another language?</strong> You have the right to request a copy of this privacy notice in any of India's official regional languages (such as <strong>Hindi</strong> or <strong>Marathi</strong>). To request a translated copy, please email our Privacy Officer at <a href="mailto:cactslearn@gmail.com" style="color: var(--accent); text-decoration: underline;">cactslearn@gmail.com</a>.
+        </div>
       </section>
-      <section aria-labelledby="section-collection" style="padding: 0">
-        <h2 id="section-collection" style="
+
+      <!-- Section 1: How We Handle Your Information -->
+      <section aria-labelledby="section-lifecycle" style="padding: 1.75rem 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius);">
+        <h2 id="section-lifecycle" style="
               color: var(--text-primary);
               font-size: 1.35rem;
               margin-bottom: 0.75rem;
             ">
-          1. Information We Collect
+          1. How We Handle Your Information: Prospective Leads vs. Enrolled Students
         </h2>
-        <p>
-          We only collect personal information that you voluntarily submit to
-          us through our website forms or direct messaging links. This
-          information may include:
+        <p style="margin-bottom: 1rem;">
+          We separate information processing into two clear stages based on how you interact with us:
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+          <!-- Stage 1 Card -->
+          <div style="padding: 1.25rem 1.5rem; background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border); border-radius: 8px;">
+            <h3 style="color: var(--accent-light); font-size: 1.1rem; margin-bottom: 0.5rem;">
+              Stage 1: Prospective Leads &amp; Demo Applicants
+            </h3>
+            <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.4rem;">
+              <li><strong>Information Collected:</strong> Full Name, Mobile Phone Number, Email Address, Experience Level or Student Status, and Skill Assessment Quiz responses.</li>
+              <li><strong>Why We Collect It:</strong> To schedule your free 1-to-1 virtual demo session, provide course guidance, and communicate with you directly on WhatsApp (+91 96655 66357).</li>
+              <li><strong>How Long We Keep It:</strong> Kept for a maximum of <strong>180 days</strong> from submission or until you ask us to remove it, after which lead records are securely deleted.</li>
+            </ul>
+          </div>
+
+          <!-- Stage 2 Card -->
+          <div style="padding: 1.25rem 1.5rem; background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border); border-radius: 8px;">
+            <h3 style="color: var(--primary-light); font-size: 1.1rem; margin-bottom: 0.5rem;">
+              Stage 2: Enrolled Students, Interns &amp; Certified Alumni
+            </h3>
+            <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.4rem;">
+              <li><strong>Information Collected:</strong> Full Name, Enrollment ID, Course Track, Attendance/Completion Records, GitHub Code Staging Repositories, and Certificate Verification payloads.</li>
+              <li><strong>Why We Collect It:</strong> To deliver 1-to-1 live developer training, evaluate your project code, issue accredited completion certificates, and maintain public verification entries on <a href="verify.html" style="color: var(--accent);">verify.html</a>.</li>
+              <li><strong>How Long We Keep It:</strong> Kept permanently for credential authentication and employer verification, subject to your right to request unlisting or deletion at any time.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Your Privacy Rights -->
+      <section aria-labelledby="section-rights" style="padding: 1.75rem 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius);">
+        <h2 id="section-rights" style="
+              color: var(--text-primary);
+              font-size: 1.35rem;
+              margin-bottom: 0.75rem;
+            ">
+          2. Your Privacy Rights
+        </h2>
+        <p style="margin-bottom: 0.75rem;">
+          You have full control over your personal information:
         </p>
         <ul style="
               margin-left: 1.5rem;
-              margin-top: 0.5rem;
               display: flex;
               flex-direction: column;
-              gap: 0.5rem;
+              gap: 0.6rem;
             ">
-          <li>Your full name</li>
-          <li>Your email address</li>
-          <li>Your phone number</li>
-          <li>Course interests and target learning goals</li>
-          <li>Prior programming experience or student status</li>
+          <li><strong>Right to Access:</strong> Ask us for a summary of the personal details we hold about you and who we share them with.</li>
+          <li><strong>Right to Correct:</strong> Request updates or corrections to any inaccurate or incomplete details.</li>
+          <li><strong>Right to Delete:</strong> Ask us to delete your personal details when they are no longer needed.</li>
+          <li><strong>Right to Unlist Verification Credentials:</strong> You have the right to request the <strong>unlisting, privacy masking, or complete removal</strong> of your certificate records from our public verification portal (<a href="verify.html" style="color: var(--accent);">verify.html</a>) at any time by emailing <a href="mailto:cactslearn@gmail.com" style="color: var(--accent);">cactslearn@gmail.com</a>.</li>
+          <li><strong>Right to Withdraw Consent:</strong> Revoke your permission for us to process your data at any time.</li>
+          <li><strong>Right to File a Grievance:</strong> Raise any privacy concerns with our designated Privacy &amp; Grievance Officer.</li>
         </ul>
       </section>
-      <section aria-labelledby="section-usage" style="padding: 0">
-        <h2 id="section-usage" style="
+
+      <!-- Section 3: Hosting & Service Provider Disclosures -->
+      <section aria-labelledby="section-processor" style="padding: 1.75rem 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius);">
+        <h2 id="section-processor" style="
               color: var(--text-primary);
               font-size: 1.35rem;
               margin-bottom: 0.75rem;
             ">
-          2. How We Use Your Information
+          3. Hosting &amp; Service Provider Disclosures
         </h2>
-        <p>
-          We use the collected information solely to facilitate your learning
-          journey, coordinate free trial demo sessions, answer inquiries, and
-          manage your student profile at CACTS. Specifically:
+        <p style="margin: 0;">
+          Our website is hosted on <strong>GitHub Pages</strong> (operated by GitHub, Inc. / Microsoft Corp.), which serves as our hosting service provider. Basic web server logs (such as IP addresses, web request headers, and browser types) are processed by GitHub Pages solely to deliver website pages securely, protect against cyber attacks, and maintain server health. CACTS does not use tracking cookies or third-party behavioral analytics tools.
         </p>
-        <ul style="
-              margin-left: 1.5rem;
-              margin-top: 0.5rem;
-              display: flex;
-              flex-direction: column;
-              gap: 0.5rem;
-            ">
-          <li>
-            To schedule and host your 1-to-1 virtual software training
-            classes.
-          </li>
-          <li>
-            To route inquiry details to WhatsApp (+91 96655 66357) for direct
-            developer coordination.
-          </li>
-          <li>
-            To communicate schedule adjustments or share repository access
-            details.
-          </li>
-        </ul>
       </section>
-      <section aria-labelledby="section-sharing" style="padding: 0">
-        <h2 id="section-sharing" style="
+
+      <!-- Section 4: Minors & Children Privacy -->
+      <section aria-labelledby="section-children" style="padding: 1.75rem 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius);">
+        <h2 id="section-children" style="
               color: var(--text-primary);
               font-size: 1.35rem;
               margin-bottom: 0.75rem;
             ">
-          3. Data Sharing &amp; Security
+          4. Protection of Minors &amp; Children
         </h2>
-        <p>
-          CACTS strictly maintains a zero-sharing policy. We
-          <b>do not sell, rent, trade, or share</b> your personal data with
-          third-party advertising networks, marketing corporations, or
-          external entities. Your information is accessed only by authorized
-          CACTS developers and mentors to support your training.
+        <p style="margin: 0;">
+          CACTS does not knowingly collect personal details from anyone under 18 years of age without explicit permission from a parent or legal guardian. If an applicant is under 18, parental consent is required before submitting information on our website.
         </p>
       </section>
-      <section aria-labelledby="section-cookies" style="padding: 0">
-        <h2 id="section-cookies" style="
-              color: var(--text-primary);
-              font-size: 1.35rem;
-              margin-bottom: 0.75rem;
-            ">
-          4. Cookies &amp; Local Storage
+
+      <!-- Section 5: Grievance Resolution & Response Commitments -->
+      <section aria-labelledby="section-dpo" style="padding: 1.75rem 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius);">
+        <h2 id="section-dpo" style="color: var(--accent-light); font-size: 1.35rem; margin-bottom: 0.75rem;">
+          5. Grievance Resolution &amp; Response Commitments
         </h2>
-        <p>
-          Our website is a static HTML platform. We do not use tracking
-          cookies. We utilize standard browser local storage (`localStorage`)
-          solely to store your preference for light or dark visual theme
-          styling, ensuring a consistent user experience during your
-          navigation.
+        <p style="margin-bottom: 1rem;">
+          To exercise any of your privacy rights, request certificate unlisting, or share a privacy concern, please contact our designated Privacy &amp; Grievance Officer:
         </p>
+        <div style="display: flex; flex-direction: column; gap: 0.4rem; color: var(--text-primary); font-size: 0.95rem; margin-bottom: 1.25rem;">
+          <p><strong>Privacy Officer:</strong> Hambirrao P</p>
+          <p><strong>Designation:</strong> Data Protection &amp; Grievance Officer, CACTS Pune</p>
+          <p><strong>Official Email:</strong> <a href="mailto:cactslearn@gmail.com" style="color: var(--accent); font-weight: 700;">cactslearn@gmail.com</a></p>
+          <p><strong>Office Address:</strong> First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune, Maharashtra 411023</p>
+        </div>
+        
+        <div style="padding: 1.25rem 1.5rem; background: rgba(15, 23, 42, 0.5); border: 1px solid var(--border); border-radius: 8px; font-size: 0.9rem; line-height: 1.6;">
+          <p style="margin-bottom: 0.5rem; color: var(--accent-light); font-weight: 700;">Our Response Timelines &amp; Escalation Right:</p>
+          <ul style="margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.3rem;">
+            <li><strong>Acknowledgement:</strong> We will acknowledge your request within <strong>48 hours</strong>.</li>
+            <li><strong>Target Resolution:</strong> We aim to resolve all requests within <strong>30 days</strong>.</li>
+            <li><strong>Maximum Response Time:</strong> All requests are finalized within a maximum limit of <strong>90 days</strong>.</li>
+          </ul>
+          <p style="margin-top: 0.75rem; color: var(--text-primary);">
+            <strong>Data Protection Board of India (DPBI) Escalation Right:</strong> If you feel your privacy concern has not been satisfactorily resolved by our Privacy Officer within the resolution timeframe, you have the right to submit a complaint to the <strong>Data Protection Board of India (DPBI)</strong>.
+          </p>
+        </div>
       </section>
-      <section aria-labelledby="section-changes" style="padding: 0">
-        <h2 id="section-changes" style="
-              color: var(--text-primary);
-              font-size: 1.35rem;
-              margin-bottom: 0.75rem;
-            ">
-          5. Changes to This Privacy Policy
-        </h2>
-        <p>
-          Although most changes are likely to be minor, CACTS may update its
-          Privacy Policy from time to time. We encourage visitors to check
-          this page periodically for any modifications. Your continued use of
-          this site after any change in this Privacy Policy will constitute
-          your acceptance of such change.
-        </p>
-      </section>
-      <section aria-labelledby="section-contact" style="padding: 0">
+
+      <!-- Section 6: Contact Us -->
+      <section aria-labelledby="section-contact" style="padding: 1.75rem 2rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius);">
         <h2 id="section-contact" style="
               color: var(--text-primary);
               font-size: 1.35rem;
               margin-bottom: 0.75rem;
             ">
-          6. Contact Information
+          6. Contact Us
         </h2>
-        <p>
-          If you have any questions about this Privacy Policy or how we handle
-          your personal data, please reach out to us at our physical
-          headquarters in Shivane, Pune, or text us on WhatsApp at
-          <b>+91 96655 66357</b>.
+        <p style="margin: 0;">
+          If you have any questions about this Privacy Policy or how we handle your information, please visit us at our office in Shivane, Pune, or message us on WhatsApp at <b>+91 96655 66357</b>.
         </p>
       </section>
     </div>
+    </section>
   </main>
   <!-- Footer -->
   <footer class="site-footer">
