@@ -963,6 +963,11 @@
       }
     }
   </style>
+  <!-- RSS 2.0 Auto-Discovery Links -->
+  <link rel="alternate" type="application/rss+xml" title="CACTS Master Updates" href="https://cactslearn.github.io/feeds/rss-main.xml" />
+  <link rel="alternate" type="application/rss+xml" title="CACTS Tech Jobs &amp; Internships" href="https://cactslearn.github.io/feeds/rss-jobs.xml" />
+  <link rel="alternate" type="application/rss+xml" title="CACTS Tech Career Guides" href="https://cactslearn.github.io/feeds/rss-guides.xml" />
+  <link rel="alternate" type="application/rss+xml" title="CACTS Engineering Courses" href="https://cactslearn.github.io/feeds/rss-courses.xml" />
 </head>
 
 <body>
@@ -1289,7 +1294,45 @@
   </div>
 
   <!-- Official Website Footer Matching Site CSS Grid Architecture -->
-  <footer class="site-footer">
+  
+  <!-- ISO 29993:2017 Credential Security & Verification Protocol Section -->
+  <section aria-labelledby="verify-guide-heading" style="max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem;">
+    <div style="border-top: 1px solid var(--border); padding-top: 3rem;">
+      <h2 class="section-title" id="verify-guide-heading" style="text-align: center; margin-bottom: 0.75rem;">
+        ISO 29993:2017 Credential Security &amp; Employer Verification Protocol
+      </h2>
+      <p class="section-subtitle" style="text-align: center; max-width: 750px; margin: 0 auto 2.5rem auto; color: var(--text-secondary);">
+        How employers, HR recruiters, and institutional partners verify candidate certificates issued by CACTS Pune.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h3 style="margin-bottom: 0.75rem; color: var(--accent-light);">
+            1. Cryptographic Hash Verification
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            Each certificate contains a unique 64-character SHA-256 cryptographic payload hash. Entering the Certificate ID displays the original immutable transcript and project commit logs stored in our verification registry.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom: 0.75rem; color: var(--accent-light);">
+            2. Live Project Code Audit
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            Unlike generic classroom certificates, verified CACTS credentials link directly to candidate GitHub pull requests and production project commits executed during our <a href="showcase/internship-on-live-projects.html" style="color: var(--accent); text-decoration: underline;">Live Projects Internship</a>.
+          </p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom: 0.75rem; color: var(--accent-light);">
+            3. Employer Direct Screening
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+            Corporate hiring partners can request direct 1-to-1 candidate performance evaluation transcripts. Explore our <a href="courses/index.html" style="color: var(--accent); text-decoration: underline;">1-to-1 Mentoring Model</a>, read <a href="reviews.html" style="color: var(--accent); text-decoration: underline;">Student Success Reviews</a>, or check <a href="jobs/index.html" style="color: var(--accent); text-decoration: underline;">Career Openings</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+<footer class="site-footer">
     <div class="footer-container">
       <div class="footer-programs-row">
         <h4 style="
@@ -1597,6 +1640,8 @@
       </div>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap">
         <a href="sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
+            <span style="color: var(--border)">|</span>
+            <a href="feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
         <span style="color: var(--border)">|</span>
         <a href="privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
         <span style="color: var(--border)">|</span>
