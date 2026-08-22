@@ -1,5 +1,10 @@
 # Ignore Search Console and Webmaster Performance Data
 performance/
 
-# Ignore scratch audit JSON files
-seo_tag_length_audit.json
+# Ignore Python bytecode cache & temporary scratch files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+scratch/
+/tmp/
