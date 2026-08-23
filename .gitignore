@@ -3,6 +3,8 @@ performance/
 
 # Ignore Python bytecode cache & temporary scratch files
 __pycache__/
+**/__pycache__/
+scripts/__pycache__/
 *.pyc
 *.pyo
 *.pyd

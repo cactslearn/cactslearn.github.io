@@ -3731,7 +3731,151 @@ def update_sitemap_html():
         write_if_changed(sitemap_html_file, sm_content)
         print(f"Automatically updated {sitemap_html_file} with hierarchical course split page directory, careers section, 34 location hubs, & 51 learning guides!")
 
+import html
+import math
+
+def build_content_index(site_root="."):
+    index_file = os.path.join(project_root, "js", "content-index.json")
+    excluded_dirs = {".git", ".github", "node_modules", "venv", "scratch", "css", "js", "scripts", "__pycache__", ".well-known", "api", "feeds", "src"}
+    excluded_files = {"planner.html", "404.html", "googleadedb2cbaba8a8c6.html", "869002205afc4d0790cda34d8b759701.txt", "BingSiteAuth.xml"}
+    
+    indexed_items = []
+    
+    for root, dirs, files in os.walk(project_root):
+        dirs[:] = [d for d in dirs if d not in excluded_dirs]
+        
+        for file in files:
+            if not file.endswith(".html") or file in excluded_files:
+                continue
+                
+            abs_path = os.path.join(root, file)
+            rel_path = os.path.relpath(abs_path, project_root)
+            norm_url = "/" + rel_path.replace("\\", "/").lstrip("/")
+            
+            try:
+                mtime = os.path.getmtime(abs_path)
+                mtime_iso = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d %H:%M:%S")
+                date_str = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d")
+                
+                with open(abs_path, "r", encoding="utf-8", errors="ignore") as f:
+                    html_content = f.read()
+                
+                title_match = re.search(r'<title>(.*?)</title>', html_content, re.IGNORECASE | re.DOTALL)
+                raw_title = title_match.group(1).strip() if title_match else file.replace(".html", "").replace("-", " ").title()
+                title = html.unescape(raw_title)
+                
+                meta_desc_tag = re.search(r'<meta\s+[^>]*name=["\']description["\'][^>]*>', html_content, re.IGNORECASE)
+                if not meta_desc_tag:
+                    meta_desc_tag = re.search(r'<meta\s+[^>]*name=["\']description["\'][\s\S]*?>', html_content, re.IGNORECASE)
+                if not meta_desc_tag:
+                    meta_desc_tag = re.search(r'<meta\s+[\s\S]*?name=["\']description["\'][\s\S]*?>', html_content, re.IGNORECASE)
+                
+                if meta_desc_tag:
+                    tag_str = meta_desc_tag.group(0)
+                    c_match = re.search(r'content=["\'](.*?)["\']', tag_str, re.IGNORECASE | re.DOTALL)
+                    description = html.unescape(c_match.group(1).strip()) if c_match else title
+                else:
+                    description = title
+
+
+
+                
+                canon_match = re.search(r'<link\s+rel=["\']canonical["\']\s+href=["\'](.*?)["\']', html_content, re.IGNORECASE | re.DOTALL)
+                if not canon_match:
+                    canon_match = re.search(r'<link\s+href=["\'](.*?)["\']\s+rel=["\']canonical["\']', html_content, re.IGNORECASE | re.DOTALL)
+                canonical_url = canon_match.group(1).strip() if canon_match else f"https://cactslearn.github.io{norm_url}"
+                
+                og_img_match = re.search(r'<meta\s+property=["\']og:image["\']\s+content=["\'](.*?)["\']', html_content, re.IGNORECASE | re.DOTALL)
+                og_image = og_img_match.group(1).strip() if og_img_match else "https://cactslearn.github.io/images/cacts-logo.png"
+                
+                ld_types = set()
+                ld_blocks = re.findall(r'<script\s+type=["\']application/ld\+json["\']>(.*?)</script>', html_content, re.IGNORECASE | re.DOTALL)
+                for block in ld_blocks:
+                    try:
+                        data = json.loads(block.strip())
+                        
+                        def extract_types(obj):
+                            if isinstance(obj, dict):
+                                if "@graph" in obj and isinstance(obj["@graph"], list):
+                                    for item in obj["@graph"]:
+                                        extract_types(item)
+                                if "@type" in obj:
+                                    t = obj["@type"]
+                                    if isinstance(t, list):
+                                        for sub_t in t:
+                                            ld_types.add(str(sub_t))
+                                    elif isinstance(t, str):
+                                        ld_types.add(t)
+                            elif isinstance(obj, list):
+                                for item in obj:
+                                    extract_types(item)
+                                    
+                        extract_types(data)
+                    except Exception:
+                        pass
+                
+                ignored_types = {"WebPage", "WebSite", "Organization", "BreadcrumbList", "PostalAddress", "EntryPoint", "Offer", "AggregateRating"}
+                primary_types = [t for t in ld_types if t not in ignored_types]
+                
+                schema_priority = ["JobPosting", "Course", "EducationalOccupationalCredential", "Article", "BlogPosting", "TechArticle", "Report", "WebApplication", "LocalBusiness"]
+                detected_schema = "WebPage"
+                for pref in schema_priority:
+                    if pref in primary_types or pref in ld_types:
+                        detected_schema = pref
+                        break
+                if detected_schema == "WebPage" and primary_types:
+                    detected_schema = primary_types[0]
+                    
+                if detected_schema == "WebPage":
+                    if norm_url.startswith("/jobs/"):
+                        detected_schema = "JobPosting"
+                    elif norm_url.startswith("/courses/"):
+                        detected_schema = "Course"
+                    elif norm_url.startswith("/guides/") or norm_url.startswith("/comparisons/"):
+                        detected_schema = "Article"
+                    elif norm_url.startswith("/tools/") and "report" in norm_url:
+                        detected_schema = "Report"
+                    elif norm_url.startswith("/tools/"):
+                        detected_schema = "WebApplication"
+                    elif norm_url.startswith("/locations/"):
+                        detected_schema = "LocalBusiness"
+                    elif norm_url.startswith("/showcase/"):
+                        detected_schema = "StudentShowcase"
+                    elif norm_url == "/verify.html":
+                        detected_schema = "EducationalOccupationalCredential"
+                    elif norm_url == "/reviews.html":
+                        detected_schema = "StudentReviews"
+
+                plain_text = re.sub(r'<[^>]+>', ' ', html_content)
+                words = re.findall(r'\w+', plain_text)
+                word_count = len(words)
+                read_time = f"{max(1, math.ceil(word_count / 200))} min read"
+                
+                indexed_items.append({
+                    "url": norm_url,
+                    "title": title,
+                    "description": description,
+                    "canonical_url": canonical_url,
+                    "og_image": og_image,
+                    "schema_type": detected_schema,
+                    "word_count": word_count,
+                    "reading_time": read_time,
+                    "mtime": int(mtime),
+                    "mtime_iso": mtime_iso,
+                    "date": date_str
+                })
+            except Exception as e:
+                print(f"Error indexing {abs_path}: {e}")
+                
+    indexed_items.sort(key=lambda x: x["mtime"], reverse=True)
+    
+    with open(index_file, "w", encoding="utf-8") as f:
+        json.dump(indexed_items, f, indent=2, ensure_ascii=False)
+        
+    print(f"Successfully generated {index_file} with {len(indexed_items)} indexed pages (Sorted newest first).")
+
 if __name__ == "__main__":
-    build()
-    generate_careers_page()
-    update_sitemap_html()
+    build_content_index()
+
+
+

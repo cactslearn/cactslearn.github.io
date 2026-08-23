@@ -12,18 +12,23 @@
   <!-- OpenGraph & Twitter Social Meta Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Certificate Verification Portal | CACTS Pune" />
-  <meta property="og:description" content="Official Authenticity &amp; Digital Accreditation Registry for CACTS 1-to-1 Training &amp; Live Internships." />
+  <meta property="og:description"
+    content="Official Authenticity &amp; Digital Accreditation Registry for CACTS 1-to-1 Training &amp; Live Internships." />
   <meta property="og:url" content="https://cactslearn.github.io/verify.html" />
   <meta property="og:image" content="https://cactslearn.github.io/images/cacts-logo.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Certificate Verification Portal | CACTS Pune" />
-  <meta name="twitter:description" content="Official Authenticity &amp; Digital Accreditation Registry for CACTS 1-to-1 Training &amp; Live Internships." />
+  <meta name="twitter:description"
+    content="Official Authenticity &amp; Digital Accreditation Registry for CACTS 1-to-1 Training &amp; Live Internships." />
   <meta name="twitter:image" content="https://cactslearn.github.io/images/cacts-logo.png" />
 
   <link href="https://cactslearn.github.io/verify.html" rel="canonical" />
 
   <!-- Standard Site CSS -->
   <link href="css/style.css" rel="stylesheet" />
+  <link href="css/social-share.css" rel="stylesheet" />
+  <script src="js/social-share-engine.js" defer></script>
+
 
   <!-- Google Fonts for Print-Ready Luxury Typography & Signatures -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -300,7 +305,7 @@
       overflow: hidden;
       margin: 0 auto;
       flex-shrink: 0;
-      
+
       -webkit-font-smoothing: antialiased !important;
       -moz-osx-font-smoothing: grayscale !important;
       text-rendering: optimizeLegibility !important;
@@ -426,10 +431,28 @@
       pointer-events: none;
     }
 
-    .corner-tl { top: 21px; left: 21px; }
-    .corner-tr { top: 21px; right: 21px; transform: scaleX(-1); }
-    .corner-bl { bottom: 21px; left: 21px; transform: scaleY(-1); }
-    .corner-br { bottom: 21px; right: 21px; transform: scale(-1); }
+    .corner-tl {
+      top: 21px;
+      left: 21px;
+    }
+
+    .corner-tr {
+      top: 21px;
+      right: 21px;
+      transform: scaleX(-1);
+    }
+
+    .corner-bl {
+      bottom: 21px;
+      left: 21px;
+      transform: scaleY(-1);
+    }
+
+    .corner-br {
+      bottom: 21px;
+      right: 21px;
+      transform: scale(-1);
+    }
 
     .cert-content {
       position: relative;
@@ -613,7 +636,8 @@
       box-sizing: border-box;
     }
 
-    .qr-code-box canvas, .qr-code-box img {
+    .qr-code-box canvas,
+    .qr-code-box img {
       width: 70px !important;
       height: 70px !important;
       image-rendering: pixelated;
@@ -866,7 +890,7 @@
       border-radius: 8px;
       font-weight: 600;
       font-size: 0.9rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       display: none;
       z-index: 9999;
       align-items: center;
@@ -879,12 +903,14 @@
         padding: 1rem;
         gap: 1rem;
       }
+
       .control-panel-row-top {
         flex-direction: column;
         align-items: stretch;
         width: 100%;
         gap: 0.75rem;
       }
+
       .search-box-group {
         flex-direction: column;
         align-items: stretch;
@@ -892,12 +918,14 @@
         min-width: 0;
         gap: 0.75rem;
       }
+
       .action-btn-group {
         flex-direction: column;
         align-items: stretch;
         width: 100%;
         gap: 0.75rem;
       }
+
       .search-box-group input,
       .search-box-group button,
       .control-panel-row-top button,
@@ -920,7 +948,9 @@
     }
 
     @media print {
-      html, body {
+
+      html,
+      body {
         background: #ffffff !important;
         padding: 0 !important;
         margin: 0 !important;
@@ -931,10 +961,21 @@
         align-items: center !important;
         justify-content: center !important;
       }
-      .site-header, footer.site-footer, .control-panel-card, .status-alert, nav[aria-label="Breadcrumb"], .floating-ctas, #breakdownSection, #toastNotification {
+
+      .site-header,
+      footer.site-footer,
+      .control-panel-card,
+      .status-alert,
+      nav[aria-label="Breadcrumb"],
+      .floating-ctas,
+      #breakdownSection,
+      #toastNotification {
         display: none !important;
       }
-      main, section.tech-section, .certificate-viewport {
+
+      main,
+      section.tech-section,
+      .certificate-viewport {
         padding: 0 !important;
         margin: 0 !important;
         border: none !important;
@@ -945,6 +986,7 @@
         justify-content: center !important;
         position: relative !important;
       }
+
       #certificateCanvas {
         box-shadow: none !important;
         margin: auto !important;
@@ -964,10 +1006,14 @@
     }
   </style>
   <!-- RSS 2.0 Auto-Discovery Links -->
-  <link rel="alternate" type="application/rss+xml" title="CACTS Master Updates" href="https://cactslearn.github.io/feeds/rss-main.xml" />
-  <link rel="alternate" type="application/rss+xml" title="CACTS Tech Jobs &amp; Internships" href="https://cactslearn.github.io/feeds/rss-jobs.xml" />
-  <link rel="alternate" type="application/rss+xml" title="CACTS Tech Career Guides" href="https://cactslearn.github.io/feeds/rss-guides.xml" />
-  <link rel="alternate" type="application/rss+xml" title="CACTS Engineering Courses" href="https://cactslearn.github.io/feeds/rss-courses.xml" />
+  <link rel="alternate" type="application/rss+xml" title="CACTS Master Updates"
+    href="https://cactslearn.github.io/feeds/rss-main.xml" />
+  <link rel="alternate" type="application/rss+xml" title="CACTS Tech Jobs &amp; Internships"
+    href="https://cactslearn.github.io/feeds/rss-jobs.xml" />
+  <link rel="alternate" type="application/rss+xml" title="CACTS Tech Career Guides"
+    href="https://cactslearn.github.io/feeds/rss-guides.xml" />
+  <link rel="alternate" type="application/rss+xml" title="CACTS Engineering Courses"
+    href="https://cactslearn.github.io/feeds/rss-courses.xml" />
 </head>
 
 <body>
@@ -1014,7 +1060,9 @@
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <a class="btn btn-accent" href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%20free%201-to-1%20demo%20session." target="_blank" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
+        <a class="btn btn-accent"
+          href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%20free%201-to-1%20demo%20session."
+          target="_blank" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
       </nav>
     </div>
   </header>
@@ -1022,7 +1070,7 @@
   <!-- Main Content Area -->
   <main style="padding-top: 8rem">
     <section aria-labelledby="verify-h1" class="tech-section">
-      
+
       <!-- Breadcrumbs -->
       <nav aria-label="Breadcrumb" style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
         <a href="index.html" style="color: var(--accent)">Home</a> &gt;
@@ -1030,32 +1078,45 @@
       </nav>
 
       <h1 class="section-title" id="verify-h1">Certificate Verification Portal</h1>
-      <p class="section-subtitle">Official Authenticity &amp; Digital Accreditation Registry for 1-to-1 Training &amp; Live Internships</p>
+      <p class="section-subtitle">Official Authenticity &amp; Digital Accreditation Registry for 1-to-1 Training &amp;
+        Live Internships</p>
 
       <!-- Control Panel Card -->
       <div class="control-panel-card">
         <div class="control-panel-row-top">
           <div class="search-box-group">
             <input type="text" id="certIdInput" placeholder="Enter Certificate ID (e.g. 20260812001)" />
-            <button class="btn btn-primary" id="verifyBtn" onclick="handleManualVerify()" style="background: linear-gradient(135deg, #bf953f 0%, #d4af37 50%, #aa771c 100%); color: #0b0f19; font-weight: 700;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <button class="btn btn-primary" id="verifyBtn" onclick="handleManualVerify()"
+              style="background: linear-gradient(135deg, #bf953f 0%, #d4af37 50%, #aa771c 100%); color: #0b0f19; font-weight: 700;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
               </svg>
               Verify Record
             </button>
           </div>
-          <button class="btn btn-linkedin" id="linkedinBtn" onclick="addToLinkedInProfile()" style="background: #0077b5; color: #ffffff; font-weight: 600;">
+          <button class="btn btn-linkedin" id="linkedinBtn" onclick="addToLinkedInProfile()"
+            style="background: #0077b5; color: #ffffff; font-weight: 600;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.65 1.65 0 0 0-1.66 1.66c0 .92.74 1.66 1.66 1.66a1.65 1.65 0 0 0 1.65-1.66c0-.92-.73-1.66-1.65-1.66z"/>
+              <path
+                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.65 1.65 0 0 0-1.66 1.66c0 .92.74 1.66 1.66 1.66a1.65 1.65 0 0 0 1.65-1.66c0-.92-.73-1.66-1.65-1.66z" />
             </svg>
             Add to LinkedIn Profile
           </button>
+          <button class="btn btn-secondary" id="shareCertBtn"
+            onclick="if(window.CactsSocialShareEngine) window.CactsSocialShareEngine.openModalForUrl(window.location.href)"
+            style="background: rgba(37, 99, 235, 0.2); border: 1px solid #2563eb; color: #60a5fa; font-weight: 600;">
+            Share Credential
+          </button>
+
         </div>
+
 
         <div class="action-btn-group">
           <button class="btn btn-secondary" id="downloadPdfBtn" onclick="downloadPDF()" disabled>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -1092,10 +1153,10 @@
 
       <!-- Certificate Viewport -->
       <div class="certificate-viewport">
-        
+
         <!-- PRINT-READY CERTIFICATE CANVAS (1050px x 742px) -->
         <div id="certificateCanvas" style="display: none;">
-          
+
           <!-- Background Cryptographic Security Watermark -->
           <div class="cert-security-watermark">CACTS VERIFIED ACCREDITATION</div>
 
@@ -1133,7 +1194,7 @@
           </svg>
 
           <div class="cert-content">
-            
+
             <!-- Header: Official CACTS Brand Name (Height Matched to 120px Side Badges) -->
             <div class="cert-header">
               <div class="cert-header-tag">AUTONOMOUS IT EDUCATION &amp; RESEARCH ACADEMY</div>
@@ -1152,7 +1213,8 @@
               <div class="cert-lead-text">THIS IS TO OFFICIALLY CERTIFY THAT</div>
               <div class="cert-student-name" id="certStudentName">Hambirrao P</div>
               <div class="cert-wording" id="certWording">
-                has successfully completed the <strong>1-to-1 Developer Mentoring &amp; Live Staging Internship</strong> program in
+                has successfully completed the <strong>1-to-1 Developer Mentoring &amp; Live Staging Internship</strong>
+                program in
               </div>
               <div class="cert-course-name" id="certCourseName">Python Developer &amp; Software Architecture</div>
               <div class="cert-meta-details" id="certMetaDetails">
@@ -1169,7 +1231,7 @@
 
             <!-- Footer 5-Column Row Alignment: High-DPI Scannable QR Codes -->
             <div class="cert-footer-row">
-              
+
               <!-- 1. QR Code 1 (Online Verification URL) -->
               <div class="qr-item-container">
                 <div class="qr-code-box" id="qrcodeOnline"></div>
@@ -1185,16 +1247,19 @@
 
               <!-- 3. Center Accreditation Seal Circle SVG with CACTS Brand Colors (76px Height Matched) -->
               <div class="seal-center-box">
-                <svg class="seal-svg-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" width="76" height="76">
+                <svg class="seal-svg-img" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 100 100" width="76" height="76">
                   <defs>
-                    <path id="sealTextPath" d="M 20,50 A 30,30 0 1,1 80,50 A 30,30 0 1,1 20,50" fill="none"/>
+                    <path id="sealTextPath" d="M 20,50 A 30,30 0 1,1 80,50 A 30,30 0 1,1 20,50" fill="none" />
                   </defs>
                   <circle cx="50" cy="50" r="46" stroke="#bf953f" stroke-width="2" fill="#ffffff" />
                   <circle cx="50" cy="50" r="42" stroke="#e11d48" stroke-width="1" fill="none" />
-                  <circle cx="50" cy="50" r="38" stroke="#0a192f" stroke-width="1.5" stroke-dasharray="3 2" fill="none" />
+                  <circle cx="50" cy="50" r="38" stroke="#0a192f" stroke-width="1.5" stroke-dasharray="3 2"
+                    fill="none" />
                   <circle cx="50" cy="50" r="32" stroke="#bf953f" stroke-width="1" fill="none" />
                   <text font-size="6.5" font-weight="700" fill="#0a192f" letter-spacing="0.7">
-                    <textPath href="#sealTextPath" xlink:href="#sealTextPath" startOffset="0%">CACTS PUNE &bull; 1-TO-1 MODEL &bull; ISO 29993 &bull;</textPath>
+                    <textPath href="#sealTextPath" xlink:href="#sealTextPath" startOffset="0%">CACTS PUNE &bull; 1-TO-1
+                      MODEL &bull; ISO 29993 &bull;</textPath>
                   </text>
                   <polygon points="50,28 54,38 65,38 56,44 60,55 50,48 40,55 44,44 35,38 46,38" fill="#e11d48" />
                 </svg>
@@ -1217,8 +1282,10 @@
 
             <!-- Bottom Credentials Footer -->
             <div class="cert-credentials-footer">
-              <div><strong style="color: #0a192f;">Certificate ID:</strong> <span id="barCertId">20260812001</span></div>
-              <div><strong style="color: #0a192f;">Issue Date:</strong> <span id="barIssueDate">August 12, 2026</span></div>
+              <div><strong style="color: #0a192f;">Certificate ID:</strong> <span id="barCertId">20260812001</span>
+              </div>
+              <div><strong style="color: #0a192f;">Issue Date:</strong> <span id="barIssueDate">August 12, 2026</span>
+              </div>
               <div style="display: flex; align-items: center; gap: 5px;">
                 <strong style="color: #0a192f;">Status:</strong>
                 <span class="cert-status-badge valid" id="barStatusBadge">VALID</span>
@@ -1230,13 +1297,15 @@
 
         <!-- Error Display Card -->
         <div class="error-display-card" id="errorCard" style="display: none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
             <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
             <line x1="12" y1="9" x2="12" y2="13"></line>
             <line x1="12" y1="17" x2="12.01" y2="17"></line>
           </svg>
           <h2 id="errorTitle">Certificate Record Not Found</h2>
-          <p id="errorDesc">No verified accreditation record matching the provided Certificate ID could be retrieved. Please check the 11-digit ID and try again.</p>
+          <p id="errorDesc">No verified accreditation record matching the provided Certificate ID could be retrieved.
+            Please check the 11-digit ID and try again.</p>
         </div>
 
       </div>
@@ -1244,15 +1313,19 @@
       <!-- Skills & Verified Project Repositories Breakdown Section -->
       <div class="breakdown-card" id="breakdownSection" style="display: none;">
         <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
           Verified Accreditation &amp; Technical Competencies
         </h3>
-        <p style="font-size: 0.9rem; color: var(--text-secondary);">Direct proof of code execution, 1-to-1 mentoring reviews, and staging repositories completed during training.</p>
+        <p style="font-size: 0.9rem; color: var(--text-secondary);">Direct proof of code execution, 1-to-1 mentoring
+          reviews, and staging repositories completed during training.</p>
 
         <div class="breakdown-grid">
           <!-- Verified Skills Column -->
           <div>
-            <h4 style="font-size: 1.05rem; color: var(--accent-light); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
+            <h4
+              style="font-size: 1.05rem; color: var(--accent-light); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
               Verified Skills &amp; Stack
             </h4>
             <div class="skill-badges-container" id="skillsContainer">
@@ -1262,7 +1335,8 @@
 
           <!-- Verified Project Repositories Column -->
           <div>
-            <h4 style="font-size: 1.05rem; color: var(--accent-light); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
+            <h4
+              style="font-size: 1.05rem; color: var(--accent-light); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
               Live Staging Repositories
             </h4>
             <div id="projectsContainer">
@@ -1274,12 +1348,17 @@
         <!-- Cryptographic Checksum SHA-256 Box -->
         <div style="margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1.25rem;">
           <div style="display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Cryptographic Proof Checksum (SHA-256)</span>
-            <span style="font-size: 0.78rem; color: var(--success); font-weight: 700;">&check; Cryptographically Verified</span>
+            <span
+              style="font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Cryptographic
+              Proof Checksum (SHA-256)</span>
+            <span style="font-size: 0.78rem; color: var(--success); font-weight: 700;">&check; Cryptographically
+              Verified</span>
           </div>
           <div class="hash-box-code">
             <span id="hashTextDisplay">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</span>
-            <button onclick="copyHashText()" style="background: none; border: none; color: var(--accent); cursor: pointer; font-size: 0.8rem; font-weight: 700;">Copy Hash</button>
+            <button onclick="copyHashText()"
+              style="background: none; border: none; color: var(--accent); cursor: pointer; font-size: 0.8rem; font-weight: 700;">Copy
+              Hash</button>
           </div>
         </div>
       </div>
@@ -1289,19 +1368,22 @@
 
   <!-- Toast Notification Container -->
   <div id="toastNotification">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
     <span id="toastMessage">Verification link copied to clipboard!</span>
   </div>
 
   <!-- Official Website Footer Matching Site CSS Grid Architecture -->
-  
+
   <!-- ISO 29993:2017 Credential Security & Verification Protocol Section -->
   <section aria-labelledby="verify-guide-heading" style="max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem;">
     <div style="border-top: 1px solid var(--border); padding-top: 3rem;">
       <h2 class="section-title" id="verify-guide-heading" style="text-align: center; margin-bottom: 0.75rem;">
         ISO 29993:2017 Credential Security &amp; Employer Verification Protocol
       </h2>
-      <p class="section-subtitle" style="text-align: center; max-width: 750px; margin: 0 auto 2.5rem auto; color: var(--text-secondary);">
+      <p class="section-subtitle"
+        style="text-align: center; max-width: 750px; margin: 0 auto 2.5rem auto; color: var(--text-secondary);">
         How employers, HR recruiters, and institutional partners verify candidate certificates issued by CACTS Pune.
       </p>
       <div class="grid-3">
@@ -1310,7 +1392,8 @@
             1. Cryptographic Hash Verification
           </h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-            Each certificate contains a unique 64-character SHA-256 cryptographic payload hash. Entering the Certificate ID displays the original immutable transcript and project commit logs stored in our verification registry.
+            Each certificate contains a unique 64-character SHA-256 cryptographic payload hash. Entering the Certificate
+            ID displays the original immutable transcript and project commit logs stored in our verification registry.
           </p>
         </div>
         <div class="card">
@@ -1318,7 +1401,10 @@
             2. Live Project Code Audit
           </h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-            Unlike generic classroom certificates, verified CACTS credentials link directly to candidate GitHub pull requests and production project commits executed during our <a href="showcase/internship-on-live-projects.html" style="color: var(--accent); text-decoration: underline;">Live Projects Internship</a>.
+            Unlike generic classroom certificates, verified CACTS credentials link directly to candidate GitHub pull
+            requests and production project commits executed during our <a
+              href="showcase/internship-on-live-projects.html"
+              style="color: var(--accent); text-decoration: underline;">Live Projects Internship</a>.
           </p>
         </div>
         <div class="card">
@@ -1326,13 +1412,17 @@
             3. Employer Direct Screening
           </h3>
           <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
-            Corporate hiring partners can request direct 1-to-1 candidate performance evaluation transcripts. Explore our <a href="courses/index.html" style="color: var(--accent); text-decoration: underline;">1-to-1 Mentoring Model</a>, read <a href="reviews.html" style="color: var(--accent); text-decoration: underline;">Student Success Reviews</a>, or check <a href="jobs/index.html" style="color: var(--accent); text-decoration: underline;">Career Openings</a>.
+            Corporate hiring partners can request direct 1-to-1 candidate performance evaluation transcripts. Explore
+            our <a href="courses/index.html" style="color: var(--accent); text-decoration: underline;">1-to-1 Mentoring
+              Model</a>, read <a href="reviews.html" style="color: var(--accent); text-decoration: underline;">Student
+              Success Reviews</a>, or check <a href="jobs/index.html"
+              style="color: var(--accent); text-decoration: underline;">Career Openings</a>.
           </p>
         </div>
       </div>
     </div>
   </section>
-<footer class="site-footer">
+  <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-programs-row">
         <h4 style="
@@ -1640,8 +1730,8 @@
       </div>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap">
         <a href="sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
-            <span style="color: var(--border)">|</span>
-            <a href="feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
+        <span style="color: var(--border)">|</span>
+        <a href="feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
         <span style="color: var(--border)">|</span>
         <a href="privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
         <span style="color: var(--border)">|</span>
@@ -1652,14 +1742,22 @@
 
   <!-- Floating Contact Buttons -->
   <div class="floating-ctas">
-    <a aria-label="Chat on WhatsApp" class="cta-circle cta-whatsapp" href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20learning%20more%20about%20your%201-to-1%20training." target="_blank">
-      <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="vertical-align: middle; transform: translateY(-1px)" viewBox="0 0 24 24" width="24">
-        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+    <a aria-label="Chat on WhatsApp" class="cta-circle cta-whatsapp"
+      href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20learning%20more%20about%20your%201-to-1%20training."
+      target="_blank">
+      <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+        stroke-width="2.5" style="vertical-align: middle; transform: translateY(-1px)" viewBox="0 0 24 24" width="24">
+        <path
+          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+        </path>
       </svg>
     </a>
     <a aria-label="Call CACTS" class="cta-circle cta-call" href="tel:+919665566357">
-      <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" style="vertical-align: middle" viewBox="0 0 24 24" width="20">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+        stroke-width="2.5" style="vertical-align: middle" viewBox="0 0 24 24" width="20">
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+        </path>
       </svg>
     </a>
   </div>
@@ -1858,7 +1956,7 @@
       const container = document.getElementById('skillsContainer');
       container.innerHTML = '';
       const list = skillsArray && skillsArray.length ? skillsArray : ["Python Scripting", "Software Architecture", "Git & Code Review", "PostgreSQL", "Docker", "REST APIs"];
-      
+
       list.forEach(skill => {
         const badge = document.createElement('div');
         badge.className = 'skill-badge';
@@ -1950,12 +2048,12 @@
       const certId = rec.id;
       const certName = rec.courseName || "Software Engineering Training";
       const orgName = "CACTS - Centre of Advanced Computer Training and Studies";
-      const issueYear = rec.issueYear || 2026;
-      const issueMonth = rec.issueMonth || 8;
+      const issueYear = parseInt(rec.issueYear, 10) || 2026;
+      const issueMonth = parseInt(rec.issueMonth, 10) || 8;
       const certUrl = `https://cactslearn.github.io/verify.html?id=${certId}`;
 
       const linkedInUrl = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${encodeURIComponent(certName)}&organizationName=${encodeURIComponent(orgName)}&issueYear=${issueYear}&issueMonth=${issueMonth}&certUrl=${encodeURIComponent(certUrl)}&certId=${encodeURIComponent(certId)}`;
-      
+
       window.open(linkedInUrl, '_blank');
       showToast("Opening LinkedIn Add Certification page...");
     }
@@ -2047,7 +2145,7 @@
     function downloadPDF() {
       if (!currentRecord) return;
       const element = document.getElementById('certificateCanvas');
-      
+
       const oldTransform = element.style.transform;
       const oldOrigin = element.style.transformOrigin;
       const oldPosition = element.style.position;
@@ -2070,7 +2168,7 @@
           margin: 0,
           filename: `CACTS_Certificate_${currentRecord.id}.pdf`,
           image: { type: 'jpeg', quality: 1.0 },
-          html2canvas: { 
+          html2canvas: {
             scale: 3,
             letterRendering: true,
             useCORS: true,
