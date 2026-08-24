@@ -165,6 +165,95 @@
       box-shadow: 0 0 12px var(--accent-glow);
     }
 
+    /* Smart Syndication Guide Box inside Card */
+    .planner-guide-box {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 0.65rem 0.85rem;
+      margin: 0.85rem 0;
+      font-size: 0.78rem;
+    }
+
+    .planner-guide-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.3rem;
+    }
+
+    .planner-guide-label {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .planner-guide-val {
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+
+    .planner-guide-tip {
+      color: #94a3b8;
+      margin-top: 0.35rem;
+      border-top: 1px dashed rgba(255, 255, 255, 0.08);
+      padding-top: 0.35rem;
+      line-height: 1.35;
+    }
+
+    /* Weekly Schedule Banner */
+    .planner-schedule-banner {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .planner-schedule-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .planner-schedule-days {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+
+    .planner-schedule-day-card {
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 6px;
+      padding: 0.4rem 0.6rem;
+      font-size: 0.75rem;
+    }
+
+    .planner-day-name {
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 0.15rem;
+    }
+
+    .planner-day-topic {
+      color: var(--text-secondary);
+      font-size: 0.72rem;
+    }
+
+    .planner-day-time {
+      color: var(--accent-light);
+      font-weight: 600;
+      font-size: 0.72rem;
+      margin-top: 0.25rem;
+    }
+
     /* Section Headers */
     .planner-section-header {
       display: flex;
@@ -383,6 +472,50 @@
         <button class="planner-filter-pill" data-filter="REVIEW">Alumni Reviews</button>
         <button class="planner-filter-pill" data-filter="GUIDE">Tech Guides</button>
         <button class="planner-filter-pill" data-filter="POLICY">Institutional &amp; Policies</button>
+      </div>
+
+      <!-- Weekly Syndication Schedule Assistant Banner -->
+      <div class="planner-schedule-banner">
+        <div class="planner-schedule-title">
+          <span>Weekly Posting Schedule &amp; Peak Engagement Guide:</span>
+        </div>
+        <div class="planner-schedule-days">
+          <div class="planner-schedule-day-card">
+            <div class="planner-day-name">Monday</div>
+            <div class="planner-day-topic">Jobs &amp; Certs (LinkedIn/WA)</div>
+            <div class="planner-day-time">8:30 AM - 10:00 AM</div>
+          </div>
+          <div class="planner-schedule-day-card">
+            <div class="planner-day-name">Tuesday</div>
+            <div class="planner-day-topic">Fees &amp; EMI (WA/IG/FB)</div>
+            <div class="planner-day-time">11:00 AM - 1:00 PM</div>
+          </div>
+          <div class="planner-schedule-day-card">
+            <div class="planner-day-name">Wednesday</div>
+            <div class="planner-day-topic">Syllabus &amp; Stacks (LinkedIn/X)</div>
+            <div class="planner-day-time">1:00 PM - 3:00 PM</div>
+          </div>
+          <div class="planner-schedule-day-card">
+            <div class="planner-day-name">Thursday</div>
+            <div class="planner-day-topic">Beginner &amp; Tools (Reddit/X)</div>
+            <div class="planner-day-time">5:00 PM - 7:00 PM</div>
+          </div>
+          <div class="planner-schedule-day-card">
+            <div class="planner-day-name">Friday</div>
+            <div class="planner-day-topic">Local Hubs (GBP/Facebook)</div>
+            <div class="planner-day-time">10:00 AM - 12:00 PM</div>
+          </div>
+          <div class="planner-schedule-day-card">
+            <div class="planner-day-name">Saturday</div>
+            <div class="planner-day-topic">Alumni Stories (IG/WA)</div>
+            <div class="planner-day-time">6:00 PM - 9:00 PM</div>
+          </div>
+          <div class="planner-schedule-day-card">
+            <div class="planner-day-name">Sunday</div>
+            <div class="planner-day-topic">Roadmaps &amp; Reports (LinkedIn)</div>
+            <div class="planner-day-time">11:00 AM - 1:00 PM</div>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -5,7 +5,7 @@
  *              search, urgent/evergreen queue rotation, gridIndex palette dispersion, and social share modal trigger.
  */
 
-window.CactsPlannerEngine = (function() {
+window.CactsPlannerEngine = (function () {
   'use strict';
 
   let rawContentIndex = [];
@@ -175,10 +175,109 @@ window.CactsPlannerEngine = (function() {
     });
   }
 
+  function getSyndicationGuidance(item) {
+    const urlLower = (item.url || '').toLowerCase();
+    const schema = (item.schema_type || '').toLowerCase();
+
+    if (schema.includes('credential') || urlLower.includes('verify.html')) {
+      return {
+        bestDay: 'Monday / Saturday',
+        bestTime: '8:30 AM - 10:00 AM IST',
+        platforms: 'LinkedIn, WhatsApp',
+        actionTip: 'Target Recruiters & HR Managers with verified credential proof.'
+      };
+    } else if (schema.includes('job') || urlLower.includes('/jobs/')) {
+      return {
+        bestDay: 'Monday / Wednesday',
+        bestTime: '8:30 AM - 10:00 AM IST',
+        platforms: 'LinkedIn, WhatsApp, X',
+        actionTip: 'Post hiring alert to reach Pune CS graduates & developers.'
+      };
+    } else if (urlLower.includes('fees.html') || urlLower.includes('/fees/')) {
+      return {
+        bestDay: 'Tuesday / Sunday',
+        bestTime: '11:00 AM - 1:00 PM IST',
+        platforms: 'WhatsApp, Instagram, FB',
+        actionTip: 'Share fee structure & EMI options to convert student inquiries.'
+      };
+    } else if (urlLower.includes('syllabus.html') || urlLower.includes('/syllabus/')) {
+      return {
+        bestDay: 'Wednesday',
+        bestTime: '1:00 PM - 3:00 PM IST',
+        platforms: 'LinkedIn, Twitter, Bluesky',
+        actionTip: 'Highlight 1-to-1 mentor code reviews & practical modules.'
+      };
+    } else if (urlLower.includes('beginner.html') || urlLower.includes('/beginner/')) {
+      return {
+        bestDay: 'Thursday / Sunday',
+        bestTime: '5:00 PM - 7:00 PM IST',
+        platforms: 'LinkedIn, Reddit, Instagram',
+        actionTip: 'Guide 0-1 year freshers starting coding from scratch.'
+      };
+    } else if (urlLower.includes('roadmap.html') || urlLower.includes('/roadmap/')) {
+      return {
+        bestDay: 'Sunday / Thursday',
+        bestTime: '11:00 AM - 1:00 PM IST',
+        platforms: 'LinkedIn, Twitter, Bluesky',
+        actionTip: 'Share career progression path for developers & switchers.'
+      };
+    } else if (urlLower.includes('comparison.html') || urlLower.includes('/comparison/')) {
+      return {
+        bestDay: 'Wednesday',
+        bestTime: '1:00 PM - 3:00 PM IST',
+        platforms: 'LinkedIn, Twitter, Reddit',
+        actionTip: 'Compare tech stacks to resolve student decision confusion.'
+      };
+    } else if (schema.includes('course') || urlLower.includes('/courses/')) {
+      return {
+        bestDay: 'Tuesday / Thursday',
+        bestTime: '11:00 AM - 1:00 PM IST',
+        platforms: 'WhatsApp, Instagram, FB',
+        actionTip: 'Promote 1-to-1 mentor training & production projects.'
+      };
+    } else if (schema.includes('tool') || urlLower.includes('/tools/')) {
+      return {
+        bestDay: 'Thursday',
+        bestTime: '5:00 PM - 7:00 PM IST',
+        platforms: 'Reddit, Twitter, LinkedIn',
+        actionTip: 'Share free interactive developer tool with tech community.'
+      };
+    } else if (schema.includes('review') || urlLower.includes('reviews.html')) {
+      return {
+        bestDay: 'Saturday',
+        bestTime: '6:00 PM - 9:00 PM IST',
+        platforms: 'Instagram, WhatsApp, FB',
+        actionTip: 'Share authentic student alumni career transformation story.'
+      };
+    } else if (schema.includes('localbusiness') || urlLower.includes('/locations/')) {
+      return {
+        bestDay: 'Friday',
+        bestTime: '10:00 AM - 12:00 PM IST',
+        platforms: 'Google Business, Facebook',
+        actionTip: 'Boost local Pune branch visibility & institute visits.'
+      };
+    } else if (schema.includes('report') || urlLower.includes('report')) {
+      return {
+        bestDay: 'Sunday',
+        bestTime: '11:00 AM - 1:00 PM IST',
+        platforms: 'LinkedIn, Twitter, Bluesky',
+        actionTip: 'Share industry salary benchmarks & market demand insights.'
+      };
+    } else {
+      return {
+        bestDay: 'Weekday',
+        bestTime: '10:00 AM - 2:00 PM IST',
+        platforms: 'LinkedIn, WhatsApp',
+        actionTip: 'Share official CACTS Pune documentation & guide.'
+      };
+    }
+  }
+
   function renderContentCard(item, queueType, shareHistory, gridIndex = 0) {
     const isRecentlyShared = shareHistory.includes(item.url);
     const badgeLabel = queueType === 'URGENT' ? 'Urgent Priority' : 'Evergreen Rotation';
     const badgeClass = queueType === 'URGENT' ? 'urgent-badge' : 'evergreen-badge';
+    const guide = getSyndicationGuidance(item);
 
     return `
       <div class="planner-card" data-url="${item.url}">
@@ -196,8 +295,23 @@ window.CactsPlannerEngine = (function() {
           <span class="planner-card-date">Updated: ${item.date || 'Recently'}</span>
         </div>
 
+        <!-- Smart Syndication Strategy Guide Box -->
+        <div class="planner-guide-box">
+          <div class="planner-guide-row">
+            <span class="planner-guide-label">Best Schedule:</span>
+            <span class="planner-guide-val">${guide.bestDay} (${guide.bestTime})</span>
+          </div>
+          <div class="planner-guide-row">
+            <span class="planner-guide-label">Target Channels:</span>
+            <span class="planner-guide-val">${guide.platforms}</span>
+          </div>
+          <div class="planner-guide-tip">
+            ${guide.actionTip}
+          </div>
+        </div>
+
         <div class="planner-card-footer">
-          <a href="${item.url}" target="_blank" class="planner-view-link">View Page ➔</a>
+          <a href="${item.url}" target="_blank" class="planner-view-link">View Page</a>
           <button class="planner-share-btn" data-url="${item.url}" data-index="${gridIndex}">
             Share Now
           </button>

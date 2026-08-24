@@ -490,7 +490,18 @@ window.CactsSocialShareEngine = (function() {
       meta.schemaType = 'JobPosting';
       meta.badgeTitle = '[Recognized: Tech Job Posting]';
       meta.presetKey = 'job';
-      meta.ldCaption = `Hiring Alert for Pune Tech Developers & Engineering Graduates!\n\n${cleanTitle} at CACTS Pune. Gain 1-to-1 live mentor code reviews, production codebase access & career guidance.\n\nApply Now: ${meta.url}`;
+
+      if (pageItemData && pageItemData.jobTitle) {
+        const jTitle = pageItemData.jobTitle;
+        const jStipend = pageItemData.stipend ? ` (${pageItemData.stipend})` : '';
+        const jDesc = truncateText(pageItemData.jobDesc || pageItemData.description, 140);
+
+        meta.customTitle = `Hiring: ${jTitle}`;
+        meta.customDescription = `${jTitle}${jStipend} at CACTS Pune. ${jDesc}`;
+        meta.ldCaption = `Hiring Alert for Pune Developers & Engineering Graduates!\n\nRole: ${jTitle}${jStipend}\nLocation: CACTS Pune\n\n${jDesc}\n\n1-to-1 Live Mentor Code Reviews, Production Codebase Access & Career Placement Support.\n\nApply Online: ${meta.url}`;
+      } else {
+        meta.ldCaption = `Hiring Alert for Pune Tech Developers & Engineering Graduates!\n\n${cleanTitle} at CACTS Pune. Gain 1-to-1 live mentor code reviews, production codebase access & career guidance.\n\nApply Now: ${meta.url}`;
+      }
       return meta;
     }
 
@@ -667,7 +678,7 @@ window.CactsSocialShareEngine = (function() {
         formatTag: '1200x630 Feed Banner',
         actionType: 'intent',
         intentUrl: `https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`,
-        actionLabel: 'Share to LinkedIn Feed ➔'
+        actionLabel: 'Share to LinkedIn Feed'
       },
       {
         id: 'twitter-tweet',
@@ -678,7 +689,7 @@ window.CactsSocialShareEngine = (function() {
         formatTag: '1200x630 Tech Tweet',
         actionType: 'intent',
         intentUrl: `https://twitter.com/intent/tweet?text=${encFullCaption}`,
-        actionLabel: 'Post Pre-filled Tweet on X ➔'
+        actionLabel: 'Post Pre-filled Tweet on X'
       },
       {
         id: 'instagram-story',
@@ -689,7 +700,7 @@ window.CactsSocialShareEngine = (function() {
         formatTag: '1080x1920 Story Card',
         actionType: 'intent',
         formatKey: '1080x1920',
-        actionLabel: 'Copy Caption & Open Instagram ➔'
+        actionLabel: 'Copy Caption & Open Instagram'
       },
       {
         id: 'whatsapp-chat',
@@ -700,7 +711,7 @@ window.CactsSocialShareEngine = (function() {
         formatTag: 'Text & Link Share',
         actionType: 'intent',
         intentUrl: `https://api.whatsapp.com/send?text=${encFullCaption}`,
-        actionLabel: 'Share Full Text & Link to WhatsApp ➔'
+        actionLabel: 'Share Full Text & Link to WhatsApp'
       },
       {
         id: 'whatsapp-enroll',
@@ -711,7 +722,7 @@ window.CactsSocialShareEngine = (function() {
         formatTag: 'Direct Desk Inquiry',
         actionType: 'intent',
         intentUrl: `https://wa.me/919665566357?text=${encodeURIComponent('Hello CACTS Pune, I am inquiring about: ' + meta.title + ' (' + targetUrl + ')')}`,
-        actionLabel: 'Open Direct WhatsApp Desk Inquiry ➔'
+        actionLabel: 'Open Direct WhatsApp Desk Inquiry'
       },
       {
         id: 'facebook-feed',
@@ -722,7 +733,7 @@ window.CactsSocialShareEngine = (function() {
         formatTag: '1200x630 Link Post',
         actionType: 'intent',
         intentUrl: `https://www.facebook.com/sharer/sharer.php?u=${encUrl}`,
-        actionLabel: 'Share to Facebook ➔'
+        actionLabel: 'Share to Facebook'
       },
       {
         id: 'gbp-post',
@@ -733,7 +744,7 @@ window.CactsSocialShareEngine = (function() {
         formatTag: '1200x900 Promo Card',
         actionType: 'intent',
         formatKey: '1200x900',
-        actionLabel: 'Copy Caption & Open Google Business ➔'
+        actionLabel: 'Copy Caption & Open Google Business'
       },
       {
         id: 'reddit-post',
@@ -744,7 +755,7 @@ window.CactsSocialShareEngine = (function() {
         formatTag: 'Discussion Link',
         actionType: 'intent',
         intentUrl: `https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}`,
-        actionLabel: 'Post to Reddit ➔'
+        actionLabel: 'Post to Reddit'
       },
       {
         id: 'bluesky-post',
@@ -755,7 +766,7 @@ window.CactsSocialShareEngine = (function() {
         formatTag: 'Tech Update',
         actionType: 'intent',
         intentUrl: `https://bsky.app/intent/compose?text=${encFullCaption}`,
-        actionLabel: 'Post Pre-filled Text to Bluesky ➔'
+        actionLabel: 'Post Pre-filled Text to Bluesky'
       }
     ];
 
@@ -769,7 +780,7 @@ window.CactsSocialShareEngine = (function() {
         recommended: true,
         formatTag: 'Native Image & Text Share',
         actionType: 'native-share',
-        actionLabel: 'Open Mobile System Share Sheet ➔'
+        actionLabel: 'Open Mobile System Share Sheet'
       });
     }
 
@@ -837,23 +848,31 @@ window.CactsSocialShareEngine = (function() {
     return str.substring(0, maxLen - 3) + '...';
   }
 
-  // Index-Dispersed Palette & Card Badge Selection Engine (Expanded Descriptive Schema Type Suffixes & "SCAN QR CODE TO..." Explicit CTA Buttons)
+  // Fixed Schema & Sub-Schema Category Palettes Map
+  const SCHEMA_PALETTES = {
+    'cert':       { bgGradStart: '#78350f', bgGradEnd: '#1c1917', accentTabBg: '#f59e0b', accentTabTextColor: '#1c1917', subheadColor: '#fbbf24' },
+    'job':        { bgGradStart: '#312e81', bgGradEnd: '#09090b', accentTabBg: '#818cf8', accentTabTextColor: '#09090b', subheadColor: '#c7d2fe' },
+    'fees':       { bgGradStart: '#064e3b', bgGradEnd: '#022c22', accentTabBg: '#10b981', accentTabTextColor: '#022c22', subheadColor: '#34d399' },
+    'syllabus':   { bgGradStart: '#1e3a8a', bgGradEnd: '#0f172a', accentTabBg: '#38bdf8', accentTabTextColor: '#0f172a', subheadColor: '#7dd3fc' },
+    'beginner':   { bgGradStart: '#451a03', bgGradEnd: '#0f172a', accentTabBg: '#f97316', accentTabTextColor: '#0f172a', subheadColor: '#fb923c' },
+    'roadmap':    { bgGradStart: '#4c1d95', bgGradEnd: '#1e1b4b', accentTabBg: '#c084fc', accentTabTextColor: '#1e1b4b', subheadColor: '#e879f9' },
+    'comparison': { bgGradStart: '#164e63', bgGradEnd: '#083344', accentTabBg: '#22d3ee', accentTabTextColor: '#083344', subheadColor: '#67e8f9' },
+    'course':     { bgGradStart: '#1e40af', bgGradEnd: '#030712', accentTabBg: '#60a5fa', accentTabTextColor: '#030712', subheadColor: '#93c5fd' },
+    'tool':       { bgGradStart: '#14532d', bgGradEnd: '#052e16', accentTabBg: '#84cc16', accentTabTextColor: '#052e16', subheadColor: '#a3e635' },
+    'review':     { bgGradStart: '#701a75', bgGradEnd: '#0f172a', accentTabBg: '#f472b6', accentTabTextColor: '#0f172a', subheadColor: '#fbcfe8' },
+    'location':   { bgGradStart: '#0c4a6e', bgGradEnd: '#032830', accentTabBg: '#38bdf8', accentTabTextColor: '#032830', subheadColor: '#7dd3fc' },
+    'report':     { bgGradStart: '#7f1d1d', bgGradEnd: '#450a0a', accentTabBg: '#f87171', accentTabTextColor: '#450a0a', subheadColor: '#fca5a5' },
+    'policy':     { bgGradStart: '#27272a', bgGradEnd: '#09090b', accentTabBg: '#e4e4e7', accentTabTextColor: '#09090b', subheadColor: '#fafafa' },
+    'info':       { bgGradStart: '#18181b', bgGradEnd: '#09090b', accentTabBg: '#fbbf24', accentTabTextColor: '#09090b', subheadColor: '#fef08a' },
+    'guide':      { bgGradStart: '#064e3b', bgGradEnd: '#0f172a', accentTabBg: '#34d399', accentTabTextColor: '#0f172a', subheadColor: '#a7f3d0' }
+  };
+
+  // Fixed Category-Specific Background Palette & Badge Selection Engine
   function getItemPalette(meta) {
-    let hash = 0;
-    const keyStr = (meta.url || '') + (meta.title || '');
-    for (let i = 0; i < keyStr.length; i++) {
-      hash = keyStr.charCodeAt(i) + ((hash << 5) - hash);
-    }
-
-    const pageItemData = meta.pageItemData;
-    const idxOffset = (pageItemData && typeof pageItemData.gridIndex === 'number') ? pageItemData.gridIndex * 5 : 0;
-    const paletteIndex = Math.abs(hash + idxOffset) % RICH_PALETTES_16.length;
-    
-    const p = RICH_PALETTES_16[paletteIndex];
-
     let tabTop = 'OFFICIAL PORTAL';
     let tabBottom = 'CACTS Pune Web Page';
-    let cta = 'SCAN QR CODE TO VISIT PAGE ➔';
+    let cta = 'SCAN QR CODE TO VISIT PAGE';
+    let catKey = 'guide';
 
     const targetUrl = (meta.url || '').toLowerCase();
     const schema = (meta.schemaType || '').toLowerCase();
@@ -861,88 +880,112 @@ window.CactsSocialShareEngine = (function() {
     if (schema.includes('credential') || targetUrl.includes('verify.html')) {
       tabTop = 'OFFICIAL ACCREDITATION';
       tabBottom = 'Certificate Verification';
-      cta = 'SCAN QR CODE TO VERIFY CREDENTIALS ➔';
+      cta = 'SCAN QR CODE TO VERIFY CREDENTIALS';
+      catKey = 'cert';
     } else if (schema.includes('job') || targetUrl.includes('/jobs/')) {
       tabTop = 'CAREER OPPORTUNITY';
       tabBottom = 'Developer Job Posting';
-      cta = 'SCAN QR CODE TO APPLY ONLINE ➔';
+      cta = 'SCAN QR CODE TO APPLY ONLINE';
+      catKey = 'job';
     } else if (targetUrl.includes('fees.html') || targetUrl.includes('/fees/')) {
       tabTop = 'COURSE FEES';
       tabBottom = 'Fees & Installments';
-      cta = 'SCAN QR CODE FOR FEES & EMI ➔';
+      cta = 'SCAN QR CODE FOR FEES & EMI';
+      catKey = 'fees';
     } else if (targetUrl.includes('syllabus.html') || targetUrl.includes('/syllabus/')) {
       tabTop = 'COURSE SYLLABUS';
       tabBottom = 'Complete Module Breakdown';
-      cta = 'SCAN QR CODE FOR FULL SYLLABUS ➔';
+      cta = 'SCAN QR CODE FOR FULL SYLLABUS';
+      catKey = 'syllabus';
     } else if (targetUrl.includes('beginner.html') || targetUrl.includes('/beginner/')) {
       tabTop = 'BEGINNER ROADMAP';
       tabBottom = 'Zero-Experience Guide';
-      cta = 'SCAN QR CODE FOR BEGINNER GUIDE ➔';
+      cta = 'SCAN QR CODE FOR BEGINNER GUIDE';
+      catKey = 'beginner';
     } else if (targetUrl.includes('roadmap.html') || targetUrl.includes('/roadmap/')) {
       tabTop = 'CAREER ROADMAP';
       tabBottom = 'Developer Career Path';
-      cta = 'SCAN QR CODE FOR CAREER ROADMAP ➔';
+      cta = 'SCAN QR CODE FOR CAREER ROADMAP';
+      catKey = 'roadmap';
     } else if (targetUrl.includes('comparison.html') || targetUrl.includes('/comparison/')) {
       tabTop = 'TECH COMPARISON';
       tabBottom = 'Framework Breakdown';
-      cta = 'SCAN QR CODE FOR TECH COMPARISON ➔';
+      cta = 'SCAN QR CODE FOR TECH COMPARISON';
+      catKey = 'comparison';
     } else if (schema.includes('course') || targetUrl.includes('/courses/')) {
       tabTop = '1-TO-1 COURSE';
       tabBottom = 'Live Mentor Training';
-      cta = 'SCAN QR CODE FOR COURSE DETAILS ➔';
+      cta = 'SCAN QR CODE FOR COURSE DETAILS';
+      catKey = 'course';
     } else if (schema.includes('tool') || schema.includes('application') || targetUrl.includes('/tools/')) {
       tabTop = 'DEVELOPER TOOL';
       tabBottom = 'Interactive Utility';
-      cta = 'SCAN QR CODE TO LAUNCH TOOL ➔';
+      cta = 'SCAN QR CODE TO LAUNCH TOOL';
+      catKey = 'tool';
     } else if (schema.includes('review') || targetUrl.includes('reviews.html')) {
       tabTop = 'ALUMNI REVIEWS';
       tabBottom = 'Verified Student Ratings';
-      cta = 'SCAN QR CODE FOR ALUMNI REVIEWS ➔';
+      cta = 'SCAN QR CODE FOR ALUMNI REVIEWS';
+      catKey = 'review';
     } else if (schema.includes('localbusiness') || targetUrl.includes('/locations/')) {
       tabTop = 'TRAINING INSTITUTE';
       tabBottom = 'Pune Branch Location';
-      cta = 'SCAN QR CODE FOR BRANCH DETAILS ➔';
+      cta = 'SCAN QR CODE FOR BRANCH DETAILS';
+      catKey = 'location';
     } else if (schema.includes('report') || targetUrl.includes('report')) {
       tabTop = 'INDUSTRY REPORT';
       tabBottom = 'Salary & Tech Index';
-      cta = 'SCAN QR CODE FOR FULL REPORT ➔';
+      cta = 'SCAN QR CODE FOR FULL REPORT';
+      catKey = 'report';
     } else if (targetUrl.includes('privacy')) {
       tabTop = 'INSTITUTIONAL POLICY';
       tabBottom = 'Privacy Policy';
-      cta = 'SCAN QR CODE FOR PRIVACY POLICY ➔';
+      cta = 'SCAN QR CODE FOR PRIVACY POLICY';
+      catKey = 'policy';
     } else if (targetUrl.includes('terms')) {
       tabTop = 'LEGAL TERMS';
       tabBottom = 'Terms & Conditions';
-      cta = 'SCAN QR CODE FOR LEGAL TERMS ➔';
+      cta = 'SCAN QR CODE FOR LEGAL TERMS';
+      catKey = 'policy';
     } else if (targetUrl.includes('about')) {
       tabTop = 'INSTITUTION PROFILE';
       tabBottom = 'About CACTS Pune';
-      cta = 'SCAN QR CODE FOR ABOUT DETAILS ➔';
+      cta = 'SCAN QR CODE FOR ABOUT DETAILS';
+      catKey = 'info';
     } else if (targetUrl.includes('contact')) {
       tabTop = 'OFFICIAL CONTACT';
       tabBottom = 'Support & Help Desk';
-      cta = 'SCAN QR CODE FOR CONTACT DESK ➔';
+      cta = 'SCAN QR CODE FOR CONTACT DESK';
+      catKey = 'info';
     } else if (targetUrl.includes('faq')) {
       tabTop = 'KNOWLEDGE DESK';
       tabBottom = 'Frequently Asked Questions';
-      cta = 'SCAN QR CODE FOR HELP FAQ ➔';
+      cta = 'SCAN QR CODE FOR HELP FAQ';
+      catKey = 'info';
     } else if (targetUrl.includes('careers')) {
       tabTop = 'CAREER CENTER';
       tabBottom = 'Job Openings & Placement';
-      cta = 'SCAN QR CODE FOR CAREER OPENINGS ➔';
+      cta = 'SCAN QR CODE FOR CAREER OPENINGS';
+      catKey = 'job';
     } else if (targetUrl.includes('sitemap')) {
       tabTop = 'SITE DIRECTORY';
       tabBottom = 'Full Course Sitemap';
-      cta = 'SCAN QR CODE FOR SITE MAP ➔';
+      cta = 'SCAN QR CODE FOR SITE MAP';
+      catKey = 'info';
     } else if (targetUrl.includes('/guides/') || targetUrl.includes('/comparisons/') || schema.includes('article')) {
       tabTop = 'ENGINEERING GUIDE';
       tabBottom = 'Tech Career Roadmap';
-      cta = 'SCAN QR CODE TO READ GUIDE ➔';
+      cta = 'SCAN QR CODE TO READ GUIDE';
+      catKey = 'guide';
     } else {
       tabTop = 'OFFICIAL PORTAL';
       tabBottom = 'CACTS Pune Web Page';
-      cta = 'SCAN QR CODE TO VISIT PAGE ➔';
+      cta = 'SCAN QR CODE TO VISIT PAGE';
+      catKey = 'guide';
     }
+
+    // Get the fixed signature palette for this specific category
+    const p = SCHEMA_PALETTES[catKey] || SCHEMA_PALETTES['guide'];
 
     return {
       bgGradStart: p.bgGradStart,
@@ -1869,6 +1912,26 @@ window.CactsSocialShareEngine = (function() {
     await refreshCanvasPreview();
   }
 
+  function getDynamicContentHashtags(meta) {
+    if (!meta) return [];
+    const text = ((meta.title || '') + ' ' + (meta.customTitle || '') + ' ' + (meta.description || '') + ' ' + (meta.url || '')).toLowerCase();
+    const dynamicTags = [];
+
+    if (text.includes('full stack') || text.includes('fullstack')) dynamicTags.push('#FullStackDeveloper');
+    if (text.includes('java')) dynamicTags.push('#JavaDeveloper');
+    if (text.includes('python')) dynamicTags.push('#PythonDeveloper');
+    if (text.includes('ai') || text.includes('machine learning') || text.includes('artificial intelligence')) dynamicTags.push('#ArtificialIntelligence');
+    if (text.includes('data science') || text.includes('analytics')) dynamicTags.push('#DataScience');
+    if (text.includes('devops') || text.includes('ci/cd') || text.includes('cloud') || text.includes('aws')) dynamicTags.push('#DevOps');
+    if (text.includes('testing') || text.includes('selenium') || text.includes('qa')) dynamicTags.push('#SoftwareTesting');
+    if (text.includes('react')) dynamicTags.push('#ReactJS');
+    if (text.includes('cybersecurity') || text.includes('security') || text.includes('soc')) dynamicTags.push('#Cybersecurity');
+    if (text.includes('power bi') || text.includes('visualization')) dynamicTags.push('#PowerBI');
+    if (text.includes('architect')) dynamicTags.push('#SoftwareArchitecture');
+
+    return dynamicTags;
+  }
+
   function renderTailoredHashtags(platformId, presetKey) {
     const pillsContainer = document.getElementById('socialHashtagPills');
     const titleElem = document.getElementById('socialHashtagTitle');
@@ -1884,13 +1947,13 @@ window.CactsSocialShareEngine = (function() {
       return;
     }
 
-    if (titleElem) titleElem.innerText = 'Target-Audience Hashtags (Click to insert):';
+    if (titleElem) titleElem.innerText = 'Content & Target-Audience Hashtags (Click to insert):';
     if (copyTagsBtn) copyTagsBtn.style.opacity = '1';
 
-    const platformTags = PLATFORM_HASHTAGS[platformId] || PLATFORM_HASHTAGS['linkedin-feed'];
     const topicTags = TOPIC_HASHTAGS[presetKey] || TOPIC_HASHTAGS['guide'];
+    const dynamicTags = getDynamicContentHashtags(currentMetadata);
     
-    const combined = Array.from(new Set([...topicTags, ...platformTags]));
+    const combined = Array.from(new Set([...topicTags, ...dynamicTags]));
     const captionArea = document.getElementById('socialCaptionText');
 
     pillsContainer.innerHTML = combined.map(h => `<button class="social-hashtag-pill">${h}</button>`).join('');
