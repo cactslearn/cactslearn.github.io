@@ -1087,7 +1087,7 @@
           <div class="search-box-group">
             <input type="text" id="certIdInput" placeholder="Enter Certificate ID (e.g. 20260812001)" />
             <button class="btn btn-primary" id="verifyBtn" onclick="handleManualVerify()"
-              style="background: linear-gradient(135deg, #bf953f 0%, #d4af37 50%, #aa771c 100%); color: #0b0f19; font-weight: 700;">
+              style="background: linear-gradient(135deg, #bf953f 0%, #d4af37 50%, #aa771c 100%); color: #0b0f19; font-weight: 700; padding: 0.75rem 1.25rem; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -1097,7 +1097,7 @@
             </button>
           </div>
           <button class="btn btn-linkedin" id="linkedinBtn" onclick="addToLinkedInProfile()"
-            style="background: #0077b5; color: #ffffff; font-weight: 600;">
+            style="background: #0077b5; color: #ffffff; font-weight: 600; padding: 0.75rem 1.25rem; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.65 1.65 0 0 0-1.66 1.66c0 .92.74 1.66 1.66 1.66a1.65 1.65 0 0 0 1.65-1.66c0-.92-.73-1.66-1.65-1.66z" />
@@ -1106,7 +1106,14 @@
           </button>
           <button class="btn btn-secondary" id="shareCertBtn"
             onclick="if(window.CactsSocialShareEngine) window.CactsSocialShareEngine.openModalForUrl(window.location.href)"
-            style="background: rgba(37, 99, 235, 0.2); border: 1px solid #2563eb; color: #60a5fa; font-weight: 600;">
+            style="background: rgba(37, 99, 235, 0.2); border: 1px solid #2563eb; color: #60a5fa; font-weight: 600; padding: 0.75rem 1.25rem; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
             Share Credential
           </button>
 

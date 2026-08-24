@@ -3764,6 +3764,11 @@ def build_content_index(site_root="."):
                 raw_title = title_match.group(1).strip() if title_match else file.replace(".html", "").replace("-", " ").title()
                 title = html.unescape(raw_title)
                 
+                # Strip branding suffixes (| CACTS, | CACTS Pune, etc.) to create a clean hook title
+                clean_title = re.sub(r'\s*[|\-–—:]\s*(?:CACTS(?:\s+Pune|\s+Institute|\s+Training|\s+Careers)?|Centre\s+of\s+Advanced\s+Computer\s+Training\s+and\s+Studies).*$', '', title, flags=re.IGNORECASE).strip()
+                if clean_title:
+                    title = clean_title
+                
                 meta_desc_tag = re.search(r'<meta\s+[^>]*name=["\']description["\'][^>]*>', html_content, re.IGNORECASE)
                 if not meta_desc_tag:
                     meta_desc_tag = re.search(r'<meta\s+[^>]*name=["\']description["\'][\s\S]*?>', html_content, re.IGNORECASE)
@@ -3814,7 +3819,7 @@ def build_content_index(site_root="."):
                     except Exception:
                         pass
                 
-                ignored_types = {"WebPage", "WebSite", "Organization", "BreadcrumbList", "PostalAddress", "EntryPoint", "Offer", "AggregateRating"}
+                ignored_types = {"WebPage", "WebSite", "Organization", "BreadcrumbList", "PostalAddress", "EntryPoint", "Offer", "AggregateRating", "ItemList", "ListItem"}
                 primary_types = [t for t in ld_types if t not in ignored_types]
                 
                 schema_priority = ["JobPosting", "Course", "EducationalOccupationalCredential", "Article", "BlogPosting", "TechArticle", "Report", "WebApplication", "LocalBusiness"]
@@ -3826,25 +3831,25 @@ def build_content_index(site_root="."):
                 if detected_schema == "WebPage" and primary_types:
                     detected_schema = primary_types[0]
                     
-                if detected_schema == "WebPage":
-                    if norm_url.startswith("/jobs/"):
-                        detected_schema = "JobPosting"
-                    elif norm_url.startswith("/courses/"):
-                        detected_schema = "Course"
-                    elif norm_url.startswith("/guides/") or norm_url.startswith("/comparisons/"):
-                        detected_schema = "Article"
-                    elif norm_url.startswith("/tools/") and "report" in norm_url:
-                        detected_schema = "Report"
-                    elif norm_url.startswith("/tools/"):
-                        detected_schema = "WebApplication"
-                    elif norm_url.startswith("/locations/"):
-                        detected_schema = "LocalBusiness"
-                    elif norm_url.startswith("/showcase/"):
-                        detected_schema = "StudentShowcase"
-                    elif norm_url == "/verify.html":
-                        detected_schema = "EducationalOccupationalCredential"
-                    elif norm_url == "/reviews.html":
-                        detected_schema = "StudentReviews"
+                # Explicit URL path canonical schema overrides for guaranteed consistency
+                if norm_url.startswith("/locations/"):
+                    detected_schema = "LocalBusiness"
+                elif norm_url.startswith("/jobs/"):
+                    detected_schema = "JobPosting"
+                elif norm_url.startswith("/courses/"):
+                    detected_schema = "Course"
+                elif norm_url.startswith("/guides/") or norm_url.startswith("/comparisons/"):
+                    detected_schema = "Article"
+                elif norm_url.startswith("/tools/") and "report" in norm_url:
+                    detected_schema = "Report"
+                elif norm_url.startswith("/tools/"):
+                    detected_schema = "WebApplication"
+                elif norm_url.startswith("/showcase/"):
+                    detected_schema = "StudentShowcase"
+                elif norm_url == "/verify.html":
+                    detected_schema = "EducationalOccupationalCredential"
+                elif norm_url == "/reviews.html":
+                    detected_schema = "StudentReviews"
 
                 plain_text = re.sub(r'<[^>]+>', ' ', html_content)
                 words = re.findall(r'\w+', plain_text)

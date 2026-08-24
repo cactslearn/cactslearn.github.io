@@ -3,13 +3,18 @@
  * Filename: js/social-share-engine.js
  * Description: Zero-dependency client-side social sharing engine featuring dynamic JSON-LD/OG content
  *              recognition, human-centric non-robotic social captions, audience-tailored problem statements,
- *              perfectly matched card badges & CTA buttons, laser-focused non-spam hashtags,
+ *              perfectly matched expanded schema badges & explicit "SCAN QR CODE TO..." CTA buttons for all page categories & course bifurcations (Fees, Syllabus, Beginner, Roadmap, Comparison, Main Course),
+ *              removal of sub-QR label for clean uncluttered QR code display,
+ *              audience-specific targeted topic hashtags (Recruiters, HRs, CS Graduates, Freshers, Local Residents),
+ *              platform-specific hashtag suppression (WhatsApp, Google Business Profile, and Reddit explicitly avoid hashtags to prevent spammy/unsupported clutter),
+ *              strict schema-type-to-platform suitability filtering (only relevant platforms shown),
+ *              clean hashtag-free socialCaptionText textarea (hashtags displayed in interactive pills for supported platforms only),
  *              automatic 100% full canonical text share URLs, pre-filled intent composers,
  *              dedicated Copy Text Only, Copy Full Caption (Text + Hashtags), & Copy Hashtags Only controls,
- *              automatic clipboard image binary & PNG file download, mobile share sheet clipboard preservation,
+ *              clipboard image binary copy, mobile share sheet clipboard preservation,
  *              live graphic preview re-rendering, format-proportional font sizing, radial background lighting,
  *              16-theme rich dark gradient palettes with index-dispersed background variation,
- *              multi-paragraph line wrapping with strict left alignment, 1080x1920 vertical space-filling grid,
+ *              multi-paragraph line wrapping with strict left alignment, clean content-only canvas layout,
  *              real QR code generation via qrcode.js CDN & ISO/IEC 18004 Reed-Solomon GF(256) encoder,
  *              *T&C Apply disclaimer footer protection for price/offer updates, & Web Share API execution.
  */
@@ -30,10 +35,12 @@ window.CactsSocialShareEngine = (function() {
   let captionDebounceTimer = null;
   let qrLibPromise = null;
 
+  // Platforms where Hashtags are explicitly unsupported or counter-productive (spams chats or breaks formatting)
+  const NO_HASHTAG_PLATFORMS = ['whatsapp-chat', 'whatsapp-enroll', 'gbp-post', 'reddit-post'];
+
   // Platform Formats Mapping
   const PLATFORM_FORMATS = {
     'linkedin-feed': '1200x630',
-    'linkedin-add': '1200x630',
     'instagram-story': '1080x1920',
     'whatsapp-chat': '1080x1920',
     'whatsapp-enroll': '1200x630',
@@ -65,29 +72,31 @@ window.CactsSocialShareEngine = (function() {
     { bgGradStart: '#0c4a6e', bgGradEnd: '#032830', accentTabBg: '#38bdf8', accentTabTextColor: '#032830', subheadColor: '#7dd3fc' }
   ];
 
-  // Platform Hashtags Base Matrix
+  // Platform Hashtags Base Matrix (For Platforms that Support Hashtags)
   const PLATFORM_HASHTAGS = {
-    'linkedin-feed': ['#CACTSPune', '#PuneITJobs', '#SoftwareEngineering'],
-    'linkedin-add': ['#CACTSPune', '#CertifiedDeveloper', '#TechAccreditation'],
-    'instagram-story': ['#cactspune', '#fullstackdeveloper', '#punestudents', '#learncoding', '#puneitjobs'],
-    'whatsapp-chat': ['#CACTSPune', '#1to1Mentorship', '#PuneTraining'],
-    'whatsapp-enroll': ['#CACTSPune', '#Admissions2026', '#ITCoursesPune'],
+    'linkedin-feed': ['#CACTSPune', '#SoftwareEngineering', '#PuneITJobs'],
+    'instagram-story': ['#cactspune', '#fullstackdeveloper', '#punestudents', '#learncoding'],
     'twitter-tweet': ['#CACTSPune', '#DevCommunity', '#TechJobs'],
     'facebook-feed': ['#CACTSPune', '#PuneITJobs', '#SoftwareTraining'],
-    'gbp-post': ['#CACTSPune', '#PuneITInstitute', '#ShivanePune'],
-    'reddit-post': ['#CACTSPune', '#developersIndia', '#learnprogramming'],
     'bluesky-post': ['#CACTSPune', '#TechUpdate', '#WebDev'],
     'native-os-share': ['#CACTSPune', '#FullStackDeveloper', '#PuneITJobs']
   };
 
-  // Laser-Focused Topic Hashtags Matrix (Targeted for High Feed Relevancy)
+  // Audience & Content-Specific Hashtags Matrix
   const TOPIC_HASHTAGS = {
-    'job': ['#CACTSPune', '#TechHiring', '#PuneITJobs', '#SoftwareJobs', '#PuneJobs', '#ITCareers'],
-    'course': ['#CACTSPune', '#FullStackDeveloper', '#ITCoursesPune', '#1to1Mentorship', '#LearnCoding', '#PuneInstitute'],
-    'cert': ['#TechHiring', '#HRTech', '#PuneITJobs', '#CACTSPune', '#CredentialVerification', '#VerifiedDeveloper'],
-    'guide': ['#CACTSPune', '#DevCommunity', '#TechGuide', '#CareerRoadmap', '#WebDev', '#Coding'],
-    'tool': ['#CACTSPune', '#DevTools', '#WebDev', '#CodingTools', '#Productivity'],
-    'review': ['#CACTSPune', '#StudentSuccess', '#AlumniReviews', '#PuneInstitute', '#TechJobs']
+    'cert': ['#TechHiring', '#Recruitment', '#VerifiedDeveloper', '#HRTech', '#CACTSPune'],
+    'job': ['#PuneITJobs', '#TechHiring', '#DeveloperJobs', '#PuneJobs', '#SoftwareEngineer'],
+    'fees': ['#ITTrainingPune', '#SoftwareCourseFees', '#EMIOption', '#CareerGuidance', '#CACTSPune'],
+    'syllabus': ['#SoftwareSyllabus', '#PracticalCoding', '#FullStackCourse', '#1to1Mentorship'],
+    'beginner': ['#CodingForBeginners', '#LearnToCode', '#ZeroExperience', '#TechCareer'],
+    'roadmap': ['#DeveloperRoadmap', '#CareerPath', '#TechSkills2026', '#SoftwareEngineering'],
+    'comparison': ['#TechComparison', '#SoftwareArchitecture', '#WebDevelopment', '#Frameworks'],
+    'course': ['#PuneITInstitute', '#SoftwareTraining', '#1to1Mentorship', '#FullStackDeveloper'],
+    'tool': ['#DevTools', '#WebDevelopment', '#DeveloperProductivity', '#CodingTools'],
+    'review': ['#StudentSuccess', '#AlumniReviews', '#PuneInstitute', '#CACTSPune'],
+    'location': ['#PuneITInstitute', '#SoftwareTrainingPune', '#DhankawadiPune', '#KatrajPune'],
+    'policy': ['#CACTSPune', '#DataProtection', '#PrivacyPolicy'],
+    'guide': ['#DevCommunity', '#TechGuide', '#CareerRoadmap', '#WebDev']
   };
 
   // Format Dimensions Matrix
@@ -304,7 +313,7 @@ window.CactsSocialShareEngine = (function() {
         }
       }
 
-      for (let i = 0; i < 9; i++) {
+      for (let i = 8; i < 9; i++) {
         if (!isReserved[i][8]) isReserved[i][8] = true;
         if (!isReserved[8][i]) isReserved[8][i] = true;
         if (!isReserved[moduleCount - 1 - i][8]) isReserved[moduleCount - 1 - i][8] = true;
@@ -382,7 +391,7 @@ window.CactsSocialShareEngine = (function() {
   }
 
   /* ==========================================================================
-     MODULE A: Content Recognition & Human-Centric Social Captions Engine
+     MODULE A: Content Recognition & Audience-Tailored Social Captions Engine
      ========================================================================== */
   function extractPageMetadata(htmlDoc = document, targetUrl = window.location.href, pageItemData = null) {
     let fullUrl = ensureFullAbsoluteUrl(targetUrl);
@@ -424,18 +433,59 @@ window.CactsSocialShareEngine = (function() {
       if (canonElem) meta.canonicalUrl = ensureFullAbsoluteUrl(canonElem.getAttribute('href'));
     }
 
-    const cleanTitle = meta.title.replace(/\s*\|\s*CACTS.*$/i, '').trim();
+    const cleanTitle = meta.title.replace(/\s*[|\-–—:]\s*(?:CACTS(?:\s+Pune|\s+Institute|\s+Training|\s+Careers)?|Centre\s+of\s+Advanced\s+Computer\s+Training\s+and\s+Studies).*$/i, '').trim();
 
-    // 1. Certificate Verification Portal & Credentials (Strict Rule Enforcement)
+    // 1. Certificate Verification Portal & Credentials (Target Audience: Candidates, Recruiters & HR Managers)
     if (fullUrl.includes('verify.html') || (pageItemData && (pageItemData.schema_type || '').toLowerCase().includes('credential'))) {
       meta.schemaType = 'EducationalOccupationalCredential';
       meta.badgeTitle = '[Recognized: Certificate Verification Portal]';
       meta.presetKey = 'cert';
-      meta.ldCaption = `Hiring managers & recruiters: Need to verify a candidate's CACTS credentials in under 10 seconds?\n\nOur official accreditation portal allows tech employers to instantly validate live project completion, 1-to-1 mentorship hours, and verified student certifications.\n\nVerify Credentials Online: ${meta.url}`;
+
+      // Dynamically inspect URL query parameters or active DOM on verify.html for candidate certificate details
+      let certId = '';
+      let studentName = '';
+      let courseName = '';
+
+      try {
+        if (typeof window !== 'undefined') {
+          const urlObj = new URL(fullUrl);
+          if (urlObj.searchParams.has('id')) {
+            certId = urlObj.searchParams.get('id').trim();
+          }
+        }
+      } catch(e) {}
+
+      if (typeof document !== 'undefined') {
+        const nameElem = document.getElementById('certStudentName');
+        const courseElem = document.getElementById('certCourseName');
+        const barIdElem = document.getElementById('barCertId');
+
+        if (nameElem && nameElem.innerText && nameElem.innerText.trim()) {
+          studentName = nameElem.innerText.trim();
+        }
+        if (courseElem && courseElem.innerText && courseElem.innerText.trim()) {
+          courseName = courseElem.innerText.trim();
+        }
+        if (!certId && barIdElem && barIdElem.innerText && barIdElem.innerText.trim()) {
+          certId = barIdElem.innerText.trim();
+        }
+      }
+
+      if (studentName || certId || courseName) {
+        const displayStudent = studentName || 'Candidate';
+        const displayCourse = courseName || 'Software Architecture & Development';
+        const displayCertId = certId ? ` (Certificate ID: ${certId})` : '';
+
+        meta.customTitle = `Congratulations ${displayStudent}! Verified Certificate`;
+        meta.customDescription = `Official Digital Accreditation: ${displayCourse}${displayCertId} at CACTS Pune. 1-to-1 live mentor code reviews & real company project internships.`;
+        meta.ldCaption = `Congratulations ${displayStudent} on successfully completing the ${displayCourse} program at CACTS Pune!\n\nOfficial Verified Credential${displayCertId}\nAccreditation Status: VALID & AUTHENTIC\nProgram Highlights: 1-to-1 Live Mentor Code Reviews & Real Company Project Internships.\n\nRecruiters & HR Managers: Validate candidate credentials online in under 10 seconds:\n${meta.url}`;
+      } else {
+        meta.ldCaption = `Hiring managers & recruiters: Need to verify a candidate's CACTS credentials in under 10 seconds?\n\nOur official accreditation portal allows tech employers to instantly validate live project completion, 1-to-1 mentorship hours, and verified student certifications.\n\nVerify Credentials Online: ${meta.url}`;
+      }
       return meta;
     }
 
-    // 2. Tech Job Postings
+    // 2. Tech Job Postings (Target Audience: Pune Developers & CS Graduates)
     if (fullUrl.includes('/jobs/') || (pageItemData && (pageItemData.schema_type || '').toLowerCase().includes('job'))) {
       meta.schemaType = 'JobPosting';
       meta.badgeTitle = '[Recognized: Tech Job Posting]';
@@ -444,16 +494,39 @@ window.CactsSocialShareEngine = (function() {
       return meta;
     }
 
-    // 3. Course Syllabi
+    // 3. Course Subpages & Syllabi (Bifurcated: Fees, Syllabus, Beginner, Roadmap, Comparison, Main)
     if (fullUrl.includes('/courses/') || (pageItemData && (pageItemData.schema_type || '').toLowerCase().includes('course'))) {
       meta.schemaType = 'Course';
-      meta.badgeTitle = '[Recognized: Course Syllabus]';
-      meta.presetKey = 'course';
-      meta.ldCaption = `Want to master full-stack software development with 1-to-1 live mentor code reviews?\n\nExplore ${cleanTitle} at CACTS Pune with practical hands-on curriculum, production company projects & career guidance.\n\nSyllabus & Enrollment Details: ${meta.url}`;
+
+      if (fullUrl.includes('fees.html') || fullUrl.includes('/fees/')) {
+        meta.badgeTitle = '[Recognized: Course Fee Structure]';
+        meta.presetKey = 'fees';
+        meta.ldCaption = `Want to check course fees & flexible installment plans for ${cleanTitle} at CACTS Pune?\n\nRead complete fee breakdown, 1-to-1 mentorship details & enrollment plans.\n\nView Fee Structure: ${meta.url}`;
+      } else if (fullUrl.includes('syllabus.html') || fullUrl.includes('/syllabus/')) {
+        meta.badgeTitle = '[Recognized: Course Syllabus Breakdown]';
+        meta.presetKey = 'syllabus';
+        meta.ldCaption = `Explore the complete module-by-module syllabus for ${cleanTitle} at CACTS Pune.\n\nMaster live company projects & 1-to-1 mentor code reviews.\n\nView Full Syllabus: ${meta.url}`;
+      } else if (fullUrl.includes('beginner.html') || fullUrl.includes('/beginner/')) {
+        meta.badgeTitle = '[Recognized: Beginner Tech Guide]';
+        meta.presetKey = 'beginner';
+        meta.ldCaption = `Starting your software development journey from scratch?\n\nRead our step-by-step beginner guide for ${cleanTitle} at CACTS Pune.\n\nStart Learning: ${meta.url}`;
+      } else if (fullUrl.includes('roadmap.html') || fullUrl.includes('/roadmap/')) {
+        meta.badgeTitle = '[Recognized: Developer Career Roadmap]';
+        meta.presetKey = 'roadmap';
+        meta.ldCaption = `Planning your tech career roadmap?\n\nDiscover the developer career path & skills required for ${cleanTitle} at CACTS Pune.\n\nExplore Roadmap: ${meta.url}`;
+      } else if (fullUrl.includes('comparison.html') || fullUrl.includes('/comparison/')) {
+        meta.badgeTitle = '[Recognized: Tech Comparison Guide]';
+        meta.presetKey = 'comparison';
+        meta.ldCaption = `Confused between tech stacks?\n\nRead our in-depth comparative breakdown for ${cleanTitle} by CACTS Pune engineering mentors.\n\nRead Comparison: ${meta.url}`;
+      } else {
+        meta.badgeTitle = '[Recognized: 1-to-1 Course Training]';
+        meta.presetKey = 'course';
+        meta.ldCaption = `Want to master full-stack software development with 1-to-1 live mentor code reviews?\n\nExplore ${cleanTitle} at CACTS Pune with practical hands-on curriculum, production company projects & career guidance.\n\nSyllabus & Enrollment Details: ${meta.url}`;
+      }
       return meta;
     }
 
-    // 4. Interactive Developer Tools
+    // 4. Interactive Developer Tools (Target Audience: Web Developers)
     if (fullUrl.includes('/tools/') || (pageItemData && (pageItemData.schema_type || '').toLowerCase().includes('tool'))) {
       meta.schemaType = 'WebApplication';
       meta.badgeTitle = '[Recognized: Interactive Developer Tool]';
@@ -462,34 +535,117 @@ window.CactsSocialShareEngine = (function() {
       return meta;
     }
 
-    // 5. Student Reviews & Alumni Success
-    if (fullUrl.includes('reviews.html')) {
+    // 5. Student Reviews & Alumni Success (Target Audience: Prospective Students & Parents)
+    if (fullUrl.includes('reviews.html') || (pageItemData && (pageItemData.schema_type || '').toLowerCase().includes('review'))) {
       meta.schemaType = 'StudentReviews';
       meta.badgeTitle = '[Recognized: Student Reviews & Alumni Ratings]';
       meta.presetKey = 'review';
-      meta.ldCaption = `Discover authentic career transformations & student reviews at CACTS Pune.\n\nSee how 1-to-1 live code reviews & real company project internships help developers land tech roles.\n\nRead Alumni Reviews: ${meta.url}`;
+
+      if (pageItemData && pageItemData.studentName) {
+        const sName = pageItemData.studentName;
+        const sRole = pageItemData.studentRole || 'CACTS Pune Alumni';
+        const rText = truncateText(pageItemData.reviewText || pageItemData.description, 140);
+
+        meta.customTitle = `Alumni Story: ${sName}`;
+        meta.customDescription = `"${rText}" - ${sName} (${sRole})`;
+        meta.ldCaption = `Alumni Career Transformation Story at CACTS Pune:\n\n${sName} (${sRole}):\n"${rText}"\n\nDiscover how 1-to-1 live mentor code reviews & real company project internships help developers land tech roles.\n\nRead Full Alumni Reviews: ${meta.url}`;
+      } else {
+        meta.ldCaption = `Discover authentic career transformations & student reviews at CACTS Pune.\n\nSee how 1-to-1 live code reviews & real company project internships help developers land tech roles.\n\nRead Alumni Reviews: ${meta.url}`;
+      }
       return meta;
     }
 
-    // 6. Branch Location Pages
+    // 6. Branch Location Pages (Target Audience: Pune Local Area Residents)
     if (fullUrl.includes('/locations/')) {
       meta.schemaType = 'LocalBusiness';
       meta.badgeTitle = '[Recognized: Pune Branch Location]';
-      meta.presetKey = 'course';
+      meta.presetKey = 'location';
       meta.ldCaption = `Looking for top-rated software & IT training institutes in Pune?\n\nVisit CACTS Pune (${cleanTitle}) for 1-to-1 developer mentorship, practical labs, and live company projects.\n\nExplore Branch Details: ${meta.url}`;
       return meta;
     }
 
-    // 7. Developer Tech Articles & Guides (Default Fallback)
-    meta.schemaType = 'Article';
-    meta.badgeTitle = '[Recognized: Tech Article / Guide]';
+    // 7. Privacy Policy Page
+    if (fullUrl.includes('privacy')) {
+      meta.schemaType = 'PrivacyPolicy';
+      meta.badgeTitle = '[Recognized: Institutional Privacy Policy]';
+      meta.presetKey = 'policy';
+      meta.ldCaption = `Official Privacy Policy & Data Protection Guidelines for CACTS Pune students, applicants, and site visitors.\n\nRead Privacy Policy: ${meta.url}`;
+      return meta;
+    }
+
+    // 8. Terms & Conditions Page
+    if (fullUrl.includes('terms')) {
+      meta.schemaType = 'TermsAndConditions';
+      meta.badgeTitle = '[Recognized: Legal Terms & Conditions]';
+      meta.presetKey = 'policy';
+      meta.ldCaption = `Official Terms & Conditions, Enrollment Rules, and Institutional Guidelines for CACTS Pune.\n\nRead Terms & Conditions: ${meta.url}`;
+      return meta;
+    }
+
+    // 9. About Us Page
+    if (fullUrl.includes('about')) {
+      meta.schemaType = 'AboutPage';
+      meta.badgeTitle = '[Recognized: Institutional Profile]';
+      meta.presetKey = 'guide';
+      meta.ldCaption = `Discover CACTS Pune - Centre of Advanced Computer Training and Studies. 1-to-1 live developer mentorship, ISO 9001:2015 compliant standards & real company project internships.\n\nVisit Profile: ${meta.url}`;
+      return meta;
+    }
+
+    // 10. Contact Us Page
+    if (fullUrl.includes('contact')) {
+      meta.schemaType = 'ContactPage';
+      meta.badgeTitle = '[Recognized: Official Contact Desk]';
+      meta.presetKey = 'guide';
+      meta.ldCaption = `Get in touch with CACTS Pune admissions, student support & technical training counselors.\n\nContact Support Desk: ${meta.url}`;
+      return meta;
+    }
+
+    // 11. FAQ Page
+    if (fullUrl.includes('faq')) {
+      meta.schemaType = 'FAQPage';
+      meta.badgeTitle = '[Recognized: Frequently Asked Questions]';
+      meta.presetKey = 'guide';
+      meta.ldCaption = `Have questions about 1-to-1 mentorship, course fees, syllabus, or placement assistance at CACTS Pune? Find clear answers here.\n\nVisit Help FAQ: ${meta.url}`;
+      return meta;
+    }
+
+    // 12. Careers Overview Page
+    if (fullUrl.includes('careers')) {
+      meta.schemaType = 'CareersPage';
+      meta.badgeTitle = '[Recognized: Career Opportunities & Hiring]';
+      meta.presetKey = 'job';
+      meta.ldCaption = `Explore tech career opportunities, hiring alerts & developer placement support at CACTS Pune.\n\nVisit Career Center: ${meta.url}`;
+      return meta;
+    }
+
+    // 13. Sitemap Directory Page
+    if (fullUrl.includes('sitemap')) {
+      meta.schemaType = 'SiteNavigation';
+      meta.badgeTitle = '[Recognized: Site Directory]';
+      meta.presetKey = 'guide';
+      meta.ldCaption = `Explore the complete directory of courses, tech career roadmaps, locations & developer tools by CACTS Pune.\n\nVisit Sitemap: ${meta.url}`;
+      return meta;
+    }
+
+    // 14. Developer Tech Articles & Guides (/guides/, /comparisons/)
+    if (fullUrl.includes('/guides/') || fullUrl.includes('/comparisons/')) {
+      meta.schemaType = 'Article';
+      meta.badgeTitle = '[Recognized: Tech Engineering Guide]';
+      meta.presetKey = 'guide';
+      meta.ldCaption = `Looking to solve complex software engineering challenges?\n\nRead ${cleanTitle} written by CACTS Pune engineering mentors.\n\nVisit Guide: ${meta.url}`;
+      return meta;
+    }
+
+    // 15. Generic Web Page Fallback
+    meta.schemaType = 'WebPage';
+    meta.badgeTitle = '[Recognized: Official Web Page]';
     meta.presetKey = 'guide';
-    meta.ldCaption = `Looking to solve complex software engineering challenges?\n\nRead ${cleanTitle} written by CACTS Pune engineering mentors.\n\nVisit Guide: ${meta.url}`;
+    meta.ldCaption = `${cleanTitle} - CACTS Pune Centre of Advanced Computer Training and Studies.\n\nVisit: ${meta.url}`;
     return meta;
   }
 
   /* ==========================================================================
-     MODULE B: Platform Suitability Scoring & Pre-filled Intent Generation
+     MODULE B: Strict Schema-Type-to-Platform Relevance Filtering Engine
      ========================================================================== */
   function getPlatformSuitability(meta) {
     const targetUrl = ensureFullAbsoluteUrl(meta.url);
@@ -500,131 +656,112 @@ window.CactsSocialShareEngine = (function() {
     const encTitle = encodeURIComponent(meta.title);
     const encFullCaption = encodeURIComponent(liveCaption);
 
-    const platforms = [];
-
-    if (meta.schemaType === 'EducationalOccupationalCredential' || (meta.url && meta.url.includes('verify.html'))) {
-      platforms.push({
-        id: 'linkedin-add',
-        name: 'LinkedIn Add Cert',
+    // Master Platform Library Dictionary
+    const allPlatforms = [
+      {
+        id: 'linkedin-feed',
+        name: 'LinkedIn Feed',
         icon: 'IN',
         color: '#0077b5',
         recommended: true,
-        formatTag: 'Direct Profile Link',
-        actionType: 'linkedin-add-profile',
-        actionLabel: 'Add Certificate to LinkedIn Profile ➔'
-      });
-    }
+        formatTag: '1200x630 Feed Banner',
+        actionType: 'intent',
+        intentUrl: `https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`,
+        actionLabel: 'Share to LinkedIn Feed ➔'
+      },
+      {
+        id: 'twitter-tweet',
+        name: 'X (Twitter)',
+        icon: 'X',
+        color: '#1da1f2',
+        recommended: true,
+        formatTag: '1200x630 Tech Tweet',
+        actionType: 'intent',
+        intentUrl: `https://twitter.com/intent/tweet?text=${encFullCaption}`,
+        actionLabel: 'Post Pre-filled Tweet on X ➔'
+      },
+      {
+        id: 'instagram-story',
+        name: 'Instagram Story',
+        icon: 'IG',
+        color: '#e1306c',
+        recommended: true,
+        formatTag: '1080x1920 Story Card',
+        actionType: 'intent',
+        formatKey: '1080x1920',
+        actionLabel: 'Copy Caption & Open Instagram ➔'
+      },
+      {
+        id: 'whatsapp-chat',
+        name: 'WhatsApp Chat',
+        icon: 'WA',
+        color: '#25d366',
+        recommended: true,
+        formatTag: 'Text & Link Share',
+        actionType: 'intent',
+        intentUrl: `https://api.whatsapp.com/send?text=${encFullCaption}`,
+        actionLabel: 'Share Full Text & Link to WhatsApp ➔'
+      },
+      {
+        id: 'whatsapp-enroll',
+        name: 'WhatsApp Desk',
+        icon: 'WA',
+        color: '#128c7e',
+        recommended: true,
+        formatTag: 'Direct Desk Inquiry',
+        actionType: 'intent',
+        intentUrl: `https://wa.me/919665566357?text=${encodeURIComponent('Hello CACTS Pune, I am inquiring about: ' + meta.title + ' (' + targetUrl + ')')}`,
+        actionLabel: 'Open Direct WhatsApp Desk Inquiry ➔'
+      },
+      {
+        id: 'facebook-feed',
+        name: 'Facebook Feed',
+        icon: 'FB',
+        color: '#1877f2',
+        recommended: true,
+        formatTag: '1200x630 Link Post',
+        actionType: 'intent',
+        intentUrl: `https://www.facebook.com/sharer/sharer.php?u=${encUrl}`,
+        actionLabel: 'Share to Facebook ➔'
+      },
+      {
+        id: 'gbp-post',
+        name: 'Google Business',
+        icon: 'G',
+        color: '#ea4335',
+        recommended: true,
+        formatTag: '1200x900 Promo Card',
+        actionType: 'intent',
+        formatKey: '1200x900',
+        actionLabel: 'Copy Caption & Open Google Business ➔'
+      },
+      {
+        id: 'reddit-post',
+        name: 'Reddit Post',
+        icon: 'RD',
+        color: '#ff4500',
+        recommended: true,
+        formatTag: 'Discussion Link',
+        actionType: 'intent',
+        intentUrl: `https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}`,
+        actionLabel: 'Post to Reddit ➔'
+      },
+      {
+        id: 'bluesky-post',
+        name: 'Bluesky Tech',
+        icon: 'BS',
+        color: '#0085ff',
+        recommended: true,
+        formatTag: 'Tech Update',
+        actionType: 'intent',
+        intentUrl: `https://bsky.app/intent/compose?text=${encFullCaption}`,
+        actionLabel: 'Post Pre-filled Text to Bluesky ➔'
+      }
+    ];
 
-    platforms.push({
-      id: 'linkedin-feed',
-      name: 'LinkedIn Feed',
-      icon: 'IN',
-      color: '#0077b5',
-      recommended: ['JobPosting', 'Course', 'EducationalOccupationalCredential', 'Article', 'Report'].includes(meta.schemaType),
-      formatTag: '1200x630 Feed Banner',
-      actionType: 'intent',
-      intentUrl: `https://www.linkedin.com/sharing/share-offsite/?url=${encUrl}`,
-      actionLabel: 'Share to LinkedIn Feed ➔'
-    });
-
-    platforms.push({
-      id: 'instagram-story',
-      name: 'Instagram Story',
-      icon: 'IG',
-      color: '#e1306c',
-      recommended: ['Course', 'EducationalOccupationalCredential', 'StudentReviews', 'StudentShowcase'].includes(meta.schemaType),
-      formatTag: '1080x1920 Story Card',
-      actionType: 'download-copy',
-      formatKey: '1080x1920',
-      actionLabel: 'Download Story PNG & Copy Caption ➔'
-    });
-
-    platforms.push({
-      id: 'whatsapp-chat',
-      name: 'WhatsApp Chat',
-      icon: 'WA',
-      color: '#25d366',
-      recommended: true,
-      formatTag: 'Text & Link Share',
-      actionType: 'intent',
-      intentUrl: `https://api.whatsapp.com/send?text=${encFullCaption}`,
-      actionLabel: 'Share Full Text & Link to WhatsApp ➔'
-    });
-
-    platforms.push({
-      id: 'whatsapp-enroll',
-      name: 'WhatsApp Desk',
-      icon: 'WA',
-      color: '#128c7e',
-      recommended: ['Course', 'JobPosting'].includes(meta.schemaType),
-      formatTag: 'Direct Desk Inquiry',
-      actionType: 'intent',
-      intentUrl: `https://wa.me/919665566357?text=${encodeURIComponent('Hello CACTS Pune, I am inquiring about: ' + meta.title + ' (' + targetUrl + ')')}`,
-      actionLabel: 'Open Direct WhatsApp Desk Inquiry ➔'
-    });
-
-    platforms.push({
-      id: 'twitter-tweet',
-      name: 'X (Twitter)',
-      icon: 'X',
-      color: '#1da1f2',
-      recommended: ['JobPosting', 'Article', 'WebApplication', 'Report'].includes(meta.schemaType),
-      formatTag: '1200x630 Tech Tweet',
-      actionType: 'intent',
-      intentUrl: `https://twitter.com/intent/tweet?text=${encFullCaption}`,
-      actionLabel: 'Post Pre-filled Tweet on X ➔'
-    });
-
-    platforms.push({
-      id: 'facebook-feed',
-      name: 'Facebook Feed',
-      icon: 'FB',
-      color: '#1877f2',
-      recommended: ['Course', 'LocalBusiness', 'StudentReviews'].includes(meta.schemaType),
-      formatTag: '1200x630 Link Post',
-      actionType: 'intent',
-      intentUrl: `https://www.facebook.com/sharer/sharer.php?u=${encUrl}`,
-      actionLabel: 'Share to Facebook ➔'
-    });
-
-    platforms.push({
-      id: 'gbp-post',
-      name: 'Google Business',
-      icon: 'G',
-      color: '#ea4335',
-      recommended: ['Course', 'LocalBusiness', 'StudentReviews'].includes(meta.schemaType),
-      formatTag: '1200x900 Promo Card',
-      actionType: 'download-copy',
-      formatKey: '1200x900',
-      actionLabel: 'Download 1200x900 Image & Copy Caption ➔'
-    });
-
-    platforms.push({
-      id: 'reddit-post',
-      name: 'Reddit Post',
-      icon: 'RD',
-      color: '#ff4500',
-      recommended: ['JobPosting', 'Article', 'WebApplication', 'Report'].includes(meta.schemaType),
-      formatTag: 'Discussion Link',
-      actionType: 'intent',
-      intentUrl: `https://www.reddit.com/submit?url=${encUrl}&title=${encTitle}`,
-      actionLabel: 'Post to Reddit ➔'
-    });
-
-    platforms.push({
-      id: 'bluesky-post',
-      name: 'Bluesky Tech',
-      icon: 'BS',
-      color: '#0085ff',
-      recommended: ['Article', 'WebApplication', 'JobPosting'].includes(meta.schemaType),
-      formatTag: 'Tech Update',
-      actionType: 'intent',
-      intentUrl: `https://bsky.app/intent/compose?text=${encFullCaption}`,
-      actionLabel: 'Post Pre-filled Text to Bluesky ➔'
-    });
-
+    // Mobile System Share Sheet (Always Available on Supported Devices)
     if (navigator.share) {
-      platforms.unshift({
+      allPlatforms.unshift({
         id: 'native-os-share',
         name: 'Mobile Share Sheet',
         icon: 'OS',
@@ -636,7 +773,50 @@ window.CactsSocialShareEngine = (function() {
       });
     }
 
-    return platforms;
+    // Determine Strict Allowed Platform IDs Based on Content Schema & Category
+    let allowedIds = [];
+
+    const urlLower = targetUrl.toLowerCase();
+    const schema = (meta.schemaType || '').toLowerCase();
+
+    if (urlLower.includes('verify.html') || schema.includes('credential')) {
+      // 1. Certificate Verification (Strictly Trust & Employer Centric)
+      allowedIds = ['linkedin-feed', 'twitter-tweet', 'whatsapp-chat', 'native-os-share'];
+    } else if (urlLower.includes('/jobs/') || schema.includes('job') || schema.includes('careers')) {
+      // 2. Job Postings & Hiring Alerts
+      allowedIds = ['linkedin-feed', 'twitter-tweet', 'reddit-post', 'bluesky-post', 'whatsapp-chat', 'whatsapp-enroll', 'native-os-share'];
+    } else if (urlLower.includes('/courses/') || schema.includes('course')) {
+      // 3. Course Syllabi & Admissions (including subpages: fees, syllabus, beginner, roadmap, comparison)
+      if (urlLower.includes('beginner') || urlLower.includes('roadmap') || urlLower.includes('comparison')) {
+        allowedIds = ['linkedin-feed', 'twitter-tweet', 'reddit-post', 'bluesky-post', 'whatsapp-chat', 'instagram-story', 'native-os-share'];
+      } else {
+        allowedIds = ['instagram-story', 'whatsapp-enroll', 'whatsapp-chat', 'facebook-feed', 'gbp-post', 'linkedin-feed', 'native-os-share'];
+      }
+    } else if (urlLower.includes('/tools/') || schema.includes('application') || schema.includes('tool')) {
+      // 4. Interactive Developer Tools
+      allowedIds = ['twitter-tweet', 'reddit-post', 'bluesky-post', 'linkedin-feed', 'whatsapp-chat', 'native-os-share'];
+    } else if (urlLower.includes('reviews.html') || schema.includes('review')) {
+      // 5. Student Reviews & Alumni Ratings
+      allowedIds = ['instagram-story', 'facebook-feed', 'gbp-post', 'whatsapp-chat', 'native-os-share'];
+    } else if (urlLower.includes('/locations/') || schema.includes('localbusiness')) {
+      // 6. Branch Location Pages & Hubs
+      allowedIds = ['gbp-post', 'facebook-feed', 'instagram-story', 'whatsapp-chat', 'native-os-share'];
+    } else if (urlLower.includes('report') || schema.includes('report')) {
+      // 7. Industry Benchmark Reports & Salary Index
+      allowedIds = ['linkedin-feed', 'twitter-tweet', 'reddit-post', 'bluesky-post', 'whatsapp-chat', 'native-os-share'];
+    } else if (urlLower.includes('privacy') || urlLower.includes('terms') || urlLower.includes('policy')) {
+      // 8. Legal & Policy Pages
+      allowedIds = ['linkedin-feed', 'whatsapp-chat', 'native-os-share'];
+    } else if (urlLower.includes('about') || urlLower.includes('contact') || urlLower.includes('faq') || urlLower.includes('sitemap')) {
+      // 9. Institutional Informational Pages
+      allowedIds = ['linkedin-feed', 'facebook-feed', 'whatsapp-chat', 'whatsapp-enroll', 'native-os-share'];
+    } else {
+      // 10. Developer Tech Articles & Guides (Default Fallback)
+      allowedIds = ['linkedin-feed', 'twitter-tweet', 'reddit-post', 'bluesky-post', 'whatsapp-chat', 'native-os-share'];
+    }
+
+    // Return ONLY the relevant platforms for this specific content schema
+    return allPlatforms.filter(p => allowedIds.includes(p.id));
   }
 
   function appendUtmParams(urlStr, platformSource) {
@@ -657,7 +837,7 @@ window.CactsSocialShareEngine = (function() {
     return str.substring(0, maxLen - 3) + '...';
   }
 
-  // Index-Dispersed Palette & Card Badge Selection Engine (Strict Category Alignment)
+  // Index-Dispersed Palette & Card Badge Selection Engine (Expanded Descriptive Schema Type Suffixes & "SCAN QR CODE TO..." Explicit CTA Buttons)
   function getItemPalette(meta) {
     let hash = 0;
     const keyStr = (meta.url || '') + (meta.title || '');
@@ -671,44 +851,97 @@ window.CactsSocialShareEngine = (function() {
     
     const p = RICH_PALETTES_16[paletteIndex];
 
-    let tabTop = 'FEATURED';
-    let tabBottom = '1-to-1 Tech';
-    let cta = 'Explore Details & Apply ➔';
+    let tabTop = 'OFFICIAL PORTAL';
+    let tabBottom = 'CACTS Pune Web Page';
+    let cta = 'SCAN QR CODE TO VISIT PAGE ➔';
 
     const targetUrl = (meta.url || '').toLowerCase();
+    const schema = (meta.schemaType || '').toLowerCase();
 
-    if (meta.schemaType === 'EducationalOccupationalCredential' || targetUrl.includes('verify.html')) {
+    if (schema.includes('credential') || targetUrl.includes('verify.html')) {
       tabTop = 'OFFICIAL ACCREDITATION';
-      tabBottom = 'Verify Portal';
-      cta = 'Verify Credentials Online ➔';
-    } else if (meta.schemaType === 'JobPosting' || targetUrl.includes('/jobs/')) {
-      tabTop = 'HIRING';
-      tabBottom = 'Tech Job';
-      cta = 'Apply for Tech Job Position ➔';
-    } else if (meta.schemaType === 'Course' || targetUrl.includes('/courses/')) {
-      tabTop = '1-TO-1 SKILLS';
-      tabBottom = 'Best Value';
-      cta = 'Enroll Now & Get Mentored ➔';
-    } else if (meta.schemaType === 'WebApplication' || targetUrl.includes('/tools/')) {
-      tabTop = 'DEV TOOL';
-      tabBottom = 'Interactive';
-      cta = 'Launch Interactive Tool ➔';
-    } else if (meta.schemaType === 'StudentReviews' || targetUrl.includes('reviews.html')) {
-      tabTop = 'STUDENT PROOF';
-      tabBottom = '5-Star Reviews';
-      cta = 'Read Alumni Reviews ➔';
-    } else if (meta.schemaType === 'LocalBusiness' || targetUrl.includes('/locations/')) {
-      tabTop = 'PUNE HUB';
-      tabBottom = '1-to-1 Labs';
-      cta = 'Explore Branch Details ➔';
-    } else if (meta.schemaType === 'Report' || targetUrl.includes('report')) {
-      tabTop = 'SALARY INDEX';
-      tabBottom = '2026 Report';
-      cta = 'Explore Salary Benchmarks ➔';
+      tabBottom = 'Certificate Verification';
+      cta = 'SCAN QR CODE TO VERIFY CREDENTIALS ➔';
+    } else if (schema.includes('job') || targetUrl.includes('/jobs/')) {
+      tabTop = 'CAREER OPPORTUNITY';
+      tabBottom = 'Developer Job Posting';
+      cta = 'SCAN QR CODE TO APPLY ONLINE ➔';
+    } else if (targetUrl.includes('fees.html') || targetUrl.includes('/fees/')) {
+      tabTop = 'COURSE FEES';
+      tabBottom = 'Fees & Installments';
+      cta = 'SCAN QR CODE FOR FEES & EMI ➔';
+    } else if (targetUrl.includes('syllabus.html') || targetUrl.includes('/syllabus/')) {
+      tabTop = 'COURSE SYLLABUS';
+      tabBottom = 'Complete Module Breakdown';
+      cta = 'SCAN QR CODE FOR FULL SYLLABUS ➔';
+    } else if (targetUrl.includes('beginner.html') || targetUrl.includes('/beginner/')) {
+      tabTop = 'BEGINNER ROADMAP';
+      tabBottom = 'Zero-Experience Guide';
+      cta = 'SCAN QR CODE FOR BEGINNER GUIDE ➔';
+    } else if (targetUrl.includes('roadmap.html') || targetUrl.includes('/roadmap/')) {
+      tabTop = 'CAREER ROADMAP';
+      tabBottom = 'Developer Career Path';
+      cta = 'SCAN QR CODE FOR CAREER ROADMAP ➔';
+    } else if (targetUrl.includes('comparison.html') || targetUrl.includes('/comparison/')) {
+      tabTop = 'TECH COMPARISON';
+      tabBottom = 'Framework Breakdown';
+      cta = 'SCAN QR CODE FOR TECH COMPARISON ➔';
+    } else if (schema.includes('course') || targetUrl.includes('/courses/')) {
+      tabTop = '1-TO-1 COURSE';
+      tabBottom = 'Live Mentor Training';
+      cta = 'SCAN QR CODE FOR COURSE DETAILS ➔';
+    } else if (schema.includes('tool') || schema.includes('application') || targetUrl.includes('/tools/')) {
+      tabTop = 'DEVELOPER TOOL';
+      tabBottom = 'Interactive Utility';
+      cta = 'SCAN QR CODE TO LAUNCH TOOL ➔';
+    } else if (schema.includes('review') || targetUrl.includes('reviews.html')) {
+      tabTop = 'ALUMNI REVIEWS';
+      tabBottom = 'Verified Student Ratings';
+      cta = 'SCAN QR CODE FOR ALUMNI REVIEWS ➔';
+    } else if (schema.includes('localbusiness') || targetUrl.includes('/locations/')) {
+      tabTop = 'TRAINING INSTITUTE';
+      tabBottom = 'Pune Branch Location';
+      cta = 'SCAN QR CODE FOR BRANCH DETAILS ➔';
+    } else if (schema.includes('report') || targetUrl.includes('report')) {
+      tabTop = 'INDUSTRY REPORT';
+      tabBottom = 'Salary & Tech Index';
+      cta = 'SCAN QR CODE FOR FULL REPORT ➔';
+    } else if (targetUrl.includes('privacy')) {
+      tabTop = 'INSTITUTIONAL POLICY';
+      tabBottom = 'Privacy Policy';
+      cta = 'SCAN QR CODE FOR PRIVACY POLICY ➔';
+    } else if (targetUrl.includes('terms')) {
+      tabTop = 'LEGAL TERMS';
+      tabBottom = 'Terms & Conditions';
+      cta = 'SCAN QR CODE FOR LEGAL TERMS ➔';
+    } else if (targetUrl.includes('about')) {
+      tabTop = 'INSTITUTION PROFILE';
+      tabBottom = 'About CACTS Pune';
+      cta = 'SCAN QR CODE FOR ABOUT DETAILS ➔';
+    } else if (targetUrl.includes('contact')) {
+      tabTop = 'OFFICIAL CONTACT';
+      tabBottom = 'Support & Help Desk';
+      cta = 'SCAN QR CODE FOR CONTACT DESK ➔';
+    } else if (targetUrl.includes('faq')) {
+      tabTop = 'KNOWLEDGE DESK';
+      tabBottom = 'Frequently Asked Questions';
+      cta = 'SCAN QR CODE FOR HELP FAQ ➔';
+    } else if (targetUrl.includes('careers')) {
+      tabTop = 'CAREER CENTER';
+      tabBottom = 'Job Openings & Placement';
+      cta = 'SCAN QR CODE FOR CAREER OPENINGS ➔';
+    } else if (targetUrl.includes('sitemap')) {
+      tabTop = 'SITE DIRECTORY';
+      tabBottom = 'Full Course Sitemap';
+      cta = 'SCAN QR CODE FOR SITE MAP ➔';
+    } else if (targetUrl.includes('/guides/') || targetUrl.includes('/comparisons/') || schema.includes('article')) {
+      tabTop = 'ENGINEERING GUIDE';
+      tabBottom = 'Tech Career Roadmap';
+      cta = 'SCAN QR CODE TO READ GUIDE ➔';
     } else {
-      tabTop = 'TECH INSIGHT';
-      tabBottom = 'Read Guide';
-      cta = 'Read Full Developer Guide ➔';
+      tabTop = 'OFFICIAL PORTAL';
+      tabBottom = 'CACTS Pune Web Page';
+      cta = 'SCAN QR CODE TO VISIT PAGE ➔';
     }
 
     return {
@@ -834,30 +1067,30 @@ window.CactsSocialShareEngine = (function() {
       ctx.fillStyle = headGrad;
       ctx.fillRect(50, 210, width - 280, 3);
 
-      // Top Right Overhanging Badge Tab
-      const tabX = width - 285;
+      // Top Right Overhanging Badge Tab (Expanded Schema Text Box)
+      const tabX = width - 330;
       ctx.save();
       ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
       ctx.shadowBlur = 18;
       ctx.shadowOffsetY = 8;
       ctx.fillStyle = palette.accentTabBg;
       ctx.beginPath();
-      ctx.roundRect(tabX, 0, 250, 92, [0, 0, 18, 18]);
+      ctx.roundRect(tabX, 0, 295, 92, [0, 0, 18, 18]);
       ctx.fill();
       ctx.restore();
 
       ctx.fillStyle = palette.accentTabTextColor;
       ctx.textAlign = 'center';
-      ctx.font = 'bold 17px Montserrat, sans-serif';
-      ctx.fillText(palette.accentTabTextTop, tabX + 125, 38);
-      ctx.font = '800 23px Montserrat, sans-serif';
-      ctx.fillText(palette.accentTabTextBottom, tabX + 125, 68);
+      ctx.font = 'bold 16px Montserrat, sans-serif';
+      ctx.fillText(palette.accentTabTextTop, tabX + 147, 38);
+      ctx.font = '800 20px Montserrat, sans-serif';
+      ctx.fillText(palette.accentTabTextBottom, tabX + 147, 68);
 
-      // 2. Title Section (Space Filling)
-      let titleY = 320;
-      let baseTitleSize = 68;
+      // 2. Title Section (Large, Highly Readable Content-Focused Typography)
+      let titleY = 280;
+      let baseTitleSize = 72;
       ctx.font = `800 ${baseTitleSize}px Montserrat, sans-serif`;
-      while (ctx.measureText(displayTitle).width > (width - 100) * 3.5 && baseTitleSize > 34) {
+      while (ctx.measureText(displayTitle).width > (width - 100) * 4.2 && baseTitleSize > 38) {
         baseTitleSize -= 2;
         ctx.font = `800 ${baseTitleSize}px Montserrat, sans-serif`;
       }
@@ -869,87 +1102,29 @@ window.CactsSocialShareEngine = (function() {
       ctx.textAlign = 'left';
       ctx.textBaseline = 'alphabetic';
       ctx.fillStyle = '#FFFFFF';
-      const titleLinesDrawn = wrapText(ctx, displayTitle, 50, titleY, width - 100, baseTitleSize * 1.28, 4);
+      const titleLinesDrawn = wrapText(ctx, displayTitle, 50, titleY, width - 100, baseTitleSize * 1.28, 5);
       ctx.restore();
 
       // Title Divider Accent Line
-      const titleDividerY = titleY + (titleLinesDrawn * baseTitleSize * 1.28) + 16;
+      const titleDividerY = titleY + (titleLinesDrawn * baseTitleSize * 1.28) + 20;
       const divGrad = ctx.createLinearGradient(50, 0, width - 100, 0);
       divGrad.addColorStop(0, palette.accentTabBg);
       divGrad.addColorStop(1, 'transparent');
       ctx.fillStyle = divGrad;
-      ctx.fillRect(50, titleDividerY, width - 100, 4);
+      ctx.fillRect(50, titleDividerY, width - 100, 5);
 
-      // 3. Description Section
-      const descY = titleDividerY + 52;
-      const descFontSize = 36;
-      const descLineHeight = 56;
+      // 3. Description Section (Generous Vertical Content Space)
+      const descY = titleDividerY + 64;
+      const descFontSize = 40;
+      const descLineHeight = 64;
       ctx.fillStyle = '#f1f5f9';
       ctx.font = `400 ${descFontSize}px Montserrat, sans-serif`;
-      const descLinesDrawn = wrapText(ctx, displayDesc, 50, descY, width - 100, descLineHeight, 8);
+      wrapText(ctx, displayDesc, 50, descY, width - 100, descLineHeight, 12);
 
-      const nextY = descY + (descLinesDrawn * descLineHeight) + 40;
-
-      // 4. Middle Feature Highlights Grid Box (Exact Terminology Rules Enforcement)
-      const gridY = Math.max(nextY, 930);
-      const gridWidth = width - 100;
-      const gridHeight = 440;
-
-      ctx.save();
-      ctx.fillStyle = 'rgba(15, 23, 42, 0.75)';
-      ctx.strokeStyle = palette.accentTabBg;
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.roundRect(50, gridY, gridWidth, gridHeight, 20);
-      ctx.fill();
-      ctx.stroke();
-
-      ctx.fillStyle = palette.accentTabBg;
-      ctx.font = 'bold 24px Montserrat, sans-serif';
-      ctx.fillText('PROGRAM HIGHLIGHTS & INSTITUTIONAL STANDARDS', 80, gridY + 52);
-
-      const tiles = [
-        { num: '01', title: '1-to-1 Mentor Reviews', desc: 'Personalized practical training' },
-        { num: '02', title: 'Real Company Projects', desc: 'Live production codebases' },
-        { num: '03', title: 'ISO 9001:2015 Compliant', desc: 'Accredited IT institute' },
-        { num: '04', title: 'Career Guidance', desc: 'Mentorship & career support' }
-      ];
-
-      const tileW = (gridWidth - 70) / 2;
-      const tileH = 135;
-
-      tiles.forEach((tile, tIdx) => {
-        const row = Math.floor(tIdx / 2);
-        const col = tIdx % 2;
-        const tx = 75 + col * (tileW + 20);
-        const ty = gridY + 85 + row * (tileH + 18);
-
-        ctx.fillStyle = 'rgba(30, 41, 59, 0.8)';
-        ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.roundRect(tx, ty, tileW, tileH, 12);
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.fillStyle = palette.accentTabBg;
-        ctx.font = 'bold 20px Montserrat, sans-serif';
-        ctx.fillText(tile.num, tx + 20, ty + 40);
-
-        ctx.fillStyle = '#ffffff';
-        ctx.font = 'bold 18px Montserrat, sans-serif';
-        ctx.fillText(tile.title, tx + 60, ty + 40);
-
-        ctx.fillStyle = '#94a3b8';
-        ctx.font = '500 14px Montserrat, sans-serif';
-        ctx.fillText(tile.desc, tx + 60, ty + 68);
-      });
-      ctx.restore();
-
-      // 5. Solid CTA Button & Real QRCode Renderer
+      // 4. Solid "SCAN QR CODE TO..." CTA Button & Real QRCode Renderer
       const btnY = 1680;
-      const btnW = 580;
-      const btnH = 84;
+      const btnW = 680;
+      const btnH = 88;
 
       ctx.save();
       ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
@@ -962,13 +1137,13 @@ window.CactsSocialShareEngine = (function() {
       ctx.restore();
 
       ctx.fillStyle = palette.accentTabTextColor;
-      ctx.font = 'bold 25px Montserrat, sans-serif';
+      ctx.font = 'bold 24px Montserrat, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(palette.ctaLabel, 50 + btnW / 2, btnY + 52);
+      ctx.fillText(palette.ctaLabel, 50 + btnW / 2, btnY + 54);
 
       await renderRealQrCodeOnCanvas(ctx, meta.url, width - 260, 1600, 210);
 
-      // 6. Bottom Footer Bar with *T&C Apply Disclaimer
+      // 5. Bottom Footer Bar with *T&C Apply Disclaimer
       const footerY = height - 65;
       ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
       ctx.fillRect(0, footerY, width, 65);
@@ -1041,12 +1216,12 @@ window.CactsSocialShareEngine = (function() {
     ctx.fillStyle = headGrad;
     ctx.fillRect(40, headerDividerY, width - 240, 2);
 
-    // Top-Right Overhanging Badge Tab
-    let tabWidth = 170;
-    let tabHeight = 66;
+    // Top-Right Overhanging Badge Tab (Expanded Schema Text Box)
+    let tabWidth = 250;
+    let tabHeight = 72;
     if (formatKey === '1080x1080') {
-      tabWidth = 200;
-      tabHeight = 74;
+      tabWidth = 270;
+      tabHeight = 78;
     }
 
     const tabX = width - tabWidth - 35;
@@ -1067,29 +1242,29 @@ window.CactsSocialShareEngine = (function() {
     ctx.textAlign = 'center';
     ctx.font = 'bold 13px Montserrat, sans-serif';
     ctx.fillText(palette.accentTabTextTop, tabX + tabWidth / 2, 28);
-    ctx.font = '800 17px Montserrat, sans-serif';
-    ctx.fillText(palette.accentTabTextBottom, tabX + tabWidth / 2, 52);
+    ctx.font = '800 16px Montserrat, sans-serif';
+    ctx.fillText(palette.accentTabTextBottom, tabX + tabWidth / 2, 54);
 
     // Title Typography
     let baseTitleSize = 48;
     let titleY = 205;
-    let maxTitleWidth = width - 270;
+    let maxTitleWidth = width - 310;
     let maxTitleLines = 3;
 
     if (formatKey === '1080x1080') {
-      baseTitleSize = 58;
-      titleY = 225;
-      maxTitleWidth = width - 260;
+      baseTitleSize = 64;
+      titleY = 230;
+      maxTitleWidth = width - 100;
       maxTitleLines = 4;
     } else if (formatKey === '1920x1080') {
       baseTitleSize = 68;
       titleY = 240;
-      maxTitleWidth = width - 360;
+      maxTitleWidth = width - 380;
       maxTitleLines = 3;
     } else if (formatKey === '1200x900') {
       baseTitleSize = 54;
       titleY = 220;
-      maxTitleWidth = width - 280;
+      maxTitleWidth = width - 320;
       maxTitleLines = 3;
     }
 
@@ -1124,9 +1299,9 @@ window.CactsSocialShareEngine = (function() {
     let maxDescLines = 4;
 
     if (formatKey === '1080x1080') {
-      descFontSize = 28;
-      descLineHeight = 44;
-      maxDescLines = 6;
+      descFontSize = 32;
+      descLineHeight = 52;
+      maxDescLines = 8;
     } else if (formatKey === '1920x1080') {
       descFontSize = 30;
       descLineHeight = 46;
@@ -1140,61 +1315,28 @@ window.CactsSocialShareEngine = (function() {
     const descY = titleDividerY + 44;
     ctx.fillStyle = '#f1f5f9';
     ctx.font = `400 ${descFontSize}px Montserrat, sans-serif`;
-    const descLinesDrawn = wrapText(ctx, displayDesc, 40, descY, maxTitleWidth, descLineHeight, maxDescLines);
+    wrapText(ctx, displayDesc, 40, descY, maxTitleWidth, descLineHeight, maxDescLines);
 
-    // Glassmorphic Highlights Card for 1080x1080
-    if (formatKey === '1080x1080') {
-      const cardY = descY + (descLinesDrawn * descLineHeight) + 30;
-      const cardWidth = width - 80;
-      const cardHeight = 160;
-
-      if (cardY + cardHeight < height - 250) {
-        ctx.save();
-        ctx.fillStyle = 'rgba(15, 23, 42, 0.65)';
-        ctx.strokeStyle = palette.accentTabBg;
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.roundRect(40, cardY, cardWidth, cardHeight, 16);
-        ctx.fill();
-        ctx.stroke();
-
-        ctx.fillStyle = palette.accentTabBg;
-        ctx.font = 'bold 18px Montserrat, sans-serif';
-        ctx.fillText('WHY TRAIN WITH CACTS PUNE:', 65, cardY + 38);
-
-        const bullets = [
-          '• 1-to-1 Live Code Reviews & Real Company Projects',
-          '• Official ISO 9001:2015 Compliant IT Institute'
-        ];
-
-        ctx.fillStyle = '#e2e8f0';
-        ctx.font = '500 16px Montserrat, sans-serif';
-        ctx.fillText(bullets[0], 65, cardY + 82);
-        ctx.fillText(bullets[1], 65, cardY + 116);
-        ctx.restore();
-      }
-    }
-
-    // CTA Pill Button
-    let btnWidth = 360;
-    let btnHeight = 56;
-    let btnFontSize = 18;
+    // Explicit "SCAN QR CODE TO..." CTA Pill Button
+    let btnWidth = 520;
+    let btnHeight = 58;
+    let btnFontSize = 17;
     let btnY = height - 135;
 
     if (formatKey === '1080x1080') {
-      btnWidth = 460;
-      btnHeight = 66;
-      btnFontSize = 21;
-      btnY = height - 150;
+      btnWidth = 560;
+      btnHeight = 72;
+      btnFontSize = 20;
+      btnY = height - 160;
     } else if (formatKey === '1920x1080') {
-      btnWidth = 460;
+      btnWidth = 580;
       btnHeight = 68;
-      btnFontSize = 22;
+      btnFontSize = 20;
       btnY = height - 160;
     } else if (formatKey === '1200x900') {
-      btnWidth = 400;
-      btnHeight = 60;
-      btnFontSize = 19;
+      btnWidth = 520;
+      btnHeight = 62;
+      btnFontSize = 18;
       btnY = height - 140;
     }
 
@@ -1214,15 +1356,15 @@ window.CactsSocialShareEngine = (function() {
     ctx.textAlign = 'center';
     ctx.fillText(palette.ctaLabel, 40 + btnWidth / 2, btnY + (btnHeight / 2) + (btnFontSize / 3.2));
 
-    // Vector QR Code
+    // Vector QR Code (Clean & Uncluttered Display)
     let qrX = width - 185;
     let qrY = 150;
     let qrSize = 145;
 
     if (formatKey === '1080x1080') {
-      qrX = width - 200;
-      qrY = height - 240;
-      qrSize = 150;
+      qrX = width - 210;
+      qrY = height - 260;
+      qrSize = 165;
     } else if (formatKey === '1920x1080') {
       qrX = width - 240;
       qrY = 160;
@@ -1367,10 +1509,6 @@ window.CactsSocialShareEngine = (function() {
 
         if (drawn) {
           ctx.restore();
-          ctx.fillStyle = '#94a3b8';
-          ctx.font = 'bold 11px Montserrat, sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText('SCAN FOR LIVE T&C', x + size / 2, y + size + 16);
           return;
         }
       } catch (e) {
@@ -1398,10 +1536,6 @@ window.CactsSocialShareEngine = (function() {
     } catch (e) {}
 
     ctx.restore();
-    ctx.fillStyle = '#94a3b8';
-    ctx.font = 'bold 11px Montserrat, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.fillText('SCAN FOR LIVE T&C', x + size / 2, y + size + 16);
   }
 
   /* ==========================================================================
@@ -1491,8 +1625,8 @@ window.CactsSocialShareEngine = (function() {
                   </div>
 
                   <!-- Dynamic Tailored Hashtags -->
-                  <div class="social-hashtag-box">
-                    <span class="social-hashtag-title">Tailored Platform Hashtags (Click to insert):</span>
+                  <div class="social-hashtag-box" id="socialHashtagBox">
+                    <span class="social-hashtag-title" id="socialHashtagTitle">Tailored Platform Hashtags (Click to insert):</span>
                     <div class="social-hashtag-pills" id="socialHashtagPills"></div>
                   </div>
                 </div>
@@ -1566,8 +1700,7 @@ window.CactsSocialShareEngine = (function() {
         await navigator.clipboard.write([new ClipboardItem({ 'image/png': currentBlob })]);
         showToast('Image binary copied to clipboard!');
       } catch (e) {
-        showToast('Clipboard image binary copy not supported on this browser. Downloading PNG file instead.');
-        downloadBtn.click();
+        showToast('Clipboard image binary copy not supported in this browser. Use the Download PNG button.');
       }
     });
 
@@ -1585,25 +1718,32 @@ window.CactsSocialShareEngine = (function() {
 
     copyTextBtn.addEventListener('click', async () => {
       let fullVal = captionArea.value.trim();
-      const pillsContainer = document.getElementById('socialHashtagPills');
-      const tags = Array.from(pillsContainer.querySelectorAll('.social-hashtag-pill')).map(p => p.innerText.trim()).filter(t => t.length > 0);
+      
+      // Only append hashtags if the active platform supports hashtags
+      if (!NO_HASHTAG_PLATFORMS.includes(activePlatformId)) {
+        const pillsContainer = document.getElementById('socialHashtagPills');
+        const tags = Array.from(pillsContainer.querySelectorAll('.social-hashtag-pill')).map(p => p.innerText.trim()).filter(t => t.length > 0);
 
-      // Ensure all hashtag pills are appended into the copied string
-      tags.forEach(tag => {
-        if (!fullVal.includes(tag)) {
-          fullVal += ' ' + tag;
-        }
-      });
+        tags.forEach(tag => {
+          if (!fullVal.includes(tag)) {
+            fullVal += ' ' + tag;
+          }
+        });
+      }
 
       try {
         await navigator.clipboard.writeText(fullVal.trim());
-        showToast('Full caption (Text + Hashtags) copied to clipboard!');
+        showToast(NO_HASHTAG_PLATFORMS.includes(activePlatformId) ? 'Caption text copied (Hashtags excluded for this platform)!' : 'Full caption (Text + Hashtags) copied to clipboard!');
       } catch (e) {
         showToast('Failed to copy full caption.');
       }
     });
 
     copyTagsBtn.addEventListener('click', async () => {
+      if (NO_HASHTAG_PLATFORMS.includes(activePlatformId)) {
+        showToast('Hashtags are not recommended for this platform.');
+        return;
+      }
       const pillsContainer = document.getElementById('socialHashtagPills');
       const tags = Array.from(pillsContainer.querySelectorAll('.social-hashtag-pill')).map(p => p.innerText.trim()).join(' ');
       try {
@@ -1664,7 +1804,7 @@ window.CactsSocialShareEngine = (function() {
     renderPlatformSelectorBar(currentMetadata);
 
     const platforms = getPlatformSuitability(currentMetadata);
-    const defaultPlatform = platforms.find(p => p.recommended) || platforms[0];
+    const defaultPlatform = platforms[0];
     if (defaultPlatform) {
       await selectPlatform(defaultPlatform.id);
     }
@@ -1699,14 +1839,18 @@ window.CactsSocialShareEngine = (function() {
   }
 
   async function selectPlatform(platformId) {
-    activePlatformId = platformId;
+    const platforms = getPlatformSuitability(currentMetadata);
+    const platform = platforms.find(p => p.id === platformId) || platforms[0];
+    if (!platform) return;
+
+    activePlatformId = platform.id;
 
     document.querySelectorAll('.social-platform-pill').forEach(pill => {
-      if (pill.dataset.id === platformId) pill.classList.add('selected');
+      if (pill.dataset.id === activePlatformId) pill.classList.add('selected');
       else pill.classList.remove('selected');
     });
 
-    const targetFormat = PLATFORM_FORMATS[platformId] || '1200x630';
+    const targetFormat = PLATFORM_FORMATS[activePlatformId] || '1200x630';
     activeFormat = targetFormat;
 
     document.querySelectorAll('.social-format-tab').forEach(tab => {
@@ -1714,10 +1858,8 @@ window.CactsSocialShareEngine = (function() {
       else tab.classList.remove('active');
     });
 
-    renderTailoredHashtags(platformId, currentMetadata ? currentMetadata.presetKey : 'guide');
+    renderTailoredHashtags(activePlatformId, currentMetadata ? currentMetadata.presetKey : 'guide');
 
-    const platforms = getPlatformSuitability(currentMetadata);
-    const platform = platforms.find(p => p.id === platformId) || platforms[0];
     const primaryBtn = document.getElementById('socialPrimaryActionBtn');
     if (primaryBtn && platform) {
       primaryBtn.innerText = platform.actionLabel;
@@ -1729,6 +1871,22 @@ window.CactsSocialShareEngine = (function() {
 
   function renderTailoredHashtags(platformId, presetKey) {
     const pillsContainer = document.getElementById('socialHashtagPills');
+    const titleElem = document.getElementById('socialHashtagTitle');
+    const copyTagsBtn = document.getElementById('socialCopyTagsBtn');
+
+    // If platform does NOT support hashtags, display explicit notice and disable hashtag pills
+    if (NO_HASHTAG_PLATFORMS.includes(platformId)) {
+      if (titleElem) titleElem.innerText = 'Platform Hashtag Status:';
+      if (pillsContainer) {
+        pillsContainer.innerHTML = '<span style="font-size: 0.82rem; color: #94a3b8; font-style: italic;">Hashtags are excluded for this platform (Not supported or clutter-inducing on WhatsApp, Google Business &amp; Reddit).</span>';
+      }
+      if (copyTagsBtn) copyTagsBtn.style.opacity = '0.4';
+      return;
+    }
+
+    if (titleElem) titleElem.innerText = 'Target-Audience Hashtags (Click to insert):';
+    if (copyTagsBtn) copyTagsBtn.style.opacity = '1';
+
     const platformTags = PLATFORM_HASHTAGS[platformId] || PLATFORM_HASHTAGS['linkedin-feed'];
     const topicTags = TOPIC_HASHTAGS[presetKey] || TOPIC_HASHTAGS['guide'];
     
@@ -1737,20 +1895,10 @@ window.CactsSocialShareEngine = (function() {
 
     pillsContainer.innerHTML = combined.map(h => `<button class="social-hashtag-pill">${h}</button>`).join('');
 
-    // Automatically append tailored hashtags into caption text area if not present
-    if (captionArea) {
-      let currentVal = captionArea.value;
-      const missingTags = combined.filter(t => !currentVal.includes(t));
-      if (missingTags.length > 0) {
-        captionArea.value = currentVal.trim() + '\n\n' + missingTags.join(' ');
-        updateCharCounter();
-      }
-    }
-
     pillsContainer.querySelectorAll('.social-hashtag-pill').forEach(pill => {
       pill.addEventListener('click', () => {
         if (!captionArea.value.includes(pill.innerText)) {
-          captionArea.value += ' ' + pill.innerText;
+          captionArea.value = captionArea.value.trim() + ' ' + pill.innerText;
           updateCharCounter();
         }
       });
@@ -1773,25 +1921,28 @@ window.CactsSocialShareEngine = (function() {
   async function handlePlatformAction(platform) {
     const action = platform.actionType;
 
-    // Get guaranteed full caption with all hashtags
+    // Get guaranteed full caption (append hashtags ONLY if supported by platform)
     let captionText = document.getElementById('socialCaptionText').value.trim();
-    const pillsContainer = document.getElementById('socialHashtagPills');
-    if (pillsContainer) {
-      const tags = Array.from(pillsContainer.querySelectorAll('.social-hashtag-pill')).map(p => p.innerText.trim()).filter(t => t.length > 0);
-      tags.forEach(tag => {
-        if (!captionText.includes(tag)) {
-          captionText += ' ' + tag;
-        }
-      });
+    if (!NO_HASHTAG_PLATFORMS.includes(platform.id)) {
+      const pillsContainer = document.getElementById('socialHashtagPills');
+      if (pillsContainer) {
+        const tags = Array.from(pillsContainer.querySelectorAll('.social-hashtag-pill')).map(p => p.innerText.trim()).filter(t => t.length > 0);
+        tags.forEach(tag => {
+          if (!captionText.includes(tag)) {
+            captionText += ' ' + tag;
+          }
+        });
+      }
     }
 
-    // Step 1: Guarantee Caption Text Copy to Mobile & Desktop Device Clipboard
+    // Step 1: Copy Caption Text to Device Clipboard
     let textCopied = false;
     try {
       await navigator.clipboard.writeText(captionText);
       textCopied = true;
     } catch (e) {}
 
+    // Step 2: Copy Image Binary to Clipboard (if supported by browser)
     let imgCopied = false;
     if (currentBlob && navigator.clipboard && navigator.clipboard.write) {
       try {
@@ -1800,57 +1951,13 @@ window.CactsSocialShareEngine = (function() {
       } catch (e) {}
     }
 
-    // Step 2: Specialized Execution for LinkedIn Feed Share
-    if (platform.id === 'linkedin-feed') {
-      const link = document.createElement('a');
-      link.download = `cacts-share-linkedin-${Date.now()}.png`;
-      link.href = currentObjectUrl;
-      link.click();
-
-      window.open(platform.intentUrl, '_blank');
-      recordShareHistory(currentMetadata.url);
-      showToast('LinkedIn Share: Caption & Hashtags copied & 1200x630 banner saved! Paste text (Ctrl+V) & attach banner image on LinkedIn.', 6000);
-      return;
-    }
-
-    // Step 3: Auto-Download Image for File-Based Social Platforms
-    if (action === 'download-copy' || platform.id === 'instagram-story' || platform.id === 'gbp-post') {
-      const link = document.createElement('a');
-      link.download = `cacts-share-${activeFormat}-${Date.now()}.png`;
-      link.href = currentObjectUrl;
-      link.click();
-    }
-
-    // Step 4: Execute Platform Specific Action / Intent Composer
-    if (action === 'linkedin-add-profile') {
-      if (typeof window.addToLinkedInProfile === 'function') {
-        window.addToLinkedInProfile();
-      } else {
-        const certUrl = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${encodeURIComponent(currentMetadata.title)}&organizationName=${encodeURIComponent("CACTS Pune")}&issueYear=2026&issueMonth=8&certUrl=${encodeURIComponent(currentMetadata.url)}`;
-        window.open(certUrl, '_blank');
-      }
-      showToast('Caption copied! Opening LinkedIn Certificate addition window...');
-    } else if (action === 'intent') {
-      window.open(platform.intentUrl, '_blank');
-      recordShareHistory(currentMetadata.url);
-      
-      if (textCopied && imgCopied) {
-        showToast(`Caption & Graphic Image copied! Ready to paste (Ctrl+V) on ${platform.name}.`);
-      } else if (textCopied) {
-        showToast(`Caption copied to clipboard! Opening pre-filled ${platform.name}...`);
-      } else {
-        showToast(`Opened ${platform.name} share composer!`);
-      }
-    } else if (action === 'download-copy') {
-      recordShareHistory(currentMetadata.url);
-      showToast(`Caption copied & ${activeFormat} image saved! Ready to upload/paste on ${platform.name}.`);
-    } else if (action === 'native-share') {
+    // Step 3: Platform Execution (NO automatic file downloads!)
+    if (action === 'native-share') {
       if (navigator.share && currentBlob) {
         try {
           const file = new File([currentBlob], 'cacts-share.png', { type: 'image/png' });
           if (navigator.canShare && navigator.canShare({ files: [file] })) {
-            showToast('Caption & hashtags copied to clipboard! Long-press -> Paste in your target app.', 5000);
-            
+            showToast('Caption copied to clipboard! Long-press -> Paste in your target app.', 5000);
             await navigator.share({
               title: currentMetadata.title,
               text: captionText,
@@ -1868,6 +1975,20 @@ window.CactsSocialShareEngine = (function() {
         } catch (e) {
           showToast('Share sheet cancelled or unsupported.');
         }
+      }
+    } else {
+      // Standard Intent / Social Composer Window Execution
+      if (platform.intentUrl) {
+        window.open(platform.intentUrl, '_blank');
+      }
+      recordShareHistory(currentMetadata.url);
+
+      if (textCopied && imgCopied) {
+        showToast(`Caption & Image copied to clipboard! Ready to paste (Ctrl+V) on ${platform.name}.`);
+      } else if (textCopied) {
+        showToast(`Caption copied to clipboard! Opening ${platform.name}...`);
+      } else {
+        showToast(`Opened ${platform.name} share composer!`);
       }
     }
   }

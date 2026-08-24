@@ -151,11 +151,17 @@ window.CactsPlannerEngine = (function() {
     return items.filter(item => {
       if (currentFilter !== 'ALL') {
         const itemSchema = (item.schema_type || '').toUpperCase();
-        if (currentFilter === 'JOB' && !itemSchema.includes('JOB')) return false;
-        if (currentFilter === 'COURSE' && !itemSchema.includes('COURSE')) return false;
-        if (currentFilter === 'CREDENTIAL' && !itemSchema.includes('CREDENTIAL')) return false;
-        if (currentFilter === 'TOOL' && !itemSchema.includes('WEBAPPLICATION')) return false;
-        if (currentFilter === 'REPORT' && !itemSchema.includes('REPORT')) return false;
+        const urlLower = (item.url || '').toLowerCase();
+
+        if (currentFilter === 'JOB' && !itemSchema.includes('JOB') && !urlLower.includes('/jobs/')) return false;
+        if (currentFilter === 'COURSE' && !itemSchema.includes('COURSE') && !urlLower.includes('/courses/')) return false;
+        if (currentFilter === 'CREDENTIAL' && !itemSchema.includes('CREDENTIAL') && !urlLower.includes('verify.html')) return false;
+        if (currentFilter === 'TOOL' && (!itemSchema.includes('WEBAPPLICATION') && !itemSchema.includes('TOOL')) && !urlLower.includes('/tools/')) return false;
+        if (currentFilter === 'REPORT' && !itemSchema.includes('REPORT') && !urlLower.includes('report')) return false;
+        if (currentFilter === 'LOCATION' && !itemSchema.includes('LOCALBUSINESS') && !urlLower.includes('/locations/')) return false;
+        if (currentFilter === 'REVIEW' && !itemSchema.includes('STUDENTREVIEWS') && !urlLower.includes('reviews.html')) return false;
+        if (currentFilter === 'GUIDE' && !itemSchema.includes('ARTICLE') && !urlLower.includes('/guides/') && !urlLower.includes('/comparisons/')) return false;
+        if (currentFilter === 'POLICY' && !urlLower.includes('privacy') && !urlLower.includes('terms') && !urlLower.includes('about') && !urlLower.includes('contact') && !urlLower.includes('faq') && !urlLower.includes('sitemap')) return false;
       }
 
       if (searchQuery) {
