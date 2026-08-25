@@ -230,10 +230,25 @@
 
     .planner-schedule-day-card {
       background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 6px;
-      padding: 0.4rem 0.6rem;
+      padding: 0.5rem 0.65rem;
       font-size: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .planner-schedule-day-card:hover {
+      border-color: var(--accent);
+      background: rgba(37, 99, 235, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .planner-schedule-day-card.active {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.35) 0%, rgba(99, 102, 241, 0.35) 100%);
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
     }
 
     .planner-day-name {
@@ -480,37 +495,37 @@
           <span>Weekly Posting Schedule &amp; Peak Engagement Guide:</span>
         </div>
         <div class="planner-schedule-days">
-          <div class="planner-schedule-day-card">
+          <div class="planner-schedule-day-card" data-day="MONDAY" title="Click to filter Monday's schedule (Jobs &amp; Certs)">
             <div class="planner-day-name">Monday</div>
             <div class="planner-day-topic">Jobs &amp; Certs (LinkedIn/WA)</div>
             <div class="planner-day-time">8:30 AM - 10:00 AM</div>
           </div>
-          <div class="planner-schedule-day-card">
+          <div class="planner-schedule-day-card" data-day="TUESDAY" title="Click to filter Tuesday's schedule (Fees &amp; EMI)">
             <div class="planner-day-name">Tuesday</div>
             <div class="planner-day-topic">Fees &amp; EMI (WA/IG/FB)</div>
             <div class="planner-day-time">11:00 AM - 1:00 PM</div>
           </div>
-          <div class="planner-schedule-day-card">
+          <div class="planner-schedule-day-card" data-day="WEDNESDAY" title="Click to filter Wednesday's schedule (Syllabus &amp; Stacks)">
             <div class="planner-day-name">Wednesday</div>
             <div class="planner-day-topic">Syllabus &amp; Stacks (LinkedIn/X)</div>
             <div class="planner-day-time">1:00 PM - 3:00 PM</div>
           </div>
-          <div class="planner-schedule-day-card">
+          <div class="planner-schedule-day-card" data-day="THURSDAY" title="Click to filter Thursday's schedule (Beginner &amp; Tools)">
             <div class="planner-day-name">Thursday</div>
             <div class="planner-day-topic">Beginner &amp; Tools (Reddit/X)</div>
             <div class="planner-day-time">5:00 PM - 7:00 PM</div>
           </div>
-          <div class="planner-schedule-day-card">
+          <div class="planner-schedule-day-card" data-day="FRIDAY" title="Click to filter Friday's schedule (Local Hubs)">
             <div class="planner-day-name">Friday</div>
             <div class="planner-day-topic">Local Hubs (GBP/Facebook)</div>
             <div class="planner-day-time">10:00 AM - 12:00 PM</div>
           </div>
-          <div class="planner-schedule-day-card">
+          <div class="planner-schedule-day-card" data-day="SATURDAY" title="Click to filter Saturday's schedule (Alumni Stories)">
             <div class="planner-day-name">Saturday</div>
             <div class="planner-day-topic">Alumni Stories (IG/WA)</div>
             <div class="planner-day-time">6:00 PM - 9:00 PM</div>
           </div>
-          <div class="planner-schedule-day-card">
+          <div class="planner-schedule-day-card" data-day="SUNDAY" title="Click to filter Sunday's schedule (Roadmaps &amp; Reports)">
             <div class="planner-day-name">Sunday</div>
             <div class="planner-day-topic">Roadmaps &amp; Reports (LinkedIn)</div>
             <div class="planner-day-time">11:00 AM - 1:00 PM</div>

@@ -13,6 +13,7 @@ window.CactsPlannerEngine = (function () {
   let evergreenQueue = [];
 
   let currentFilter = 'ALL';
+  let currentDayFilter = 'ALL';
   let searchQuery = '';
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -64,6 +65,7 @@ window.CactsPlannerEngine = (function () {
   function bindFilterEvents() {
     const searchInput = document.getElementById('plannerSearchInput');
     const filterPills = document.querySelectorAll('.planner-filter-pill');
+    const dayCards = document.querySelectorAll('.planner-schedule-day-card');
     const exportCsvBtn = document.getElementById('exportCsvBtn');
     const exportJsonBtn = document.getElementById('exportJsonBtn');
     const exportHistoryBtn = document.getElementById('exportHistoryBtn');
@@ -80,6 +82,36 @@ window.CactsPlannerEngine = (function () {
         filterPills.forEach(p => p.classList.remove('active'));
         e.target.classList.add('active');
         currentFilter = e.target.dataset.filter || 'ALL';
+
+        // Clear day filter selection when a category pill is clicked
+        dayCards.forEach(dc => dc.classList.remove('active'));
+        currentDayFilter = 'ALL';
+
+        renderDashboard();
+      });
+    });
+
+    dayCards.forEach(dayCard => {
+      dayCard.addEventListener('click', e => {
+        const clickedCard = e.currentTarget;
+        const targetDay = clickedCard.dataset.day || 'ALL';
+
+        if (clickedCard.classList.contains('active')) {
+          // Toggle off if already active
+          clickedCard.classList.remove('active');
+          currentDayFilter = 'ALL';
+        } else {
+          dayCards.forEach(dc => dc.classList.remove('active'));
+          clickedCard.classList.add('active');
+          currentDayFilter = targetDay;
+        }
+
+        // Reset category pill selection to ALL when filtering by day
+        filterPills.forEach(p => p.classList.remove('active'));
+        const allPill = document.querySelector('.planner-filter-pill[data-filter="ALL"]');
+        if (allPill) allPill.classList.add('active');
+        currentFilter = 'ALL';
+
         renderDashboard();
       });
     });
@@ -149,10 +181,30 @@ window.CactsPlannerEngine = (function () {
 
   function filterItems(items) {
     return items.filter(item => {
-      if (currentFilter !== 'ALL') {
-        const itemSchema = (item.schema_type || '').toUpperCase();
-        const urlLower = (item.url || '').toLowerCase();
+      const itemSchema = (item.schema_type || '').toUpperCase();
+      const urlLower = (item.url || '').toLowerCase();
 
+      // Day-based schedule filtering
+      if (currentDayFilter !== 'ALL') {
+        if (currentDayFilter === 'MONDAY') {
+          if (!itemSchema.includes('JOB') && !itemSchema.includes('CREDENTIAL') && !urlLower.includes('/jobs/') && !urlLower.includes('verify.html')) return false;
+        } else if (currentDayFilter === 'TUESDAY') {
+          if (!urlLower.includes('fees.html') && !urlLower.includes('/fees/') && (!itemSchema.includes('COURSE') || !urlLower.includes('/courses/'))) return false;
+        } else if (currentDayFilter === 'WEDNESDAY') {
+          if (!urlLower.includes('syllabus.html') && !urlLower.includes('/syllabus/') && !urlLower.includes('comparison.html') && !urlLower.includes('/comparison/')) return false;
+        } else if (currentDayFilter === 'THURSDAY') {
+          if (!urlLower.includes('beginner.html') && !urlLower.includes('/beginner/') && !itemSchema.includes('WEBAPPLICATION') && !itemSchema.includes('TOOL') && !urlLower.includes('/tools/')) return false;
+        } else if (currentDayFilter === 'FRIDAY') {
+          if (!itemSchema.includes('LOCALBUSINESS') && !urlLower.includes('/locations/')) return false;
+        } else if (currentDayFilter === 'SATURDAY') {
+          if (!itemSchema.includes('STUDENTREVIEWS') && !urlLower.includes('reviews.html')) return false;
+        } else if (currentDayFilter === 'SUNDAY') {
+          if (!urlLower.includes('roadmap.html') && !urlLower.includes('/roadmap/') && !itemSchema.includes('REPORT') && !urlLower.includes('report')) return false;
+        }
+      }
+
+      // Category pill filtering
+      if (currentFilter !== 'ALL') {
         if (currentFilter === 'JOB' && !itemSchema.includes('JOB') && !urlLower.includes('/jobs/')) return false;
         if (currentFilter === 'COURSE' && !itemSchema.includes('COURSE') && !urlLower.includes('/courses/')) return false;
         if (currentFilter === 'CREDENTIAL' && !itemSchema.includes('CREDENTIAL') && !urlLower.includes('verify.html')) return false;
