@@ -17,7 +17,8 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
 
   <!-- Web App Manifest for PWA & Web Share Target -->
   <link rel="manifest" href="webmcp.json" />
@@ -163,6 +164,41 @@
       color: #ffffff;
       border-color: var(--accent);
       box-shadow: 0 0 12px var(--accent-glow);
+    }
+
+    /* Today's Day Indicator & Progress Bar */
+    .planner-schedule-day-card.is-today {
+      border-color: #f59e0b !important;
+      box-shadow: 0 0 10px rgba(245, 158, 11, 0.35);
+    }
+
+    .planner-today-pill {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      background: #f59e0b;
+      color: #1c1917;
+      border-radius: 4px;
+      padding: 0.05rem 0.3rem;
+      margin-left: 0.3rem;
+      vertical-align: middle;
+      letter-spacing: 0.5px;
+    }
+
+    .planner-progress-bar-container {
+      width: 100%;
+      height: 6px;
+      background: rgba(30, 41, 59, 0.8);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 0.75rem;
+    }
+
+    .planner-progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+      transition: width 0.4s ease;
     }
 
     /* Smart Syndication Guide Box inside Card */
@@ -453,18 +489,27 @@
         <h2 class="planner-title">
           Social Content Planner &amp; Syndication Strategy
         </h2>
-        <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
           <span class="planner-stats-badge">
-            Total Indexed Pages: <strong id="totalIndexedCount">0</strong>
+            Indexed: <strong id="totalIndexedCount">0</strong>
+          </span>
+          <span class="planner-stats-badge">
+            Syndicated: <strong id="syndicatedCoverageText">0 / 0 (0%)</strong>
+          </span>
+          <span class="planner-stats-badge" style="border-color: rgba(99, 102, 241, 0.4); color: #c7d2fe;">
+            Showing: <strong id="searchResultCount">0 items</strong>
           </span>
         </div>
+      </div>
+      <div class="planner-progress-bar-container">
+        <div class="planner-progress-bar-fill" id="syndicatedProgressBar"></div>
       </div>
 
       <div class="planner-controls-row">
         <!-- Search Input -->
         <div class="planner-search-box">
-          <span class="planner-search-icon">Search:</span>
-          <input type="text" id="plannerSearchInput" class="planner-search-input" placeholder="Search content titles, schemas, URLs (Press '/' to focus)..." />
+          <input type="text" id="plannerSearchInput" class="planner-search-input"
+            placeholder="Search content titles, schemas, URLs (Press '/' to focus)..." />
         </div>
 
         <!-- Export Buttons -->
@@ -478,6 +523,8 @@
       <!-- Category Filter Pills -->
       <div class="planner-filter-pills">
         <button class="planner-filter-pill active" data-filter="ALL">All Categories</button>
+        <button class="planner-filter-pill" data-filter="UNSHARED"
+          style="border-color: #10b981; color: #34d399;">Unshared Only</button>
         <button class="planner-filter-pill" data-filter="JOB">Tech Jobs</button>
         <button class="planner-filter-pill" data-filter="COURSE">Course Syllabi</button>
         <button class="planner-filter-pill" data-filter="CREDENTIAL">Certificates</button>
@@ -491,44 +538,41 @@
 
       <!-- Weekly Syndication Schedule Assistant Banner -->
       <div class="planner-schedule-banner">
-        <div class="planner-schedule-title">
-          <span>Weekly Posting Schedule &amp; Peak Engagement Guide:</span>
-        </div>
         <div class="planner-schedule-days">
-          <div class="planner-schedule-day-card" data-day="MONDAY" title="Click to filter Monday's schedule (Jobs &amp; Certs)">
+          <div class="planner-schedule-day-card" data-day="MONDAY"
+            title="Click to filter Monday's schedule (Jobs &amp; Certs)">
             <div class="planner-day-name">Monday</div>
-            <div class="planner-day-topic">Jobs &amp; Certs (LinkedIn/WA)</div>
-            <div class="planner-day-time">8:30 AM - 10:00 AM</div>
+            <div class="planner-day-topic">Jobs &amp; Certs</div>
           </div>
-          <div class="planner-schedule-day-card" data-day="TUESDAY" title="Click to filter Tuesday's schedule (Fees &amp; EMI)">
+          <div class="planner-schedule-day-card" data-day="TUESDAY"
+            title="Click to filter Tuesday's schedule (Fees &amp; EMI)">
             <div class="planner-day-name">Tuesday</div>
-            <div class="planner-day-topic">Fees &amp; EMI (WA/IG/FB)</div>
-            <div class="planner-day-time">11:00 AM - 1:00 PM</div>
+            <div class="planner-day-topic">Fees &amp; EMI</div>
           </div>
-          <div class="planner-schedule-day-card" data-day="WEDNESDAY" title="Click to filter Wednesday's schedule (Syllabus &amp; Stacks)">
+          <div class="planner-schedule-day-card" data-day="WEDNESDAY"
+            title="Click to filter Wednesday's schedule (Syllabus &amp; Stacks)">
             <div class="planner-day-name">Wednesday</div>
-            <div class="planner-day-topic">Syllabus &amp; Stacks (LinkedIn/X)</div>
-            <div class="planner-day-time">1:00 PM - 3:00 PM</div>
+            <div class="planner-day-topic">Syllabus &amp; Stacks</div>
           </div>
-          <div class="planner-schedule-day-card" data-day="THURSDAY" title="Click to filter Thursday's schedule (Beginner &amp; Tools)">
+          <div class="planner-schedule-day-card" data-day="THURSDAY"
+            title="Click to filter Thursday's schedule (Beginner &amp; Tools)">
             <div class="planner-day-name">Thursday</div>
-            <div class="planner-day-topic">Beginner &amp; Tools (Reddit/X)</div>
-            <div class="planner-day-time">5:00 PM - 7:00 PM</div>
+            <div class="planner-day-topic">Beginner &amp; Tools</div>
           </div>
-          <div class="planner-schedule-day-card" data-day="FRIDAY" title="Click to filter Friday's schedule (Local Hubs)">
+          <div class="planner-schedule-day-card" data-day="FRIDAY"
+            title="Click to filter Friday's schedule (Local Hubs &amp; Institutional Info)">
             <div class="planner-day-name">Friday</div>
-            <div class="planner-day-topic">Local Hubs (GBP/Facebook)</div>
-            <div class="planner-day-time">10:00 AM - 12:00 PM</div>
+            <div class="planner-day-topic">Local Hubs &amp; Institute</div>
           </div>
-          <div class="planner-schedule-day-card" data-day="SATURDAY" title="Click to filter Saturday's schedule (Alumni Stories)">
+          <div class="planner-schedule-day-card" data-day="SATURDAY"
+            title="Click to filter Saturday's schedule (Alumni Stories)">
             <div class="planner-day-name">Saturday</div>
-            <div class="planner-day-topic">Alumni Stories (IG/WA)</div>
-            <div class="planner-day-time">6:00 PM - 9:00 PM</div>
+            <div class="planner-day-topic">Alumni Stories</div>
           </div>
-          <div class="planner-schedule-day-card" data-day="SUNDAY" title="Click to filter Sunday's schedule (Roadmaps &amp; Reports)">
+          <div class="planner-schedule-day-card" data-day="SUNDAY"
+            title="Click to filter Sunday's schedule (Roadmaps &amp; Reports)">
             <div class="planner-day-name">Sunday</div>
-            <div class="planner-day-topic">Roadmaps &amp; Reports (LinkedIn)</div>
-            <div class="planner-day-time">11:00 AM - 1:00 PM</div>
+            <div class="planner-day-topic">Roadmaps &amp; Reports</div>
           </div>
         </div>
       </div>
@@ -556,8 +600,10 @@
   </main>
 
   <!-- Footer -->
-  <footer style="margin-top: 4rem; padding: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
-    <p>© 2026 CACTS (Centre of Advanced Computer Training and Studies) Pune. Zero-Database Dynamic Client-Side Syndication Engine.</p>
+  <footer
+    style="margin-top: 4rem; padding: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
+    <p>© 2026 CACTS (Centre of Advanced Computer Training and Studies) Pune. Zero-Database Dynamic Client-Side
+      Syndication Engine.</p>
   </footer>
 </body>
 

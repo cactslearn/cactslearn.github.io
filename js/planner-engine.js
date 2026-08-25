@@ -29,12 +29,28 @@ window.CactsPlannerEngine = (function () {
       processQueues();
       bindFilterEvents();
       setupKeyboardShortcuts();
+      highlightTodayDayCard();
       renderDashboard();
     } catch (e) {
       console.error('Planner initialization error:', e);
       const container = document.getElementById('urgentCardsGrid');
       if (container) {
         container.innerHTML = '<div class="planner-error-msg">Failed to load indexed pages. Ensure js/content-index.json exists.</div>';
+      }
+    }
+  }
+
+  function highlightTodayDayCard() {
+    const daysMap = ['SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY', 'SATURDAY'];
+    const todayIndex = new Date().getDay();
+    const todayKey = daysMap[todayIndex];
+
+    const todayCard = document.querySelector(`.planner-schedule-day-card[data-day="${todayKey}"]`);
+    if (todayCard) {
+      todayCard.classList.add('is-today');
+      const nameElem = todayCard.querySelector('.planner-day-name');
+      if (nameElem && !nameElem.querySelector('.planner-today-pill')) {
+        nameElem.innerHTML += ' <span class="planner-today-pill">TODAY</span>';
       }
     }
   }
@@ -150,15 +166,38 @@ window.CactsPlannerEngine = (function () {
     const urgentContainer = document.getElementById('urgentCardsGrid');
     const evergreenContainer = document.getElementById('evergreenCardsGrid');
     const totalCountElem = document.getElementById('totalIndexedCount');
-
-    if (totalCountElem) {
-      totalCountElem.innerText = rawContentIndex.length;
-    }
+    const coverageTextElem = document.getElementById('syndicatedCoverageText');
+    const progressBarElem = document.getElementById('syndicatedProgressBar');
+    const searchResultCountElem = document.getElementById('searchResultCount');
 
     const shareHistory = JSON.parse(localStorage.getItem('cacts_share_history') || '[]');
+    const totalCount = rawContentIndex.length;
+
+    if (totalCountElem) {
+      totalCountElem.innerText = totalCount;
+    }
+
+    if (coverageTextElem || progressBarElem) {
+      // Find unique shared URLs in shareHistory that exist in rawContentIndex
+      const sharedSet = new Set(shareHistory.filter(url => rawContentIndex.some(item => item.url === url)));
+      const sharedCount = sharedSet.size;
+      const pct = totalCount > 0 ? Math.round((sharedCount / totalCount) * 100) : 0;
+
+      if (coverageTextElem) {
+        coverageTextElem.innerText = `${sharedCount} / ${totalCount} (${pct}%)`;
+      }
+      if (progressBarElem) {
+        progressBarElem.style.width = `${pct}%`;
+      }
+    }
 
     const filteredUrgent = filterItems(urgentQueue);
     const filteredEvergreen = filterItems(evergreenQueue);
+    const totalMatching = filteredUrgent.length + filteredEvergreen.length;
+
+    if (searchResultCountElem) {
+      searchResultCountElem.innerText = `Showing ${totalMatching} items`;
+    }
 
     if (urgentContainer) {
       if (filteredUrgent.length === 0) {
@@ -180,6 +219,8 @@ window.CactsPlannerEngine = (function () {
   }
 
   function filterItems(items) {
+    const shareHistory = JSON.parse(localStorage.getItem('cacts_share_history') || '[]');
+
     return items.filter(item => {
       const itemSchema = (item.schema_type || '').toUpperCase();
       const urlLower = (item.url || '').toLowerCase();
@@ -195,7 +236,7 @@ window.CactsPlannerEngine = (function () {
         } else if (currentDayFilter === 'THURSDAY') {
           if (!urlLower.includes('beginner.html') && !urlLower.includes('/beginner/') && !itemSchema.includes('WEBAPPLICATION') && !itemSchema.includes('TOOL') && !urlLower.includes('/tools/')) return false;
         } else if (currentDayFilter === 'FRIDAY') {
-          if (!itemSchema.includes('LOCALBUSINESS') && !urlLower.includes('/locations/')) return false;
+          if (!itemSchema.includes('LOCALBUSINESS') && !urlLower.includes('/locations/') && !urlLower.includes('privacy') && !urlLower.includes('terms') && !urlLower.includes('about') && !urlLower.includes('contact') && !urlLower.includes('faq') && !urlLower.includes('sitemap')) return false;
         } else if (currentDayFilter === 'SATURDAY') {
           if (!itemSchema.includes('STUDENTREVIEWS') && !urlLower.includes('reviews.html')) return false;
         } else if (currentDayFilter === 'SUNDAY') {
@@ -205,15 +246,17 @@ window.CactsPlannerEngine = (function () {
 
       // Category pill filtering
       if (currentFilter !== 'ALL') {
-        if (currentFilter === 'JOB' && !itemSchema.includes('JOB') && !urlLower.includes('/jobs/')) return false;
-        if (currentFilter === 'COURSE' && !itemSchema.includes('COURSE') && !urlLower.includes('/courses/')) return false;
-        if (currentFilter === 'CREDENTIAL' && !itemSchema.includes('CREDENTIAL') && !urlLower.includes('verify.html')) return false;
-        if (currentFilter === 'TOOL' && (!itemSchema.includes('WEBAPPLICATION') && !itemSchema.includes('TOOL')) && !urlLower.includes('/tools/')) return false;
-        if (currentFilter === 'REPORT' && !itemSchema.includes('REPORT') && !urlLower.includes('report')) return false;
-        if (currentFilter === 'LOCATION' && !itemSchema.includes('LOCALBUSINESS') && !urlLower.includes('/locations/')) return false;
-        if (currentFilter === 'REVIEW' && !itemSchema.includes('STUDENTREVIEWS') && !urlLower.includes('reviews.html')) return false;
-        if (currentFilter === 'GUIDE' && !itemSchema.includes('ARTICLE') && !urlLower.includes('/guides/') && !urlLower.includes('/comparisons/')) return false;
-        if (currentFilter === 'POLICY' && !urlLower.includes('privacy') && !urlLower.includes('terms') && !urlLower.includes('about') && !urlLower.includes('contact') && !urlLower.includes('faq') && !urlLower.includes('sitemap')) return false;
+        if (currentFilter === 'UNSHARED') {
+          if (shareHistory.includes(item.url)) return false;
+        } else if (currentFilter === 'JOB' && !itemSchema.includes('JOB') && !urlLower.includes('/jobs/')) return false;
+        else if (currentFilter === 'COURSE' && !itemSchema.includes('COURSE') && !urlLower.includes('/courses/')) return false;
+        else if (currentFilter === 'CREDENTIAL' && !itemSchema.includes('CREDENTIAL') && !urlLower.includes('verify.html')) return false;
+        else if (currentFilter === 'TOOL' && (!itemSchema.includes('WEBAPPLICATION') && !itemSchema.includes('TOOL')) && !urlLower.includes('/tools/')) return false;
+        else if (currentFilter === 'REPORT' && !itemSchema.includes('REPORT') && !urlLower.includes('report')) return false;
+        else if (currentFilter === 'LOCATION' && !itemSchema.includes('LOCALBUSINESS') && !urlLower.includes('/locations/')) return false;
+        else if (currentFilter === 'REVIEW' && !itemSchema.includes('STUDENTREVIEWS') && !urlLower.includes('reviews.html')) return false;
+        else if (currentFilter === 'GUIDE' && !itemSchema.includes('ARTICLE') && !urlLower.includes('/guides/') && !urlLower.includes('/comparisons/')) return false;
+        else if (currentFilter === 'POLICY' && !urlLower.includes('privacy') && !urlLower.includes('terms') && !urlLower.includes('about') && !urlLower.includes('contact') && !urlLower.includes('faq') && !urlLower.includes('sitemap')) return false;
       }
 
       if (searchQuery) {
@@ -232,96 +275,31 @@ window.CactsPlannerEngine = (function () {
     const schema = (item.schema_type || '').toLowerCase();
 
     if (schema.includes('credential') || urlLower.includes('verify.html')) {
-      return {
-        bestDay: 'Monday / Saturday',
-        bestTime: '8:30 AM - 10:00 AM IST',
-        platforms: 'LinkedIn, WhatsApp',
-        actionTip: 'Target Recruiters & HR Managers with verified credential proof.'
-      };
+      return 'Target Recruiters & HR Managers with verified credential proof.';
     } else if (schema.includes('job') || urlLower.includes('/jobs/')) {
-      return {
-        bestDay: 'Monday / Wednesday',
-        bestTime: '8:30 AM - 10:00 AM IST',
-        platforms: 'LinkedIn, WhatsApp, X',
-        actionTip: 'Post hiring alert to reach Pune CS graduates & developers.'
-      };
+      return 'Post hiring alert to reach Pune CS graduates & developers.';
     } else if (urlLower.includes('fees.html') || urlLower.includes('/fees/')) {
-      return {
-        bestDay: 'Tuesday / Sunday',
-        bestTime: '11:00 AM - 1:00 PM IST',
-        platforms: 'WhatsApp, Instagram, FB',
-        actionTip: 'Share fee structure & EMI options to convert student inquiries.'
-      };
+      return 'Share fee structure & EMI options to convert student inquiries.';
     } else if (urlLower.includes('syllabus.html') || urlLower.includes('/syllabus/')) {
-      return {
-        bestDay: 'Wednesday',
-        bestTime: '1:00 PM - 3:00 PM IST',
-        platforms: 'LinkedIn, Twitter, Bluesky',
-        actionTip: 'Highlight 1-to-1 mentor code reviews & practical modules.'
-      };
+      return 'Highlight 1-to-1 mentor code reviews & practical modules.';
     } else if (urlLower.includes('beginner.html') || urlLower.includes('/beginner/')) {
-      return {
-        bestDay: 'Thursday / Sunday',
-        bestTime: '5:00 PM - 7:00 PM IST',
-        platforms: 'LinkedIn, Reddit, Instagram',
-        actionTip: 'Guide 0-1 year freshers starting coding from scratch.'
-      };
+      return 'Guide 0-1 year freshers starting coding from scratch.';
     } else if (urlLower.includes('roadmap.html') || urlLower.includes('/roadmap/')) {
-      return {
-        bestDay: 'Sunday / Thursday',
-        bestTime: '11:00 AM - 1:00 PM IST',
-        platforms: 'LinkedIn, Twitter, Bluesky',
-        actionTip: 'Share career progression path for developers & switchers.'
-      };
+      return 'Share career progression path for developers & switchers.';
     } else if (urlLower.includes('comparison.html') || urlLower.includes('/comparison/')) {
-      return {
-        bestDay: 'Wednesday',
-        bestTime: '1:00 PM - 3:00 PM IST',
-        platforms: 'LinkedIn, Twitter, Reddit',
-        actionTip: 'Compare tech stacks to resolve student decision confusion.'
-      };
+      return 'Compare tech stacks to resolve student decision confusion.';
     } else if (schema.includes('course') || urlLower.includes('/courses/')) {
-      return {
-        bestDay: 'Tuesday / Thursday',
-        bestTime: '11:00 AM - 1:00 PM IST',
-        platforms: 'WhatsApp, Instagram, FB',
-        actionTip: 'Promote 1-to-1 mentor training & production projects.'
-      };
+      return 'Promote 1-to-1 mentor training & production projects.';
     } else if (schema.includes('tool') || urlLower.includes('/tools/')) {
-      return {
-        bestDay: 'Thursday',
-        bestTime: '5:00 PM - 7:00 PM IST',
-        platforms: 'Reddit, Twitter, LinkedIn',
-        actionTip: 'Share free interactive developer tool with tech community.'
-      };
+      return 'Share free interactive developer tool with tech community.';
     } else if (schema.includes('review') || urlLower.includes('reviews.html')) {
-      return {
-        bestDay: 'Saturday',
-        bestTime: '6:00 PM - 9:00 PM IST',
-        platforms: 'Instagram, WhatsApp, FB',
-        actionTip: 'Share authentic student alumni career transformation story.'
-      };
+      return 'Share authentic student alumni career transformation story.';
     } else if (schema.includes('localbusiness') || urlLower.includes('/locations/')) {
-      return {
-        bestDay: 'Friday',
-        bestTime: '10:00 AM - 12:00 PM IST',
-        platforms: 'Google Business, Facebook',
-        actionTip: 'Boost local Pune branch visibility & institute visits.'
-      };
+      return 'Boost local Pune branch visibility & institute visits.';
     } else if (schema.includes('report') || urlLower.includes('report')) {
-      return {
-        bestDay: 'Sunday',
-        bestTime: '11:00 AM - 1:00 PM IST',
-        platforms: 'LinkedIn, Twitter, Bluesky',
-        actionTip: 'Share industry salary benchmarks & market demand insights.'
-      };
+      return 'Share industry salary benchmarks & market demand insights.';
     } else {
-      return {
-        bestDay: 'Weekday',
-        bestTime: '10:00 AM - 2:00 PM IST',
-        platforms: 'LinkedIn, WhatsApp',
-        actionTip: 'Share official CACTS Pune documentation & guide.'
-      };
+      return 'Share official CACTS Pune documentation & guide.';
     }
   }
 
@@ -329,7 +307,7 @@ window.CactsPlannerEngine = (function () {
     const isRecentlyShared = shareHistory.includes(item.url);
     const badgeLabel = queueType === 'URGENT' ? 'Urgent Priority' : 'Evergreen Rotation';
     const badgeClass = queueType === 'URGENT' ? 'urgent-badge' : 'evergreen-badge';
-    const guide = getSyndicationGuidance(item);
+    const guideTip = getSyndicationGuidance(item);
 
     return `
       <div class="planner-card" data-url="${item.url}">
@@ -349,16 +327,8 @@ window.CactsPlannerEngine = (function () {
 
         <!-- Smart Syndication Strategy Guide Box -->
         <div class="planner-guide-box">
-          <div class="planner-guide-row">
-            <span class="planner-guide-label">Best Schedule:</span>
-            <span class="planner-guide-val">${guide.bestDay} (${guide.bestTime})</span>
-          </div>
-          <div class="planner-guide-row">
-            <span class="planner-guide-label">Target Channels:</span>
-            <span class="planner-guide-val">${guide.platforms}</span>
-          </div>
           <div class="planner-guide-tip">
-            ${guide.actionTip}
+            ${guideTip}
           </div>
         </div>
 
