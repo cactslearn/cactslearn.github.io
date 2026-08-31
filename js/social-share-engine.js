@@ -1157,17 +1157,71 @@ window.CactsSocialShareEngine = (function() {
       ctx.fillRect(50, titleDividerY, width - 100, 5);
 
       // 3. Description Section (Generous Vertical Content Space)
-      const descY = titleDividerY + 64;
-      const descFontSize = 40;
-      const descLineHeight = 64;
+      const descY = titleDividerY + 60;
+      const descFontSize = 38;
+      const descLineHeight = 60;
       ctx.fillStyle = '#f1f5f9';
       ctx.font = `400 ${descFontSize}px Montserrat, sans-serif`;
-      wrapText(ctx, displayDesc, 50, descY, width - 100, descLineHeight, 12);
+      const descLinesDrawn = wrapText(ctx, displayDesc, 50, descY, width - 100, descLineHeight, 7);
+      const descEndY = descY + (descLinesDrawn * descLineHeight);
 
-      // 4. Solid "SCAN QR CODE TO..." CTA Button & Real QRCode Renderer
-      const btnY = 1680;
-      const btnW = 680;
-      const btnH = 88;
+      // 4. Key Program Highlights Pills Row (Pillar Value Indicators)
+      const pillY = descEndY + 40;
+      const highlights = ['1-to-1 Senior Mentorship', 'Live Staging Project', 'Verified Accreditation'];
+      let pillX = 50;
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'alphabetic';
+
+      highlights.forEach(h => {
+        ctx.font = 'bold 18px Montserrat, sans-serif';
+        const textW = ctx.measureText(h).width;
+        const pillW = textW + 32;
+        const pillH = 42;
+
+        if (pillX + pillW < width - 50) {
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.08)';
+          ctx.strokeStyle = 'rgba(255, 255, 255, 0.18)';
+          ctx.lineWidth = 1.5;
+          ctx.beginPath();
+          ctx.roundRect(pillX, pillY, pillW, pillH, 21);
+          ctx.fill();
+          ctx.stroke();
+
+          ctx.fillStyle = palette.subheadColor;
+          ctx.textAlign = 'center';
+          ctx.fillText(h, pillX + pillW / 2, pillY + 27);
+          pillX += pillW + 14;
+        }
+      });
+
+      // 5. Featured Centerpiece Large QR Code Box (340px x 340px)
+      const qrSize = 340;
+      const qrX = (width - qrSize) / 2; // Centered at 370px
+      const cardY = Math.max(pillY + 75, 1080);
+      const qrY = cardY + 30;
+
+      // QR Code Background Glow Glassmorphic Card
+      ctx.save();
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+      ctx.shadowBlur = 24;
+      ctx.shadowOffsetY = 10;
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.88)';
+      ctx.strokeStyle = palette.accentTabBg;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.roundRect(qrX - 30, cardY, qrSize + 60, qrSize + 175, 28);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      // Render Real QRCode at size 340x340
+      await renderRealQrCodeOnCanvas(ctx, meta.url, qrX, qrY, qrSize);
+
+      // Solid CTA Badge Button directly centered under the QR Code
+      const btnY = qrY + qrSize + 30;
+      const btnW = 540;
+      const btnH = 76;
+      const btnX = (width - btnW) / 2;
 
       ctx.save();
       ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
@@ -1175,18 +1229,16 @@ window.CactsSocialShareEngine = (function() {
       ctx.shadowOffsetY = 6;
       ctx.fillStyle = palette.accentTabBg;
       ctx.beginPath();
-      ctx.roundRect(50, btnY, btnW, btnH, btnH / 2);
+      ctx.roundRect(btnX, btnY, btnW, btnH, btnH / 2);
       ctx.fill();
       ctx.restore();
 
       ctx.fillStyle = palette.accentTabTextColor;
-      ctx.font = 'bold 24px Montserrat, sans-serif';
+      ctx.font = 'bold 22px Montserrat, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText(palette.ctaLabel, 50 + btnW / 2, btnY + 54);
+      ctx.fillText(palette.ctaLabel, width / 2, btnY + 47);
 
-      await renderRealQrCodeOnCanvas(ctx, meta.url, width - 260, 1600, 210);
-
-      // 5. Bottom Footer Bar with *T&C Apply Disclaimer
+      // 6. Bottom Footer Bar with *T&C Apply Disclaimer
       const footerY = height - 65;
       ctx.fillStyle = 'rgba(0, 0, 0, 0.55)';
       ctx.fillRect(0, footerY, width, 65);

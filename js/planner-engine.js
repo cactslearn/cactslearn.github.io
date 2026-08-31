@@ -225,22 +225,30 @@ window.CactsPlannerEngine = (function () {
       const itemSchema = (item.schema_type || '').toUpperCase();
       const urlLower = (item.url || '').toLowerCase();
 
-      // Day-based schedule filtering
+      // Day-based schedule filtering (Strictly Mutually Exclusive - No Duplicates Across Days)
       if (currentDayFilter !== 'ALL') {
+        const isJobOrCert = itemSchema.includes('JOB') || itemSchema.includes('CREDENTIAL') || urlLower.includes('/jobs/') || urlLower.includes('verify.html') || urlLower.includes('certifications.html');
+        const isFeeOrCourseHub = urlLower.includes('fees.html') || urlLower.includes('/fees/') || urlLower.includes('/projects.html') || urlLower.endsWith('/courses/index.html') || urlLower.endsWith('/courses/') || (urlLower.includes('/courses/') && urlLower.endsWith('/index.html'));
+        const isSyllabusOrComparison = urlLower.includes('syllabus.html') || urlLower.includes('/syllabus/') || urlLower.includes('comparison.html') || urlLower.includes('/comparison/') || urlLower.includes('/comparisons/');
+        const isBeginnerOrTool = urlLower.includes('beginner.html') || urlLower.includes('/beginner/') || itemSchema.includes('WEBAPPLICATION') || itemSchema.includes('TOOL') || urlLower.includes('/tools/');
+        const isLocationOrPolicy = itemSchema.includes('LOCALBUSINESS') || urlLower.includes('/locations/') || urlLower.includes('privacy') || urlLower.includes('terms') || urlLower.includes('about') || urlLower.includes('contact') || urlLower.includes('faq') || urlLower.includes('sitemap');
+        const isReview = itemSchema.includes('STUDENTREVIEWS') || urlLower.includes('reviews.html');
+        const isRoadmapOrReport = urlLower.includes('roadmap.html') || urlLower.includes('/roadmap/') || itemSchema.includes('REPORT') || urlLower.includes('report') || urlLower.includes('interview-questions.html');
+
         if (currentDayFilter === 'MONDAY') {
-          if (!itemSchema.includes('JOB') && !itemSchema.includes('CREDENTIAL') && !urlLower.includes('/jobs/') && !urlLower.includes('verify.html')) return false;
+          if (!isJobOrCert) return false;
         } else if (currentDayFilter === 'TUESDAY') {
-          if (!urlLower.includes('fees.html') && !urlLower.includes('/fees/') && (!itemSchema.includes('COURSE') || !urlLower.includes('/courses/'))) return false;
+          if (!isFeeOrCourseHub || isBeginnerOrTool || isRoadmapOrReport || isSyllabusOrComparison || isJobOrCert) return false;
         } else if (currentDayFilter === 'WEDNESDAY') {
-          if (!urlLower.includes('syllabus.html') && !urlLower.includes('/syllabus/') && !urlLower.includes('comparison.html') && !urlLower.includes('/comparison/')) return false;
+          if (!isSyllabusOrComparison) return false;
         } else if (currentDayFilter === 'THURSDAY') {
-          if (!urlLower.includes('beginner.html') && !urlLower.includes('/beginner/') && !itemSchema.includes('WEBAPPLICATION') && !itemSchema.includes('TOOL') && !urlLower.includes('/tools/')) return false;
+          if (!isBeginnerOrTool) return false;
         } else if (currentDayFilter === 'FRIDAY') {
-          if (!itemSchema.includes('LOCALBUSINESS') && !urlLower.includes('/locations/') && !urlLower.includes('privacy') && !urlLower.includes('terms') && !urlLower.includes('about') && !urlLower.includes('contact') && !urlLower.includes('faq') && !urlLower.includes('sitemap')) return false;
+          if (!isLocationOrPolicy) return false;
         } else if (currentDayFilter === 'SATURDAY') {
-          if (!itemSchema.includes('STUDENTREVIEWS') && !urlLower.includes('reviews.html')) return false;
+          if (!isReview) return false;
         } else if (currentDayFilter === 'SUNDAY') {
-          if (!urlLower.includes('roadmap.html') && !urlLower.includes('/roadmap/') && !itemSchema.includes('REPORT') && !urlLower.includes('report')) return false;
+          if (!isRoadmapOrReport) return false;
         }
       }
 
