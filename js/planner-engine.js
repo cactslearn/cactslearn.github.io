@@ -56,26 +56,24 @@ window.CactsPlannerEngine = (function () {
   }
 
   function processQueues() {
-    const thirtyDaysAgo = new Date();
-    thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
-
     urgentQueue = [];
     evergreenQueue = [];
 
+    // Filter genuine high-priority urgent candidates (Active Jobs, Cert Verification, Explicit New Pages)
     rawContentIndex.forEach((item, idx) => {
       item.gridIndex = idx;
-      const itemDate = new Date(item.date);
-      if (itemDate >= thirtyDaysAgo || item.is_new) {
+      const schema = (item.schema_type || '').toUpperCase();
+      const urlLower = (item.url || '').toLowerCase();
+
+      // High-priority urgent items: Active Tech Jobs, Certificate Verification, or explicitly marked new items
+      const isHighPriorityUrgent = schema.includes('JOB') || schema.includes('CREDENTIAL') || urlLower.includes('/jobs/') || urlLower.includes('verify.html') || item.is_new;
+
+      if (isHighPriorityUrgent) {
         urgentQueue.push(item);
       } else {
         evergreenQueue.push(item);
       }
     });
-
-    if (urgentQueue.length === 0 && rawContentIndex.length > 0) {
-      urgentQueue = rawContentIndex.slice(0, 30);
-      evergreenQueue = rawContentIndex.slice(30);
-    }
   }
 
   function bindFilterEvents() {
@@ -165,6 +163,8 @@ window.CactsPlannerEngine = (function () {
   function renderDashboard() {
     const urgentContainer = document.getElementById('urgentCardsGrid');
     const evergreenContainer = document.getElementById('evergreenCardsGrid');
+    const urgentHeader = document.getElementById('urgentSectionHeader');
+    const evergreenHeader = document.getElementById('evergreenSectionHeader');
     const totalCountElem = document.getElementById('totalIndexedCount');
     const coverageTextElem = document.getElementById('syndicatedCoverageText');
     const progressBarElem = document.getElementById('syndicatedProgressBar');
@@ -199,19 +199,40 @@ window.CactsPlannerEngine = (function () {
       searchResultCountElem.innerText = `Showing ${totalMatching} items`;
     }
 
-    if (urgentContainer) {
-      if (filteredUrgent.length === 0) {
-        urgentContainer.innerHTML = '<div class="planner-empty-msg">No newly updated content items match your current filter.</div>';
-      } else {
-        urgentContainer.innerHTML = filteredUrgent.map((item, idx) => renderContentCard(item, 'URGENT', shareHistory, idx)).join('');
+    if (totalMatching === 0) {
+      if (urgentHeader) urgentHeader.style.display = 'block';
+      if (evergreenHeader) evergreenHeader.style.display = 'none';
+      if (urgentContainer) {
+        urgentContainer.style.display = 'grid';
+        urgentContainer.innerHTML = '<div class="planner-empty-msg">No content items match your current filter selection.</div>';
       }
-    }
+      if (evergreenContainer) {
+        evergreenContainer.style.display = 'none';
+        evergreenContainer.innerHTML = '';
+      }
+    } else {
+      if (urgentContainer) {
+        if (filteredUrgent.length === 0) {
+          if (urgentHeader) urgentHeader.style.display = 'none';
+          urgentContainer.style.display = 'none';
+          urgentContainer.innerHTML = '';
+        } else {
+          if (urgentHeader) urgentHeader.style.display = 'block';
+          urgentContainer.style.display = 'grid';
+          urgentContainer.innerHTML = filteredUrgent.map((item, idx) => renderContentCard(item, 'URGENT', shareHistory, idx)).join('');
+        }
+      }
 
-    if (evergreenContainer) {
-      if (filteredEvergreen.length === 0) {
-        evergreenContainer.innerHTML = '<div class="planner-empty-msg">No evergreen rotation content items match your current filter.</div>';
-      } else {
-        evergreenContainer.innerHTML = filteredEvergreen.map((item, idx) => renderContentCard(item, 'EVERGREEN', shareHistory, idx + filteredUrgent.length)).join('');
+      if (evergreenContainer) {
+        if (filteredEvergreen.length === 0) {
+          if (evergreenHeader) evergreenHeader.style.display = 'none';
+          evergreenContainer.style.display = 'none';
+          evergreenContainer.innerHTML = '';
+        } else {
+          if (evergreenHeader) evergreenHeader.style.display = 'block';
+          evergreenContainer.style.display = 'grid';
+          evergreenContainer.innerHTML = filteredEvergreen.map((item, idx) => renderContentCard(item, 'EVERGREEN', shareHistory, idx + filteredUrgent.length)).join('');
+        }
       }
     }
 

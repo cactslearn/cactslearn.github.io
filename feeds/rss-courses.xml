@@ -1,212 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CACTS Engineering Courses &amp; Syllabus Updates</title>
-    <link>https://cactslearn.github.io/courses/</link>
-    <description>Latest 1-to-1 engineering course tracks, Spring Boot, AI/ML, DevOps, and Fullstack Web syllabi.</description>
+    <title>CACTS Software Courses &amp; Developer Bootcamps</title>
+    <link>https://cactslearn.github.io/</link>
+    <description>1-to-1 software training courses, full stack coding bootcamps, and developer internships in Pune.</description>
     <language>en-in</language>
-    <lastBuildDate>Tue, 18 Aug 2026 13:03:38 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 14:44:32 +0530</lastBuildDate>
     <atom:link href="https://cactslearn.github.io/feeds/rss-courses.xml" rel="self" type="application/rss+xml"/>
 
     <item>
-      <title>AI &amp; Machine Learning Engineering Course in Pune | CACTS</title>
-      <link>https://cactslearn.github.io/courses/ai-ml/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/ai-ml/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Advanced AI & ML course with Python coding in Pune. Master PyTorch, LLMs & Deep Learning with 1-to-1 coaching, live project internship & technical portfolio building.]]></description>
-      <category>Ai Ml</category>
+      <title>Java Fullstack Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/java-fullstack-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/java-fullstack-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Master Java Fullstack coding &amp; Spring Boot development in Pune with CACTS. 1-to-1 developer coaching, real project internship &amp; 100% technical competence.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>AI &amp; ML Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/ai-ml/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/ai-ml/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 AI & ML Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Ai Ml</category>
+      <title>Full Stack Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/full-stack-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/full-stack-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Join MERN Full Stack coding classes &amp; web development training in Pune. Hands-on coding bootcamp, live project internship, &amp; career readiness near you.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>AI Red Teaming &amp; Offensive AI Security Course in Pune | CACTS</title>
-      <link>https://cactslearn.github.io/courses/ai-red-teaming/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/ai-red-teaming/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[AI Red Teaming & AI Red Teamer & LLM Security Specialist training course in Pune. Learn prompt injection defense, adversarial AI red teaming & LLM Moderation Middleware with 1-to-1 coaching, live internship & technical code reviews.]]></description>
-      <category>Ai Red Teaming</category>
+      <title>AI &amp; ML Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/ai-ml-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/ai-ml-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Advanced AI &amp; ML course with Python coding in Pune. Master PyTorch, LLMs &amp; Deep Learning with 1-to-1 coaching, live project internship &amp; technical portfolio building.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>AI Red Teaming Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/ai-red-teaming/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/ai-red-teaming/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 AI Red Teaming Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Ai Red Teaming</category>
+      <title>Data Science Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/data-science-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/data-science-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Top Data Science course &amp; Python analytics coaching near you in Pune. Learn SQL, Machine Learning, Power BI with live company internship &amp; technical portfolio building.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>Blockchain &amp; Smart Contract Developer Course in Pune | CACTS</title>
-      <link>https://cactslearn.github.io/courses/blockchain/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/blockchain/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Learn Blockchain development in Pune. Master Solidity, Ethereum & Web3.js coding with 1-to-1 coaching, live company project internship & technical readiness.]]></description>
-      <category>Blockchain</category>
+      <title>Data Engineering Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/data-engineering-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/data-engineering-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Become a Data Engineer in Pune. Learn SQL, Python ETL, Apache Spark &amp; Cloud Pipelines with 1-to-1 coding coaching, live internship project &amp; technical verification.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>Blockchain Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/blockchain/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/blockchain/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 Blockchain Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Blockchain</category>
+      <title>Python Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/python-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/python-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Premier Python programming course &amp; development training in Pune. 1-to-1 coding coaching, Django/Flask projects, live internship &amp; technical code reviews.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>AWS Cloud Architecture &amp; Systems Course in Pune | CACTS</title>
-      <link>https://cactslearn.github.io/courses/cloud/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/cloud/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[AWS & Multi-Cloud engineering course in Pune. Learn EC2, S3, IAM, Serverless & Terraform with hands-on coding lab, live internship & career readiness coaching.]]></description>
-      <category>Cloud</category>
+      <title>Power BI Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/power-bi-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/power-bi-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Best Power BI analytics course near you in Pune. Learn DAX modeling, SQL &amp; dashboard design with 1-to-1 coaching, live internship &amp; technical readiness.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>Cloud Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/cloud/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/cloud/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 Cloud Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Cloud</category>
+      <title>Cloud Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/cloud-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/cloud-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[AWS &amp; Multi-Cloud engineering course in Pune. Learn EC2, S3, IAM, Serverless &amp; Terraform with hands-on coding lab, live internship &amp; career readiness coaching.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>Cybersecurity &amp; Ethical Hacking Course in Pune | CACTS</title>
-      <link>https://cactslearn.github.io/courses/cybersecurity/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/cybersecurity/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Cybersecurity & SOC Analyst training course in Pune. Learn network security, penetration testing & SIEM with 1-to-1 coaching, live internship & technical code reviews.]]></description>
-      <category>Cybersecurity</category>
+      <title>DevOps Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/devops-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/devops-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Master DevOps &amp; Cloud infrastructure in Pune. Docker, Kubernetes, Jenkins, Terraform &amp; AWS coding bootcamp with 1-to-1 coaching &amp; live project internship.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>Cybersecurity Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/cybersecurity/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/cybersecurity/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 Cybersecurity Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Cybersecurity</category>
+      <title>Software Testing Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/software-testing-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/software-testing-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Best Software Testing course near you in Pune. Learn Manual testing, Selenium Java automation, API testing with live internship project &amp; 100% technical competence.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>Data Engineering Course &amp; ETL Training in Pune | CACTS</title>
-      <link>https://cactslearn.github.io/courses/data-engineering/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/data-engineering/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Become a Data Engineer in Pune. Learn SQL, Python ETL, Apache Spark & Cloud Pipelines with 1-to-1 coding coaching, live internship project & technical verification.]]></description>
-      <category>Data Engineering</category>
+      <title>Cybersecurity Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/cybersecurity-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/cybersecurity-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Cybersecurity &amp; SOC Analyst training course in Pune. Learn network security, penetration testing &amp; SIEM with 1-to-1 coaching, live internship &amp; technical code reviews.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>Data Engineering Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/data-engineering/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/data-engineering/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 Data Engineering Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Data Engineering</category>
+      <title>React JS Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/react-js-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/react-js-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Master React 18 &amp; JavaScript frontend coding in Pune. 1-to-1 web development training, Redux Toolkit, live company internship &amp; technical readiness.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>Data Science &amp; Analytics Course in Pune | CACTS Training</title>
-      <link>https://cactslearn.github.io/courses/data-science/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/data-science/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Top Data Science course & Python analytics coaching near you in Pune. Learn SQL, Machine Learning, Power BI with live company internship & technical portfolio building.]]></description>
-      <category>Data Science</category>
+      <title>React Native Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/react-native-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/react-native-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Learn React Native mobile app development in Pune. Build cross-platform iOS &amp; Android apps with 1-to-1 coding coaching, live internship &amp; technical code reviews.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>Data Science Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/data-science/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/data-science/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 Data Science Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Data Science</category>
+      <title>Software Architect Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/software-architect-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/software-architect-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Advanced Software Architect &amp; High-Scale System Design course in Pune. Master microservices, distributed systems &amp; clean coding with 1-to-1 senior coaching.]]></description>
+      <category>Software Training</category>
     </item>
     <item>
-      <title>DevOps &amp; Cloud Engineering Course in Pune | CACTS Training</title>
-      <link>https://cactslearn.github.io/courses/devops/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/devops/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Master DevOps & Cloud infrastructure in Pune. Docker, Kubernetes, Jenkins, Terraform & AWS coding bootcamp with 1-to-1 coaching & live project internship.]]></description>
-      <category>Devops</category>
-    </item>
-    <item>
-      <title>DevOps Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/devops/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/devops/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 DevOps Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Devops</category>
-    </item>
-    <item>
-      <title>Full Stack MERN Web Development Course in Pune | CACTS</title>
-      <link>https://cactslearn.github.io/courses/full-stack/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/full-stack/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Join MERN Full Stack coding classes & web development training in Pune. Hands-on coding bootcamp, live project internship, & career readiness near you.]]></description>
-      <category>Full Stack</category>
-    </item>
-    <item>
-      <title>Full Stack Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/full-stack/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/full-stack/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 Full Stack Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Full Stack</category>
-    </item>
-    <item>
-      <title>One-to-One Virtual Software Training | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Discover the power of private mentorship. CACTS offers 1-to-1 online training where working developers guide you step-by-step through customized learning.]]></description>
-      <category>Index.Html</category>
-    </item>
-    <item>
-      <title>Java Fullstack Course &amp; Coding Training in Pune | CACTS</title>
-      <link>https://cactslearn.github.io/courses/java-fullstack/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/java-fullstack/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Master Java Fullstack coding & Spring Boot development in Pune with CACTS. 1-to-1 developer coaching, real project internship & 100% technical competence.]]></description>
-      <category>Java Fullstack</category>
-    </item>
-    <item>
-      <title>Java Fullstack Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/java-fullstack/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/java-fullstack/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 Java Fullstack Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Java Fullstack</category>
-    </item>
-    <item>
-      <title>Power BI &amp; Business Analytics Course in Pune | CACTS</title>
-      <link>https://cactslearn.github.io/courses/power-bi/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/power-bi/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Best Power BI analytics course near you in Pune. Learn DAX modeling, SQL & dashboard design with 1-to-1 coaching, live internship & technical readiness.]]></description>
-      <category>Power Bi</category>
-    </item>
-    <item>
-      <title>Power BI Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/power-bi/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/power-bi/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 Power BI Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Power Bi</category>
-    </item>
-    <item>
-      <title>Python Developer Course &amp; Coding Classes in Pune | CACTS</title>
-      <link>https://cactslearn.github.io/courses/python/</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/python/</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Premier Python programming course & development training in Pune. 1-to-1 coding coaching, Django/Flask projects, live internship & technical code reviews.]]></description>
-      <category>Python</category>
-    </item>
-    <item>
-      <title>Python Training Syllabus &amp; Modules | CACTS Pune</title>
-      <link>https://cactslearn.github.io/courses/python/syllabus.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/courses/python/syllabus.html</guid>
-      <pubDate>Tue, 18 Aug 2026 11:21:16 GMT</pubDate>
-      <description><![CDATA[Read the complete, detailed course syllabus for 1-to-1 Python Training training in Pune. Explore modules, prerequisites, and live tools.]]></description>
-      <category>Python</category>
+      <title>Blockchain Training Course &amp; Certification | CACTS Pune</title>
+      <link>https://cactslearn.github.io/blockchain-training.html</link>
+      <guid isPermaLink="true">https://cactslearn.github.io/blockchain-training.html</guid>
+      <pubDate>Tue, 01 Sep 2026 14:44:32 +0530</pubDate>
+      <description><![CDATA[Learn Blockchain development in Pune. Master Solidity, Ethereum &amp; Web3.js coding with 1-to-1 coaching, live company project internship &amp; technical readiness.]]></description>
+      <category>Software Training</category>
     </item>
   </channel>
 </rss>

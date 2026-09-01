@@ -175,6 +175,14 @@ def generate_job_pages():
         stipend_min = clean_nums[0] if len(clean_nums) > 0 else 12000
         stipend_max = clean_nums[1] if len(clean_nums) > 1 else stipend_min + 5000
 
+        date_posted = job.get("date_posted", "2026-08-01")
+        valid_through = job.get("valid_through", "2026-12-31T23:59:59Z")
+        status = job.get("status", "ACTIVE")
+
+        if status != "ACTIVE":
+            # Skip building page or mark closed if expired
+            continue
+
         content = template
         content = content.replace("{{JOB_SLUG}}", slug)
         content = content.replace("{{JOB_TITLE}}", job["title"])
@@ -196,6 +204,8 @@ def generate_job_pages():
         content = content.replace("{{BRIDGE_DESCRIPTION}}", job["bridge_description"])
         content = content.replace("{{RELATED_COURSE_NAME}}", job["related_course_name"])
         content = content.replace("{{RELATED_COURSE_SLUG}}", job["related_course_slug"])
+        content = content.replace("{{JOB_DATE_POSTED}}", date_posted)
+        content = content.replace("{{JOB_VALID_THROUGH}}", valid_through)
 
         write_if_changed(out_path, content)
         generated_job_files.append((slug, rel_path, job["title"]))
@@ -3063,72 +3073,51 @@ def build():
     # 6. Generate sitemap.xml
     existing_lastmods = parse_existing_sitemap_lastmods(sitemap_file)
     git_modified_files = get_git_modified_files()
-    static_pages = [
-        ("https://cactslearn.github.io/", "index.html", "1.0", "monthly"),
-        ("https://cactslearn.github.io/about.html", "about.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/contact.html", "contact.html", "0.9", "monthly"),
-        ("https://cactslearn.github.io/internship-on-live-projects.html", "internship-on-live-projects.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/one-to-one-software-training.html", "one-to-one-software-training.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/free-career-guidance.html", "free-career-guidance.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/reviews.html", "reviews.html", "0.7", "monthly"),
-        ("https://cactslearn.github.io/faqs.html", "faqs.html", "0.7", "monthly"),
-        ("https://cactslearn.github.io/sitemap.html", "sitemap.html", "0.7", "monthly"),
-        ("https://cactslearn.github.io/pune-it-salary-calculator.html", "pune-it-salary-calculator.html", "0.9", "weekly"),
-        ("https://cactslearn.github.io/course-readiness-check.html", "course-readiness-check.html", "0.9", "weekly"),
-        ("https://cactslearn.github.io/pune-it-salary-report.html", "pune-it-salary-report.html", "0.9", "weekly"),
-        ("https://cactslearn.github.io/privacy-policy.html", "privacy-policy.html", "0.5", "monthly"),
-        ("https://cactslearn.github.io/terms-conditions.html", "terms-conditions.html", "0.5", "monthly"),
-        ("https://cactslearn.github.io/free-skill-assessment.html", "free-skill-assessment.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/course-recommendation-quiz.html", "course-recommendation-quiz.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/career-roadmaps.html", "career-roadmaps.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/student-projects.html", "student-projects.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/internship-showcase.html", "internship-showcase.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/project-portfolios.html", "project-portfolios.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/technology-comparisons.html", "technology-comparisons.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/cacts-vs-classroom-vs-ai.html", "cacts-vs-classroom-vs-ai.html", "0.9", "weekly"),
-        ("https://cactslearn.github.io/free-learning-resources.html", "free-learning-resources.html", "0.8", "monthly"),
-        ("https://cactslearn.github.io/live-code-compiler.html", "live-code-compiler.html", "0.8", "monthly"),
-    ]
 
-    # Dynamically include all 34 location/neighborhood landing pages in sitemap.xml
-    loc_files = sorted([f for f in os.listdir(".") if f.startswith("software-training-institute-") and f.endswith(".html")])
-    for lf in loc_files:
-        url = f"https://cactslearn.github.io/{lf}"
-        priority = "0.9" if lf == "software-training-institute-pune.html" else "0.8"
-        if not any(item[1] == lf for item in static_pages):
-            static_pages.append((url, lf, priority, "monthly"))
+    # Dynamically discover all HTML files across site directories for sitemap.xml
+    all_site_pages = []
+    excluded_dirs = {".git", ".github", "node_modules", "venv", "scratch", "css", "js", "scripts", "__pycache__", ".well-known", "api", "feeds", "src"}
+    excluded_files = {"planner.html", "404.html", "googleadedb2cbaba8a8c6.html", "869002205afc4d0790cda34d8b759701.txt", "BingSiteAuth.xml"}
+
+    for root, dirs, files in os.walk(project_root):
+        dirs[:] = [d for d in dirs if d not in excluded_dirs]
+        for f in sorted(files):
+            if f.endswith(".html") and f not in excluded_files:
+                abs_path = os.path.join(root, f)
+                rel_path = os.path.relpath(abs_path, project_root).replace("\\", "/")
+                
+                if rel_path == "index.html":
+                    url = "https://cactslearn.github.io/"
+                    priority = "1.0"
+                    changefreq = "monthly"
+                else:
+                    url = f"https://cactslearn.github.io/{rel_path}"
+                    if rel_path.startswith("jobs/"):
+                        priority = "0.8"
+                        changefreq = "weekly"
+                    elif rel_path.startswith("courses/"):
+                        priority = "0.9"
+                        changefreq = "weekly"
+                    elif rel_path.startswith("tools/"):
+                        priority = "0.9"
+                        changefreq = "weekly"
+                    elif rel_path == "software-training-institute-pune.html":
+                        priority = "0.9"
+                        changefreq = "monthly"
+                    else:
+                        priority = "0.8"
+                        changefreq = "monthly"
+
+                all_site_pages.append((url, rel_path, priority, changefreq))
 
     sitemap_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-    for url, file_path, priority, changefreq in static_pages:
+    for url, file_path, priority, changefreq in all_site_pages:
         lastmod_val = get_url_lastmod(url, file_path, existing_lastmods, git_modified_files)
         sitemap_xml += f"""    <url>
         <loc>{url}</loc>
         <lastmod>{lastmod_val}</lastmod>
         <changefreq>{changefreq}</changefreq>
         <priority>{priority}</priority>
-    </url>
-"""
-
-    for pg in generated_pages:
-        filename = f"{pg}.html"
-        url = f"https://cactslearn.github.io/{filename}"
-        lastmod_val = get_url_lastmod(url, filename, existing_lastmods, git_modified_files)
-        sitemap_xml += f"""    <url>
-        <loc>{url}</loc>
-        <lastmod>{lastmod_val}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-"""
-
-    for slug, rel_path, title in job_pages:
-        url = f"https://cactslearn.github.io/{rel_path}"
-        lastmod_val = get_url_lastmod(url, rel_path, existing_lastmods, git_modified_files)
-        sitemap_xml += f"""    <url>
-        <loc>{url}</loc>
-        <lastmod>{lastmod_val}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
     </url>
 """
 

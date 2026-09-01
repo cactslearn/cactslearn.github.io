@@ -1,0 +1,50 @@
+name: Daily Site Freshness & Maintenance Pipeline (Nightly IST)
+
+on:
+  schedule:
+    # 00:00 AM IST (Midnight IST) = 18:30 UTC of previous day
+    - cron: '30 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  maintain-freshness:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Run Master Site Freshness Pipeline
+        env:
+          GCP_SERVICE_ACCOUNT_KEY: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+        run: |
+          python scripts/maintain_site_freshness.py
+
+      - name: Commit and Push Freshness Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Changes detected after freshness run. Committing..."
+            git add .
+            git commit -m "chore(freshness): automated daily site freshness maintenance [skip ci]"
+            git push origin main || git push origin master
+          else
+            echo "No site files were modified during this freshness run."
+          fi
