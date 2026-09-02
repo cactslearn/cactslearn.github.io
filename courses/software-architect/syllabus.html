@@ -75,7 +75,7 @@
             {
                   "@type": "CourseInstance",
                   "startDate": "2026-09-15",
-                  "remainingAttendeeCapacity": 3,
+                  "remainingAttendeeCapacity": 5,
                   "courseMode": [
                         "onsite",
                         "synchronous",
@@ -104,7 +104,7 @@
             {
                   "@type": "CourseInstance",
                   "startDate": "2026-09-15",
-                  "remainingAttendeeCapacity": 3,
+                  "remainingAttendeeCapacity": 5,
                   "courseMode": [
                         "online",
                         "synchronous",
@@ -126,7 +126,7 @@
             {
                   "@type": "CourseInstance",
                   "startDate": "2026-10-01",
-                  "remainingAttendeeCapacity": 3,
+                  "remainingAttendeeCapacity": 2,
                   "courseMode": [
                         "blended",
                         "online",
@@ -156,27 +156,27 @@
             }
       ],
       "hasPart": [
-            {
-                  "@type": "CreativeWork",
-                  "name": "Module 1: Enterprise System Design & Domain-Driven Design (DDD)",
-                  "timeRequired": "P4W"
-            },
-            {
-                  "@type": "CreativeWork",
-                  "name": "Module 2: High-Performance Distributed Systems & Caching",
-                  "timeRequired": "P4W"
-            },
-            {
-                  "@type": "CreativeWork",
-                  "name": "Module 3: Event-Driven Architecture & Message Brokers",
-                  "timeRequired": "P4W"
-            },
-            {
-                  "@type": "CreativeWork",
-                  "name": "Module 4: Cloud Infrastructure Topology & Production Deployment",
-                  "timeRequired": "P4W"
-            }
-      ],
+      {
+            "@type": "CreativeWork",
+            "name": "Module 1: Domain-Driven Design & Enterprise Microservices",
+            "timeRequired": "P4W"
+      },
+      {
+            "@type": "CreativeWork",
+            "name": "Module 2: High-Throughput Event-Driven Systems (EDA)",
+            "timeRequired": "P4W"
+      },
+      {
+            "@type": "CreativeWork",
+            "name": "Module 3: Distributed Transactions & Fault Tolerance",
+            "timeRequired": "P4W"
+      },
+      {
+            "@type": "CreativeWork",
+            "name": "Module 4: System Design Interview Prep & Live Capstone",
+            "timeRequired": "P4W"
+      }
+],
       "potentialAction": [
             {
                   "@type": "RegisterAction",
@@ -411,7 +411,7 @@
                 <line x1="8" y1="2" x2="8" y2="6"></line>
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
-              <span>Next Intake: <span class="next-batch-date">September 15, 2026</span></span>
+              <span>Next Intake: <span class="next-batch-date">September 15, 2026</span> (<span class="remaining-seats">5 Seats Left</span>)</span>
             </div>
             <div class="meta-tag">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
@@ -433,6 +433,22 @@
                 </path>
               </svg>
               <span>Shivane, Pune &amp; Online</span>
+            </div>
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16" height="16">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span><span class="candidates-count">270+ Candidates</span> Mentored</span>
+            </div>
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16" height="16">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>Pune Salary Outlook: <span class="salary-benchmark">₹12.0 – ₹28.5 LPA</span></span>
             </div>
           </div>
           <!-- AEO Answer-First Callout (Optimized for AI Search Engines) -->
@@ -597,120 +613,64 @@
           <div class="curriculum-accordion" style="margin-bottom: 3rem">
             <div class="curriculum-module">
               <div class="module-header" style="cursor: default">
-                <h4 style="color: var(--accent-light)">
-                  Module 1: Enterprise System Design &amp; Domain-Driven
-                  Design (DDD)
-                </h4>
+                <h4 style="color: var(--accent-light)">Module 1: Domain-Driven Design & Enterprise Microservices</h4>
                 <span class="module-duration">4 Weeks</span>
               </div>
               <div class="module-content active" style="max-height: none; background: rgba(6, 9, 19, 0.15)">
                 <div class="module-content-inner">
                   <ul>
-                    <li>
-                      Monolithic vs Microservice architectures &amp;
-                      trade-offs
-                    </li>
-                    <li>
-                      Domain-Driven Design (DDD): Bounded contexts &amp;
-                      entities
-                    </li>
-                    <li>
-                      Designing RESTful APIs and API Gateway routing
-                      structures
-                    </li>
-                    <li>
-                      System design diagramming: UML, sequence, and
-                      architectural flows
-                    </li>
+                    <li>Domain-Driven Design (DDD): Bounded Contexts, Aggregates & Ubiquitous Language</li>
+                    <li>Decomposing Monoliths into Scalable Microservices</li>
+                    <li>API Gateway, Service Mesh & Distributed Tracing (OpenTelemetry)</li>
+                    <li>Database per Service vs Shared Database Strategies</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="curriculum-module">
               <div class="module-header" style="cursor: default">
-                <h4 style="color: var(--accent-light)">
-                  Module 2: High-Performance Distributed Systems &amp; Caching
-                </h4>
+                <h4 style="color: var(--accent-light)">Module 2: High-Throughput Event-Driven Systems (EDA)</h4>
                 <span class="module-duration">4 Weeks</span>
               </div>
               <div class="module-content active" style="max-height: none; background: rgba(6, 9, 19, 0.15)">
                 <div class="module-content-inner">
                   <ul>
-                    <li>
-                      Database scaling: Replication, Sharding, and Read-Write
-                      splits
-                    </li>
-                    <li>
-                      Distributed caching strategies using Redis &amp;
-                      Memcached
-                    </li>
-                    <li>
-                      Load balancing algorithms (Round Robin, Least Conn)
-                      &amp; HAProxy
-                    </li>
-                    <li>
-                      Consistent Hashing and distributed system hashing models
-                    </li>
+                    <li>Asynchronous Messaging with Apache Kafka & RabbitMQ</li>
+                    <li>CQRS (Command Query Responsibility Segregation) Architecture</li>
+                    <li>Event Sourcing & Transactional Outbox Pattern</li>
+                    <li>Distributed Caching Architectures with Redis 7 & Cache Invalidation</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="curriculum-module">
               <div class="module-header" style="cursor: default">
-                <h4 style="color: var(--accent-light)">
-                  Module 3: Event-Driven Architecture &amp; Message Brokers
-                </h4>
+                <h4 style="color: var(--accent-light)">Module 3: Distributed Transactions & Fault Tolerance</h4>
                 <span class="module-duration">4 Weeks</span>
               </div>
               <div class="module-content active" style="max-height: none; background: rgba(6, 9, 19, 0.15)">
                 <div class="module-content-inner">
                   <ul>
-                    <li>
-                      Asynchronous message brokers: Apache Kafka &amp;
-                      RabbitMQ
-                    </li>
-                    <li>
-                      Publish-subscribe models and event sourcing paradigms
-                    </li>
-                    <li>
-                      Handling message ordering, idempotency, and partition
-                      sizing
-                    </li>
-                    <li>
-                      Distributed transactions: Saga pattern vs Two-Phase
-                      Commit
-                    </li>
+                    <li>Managing Distributed Transactions with the Saga Pattern</li>
+                    <li>Resilience Patterns: Circuit Breaker, Rate Limiting, Bulkhead & Retry with Backoff</li>
+                    <li>CAP Theorem, PACELC Theorem & Consistency Trade-Offs</li>
+                    <li>Database Sharding, Partitioning & Global Replication Strategies</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="curriculum-module">
               <div class="module-header" style="cursor: default">
-                <h4 style="color: var(--accent-light)">
-                  Module 4: Cloud Infrastructure Topology &amp; Production
-                  Deployment
-                </h4>
+                <h4 style="color: var(--accent-light)">Module 4: System Design Interview Prep & Live Capstone</h4>
                 <span class="module-duration">4 Weeks</span>
               </div>
               <div class="module-content active" style="max-height: none; background: rgba(6, 9, 19, 0.15)">
                 <div class="module-content-inner">
                   <ul>
-                    <li>
-                      Container orchestration with Docker &amp; Kubernetes
-                      (EKS)
-                    </li>
-                    <li>
-                      Deploying distributed applications on cloud (AWS IAM,
-                      VPC, EC2)
-                    </li>
-                    <li>
-                      Monitoring and observability setups: Prometheus,
-                      Grafana, and ELK Stack
-                    </li>
-                    <li>
-                      Capstone project: Building and scaling a microservices
-                      cluster topology
-                    </li>
+                    <li>High-Level Design (HLD): Designing Distributed Systems (Netflix, Uber, WhatsApp)</li>
+                    <li>Low-Level Design (LLD): Object-Oriented Design Patterns & UML Modeling</li>
+                    <li>Cloud-Native Well-Architected Framework (AWS/GCP/Azure)</li>
+                    <li>Live Enterprise Software Architecture Consulting Project</li>
                   </ul>
                 </div>
               </div>
@@ -1190,7 +1150,7 @@
       </div>
     </section>
   </main>
-  <!-- Footer -->
+    <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-programs-row">
@@ -1205,39 +1165,22 @@
           Engineering Labs &amp; Programs
         </h4>
         <ul class="footer-programs-grid">
-          <li>
-            <a href="../java-fullstack/index.html">Java Fullstack Training</a>
-          </li>
-          <li>
-            <a href="../full-stack/index.html">Full Stack Web (MERN)</a>
-          </li>
-          <li><a href="../react-js/index.html">React JS Development</a></li>
-          <li>
-            <a href="../react-native/index.html">React Native Mobile</a>
-          </li>
-          <li><a href="../ai-ml/index.html">AI &amp; Machine Learning</a></li>
-          <li>
-            <a href="../data-science/index.html">Data Science Analytics</a>
-          </li>
-          <li>
-            <a href="../data-engineering/index.html">Data Engineering ETL</a>
-          </li>
-          <li><a href="../python/index.html">Python Scripting Lab</a></li>
-          <li><a href="../devops/index.html">DevOps Engineering</a></li>
-          <li>
-            <a href="../cloud/index.html">Cloud Systems Architecture</a>
-          </li>
-          <li><a href="../power-bi/index.html">Power BI Analytics</a></li>
-          <li>
-            <a href="../software-testing/index.html">Software Testing Lab</a>
-          </li>
-          <li>
-            <a href="../cybersecurity/index.html">Cybersecurity Operations</a>
-          </li>
-          <li>
-            <a href="../blockchain/index.html">Blockchain Development</a>
-          </li>
-          <li><a href="index.html">Software Architect Lab</a></li>
+          <li><a href="../../courses/java-fullstack/">Java Fullstack Training</a></li>
+          <li><a href="../../courses/full-stack/">Full Stack Web (MERN)</a></li>
+          <li><a href="../../courses/react-js/">React JS Development</a></li>
+          <li><a href="../../courses/react-native/">React Native Mobile</a></li>
+          <li><a href="../../courses/ai-ml/">AI & Machine Learning</a></li>
+          <li><a href="../../courses/ai-red-teaming/">AI Red Teaming</a></li>
+          <li><a href="../../courses/data-science/">Data Science Analytics</a></li>
+          <li><a href="../../courses/data-engineering/">Data Engineering ETL</a></li>
+          <li><a href="../../courses/python/">Python Scripting Lab</a></li>
+          <li><a href="../../courses/devops/">DevOps Engineering</a></li>
+          <li><a href="../../courses/cloud/">Cloud Systems Architecture</a></li>
+          <li><a href="../../courses/power-bi/">Power BI Analytics</a></li>
+          <li><a href="../../courses/software-testing/">Software Testing Lab</a></li>
+          <li><a href="../../courses/cybersecurity/">Cybersecurity Operations</a></li>
+          <li><a href="../../courses/blockchain/">Blockchain Development</a></li>
+          <li><a href="../../courses/software-architect/">Software Architect Lab</a></li>
         </ul>
       </div>
       <div class="footer-brand">
@@ -1334,60 +1277,30 @@
         <h4>Institutional Links</h4>
         <ul style="list-style: none">
           <li><a href="../../about.html">About CACTS</a></li>
-          <li><a href="../../jobs/index.html">Current Openings</a></li>
-          <li>
-            <a href="../../showcase/internship-on-live-projects.html">Live Projects Internship</a>
-          </li>
-          <li>
-            <a href="../../courses/index.html">1-to-1 Mentoring Model</a>
-          </li>
-          <li>
-            <a href="../../comparisons/cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a>
-          </li>
-          <li>
-            <a href="../../tools/free-career-guidance.html">Free Career Guidance</a>
-          </li>
+          <li><a href="../../courses/index.html">1-to-1 Mentoring Model</a></li>
+          <li><a href="../../showcase/internship-on-live-projects.html">Live Projects Internship</a></li>
+          <li><a href="../../comparisons/cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a></li>
           <li><a href="../../reviews.html">Success Reviews</a></li>
           <li><a href="../../faqs.html">Institutional FAQs</a></li>
+          <li><a href="../../jobs/index.html">Current Openings</a></li>
+          <li><a href="../../locations/index.html">Software Training Pune</a></li>
+          <li><a href="../../tools/free-career-guidance.html">Free Career Guidance</a></li>
           <li><a href="../../contact.html">Contact Us</a></li>
-          <li>
-            <a href="../../locations/pune.html">Software Training Pune</a>
-          </li>
         </ul>
       </div>
       <div class="footer-links">
         <h4>Learning Portals</h4>
         <ul style="list-style: none">
-          <li>
-            <a href="../../tools/free-skill-assessment.html">Skill Assessment</a>
-          </li>
-          <li>
-            <a href="../../tools/course-recommendation-quiz.html">Course Finder Quiz</a>
-          </li>
-          <li>
-            <a href="../../tools/career-roadmaps.html">Career Roadmaps</a>
-          </li>
-          <li>
-            <a href="../../showcase/student-projects.html">Student Projects</a>
-          </li>
-          <li>
-            <a href="../../showcase/internship-showcase.html">Internship Showcase</a>
-          </li>
-          <li>
-            <a href="../../showcase/project-portfolios.html">Project Portfolios</a>
-          </li>
-          <li>
-            <a href="../../comparisons/technology-comparisons.html">Tech Comparisons</a>
-          </li>
-          <li>
-            <a href="../../tools/free-learning-resources.html">Free Resources</a>
-          </li>
-          <li>
-            <a href="../../guides/technology-career-guides.html">Career Guides</a>
-          </li>
-          <li>
-            <a href="../../tools/live-code-compiler.html">Live Code &amp; Syntax Validator</a>
-          </li>
+          <li><a href="../../tools/index.html">Interactive Tools Suite</a></li>
+          <li><a href="../../tools/pune-it-salary-calculator.html">Pune IT Salary Calculator</a></li>
+          <li><a href="../../tools/pune-it-salary-report.html">Pune IT Salary Report 2026</a></li>
+          <li><a href="../../tools/course-recommendation-quiz.html">Course Finder Quiz</a></li>
+          <li><a href="../../tools/free-skill-assessment.html">Skill Assessment</a></li>
+          <li><a href="../../tools/career-roadmaps.html">Career Roadmaps</a></li>
+          <li><a href="../../guides/index.html">Career &amp; Tech Guides</a></li>
+          <li><a href="../../showcase/index.html">Student Project Showcase</a></li>
+          <li><a href="../../comparisons/technology-comparisons.html">Tech Comparisons</a></li>
+          <li><a href="../../tools/live-code-compiler.html">Live Code &amp; Syntax Validator</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -1512,8 +1425,8 @@
       </div>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap">
         <a href="../../sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
-            <span style="color: var(--border)">|</span>
-            <a href="../../feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
+        <span style="color: var(--border)">|</span>
+        <a href="../../feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
         <span style="color: var(--border)">|</span>
         <a href="../../privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
         <span style="color: var(--border)">|</span>

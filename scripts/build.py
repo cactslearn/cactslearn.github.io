@@ -3430,30 +3430,30 @@ def generate_careers_page():
                 <h4>Institutional Links</h4>
                 <ul style="list-style: none;">
                     <li><a href="about.html">About CACTS</a></li>
-                    <li><a href="careers.html">Current Openings</a></li>
-                    <li><a href="internship-on-live-projects.html">Live Projects Internship</a></li>
-                    <li><a href="one-to-one-software-training.html">1-to-1 Mentoring Model</a></li>
-                    <li><a href="cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a></li>
-                    <li><a href="free-career-guidance.html">Free Career Guidance</a></li>
+                    <li><a href="courses/index.html">1-to-1 Mentoring Model</a></li>
+                    <li><a href="showcase/internship-on-live-projects.html">Live Projects Internship</a></li>
+                    <li><a href="comparisons/cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a></li>
                     <li><a href="reviews.html">Success Reviews</a></li>
                     <li><a href="faqs.html">Institutional FAQs</a></li>
+                    <li><a href="jobs/index.html">Current Openings</a></li>
+                    <li><a href="locations/index.html">Software Training Pune</a></li>
+                    <li><a href="tools/free-career-guidance.html">Free Career Guidance</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="software-training-institute-pune.html">Software Training Pune</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h4>Learning Portals</h4>
                 <ul style="list-style: none;">
-                    <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
-                    <li><a href="course-recommendation-quiz.html">Course Finder Quiz</a></li>
-                    <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
-                    <li><a href="student-projects.html">Student Projects</a></li>
-                    <li><a href="internship-showcase.html">Internship Showcase</a></li>
-                    <li><a href="project-portfolios.html">Project Portfolios</a></li>
-                    <li><a href="technology-comparisons.html">Tech Comparisons</a></li>
-                    <li><a href="free-learning-resources.html">Free Resources</a></li>
-                    <li><a href="technology-career-guides.html">Career Guides</a></li>
-                    <li><a href="live-code-compiler.html">Live Code &amp; Syntax Validator</a></li>
+                    <li><a href="tools/index.html">Interactive Tools Suite</a></li>
+                    <li><a href="tools/pune-it-salary-calculator.html">Pune IT Salary Calculator</a></li>
+                    <li><a href="tools/pune-it-salary-report.html">Pune IT Salary Report 2026</a></li>
+                    <li><a href="tools/course-recommendation-quiz.html">Course Finder Quiz</a></li>
+                    <li><a href="tools/free-skill-assessment.html">Skill Assessment</a></li>
+                    <li><a href="tools/career-roadmaps.html">Career Roadmaps</a></li>
+                    <li><a href="guides/index.html">Career &amp; Tech Guides</a></li>
+                    <li><a href="showcase/index.html">Student Project Showcase</a></li>
+                    <li><a href="comparisons/technology-comparisons.html">Tech Comparisons</a></li>
+                    <li><a href="tools/live-code-compiler.html">Live Code &amp; Syntax Validator</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
@@ -3487,9 +3487,9 @@ def generate_careers_page():
                 <p style="margin-top: 0.25rem; font-size: 0.8rem; color: var(--text-secondary);">First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune, Maharashtra 411023</p>
             </div>
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <a href="careers.html" style="color: var(--accent-light); font-weight: 700;">Current Openings</a>
-                <span style="color: var(--border);">|</span>
                 <a href="sitemap.html" style="color: var(--text-secondary);">Sitemap</a>
+                <span style="color: var(--border);">|</span>
+                <a href="feeds/index.html" style="color: var(--text-secondary);">RSS Feeds</a>
                 <span style="color: var(--border);">|</span>
                 <a href="privacy-policy.html" style="color: var(--text-secondary);">Privacy Policy</a>
                 <span style="color: var(--border);">|</span>

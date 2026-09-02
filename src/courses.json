@@ -2,7 +2,7 @@
   {
     "slug": "java-fullstack-training",
     "name": "Java Fullstack Training",
-    "price": "\u20b919,999",
+    "price": "₹19,999",
     "price_num": 19999,
     "duration": "16 Weeks",
     "gbp_category": "Computer Training School",
@@ -12,55 +12,54 @@
     "h1": "Java Fullstack Course & Development Training in Pune",
     "h2": "Hands-On Coding & Development Bootcamp: Build Spring Boot, React & SQL microservices under 1-to-1 coaching with a guaranteed internship project near you in Pune.",
     "skills": [
-      "Core Java",
-      "Advanced Java",
-      "Spring Boot",
-      "Hibernate",
-      "ReactJS",
-      "REST APIs",
-      "MySQL",
-      "Git & GitHub"
+      "Java 21 LTS",
+      "Spring Boot 3.3",
+      "Hibernate 6",
+      "React 19",
+      "REST APIs & Microservices",
+      "PostgreSQL & MySQL",
+      "Docker & Git"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Spring Boot, React, and SQL enterprise backend systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Java Core Fundamentals",
+        "title": "Module 1: Java 21 LTS Core & Modern Fundamentals",
         "duration": "4 Weeks",
         "topics": [
-          "Object-Oriented Programming (OOPs) concepts in depth",
-          "Java Collections Framework & Generic Data Structures",
-          "Exception Handling and Multi-threading basics",
-          "File I/O and JVM memory model architecture"
+          "Java 21 Virtual Threads, Records, and Pattern Matching",
+          "Java Collections Framework, Stream API & Modern Concurrency",
+          "Exception Handling and JVM Memory Tuning",
+          "Object-Oriented Design Principles (SOLID) with Java 21"
         ]
       },
       {
-        "title": "Module 2: Advanced Java & Database Integration",
+        "title": "Module 2: Advanced Java & Database Architecture",
         "duration": "4 Weeks",
         "topics": [
-          "JDBC connections and connection pools",
-          "Servlets & JSP Web Containers",
-          "Hibernate ORM mapping and HQL queries",
-          "Relational database modeling with MySQL"
+          "JDBC Connection Pooling (HikariCP) and Transaction Management",
+          "Hibernate 6 ORM Entity Mapping and HQL Queries",
+          "Spring Data JPA Repository Design with Pagination",
+          "Relational Database Modeling with PostgreSQL & MySQL"
         ]
       },
       {
-        "title": "Module 3: Spring Framework & Spring Boot microservices",
+        "title": "Module 3: Spring Boot 3.3 Microservices & Security",
         "duration": "4 Weeks",
         "topics": [
-          "Spring Core, Dependency Injection (DI) & Inversion of Control (IoC)",
-          "Spring Boot MVC for RESTful API construction",
-          "Spring Data JPA & repository integration",
-          "Spring Security basics and JWT authentication"
+          "Spring Boot 3.3 RESTful API Engineering with OpenApi/Swagger",
+          "Spring Security 6 with JWT & OAuth2 Authentication",
+          "Microservices Architecture, Service Discovery & API Gateway",
+          "Asynchronous Event Handling and Docker Containerization"
         ]
       },
       {
-        "title": "Module 4: React Front-End & Live Internship",
+        "title": "Module 4: React 19 Frontend & Live Project Internship",
         "duration": "4 Weeks",
         "topics": [
-          "React Components, Hooks, and State Management",
-          "Integrating Spring Boot APIs with React Axios clients",
-          "Git version control, code review loops, and CI/CD staging deploy",
-          "Onboarding on a live, real company project internship"
+          "React 19 Components, Hooks, State Management & Vite",
+          "Integrating Spring Boot Microservices with React Clients",
+          "Git Review Loops, Pull Requests, and CI/CD Staging Deployments",
+          "Onboarding on a Live Company Project Internship"
         ]
       }
     ],
@@ -106,7 +105,7 @@
   {
     "slug": "full-stack-training",
     "name": "Full Stack Training",
-    "price": "\u20b917,999",
+    "price": "₹17,999",
     "price_num": 17999,
     "duration": "14 Weeks",
     "gbp_category": "Computer Training School",
@@ -116,51 +115,55 @@
     "h1": "MERN Full Stack Web Development Course in Pune",
     "h2": "Professional Web Development & Coding Bootcamp: Build React & Node.js web apps with guaranteed live project internship and verified technical competence.",
     "skills": [
-      "HTML5 & CSS3",
-      "Modern JavaScript (ES6+)",
-      "ReactJS",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "RESTful API",
-      "GitHub"
+      "React 19",
+      "Node.js 22 LTS",
+      "Express.js 5",
+      "TypeScript 5",
+      "MongoDB 7 & Mongoose",
+      "Next.js 15",
+      "RESTful APIs",
+      "GitHub & Docker"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual MERN (MongoDB, Express, React, Node.js) web application systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Modern Front-end Architecture",
+        "title": "Module 1: Modern Frontend Architecture & React 19",
         "duration": "4 Weeks",
         "topics": [
-          "Semantic HTML5, CSS Flexbox and Grid layouts",
-          "Responsive Design, CSS custom properties, and animations",
-          "Vanilla JS DOM manipulation, Promises, Async/Await, and API fetching"
+          "Semantic HTML5, Responsive CSS Grid & Flexbox",
+          "Modern JavaScript (ES2024+) & TypeScript 5 Fundamentals",
+          "React 19 Components, Custom Hooks, and State Engineering",
+          "Next.js 15 App Router & Server-Side Rendering"
         ]
       },
       {
-        "title": "Module 2: React.js UI Engineering",
+        "title": "Module 2: Backend Node.js 22 LTS & Express.js 5",
         "duration": "4 Weeks",
         "topics": [
-          "React Functional Components and React Hooks (useState, useEffect)",
-          "State Management and client-side routing",
-          "Asynchronous data fetching and styling in React"
+          "Node.js 22 LTS Event Loop, Streams, and Worker Threads",
+          "Express.js 5 RESTful API Routing, Controllers & Middleware",
+          "JWT Authentication, Password Hashing & Role-Based Access Control",
+          "API Error Handling, Validation, and Rate Limiting"
         ]
       },
       {
-        "title": "Module 3: Backend Node.js & Express APIs",
+        "title": "Module 3: MongoDB 7 & Cloud Database Design",
         "duration": "3 Weeks",
         "topics": [
-          "Node.js event loop and file systems",
-          "Express.js routing, controllers, and middleware configuration",
-          "REST API architecture and JSON response formatting"
+          "NoSQL Schema Modeling with MongoDB 7 & Mongoose",
+          "Aggregation Pipelines, Indexing, and Query Optimization",
+          "Database Transactions and Cloud Database Deployments",
+          "Redis Caching Layer Integration"
         ]
       },
       {
-        "title": "Module 4: MongoDB & Staging Deployment",
+        "title": "Module 4: Full Stack Integration & Live Internship",
         "duration": "3 Weeks",
         "topics": [
-          "NoSQL database modeling with MongoDB & Mongoose",
-          "User authentication (bcrypt & JSON Web Tokens)",
-          "Git workflow and deploying web apps to Cloud Providers"
+          "Connecting React 19 Clients to Secure Node.js Backend Services",
+          "Docker Containerization & Cloud Staging Deployment",
+          "Git Collaboration, Code Reviews & CI/CD Pipeline Automation",
+          "Live Company Web Application Internship Project"
         ]
       }
     ],
@@ -206,7 +209,7 @@
   {
     "slug": "ai-ml-training",
     "name": "AI & ML Training",
-    "price": "\u20b924,999",
+    "price": "₹24,999",
     "price_num": 24999,
     "duration": "16 Weeks",
     "gbp_category": "Training Centre",
@@ -216,50 +219,54 @@
     "h1": "AI & Machine Learning Engineer Course in Pune",
     "h2": "Advanced AI Coding & Development Bootcamp: Build neural networks & LLM applications under 1-to-1 developer coaching with real-world internship project.",
     "skills": [
-      "Python for ML",
-      "Scikit-Learn",
-      "TensorFlow & Keras",
-      "Pandas & Numpy",
-      "Neural Networks",
-      "NLP & Computer Vision",
-      "Supervised Learning"
+      "Python 3.12",
+      "PyTorch 2.4",
+      "LangChain 0.3 & LlamaIndex",
+      "Transformers (Hugging Face)",
+      "Llama 3.1 & Ollama Local LLMs",
+      "Scikit-Learn 1.5 & MLflow",
+      "Vector Databases (Pinecone/Chroma)"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Predictive Models, Neural Networks, and NLP systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Mathematical Foundations & Python for ML",
+        "title": "Module 1: Mathematical Foundations & Classical Machine Learning",
         "duration": "4 Weeks",
         "topics": [
-          "Linear Algebra, Calculus, and Probability for AI",
-          "Numerical computation with NumPy and Data analysis with Pandas",
-          "Data visualization with Matplotlib and Seaborn"
+          "Linear Algebra, Multivariable Calculus & Probability for AI",
+          "Feature Engineering, Data Preprocessing & Scikit-Learn 1.5",
+          "Supervised Learning: Regression, Classification, SVM & Random Forests",
+          "Model Evaluation: Confusion Matrices, ROC-AUC & Hyperparameter Tuning"
         ]
       },
       {
-        "title": "Module 2: Classical Machine Learning Algorithms",
+        "title": "Module 2: Deep Learning & Computer Vision with PyTorch 2.4",
         "duration": "4 Weeks",
         "topics": [
-          "Supervised learning: Regression, Decision Trees, Random Forests, SVMs",
-          "Unsupervised learning: K-Means clustering, PCA dimensionality reduction",
-          "Model evaluation metrics: Precision, Recall, F1-Score, ROC-AUC"
+          "Neural Network Architecture, Backpropagation & Loss Functions",
+          "Building Custom Neural Networks with PyTorch 2.4 Tensors",
+          "Convolutional Neural Networks (CNNs) for Image Recognition",
+          "Transfer Learning with ResNet and Vision Transformers"
         ]
       },
       {
-        "title": "Module 3: Deep Learning & Neural Networks",
+        "title": "Module 3: NLP & Generative AI with Large Language Models",
         "duration": "4 Weeks",
         "topics": [
-          "Perceptrons, Backpropagation, and activation functions",
-          "Building Neural Networks using TensorFlow and Keras",
-          "Introduction to Convolutional Neural Networks (CNN) for image data"
+          "Word Embeddings, Attention Mechanism & Transformer Architecture",
+          "Fine-Tuning Open Source LLMs (Llama 3.1, Mistral) with LoRA/QLoRA",
+          "Running Local LLMs via Ollama and vLLM Inference Engines",
+          "Hugging Face Transformers Pipeline Implementation"
         ]
       },
       {
-        "title": "Module 4: NLP & Live AI Model Deployment",
+        "title": "Module 4: LangChain 0.3, RAG & Live AI Project Internship",
         "duration": "4 Weeks",
         "topics": [
-          "Natural Language Processing (NLP) text processing & vectorization",
-          "Deploying models as microservices using Flask/FastAPI",
-          "Collaborating on active company machine learning pipelines"
+          "Retrieval-Augmented Generation (RAG) with LangChain 0.3 & LlamaIndex",
+          "Vector Embeddings & Semantic Search with ChromaDB & Pinecone",
+          "Building Autonomous AI Agents with Tool Calling Capabilities",
+          "Live Enterprise Generative AI Application Project Internship"
         ]
       }
     ],
@@ -305,7 +312,7 @@
   {
     "slug": "data-science-training",
     "name": "Data Science Training",
-    "price": "\u20b922,999",
+    "price": "₹22,999",
     "price_num": 22999,
     "duration": "14 Weeks",
     "gbp_category": "Training Centre",
@@ -315,50 +322,54 @@
     "h1": "Data Science & Machine Learning Course in Pune",
     "h2": "Hands-On Analytics & Data Coding Bootcamp: Master pandas, ML algorithms & predictive modeling with real-world internship and career readiness coaching.",
     "skills": [
-      "Statistics",
-      "Python Data Science",
-      "Pandas & Numpy",
-      "SQL for Analytics",
-      "Data Wrangling",
-      "Machine Learning Core",
-      "Data Visualization"
+      "Python 3.12",
+      "Pandas 2.2 & NumPy",
+      "Scikit-Learn 1.5 & XGBoost 2",
+      "Plotly & Seaborn",
+      "Statistical Hypothesis Testing",
+      "SQL Analytics & BigQuery",
+      "Git & JupyterLab"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual SQL Databases, Pandas Analytics, and business intelligence systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Descriptive & Inferential Statistics",
-        "duration": "3 Weeks",
-        "topics": [
-          "Central tendency, dispersion, probability distributions",
-          "Hypothesis testing, p-values, A/B testing principles",
-          "Sampling techniques and statistical errors"
-        ]
-      },
-      {
-        "title": "Module 2: Python Data Pipeline",
+        "title": "Module 1: Python for Data Science & Advanced Wrangling",
         "duration": "4 Weeks",
         "topics": [
-          "Data collection, cleaning, and preprocessing with Pandas",
-          "Dealing with missing values and outliers",
-          "Exploratory Data Analysis (EDA) best practices"
+          "High-Performance Vectorized Computations with NumPy",
+          "Data Manipulation, Cleaning & Transformation with Pandas 2.2",
+          "Complex SQL Analytics, Joins & Window Functions",
+          "Automating Data Ingestion from APIs, JSON & Databases"
         ]
       },
       {
-        "title": "Module 3: Structured Querying & Warehousing",
-        "duration": "3 Weeks",
-        "topics": [
-          "Relational database querying with SQL (joins, subqueries, aggregates)",
-          "Connecting Python to SQL databases",
-          "Data schema design for analytics"
-        ]
-      },
-      {
-        "title": "Module 4: Predictive Modeling & Case Projects",
+        "title": "Module 2: Exploratory Data Analysis & Statistical Inference",
         "duration": "4 Weeks",
         "topics": [
-          "Linear and logistic regression implementations",
-          "Building business dashboards and storyboards",
-          "Analyzing actual company datasets during the live internship phase"
+          "Exploratory Data Analysis (EDA) with Seaborn & Plotly",
+          "Descriptive & Inferential Statistics for Business Decisions",
+          "Hypothesis Testing (A/B Testing, T-tests, ANOVA, Chi-Square)",
+          "Probability Distributions and Sampling Techniques"
+        ]
+      },
+      {
+        "title": "Module 3: Predictive Machine Learning Modeling",
+        "duration": "4 Weeks",
+        "topics": [
+          "Supervised ML: Linear/Logistic Regression, Decision Trees",
+          "Ensemble Learning with Random Forest, XGBoost 2 & LightGBM",
+          "Unsupervised Learning: K-Means Clustering, PCA & Dimensionality Reduction",
+          "Feature Importance & Model Explainability (SHAP / LIME)"
+        ]
+      },
+      {
+        "title": "Module 4: Business Intelligence & Live Data Science Internship",
+        "duration": "4 Weeks",
+        "topics": [
+          "Deploying ML Models as REST APIs with FastAPI & Streamlit",
+          "Interactive Executive Dashboards with Plotly Dash",
+          "Model Versioning and Lifecycle Management with MLflow",
+          "Live Industry Predictive Analytics Project Internship"
         ]
       }
     ],
@@ -369,7 +380,7 @@
       },
       {
         "q": "Is the internship part of the tuition?",
-        "a": "Yes, the live project internship experience is fully included in the \u20b922,999 program fee."
+        "a": "Yes, the live project internship experience is fully included in the ₹22,999 program fee."
       }
     ],
     "reviews": [
@@ -404,7 +415,7 @@
   {
     "slug": "data-engineering-training",
     "name": "Data Engineering Training",
-    "price": "\u20b924,999",
+    "price": "₹24,999",
     "price_num": 24999,
     "duration": "16 Weeks",
     "gbp_category": "Computer Training School",
@@ -414,50 +425,54 @@
     "h1": "Data Engineering & Big Data Course in Pune",
     "h2": "Production Data Pipeline & Coding Bootcamp: Build PySpark ETL pipelines & cloud data lakes with real project internship and 1-to-1 developer mentorship.",
     "skills": [
-      "ETL Pipelines",
-      "Apache Spark",
-      "Hadoop Ecosystem",
-      "Advanced SQL",
-      "Data Warehousing",
-      "Cloud Data Lakes",
-      "Python Scripting"
+      "Apache Spark 3.5 & PySpark",
+      "Apache Kafka 3.8",
+      "Apache Airflow 2.9",
+      "Delta Lake & Snowflake",
+      "dbt (Data Build Tool)",
+      "PostgreSQL & ClickHouse",
+      "Docker & AWS Cloud"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual ETL pipelines, Apache Spark streaming, and AWS data maps systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Advanced SQL & Data Architecture",
+        "title": "Module 1: Distributed Data Processing with Apache Spark 3.5",
         "duration": "4 Weeks",
         "topics": [
-          "Complex relational querying, window functions, and indexing",
-          "OLAP vs OLTP systems architecture",
-          "Designing star and snowflake data warehouse schemas"
+          "Apache Spark 3.5 Architecture, RDDs, DataFrames & Spark SQL",
+          "Large-Scale Batch ETL Pipelines with PySpark",
+          "Distributed Joins, Partitioning & Memory Optimization",
+          "Data Lake Storage Formats (Parquet, ORC, Delta Lake)"
         ]
       },
       {
-        "title": "Module 2: Python Scripting & ETL Pipelines",
+        "title": "Module 2: Real-Time Event Streaming with Apache Kafka 3.8",
         "duration": "4 Weeks",
         "topics": [
-          "Writing robust ETL scripts in Python",
-          "Interacting with APIs and file formats (JSON, CSV, Parquet)",
-          "Automating jobs and tracking execution logs"
+          "Kafka 3.8 Architecture: Brokers, Topics, Partitions & Producers/Consumers",
+          "Stream Processing with Spark Structured Streaming",
+          "Schema Registry, Avro Serialization & Event-Driven Pipelines",
+          "Handling Late-Arriving Data, Watermarks & Windowing"
         ]
       },
       {
-        "title": "Module 3: Big Data and Distributed Systems",
+        "title": "Module 3: Workflow Orchestration & Data Warehousing",
         "duration": "4 Weeks",
         "topics": [
-          "Hadoop HDFS storage and MapReduce principles",
-          "Distributed computing with Apache Spark (DataFrames & SQL)",
-          "Stream processing concepts and queue messaging"
+          "DAG Authoring & Scheduling with Apache Airflow 2.9",
+          "Data Modeling & Transformations with dbt (Data Build Tool)",
+          "Cloud Data Warehousing with Snowflake & ClickHouse",
+          "Data Quality Testing & Pipeline Monitoring"
         ]
       },
       {
-        "title": "Module 4: Cloud Data Lakes & Integration",
+        "title": "Module 4: Cloud Data Platform & Live Engineering Internship",
         "duration": "4 Weeks",
         "topics": [
-          "Deploying data pipelines on Cloud platforms",
-          "Database migrations and security access controls",
-          "Real company data warehouse optimization project"
+          "Building End-to-End Medallion Lakehouse Architectures (Bronze/Silver/Gold)",
+          "Containerized Pipeline Deployments with Docker & AWS S3/EMR",
+          "CI/CD for Data Pipelines with GitHub Actions",
+          "Live Company Big Data Engineering Project Internship"
         ]
       }
     ],
@@ -503,7 +518,7 @@
   {
     "slug": "python-training",
     "name": "Python Training",
-    "price": "\u20b99,999",
+    "price": "₹9,999",
     "price_num": 9999,
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
@@ -513,41 +528,54 @@
     "h1": "Python Development Course & Coding Training in Pune",
     "h2": "Practical Python Coding Bootcamp: Learn backend development, REST APIs & data scripting with live company project internship and technical portfolio audits. near you.",
     "skills": [
-      "Python Syntax",
-      "OOP Concepts",
-      "Data Structures",
-      "File Handling",
-      "APIs & Web Scraping",
-      "SQL Connection",
-      "Script Automation"
+      "Python 3.12",
+      "FastAPI & Django 5",
+      "Playwright & Selenium 4",
+      "Pandas 2.2 & NumPy",
+      "PyTest & CI/CD",
+      "PostgreSQL & SQLite",
+      "Git & GitHub"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Advanced Scripting, OOP, and automation systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Python Core Foundations",
+        "title": "Module 1: Python 3.12 Core & Object-Oriented Engineering",
         "duration": "3 Weeks",
         "topics": [
-          "Variables, dynamic data types, and operators",
-          "Control flow logic (if-else, loops) and functions",
-          "List, Dictionary, Tuple, and Set data structures"
+          "Python 3.12 Syntax, Type Hinting, and Structural Pattern Matching",
+          "Object-Oriented Programming (OOP) & Design Patterns in Python",
+          "Generators, Decorators, Context Managers & Memory Management",
+          "Virtual Environments (uv/venv) and Package Management"
         ]
       },
       {
-        "title": "Module 2: Object-Oriented Python & Libraries",
+        "title": "Module 2: Web Scraping & Browser Automation",
         "duration": "3 Weeks",
         "topics": [
-          "Classes, inheritance, polymorphism, and encapsulation",
-          "Working with standard packages (OS, Sys, Math, DateTime)",
-          "File I/O operations and robust Exception Handling"
+          "Headless Browser Automation with Playwright & Selenium 4",
+          "Dynamic Web Scraping with BeautifulSoup4 & Async Requests",
+          "Handling Captchas, Proxies, and Session Storage",
+          "Automated Data Extraction & Excel/CSV Pipeline Export"
         ]
       },
       {
-        "title": "Module 3: Database & Script Automation",
-        "duration": "2 Weeks",
+        "title": "Module 3: FastAPI Backend & Data Automation",
+        "duration": "3 Weeks",
         "topics": [
-          "Connecting to databases (SQL/SQLite) from Python",
-          "Parsing web data (APIs and Web Scraping with BeautifulSoup)",
-          "Writing custom scripts to automate desktop workflows"
+          "Building High-Performance REST APIs with FastAPI & Pydantic",
+          "Data Manipulation & ETL Pipelines with Pandas 2.2",
+          "Database Integration with SQLAlchemy & PostgreSQL",
+          "Asynchronous Task Queues with Celery & Redis"
+        ]
+      },
+      {
+        "title": "Module 4: PyTest, CI/CD & Live Automation Internship",
+        "duration": "3 Weeks",
+        "topics": [
+          "Unit & Integration Testing with PyTest and Mocking",
+          "GitHub Actions CI/CD Pipeline Configuration for Python",
+          "Docker Containerization & Cloud Deployment",
+          "Live Company Automation & Data Pipeline Project Internship"
         ]
       }
     ],
@@ -593,7 +621,7 @@
   {
     "slug": "power-bi-training",
     "name": "Power BI Training",
-    "price": "\u20b97,999",
+    "price": "₹7,999",
     "price_num": 7999,
     "duration": "6 Weeks",
     "gbp_category": "Training Centre",
@@ -603,40 +631,53 @@
     "h1": "Power BI Analytics & Dashboard Course in Pune",
     "h2": "Business Intelligence & Data Visualization Bootcamp: Design enterprise Power BI dashboards with real company dataset internships and technical portfolio building.",
     "skills": [
-      "Power BI Desktop",
-      "DAX Functions",
-      "Data Modeling",
-      "Power Query ETL",
-      "Interactive Dashboards",
-      "Data Transformation"
+      "Power BI Desktop (Latest 2026)",
+      "Advanced DAX Calculations",
+      "Power Query M Engine",
+      "Microsoft Fabric & Power BI Service",
+      "Data Modeling & Star Schema",
+      "SQL Server Integration"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual DAX expressions, data relationships, and dashboard structures systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Data Connection & Power Query Transformation",
-        "duration": "2 Weeks",
+        "title": "Module 1: Power Query ETL & Data Transformation",
+        "duration": "3 Weeks",
         "topics": [
-          "Connecting to SQL databases, Excel, and API data feeds",
-          "Cleaning, pivoting, and merging data in Power Query",
-          "Custom columns and data type structuring"
+          "Connecting to Diverse Data Sources (SQL, Excel, Web APIs, SharePoint)",
+          "Data Cleaning, Pivoting & Merging in Power Query M Engine",
+          "Parameters, Custom Functions & Incremental Data Refreshes",
+          "Best Practices for Clean Data Pipeline Ingestion"
         ]
       },
       {
-        "title": "Module 2: Data Modeling & DAX Formulas",
-        "duration": "2 Weeks",
+        "title": "Module 2: Dimensional Data Modeling & Star Schema",
+        "duration": "3 Weeks",
         "topics": [
-          "Establishing database table relationships (star schemas)",
-          "Writing calculated columns and measures",
-          "Using DAX functions (CALCULATE, RELATED, Time Intelligence)"
+          "Star Schema vs Snowflake Schema Dimensional Modeling",
+          "Managing Table Relationships, Cardinality & Cross-Filtering",
+          "Role-Playing Dimensions, Date Tables & Surrogate Keys",
+          "Optimizing Data Model Size and Performance"
         ]
       },
       {
-        "title": "Module 3: Reporting, Publishing & Live Dashboard Projects",
-        "duration": "2 Weeks",
+        "title": "Module 3: Advanced DAX (Data Analysis Expressions)",
+        "duration": "3 Weeks",
         "topics": [
-          "Selecting standard and custom visual charts",
-          "Configuring dashboard filters, slicers, and drill-downs",
-          "Publishing reports to Power BI Service and sharing securely"
+          "Calculated Columns vs Measures & Evaluation Context (Row/Filter Context)",
+          "Advanced CALCULATE, FILTER, ALL & Time Intelligence Functions",
+          "Ranking, Running Totals, Year-over-Year (YoY) Growth Metrics",
+          "DAX Performance Optimization with DAX Studio"
+        ]
+      },
+      {
+        "title": "Module 4: Visual Storytelling & Live Analytics Internship",
+        "duration": "3 Weeks",
+        "topics": [
+          "Interactive Executive Dashboards, Drill-Throughs & Tooltips",
+          "Row-Level Security (RLS) & Workspace Governance",
+          "Publishing & Sharing in Power BI Service / Microsoft Fabric",
+          "Live Business Intelligence Dashboard Project Internship"
         ]
       }
     ],
@@ -682,7 +723,7 @@
   {
     "slug": "cloud-training",
     "name": "Cloud Training",
-    "price": "\u20b914,999",
+    "price": "₹14,999",
     "price_num": 14999,
     "duration": "10 Weeks",
     "gbp_category": "Computer Training School",
@@ -692,42 +733,53 @@
     "h1": "AWS Cloud Architecture & Systems Course in Pune",
     "h2": "Enterprise Cloud Systems Development Bootcamp: Architect scalable AWS cloud infrastructure with real-world company project internship near you.",
     "skills": [
-      "AWS Infrastructure",
-      "Azure Core Services",
-      "Cloud Security",
-      "VPC Networking",
-      "Compute (EC2/VMs)",
-      "Storage Solutions",
-      "Identity Access (IAM)"
+      "AWS Solutions Architect (2026 Core Services)",
+      "AWS Lambda & Serverless Framework",
+      "Amazon EKS & ECS",
+      "Terraform 1.9 & AWS CDK",
+      "VPC Networking, IAM & Cloud Security",
+      "Cost Optimization & Multi-Region HA"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual AWS infrastructure, EC2 scaling clusters, and VPC networks systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Cloud Architecture Foundations & Networking",
-        "duration": "3 Weeks",
-        "topics": [
-          "Introduction to Cloud virtualization benefits and regions",
-          "Configuring Virtual Private Clouds (VPC) and subnets",
-          "Managing route tables, internet gateways, and security groups"
-        ]
-      },
-      {
-        "title": "Module 2: Compute & Storage Operations",
-        "duration": "3 Weeks",
-        "topics": [
-          "Launching EC2 virtual machines and storage volumes",
-          "Configuring S3 objects, bucket policies, and lifecycle management",
-          "Setting up Elastic Load Balancers and Auto Scaling policies"
-        ]
-      },
-      {
-        "title": "Module 3: Cloud Databases, IAM & Monitoring",
+        "title": "Module 1: AWS Core Infrastructure & Global Architecture",
         "duration": "4 Weeks",
         "topics": [
-          "Deploying RDS managed relational databases (MySQL/PostgreSQL)",
-          "Creating IAM user groups, access policies, and MFA keys",
-          "Configuring CloudWatch log events and metric notifications",
-          "Deploying a live web app during the company project internship"
+          "AWS Global Infrastructure: Regions, AZs & Edge Locations",
+          "Custom VPC Networking: Subnets, Route Tables, NAT Gateways & VPNs",
+          "Identity & Access Management (IAM): Policies, Roles & Multi-Factor Auth",
+          "Compute with EC2, Auto Scaling Groups & Application Load Balancers"
+        ]
+      },
+      {
+        "title": "Module 2: Cloud Storage, Databases & High Availability",
+        "duration": "4 Weeks",
+        "topics": [
+          "Storage Architecture: S3 Lifecycle Rules, EFS & EBS Volumes",
+          "Relational Databases with Amazon RDS & Aurora Multi-AZ Clusters",
+          "NoSQL Databases with DynamoDB Global Tables & In-Memory Caching",
+          "Disaster Recovery & Multi-Region High Availability Strategies"
+        ]
+      },
+      {
+        "title": "Module 3: Serverless Compute & Container Services",
+        "duration": "4 Weeks",
+        "topics": [
+          "Serverless Architecture with AWS Lambda & API Gateway",
+          "Event-Driven Workflows with Amazon SQS, SNS & EventBridge",
+          "Container Management with Amazon ECS & Amazon EKS",
+          "Cloud Security, WAF, KMS Encryption & CloudTrail Auditing"
+        ]
+      },
+      {
+        "title": "Module 4: Infrastructure as Code & Live Cloud Internship",
+        "duration": "4 Weeks",
+        "topics": [
+          "Automating AWS Infrastructure with Terraform 1.9 & AWS CDK",
+          "Cost Optimization, AWS Budgets & AWS Cost Explorer",
+          "Monitoring & Log Aggregation with CloudWatch & OpenSearch",
+          "Live Enterprise AWS Cloud Architecture Project Internship"
         ]
       }
     ],
@@ -773,7 +825,7 @@
   {
     "slug": "devops-training",
     "name": "DevOps Training",
-    "price": "\u20b914,999",
+    "price": "₹14,999",
     "price_num": 14999,
     "duration": "12 Weeks",
     "gbp_category": "Computer Training School",
@@ -783,50 +835,54 @@
     "h1": "DevOps & Cloud Engineering Course in Pune",
     "h2": "Automated Cloud & DevOps Development Bootcamp: Deploy CI/CD pipelines & Docker clusters with guaranteed live project internship and technical portfolio building near you.",
     "skills": [
-      "CI/CD Pipelines",
-      "Docker Containers",
-      "Kubernetes",
-      "Linux Shell scripting",
-      "Ansible",
-      "Git Version Control",
-      "Monitoring Tools"
+      "Kubernetes 1.31",
+      "Docker 27 & Podman",
+      "Terraform 1.9 (IaC)",
+      "GitHub Actions & Jenkins CI/CD",
+      "Ansible 10",
+      "Prometheus & Grafana Monitoring",
+      "AWS Cloud Architecture"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual Docker containerization, Kubernetes orchestration, and CI/CD release pipeline systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Linux Operations & Version Control",
-        "duration": "3 Weeks",
+        "title": "Module 1: Linux Administration & Docker 27 Containerization",
+        "duration": "4 Weeks",
         "topics": [
-          "Linux directory structures, permissions, and shell scripting",
-          "Git commands, branch workflows, and remote repository syncing",
-          "Package management and system services administration"
+          "Enterprise Linux System Administration & Shell Scripting",
+          "Docker 27 Architecture, Multi-Stage Builds & Optimization",
+          "Docker Compose Networking, Volumes & Secrets Management",
+          "Container Security, Vulnerability Scanning (Trivy) & Podman"
         ]
       },
       {
-        "title": "Module 2: Containerization with Docker",
-        "duration": "3 Weeks",
+        "title": "Module 2: Kubernetes 1.31 Production Orchestration",
+        "duration": "4 Weeks",
         "topics": [
-          "Writing Dockerfiles to build customized application containers",
-          "Managing Docker volumes, networks, and environment variables",
-          "Multi-container deployments with Docker Compose"
+          "Kubernetes 1.31 Architecture: Pods, Deployments, Services & Ingress",
+          "ConfigMaps, Secrets, Persistent Volumes & StatefulSets",
+          "Helm 3 Chart Packaging & Cluster Configuration Management",
+          "Production Kubernetes Deployments on AWS EKS"
         ]
       },
       {
-        "title": "Module 3: Kubernetes Orchestration & Ansible Automation",
-        "duration": "3 Weeks",
+        "title": "Module 3: Infrastructure as Code with Terraform 1.9 & Ansible",
+        "duration": "4 Weeks",
         "topics": [
-          "Deploying Kubernetes pods, services, and replica sets",
-          "Writing Ansible playbooks for automated server configurations",
-          "Managing secrets and environment configurations"
+          "Infrastructure Provisioning with Terraform 1.9 & AWS Provider",
+          "Terraform Modules, State Management & Remote Backends",
+          "Configuration Management & Server Hardening with Ansible 10",
+          "Automated Cloud Infrastructure Lifecycle Management"
         ]
       },
       {
-        "title": "Module 4: CI/CD Pipelines & Real Deployment",
-        "duration": "3 Weeks",
+        "title": "Module 4: GitOps CI/CD, Observability & Live Internship",
+        "duration": "4 Weeks",
         "topics": [
-          "Configuring Jenkins / GitHub Actions pipelines for auto-builds",
-          "Deploying containerized code to remote server nodes",
-          "Active infrastructure configuration for live company projects"
+          "End-to-End CI/CD Pipelines with GitHub Actions & Jenkins",
+          "GitOps Deployments with ArgoCD in Kubernetes",
+          "Observability: Metrics with Prometheus & Dashboards in Grafana",
+          "Live Enterprise Cloud DevOps Project Internship"
         ]
       }
     ],
@@ -872,7 +928,7 @@
   {
     "slug": "software-testing-training",
     "name": "Software Testing Training",
-    "price": "\u20b99,999",
+    "price": "₹9,999",
     "price_num": 9999,
     "duration": "10 Weeks",
     "gbp_category": "Computer Training School",
@@ -882,50 +938,53 @@
     "h1": "Software Testing & QA Automation Course in Pune",
     "h2": "QA Automation & Test Development Bootcamp: Master Selenium, JUnit & REST Assured with real company staging server internship near you in Pune.",
     "skills": [
-      "Manual Testing",
-      "Selenium WebDriver",
-      "Java for QA",
-      "TestNG Framework",
-      "API Testing",
-      "Jira & Bug Tracking",
-      "SQL for Database Testing"
+      "Selenium 4.23 & Playwright",
+      "Java 21 & Python Test Automation",
+      "RestAssured API Testing",
+      "TestNG & Cucumber BDD",
+      "Docker & CI/CD Pipelines",
+      "Jira & Test Management"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual manual verification and Selenium automation testing systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Manual Testing & QA Processes",
-        "duration": "3 Weeks",
+        "title": "Module 1: Manual Testing & Automation Foundations with Java 21",
+        "duration": "4 Weeks",
         "topics": [
-          "Software Development Life Cycle (SDLC) & testing methodologies",
-          "Writing comprehensive test plans, cases, and scenarios",
-          "Defect reporting and tracking lifecycle using Jira templates"
+          "SDLC, STLC, Agile Scrum Methodologies & Jira Test Management",
+          "Test Case Design, Black-Box Testing Techniques & Bug Life Cycle",
+          "Java 21 Programming Fundamentals for Automation Engineers",
+          "Object-Oriented Design for Scalable Test Frameworks"
         ]
       },
       {
-        "title": "Module 2: Java Coding & Automation Foundations",
-        "duration": "3 Weeks",
+        "title": "Module 2: Web UI Automation with Selenium 4 & Playwright",
+        "duration": "4 Weeks",
         "topics": [
-          "Java syntax, variables, conditions, and loops for testing",
-          "Object-Oriented Programming (OOP) concepts in Java",
-          "Setting up testing frameworks (JUnit and TestNG)"
+          "Selenium 4 WebDriver Architecture, Locators & Dynamic Waits",
+          "Modern Web Testing with Microsoft Playwright & Async Execution",
+          "Page Object Model (POM) Design Pattern & Page Factory",
+          "Handling Windows, Frames, Alerts, Shadow DOM & File Uploads"
         ]
       },
       {
-        "title": "Module 3: Selenium WebDriver & Page Object Model",
-        "duration": "2 Weeks",
+        "title": "Module 3: API Test Automation with RestAssured & Postman",
+        "duration": "4 Weeks",
         "topics": [
-          "Locators (XPath, CSS selectors) and element interactions",
-          "Handling alerts, dynamic waits, popups, and frames",
-          "Designing reusable testing frameworks with Page Object Model (POM)"
+          "RESTful API Fundamentals: HTTP Methods, Headers & Status Codes",
+          "Automated API Testing with RestAssured & Java",
+          "JSON/XML Payload Serialization, Deserialization & Schema Validation",
+          "Authentication (Bearer Tokens, OAuth2) & API Chaining"
         ]
       },
       {
-        "title": "Module 4: API Testing & Database QA",
-        "duration": "2 Weeks",
+        "title": "Module 4: Cucumber BDD, CI/CD & Live SDET Internship",
+        "duration": "4 Weeks",
         "topics": [
-          "REST API testing with Postman and validating JSON codes",
-          "Database verification querying with SQL",
-          "Running tests against active company application modules"
+          "Behavior-Driven Development (BDD) with Cucumber & Gherkin",
+          "Parallel Test Execution with TestNG, Selenium Grid & Docker",
+          "Integrating Test Frameworks into GitHub Actions CI/CD Pipelines",
+          "Live Company Software Quality Assurance Project Internship"
         ]
       }
     ],
@@ -971,7 +1030,7 @@
   {
     "slug": "cybersecurity-training",
     "name": "Cybersecurity Training",
-    "price": "\u20b919,999",
+    "price": "₹19,999",
     "price_num": 19999,
     "duration": "12 Weeks",
     "gbp_category": "Computer Training School",
@@ -981,50 +1040,53 @@
     "h1": "Cybersecurity Operations & Defense Course in Pune",
     "h2": "Information Security & SOC Analyst Development Bootcamp: Master vulnerability assessment & incident response with live company project internship.",
     "skills": [
-      "Ethical Hacking",
-      "Network Security",
-      "Vulnerability Scanning",
-      "Metasploit & Nmap",
-      "Cryptography",
-      "Linux Security",
-      "OWASP Top 10"
+      "Wireshark & Nmap",
+      "SOC Operations & SIEM (Splunk/Elastic)",
+      "Vulnerability Assessment & VAPT (Metasploit/Burp Suite)",
+      "Network Defense & Firewall Engineering",
+      "Incident Response & Threat Hunting",
+      "Linux Security & Python Automation"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual vulnerability analysis, network socket tracing, and firewall defense systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Networking Basics & Linux Security",
+        "title": "Module 1: Network Security, Protocols & Packet Analysis",
         "duration": "3 Weeks",
         "topics": [
-          "TCP/IP protocols, subnetting, and port allocations",
-          "Linux commands, administration, and system configurations",
-          "Network scanning and reconnaissance basics using Nmap"
+          "TCP/IP Suite, OSI Model, DNS, DHCP & Routing Protocols",
+          "Deep Packet Inspection & Network Traffic Analysis with Wireshark",
+          "Port Scanning, Network Mapping & OS Fingerprinting with Nmap",
+          "Firewall Rules, IDS/IPS Configuration & VPN Tunneling"
         ]
       },
       {
-        "title": "Module 2: Vulnerability Analysis & Exploits",
+        "title": "Module 2: SOC Operations & SIEM Threat Monitoring",
         "duration": "3 Weeks",
         "topics": [
-          "Identifying security vulnerabilities using scanners",
-          "Exploiting security gaps in sandbox labs using Metasploit",
-          "System privilege escalation and maintaining access vectors"
+          "Security Operations Center (SOC) Architecture & Tier-1 Analysis",
+          "Log Aggregation & Threat Detection with Splunk & Elastic SIEM",
+          "Correlation Rules, Alert Triage & Incident Escalation Workflows",
+          "MITRE ATT&CK Framework Mapping & Cyber Kill Chain"
         ]
       },
       {
-        "title": "Module 3: Web Application Security & OWASP",
+        "title": "Module 3: Vulnerability Assessment & Web Penetration Testing",
         "duration": "3 Weeks",
         "topics": [
-          "SQL Injection, Cross-Site Scripting (XSS), and CSRF attacks",
-          "OWASP Top 10 security framework definitions",
-          "Web app firewalls and defensive API configuration concepts"
+          "Vulnerability Scanning with Nessus and OpenVAS",
+          "Web Application Security Testing with Burp Suite (OWASP Top 10)",
+          "SQL Injection, XSS, CSRF & Authentication Bypass Exploits",
+          "Exploit Development Basics with Metasploit Framework"
         ]
       },
       {
-        "title": "Module 4: Cryptography & Security Operations",
+        "title": "Module 4: Incident Response, Hardening & Live Security Internship",
         "duration": "3 Weeks",
         "topics": [
-          "Encryption standards, hashing, and digital certificates",
-          "Setting up intrusion detection monitors and firewall rules",
-          "Conducting vulnerability reviews on company staging systems"
+          "Incident Response Life Cycle, Forensics & Memory Analysis",
+          "Linux and Windows Enterprise System Hardening",
+          "Security Automation with Python Scripting & Yara Rules",
+          "Live Enterprise Cybersecurity Audit & Defense Project Internship"
         ]
       }
     ],
@@ -1070,7 +1132,7 @@
   {
     "slug": "react-js-training",
     "name": "React JS Training",
-    "price": "\u20b914,999",
+    "price": "₹14,999",
     "price_num": 14999,
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
@@ -1080,55 +1142,54 @@
     "h1": "React JS Frontend Coding Course in Pune",
     "h2": "Modern Frontend Development & React Bootcamp: Build high-performance web UIs with guaranteed live company project internship and career coaching near you.",
     "skills": [
-      "JavaScript ES6+",
-      "ReactJS Components",
-      "React Hooks",
-      "Redux Toolkit",
-      "React Router",
-      "Axios REST integration",
-      "TailwindCSS",
+      "React 19",
+      "Next.js 15 App Router",
+      "TypeScript 5",
+      "Redux Toolkit & Zustand",
+      "Vite & Tailwind CSS",
+      "RESTful & GraphQL APIs",
       "Git & GitHub"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual React Hooks, Redux Toolkit, and REST API integration systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Advanced JS & Layouts",
-        "duration": "2 Weeks",
+        "title": "Module 1: React 19 Fundamentals & TypeScript 5",
+        "duration": "4 Weeks",
         "topics": [
-          "ES6+ syntax, Promises, Async/Await and Array methods",
-          "Responsive layouts with Flexbox, CSS Grid, and TailwindCSS",
-          "DOM manipulation events and local storage integrations",
-          "Git branch management, merge conflict resolution"
+          "React 19 Architecture, JSX, and Virtual DOM",
+          "TypeScript 5 Integration with React Components & Props",
+          "React 19 Hooks (useState, useEffect, useMemo, useCallback)",
+          "Modern Styling with Tailwind CSS and Component Libraries"
         ]
       },
       {
-        "title": "Module 2: React Core & Component Design",
-        "duration": "2 Weeks",
+        "title": "Module 2: Advanced State Management & Data Fetching",
+        "duration": "4 Weeks",
         "topics": [
-          "JSX compiler, virtual DOM, and component rendering cycles",
-          "Functional components, Props validation, and state hook mapping",
-          "Handling lists, forms, and custom inputs in React",
-          "React side-effects with useEffect and cleanup callbacks"
+          "Global State Management with Redux Toolkit & Zustand",
+          "Asynchronous Data Fetching with React Query (TanStack Query)",
+          "Forms Management with React Hook Form & Zod Validation",
+          "Client-Side Routing with React Router v6"
         ]
       },
       {
-        "title": "Module 3: Routing & Global State",
-        "duration": "2 Weeks",
+        "title": "Module 3: Next.js 15 Full Stack Web Architecture",
+        "duration": "4 Weeks",
         "topics": [
-          "Single Page App routing using React Router DOM",
-          "Context API for theme and language state sharing",
-          "Redux Toolkit slices, stores, and async thunk middleware",
-          "HTTP REST client calls using Axios libraries"
+          "Next.js 15 App Router, Server Components & Server Actions",
+          "Static Site Generation (SSG), Server-Side Rendering (SSR) & ISR",
+          "Authentication with NextAuth & Middleware Routing",
+          "SEO Optimization, Metadata Management & Web Vitals"
         ]
       },
       {
-        "title": "Module 4: Performance & Live Internship",
-        "duration": "2 Weeks",
+        "title": "Module 4: Production Build & Live Frontend Internship",
+        "duration": "4 Weeks",
         "topics": [
-          "React.memo, useMemo, and useCallback optimizations",
-          "Testing components, mock service worker endpoints",
-          "Building production bundles and Netlify/Vercel pipelines",
-          "Onboarding on a live enterprise dashboard frontend internship"
+          "Vite Production Optimization, Code Splitting & Lazy Loading",
+          "Testing with Vitest and React Testing Library",
+          "Deploying to Vercel and AWS Cloud Staging Servers",
+          "Live Company React 19 Frontend Project Internship"
         ]
       }
     ],
@@ -1174,7 +1235,7 @@
   {
     "slug": "react-native-training",
     "name": "React Native Training",
-    "price": "\u20b916,999",
+    "price": "₹16,999",
     "price_num": 16999,
     "duration": "8 Weeks",
     "gbp_category": "Computer Training School",
@@ -1184,55 +1245,54 @@
     "h1": "React Native Mobile App Development Course in Pune",
     "h2": "Cross-Platform Mobile Coding & Development Bootcamp: Ship iOS & Android mobile apps with real company project internship near you in Pune.",
     "skills": [
-      "React Native",
-      "Expo CLI",
-      "TypeScript",
-      "React Navigation",
-      "Mobile UI layouts",
-      "SQLite local storage",
-      "App Store & Google Play",
-      "Git & GitHub"
+      "React Native 0.75+ (New Architecture)",
+      "Expo SDK 51/52",
+      "TypeScript 5",
+      "React Navigation 6",
+      "Native APIs (Camera, Location, Push Notifications)",
+      "Offline SQLite & Storage",
+      "Git & Mobile CI/CD"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual cross-platform iOS and Android mobile app systems from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Mobile UI & Expo Layouts",
-        "duration": "2 Weeks",
+        "title": "Module 1: React Native & Expo Core Architecture",
+        "duration": "4 Weeks",
         "topics": [
-          "Expo CLI toolchain configuration and mobile simulators",
-          "Core components: View, Text, Image, ScrollView, FlatList",
-          "Mobile styles: flex layouts, StyleSheet, safe areas",
-          "Handling user inputs, TextInput, pressable touch dynamics"
+          "React Native New Architecture (TurboModules & Fabric Renderer)",
+          "Expo SDK Setup, File-Based Routing & TypeScript 5 Config",
+          "Cross-Platform Native UI Components (iOS & Android)",
+          "Styling with NativeWind / Tailwind CSS"
         ]
       },
       {
-        "title": "Module 2: TypeScript & App Navigation",
-        "duration": "2 Weeks",
+        "title": "Module 2: Navigation & Native Device Integration",
+        "duration": "4 Weeks",
         "topics": [
-          "TypeScript type safety, interfaces, and component props",
-          "React Navigation setup: Stack, Bottom Tab, and Drawer navigations",
-          "Passing params across screens, custom headers",
-          "Handling form state validation and custom UI buttons"
+          "Stack, Tab & Drawer Navigation with React Navigation",
+          "Camera, Gallery & Media Upload Hardware Integration",
+          "Geolocation, Maps & Real-Time Tracking APIs",
+          "Local Push Notifications & Background Tasks"
         ]
       },
       {
-        "title": "Module 3: Native Features & APIs",
-        "duration": "2 Weeks",
+        "title": "Module 3: State Management, Offline Data & APIs",
+        "duration": "4 Weeks",
         "topics": [
-          "Local storage caching with SQLite and AsyncStorage",
-          "Device hardware APIs: Camera roll, Location coordinates",
-          "Push notifications scheduling and listener config",
-          "Consuming REST APIs over mobile network layers"
+          "State Management with Redux Toolkit / Zustand in Mobile",
+          "Offline-First Architecture with SQLite & MMKV Storage",
+          "Secure Authentication (Biometrics & JWT Tokens)",
+          "Connecting to Backend REST & GraphQL APIs"
         ]
       },
       {
-        "title": "Module 4: Stores Deployment & Internship",
-        "duration": "2 Weeks",
+        "title": "Module 4: App Store Build, EAS & Live Mobile Internship",
+        "duration": "4 Weeks",
         "topics": [
-          "App signing configurations, keystores, provisioning profiles",
-          "Expo Application Services (EAS) build systems",
-          "Google Play Console and Apple App Store Connect setup",
-          "Onboarding on a live mobile app internship deployment project"
+          "EAS (Expo Application Services) Cloud Build Pipelines",
+          "Android APK/AAB and iOS IPA Production Packaging",
+          "Google Play Console & Apple App Store Deployment Workflows",
+          "Live Cross-Platform Mobile Application Project Internship"
         ]
       }
     ],
@@ -1278,7 +1338,7 @@
   {
     "slug": "software-architect-training",
     "name": "Software Architect Training",
-    "price": "\u20b929,999",
+    "price": "₹29,999",
     "price_num": 29999,
     "duration": "16 Weeks",
     "gbp_category": "Computer Training School",
@@ -1288,55 +1348,53 @@
     "h1": "Software Architecture & Systems Design Course in Pune",
     "h2": "Senior System Design & Enterprise Architecture Bootcamp: Design fault-tolerant microservices & cloud systems with live project internship & career readiness coaching.",
     "skills": [
-      "System Design",
-      "Microservices",
-      "Kafka (Event Pipelines)",
-      "Redis (Caching)",
-      "Docker & Kubernetes",
-      "AWS Sizing & Topology",
-      "Prometheus & Grafana",
-      "Git & CI/CD"
+      "Microservices & Event-Driven Architecture (EDA)",
+      "Domain-Driven Design (DDD)",
+      "System Scalability (Sharding, CQRS, Event Sourcing)",
+      "Distributed Caching with Redis 7",
+      "Cloud-Native Resilience Patterns (Circuit Breaker, Saga)",
+      "High-Level Design (HLD) & Low-Level Design (LLD)"
     ],
     "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your commits daily. Fix your logic, ship your code, refactor your system. Say goodbye to 30-student classroom factories and standard pre-recorded video loops. We prioritize proof of skill via active GitHub contribution graphs and deployed staging environments. At CACTS, you construct and deploy actual distributed systems architecture from day one, completing your technical milestones by committing code to live company repositories. Every course includes hands-on coding labs, live project internships on active staging servers, and 1-to-1 career career readiness coaching.",
     "modules": [
       {
-        "title": "Module 1: Enterprise System Design & Domain-Driven Design (DDD)",
+        "title": "Module 1: Domain-Driven Design & Enterprise Microservices",
         "duration": "4 Weeks",
         "topics": [
-          "Monolithic vs Microservice architectures & trade-offs",
-          "Domain-Driven Design (DDD): Bounded contexts & entities",
-          "Designing RESTful APIs and API Gateway routing structures",
-          "System design diagramming: UML, sequence, and architectural flows"
+          "Domain-Driven Design (DDD): Bounded Contexts, Aggregates & Ubiquitous Language",
+          "Decomposing Monoliths into Scalable Microservices",
+          "API Gateway, Service Mesh & Distributed Tracing (OpenTelemetry)",
+          "Database per Service vs Shared Database Strategies"
         ]
       },
       {
-        "title": "Module 2: High-Performance Distributed Systems & Caching",
+        "title": "Module 2: High-Throughput Event-Driven Systems (EDA)",
         "duration": "4 Weeks",
         "topics": [
-          "Database scaling: Replication, Sharding, and Read-Write splits",
-          "Distributed caching strategies using Redis & Memcached",
-          "Load balancing algorithms (Round Robin, Least Conn) & HAProxy",
-          "Consistent Hashing and distributed system hashing models"
+          "Asynchronous Messaging with Apache Kafka & RabbitMQ",
+          "CQRS (Command Query Responsibility Segregation) Architecture",
+          "Event Sourcing & Transactional Outbox Pattern",
+          "Distributed Caching Architectures with Redis 7 & Cache Invalidation"
         ]
       },
       {
-        "title": "Module 3: Event-Driven Architecture & Message Brokers",
+        "title": "Module 3: Distributed Transactions & Fault Tolerance",
         "duration": "4 Weeks",
         "topics": [
-          "Asynchronous message brokers: Apache Kafka & RabbitMQ",
-          "Publish-subscribe models and event sourcing paradigms",
-          "Handling message ordering, idempotency, and partition sizing",
-          "Distributed transactions: Saga pattern vs Two-Phase Commit"
+          "Managing Distributed Transactions with the Saga Pattern",
+          "Resilience Patterns: Circuit Breaker, Rate Limiting, Bulkhead & Retry with Backoff",
+          "CAP Theorem, PACELC Theorem & Consistency Trade-Offs",
+          "Database Sharding, Partitioning & Global Replication Strategies"
         ]
       },
       {
-        "title": "Module 4: Cloud Infrastructure Topology & Production Deployment",
+        "title": "Module 4: System Design Interview Prep & Live Capstone",
         "duration": "4 Weeks",
         "topics": [
-          "Container orchestration with Docker & Kubernetes (EKS)",
-          "Deploying distributed applications on cloud (AWS IAM, VPC, EC2)",
-          "Monitoring and observability setups: Prometheus, Grafana, and ELK Stack",
-          "Capstone project: Building and scaling a microservices cluster topology"
+          "High-Level Design (HLD): Designing Distributed Systems (Netflix, Uber, WhatsApp)",
+          "Low-Level Design (LLD): Object-Oriented Design Patterns & UML Modeling",
+          "Cloud-Native Well-Architected Framework (AWS/GCP/Azure)",
+          "Live Enterprise Software Architecture Consulting Project"
         ]
       }
     ],
@@ -1382,7 +1440,7 @@
   {
     "slug": "blockchain-training",
     "name": "Blockchain Training",
-    "price": "\u20b924,999",
+    "price": "₹24,999",
     "price_num": 24999,
     "duration": "16 Weeks",
     "gbp_category": "Computer Training School",
@@ -1392,55 +1450,53 @@
     "h1": "Blockchain Development & Web3 Course in Pune",
     "h2": "Decentralized Smart Contract Coding Bootcamp: Build dApps & ERC-20 tokens on Ethereum testnets with live company project internship support near you.",
     "skills": [
-      "Blockchain Architecture",
-      "Cryptography & Hashing",
-      "Solidity & EVM",
-      "Smart Contracts",
-      "Hardhat & Foundry",
-      "Web3.js & Ethers.js",
-      "ERC-20 & ERC-721 Tokens",
-      "DApp Development & IPFS"
+      "Solidity 0.8.26+",
+      "Foundry & Hardhat",
+      "EVM Architecture & Gas Optimization",
+      "OpenZeppelin 5.0 Contracts",
+      "Ethers.js v6 & Viem",
+      "Ethereum Sepolia & Polygon L2 Deployments"
     ],
     "overview": "Looking for a practical software development course or IT training near you in Pune? Master decentralized application architecture and smart contract engineering from scratch based on the official roadmap.sh Blockchain Developer curriculum. Under senior Web3 developers, you will write gas-optimized Solidity smart contracts, conduct security audits, test using Hardhat/Foundry, and integrate Web3 frontends with Ethers.js and IPFS. Complete your 1-to-1 practical training by deploying live Decentralized Applications (DApps) on Ethereum testnets and Layer-2 networks. Our hands-on coding bootcamp combines 1-to-1 developer coaching with guaranteed live company project internships and 100% practical technical competence.",
     "modules": [
       {
-        "title": "Module 1: Blockchain Fundamentals & Cryptography",
+        "title": "Module 1: Blockchain Architecture & Solidity 0.8.26+ Core",
         "duration": "4 Weeks",
         "topics": [
-          "Distributed Ledger Technology (DLT) & Consensus Mechanisms (PoW, PoS)",
-          "SHA-256 Hashing, Asymmetric Cryptography & Digital Signatures",
-          "Block structure, Transactions, Mempools & Gas mechanics",
-          "Ethereum Architecture, EVM Execution Engine & Accounts vs Contracts"
+          "Blockchain Fundamentals: Hashing, Cryptography & Consensus Mechanisms",
+          "Ethereum Virtual Machine (EVM) Architecture & Gas Mechanics",
+          "Solidity 0.8.26+ Syntax, Data Types, Modifiers & Events",
+          "Inheritance, Interfaces & Libraries in Solidity"
         ]
       },
       {
-        "title": "Module 2: Solidity Smart Contract Development",
+        "title": "Module 2: Smart Contract Security & OpenZeppelin 5.0",
         "duration": "4 Weeks",
         "topics": [
-          "Solidity syntax, Data Types, Control Structures & Functions",
-          "State Variables, Memory vs Storage, and Event Logs",
-          "Inheritance, Interfaces, Abstract Contracts & Libraries",
-          "ERC-20 Fungible Tokens & ERC-721 / ERC-1155 NFT Standards"
+          "ERC-20, ERC-721 (NFT), and ERC-1155 Token Standards",
+          "Access Control (Ownable, AccessControl) with OpenZeppelin 5.0",
+          "Preventing Reentrancy, Overflow & Front-Running Vulnerabilities",
+          "Upgradable Contracts (Proxy Patterns, UUPS)"
         ]
       },
       {
-        "title": "Module 3: Web3 Frameworks & Security Auditing",
+        "title": "Module 3: Smart Contract Testing with Foundry & Hardhat",
         "duration": "4 Weeks",
         "topics": [
-          "Testing & Compiling with Hardhat, Foundry & Remix IDE",
-          "Smart Contract Security: Re-entrancy, Overflow, and Slither Auditing",
-          "Gas Optimization techniques and Yul assembly basics",
-          "Oracle integration with Chainlink & Layer-2 Scaling (Arbitrum, Optimism)"
+          "Fuzz Testing, Invariant Testing & Gas Profiling with Foundry",
+          "Hardhat Deployment Scripts, Local Nodes & Sepolia Testnet",
+          "Decentralized Storage Integration with IPFS and Pinata",
+          "Oracle Integration with Chainlink Price Feeds & VRF"
         ]
       },
       {
-        "title": "Module 4: Full-Stack Web3 DApp Integration & Deployment",
+        "title": "Module 4: Full Stack Web3 dApp & Live Blockchain Internship",
         "duration": "4 Weeks",
         "topics": [
-          "Connecting React Frontends to Ethereum via Ethers.js / Web3.js",
-          "MetaMask Wallet authentication & transaction signing",
-          "Decentralized Storage integration with IPFS & Pinata",
-          "Deploying live DApps on Sepolia Testnet & Polygon Mainnet"
+          "Web3 Frontend Engineering with Next.js 15, Viem, Wagmi & Ethers.js v6",
+          "Wallet Connections (MetaMask, WalletConnect, RainbowKit)",
+          "Deploying dApps to Layer-2 Networks (Arbitrum, Polygon, Base)",
+          "Live Web3 Decentralized Finance (DeFi) Project Internship"
         ]
       }
     ],

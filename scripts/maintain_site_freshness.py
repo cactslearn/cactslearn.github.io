@@ -15,13 +15,116 @@ import os
 import sys
 import re
 import json
+import hashlib
 import subprocess
 from datetime import datetime, timedelta, timezone
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 # Project root directory
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(PROJECT_ROOT)
 sys.path.insert(0, PROJECT_ROOT)
+
+COURSE_METRICS = {
+    'java-fullstack': {
+        'name': 'Java Fullstack',
+        'base_students': 720,
+        'monthly_rate': 18,
+        'salary_range': '₹4.5 – ₹11.2 LPA'
+    },
+    'full-stack': {
+        'name': 'Full Stack (MERN)',
+        'base_students': 650,
+        'monthly_rate': 16,
+        'salary_range': '₹4.5 – ₹11.2 LPA'
+    },
+    'python': {
+        'name': 'Python Automation',
+        'base_students': 510,
+        'monthly_rate': 14,
+        'salary_range': '₹4.0 – ₹9.8 LPA'
+    },
+    'react-js': {
+        'name': 'React JS',
+        'base_students': 480,
+        'monthly_rate': 12,
+        'salary_range': '₹4.2 – ₹10.5 LPA'
+    },
+    'react-native': {
+        'name': 'React Native',
+        'base_students': 260,
+        'monthly_rate': 8,
+        'salary_range': '₹4.8 – ₹11.8 LPA'
+    },
+    'ai-ml': {
+        'name': 'AI & Machine Learning',
+        'base_students': 390,
+        'monthly_rate': 12,
+        'salary_range': '₹6.0 – ₹14.8 LPA'
+    },
+    'ai-red-teaming': {
+        'name': 'AI Red Teaming & Security',
+        'base_students': 170,
+        'monthly_rate': 6,
+        'salary_range': '₹6.5 – ₹15.8 LPA'
+    },
+    'data-science': {
+        'name': 'Data Science',
+        'base_students': 350,
+        'monthly_rate': 10,
+        'salary_range': '₹5.5 – ₹13.5 LPA'
+    },
+    'data-engineering': {
+        'name': 'Data Engineering',
+        'base_students': 330,
+        'monthly_rate': 10,
+        'salary_range': '₹5.5 – ₹13.5 LPA'
+    },
+    'devops': {
+        'name': 'DevOps & Cloud',
+        'base_students': 360,
+        'monthly_rate': 10,
+        'salary_range': '₹5.2 – ₹12.8 LPA'
+    },
+    'cloud': {
+        'name': 'Cloud Solutions Architecture',
+        'base_students': 250,
+        'monthly_rate': 8,
+        'salary_range': '₹5.5 – ₹13.5 LPA'
+    },
+    'power-bi': {
+        'name': 'Power BI Analytics',
+        'base_students': 310,
+        'monthly_rate': 10,
+        'salary_range': '₹4.0 – ₹9.8 LPA'
+    },
+    'software-testing': {
+        'name': 'Software Testing (SDET)',
+        'base_students': 430,
+        'monthly_rate': 12,
+        'salary_range': '₹3.8 – ₹9.2 LPA'
+    },
+    'cybersecurity': {
+        'name': 'Cybersecurity Operations',
+        'base_students': 290,
+        'monthly_rate': 8,
+        'salary_range': '₹5.0 – ₹12.2 LPA'
+    },
+    'blockchain': {
+        'name': 'Blockchain Development',
+        'base_students': 190,
+        'monthly_rate': 6,
+        'salary_range': '₹6.2 – ₹15.2 LPA'
+    },
+    'software-architect': {
+        'name': 'Software Architecture',
+        'base_students': 220,
+        'monthly_rate': 6,
+        'salary_range': '₹12.0 – ₹28.5 LPA'
+    }
+}
 
 IST_OFFSET = timezone(timedelta(hours=5, minutes=30))
 
@@ -154,10 +257,109 @@ def refresh_tool_reports():
     if updated_count == 0:
         print("[INFO] Tool report dates are already up to date.")
 
+def get_track_slug_from_path(filepath):
+    normalized = filepath.replace("\\", "/")
+    m = re.search(r'/courses/([^/]+)/', normalized)
+    if m and m.group(1) in COURSE_METRICS:
+        return m.group(1)
+    return None
+
+def calculate_dynamic_metrics(track_slug, batch_iso):
+    now = get_now_ist()
+    # Months elapsed since baseline Jan 2026
+    months_elapsed = max(0, (now.year - 2026) * 12 + (now.month - 1))
+    
+    if track_slug and track_slug in COURSE_METRICS:
+        m = COURSE_METRICS[track_slug]
+        cand_count = m['base_students'] + (months_elapsed * m['monthly_rate'])
+        cand_badge = f"{int(round(cand_count / 10.0) * 10)}+ Candidates"
+        salary_range = m['salary_range']
+        
+        # Deterministic pseudo-random remaining seats (1 to 5)
+        key = f"{track_slug}_{batch_iso}"
+        hash_val = int(hashlib.md5(key.encode("utf-8")).hexdigest()[:4], 16)
+        seats = (hash_val % 5) + 1
+    else:
+        # Default aggregate for location and index pages
+        total_students = sum(m['base_students'] + (months_elapsed * m['monthly_rate']) for m in COURSE_METRICS.values())
+        cand_badge = f"{int(round(total_students / 100.0) * 100)}+ Engineers"
+        salary_range = "₹4.5 – ₹14.5 LPA"
+        
+        # Location seats (1 to 5 based on batch_iso)
+        key = f"location_{batch_iso}"
+        hash_val = int(hashlib.md5(key.encode("utf-8")).hexdigest()[:4], 16)
+        seats = (hash_val % 5) + 1
+
+    return cand_badge, salary_range, seats
+
+def reorder_course_meta_tags(block, batch1_str, seats, cand_badge, salary_range):
+    # Extract duration
+    duration_m = re.search(r'<span>(\d+\s+Weeks?)</span>', block, re.IGNORECASE)
+    duration_text = duration_m.group(1).strip() if duration_m else "16 Weeks"
+
+    # Extract price
+    price_m = re.search(r'<span>(₹[\d,]+(?:\s*\([^)]+\))?)</span>', block)
+    price_text = price_m.group(1).strip() if price_m else "₹19,999 (Value-Driven Pricing)"
+
+    # Extract location
+    loc_m = re.search(r'<span>([^<]*Pune[^<]*)</span>', block)
+    loc_text = loc_m.group(1).strip() if loc_m else "Shivane, Pune & Online"
+
+    new_block = f'''<div class="course-meta-tags">
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16" height="16">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Next Intake: <span class="next-batch-date">{batch1_str}</span> (<span class="remaining-seats">{seats} Seats Left</span>)</span>
+            </div>
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>{duration_text}</span>
+            </div>
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>{price_text}</span>
+            </div>
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                </path>
+              </svg>
+              <span>{loc_text}</span>
+            </div>
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16" height="16">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span><span class="candidates-count">{cand_badge}</span> Mentored</span>
+            </div>
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16" height="16">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>Pune Salary Outlook: <span class="salary-benchmark">{salary_range}</span></span>
+            </div>
+          </div>'''
+    return new_block
+
 def refresh_course_instance_dates():
     """
     Refreshes or injects startDate in CourseInstance Schema.org blocks AND updates visible DOM text
-    (e.g., <span class="next-batch-date">...</span>) across all site HTML pages on a 1st & 15th schedule.
+    (next intake date, pseudo-random remaining seats 1-5, dynamic candidate counters, and salary benchmarks)
+    across all site HTML pages on a 1st & 15th schedule.
     """
     batch1_str, batch1_iso, batch2_str, batch2_iso = calculate_upcoming_batch_dates()
     excluded_dirs = {".git", ".github", "node_modules", "venv", "scratch", "css", "js", "scripts", "__pycache__", ".well-known", "api", "feeds", "src"}
@@ -174,19 +376,21 @@ def refresh_course_instance_dates():
                     content = f.read()
 
                 new_content = content
+                track_slug = get_track_slug_from_path(filepath)
+                cand_badge, salary_range, seats = calculate_dynamic_metrics(track_slug, batch1_iso)
 
-                # 1. Update JSON-LD Schema "startDate" in CourseInstance blocks
+                # 1. Update JSON-LD Schema "startDate" & "remainingAttendeeCapacity" in CourseInstance blocks
                 if '"CourseInstance"' in new_content:
                     total_scanned += 1
                     
-                    # Split JSON-LD blocks and update CourseInstance objects
-                    # For blended/secondary instances, use batch2_iso; for primary instances, use batch1_iso
                     def update_instance(match):
                         block = match.group(0)
                         if '"blended"' in block or '"asynchronous"' in block:
                             target_iso = batch2_iso
+                            target_seats = ((seats + 1) % 5) + 1
                         else:
                             target_iso = batch1_iso
+                            target_seats = seats
                             
                         if '"startDate"' in block:
                             block = re.sub(r'("startDate"\s*:\s*")\d{4}-\d{2}-\d{2}(")', rf'\g<1>{target_iso}\2', block)
@@ -194,9 +398,9 @@ def refresh_course_instance_dates():
                             block = re.sub(r'("@type"\s*:\s*"CourseInstance"\s*,)', rf'\1\n                  "startDate": "{target_iso}",', block)
 
                         if '"remainingAttendeeCapacity"' in block:
-                            block = re.sub(r'("remainingAttendeeCapacity"\s*:\s*)\d+', r'\g<1>3', block)
+                            block = re.sub(r'("remainingAttendeeCapacity"\s*:\s*)\d+', rf'\g<1>{target_seats}', block)
                         else:
-                            block = re.sub(r'("startDate"\s*:\s*"\d{4}-\d{2}-\d{2}"\s*,)', r'\1\n                  "remainingAttendeeCapacity": 3,', block)
+                            block = re.sub(r'("startDate"\s*:\s*"\d{4}-\d{2}-\d{2}"\s*,)', rf'\1\n                  "remainingAttendeeCapacity": {target_seats},', block)
 
                         return block
 
@@ -207,42 +411,45 @@ def refresh_course_instance_dates():
                         flags=re.DOTALL
                     )
 
-                # 2. Update OR Inject visible DOM hero badge (<span class="next-batch-date">...</span>)
-                meta_badge_html = f'''<div class="meta-tag">
-              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16" height="16">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-              <span>Next Intake: <span class="next-batch-date">{batch1_str}</span></span>
-            </div>'''
-
-                location_hero_badge = f'''<div class="location-intake-badge" style="margin: 1rem 0 1.5rem 0; color: var(--accent); font-weight: 600; font-size: 0.95rem; display: flex; align-items: center; gap: 0.5rem;">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                <span>Next 1-to-1 Intake: <span class="next-batch-date">{batch1_str}</span> (3 Seats Available)</span>
-              </div>'''
-
-                if 'class="next-batch-date"' in new_content:
+                # 2. Update visible DOM hero badges & course meta tags
+                if '<div class="course-meta-tags">' in new_content and track_slug:
                     new_content = re.sub(
-                        r'(<span\s+class=["\']next-batch-date["\']\s*>)[^<]+(</span>)',
-                        rf'\g<1>{batch1_str}\2',
-                        new_content
+                        r'<div\s+class=["\']course-meta-tags["\'].*?</div>\s*</div>',
+                        lambda m: reorder_course_meta_tags(m.group(0), batch1_str, seats, cand_badge, salary_range),
+                        new_content,
+                        flags=re.DOTALL
                     )
-                else:
-                    if '<div class="course-meta-tags">' in new_content:
+                    if '<span class="next-batch-date">' not in new_content:
                         new_content = re.sub(
-                            r'(<div\s+class=["\']course-meta-tags["\']\s*>)',
-                            rf'\1\n            {meta_badge_html}',
-                            new_content
-                        )
-                    elif any(h in new_content for h in ['id="pune-h1"', 'id="location-h1"', 'id="model-h1"']):
-                        new_content = re.sub(
-                            r'(<h1[^>]*id=["\'](?:pune-h1|location-h1|model-h1)["\'][^>]*>.*?</h1>)',
-                            rf'\1\n              {location_hero_badge}',
+                            r'<div\s+class=["\']course-meta-tags["\'].*?</div>',
+                            lambda m: reorder_course_meta_tags(m.group(0), batch1_str, seats, cand_badge, salary_range),
                             new_content,
                             flags=re.DOTALL
                         )
+
+                location_hero_badge = f'''<div class="location-intake-badge" style="margin: 1rem 0 1.5rem 0; color: var(--accent); font-weight: 600; font-size: 0.92rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                <span>Next 1-to-1 Intake: <span class="next-batch-date">{batch1_str}</span> (<span class="remaining-seats">{seats} Seats Available</span>)</span>
+                <span style="color: var(--border);">|</span>
+                <span><span class="candidates-count">{cand_badge}</span> Mentored</span>
+                <span style="color: var(--border);">|</span>
+                <span>Pune Salary Benchmark: <span class="salary-benchmark">{salary_range}</span></span>
+              </div>'''
+
+                if '<div class="location-intake-badge"' in new_content:
+                    new_content = re.sub(
+                        r'<div\s+class=["\']location-intake-badge["\'].*?</div>',
+                        location_hero_badge,
+                        new_content,
+                        flags=re.DOTALL
+                    )
+                elif any(h in new_content for h in ['id="pune-h1"', 'id="location-h1"', 'id="model-h1"']):
+                    new_content = re.sub(
+                        r'(<h1[^>]*id=["\'](?:pune-h1|location-h1|model-h1)["\'][^>]*>.*?</h1>)',
+                        rf'\1\n              {location_hero_badge}',
+                        new_content,
+                        flags=re.DOTALL
+                    )
 
                 if new_content != content:
                     with open(filepath, "w", encoding="utf-8") as f:

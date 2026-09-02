@@ -3,776 +3,777 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>
-    Free Developer Cheat Sheets, Guides &amp; Tutorials | CACTS Pune
-  </title>
-  <meta
-    content="Access free developer cheat sheets, system design diagrams, SQL queries, and tech roadmaps curated by senior software mentors at CACTS."
-    name="description" />
-  <meta content="index, follow" name="robots" />
-  <link href="https://cactslearn.github.io/tools/free-learning-resources.html" rel="canonical" />
-  <link href="../css/style.css" rel="stylesheet" />
-  <style>
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
+ <meta charset="utf-8" />
+ <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+ <title>
+ Free Developer Cheat Sheets, Guides &amp; Tutorials | CACTS Pune
+ </title>
+ <meta
+ content="Access free developer cheat sheets, system design diagrams, SQL queries, and tech roadmaps curated by senior software mentors at CACTS."
+ name="description" />
+ <meta content="index, follow" name="robots" />
+ <link href="https://cactslearn.github.io/tools/free-learning-resources.html" rel="canonical" />
+ <link href="../css/style.css" rel="stylesheet" />
+ <style>
+ .resources-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+ gap: 2rem;
+ margin-top: 3rem;
+ }
 
-    .resource-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--border-radius);
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: var(--transition);
-    }
+ .resource-card {
+ background: var(--bg-card);
+ border: 1px solid var(--border);
+ border-radius: var(--border-radius);
+ padding: 2rem;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ transition: var(--transition);
+ }
 
-    .resource-card:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-5px);
-      background: var(--bg-card-hover);
-      box-shadow: 0 10px 25px -10px rgba(20, 184, 166, 0.15);
-    }
+ .resource-card:hover {
+ border-color: var(--border-hover);
+ transform: translateY(-5px);
+ background: var(--bg-card-hover);
+ box-shadow: 0 10px 25px -10px rgba(20, 184, 166, 0.15);
+ }
 
-    .resource-title {
-      font-size: 1.3rem;
-      color: var(--text-primary);
-      margin-bottom: 0.75rem;
-      font-family: var(--font-heading);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+ .resource-title {
+ font-size: 1.3rem;
+ color: var(--text-primary);
+ margin-bottom: 0.75rem;
+ font-family: var(--font-heading);
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ }
 
-    .resource-features {
-      list-style: none;
-      margin: 1.25rem 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-    }
+ .resource-features {
+ list-style: none;
+ margin: 1.25rem 0;
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+ font-size: 0.9rem;
+ color: var(--text-secondary);
+ }
 
-    .resource-features li {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+ .resource-features li {
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ }
 
-    .resource-features li::before {
-      content: "▫";
-      color: var(--accent);
-      font-weight: bold;
-    }
+ .resource-features li::before {
+ content: "";
+ color: var(--accent);
+ font-weight: bold;
+ }
 
-    .resources-list-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      transition: var(--transition);
-      display: inline-block;
-    }
+ .resources-list-links a {
+ color: var(--text-secondary);
+ text-decoration: none;
+ transition: var(--transition);
+ display: inline-block;
+ }
 
-    .resources-list-links a:hover {
-      color: var(--accent-light) !important;
-      transform: translateX(4px);
-    }
-  </style>
-  <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://cactslearn.github.io/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Free Developer Cheat Sheets & Learning Resources",
-            "item": "https://cactslearn.github.io/tools/free-learning-resources.html"
-          }
-        ]
-      }
-    </script>
-  <!-- Open Graph (OG) & Twitter Card Social Tags -->
-  <meta content="Free Developer Cheat Sheets, Guides &amp; Tutorials | CACTS Pune" property="og:title" />
-  <meta
-    content="Access free developer cheat sheets, system design diagrams, SQL queries, and tech roadmaps curated by senior software mentors at CACTS."
-    property="og:description" />
-  <meta content="website" property="og:type" />
-  <meta content="https://cactslearn.github.io/tools/free-learning-resources.html" property="og:url" />
-  <meta content="https://cactslearn.github.io/images/cacts-og-banner.jpg" property="og:image" />
-  <meta content="summary_large_image" name="twitter:card" />
-  <meta content="Free Developer Cheat Sheets, Guides &amp; Tutorials | CACTS Pune" name="twitter:title" />
-  <meta
-    content="Access free developer cheat sheets, system design diagrams, SQL queries, and tech roadmaps curated by senior software mentors at CACTS."
-    name="twitter:description" />
-  <meta content="https://cactslearn.github.io/images/cacts-og-banner.jpg" name="twitter:image" />
-  <!-- RSS 2.0 Auto-Discovery Links -->
-  <link rel="alternate" type="application/rss+xml" title="CACTS Master Updates" href="https://cactslearn.github.io/feeds/rss-main.xml" />
-  <link rel="alternate" type="application/rss+xml" title="CACTS Tech Jobs &amp; Internships" href="https://cactslearn.github.io/feeds/rss-jobs.xml" />
-  <link rel="alternate" type="application/rss+xml" title="CACTS Tech Career Guides" href="https://cactslearn.github.io/feeds/rss-guides.xml" />
-  <link rel="alternate" type="application/rss+xml" title="CACTS Engineering Courses" href="https://cactslearn.github.io/feeds/rss-courses.xml" />
+ .resources-list-links a:hover {
+ color: var(--accent-light) !important;
+ transform: translateX(4px);
+ }
+ </style>
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+ {
+ "@type": "ListItem",
+ "position": 1,
+ "name": "Home",
+ "item": "https://cactslearn.github.io/"
+ },
+ {
+ "@type": "ListItem",
+ "position": 2,
+ "name": "Free Developer Cheat Sheets & Learning Resources",
+ "item": "https://cactslearn.github.io/tools/free-learning-resources.html"
+ }
+ ]
+ }
+ </script>
+ <!-- Open Graph (OG) & Twitter Card Social Tags -->
+ <meta content="Free Developer Cheat Sheets, Guides &amp; Tutorials | CACTS Pune" property="og:title" />
+ <meta
+ content="Access free developer cheat sheets, system design diagrams, SQL queries, and tech roadmaps curated by senior software mentors at CACTS."
+ property="og:description" />
+ <meta content="website" property="og:type" />
+ <meta content="https://cactslearn.github.io/tools/free-learning-resources.html" property="og:url" />
+ <meta content="https://cactslearn.github.io/images/cacts-og-banner.jpg" property="og:image" />
+ <meta content="summary_large_image" name="twitter:card" />
+ <meta content="Free Developer Cheat Sheets, Guides &amp; Tutorials | CACTS Pune" name="twitter:title" />
+ <meta
+ content="Access free developer cheat sheets, system design diagrams, SQL queries, and tech roadmaps curated by senior software mentors at CACTS."
+ name="twitter:description" />
+ <meta content="https://cactslearn.github.io/images/cacts-og-banner.jpg" name="twitter:image" />
+ <!-- RSS 2.0 Auto-Discovery Links -->
+ <link rel="alternate" type="application/rss+xml" title="CACTS Master Updates" href="https://cactslearn.github.io/feeds/rss-main.xml" />
+ <link rel="alternate" type="application/rss+xml" title="CACTS Tech Jobs &amp; Internships" href="https://cactslearn.github.io/feeds/rss-jobs.xml" />
+ <link rel="alternate" type="application/rss+xml" title="CACTS Tech Career Guides" href="https://cactslearn.github.io/feeds/rss-guides.xml" />
+ <link rel="alternate" type="application/rss+xml" title="CACTS Engineering Courses" href="https://cactslearn.github.io/feeds/rss-courses.xml" />
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="nav-container">
-      <div class="logo">
-        <a href="../index.html">
-          <span>CACTS</span>
-        </a>
-      </div>
-      <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
-        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-          stroke-width="2" style="vertical-align: middle" viewbox="0 0 24 24" width="24">
-          <line x1="3" x2="21" y1="12" y2="12"></line>
-          <line x1="3" x2="21" y1="6" y2="6"></line>
-          <line x1="3" x2="21" y1="18" y2="18"></line>
-        </svg>
-      </button>
-      <nav aria-label="Main Navigation" class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="../about.html">About</a>
-        <a href="../showcase/internship-on-live-projects.html">Live Internship</a>
-        <a href="../courses/index.html">1-to-1 Model</a>
-        <a href="free-career-guidance.html">Career Guidance</a>
-        <a href="../reviews.html">Reviews</a>
-        <a href="../faqs.html">FAQs</a>
-        <button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle">
-          <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" style="display: block" viewbox="0 0 24 24" width="20">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" x2="12" y1="1" y2="3"></line>
-            <line x1="12" x2="12" y1="21" y2="23"></line>
-            <line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
-            <line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
-            <line x1="1" x2="3" y1="12" y2="12"></line>
-            <line x1="21" x2="23" y1="12" y2="12"></line>
-            <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
-            <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
-          </svg>
-          <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" style="display: none" viewbox="0 0 24 24" width="20">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-        <a class="btn btn-accent" href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20free%20career%20guidance%20and%201-to-1%20mentorship." target="_blank" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
-      </nav>
-    </div>
-  </header>
-  <main style="padding-top: 8rem">
-    <section aria-labelledby="resources-h1" class="tech-section">
-      <nav aria-label="Breadcrumb" style="
-            margin-bottom: 2rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-          ">
-        <a href="../index.html" style="color: var(--accent)">Home</a> &gt;
-        <span style="color: var(--text-primary)">Free Developer Cheat Sheets &amp; Learning Resources</span>
-      </nav>
-      <h1 class="section-title">
-        Free Developer Cheat Sheets &amp; Learning Resources
-      </h1>
-      <p class="section-subtitle">
-        Compiled by our active developer-mentors. Download these PDF reference
-        cheat sheets, CLI cheat lists, and syntax manuals to assist your
-        learning.
-      </p>
-      <div
-        style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem; margin-top: 2rem; margin-bottom: 3rem">
-        <h2
-          style="font-size: 1.35rem; color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading)">
-          Developer Syntax Manuals &amp; Technical Reference Library
-        </h2>
-        <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin-bottom: 1rem">
-          Mastering modern software engineering requires quick access to production-tested code templates, command
-          syntax manuals, and architecture blueprints. Our developer-mentors have compiled these cheat sheets from
-          active corporate projects across Full Stack Development, Data Engineering, Cloud Infrastructure, and AI/ML
-          pipelines in Pune IT parks.
-        </p>
-        <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin-bottom: 1.25rem">
-          Whether you are preparing for technical screening interviews or building live GitHub repositories during our
-          1-to-1 virtual training sessions, these cheat sheets serve as immediate reference manuals to accelerate your
-          learning curve.
-        </p>
-        <div
-          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem">
-          <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border: 1px solid var(--border)">
-            <strong style="color: var(--primary-light); display: block; margin-bottom: 0.25rem">⚡ Instant Code
-              References</strong>
-            <span style="font-size: 0.85rem; color: var(--text-secondary)">Quick syntax lookups for SQL CTEs, Docker
-              commands, REST endpoints, and Git workflows.</span>
-          </div>
-          <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border: 1px solid var(--border)">
-            <strong style="color: var(--primary-light); display: block; margin-bottom: 0.25rem">🎯 Interview
-              Alignment</strong>
-            <span style="font-size: 0.85rem; color: var(--text-secondary)">Key concepts frequently tested in technical
-              screening rounds with Pune hiring managers.</span>
-          </div>
-          <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border: 1px solid var(--border)">
-            <strong style="color: var(--primary-light); display: block; margin-bottom: 0.25rem">💻 Practical Lab
-              Integration</strong>
-            <span style="font-size: 0.85rem; color: var(--text-secondary)">Seamlessly integrated into 1-to-1 live
-              screen-sharing mentorship sessions.</span>
-          </div>
-        </div>
-      </div>
-      <div style="margin-top: 2rem; margin-bottom: 2.5rem">
-        <h2 style="
-              font-size: 1.5rem;
-              color: var(--text-primary);
-              margin-bottom: 1.5rem;
-              font-family: var(--font-heading);
-            ">
-          Interactive Utility Tools &amp; Benchmark Reports (2026)
-        </h2>
-        <div style="
-              display: grid;
-              grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-              gap: 2rem;
-            ">
-          <div class="resource-card">
-            <div>
-              <div class="resource-title">
-                <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2" style="
-                      vertical-align: middle;
-                      margin-right: 0.35rem;
-                      color: var(--accent);
-                      flex-shrink: 0;
-                    " viewbox="0 0 24 24" width="18">
-                  <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
-                  <line x1="8" x2="16" y1="21" y2="21"></line>
-                  <line x1="12" x2="12" y1="17" y2="21"></line>
-                </svg>Pune IT Salary Calculator
-              </div>
-              <p style="
-                    color: var(--text-secondary);
-                    font-size: 0.95rem;
-                    line-height: 1.5;
-                  ">
-                Calculate expected Pune tech compensation, ATS resume filter
-                pass rates, and the salary delta between paper certificates vs
-                verified GitHub code proofs.
-              </p>
-            </div>
-            <a class="btn btn-accent" href="pune-it-salary-calculator.html"
-              style="text-align: center; margin-top: 1.5rem; color: #0b0f19">
-              Launch Salary Calculator ↗
-            </a>
-          </div>
-          <div class="resource-card">
-            <div>
-              <div class="resource-title">
-                <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2" style="
-                      vertical-align: middle;
-                      margin-right: 0.35rem;
-                      color: var(--accent);
-                      flex-shrink: 0;
-                    " viewbox="0 0 24 24" width="18">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>Course Readiness Check
-              </div>
-              <p style="
-                    color: var(--text-secondary);
-                    font-size: 0.95rem;
-                    line-height: 1.5;
-                  ">
-                10-question technical diagnostic evaluating logic baseline,
-                debugging persistence, weekly time commitment, and future role
-                risk score.
-              </p>
-            </div>
-            <a class="btn btn-accent" href="course-readiness-check.html"
-              style="text-align: center; margin-top: 1.5rem; color: #0b0f19">
-              Start Readiness Quiz ↗
-            </a>
-          </div>
-          <div class="resource-card">
-            <div>
-              <div class="resource-title">
-                <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                  stroke-width="2" style="
-                      vertical-align: middle;
-                      margin-right: 0.35rem;
-                      color: var(--accent);
-                      flex-shrink: 0;
-                    " viewbox="0 0 24 24" width="18">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" x2="8" y1="13" y2="13"></line>
-                  <line x1="16" x2="8" y1="17" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>Pune IT Hiring Report
-              </div>
-              <p style="
-                    color: var(--text-secondary);
-                    font-size: 0.95rem;
-                    line-height: 1.5;
-                  ">
-                Dual-angle benchmark report citing Stack Overflow, GitHub
-                Octoverse &amp; NASSCOM study data on Pune software tech
-                demand &amp; position evolution.
-              </p>
-            </div>
-            <a class="btn btn-accent" href="pune-it-salary-report.html"
-              style="text-align: center; margin-top: 1.5rem; color: #0b0f19">
-              Read Benchmark Report ↗
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="resources-grid">
-        <!-- Git Workflow Card -->
-        <div class="resource-card">
-          <div>
-            <div class="resource-title">
-              <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="
-                    vertical-align: middle;
-                    margin-right: 0.35rem;
-                    color: var(--accent);
-                    flex-shrink: 0;
-                  " viewbox="0 0 24 24" width="16">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-              </svg>Git Workflow &amp; Command Sheet
-            </div>
-            <p style="
-                  color: var(--text-secondary);
-                  font-size: 0.95rem;
-                  line-height: 1.5;
-                ">
-              A concise command reference mapping branching, staging, commits,
-              and pull request workflows which are key to our
-              <a href="../courses/devops/" style="color: var(--accent)">DevOps Engineering Training</a>.
-            </p>
-            <ul class="resource-features">
-              <li>Local commit sequences (add, commit, push)</li>
-              <li>Feature branching &amp; merging</li>
-              <li>Resolving merge conflicts with clean logs</li>
-            </ul>
-          </div>
-          <a class="btn btn-primary"
-            href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20Git%20Workflow%20Cheat%20Sheet."
-            style="text-align: center; margin-top: 1.5rem" target="_blank">
-            Request PDF on WhatsApp
-          </a>
-        </div>
-        <!-- SQL Query Card -->
-        <div class="resource-card">
-          <div>
-            <div class="resource-title">
-              <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="
-                    vertical-align: middle;
-                    margin-right: 0.35rem;
-                    color: var(--accent);
-                    flex-shrink: 0;
-                  " viewbox="0 0 24 24" width="16">
-                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
-              </svg>SQL Queries &amp; DB Schema Guide
-            </div>
-            <p style="
-                  color: var(--text-secondary);
-                  font-size: 0.95rem;
-                  line-height: 1.5;
-                ">
-              Relational database lookup sheet detailing subqueries, window
-              functions, table joins, and normalization rules, which we cover
-              in our
-              <a href="../courses/data-engineering/" style="color: var(--accent)">Data Engineering Training</a>.
-            </p>
-            <ul class="resource-features">
-              <li>JOIN operations &amp; GROUP BY aggregation</li>
-              <li>Common Table Expressions (CTEs)</li>
-              <li>Database index optimization commands</li>
-            </ul>
-          </div>
-          <a class="btn btn-primary"
-            href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20SQL%20Queries%20Cheat%20Sheet."
-            style="text-align: center; margin-top: 1.5rem" target="_blank">
-            Request PDF on WhatsApp
-          </a>
-        </div>
-        <!-- Linux Terminal Card -->
-        <div class="resource-card">
-          <div>
-            <div class="resource-title">
-              <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="
-                    vertical-align: middle;
-                    margin-right: 0.35rem;
-                    color: var(--accent);
-                    flex-shrink: 0;
-                  " viewbox="0 0 24 24" width="16">
-                <rect height="16" rx="2" ry="2" width="20" x="2" y="4"></rect>
-                <line x1="6" x2="10" y1="8" y2="8"></line>
-                <line x1="6" x2="18" y1="12" y2="12"></line>
-                <line x1="6" x2="14" y1="16" y2="16"></line>
-              </svg>Linux CLI &amp; System Logs Manual
-            </div>
-            <p style="
-                  color: var(--text-secondary);
-                  font-size: 0.95rem;
-                  line-height: 1.5;
-                ">
-              Terminal navigation guide outlining folder permissions, port
-              tracking, and logging, essential for
-              <a href="../courses/cybersecurity/" style="color: var(--accent)">Cybersecurity Course</a>
-              students.
-            </p>
-            <ul class="resource-features">
-              <li>System logs monitoring (tail -f, grep)</li>
-              <li>Permissions modification (chmod, chown)</li>
-              <li>Network port allocation tracking (lsof, netstat)</li>
-            </ul>
-          </div>
-          <a class="btn btn-primary"
-            href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20Linux%20CLI%20Manual."
-            style="text-align: center; margin-top: 1.5rem" target="_blank">
-            Request PDF on WhatsApp
-          </a>
-        </div>
-        <!-- Python Basics Card -->
-        <div class="resource-card">
-          <div>
-            <div class="resource-title">
-              <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="
-                    vertical-align: middle;
-                    margin-right: 0.35rem;
-                    color: var(--accent);
-                    flex-shrink: 0;
-                  " viewbox="0 0 24 24" width="16">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-              </svg>Python Coding &amp; Scripting Reference
-            </div>
-            <p style="
-                  color: var(--text-secondary);
-                  font-size: 0.95rem;
-                  line-height: 1.5;
-                ">
-              A foundational reference guide detailing variables, loops,
-              functions, and API requests, which we teach in our
-              <a href="../courses/python/" style="color: var(--accent)">Python Training</a>.
-            </p>
-            <ul class="resource-features">
-              <li>Slicing &amp; collection comprehension</li>
-              <li>REST API requests integration (requests library)</li>
-              <li>CSV and JSON file manipulation logs</li>
-            </ul>
-          </div>
-          <a class="btn btn-primary"
-            href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20Python%20Programming%20Reference."
-            style="text-align: center; margin-top: 1.5rem" target="_blank">
-            Request PDF on WhatsApp
-          </a>
-        </div>
-        <!-- REST API Codes Card -->
-        <div class="resource-card">
-          <div>
-            <div class="resource-title">
-              <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="
-                    vertical-align: middle;
-                    margin-right: 0.35rem;
-                    color: var(--accent);
-                    flex-shrink: 0;
-                  " viewbox="0 0 24 24" width="16">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" x2="22" y1="12" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                </path>
-              </svg>Web REST API Response Code Chart
-            </div>
-            <p style="
-                  color: var(--text-secondary);
-                  font-size: 0.95rem;
-                  line-height: 1.5;
-                ">
-              A quick overview mapping HTTP methods, client headers, and
-              response states, a key component of our
-              <a href="../courses/full-stack/" style="color: var(--accent)">Full Stack Training</a>.
-            </p>
-            <ul class="resource-features">
-              <li>REST methods (GET, POST, PUT, DELETE)</li>
-              <li>Status definitions (200, 201, 400, 401, 500)</li>
-              <li>Bearer token header setups</li>
-            </ul>
-          </div>
-          <a class="btn btn-primary"
-            href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20REST%20API%20Chart."
-            style="text-align: center; margin-top: 1.5rem" target="_blank">
-            Request PDF on WhatsApp
-          </a>
-        </div>
-        <!-- AI Red Teaming Card -->
-        <div class="resource-card">
-          <div>
-            <div class="resource-title">
-              <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="
-                    vertical-align: middle;
-                    margin-right: 0.35rem;
-                    color: var(--accent);
-                    flex-shrink: 0;
-                  " viewbox="0 0 24 24" width="16">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                <circle cx="12" cy="12" r="3"></circle>
-              </svg>AI Red Teaming &amp; OWASP LLM Cheat Sheet
-            </div>
-            <p style="
-                  color: var(--text-secondary);
-                  font-size: 0.95rem;
-                  line-height: 1.5;
-                ">
-              An essential reference guide covering prompt injection vectors, PyRIT probes, and NeMo Guardrail rules taught in our
-              <a href="../courses/ai-red-teaming/" style="color: var(--accent)">AI Red Teaming Course</a>.
-            </p>
-            <ul class="resource-features">
-              <li>Direct &amp; Indirect Prompt Injection Payloads</li>
-              <li>OWASP LLM Top 10 Vulnerability Matrix</li>
-              <li>NeMo Guardrails &amp; Colang Policy Rules</li>
-            </ul>
-          </div>
-          <a class="btn btn-primary"
-            href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20AI%20Red%20Teaming%20Cheat%20Sheet."
-            style="text-align: center; margin-top: 1.5rem" target="_blank">
-            Request PDF on WhatsApp
-          </a>
-        </div>
-      </div>
-      <!-- New Programmatic Resource Directories -->
-      <div style="margin-top: 5rem">
-        <h2 style="
-              font-family: var(--font-heading);
-              margin-bottom: 2.5rem;
-              text-align: center;
-            ">
-          Explore Our Technology Glossaries &amp; Project Guides
-        </h2>
-        <div class="grid-3" style="gap: 2.5rem; margin-bottom: 5rem">
-          <!-- Glossary Directory Card -->
-          <div style="
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2.25rem;
-              ">
-            <h3 style="
-                  color: var(--accent-light);
-                  margin-bottom: 1.25rem;
-                  font-family: var(--font-heading);
-                  display: flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                ">
-              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="
-                    vertical-align: middle;
-                    margin-right: 0.5rem;
-                    color: var(--accent-light);
-                    flex-shrink: 0;
-                  " viewbox="0 0 24 24" width="20">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-              </svg>Tech Glossaries
-            </h3>
-            <ul class="resources-list-links" style="
-                  list-style: none;
-                  padding: 0;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 0.8rem;
-                  font-size: 0.95rem;
-                ">
-              <li>
-                <a href="../guides/what-is-apache-spark.html">What is Apache Spark?</a>
-              </li>
-              <li>
-                <a href="../guides/what-is-kafka.html">What is Apache Kafka?</a>
-              </li>
-              <li>
-                <a href="../guides/what-is-docker.html">What is Docker?</a>
-              </li>
-              <li>
-                <a href="../guides/what-is-kubernetes.html">What is Kubernetes?</a>
-              </li>
-              <li>
-                <a href="../guides/what-is-jenkins.html">What is Jenkins?</a>
-              </li>
-              <li>
-                <a href="../guides/what-is-terraform.html">What is Terraform?</a>
-              </li>
-              <li>
-                <a href="../guides/what-is-power-bi.html">What is Power BI?</a>
-              </li>
-              <li>
-                <a href="../guides/what-is-hadoop.html">What is Hadoop?</a>
-              </li>
-            </ul>
-          </div>
-          <!-- Project Ideas Card -->
-          <div style="
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2.25rem;
-              ">
-            <h3 style="
-                  color: var(--primary-light);
-                  margin-bottom: 1.25rem;
-                  font-family: var(--font-heading);
-                  display: flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                ">
-              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="
-                    vertical-align: middle;
-                    margin-right: 0.5rem;
-                    color: var(--primary-light);
-                    flex-shrink: 0;
-                  " viewbox="0 0 24 24" width="20">
-                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
-              </svg>Project Portfolios
-            </h3>
-            <ul class="resources-list-links" style="
-                  list-style: none;
-                  padding: 0;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 0.8rem;
-                  font-size: 0.95rem;
-                ">
-              <li>
-                <a href="../courses/java-fullstack/projects.html">Java Fullstack Project Ideas</a>
-              </li>
-              <li>
-                <a href="../courses/react-js/projects.html">React JS Project Ideas</a>
-              </li>
-              <li>
-                <a href="../courses/react-native/projects.html">React Native Project Ideas</a>
-              </li>
-              <li>
-                <a href="../courses/data-science/projects.html">Data Science Project Ideas</a>
-              </li>
-              <li>
-                <a href="../courses/data-engineering/projects.html">Data Engineering Project Ideas</a>
-              </li>
-              <li>
-                <a href="../courses/devops/projects.html">DevOps Project Ideas</a>
-              </li>
-              <li>
-                <a href="../courses/cybersecurity/projects.html">Cybersecurity Project Ideas</a>
-              </li>
-              <li>
-                <a href="../courses/power-bi/projects.html">Power BI Dashboard Ideas</a>
-              </li>
-            </ul>
-          </div>
-          <!-- Certifications Card -->
-          <div style="
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2.25rem;
-              ">
-            <h3 style="
-                  color: var(--warning);
-                  margin-bottom: 1.25rem;
-                  font-family: var(--font-heading);
-                  display: flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                ">
-              <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="
-                    vertical-align: middle;
-                    margin-right: 0.5rem;
-                    color: var(--warning);
-                    flex-shrink: 0;
-                  " viewbox="0 0 24 24" width="20">
-                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
-                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
-                <path d="M4 22h16"></path>
-                <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"></path>
-                <path d="M12 2a6 6 0 0 1 6 6v3.58a6 6 0 0 1-6 6 6 6 0 0 1-6-6V8a6 6 0 0 1 6-6z"></path>
-              </svg>Certifications Guides
-            </h3>
-            <ul class="resources-list-links" style="
-                  list-style: none;
-                  padding: 0;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 0.8rem;
-                  font-size: 0.95rem;
-                ">
-              <li>
-                <a href="../courses/data-engineering/certifications.html">Best Data Engineering Certifications</a>
-              </li>
-              <li>
-                <a href="../courses/devops/certifications.html">Best DevOps Certifications</a>
-              </li>
-              <li>
-                <a href="../courses/cybersecurity/certifications.html">Best Cybersecurity Certifications</a>
-              </li>
-              <li>
-                <a href="../courses/power-bi/certifications.html">Best Power BI Certifications</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Free Consultation Grid -->
-      <div style="
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            text-align: center;
-            margin-top: 5rem;
-          ">
-        <h2>Unsure How to Implement These Reference Sheets?</h2>
-        <p style="
-              color: var(--text-secondary);
-              max-width: 600px;
-              margin: 1rem auto 2rem auto;
-              font-size: 1.05rem;
-            ">
-          Our developer-mentors teach 1-to-1. Book a trial session to code
-          live on a screenshare and master these tools.
-        </p>
-        <div style="
-              display: flex;
-              gap: 1rem;
-              justify-content: center;
-              flex-wrap: wrap;
-            ">
-          <a class="btn btn-primary" href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20free%20career%20guidance%20and%201-to-1%20mentorship." target="_blank" >Book Free Trial Session</a>
-          <a class="btn btn-accent"
-            href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20want%20to%20ask%20about%20your%201-to-1%20mentorship%20in%20conjunction%20with%20free%20resources."
-            style="color: #0b0f19" target="_blank">Discuss on WhatsApp</a>
-        </div>
-      </div>
-    </section>
-  </main>
+ <header class="site-header">
+ <div class="nav-container">
+ <div class="logo">
+ <a href="../index.html">
+ <span>CACTS</span>
+ </a>
+ </div>
+ <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
+ <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="vertical-align: middle" viewbox="0 0 24 24" width="24">
+ <line x1="3" x2="21" y1="12" y2="12"></line>
+ <line x1="3" x2="21" y1="6" y2="6"></line>
+ <line x1="3" x2="21" y1="18" y2="18"></line>
+ </svg>
+ </button>
+ <nav aria-label="Main Navigation" class="nav-links">
+ <a href="../index.html">Home</a>
+ <a href="../about.html">About</a>
+ <a href="../showcase/internship-on-live-projects.html">Live Internship</a>
+ <a href="../courses/index.html">1-to-1 Model</a>
+ <a href="free-career-guidance.html">Career Guidance</a>
+ <a href="../reviews.html">Reviews</a>
+ <a href="../faqs.html">FAQs</a>
+ <button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle">
+ <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+ stroke-linejoin="round" stroke-width="2" style="display: block" viewbox="0 0 24 24" width="20">
+ <circle cx="12" cy="12" r="5"></circle>
+ <line x1="12" x2="12" y1="1" y2="3"></line>
+ <line x1="12" x2="12" y1="21" y2="23"></line>
+ <line x1="4.22" x2="5.64" y1="4.22" y2="5.64"></line>
+ <line x1="18.36" x2="19.78" y1="18.36" y2="19.78"></line>
+ <line x1="1" x2="3" y1="12" y2="12"></line>
+ <line x1="21" x2="23" y1="12" y2="12"></line>
+ <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
+ <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
+ </svg>
+ <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+ stroke-linejoin="round" stroke-width="2" style="display: none" viewbox="0 0 24 24" width="20">
+ <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+ </svg>
+ </button>
+ <a class="btn btn-accent" href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20free%20career%20guidance%20and%201-to-1%20mentorship." target="_blank" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
+ </nav>
+ </div>
+ </header>
+ <main style="padding-top: 8rem">
+ <section aria-labelledby="resources-h1" class="tech-section">
+ <nav aria-label="Breadcrumb" style="
+ margin-bottom: 2rem;
+ font-size: 0.85rem;
+ color: var(--text-secondary);
+ ">
+ <a href="../index.html" style="color: var(--accent)">Home</a> &gt;
+ <span style="color: var(--text-primary)">Free Developer Cheat Sheets &amp; Learning Resources</span>
+ </nav>
+ <h1 class="section-title">
+ Free Developer Cheat Sheets &amp; Learning Resources
+ </h1>
+ <p class="section-subtitle">
+ Compiled by our active developer-mentors. Download these PDF reference
+ cheat sheets, CLI cheat lists, and syntax manuals to assist your
+ learning.
+ </p>
+ <div
+ style="background: rgba(20, 184, 166, 0.05); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem; margin-top: 2rem; margin-bottom: 3rem">
+ <h2
+ style="font-size: 1.35rem; color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading)">
+ Developer Syntax Manuals &amp; Technical Reference Library
+ </h2>
+ <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin-bottom: 1rem">
+ Mastering modern software engineering requires quick access to production-tested code templates, command
+ syntax manuals, and architecture blueprints. Our developer-mentors have compiled these cheat sheets from
+ active corporate projects across Full Stack Development, Data Engineering, Cloud Infrastructure, and AI/ML
+ pipelines in Pune IT parks.
+ </p>
+ <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin-bottom: 1.25rem">
+ Whether you are preparing for technical screening interviews or building live GitHub repositories during our
+ 1-to-1 virtual training sessions, these cheat sheets serve as immediate reference manuals to accelerate your
+ learning curve.
+ </p>
+ <div
+ style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1rem">
+ <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border: 1px solid var(--border)">
+ <strong style="color: var(--primary-light); display: block; margin-bottom: 0.25rem"> Instant Code
+ References</strong>
+ <span style="font-size: 0.85rem; color: var(--text-secondary)">Quick syntax lookups for SQL CTEs, Docker
+ commands, REST endpoints, and Git workflows.</span>
+ </div>
+ <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border: 1px solid var(--border)">
+ <strong style="color: var(--primary-light); display: block; margin-bottom: 0.25rem"> Interview
+ Alignment</strong>
+ <span style="font-size: 0.85rem; color: var(--text-secondary)">Key concepts frequently tested in technical
+ screening rounds with Pune hiring managers.</span>
+ </div>
+ <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border: 1px solid var(--border)">
+ <strong style="color: var(--primary-light); display: block; margin-bottom: 0.25rem"> Practical Lab
+ Integration</strong>
+ <span style="font-size: 0.85rem; color: var(--text-secondary)">Seamlessly integrated into 1-to-1 live
+ screen-sharing mentorship sessions.</span>
+ </div>
+ </div>
+ </div>
+ <div style="margin-top: 2rem; margin-bottom: 2.5rem">
+ <h2 style="
+ font-size: 1.5rem;
+ color: var(--text-primary);
+ margin-bottom: 1.5rem;
+ font-family: var(--font-heading);
+ ">
+ Interactive Utility Tools &amp; Benchmark Reports (2026)
+ </h2>
+ <div style="
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+ gap: 2rem;
+ ">
+ <div class="resource-card">
+ <div>
+ <div class="resource-title">
+ <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.35rem;
+ color: var(--accent);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="18">
+ <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
+ <line x1="8" x2="16" y1="21" y2="21"></line>
+ <line x1="12" x2="12" y1="17" y2="21"></line>
+ </svg>Pune IT Salary Calculator
+ </div>
+ <p style="
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ line-height: 1.5;
+ ">
+ Calculate expected Pune tech compensation, ATS resume filter
+ pass rates, and the salary delta between paper certificates vs
+ verified GitHub code proofs.
+ </p>
+ </div>
+ <a class="btn btn-accent" href="pune-it-salary-calculator.html"
+ style="text-align: center; margin-top: 1.5rem; color: #0b0f19">
+ Launch Salary Calculator ↗
+ </a>
+ </div>
+ <div class="resource-card">
+ <div>
+ <div class="resource-title">
+ <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.35rem;
+ color: var(--accent);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="18">
+ <circle cx="12" cy="12" r="10"></circle>
+ <polyline points="12 6 12 12 16 14"></polyline>
+ </svg>Course Readiness Check
+ </div>
+ <p style="
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ line-height: 1.5;
+ ">
+ 10-question technical diagnostic evaluating logic baseline,
+ debugging persistence, weekly time commitment, and future role
+ risk score.
+ </p>
+ </div>
+ <a class="btn btn-accent" href="course-readiness-check.html"
+ style="text-align: center; margin-top: 1.5rem; color: #0b0f19">
+ Start Readiness Quiz ↗
+ </a>
+ </div>
+ <div class="resource-card">
+ <div>
+ <div class="resource-title">
+ <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.35rem;
+ color: var(--accent);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="18">
+ <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+ <polyline points="14 2 14 8 20 8"></polyline>
+ <line x1="16" x2="8" y1="13" y2="13"></line>
+ <line x1="16" x2="8" y1="17" y2="17"></line>
+ <polyline points="10 9 9 9 8 9"></polyline>
+ </svg>Pune IT Hiring Report
+ </div>
+ <p style="
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ line-height: 1.5;
+ ">
+ Dual-angle benchmark report citing Stack Overflow, GitHub
+ Octoverse &amp; NASSCOM study data on Pune software tech
+ demand &amp; position evolution.
+ </p>
+ </div>
+ <a class="btn btn-accent" href="pune-it-salary-report.html"
+ style="text-align: center; margin-top: 1.5rem; color: #0b0f19">
+ Read Benchmark Report ↗
+ </a>
+ </div>
+ </div>
+ </div>
+ <div class="resources-grid">
+ <!-- Git Workflow Card -->
+ <div class="resource-card">
+ <div>
+ <div class="resource-title">
+ <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.35rem;
+ color: var(--accent);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="16">
+ <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+ </svg>Git Workflow &amp; Command Sheet
+ </div>
+ <p style="
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ line-height: 1.5;
+ ">
+ A concise command reference mapping branching, staging, commits,
+ and pull request workflows which are key to our
+ <a href="../courses/devops/" style="color: var(--accent)">DevOps Engineering Training</a>.
+ </p>
+ <ul class="resource-features">
+ <li>Local commit sequences (add, commit, push)</li>
+ <li>Feature branching &amp; merging</li>
+ <li>Resolving merge conflicts with clean logs</li>
+ </ul>
+ </div>
+ <a class="btn btn-primary"
+ href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20Git%20Workflow%20Cheat%20Sheet."
+ style="text-align: center; margin-top: 1.5rem" target="_blank">
+ Request PDF on WhatsApp
+ </a>
+ </div>
+ <!-- SQL Query Card -->
+ <div class="resource-card">
+ <div>
+ <div class="resource-title">
+ <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.35rem;
+ color: var(--accent);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="16">
+ <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+ <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+ <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"></path>
+ </svg>SQL Queries &amp; DB Schema Guide
+ </div>
+ <p style="
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ line-height: 1.5;
+ ">
+ Relational database lookup sheet detailing subqueries, window
+ functions, table joins, and normalization rules, which we cover
+ in our
+ <a href="../courses/data-engineering/" style="color: var(--accent)">Data Engineering Training</a>.
+ </p>
+ <ul class="resource-features">
+ <li>JOIN operations &amp; GROUP BY aggregation</li>
+ <li>Common Table Expressions (CTEs)</li>
+ <li>Database index optimization commands</li>
+ </ul>
+ </div>
+ <a class="btn btn-primary"
+ href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20SQL%20Queries%20Cheat%20Sheet."
+ style="text-align: center; margin-top: 1.5rem" target="_blank">
+ Request PDF on WhatsApp
+ </a>
+ </div>
+ <!-- Linux Terminal Card -->
+ <div class="resource-card">
+ <div>
+ <div class="resource-title">
+ <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.35rem;
+ color: var(--accent);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="16">
+ <rect height="16" rx="2" ry="2" width="20" x="2" y="4"></rect>
+ <line x1="6" x2="10" y1="8" y2="8"></line>
+ <line x1="6" x2="18" y1="12" y2="12"></line>
+ <line x1="6" x2="14" y1="16" y2="16"></line>
+ </svg>Linux CLI &amp; System Logs Manual
+ </div>
+ <p style="
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ line-height: 1.5;
+ ">
+ Terminal navigation guide outlining folder permissions, port
+ tracking, and logging, essential for
+ <a href="../courses/cybersecurity/" style="color: var(--accent)">Cybersecurity Course</a>
+ students.
+ </p>
+ <ul class="resource-features">
+ <li>System logs monitoring (tail -f, grep)</li>
+ <li>Permissions modification (chmod, chown)</li>
+ <li>Network port allocation tracking (lsof, netstat)</li>
+ </ul>
+ </div>
+ <a class="btn btn-primary"
+ href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20Linux%20CLI%20Manual."
+ style="text-align: center; margin-top: 1.5rem" target="_blank">
+ Request PDF on WhatsApp
+ </a>
+ </div>
+ <!-- Python Basics Card -->
+ <div class="resource-card">
+ <div>
+ <div class="resource-title">
+ <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.35rem;
+ color: var(--accent);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="16">
+ <polyline points="16 18 22 12 16 6"></polyline>
+ <polyline points="8 6 2 12 8 18"></polyline>
+ </svg>Python Coding &amp; Scripting Reference
+ </div>
+ <p style="
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ line-height: 1.5;
+ ">
+ A foundational reference guide detailing variables, loops,
+ functions, and API requests, which we teach in our
+ <a href="../courses/python/" style="color: var(--accent)">Python Training</a>.
+ </p>
+ <ul class="resource-features">
+ <li>Slicing &amp; collection comprehension</li>
+ <li>REST API requests integration (requests library)</li>
+ <li>CSV and JSON file manipulation logs</li>
+ </ul>
+ </div>
+ <a class="btn btn-primary"
+ href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20Python%20Programming%20Reference."
+ style="text-align: center; margin-top: 1.5rem" target="_blank">
+ Request PDF on WhatsApp
+ </a>
+ </div>
+ <!-- REST API Codes Card -->
+ <div class="resource-card">
+ <div>
+ <div class="resource-title">
+ <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.35rem;
+ color: var(--accent);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="16">
+ <circle cx="12" cy="12" r="10"></circle>
+ <line x1="2" x2="22" y1="12" y2="12"></line>
+ <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+ </path>
+ </svg>Web REST API Response Code Chart
+ </div>
+ <p style="
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ line-height: 1.5;
+ ">
+ A quick overview mapping HTTP methods, client headers, and
+ response states, a key component of our
+ <a href="../courses/full-stack/" style="color: var(--accent)">Full Stack Training</a>.
+ </p>
+ <ul class="resource-features">
+ <li>REST methods (GET, POST, PUT, DELETE)</li>
+ <li>Status definitions (200, 201, 400, 401, 500)</li>
+ <li>Bearer token header setups</li>
+ </ul>
+ </div>
+ <a class="btn btn-primary"
+ href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20REST%20API%20Chart."
+ style="text-align: center; margin-top: 1.5rem" target="_blank">
+ Request PDF on WhatsApp
+ </a>
+ </div>
+ <!-- AI Red Teaming Card -->
+ <div class="resource-card">
+ <div>
+ <div class="resource-title">
+ <svg fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.35rem;
+ color: var(--accent);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="16">
+ <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+ <circle cx="12" cy="12" r="3"></circle>
+ </svg>AI Red Teaming &amp; OWASP LLM Cheat Sheet
+ </div>
+ <p style="
+ color: var(--text-secondary);
+ font-size: 0.95rem;
+ line-height: 1.5;
+ ">
+ An essential reference guide covering prompt injection vectors, PyRIT probes, and NeMo Guardrail rules taught in our
+ <a href="../courses/ai-red-teaming/" style="color: var(--accent)">AI Red Teaming Course</a>.
+ </p>
+ <ul class="resource-features">
+ <li>Direct &amp; Indirect Prompt Injection Payloads</li>
+ <li>OWASP LLM Top 10 Vulnerability Matrix</li>
+ <li>NeMo Guardrails &amp; Colang Policy Rules</li>
+ </ul>
+ </div>
+ <a class="btn btn-primary"
+ href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20would%20like%20to%20download%20the%20Free%20AI%20Red%20Teaming%20Cheat%20Sheet."
+ style="text-align: center; margin-top: 1.5rem" target="_blank">
+ Request PDF on WhatsApp
+ </a>
+ </div>
+ </div>
+ <!-- New Programmatic Resource Directories -->
+ <div style="margin-top: 5rem">
+ <h2 style="
+ font-family: var(--font-heading);
+ margin-bottom: 2.5rem;
+ text-align: center;
+ ">
+ Explore Our Technology Glossaries &amp; Project Guides
+ </h2>
+ <div class="grid-3" style="gap: 2.5rem; margin-bottom: 5rem">
+ <!-- Glossary Directory Card -->
+ <div style="
+ background: var(--bg-card);
+ border: 1px solid var(--border);
+ border-radius: var(--border-radius);
+ padding: 2.25rem;
+ ">
+ <h3 style="
+ color: var(--accent-light);
+ margin-bottom: 1.25rem;
+ font-family: var(--font-heading);
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ ">
+ <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.5rem;
+ color: var(--accent-light);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="20">
+ <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+ <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+ </svg>Tech Glossaries
+ </h3>
+ <ul class="resources-list-links" style="
+ list-style: none;
+ padding: 0;
+ display: flex;
+ flex-direction: column;
+ gap: 0.8rem;
+ font-size: 0.95rem;
+ ">
+ <li>
+ <a href="../guides/what-is-apache-spark.html">What is Apache Spark?</a>
+ </li>
+ <li>
+ <a href="../guides/what-is-kafka.html">What is Apache Kafka?</a>
+ </li>
+ <li>
+ <a href="../guides/what-is-docker.html">What is Docker?</a>
+ </li>
+ <li>
+ <a href="../guides/what-is-kubernetes.html">What is Kubernetes?</a>
+ </li>
+ <li>
+ <a href="../guides/what-is-jenkins.html">What is Jenkins?</a>
+ </li>
+ <li>
+ <a href="../guides/what-is-terraform.html">What is Terraform?</a>
+ </li>
+ <li>
+ <a href="../guides/what-is-power-bi.html">What is Power BI?</a>
+ </li>
+ <li>
+ <a href="../guides/what-is-hadoop.html">What is Hadoop?</a>
+ </li>
+ </ul>
+ </div>
+ <!-- Project Ideas Card -->
+ <div style="
+ background: var(--bg-card);
+ border: 1px solid var(--border);
+ border-radius: var(--border-radius);
+ padding: 2.25rem;
+ ">
+ <h3 style="
+ color: var(--primary-light);
+ margin-bottom: 1.25rem;
+ font-family: var(--font-heading);
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ ">
+ <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.5rem;
+ color: var(--primary-light);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="20">
+ <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+ </svg>Project Portfolios
+ </h3>
+ <ul class="resources-list-links" style="
+ list-style: none;
+ padding: 0;
+ display: flex;
+ flex-direction: column;
+ gap: 0.8rem;
+ font-size: 0.95rem;
+ ">
+ <li>
+ <a href="../courses/java-fullstack/projects.html">Java Fullstack Project Ideas</a>
+ </li>
+ <li>
+ <a href="../courses/react-js/projects.html">React JS Project Ideas</a>
+ </li>
+ <li>
+ <a href="../courses/react-native/projects.html">React Native Project Ideas</a>
+ </li>
+ <li>
+ <a href="../courses/data-science/projects.html">Data Science Project Ideas</a>
+ </li>
+ <li>
+ <a href="../courses/data-engineering/projects.html">Data Engineering Project Ideas</a>
+ </li>
+ <li>
+ <a href="../courses/devops/projects.html">DevOps Project Ideas</a>
+ </li>
+ <li>
+ <a href="../courses/cybersecurity/projects.html">Cybersecurity Project Ideas</a>
+ </li>
+ <li>
+ <a href="../courses/power-bi/projects.html">Power BI Dashboard Ideas</a>
+ </li>
+ </ul>
+ </div>
+ <!-- Certifications Card -->
+ <div style="
+ background: var(--bg-card);
+ border: 1px solid var(--border);
+ border-radius: var(--border-radius);
+ padding: 2.25rem;
+ ">
+ <h3 style="
+ color: var(--warning);
+ margin-bottom: 1.25rem;
+ font-family: var(--font-heading);
+ display: flex;
+ align-items: center;
+ gap: 0.5rem;
+ ">
+ <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2" style="
+ vertical-align: middle;
+ margin-right: 0.5rem;
+ color: var(--warning);
+ flex-shrink: 0;
+ " viewbox="0 0 24 24" width="20">
+ <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+ <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+ <path d="M4 22h16"></path>
+ <path d="M10 14.66V17c0 .55-.45 1-1 1H4v2h16v-2h-5c-.55 0-1-.45-1-1v-2.34"></path>
+ <path d="M12 2a6 6 0 0 1 6 6v3.58a6 6 0 0 1-6 6 6 6 0 0 1-6-6V8a6 6 0 0 1 6-6z"></path>
+ </svg>Certifications Guides
+ </h3>
+ <ul class="resources-list-links" style="
+ list-style: none;
+ padding: 0;
+ display: flex;
+ flex-direction: column;
+ gap: 0.8rem;
+ font-size: 0.95rem;
+ ">
+ <li>
+ <a href="../courses/data-engineering/certifications.html">Best Data Engineering Certifications</a>
+ </li>
+ <li>
+ <a href="../courses/devops/certifications.html">Best DevOps Certifications</a>
+ </li>
+ <li>
+ <a href="../courses/cybersecurity/certifications.html">Best Cybersecurity Certifications</a>
+ </li>
+ <li>
+ <a href="../courses/power-bi/certifications.html">Best Power BI Certifications</a>
+ </li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ <!-- Free Consultation Grid -->
+ <div style="
+ background: var(--bg-card);
+ border: 1px solid var(--border);
+ border-radius: var(--border-radius);
+ padding: 3rem;
+ text-align: center;
+ margin-top: 5rem;
+ ">
+ <h2>Unsure How to Implement These Reference Sheets?</h2>
+ <p style="
+ color: var(--text-secondary);
+ max-width: 600px;
+ margin: 1rem auto 2rem auto;
+ font-size: 1.05rem;
+ ">
+ Our developer-mentors teach 1-to-1. Book a trial session to code
+ live on a screenshare and master these tools.
+ </p>
+ <div style="
+ display: flex;
+ gap: 1rem;
+ justify-content: center;
+ flex-wrap: wrap;
+ ">
+ <a class="btn btn-primary" href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20free%20career%20guidance%20and%201-to-1%20mentorship." target="_blank" >Book Free Trial Session</a>
+ <a class="btn btn-accent"
+ href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20want%20to%20ask%20about%20your%201-to-1%20mentorship%20in%20conjunction%20with%20free%20resources."
+ style="color: #0b0f19" target="_blank">Discuss on WhatsApp</a>
+ </div>
+ </div>
+ </section>
+ </main>
+   <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-programs-row">
@@ -791,7 +792,7 @@
           <li><a href="../courses/full-stack/">Full Stack Web (MERN)</a></li>
           <li><a href="../courses/react-js/">React JS Development</a></li>
           <li><a href="../courses/react-native/">React Native Mobile</a></li>
-          <li><a href="../courses/ai-ml/">AI &amp; Machine Learning</a></li>
+          <li><a href="../courses/ai-ml/">AI & Machine Learning</a></li>
           <li><a href="../courses/ai-red-teaming/">AI Red Teaming</a></li>
           <li><a href="../courses/data-science/">Data Science Analytics</a></li>
           <li><a href="../courses/data-engineering/">Data Engineering ETL</a></li>
@@ -899,50 +900,30 @@
         <h4>Institutional Links</h4>
         <ul style="list-style: none">
           <li><a href="../about.html">About CACTS</a></li>
-          <li><a href="../jobs/index.html">Current Openings</a></li>
-          <li>
-            <a href="../showcase/internship-on-live-projects.html">Live Projects Internship</a>
-          </li>
           <li><a href="../courses/index.html">1-to-1 Mentoring Model</a></li>
-          <li>
-            <a href="../comparisons/cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a>
-          </li>
-          <li>
-            <a href="free-career-guidance.html">Free Career Guidance</a>
-          </li>
+          <li><a href="../showcase/internship-on-live-projects.html">Live Projects Internship</a></li>
+          <li><a href="../comparisons/cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a></li>
           <li><a href="../reviews.html">Success Reviews</a></li>
           <li><a href="../faqs.html">Institutional FAQs</a></li>
+          <li><a href="../jobs/index.html">Current Openings</a></li>
+          <li><a href="../locations/index.html">Software Training Pune</a></li>
+          <li><a href="../tools/free-career-guidance.html">Free Career Guidance</a></li>
           <li><a href="../contact.html">Contact Us</a></li>
-          <li><a href="../locations/pune.html">Software Training Pune</a></li>
         </ul>
       </div>
       <div class="footer-links">
         <h4>Learning Portals</h4>
         <ul style="list-style: none">
-          <li><a href="free-skill-assessment.html">Skill Assessment</a></li>
-          <li>
-            <a href="course-recommendation-quiz.html">Course Finder Quiz</a>
-          </li>
-          <li><a href="career-roadmaps.html">Career Roadmaps</a></li>
-          <li>
-            <a href="../showcase/student-projects.html">Student Projects</a>
-          </li>
-          <li>
-            <a href="../showcase/internship-showcase.html">Internship Showcase</a>
-          </li>
-          <li>
-            <a href="../showcase/project-portfolios.html">Project Portfolios</a>
-          </li>
-          <li>
-            <a href="../comparisons/technology-comparisons.html">Tech Comparisons</a>
-          </li>
-          <li><a href="free-learning-resources.html">Free Resources</a></li>
-          <li>
-            <a href="../guides/technology-career-guides.html">Career Guides</a>
-          </li>
-          <li>
-            <a href="live-code-compiler.html">Live Code &amp; Syntax Validator</a>
-          </li>
+          <li><a href="../tools/index.html">Interactive Tools Suite</a></li>
+          <li><a href="../tools/pune-it-salary-calculator.html">Pune IT Salary Calculator</a></li>
+          <li><a href="../tools/pune-it-salary-report.html">Pune IT Salary Report 2026</a></li>
+          <li><a href="../tools/course-recommendation-quiz.html">Course Finder Quiz</a></li>
+          <li><a href="../tools/free-skill-assessment.html">Skill Assessment</a></li>
+          <li><a href="../tools/career-roadmaps.html">Career Roadmaps</a></li>
+          <li><a href="../guides/index.html">Career &amp; Tech Guides</a></li>
+          <li><a href="../showcase/index.html">Student Project Showcase</a></li>
+          <li><a href="../comparisons/technology-comparisons.html">Tech Comparisons</a></li>
+          <li><a href="../tools/live-code-compiler.html">Live Code &amp; Syntax Validator</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -1067,8 +1048,8 @@
       </div>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap">
         <a href="../sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
-            <span style="color: var(--border)">|</span>
-            <a href="../feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
+        <span style="color: var(--border)">|</span>
+        <a href="../feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
         <span style="color: var(--border)">|</span>
         <a href="../privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
         <span style="color: var(--border)">|</span>
@@ -1076,28 +1057,28 @@
       </div>
     </div>
   </footer>
-    <!-- Floating Contacts -->
-  <div class="floating-ctas">
-    <a aria-label="Chat on WhatsApp" class="cta-circle cta-whatsapp"
-      href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20learning%20more%20about%20your%201-to-1%20training."
-      target="_blank">
-      <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width="2.5" style="vertical-align: middle; transform: translateY(-1px)" viewbox="0 0 24 24" width="24">
-        <path
-          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
-        </path>
-      </svg>
-    </a>
-    <a aria-label="Call CACTS" class="cta-circle cta-call" href="tel:+919665566357">
-      <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width="2.5" style="vertical-align: middle" viewbox="0 0 24 24" width="20">
-        <path
-          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-        </path>
-      </svg>
-    </a>
-  </div>
-  <script src="../js/main.js"></script>
+ <!-- Floating Contacts -->
+ <div class="floating-ctas">
+ <a aria-label="Chat on WhatsApp" class="cta-circle cta-whatsapp"
+ href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20learning%20more%20about%20your%201-to-1%20training."
+ target="_blank">
+ <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2.5" style="vertical-align: middle; transform: translateY(-1px)" viewbox="0 0 24 24" width="24">
+ <path
+ d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+ </path>
+ </svg>
+ </a>
+ <a aria-label="Call CACTS" class="cta-circle cta-call" href="tel:+919665566357">
+ <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+ stroke-width="2.5" style="vertical-align: middle" viewbox="0 0 24 24" width="20">
+ <path
+ d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+ </path>
+ </svg>
+ </a>
+ </div>
+ <script src="../js/main.js"></script>
 </body>
 
 </html>

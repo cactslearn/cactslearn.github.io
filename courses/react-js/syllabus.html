@@ -124,7 +124,7 @@
             {
                   "@type": "CourseInstance",
                   "startDate": "2026-10-01",
-                  "remainingAttendeeCapacity": 3,
+                  "remainingAttendeeCapacity": 5,
                   "courseMode": [
                         "blended",
                         "online",
@@ -154,27 +154,27 @@
             }
       ],
       "hasPart": [
-            {
-                  "@type": "CreativeWork",
-                  "name": "Module 1: Advanced JS & Layouts",
-                  "timeRequired": "P2W"
-            },
-            {
-                  "@type": "CreativeWork",
-                  "name": "Module 2: React Core & Component Design",
-                  "timeRequired": "P2W"
-            },
-            {
-                  "@type": "CreativeWork",
-                  "name": "Module 3: Routing & Global State",
-                  "timeRequired": "P2W"
-            },
-            {
-                  "@type": "CreativeWork",
-                  "name": "Module 4: Performance & Live Internship",
-                  "timeRequired": "P2W"
-            }
-      ],
+      {
+            "@type": "CreativeWork",
+            "name": "Module 1: React 19 Fundamentals & TypeScript 5",
+            "timeRequired": "P4W"
+      },
+      {
+            "@type": "CreativeWork",
+            "name": "Module 2: Advanced State Management & Data Fetching",
+            "timeRequired": "P4W"
+      },
+      {
+            "@type": "CreativeWork",
+            "name": "Module 3: Next.js 15 Full Stack Web Architecture",
+            "timeRequired": "P4W"
+      },
+      {
+            "@type": "CreativeWork",
+            "name": "Module 4: Production Build & Live Frontend Internship",
+            "timeRequired": "P4W"
+      }
+],
       "potentialAction": [
             {
                   "@type": "RegisterAction",
@@ -407,7 +407,7 @@
                 <line x1="8" y1="2" x2="8" y2="6"></line>
                 <line x1="3" y1="10" x2="21" y2="10"></line>
               </svg>
-              <span>Next Intake: <span class="next-batch-date">September 15, 2026</span></span>
+              <span>Next Intake: <span class="next-batch-date">September 15, 2026</span> (<span class="remaining-seats">3 Seats Left</span>)</span>
             </div>
             <div class="meta-tag">
               <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
@@ -429,6 +429,22 @@
                 </path>
               </svg>
               <span>Shivane, Pune &amp; Online</span>
+            </div>
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16" height="16">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span><span class="candidates-count">580+ Candidates</span> Mentored</span>
+            </div>
+            <div class="meta-tag">
+              <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="16" height="16">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>Pune Salary Outlook: <span class="salary-benchmark">₹4.2 – ₹10.5 LPA</span></span>
             </div>
           </div>
           <!-- AEO Answer-First Callout (Optimized for AI Search Engines) -->
@@ -592,96 +608,64 @@
           <div class="curriculum-accordion" style="margin-bottom: 3rem">
             <div class="curriculum-module">
               <div class="module-header" style="cursor: default">
-                <h4 style="color: var(--accent-light)">
-                  Module 1: Advanced JS &amp; Layouts
-                </h4>
-                <span class="module-duration">2 Weeks</span>
+                <h4 style="color: var(--accent-light)">Module 1: React 19 Fundamentals & TypeScript 5</h4>
+                <span class="module-duration">4 Weeks</span>
               </div>
               <div class="module-content active" style="max-height: none; background: rgba(6, 9, 19, 0.15)">
                 <div class="module-content-inner">
                   <ul>
-                    <li>
-                      ES6+ syntax, Promises, Async/Await and Array methods
-                    </li>
-                    <li>
-                      Responsive layouts with Flexbox, CSS Grid, and
-                      TailwindCSS
-                    </li>
-                    <li>
-                      DOM manipulation events and local storage integrations
-                    </li>
-                    <li>Git branch management, merge conflict resolution</li>
+                    <li>React 19 Architecture, JSX, and Virtual DOM</li>
+                    <li>TypeScript 5 Integration with React Components & Props</li>
+                    <li>React 19 Hooks (useState, useEffect, useMemo, useCallback)</li>
+                    <li>Modern Styling with Tailwind CSS and Component Libraries</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="curriculum-module">
               <div class="module-header" style="cursor: default">
-                <h4 style="color: var(--accent-light)">
-                  Module 2: React Core &amp; Component Design
-                </h4>
-                <span class="module-duration">2 Weeks</span>
+                <h4 style="color: var(--accent-light)">Module 2: Advanced State Management & Data Fetching</h4>
+                <span class="module-duration">4 Weeks</span>
               </div>
               <div class="module-content active" style="max-height: none; background: rgba(6, 9, 19, 0.15)">
                 <div class="module-content-inner">
                   <ul>
-                    <li>
-                      JSX compiler, virtual DOM, and component rendering
-                      cycles
-                    </li>
-                    <li>
-                      Functional components, Props validation, and state hook
-                      mapping
-                    </li>
-                    <li>Handling lists, forms, and custom inputs in React</li>
-                    <li>
-                      React side-effects with useEffect and cleanup callbacks
-                    </li>
+                    <li>Global State Management with Redux Toolkit & Zustand</li>
+                    <li>Asynchronous Data Fetching with React Query (TanStack Query)</li>
+                    <li>Forms Management with React Hook Form & Zod Validation</li>
+                    <li>Client-Side Routing with React Router v6</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="curriculum-module">
               <div class="module-header" style="cursor: default">
-                <h4 style="color: var(--accent-light)">
-                  Module 3: Routing &amp; Global State
-                </h4>
-                <span class="module-duration">2 Weeks</span>
+                <h4 style="color: var(--accent-light)">Module 3: Next.js 15 Full Stack Web Architecture</h4>
+                <span class="module-duration">4 Weeks</span>
               </div>
               <div class="module-content active" style="max-height: none; background: rgba(6, 9, 19, 0.15)">
                 <div class="module-content-inner">
                   <ul>
-                    <li>Single Page App routing using React Router DOM</li>
-                    <li>Context API for theme and language state sharing</li>
-                    <li>
-                      Redux Toolkit slices, stores, and async thunk middleware
-                    </li>
-                    <li>HTTP REST client calls using Axios libraries</li>
+                    <li>Next.js 15 App Router, Server Components & Server Actions</li>
+                    <li>Static Site Generation (SSG), Server-Side Rendering (SSR) & ISR</li>
+                    <li>Authentication with NextAuth & Middleware Routing</li>
+                    <li>SEO Optimization, Metadata Management & Web Vitals</li>
                   </ul>
                 </div>
               </div>
             </div>
             <div class="curriculum-module">
               <div class="module-header" style="cursor: default">
-                <h4 style="color: var(--accent-light)">
-                  Module 4: Performance &amp; Live Internship
-                </h4>
-                <span class="module-duration">2 Weeks</span>
+                <h4 style="color: var(--accent-light)">Module 4: Production Build & Live Frontend Internship</h4>
+                <span class="module-duration">4 Weeks</span>
               </div>
               <div class="module-content active" style="max-height: none; background: rgba(6, 9, 19, 0.15)">
                 <div class="module-content-inner">
                   <ul>
-                    <li>
-                      React.memo, useMemo, and useCallback optimizations
-                    </li>
-                    <li>Testing components, mock service worker endpoints</li>
-                    <li>
-                      Building production bundles and Netlify/Vercel pipelines
-                    </li>
-                    <li>
-                      Onboarding on a live enterprise dashboard frontend
-                      internship
-                    </li>
+                    <li>Vite Production Optimization, Code Splitting & Lazy Loading</li>
+                    <li>Testing with Vitest and React Testing Library</li>
+                    <li>Deploying to Vercel and AWS Cloud Staging Servers</li>
+                    <li>Live Company React 19 Frontend Project Internship</li>
                   </ul>
                 </div>
               </div>
@@ -1155,7 +1139,7 @@
       </div>
     </section>
   </main>
-  <!-- Footer -->
+    <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-programs-row">
@@ -1170,41 +1154,22 @@
           Engineering Labs &amp; Programs
         </h4>
         <ul class="footer-programs-grid">
-          <li>
-            <a href="../java-fullstack/index.html">Java Fullstack Training</a>
-          </li>
-          <li>
-            <a href="../full-stack/index.html">Full Stack Web (MERN)</a>
-          </li>
-          <li><a href="index.html">React JS Development</a></li>
-          <li>
-            <a href="../react-native/index.html">React Native Mobile</a>
-          </li>
-          <li><a href="../ai-ml/index.html">AI &amp; Machine Learning</a></li>
-          <li>
-            <a href="../data-science/index.html">Data Science Analytics</a>
-          </li>
-          <li>
-            <a href="../data-engineering/index.html">Data Engineering ETL</a>
-          </li>
-          <li><a href="../python/index.html">Python Scripting Lab</a></li>
-          <li><a href="../devops/index.html">DevOps Engineering</a></li>
-          <li>
-            <a href="../cloud/index.html">Cloud Systems Architecture</a>
-          </li>
-          <li><a href="../power-bi/index.html">Power BI Analytics</a></li>
-          <li>
-            <a href="../software-testing/index.html">Software Testing Lab</a>
-          </li>
-          <li>
-            <a href="../cybersecurity/index.html">Cybersecurity Operations</a>
-          </li>
-          <li>
-            <a href="../blockchain/index.html">Blockchain Development</a>
-          </li>
-          <li>
-            <a href="../software-architect/index.html">Software Architect Lab</a>
-          </li>
+          <li><a href="../../courses/java-fullstack/">Java Fullstack Training</a></li>
+          <li><a href="../../courses/full-stack/">Full Stack Web (MERN)</a></li>
+          <li><a href="../../courses/react-js/">React JS Development</a></li>
+          <li><a href="../../courses/react-native/">React Native Mobile</a></li>
+          <li><a href="../../courses/ai-ml/">AI & Machine Learning</a></li>
+          <li><a href="../../courses/ai-red-teaming/">AI Red Teaming</a></li>
+          <li><a href="../../courses/data-science/">Data Science Analytics</a></li>
+          <li><a href="../../courses/data-engineering/">Data Engineering ETL</a></li>
+          <li><a href="../../courses/python/">Python Scripting Lab</a></li>
+          <li><a href="../../courses/devops/">DevOps Engineering</a></li>
+          <li><a href="../../courses/cloud/">Cloud Systems Architecture</a></li>
+          <li><a href="../../courses/power-bi/">Power BI Analytics</a></li>
+          <li><a href="../../courses/software-testing/">Software Testing Lab</a></li>
+          <li><a href="../../courses/cybersecurity/">Cybersecurity Operations</a></li>
+          <li><a href="../../courses/blockchain/">Blockchain Development</a></li>
+          <li><a href="../../courses/software-architect/">Software Architect Lab</a></li>
         </ul>
       </div>
       <div class="footer-brand">
@@ -1301,60 +1266,30 @@
         <h4>Institutional Links</h4>
         <ul style="list-style: none">
           <li><a href="../../about.html">About CACTS</a></li>
-          <li><a href="../../jobs/index.html">Current Openings</a></li>
-          <li>
-            <a href="../../showcase/internship-on-live-projects.html">Live Projects Internship</a>
-          </li>
-          <li>
-            <a href="../../courses/index.html">1-to-1 Mentoring Model</a>
-          </li>
-          <li>
-            <a href="../../comparisons/cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a>
-          </li>
-          <li>
-            <a href="../../tools/free-career-guidance.html">Free Career Guidance</a>
-          </li>
+          <li><a href="../../courses/index.html">1-to-1 Mentoring Model</a></li>
+          <li><a href="../../showcase/internship-on-live-projects.html">Live Projects Internship</a></li>
+          <li><a href="../../comparisons/cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a></li>
           <li><a href="../../reviews.html">Success Reviews</a></li>
           <li><a href="../../faqs.html">Institutional FAQs</a></li>
+          <li><a href="../../jobs/index.html">Current Openings</a></li>
+          <li><a href="../../locations/index.html">Software Training Pune</a></li>
+          <li><a href="../../tools/free-career-guidance.html">Free Career Guidance</a></li>
           <li><a href="../../contact.html">Contact Us</a></li>
-          <li>
-            <a href="../../locations/pune.html">Software Training Pune</a>
-          </li>
         </ul>
       </div>
       <div class="footer-links">
         <h4>Learning Portals</h4>
         <ul style="list-style: none">
-          <li>
-            <a href="../../tools/free-skill-assessment.html">Skill Assessment</a>
-          </li>
-          <li>
-            <a href="../../tools/course-recommendation-quiz.html">Course Finder Quiz</a>
-          </li>
-          <li>
-            <a href="../../tools/career-roadmaps.html">Career Roadmaps</a>
-          </li>
-          <li>
-            <a href="../../showcase/student-projects.html">Student Projects</a>
-          </li>
-          <li>
-            <a href="../../showcase/internship-showcase.html">Internship Showcase</a>
-          </li>
-          <li>
-            <a href="../../showcase/project-portfolios.html">Project Portfolios</a>
-          </li>
-          <li>
-            <a href="../../comparisons/technology-comparisons.html">Tech Comparisons</a>
-          </li>
-          <li>
-            <a href="../../tools/free-learning-resources.html">Free Resources</a>
-          </li>
-          <li>
-            <a href="../../guides/technology-career-guides.html">Career Guides</a>
-          </li>
-          <li>
-            <a href="../../tools/live-code-compiler.html">Live Code &amp; Syntax Validator</a>
-          </li>
+          <li><a href="../../tools/index.html">Interactive Tools Suite</a></li>
+          <li><a href="../../tools/pune-it-salary-calculator.html">Pune IT Salary Calculator</a></li>
+          <li><a href="../../tools/pune-it-salary-report.html">Pune IT Salary Report 2026</a></li>
+          <li><a href="../../tools/course-recommendation-quiz.html">Course Finder Quiz</a></li>
+          <li><a href="../../tools/free-skill-assessment.html">Skill Assessment</a></li>
+          <li><a href="../../tools/career-roadmaps.html">Career Roadmaps</a></li>
+          <li><a href="../../guides/index.html">Career &amp; Tech Guides</a></li>
+          <li><a href="../../showcase/index.html">Student Project Showcase</a></li>
+          <li><a href="../../comparisons/technology-comparisons.html">Tech Comparisons</a></li>
+          <li><a href="../../tools/live-code-compiler.html">Live Code &amp; Syntax Validator</a></li>
         </ul>
       </div>
       <div class="footer-contact">
@@ -1479,8 +1414,8 @@
       </div>
       <div style="display: flex; gap: 1rem; flex-wrap: wrap">
         <a href="../../sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
-            <span style="color: var(--border)">|</span>
-            <a href="../../feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
+        <span style="color: var(--border)">|</span>
+        <a href="../../feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
         <span style="color: var(--border)">|</span>
         <a href="../../privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
         <span style="color: var(--border)">|</span>
