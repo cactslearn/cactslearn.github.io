@@ -1540,5 +1540,70 @@
         "date": "2026-07-04"
       }
     ]
+  },
+  {
+    "slug": "ai-red-teaming-training",
+    "name": "AI Red Teaming & Security Training",
+    "price": "₹24,999",
+    "price_num": 24999,
+    "duration": "12 Weeks",
+    "gbp_category": "Computer Training School",
+    "gbp_description": "1-to-1 AI Red Teaming & LLM Security training in Pune. Master prompt injection defense, PyRIT scanning, and adversarial AI safety with hands-on coding.",
+    "seo_title": "AI Red Teaming & Offensive AI Security Course in Pune | CACTS",
+    "meta_description": "AI Red Teaming & LLM Security Specialist training course in Pune. Learn prompt injection defense, adversarial AI red teaming & LLM moderation with 1-to-1 coaching.",
+    "h1": "AI Red Teaming & Offensive AI Security Course in Pune",
+    "h2": "Hands-On LLM Security & Adversarial AI Bootcamp: Master prompt injection attacks, PyRIT scanning, and LLM guardrails under 1-to-1 coaching in Pune.",
+    "skills": [
+      "OWASP Top 10 for GenAI",
+      "PyRIT Automated Scanning",
+      "Prompt Injection & Jailbreaking",
+      "Model Guardrails & Moderation",
+      "Adversarial Robustness Testing",
+      "Python Security Automation",
+      "Docker & Git"
+    ],
+    "overview": "We do not offer generic courses. We assign you a dedicated seat in the lab under a senior developer who reviews your security audits and testing scripts daily. Master LLM vulnerability assessment, automated PyRIT scans, and AI safety testing from day one.",
+    "modules": [
+      {
+        "title": "Module 1: Foundations of GenAI Security & OWASP Top 10 for LLMs",
+        "duration": "3 Weeks",
+        "topics": [
+          "LLM Architectures, Prompt Processing, and Attention Mechanisms",
+          "OWASP Top 10 for Large Language Models Deep Dive",
+          "Direct and Indirect Prompt Injections and Data Exfiltration",
+          "System Prompt Leakage and Insecure Output Handling"
+        ]
+      },
+      {
+        "title": "Module 2: Adversarial Attacks, Jailbreaking & Red Teaming Frameworks",
+        "duration": "3 Weeks",
+        "topics": [
+          "Token Manipulation, Cipher Attacks & Obfuscation Techniques",
+          "Automated Red Teaming with Microsoft PyRIT and Garak",
+          "Adversarial Robustness Testing and Benchmark Evaluation",
+          "Multi-Turn Conversation Exploitation and Context Poisoning"
+        ]
+      },
+      {
+        "title": "Module 3: Defensive Engineering, Guardrails & Moderation Middleware",
+        "duration": "3 Weeks",
+        "topics": [
+          "Implementing NeMo Guardrails and Llama Guard",
+          "Input/Output Filtering and Embedding-Based Semantic Defense",
+          "Rate Limiting, Anomaly Detection & Prompt Sanitization",
+          "Secure API Gateway Integration and Access Control for GenAI"
+        ]
+      },
+      {
+        "title": "Module 4: Enterprise Compliance, Auditing & Live Project Internship",
+        "duration": "3 Weeks",
+        "topics": [
+          "NIST AI Risk Management Framework & EU AI Act Compliance",
+          "Compiling Professional AI Security Audit Reports",
+          "End-to-End Enterprise LLM Security Assessment",
+          "Live Project Internship on Active AI Staging Environments"
+        ]
+      }
+    ]
   }
 ]

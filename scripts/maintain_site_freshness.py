@@ -461,6 +461,83 @@ def refresh_course_instance_dates():
     else:
         print(f"[INFO] All {total_scanned} CourseInstance page dates (Primary: {batch1_iso}) are already up to date.")
 
+def refresh_homepage_and_catalog_course_cards():
+    """
+    Specifically updates the 16 course cards in index.html (#courses)
+    and the 16 course cards in courses/index.html (#index-tracks-heading)
+    with current batch dates, deterministic seats, candidate counts, and salary benchmarks.
+    Does NOT modify other pages.
+    """
+    b1_str, b1_iso, b2_str, b2_iso = calculate_upcoming_batch_dates()
+    now = get_now_ist()
+    months_elapsed = max(0, (now.year - 2026) * 12 + (now.month - 1))
+
+    # 1. Update index.html course cards
+    idx_path = os.path.join(PROJECT_ROOT, "index.html")
+    if os.path.exists(idx_path):
+        with open(idx_path, "r", encoding="utf-8") as f:
+            idx_content = f.read()
+
+        new_idx = idx_content
+        for track, m in COURSE_METRICS.items():
+            cand_count = m['base_students'] + (months_elapsed * m['monthly_rate'])
+            cand_badge = f"{int(round(cand_count / 10.0) * 10)}+ Candidates"
+            salary_range = m['salary_range']
+            key = f"{track}_{b1_iso}"
+            hash_val = int(hashlib.md5(key.encode("utf-8")).hexdigest()[:4], 16)
+            seats = (hash_val % 5) + 1
+
+            pattern = rf'(<div class="card">(?:(?!<div class="card">).)*?href=["\']courses/{track}/["\'].*?)(<div style="margin-top: 0\.75rem; margin-bottom: 1\.25rem;.*?</div>\s*</div>)'
+            match = re.search(pattern, new_idx, re.DOTALL)
+            if match:
+                card_head = match.group(1)
+                badge_block = match.group(2)
+                badge_block = re.sub(r'(<span class=["\']next-batch-date["\']>)[^<]+(</span>)', rf'\g<1>{b1_str}\2', badge_block)
+                badge_block = re.sub(r'(<span class=["\']remaining-seats["\']>)[^<]+(</span>)', rf'\g<1>{seats} Seats Left\2', badge_block)
+                badge_block = re.sub(r'(<span class=["\']candidates-count["\']>)[^<]+(</span>)', rf'\g<1>{cand_badge}\2', badge_block)
+                badge_block = re.sub(r'(<span class=["\']salary-benchmark["\']>)[^<]+(</span>)', rf'\g<1>{salary_range}\2', badge_block)
+                new_idx = new_idx[:match.start()] + card_head + badge_block + new_idx[match.end():]
+
+        if new_idx != idx_content:
+            with open(idx_path, "w", encoding="utf-8") as f:
+                f.write(new_idx)
+            print(f"[SUCCESS] Updated 16 course cards in index.html with batch {b1_str}.")
+        else:
+            print(f"[INFO] 16 course cards in index.html are already up to date ({b1_str}).")
+
+    # 2. Update courses/index.html course cards
+    courses_idx_path = os.path.join(PROJECT_ROOT, "courses", "index.html")
+    if os.path.exists(courses_idx_path):
+        with open(courses_idx_path, "r", encoding="utf-8") as f:
+            courses_idx = f.read()
+
+        new_courses_idx = courses_idx
+        for track, m in COURSE_METRICS.items():
+            cand_count = m['base_students'] + (months_elapsed * m['monthly_rate'])
+            cand_badge = f"{int(round(cand_count / 10.0) * 10)}+ Candidates"
+            salary_range = m['salary_range']
+            key = f"{track}_{b1_iso}"
+            hash_val = int(hashlib.md5(key.encode("utf-8")).hexdigest()[:4], 16)
+            seats = (hash_val % 5) + 1
+
+            pattern = rf'(<div class="card"[^>]*>(?:(?!<div class="card").)*?href=["\']{track}/index\.html["\'].*?)(<div style="margin-top: 0\.75rem; margin-bottom: 1rem;.*?</div>\s*</div>)'
+            match = re.search(pattern, new_courses_idx, re.DOTALL)
+            if match:
+                card_head = match.group(1)
+                badge_block = match.group(2)
+                badge_block = re.sub(r'(<span class=["\']next-batch-date["\']>)[^<]+(</span>)', rf'\g<1>{b1_str}\2', badge_block)
+                badge_block = re.sub(r'(<span class=["\']remaining-seats["\']>)[^<]+(</span>)', rf'\g<1>{seats} Seats Left\2', badge_block)
+                badge_block = re.sub(r'(<span class=["\']candidates-count["\']>)[^<]+(</span>)', rf'\g<1>{cand_badge}\2', badge_block)
+                badge_block = re.sub(r'(<span class=["\']salary-benchmark["\']>)[^<]+(</span>)', rf'\g<1>{salary_range}\2', badge_block)
+                new_courses_idx = new_courses_idx[:match.start()] + card_head + badge_block + new_courses_idx[match.end():]
+
+        if new_courses_idx != courses_idx:
+            with open(courses_idx_path, "w", encoding="utf-8") as f:
+                f.write(new_courses_idx)
+            print(f"[SUCCESS] Updated 16 catalog cards in courses/index.html with batch {b1_str}.")
+        else:
+            print(f"[INFO] 16 catalog cards in courses/index.html are already up to date ({b1_str}).")
+
 def refresh_faq_dates():
     """
     Refreshes intake batch dates inside FAQPage JSON-LD schema AND human-visible FAQ DOM accordions
@@ -669,11 +746,13 @@ def sync_rss_feeds():
             for c in courses:
                 t_esc = c['name'].replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
                 d_esc = c['meta_description'].replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+                track_slug = c['slug'].replace('-training', '')
+                course_url = f"https://cactslearn.github.io/courses/{track_slug}/"
                 courses_items_xml += f"""
     <item>
       <title>{t_esc} Course &amp; Certification | CACTS Pune</title>
-      <link>https://cactslearn.github.io/{c['slug']}.html</link>
-      <guid isPermaLink="true">https://cactslearn.github.io/{c['slug']}.html</guid>
+      <link>{course_url}</link>
+      <guid isPermaLink="true">{course_url}</guid>
       <pubDate>{rfc822_now}</pubDate>
       <description><![CDATA[{d_esc}]]></description>
       <category>Software Training</category>
@@ -759,6 +838,9 @@ def main():
 
     # 4. Refresh CourseInstance startDate schema & visible DOM batch dates in all pages
     refresh_course_instance_dates()
+
+    # 4.1 Specifically refresh the 16 course cards in index.html and courses/index.html
+    refresh_homepage_and_catalog_course_cards()
 
     # 4.5 Refresh Date-Anchored FAQ Answers in JSON-LD & DOM
     refresh_faq_dates()
