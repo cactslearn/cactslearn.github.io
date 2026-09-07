@@ -239,7 +239,9 @@ def parse_existing_sitemap_lastmods(sitemap_path):
                 lastmod_elem = url_elem.find('sm:lastmod', ns)
                 if loc_elem is not None and loc_elem.text and lastmod_elem is not None and lastmod_elem.text:
                     url = loc_elem.text.strip()
+                    url_clean = re.sub(r'(?<!:)//+', '/', url)
                     lastmods[url] = lastmod_elem.text.strip()
+                    lastmods[url_clean] = lastmod_elem.text.strip()
         except Exception:
             pass
     return lastmods
@@ -3090,6 +3092,21 @@ def build():
                     url = "https://cactslearn.github.io/"
                     priority = "1.0"
                     changefreq = "monthly"
+                elif rel_path.endswith("/index.html"):
+                    # Subdirectory index: strip index.html and keep single trailing slash (e.g. 'courses/ai-ml/')
+                    url = f"https://cactslearn.github.io/{rel_path[:-10]}"
+                    if rel_path.startswith("courses/"):
+                        priority = "0.9"
+                        changefreq = "weekly"
+                    elif rel_path.startswith("jobs/"):
+                        priority = "0.8"
+                        changefreq = "weekly"
+                    elif rel_path.startswith("tools/"):
+                        priority = "0.9"
+                        changefreq = "weekly"
+                    else:
+                        priority = "0.8"
+                        changefreq = "monthly"
                 else:
                     url = f"https://cactslearn.github.io/{rel_path}"
                     if rel_path.startswith("jobs/"):
@@ -3107,6 +3124,9 @@ def build():
                     else:
                         priority = "0.8"
                         changefreq = "monthly"
+
+                # Normalize duplicate slashes in the path (excluding protocol https://)
+                url = re.sub(r'(?<!:)//+', '/', url)
 
                 all_site_pages.append((url, rel_path, priority, changefreq))
 

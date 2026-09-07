@@ -31,13 +31,13 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses//</loc>
+        <loc>https://cactslearn.github.io/courses/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/ai-ml//</loc>
+        <loc>https://cactslearn.github.io/courses/ai-ml/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -145,7 +145,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/blockchain//</loc>
+        <loc>https://cactslearn.github.io/courses/blockchain/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -199,7 +199,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/cloud//</loc>
+        <loc>https://cactslearn.github.io/courses/cloud/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -253,7 +253,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/cybersecurity//</loc>
+        <loc>https://cactslearn.github.io/courses/cybersecurity/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -307,7 +307,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/data-engineering//</loc>
+        <loc>https://cactslearn.github.io/courses/data-engineering/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -361,7 +361,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/data-science//</loc>
+        <loc>https://cactslearn.github.io/courses/data-science/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -415,7 +415,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/devops//</loc>
+        <loc>https://cactslearn.github.io/courses/devops/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -469,7 +469,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/full-stack//</loc>
+        <loc>https://cactslearn.github.io/courses/full-stack/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -523,7 +523,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/java-fullstack//</loc>
+        <loc>https://cactslearn.github.io/courses/java-fullstack/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -577,7 +577,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/power-bi//</loc>
+        <loc>https://cactslearn.github.io/courses/power-bi/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -631,7 +631,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/python//</loc>
+        <loc>https://cactslearn.github.io/courses/python/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -685,7 +685,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/react-js//</loc>
+        <loc>https://cactslearn.github.io/courses/react-js/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -739,7 +739,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/react-native//</loc>
+        <loc>https://cactslearn.github.io/courses/react-native/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -793,7 +793,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/software-architect//</loc>
+        <loc>https://cactslearn.github.io/courses/software-architect/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -847,7 +847,7 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/courses/software-testing//</loc>
+        <loc>https://cactslearn.github.io/courses/software-testing/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -907,7 +907,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/guides//</loc>
+        <loc>https://cactslearn.github.io/guides/</loc>
         <lastmod>2026-09-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -1027,7 +1027,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/jobs//</loc>
+        <loc>https://cactslearn.github.io/jobs/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -1135,7 +1135,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/locations//</loc>
+        <loc>https://cactslearn.github.io/locations/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -1351,7 +1351,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/showcase//</loc>
+        <loc>https://cactslearn.github.io/showcase/</loc>
         <lastmod>2026-09-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -1393,7 +1393,7 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/tools//</loc>
+        <loc>https://cactslearn.github.io/tools/</loc>
         <lastmod>2026-09-02</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
