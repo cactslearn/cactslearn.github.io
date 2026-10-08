@@ -99,7 +99,9 @@ window.CactsSocialShareEngine = (function() {
     'react-js': ['#ReactJS', '#FrontendDev', '#JavaScript', '#CACTSPune'],
     'react-native': ['#ReactNative', '#MobileAppDev', '#AppDevelopment', '#CACTSPune'],
     'software-architect': ['#SoftwareArchitecture', '#SystemDesign', '#Microservices', '#CACTSPune'],
-    'software-testing': ['#SoftwareTesting', '#QAAutomation', '#Selenium', '#SDET', '#CACTSPune']
+    'software-testing': ['#SoftwareTesting', '#QAAutomation', '#Selenium', '#SDET', '#CACTSPune'],
+    'academic-projects': ['#EngineeringProjects', '#FinalYearProject', '#SystemDesign', '#CACTSPune'],
+    'ojt-internship': ['#SoftwareInternship', '#CollegeOJT', '#WebDevelopment', '#CACTSPune']
   };
 
   // Job Role Specific Hashtags

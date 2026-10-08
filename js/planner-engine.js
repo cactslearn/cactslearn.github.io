@@ -65,8 +65,8 @@ window.CactsPlannerEngine = (function () {
       const schema = (item.schema_type || '').toUpperCase();
       const urlLower = (item.url || '').toLowerCase();
 
-      // High-priority urgent items: Active Tech Jobs, Certificate Verification, or explicitly marked new items
-      const isHighPriorityUrgent = schema.includes('JOB') || schema.includes('CREDENTIAL') || urlLower.includes('/jobs/') || urlLower.includes('verify.html') || item.is_new;
+      // High-priority urgent items: Active Tech Jobs, Certificate Verification, Academic Mentorship, OJT, or explicitly marked new items
+      const isHighPriorityUrgent = schema.includes('JOB') || schema.includes('CREDENTIAL') || schema.includes('ACADEMIC') || schema.includes('OJT') || urlLower.includes('/jobs/') || urlLower.includes('verify.html') || urlLower.includes('academic-projects.html') || urlLower.includes('ojt-internship.html') || item.is_new;
 
       if (isHighPriorityUrgent) {
         urgentQueue.push(item);
@@ -278,7 +278,7 @@ window.CactsPlannerEngine = (function () {
         if (currentFilter === 'UNSHARED') {
           if (shareHistory.includes(item.url)) return false;
         } else if (currentFilter === 'JOB' && !itemSchema.includes('JOB') && !urlLower.includes('/jobs/')) return false;
-        else if (currentFilter === 'COURSE' && !itemSchema.includes('COURSE') && !urlLower.includes('/courses/')) return false;
+        else if (currentFilter === 'COURSE' && !itemSchema.includes('COURSE') && !itemSchema.includes('ACADEMIC') && !itemSchema.includes('OJT') && !urlLower.includes('/courses/') && !urlLower.includes('academic-projects') && !urlLower.includes('ojt-internship')) return false;
         else if (currentFilter === 'CREDENTIAL' && !itemSchema.includes('CREDENTIAL') && !urlLower.includes('verify.html')) return false;
         else if (currentFilter === 'TOOL' && (!itemSchema.includes('WEBAPPLICATION') && !itemSchema.includes('TOOL')) && !urlLower.includes('/tools/')) return false;
         else if (currentFilter === 'REPORT' && !itemSchema.includes('REPORT') && !urlLower.includes('report')) return false;
@@ -305,6 +305,10 @@ window.CactsPlannerEngine = (function () {
 
     if (schema.includes('credential') || urlLower.includes('verify.html')) {
       return 'Target Recruiters & HR Managers with verified credential proof.';
+    } else if (schema.includes('academic') || urlLower.includes('academic-projects')) {
+      return 'Target Engineering, MCA & Diploma students with 1-to-1 project mentorship & viva prep.';
+    } else if (schema.includes('ojt') || urlLower.includes('ojt-internship')) {
+      return 'Reach college students seeking verified software OJT with real sprint tasks & Git code reviews.';
     } else if (schema.includes('job') || urlLower.includes('/jobs/')) {
       return 'Post hiring alert to reach Pune CS graduates & developers.';
     } else if (urlLower.includes('fees.html') || urlLower.includes('/fees/')) {

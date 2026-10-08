@@ -216,7 +216,7 @@ ALLOWED_ROOT_HTML = {
     "index.html", "about.html", "contact.html", "faqs.html",
     "reviews.html", "sitemap.html", "404.html", "privacy-policy.html",
     "terms-conditions.html", "verify.html", "planner.html",
-    "googleadedb2cbaba8a8c6.html"
+    "googleadedb2cbaba8a8c6.html", "academic-projects.html", "ojt-internship.html"
 }
 
 def write_if_changed(filepath, new_content):
@@ -294,6 +294,55 @@ def get_url_lastmod(url, relative_file_path, existing_lastmods, git_modified_fil
     
     return datetime.now().strftime("%Y-%m-%d")
 
+def synchronize_site_footers(site_root):
+    excluded_dirs = {".git", ".github", "node_modules", "venv", "scratch", "css", "js", "scripts", "__pycache__", ".well-known", "api", "feeds", "src"}
+    updated_count = 0
+
+    for root, dirs, files in os.walk(site_root):
+        dirs[:] = [d for d in dirs if d not in excluded_dirs]
+        for file in files:
+            if not file.endswith(".html"):
+                continue
+
+            file_path = os.path.join(root, file)
+            rel_path = os.path.relpath(file_path, site_root).replace("\\", "/")
+
+            if rel_path.startswith("src/"):
+                continue
+
+            depth = rel_path.count("/")
+            prefix = ("../" * depth) if depth > 0 else ""
+
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    content = f.read()
+
+                inst_pattern = re.compile(r'(<div class="footer-links">\s*<h4>Institutional Links</h4>\s*<ul[^>]*>)([\s\S]*?)(</ul>)', re.IGNORECASE)
+                match = inst_pattern.search(content)
+                if match:
+                    ul_content = match.group(2)
+                    if "academic-projects.html" not in ul_content:
+                        acad_link = f'<li><a href="{prefix}academic-projects.html">Academic Projects</a></li>'
+                        ojt_link = f'<li><a href="{prefix}ojt-internship.html">College OJT &amp; Internships</a></li>'
+                        new_links = f"\n          {acad_link}\n          {ojt_link}"
+
+                        about_re = re.compile(rf'(\s*<li><a href="{re.escape(prefix)}about\.html">.*?</a></li>)', re.IGNORECASE)
+                        if about_re.search(ul_content):
+                            new_ul = about_re.sub(rf'\1{new_links}', ul_content, count=1)
+                        else:
+                            new_ul = f"{new_links}\n{ul_content}"
+
+                        new_block = match.group(1) + new_ul + match.group(3)
+                        new_content = content[:match.start()] + new_block + content[match.end():]
+
+                        if write_if_changed(file_path, new_content):
+                            updated_count += 1
+            except Exception as e:
+                print(f"Error checking footer in {file_path}: {e}")
+
+    if updated_count > 0:
+        print(f"Synchronized Academic Projects & OJT links in footers of {updated_count} pages.")
+
 def build():
     # Ensure current working directory is the project root
     os.chdir(project_root)
@@ -322,6 +371,19 @@ def build():
     # 5. Generate Job Pages
     job_pages = generate_job_pages()
     print(f"Generated {len(job_pages)} job posting pages in jobs/ directory.")
+
+    # 5.1 Synchronize Core Academic Projects & College OJT Pages
+    for core_page in ["academic-projects.html", "ojt-internship.html"]:
+        src_core = os.path.join(project_root, "src", core_page)
+        if os.path.exists(src_core):
+            with open(src_core, "r", encoding="utf-8") as f:
+                core_content = f.read()
+            dest_core = os.path.join(project_root, core_page)
+            write_if_changed(dest_core, core_content)
+            print(f"Synchronized {core_page} from src/")
+
+    # 5.2 Synchronize Site Footers with Academic Projects & OJT Links
+    synchronize_site_footers(project_root)
 
     # 6. Generate sitemap.xml
     existing_lastmods = parse_existing_sitemap_lastmods(sitemap_file)
@@ -367,6 +429,9 @@ def build():
                         priority = "0.9"
                         changefreq = "weekly"
                     elif rel_path.startswith("tools/"):
+                        priority = "0.9"
+                        changefreq = "weekly"
+                    elif rel_path in ("academic-projects.html", "ojt-internship.html"):
                         priority = "0.9"
                         changefreq = "weekly"
                     elif rel_path == "software-training-institute-pune.html":
@@ -995,6 +1060,13 @@ def update_sitemap_html():
             """
             sm_content = sm_content.replace('</div>\n    </main>', f'{res_group}\n        </div>\n    </main>')
 
+        # Ensure Academic Projects & OJT links are present in sitemap.html Group 1
+        if "academic-projects.html" not in sm_content:
+            sm_content = sm_content.replace(
+                '<li><span class="sitemap-bullet">→</span><a href="about.html">About CACTS (Established 2012)</a></li>',
+                '<li><span class="sitemap-bullet">→</span><a href="about.html">About CACTS (Established 2012)</a></li>\n            <li><span class="sitemap-bullet">→</span><a href="academic-projects.html">Academic Projects (1-to-1 Mentorship)</a></li>\n            <li><span class="sitemap-bullet">→</span><a href="ojt-internship.html">Supervised College OJT &amp; Internships</a></li>'
+            )
+
         write_if_changed(sitemap_html_file, sm_content)
         print(f"Automatically updated {sitemap_html_file} with hierarchical course split page directory, careers section, 34 location hubs, & 51 learning guides!")
 
@@ -1105,6 +1177,10 @@ def build_content_index(site_root="."):
                     detected_schema = "JobPosting"
                 elif norm_url.startswith("/courses/"):
                     detected_schema = "Course"
+                elif norm_url == "/academic-projects.html":
+                    detected_schema = "AcademicProjectMentorship"
+                elif norm_url == "/ojt-internship.html":
+                    detected_schema = "CollegeOJT"
                 elif norm_url.startswith("/guides/") or norm_url.startswith("/comparisons/"):
                     detected_schema = "Article"
                 elif norm_url.startswith("/tools/") and "report" in norm_url:
