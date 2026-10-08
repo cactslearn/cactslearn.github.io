@@ -55,12 +55,12 @@
   },
   {
     "id": "data-science",
-    "name": "Data Science & Analytics",
+    "name": "Data Science & Machine Learning",
     "url": "https://cactslearn.github.io/courses/data-science/",
     "path": "courses/data-science/",
     "duration": "16 Weeks",
     "model": "1-to-1 Mentorship & Staging Internship",
-    "description": "Statistical modeling, Python, Pandas, NumPy, Scikit-Learn, SQL, and Power BI dashboards."
+    "description": "Statistical modeling, Python, Pandas, NumPy, Scikit-Learn, SQL, and Power BI dashboards with live internship."
   },
   {
     "id": "data-engineering",
@@ -82,12 +82,12 @@
   },
   {
     "id": "devops",
-    "name": "DevOps Engineering & Automation",
+    "name": "DevOps & Cloud Engineering (Docker/K8s)",
     "url": "https://cactslearn.github.io/courses/devops/",
     "path": "courses/devops/",
     "duration": "16 Weeks",
     "model": "1-to-1 Mentorship & Staging Internship",
-    "description": "CI/CD pipelines, Docker containerization, Kubernetes orchestration, Terraform & Ansible."
+    "description": "CI/CD pipelines, Docker containerization, Kubernetes orchestration, Terraform & AWS cloud infrastructure."
   },
   {
     "id": "cloud",
@@ -109,21 +109,21 @@
   },
   {
     "id": "software-testing",
-    "name": "Software Testing & Automation Lab",
+    "name": "Software Testing & QA Automation (SDET)",
     "url": "https://cactslearn.github.io/courses/software-testing/",
     "path": "courses/software-testing/",
     "duration": "12 Weeks",
     "model": "1-to-1 Mentorship & Staging Internship",
-    "description": "Manual testing QA, Selenium WebDriver, Playwright, API Testing (Postman/RestAssured), and TestNG."
+    "description": "Manual testing QA, Selenium WebDriver, Playwright, API Testing (Postman/RestAssured), and TestNG framework."
   },
   {
     "id": "cybersecurity",
-    "name": "Cybersecurity Operations & Defense",
+    "name": "Cybersecurity & SOC Analyst Training",
     "url": "https://cactslearn.github.io/courses/cybersecurity/",
     "path": "courses/cybersecurity/",
     "duration": "16 Weeks",
     "model": "1-to-1 Mentorship & Staging Internship",
-    "description": "Network security, ethical hacking, SOC operations, SIEM monitoring, and vulnerability assessment."
+    "description": "Network security, ethical hacking, SOC operations, SIEM monitoring, Splunk, and vulnerability assessment."
   },
   {
     "id": "blockchain",

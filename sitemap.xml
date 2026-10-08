@@ -1,13 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://cactslearn.github.io/</loc>
+        <loc>https://cactslearn.github.io/about.html</loc>
         <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/contact.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/faqs.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/about.html</loc>
+        <loc>https://cactslearn.github.io/privacy-policy.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/reviews.html</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/sitemap.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/terms-conditions.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/verify.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -25,20 +67,8 @@
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/contact.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://cactslearn.github.io/courses/</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/ai-ml/</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -67,6 +97,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/ai-ml/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/ai-ml/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -86,12 +122,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/ai-ml/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/ai-red-teaming/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -121,6 +151,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/ai-red-teaming/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/ai-red-teaming/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -140,12 +176,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/ai-red-teaming/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/blockchain/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -175,6 +205,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/blockchain/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/blockchain/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -194,12 +230,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/blockchain/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/cloud/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -229,6 +259,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/cloud/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/cloud/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -248,12 +284,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/cloud/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/cybersecurity/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -283,6 +313,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/cybersecurity/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/cybersecurity/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -302,12 +338,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/cybersecurity/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/data-engineering/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -337,6 +367,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/data-engineering/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/data-engineering/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -356,12 +392,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/data-engineering/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/data-science/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -391,6 +421,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/data-science/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/data-science/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -410,12 +446,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/data-science/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/devops/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -445,6 +475,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/devops/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/devops/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -464,12 +500,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/devops/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/full-stack/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -499,6 +529,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/full-stack/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/full-stack/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -518,12 +554,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/full-stack/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/java-fullstack/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -553,6 +583,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/java-fullstack/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/java-fullstack/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -572,12 +608,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/java-fullstack/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/power-bi/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -607,6 +637,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/power-bi/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/power-bi/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -626,12 +662,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/power-bi/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/python/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -661,6 +691,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/python/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/python/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -680,12 +716,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/python/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/react-js/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -715,6 +745,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/react-js/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/react-js/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -734,12 +770,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/react-js/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/react-native/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -769,6 +799,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/react-native/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/react-native/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -788,12 +824,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/react-native/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/software-architect/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -823,6 +853,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/software-architect/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/software-architect/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -842,12 +878,6 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/courses/software-architect/syllabus.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/courses/software-testing/</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -877,6 +907,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/courses/software-testing/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/courses/software-testing/interview-questions.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -901,38 +937,32 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/faqs.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/guides/</loc>
-        <lastmod>2026-09-02</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
         <loc>https://cactslearn.github.io/guides/how-ai-is-used-in-healthcare.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/how-data-engineering-is-used-in-e-commerce.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/how-devops-is-used-in-software-companies.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/how-power-bi-is-used-in-manufacturing.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/guides/</loc>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -944,139 +974,133 @@
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-does-a-blockchain-developer-do.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-does-a-data-engineer-do.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-does-a-devops-engineer-do.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-does-a-power-bi-developer-do.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-does-a-soc-analyst-do.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-does-an-ai-engineer-do.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-is-apache-spark.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-is-docker.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-is-hadoop.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-is-jenkins.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-is-kafka.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-is-kubernetes.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-is-power-bi.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/guides/what-is-terraform.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/jobs/</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
         <loc>https://cactslearn.github.io/jobs/ai-engineer-trainee.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/blockchain-developer-intern.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/cloud-infrastructure-trainee.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/cybersecurity-analyst-trainee.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/data-engineering-intern.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/data-science-intern.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/devops-trainee.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/full-stack-developer-intern.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -1087,316 +1111,292 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/jobs/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/jobs/java-backend-developer-trainee.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/power-bi-analytics-trainee.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/python-developer-apprentice.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/react-frontend-developer-intern.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/react-native-developer-trainee.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/seo-intern.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/software-architect-apprentice.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/jobs/software-testing-intern.html</loc>
-        <lastmod>2026-08-13</lastmod>
+        <lastmod>2026-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/locations/</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    <url>
         <loc>https://cactslearn.github.io/locations/akurdi.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/aundh.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/balewadi.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/baner.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/chinchwad.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/dhankawadi.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/erandwane.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/fc-road.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/hadapsar.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/hinjewadi-phase-1.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/hinjewadi-phase-2.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/hinjewadi-phase-3.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/jm-road.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/karve-road.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/karvenagar.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/katraj.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/kharadi.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/kothrud.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/magarpatta-city.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/mundhwa.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/nagar-road.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/nigdi.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/pimple-saudagar.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/pimpri.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/pune.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/rahatani.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/shivaji-nagar.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/sinhagad-road.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/swargate.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/viman-nagar.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/wagholi.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/wakad.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/locations/warje.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/privacy-policy.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://cactslearn.github.io/reviews.html</loc>
+        <loc>https://cactslearn.github.io/locations/aundh.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/balewadi.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/baner.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/chinchwad.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/dhankawadi.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/erandwane.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/fc-road.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/hadapsar.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/hinjewadi-phase-1.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/hinjewadi-phase-2.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/hinjewadi-phase-3.html</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/jm-road.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/karve-road.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/karvenagar.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/katraj.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/kharadi.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/kothrud.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/magarpatta-city.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/mundhwa.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/nagar-road.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/nigdi.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/pimple-saudagar.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/pimpri.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/pune.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/rahatani.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/shivaji-nagar.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/sinhagad-road.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/swargate.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/viman-nagar.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/wagholi.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/wakad.html</loc>
+        <lastmod>2026-08-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://cactslearn.github.io/locations/warje.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/showcase/</loc>
-        <lastmod>2026-09-02</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/showcase/internship-on-live-projects.html</loc>
         <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/showcase/internship-showcase.html</loc>
         <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/showcase/project-portfolios.html</loc>
         <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/showcase/student-projects.html</loc>
         <lastmod>2026-08-13</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.85</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/sitemap.html</loc>
-        <lastmod>2026-08-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/terms-conditions.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/tools/</loc>
-        <lastmod>2026-09-02</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
     </url>
     <url>
         <loc>https://cactslearn.github.io/tools/career-roadmaps.html</loc>
@@ -1435,6 +1435,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://cactslearn.github.io/tools/</loc>
+        <lastmod>2026-10-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://cactslearn.github.io/tools/live-code-compiler.html</loc>
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
@@ -1451,11 +1457,5 @@
         <lastmod>2026-08-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
-    </url>
-    <url>
-        <loc>https://cactslearn.github.io/verify.html</loc>
-        <lastmod>2026-08-13</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
     </url>
 </urlset>

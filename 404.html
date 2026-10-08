@@ -12,6 +12,120 @@
   <meta content="noindex, follow" name="robots" />
   <link href="https://cactslearn.github.io/404.html" rel="canonical" />
   <link href="css/style.css" rel="stylesheet" />
+  <!-- Smart Client-Side Redirect Engine for Legacy URLs -->
+  <script>
+    (function() {
+      try {
+        var rawPath = window.location.pathname || "";
+        var cleanPath = rawPath.replace(/^\/+|\/+$/g, '');
+        var filename = cleanPath.split('/').pop();
+        if (!filename && cleanPath) filename = cleanPath;
+
+        var redirectMap = {
+          "software-training-institute-pune.html": "locations/pune.html",
+          "software-training-institute-shivane.html": "locations/pune.html",
+          "software-training-institute-karvenagar.html": "locations/karvenagar.html",
+          "software-training-institute-kothrud.html": "locations/kothrud.html",
+          "software-training-institute-sinhagad-road.html": "locations/sinhagad-road.html",
+          "software-training-institute-warje.html": "locations/warje.html",
+          "software-training-institute-hadapsar.html": "locations/hadapsar.html",
+          "software-training-institute-hinjewadi.html": "locations/hinjewadi-phase-1.html",
+          "software-training-institute-baner.html": "locations/baner.html",
+          "software-training-institute-wakad.html": "locations/wakad.html",
+          "software-training-institute-viman-nagar.html": "locations/viman-nagar.html",
+          "software-training-institute-aundh.html": "locations/aundh.html",
+
+          "react-js-training.html": "courses/react-js/",
+          "software-testing-training.html": "courses/software-testing/",
+          "data-science-training.html": "courses/data-science/",
+          "react-native-training.html": "courses/react-native/",
+          "python-training.html": "courses/python/",
+          "python-programming-training.html": "courses/python/",
+          "power-bi-training.html": "courses/power-bi/",
+          "ai-ml-training.html": "courses/ai-ml/",
+          "ai-machine-learning-training.html": "courses/ai-ml/",
+          "devops-training.html": "courses/devops/",
+          "software-architect-training.html": "courses/software-architect/",
+          "cloud-training.html": "courses/cloud/",
+          "cloud-computing-training.html": "courses/cloud/",
+          "data-engineering-training.html": "courses/data-engineering/",
+          "cybersecurity-training.html": "courses/cybersecurity/",
+          "blockchain-training.html": "courses/blockchain/",
+          "full-stack-training.html": "courses/full-stack/",
+          "java-fullstack-training.html": "courses/java-fullstack/",
+          "one-to-one-software-training.html": "courses/index.html",
+
+          "python-programming-roadmap.html": "courses/python/roadmap.html",
+          "python-roadmap.html": "courses/python/roadmap.html",
+          "data-engineering-roadmap.html": "courses/data-engineering/roadmap.html",
+          "ai-ml-roadmap.html": "courses/ai-ml/roadmap.html",
+          "ai-machine-learning-roadmap.html": "courses/ai-ml/roadmap.html",
+          "data-science-roadmap.html": "courses/data-science/roadmap.html",
+          "devops-roadmap.html": "courses/devops/roadmap.html",
+          "cloud-roadmap.html": "courses/cloud/roadmap.html",
+          "cloud-computing-roadmap.html": "courses/cloud/roadmap.html",
+          "software-testing-roadmap.html": "courses/software-testing/roadmap.html",
+          "power-bi-roadmap.html": "courses/power-bi/roadmap.html",
+          "cybersecurity-roadmap.html": "courses/cybersecurity/roadmap.html",
+
+          "course-recommendation-quiz.html": "tools/course-recommendation-quiz.html",
+          "course-readiness-check.html": "tools/course-readiness-check.html",
+          "career-roadmaps.html": "tools/career-roadmaps.html",
+          "pune-it-salary-calculator.html": "tools/pune-it-salary-calculator.html",
+          "pune-it-salary-report.html": "tools/pune-it-salary-report.html",
+          "free-career-guidance.html": "tools/free-career-guidance.html",
+          "free-skill-assessment.html": "tools/free-skill-assessment.html",
+          "free-learning-resources.html": "tools/free-learning-resources.html",
+          "live-code-compiler.html": "tools/live-code-compiler.html",
+
+          "internship-showcase.html": "showcase/internship-showcase.html",
+          "project-portfolios.html": "showcase/project-portfolios.html",
+          "student-projects.html": "showcase/student-projects.html",
+          "software-development-internship.html": "showcase/internship-on-live-projects.html",
+          "live-project-internship.html": "showcase/internship-on-live-projects.html",
+
+          "cacts-vs-classroom-vs-ai.html": "comparisons/cacts-vs-classroom-vs-ai.html",
+          "technology-comparisons.html": "comparisons/technology-comparisons.html",
+          "technology-career-guides.html": "guides/technology-career-guides.html",
+          "careers.html": "jobs/index.html"
+        };
+
+        var target = redirectMap[filename];
+
+        // Pattern matching fallback
+        if (!target && filename) {
+          if (filename.indexOf("software-training-institute-") === 0) {
+            var loc = filename.replace("software-training-institute-", "").replace(".html", "");
+            target = "locations/" + loc + ".html";
+          } else if (filename.indexOf("-training.html") !== -1) {
+            var crs = filename.replace("-training.html", "");
+            target = "courses/" + crs + "/";
+          } else if (filename.indexOf("-roadmap.html") !== -1) {
+            var rd = filename.replace("-roadmap.html", "");
+            target = "courses/" + rd + "/roadmap.html";
+          }
+        }
+
+        if (target) {
+          var dest = (window.location.origin ? window.location.origin : "") + "/" + target;
+          window._cactsRedirectTarget = dest;
+          window.location.replace(dest);
+        }
+      } catch (e) {
+        // Fallback silently if any error occurs
+      }
+    })();
+    document.addEventListener("DOMContentLoaded", function() {
+      if (window._cactsRedirectTarget) {
+        var banner = document.getElementById("redirect-banner");
+        var link = document.getElementById("redirect-banner-link");
+        if (banner && link) {
+          link.href = window._cactsRedirectTarget;
+          banner.style.display = "block";
+        }
+      }
+    });
+  </script>
   <!-- JSON-LD BreadcrumbList Schema for 404 -->
   <script type="application/ld+json">
       {
@@ -143,6 +257,17 @@
         The page you are looking for might have been removed, had its name
         changed, or is temporarily unavailable. Let's get you back on track.
       </p>
+      <div id="redirect-banner" style="display: none; background: rgba(20, 184, 166, 0.12); border: 1px solid var(--accent); padding: 1.25rem; border-radius: 12px; margin-bottom: 2rem; text-align: left;">
+        <p style="color: var(--accent-light); font-weight: 700; margin-bottom: 0.35rem; font-size: 1.05rem;">
+          Redirecting to updated page...
+        </p>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.75rem;">
+          We recently reorganized our course catalog and local training centers.
+        </p>
+        <a id="redirect-banner-link" href="#" class="btn btn-accent" style="display: inline-block; padding: 0.45rem 1rem; font-size: 0.88rem; color: #0b0f19;">
+          Click here if not redirected automatically &rarr;
+        </a>
+      </div>
       <div style="
             display: grid;
             grid-template-columns: repeat(2, 1fr);
