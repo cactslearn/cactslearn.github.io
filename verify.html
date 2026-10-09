@@ -268,6 +268,18 @@
       color: var(--danger);
     }
 
+    .status-alert.loading {
+      display: flex;
+      background: rgba(2, 132, 199, 0.12);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
     .status-alert-info {
       display: flex;
       align-items: center;
@@ -1796,32 +1808,78 @@
       fetchCertificateRecord(certId);
     }
 
+    const CERT_API_ENDPOINT = "https://script.google.com/macros/s/AKfycbxPfWNqDgntuL1IaQnjfgkNbbVhlxMzgXE2mjfSrOsaPYeyC_nIlSzEOkcDcZ7S4_s/exec";
+
     function fetchCertificateRecord(certId) {
-      if (certId.length < 6) {
-        showError('Invalid Certificate ID Format', 'Certificate IDs must follow the YYYYMMDDXXXX format (e.g. 20260812001).');
+      if (!certId || certId.trim().length < 4) {
+        showError('Invalid Certificate ID Format', 'Please enter a valid Certificate ID (e.g. 20260812001).');
         return;
       }
 
-      const yearMonth = certId.substring(0, 6);
-      const recordFilePath = `records/${yearMonth}.json`;
+      const cleanId = certId.trim();
 
-      fetch(recordFilePath)
+      // Display live authentication loading state
+      const statusBanner = document.getElementById('statusBanner');
+      statusBanner.className = 'status-alert loading';
+      document.getElementById('statusInfo').innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="12"></circle></svg>
+        <span>CONNECTING TO LIVE ACCREDITATION GATEWAY: Authenticating Certificate ID ${cleanId}...</span>
+      `;
+      document.getElementById('statusTimestamp').innerText = 'Querying registry...';
+      document.getElementById('errorCard').style.display = 'none';
+
+      const apiUrl = `${CERT_API_ENDPOINT}?id=${encodeURIComponent(cleanId)}`;
+
+      fetch(apiUrl)
         .then(response => {
           if (!response.ok) {
-            throw new Error(`Record file ${recordFilePath} not found.`);
+            throw new Error(`Live gateway responded with HTTP status ${response.status}`);
           }
           return response.json();
         })
         .then(data => {
-          if (data && data[certId]) {
-            renderCertificate(data[certId]);
+          if (!data || data.success === false || data.error) {
+            const msg = (data && data.message) ? data.message : `No accreditation record matching Certificate ID "${cleanId}" was found in the live verification registry.`;
+            showError('Certificate Record Not Found', msg);
+            return;
+          }
+
+          const record = (data[cleanId] && typeof data[cleanId] === 'object') ? data[cleanId] : data;
+          if (record && (record.id || record.studentName)) {
+            // Defensively ensure array/object attributes are parsed if stringified
+            if (typeof record.skills === 'string') {
+              try { record.skills = JSON.parse(record.skills); } catch (e) { record.skills = record.skills.split(',').map(s => s.trim()); }
+            }
+            if (typeof record.projects === 'string') {
+              try { record.projects = JSON.parse(record.projects); } catch (e) {}
+            }
+            if (typeof record.signees === 'string') {
+              try { record.signees = JSON.parse(record.signees); } catch (e) {}
+            }
+            renderCertificate(record);
           } else {
-            showError('Certificate Record Not Found', `No accreditation record matching Certificate ID "${certId}" was found in record file ${yearMonth}.json.`);
+            showError('Certificate Record Not Found', `No accreditation record matching Certificate ID "${cleanId}" was found in the live verification registry.`);
           }
         })
         .catch(err => {
-          console.warn(err);
-          showError('Certificate Record Not Found', `No active verification file found for period "${yearMonth}". Please confirm your Certificate ID.`);
+          console.warn('Live API request failed, checking local backup if available:', err);
+          if (cleanId.length >= 6) {
+            const yearMonth = cleanId.substring(0, 6);
+            fetch(`records/${yearMonth}.json`)
+              .then(res => res.ok ? res.json() : Promise.reject())
+              .then(localData => {
+                if (localData && localData[cleanId]) {
+                  renderCertificate(localData[cleanId]);
+                  return;
+                }
+                showError('Certificate Record Not Found', `No accreditation record matching Certificate ID "${cleanId}" could be authenticated.`);
+              })
+              .catch(() => {
+                showError('Verification Gateway Unavailable', `Could not connect to the live verification registry. Please check your internet connection and try again.`);
+              });
+          } else {
+            showError('Verification Gateway Unavailable', `Could not connect to the live verification registry. Please check your internet connection and try again.`);
+          }
         });
     }
 
