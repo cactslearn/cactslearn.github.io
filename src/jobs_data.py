@@ -26,7 +26,7 @@ JOBS_DATA = [
     "meta_title": "Full Stack Developer Trainee | CACTS Pune",
     "meta_description": "Apply for Full Stack Developer Trainee at CACTS Pune. Build active MERN web apps under 1-to-1 senior mentorship. Open for freshers & interns.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -56,7 +56,7 @@ JOBS_DATA = [
     "meta_title": "Java Full Stack Developer Trainee | CACTS Pune",
     "meta_description": "Apply for Java Full Stack Trainee at CACTS Pune. Build Spring Boot microservices & SQL database systems under 1-to-1 mentorship. Open for freshers.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -85,7 +85,7 @@ JOBS_DATA = [
     "meta_title": "Python Software Engineer Trainee | CACTS Pune",
     "meta_description": "Apply for Python Developer Apprentice at CACTS Pune. Build automation scripts, Web APIs & data workflows under 1-to-1 mentorship. Open for freshers.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -114,7 +114,7 @@ JOBS_DATA = [
     "meta_title": "Data Science & AI Intern (Python, SQL & ML) | CACTS Pune",
     "meta_description": "Apply for Data Science Intern at CACTS Pune. Clean datasets, train Scikit-Learn ML models & build BI dashboards under 1-to-1 senior mentorship.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -143,7 +143,7 @@ JOBS_DATA = [
     "meta_title": "AI & ML Engineering Trainee | CACTS Pune",
     "meta_description": "Apply for AI Engineering Trainee at CACTS Pune. Build LLM fine-tuning pipelines & neural network models under 1-to-1 mentorship. Open for freshers.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -172,7 +172,7 @@ JOBS_DATA = [
     "meta_title": "Data Engineering Pipeline Intern | CACTS Pune",
     "meta_description": "Apply for Data Engineering Intern at CACTS Pune. Build ETL data pipelines & manage Spark data warehouses under 1-to-1 mentorship. Open for freshers.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -201,7 +201,7 @@ JOBS_DATA = [
     "meta_title": "Cloud & AWS Infrastructure Trainee | CACTS Pune",
     "meta_description": "Apply for Cloud AWS Trainee at CACTS Pune. Configure EC2 instances, S3 buckets, VPC networks & IAM policies under 1-to-1 senior mentorship.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -230,7 +230,7 @@ JOBS_DATA = [
     "meta_title": "DevOps & Cloud Engineer Trainee (Docker / K8s / CI-CD) | CACTS Pune",
     "meta_description": "Apply for DevOps Trainee Internship at CACTS Pune. Build Docker, Kubernetes, Jenkins & AWS CI/CD pipelines under 1-to-1 senior mentorship.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -259,7 +259,7 @@ JOBS_DATA = [
     "meta_title": "QA Automation & Selenium Testing Intern (SDET) | CACTS Pune",
     "meta_description": "Apply for QA Automation Intern at CACTS Pune. Write automated Selenium Webdriver test suites & API validations under 1-to-1 senior mentorship.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -288,7 +288,7 @@ JOBS_DATA = [
     "meta_title": "SOC Analyst Internship for Freshers (L1/L2) | \u20b915k\u2013\u20b920k Stipend | CACTS Pune",
     "meta_description": "Apply for SOC Analyst Internship for freshers at CACTS Pune. Hands-on SIEM, Splunk, Wireshark & threat detection under 1-to-1 senior mentor code reviews.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -317,7 +317,7 @@ JOBS_DATA = [
     "meta_title": "Power BI Analytics Trainee | CACTS Pune",
     "meta_description": "Apply for Power BI Trainee at CACTS Pune. Build interactive DAX dashboards & enterprise business analytics under 1-to-1 senior mentorship.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -346,7 +346,7 @@ JOBS_DATA = [
     "meta_title": "Software Architect Apprentice | CACTS Pune",
     "meta_description": "Apply for Software Architect Apprentice at CACTS Pune. Design microservices, event streams & system architecture under 1-to-1 senior mentorship.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -375,7 +375,7 @@ JOBS_DATA = [
     "meta_title": "React Frontend Developer Intern | CACTS Pune",
     "meta_description": "Apply for React Frontend Intern at CACTS Pune. Build interactive React 18 UI components & Redux store logic under 1-to-1 senior mentorship.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -404,7 +404,7 @@ JOBS_DATA = [
     "meta_title": "React Native Mobile App Trainee | CACTS Pune",
     "meta_description": "Apply for React Native Mobile Trainee at CACTS Pune. Build cross-platform iOS & Android mobile apps under 1-to-1 senior mentorship.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -433,7 +433,7 @@ JOBS_DATA = [
     "meta_title": "Blockchain Developer Intern | CACTS Pune",
     "meta_description": "Apply for Blockchain Developer Intern at CACTS Pune. Develop Ethereum smart contracts using Solidity & Web3.js under 1-to-1 senior mentorship.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   },
   {
@@ -470,7 +470,7 @@ JOBS_DATA = [
     "meta_title": "SEO Intern Job Opening in Pune (Aundh) | CACTS",
     "meta_description": "Apply for SEO Intern position at CACTS Pune (Aundh). Learn keyword research, on-page/off-page SEO & Google Analytics on real projects. Stipend: \u20b910,000/month.",
     "date_posted": "2026-08-01",
-    "valid_through": "2027-01-08T23:59:59Z",
+    "valid_through": "2027-01-09T23:59:59Z",
     "status": "ACTIVE"
   }
 ]
