@@ -1152,7 +1152,7 @@
             Export High-Res PNG
           </button>
 
-          <button class="btn btn-secondary" id="copyLinkBtn" onclick="copyVerificationLink()">
+          <button class="btn btn-secondary" id="copyLinkBtn" onclick="copyVerificationLink()" disabled>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
               <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
@@ -1760,18 +1760,21 @@
       const ySpan = document.getElementById('footer-year');
       if (ySpan) ySpan.innerText = new Date().getFullYear();
 
+      const certInput = document.getElementById('certIdInput');
+      if (certInput) {
+        certInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') handleManualVerify();
+        });
+      }
+
       // Check URL query parameters for Certificate ID
       const urlParams = new URLSearchParams(window.location.search);
       const certId = urlParams.get('id');
       if (certId && certId.trim()) {
         document.getElementById('certIdInput').value = certId.trim();
         fetchCertificateRecord(certId.trim());
-      } else {
-        // Pre-fill and display verified sample certificate record when visiting without query parameters
-        const defaultSampleId = '20260812001';
-        document.getElementById('certIdInput').value = defaultSampleId;
-        fetchCertificateRecord(defaultSampleId);
       }
+      // When page visited without query parameters, do NOT auto-load any default certificate
     });
 
     window.addEventListener('resize', fitCertificateToScreen);
@@ -1891,6 +1894,7 @@
       document.getElementById('breakdownSection').style.display = 'block';
       document.getElementById('downloadPdfBtn').disabled = false;
       document.getElementById('downloadPngBtn').disabled = false;
+      document.getElementById('copyLinkBtn').disabled = false;
 
       // Status Alert Banner & Status Badges
       const statusBanner = document.getElementById('statusBanner');
@@ -2060,6 +2064,7 @@
       document.getElementById('breakdownSection').style.display = 'none';
       document.getElementById('downloadPdfBtn').disabled = true;
       document.getElementById('downloadPngBtn').disabled = true;
+      document.getElementById('copyLinkBtn').disabled = true;
 
       const statusBanner = document.getElementById('statusBanner');
       statusBanner.className = 'status-alert error';

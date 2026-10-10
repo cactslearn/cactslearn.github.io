@@ -1,39 +1,51 @@
 # --- Allow AI Search, Citation & LLM Agents for Maximum GEO & AIO Ranking ---
 User-agent: OAI-SearchBot
+Disallow: /invoice.html
 Allow: /
 
 User-agent: ChatGPT-User
+Disallow: /invoice.html
 Allow: /
 
 User-agent: GPTBot
+Disallow: /invoice.html
 Allow: /
 
 User-agent: PerplexityBot
+Disallow: /invoice.html
 Allow: /
 
 User-agent: Perplexity-User
+Disallow: /invoice.html
 Allow: /
 
 User-agent: Claude-SearchBot
+Disallow: /invoice.html
 Allow: /
 
 User-agent: ClaudeBot
+Disallow: /invoice.html
 Allow: /
 
 User-agent: anthropic-ai
+Disallow: /invoice.html
 Allow: /
 
 User-agent: Google-Extended
+Disallow: /invoice.html
 Allow: /
 
 User-agent: Bytespider
+Disallow: /invoice.html
 Allow: /
 
 User-agent: CCBot
+Disallow: /invoice.html
 Allow: /
 
 # --- Standard Web Crawlers ---
 User-agent: *
+Disallow: /invoice.html
 Allow: /
 Disallow: /assets/private/
 Disallow: /apple-app-site-association

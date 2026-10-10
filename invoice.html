@@ -1,0 +1,2699 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Student Invoicing &amp; Fee Receipts Portal | CACTS Pune</title>
+  <meta
+    content="Official Student Invoicing, Fee Ledger &amp; Installment Payment Receipts Portal for CACTS (Centre of Advanced Computer Training and Studies) Pune."
+    name="description" />
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+  <!-- OpenGraph & Twitter Social Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Student Invoicing &amp; Fee Receipts Portal | CACTS Pune" />
+  <meta property="og:description"
+    content="Official Student Billing Statement, Fee Breakdown &amp; Installment Payment Receipts Portal for CACTS Pune." />
+  <meta property="og:url" content="https://cactslearn.github.io/invoice.html" />
+  <meta property="og:image" content="https://cactslearn.github.io/images/cacts-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Student Invoicing &amp; Fee Receipts Portal | CACTS Pune" />
+  <meta name="twitter:description"
+    content="Official Student Billing Statement, Fee Breakdown &amp; Installment Payment Receipts Portal for CACTS Pune." />
+  <meta name="twitter:image" content="https://cactslearn.github.io/images/cacts-logo.png" />
+
+  <link href="https://cactslearn.github.io/invoice.html" rel="canonical" />
+
+  <!-- Standard Site CSS -->
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/social-share.css" rel="stylesheet" />
+  <script src="js/social-share-engine.js" defer></script>
+
+  <!-- Google Fonts for Corporate Tax Invoice Typography & Signatures -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- External JS Libraries for QR Codes & PDF/PNG Export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- JSON-LD Structured Data for Invoice Page -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "LocalBusiness",
+    "EducationalOrganization",
+    "Organization"
+  ],
+  "name": "CACTS - Centre of Advanced Computer Training and Studies",
+  "image": "https://cactslearn.github.io/images/cacts-logo.png",
+  "url": "https://cactslearn.github.io/",
+  "telephone": "+919665566357",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "postalCode": "411023",
+    "addressCountry": "IN"
+  }
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://cactslearn.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Course Invoices & Receipts",
+      "item": "https://cactslearn.github.io/invoice.html"
+    }
+  ]
+}
+  </script>
+
+  <style>
+    /* Control Panel Card - Exactly matching verify.html */
+    .control-panel-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: var(--transition);
+    }
+
+    .control-panel-row-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .search-box-group {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex: 1;
+      min-width: 320px;
+      flex-wrap: wrap;
+    }
+
+    .search-box-group input,
+    .search-box-group select {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: var(--font-body);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .search-box-group input:focus,
+    .search-box-group select:focus {
+      border-color: var(--accent);
+    }
+
+    .search-box-group input[type="text"] {
+      flex: 2;
+      min-width: 160px;
+    }
+
+    .search-box-group select {
+      flex: 1;
+      min-width: 100px;
+    }
+
+    .action-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+
+    .view-toggle-group {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .view-toggle-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .view-toggle-btn.active {
+      background: var(--accent);
+      color: #0b0f19;
+      font-weight: 700;
+    }
+
+    .btn-secondary {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      font-weight: 600;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.15rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover:not(:disabled) {
+      background: var(--bg-card-hover);
+      border-color: var(--accent);
+      color: var(--accent-light);
+    }
+
+    /* Light Theme Adjustments */
+    body.light-theme .control-panel-card,
+    body.light-theme .breakdown-card,
+    body.light-theme .error-display-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    body.light-theme .search-box-group input,
+    body.light-theme .search-box-group select {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    body.light-theme .search-box-group input:focus,
+    body.light-theme .search-box-group select:focus {
+      border-color: var(--accent);
+    }
+
+    body.light-theme .btn-secondary {
+      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      color: #0f172a !important;
+    }
+
+    body.light-theme .btn-secondary:hover:not(:disabled) {
+      background: #f1f5f9;
+      color: var(--accent) !important;
+    }
+
+    body.light-theme .view-toggle-group {
+      background: #f1f5f9;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    body.light-theme .view-toggle-btn.active {
+      background: var(--accent);
+      color: #0b0f19;
+    }
+
+    body.light-theme #toastNotification {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1px solid var(--accent);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Verification & Invoice Status Alert Banner */
+    .status-alert {
+      width: 100%;
+      padding: 0.85rem 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .status-alert.success {
+      display: flex;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid var(--success);
+      color: var(--success);
+    }
+
+    .status-alert.expired,
+    .status-alert.partial {
+      display: flex;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid #f59e0b;
+      color: #f59e0b;
+    }
+
+    .status-alert.error {
+      display: flex;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid var(--danger);
+      color: var(--danger);
+    }
+
+    .status-alert.loading {
+      display: flex;
+      background: rgba(2, 132, 199, 0.12);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .status-alert-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    /* Responsive Viewport for Invoices and Receipts */
+    .invoice-viewport {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0.5rem 0;
+      overflow: visible;
+      min-height: 0;
+    }
+
+    /* ========================================================
+       MASTER INVOICE & RECEIPT CANVAS (A4-Optimized 794px Layout)
+       ======================================================== */
+    #invoiceCanvas,
+    #receiptCanvas {
+      width: 794px;
+      min-width: 794px;
+      max-width: 794px;
+      min-height: auto;
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+      border-radius: 4px;
+      position: relative;
+      box-sizing: border-box;
+      padding: 22px 26px;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      border: 1px solid #e2e8f0;
+      margin: 0 auto;
+      overflow: hidden;
+      flex-shrink: 0;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      text-rendering: optimizeLegibility !important;
+    }
+
+    #receiptCanvas {
+      padding: 20px 24px;
+    }
+
+    /* Document Watermark */
+    .doc-watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-32deg);
+      font-family: 'Montserrat', 'Inter', sans-serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: rgba(15, 23, 42, 0.025);
+      letter-spacing: 6px;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      z-index: 1;
+    }
+
+    /* Header Strip */
+    .doc-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 12px;
+      position: relative;
+      z-index: 2;
+      gap: 16px;
+    }
+
+    .doc-brand-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+
+    .doc-brand-logo {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .doc-brand-title {
+      font-family: 'Montserrat', 'Inter', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: 0.2px;
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .doc-brand-sub {
+      font-size: 0.58rem;
+      color: #475569;
+      margin-top: 3px;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .doc-type-badge-container {
+      text-align: right;
+      flex: 0 0 auto;
+      white-space: nowrap;
+    }
+
+    .doc-type-pill {
+      display: inline-block;
+      background: #0f172a;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .doc-number-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 5px;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      word-break: keep-all;
+    }
+
+    .doc-date-text {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+
+    /* Meta Info Grid */
+    .doc-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 16px;
+      margin: 12px 0;
+      padding: 10px 14px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .meta-box-title {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: #64748b;
+      margin-bottom: 2px;
+    }
+
+    .meta-box-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .meta-box-detail {
+      font-size: 0.78rem;
+      color: #334155;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+
+    /* Tables */
+    .doc-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      margin: 10px 0;
+      font-size: 0.81rem;
+      position: relative;
+      z-index: 2;
+      box-sizing: border-box;
+    }
+
+    .doc-table th {
+      background: #0f172a !important;
+      color: #ffffff !important;
+      padding: 6px 8px;
+      font-weight: 600;
+      text-align: left;
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      box-sizing: border-box;
+    }
+
+    .doc-table th.text-right,
+    .doc-table td.text-right {
+      text-align: right;
+    }
+
+    .doc-table th.text-center,
+    .doc-table td.text-center {
+      text-align: center;
+    }
+
+    .doc-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #1e293b;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      box-sizing: border-box;
+    }
+
+    .doc-table tbody tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    /* Section Subheaders */
+    .doc-section-heading {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin: 14px 0 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .doc-section-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #cbd5e1;
+    }
+
+    /* Status Badges */
+    .status-pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 16px;
+      font-weight: 700;
+      font-size: 0.72rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      width: fit-content;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      box-sizing: border-box;
+    }
+
+    .status-pill-badge.paid {
+      background: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+    }
+
+    .status-pill-badge.partial {
+      background: #fffbeb;
+      color: #b45309;
+      border: 1px solid #fde68a;
+    }
+
+    .status-pill-badge.unpaid {
+      background: #fef2f2;
+      color: #b91c1c;
+      border: 1px solid #fecaca;
+    }
+
+    /* Full-Width In-Words & Status Strip */
+    .summary-words-strip {
+      width: 100%;
+      box-sizing: border-box;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 14px;
+      margin: 12px 0 6px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .words-content {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .words-line {
+      font-size: 0.82rem;
+      line-height: 1.35;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      flex-wrap: wrap;
+      word-spacing: 0.1em;
+    }
+
+    .words-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #64748b;
+      white-space: nowrap;
+      margin-right: 6px;
+      word-spacing: 0.1em;
+    }
+
+    .words-val {
+      font-weight: 700;
+      color: #0f172a;
+      word-spacing: 0.1em;
+    }
+
+    .words-val.balance {
+      color: #b45309;
+      word-spacing: 0.1em;
+    }
+
+    .summary-words-strip .status-pill-badge {
+      margin-top: 0;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+
+    /* Full-Width Financial Statement & Final Account Standing Table */
+    .summary-ledger-table {
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: collapse;
+      margin-top: 4px;
+      margin-bottom: 12px;
+      font-size: 0.82rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .summary-ledger-table td {
+      padding: 5px 10px;
+      box-sizing: border-box;
+      border-bottom: 1px solid #e2e8f0;
+      line-height: 1.35;
+    }
+
+    .summary-ledger-table td.total-label {
+      text-align: left;
+      color: #334155;
+      font-weight: 600;
+      word-spacing: 0.1em;
+    }
+
+    .summary-ledger-table td.total-value {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      font-feature-settings: "tnum";
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 700;
+      color: #0f172a;
+      white-space: nowrap;
+    }
+
+    .summary-ledger-table tr.net-payable-row td {
+      background: #f1f5f9;
+      border-top: 2px solid #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #0f172a;
+      word-spacing: 0.1em;
+    }
+
+    .summary-ledger-table tr.balance-due-row td {
+      background: #fffbeb;
+      border-top: 2px solid #d97706;
+      border-bottom: 2px solid #d97706;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #b45309;
+      word-spacing: 0.1em;
+    }
+
+    .summary-ledger-table tr.balance-due-row.cleared td {
+      background: #ecfdf5;
+      border-top: 2px solid #10b981;
+      border-bottom: 2px solid #10b981;
+      color: #047857;
+    }
+
+    /* Verification, Stamp & Signature Footer */
+    .doc-auth-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .auth-qr-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: 80px;
+      box-sizing: border-box;
+    }
+
+    .auth-qr-img {
+      width: 80px;
+      height: 80px;
+      border: 1px solid #e2e8f0;
+      padding: 2px;
+      background: #ffffff;
+      border-radius: 4px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .auth-qr-img canvas,
+    .auth-qr-img img {
+      width: 100% !important;
+      height: 100% !important;
+      display: block;
+      object-fit: contain;
+    }
+
+    .auth-qr-caption {
+      font-size: 0.67rem;
+      color: #64748b;
+      line-height: 1.35;
+      max-width: 165px;
+    }
+
+    .auth-seal-block {
+      height: 80px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .official-gold-seal-svg {
+      width: 80px;
+      height: 80px;
+      display: block;
+      /* vertical-align: middle; */
+      filter: drop-shadow(0 2px 5px rgba(180, 83, 9, 0.2));
+      flex-shrink: 0;
+    }
+
+    .auth-sig-block {
+      height: 80px;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-end;
+      box-sizing: border-box;
+    }
+
+    .auth-signature-script {
+      font-family: 'Alex Brush', cursive;
+      font-size: 1.85rem;
+      color: #0f172a;
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+
+    .auth-sig-line {
+      width: 130px;
+      height: 1px;
+      background: #0f172a;
+      margin: 2px 0 4px auto;
+    }
+
+    .receipt-link-btn {
+      color: #0f172a;
+      font-weight: 700;
+      font-family: monospace, sans-serif;
+      font-size: 0.84rem;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: 2px 7px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-block;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .receipt-link-btn:hover {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+
+    .auth-sig-name {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .auth-sig-title {
+      font-size: 0.72rem;
+      color: #64748b;
+    }
+
+    .doc-legal-disclaimer {
+      margin-top: 12px;
+      font-size: 0.66rem;
+      color: #94a3b8;
+      text-align: center;
+      line-height: 1.35;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 5px;
+    }
+
+    /* ========================================================
+       RECEIPT VOUCHER STYLES (#receiptCanvas)
+       ======================================================== */
+    .receipt-voucher-box {
+      border: 2px solid #0f172a;
+      padding: 16px 20px;
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .receipt-corner-deco {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border: 2px solid #0f172a;
+    }
+
+    .receipt-corner-tl {
+      top: 5px;
+      left: 5px;
+      border-right: none;
+      border-bottom: none;
+    }
+
+    .receipt-corner-tr {
+      top: 5px;
+      right: 5px;
+      border-left: none;
+      border-bottom: none;
+    }
+
+    .receipt-corner-bl {
+      bottom: 5px;
+      left: 5px;
+      border-right: none;
+      border-top: none;
+    }
+
+    .receipt-corner-br {
+      bottom: 5px;
+      right: 5px;
+      border-left: none;
+      border-top: none;
+    }
+
+    .receipt-row-lead {
+      font-size: 0.88rem;
+      line-height: 1.8;
+      margin: 14px 0;
+      color: #1e293b;
+      word-spacing: 0.05em;
+    }
+
+    .receipt-fill-line {
+      font-weight: 700;
+      color: #0f172a;
+      border-bottom: 1px dotted #64748b;
+      padding: 0 4px;
+      margin: 0 2px;
+      display: inline;
+    }
+
+    .receipt-amount-display-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      font-family: 'Montserrat', sans-serif;
+      margin: 10px 0;
+    }
+
+    /* Error Display Card */
+    .error-display-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(239, 68, 68, 0.4);
+      border-radius: var(--border-radius);
+      padding: 2.5rem;
+      text-align: center;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    /* Floating Toast */
+    #toastNotification {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      display: none;
+      z-index: 9999;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Print Styles - Guaranteed 1-Page A4 Fit & Identical to PDF */
+    @page {
+      size: A4 portrait;
+      margin: 8mm 6mm;
+    }
+
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        /* color-adjust: exact !important; */
+      }
+
+      html,
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+      }
+
+      .site-header,
+      footer.site-footer,
+      .control-panel-card,
+      .status-alert,
+      nav[aria-label="Breadcrumb"],
+      .section-title,
+      .section-subtitle,
+      #invoice-h1,
+      .error-display-card,
+      .floating-ctas,
+      #toastNotification {
+        display: none !important;
+      }
+
+      main,
+      section.tech-section,
+      .invoice-viewport {
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+        display: block !important;
+        width: 100% !important;
+        overflow: visible !important;
+      }
+
+      #invoiceCanvas,
+      #receiptCanvas {
+        transform: none !important;
+        box-shadow: none !important;
+        border: 1px solid #cbd5e1 !important;
+        padding: 16px 20px !important;
+        margin: 0 auto !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 196mm !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-sizing: border-box !important;
+      }
+
+      .doc-brand-title {
+        font-size: 0.80rem !important;
+        white-space: nowrap !important;
+      }
+
+      .doc-brand-sub {
+        font-size: 0.56rem !important;
+        white-space: nowrap !important;
+      }
+
+      .doc-meta-grid {
+        margin: 8px 0 !important;
+        padding: 8px 12px !important;
+        grid-template-columns: 1fr 1.35fr !important;
+      }
+
+      .meta-box-detail {
+        font-size: 0.74rem !important;
+        white-space: nowrap !important;
+      }
+
+      .summary-words-strip {
+        margin: 8px 0 4px 0 !important;
+        padding: 6px 12px !important;
+      }
+
+      .summary-ledger-table {
+        margin-top: 2px !important;
+        margin-bottom: 8px !important;
+      }
+
+      .summary-ledger-table td {
+        padding: 4px 8px !important;
+      }
+
+      .doc-auth-footer {
+        margin-top: 24px !important;
+        padding-top: 20px !important;
+        height: auto !important;
+        min-height: 80px !important;
+        align-items: flex-end !important;
+      }
+
+      .auth-qr-block,
+      .auth-qr-img,
+      .auth-seal-block,
+      .official-gold-seal-svg,
+      .auth-sig-block {
+        height: 80px !important;
+      }
+
+      .auth-qr-img,
+      .official-gold-seal-svg {
+        width: 80px !important;
+      }
+
+      #invoiceCanvas[style*="display: none"],
+      #receiptCanvas[style*="display: none"] {
+        display: none !important;
+      }
+    }
+
+    /* Responsive Mobile Control Panel Adjustment */
+    @media (max-width: 768px) {
+      .control-panel-card {
+        padding: 1rem;
+        gap: 1rem;
+      }
+
+      .control-panel-row-top {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-box-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .action-btn-group {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .view-toggle-group {
+        width: 100%;
+      }
+
+      .view-toggle-btn {
+        flex: 1;
+        justify-content: center;
+      }
+
+      #fetchInvoiceBtn,
+      .action-btn-group button {
+        width: 100% !important;
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <!-- RSS 2.0 Auto-Discovery Links -->
+  <link rel="alternate" type="application/rss+xml" title="CACTS Master Updates"
+    href="https://cactslearn.github.io/feeds/rss-main.xml" />
+  <link rel="alternate" type="application/rss+xml" title="CACTS Tech Jobs &amp; Internships"
+    href="https://cactslearn.github.io/feeds/rss-jobs.xml" />
+  <link rel="alternate" type="application/rss+xml" title="CACTS Tech Career Guides"
+    href="https://cactslearn.github.io/feeds/rss-guides.xml" />
+  <link rel="alternate" type="application/rss+xml" title="CACTS Engineering Courses"
+    href="https://cactslearn.github.io/feeds/rss-courses.xml" />
+</head>
+
+<body>
+
+  <!-- Site Header - Matching verify.html -->
+  <header class="site-header">
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html">
+          <span>CACTS</span>
+        </a>
+      </div>
+      <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
+        <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+          stroke-width="2" style="vertical-align: middle" viewbox="0 0 24 24" width="24">
+          <line x1="3" x2="21" y1="12" y2="12"></line>
+          <line x1="3" x2="21" y1="6" y2="6"></line>
+          <line x1="3" x2="21" y1="18" y2="18"></line>
+        </svg>
+      </button>
+      <nav aria-label="Main Navigation" class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="showcase/internship-on-live-projects.html">Live Internship</a>
+        <a href="courses/index.html">1-to-1 Model</a>
+        <a href="tools/free-career-guidance.html">Career Guidance</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="faqs.html">FAQs</a>
+        <button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle">
+          <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" style="display: block" viewbox="0 0 24 24" width="20">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="2" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="23" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" style="display: none" viewbox="0 0 24 24" width="20">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <a class="btn btn-accent"
+          href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%20free%201-to-1%20demo%20session."
+          target="_blank" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area - Exactly matching verify.html padding and structure -->
+  <main style="padding-top: 8rem">
+    <section aria-labelledby="invoice-h1" class="tech-section">
+
+      <!-- Breadcrumbs -->
+      <nav aria-label="Breadcrumb" style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
+        <a href="index.html" style="color: var(--accent)">Home</a> &gt;
+        <span style="color: var(--text-primary)">Course Invoices &amp; Receipts</span>
+      </nav>
+
+      <h1 class="section-title" id="invoice-h1">Student Invoicing &amp; Fee Receipts</h1>
+      <p class="section-subtitle">Official Student Billing Statement, Fee Breakdown &amp; Installment Receipts Portal
+      </p>
+
+      <!-- Control Panel Card -->
+      <div class="control-panel-card">
+        <div class="control-panel-row-top">
+          <div class="search-box-group">
+            <input type="text" id="mobileInput" placeholder="Registered 10-Digit Mobile (e.g. 9876543210)"
+              maxlength="10" />
+            <select id="monthSelect" title="Admission Month">
+              <option value="1">Jan (01)</option>
+              <option value="2">Feb (02)</option>
+              <option value="3">Mar (03)</option>
+              <option value="4">Apr (04)</option>
+              <option value="5">May (05)</option>
+              <option value="6">Jun (06)</option>
+              <option value="7">Jul (07)</option>
+              <option value="8">Aug (08)</option>
+              <option value="9">Sep (09)</option>
+              <option value="10" selected>Oct (10)</option>
+              <option value="11">Nov (11)</option>
+              <option value="12">Dec (12)</option>
+            </select>
+            <select id="yearSelect" title="Admission Year">
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026" selected>2026</option>
+              <option value="2027">2027</option>
+            </select>
+            <button class="btn btn-primary" id="fetchInvoiceBtn" onclick="handleManualSearch()"
+              style="background: linear-gradient(135deg, #bf953f 0%, #d4af37 50%, #aa771c 100%); color: #0b0f19; font-weight: 700; padding: 0.75rem 1.25rem; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              Get Invoice &amp; Receipts
+            </button>
+          </div>
+        </div>
+
+        <div class="action-btn-group">
+          <!-- View Switcher -->
+          <div class="view-toggle-group">
+            <button class="view-toggle-btn active" id="btnViewInvoice" onclick="switchView('invoice')">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              Master Tax Invoice
+            </button>
+            <button class="view-toggle-btn" id="btnViewReceipt" onclick="switchView('receipt')">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              Payment Receipts (<span id="receiptCountBadge">0</span>)
+            </button>
+          </div>
+
+          <!-- Document Selector (when multiple invoices/receipts exist) -->
+          <div style="display: flex; gap: 0.5rem; align-items: center;">
+            <select id="receiptSelect" onchange="renderSpecificReceipt(this.value)"
+              style="display: none; padding: 0.6rem 0.8rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-primary); font-size: 0.85rem; font-weight: 600;">
+              <!-- Populated dynamically -->
+            </select>
+          </div>
+
+          <!-- Actions -->
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <button class="btn btn-secondary" id="downloadPdfBtn" onclick="downloadDocumentPDF()" disabled>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              Download PDF
+            </button>
+            <button class="btn btn-secondary" id="printDocBtn" onclick="window.print()" disabled>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+              </svg>
+              Print
+            </button>
+            <button class="btn btn-secondary" id="copyShareBtn" onclick="copyDocumentLink()" disabled>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              Copy Link
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status Alert Banner - Matching verify.html -->
+      <div class="status-alert" id="statusBanner">
+        <div class="status-alert-info" id="statusInfo">
+          <!-- Dynamically populated -->
+        </div>
+        <span id="statusTimestamp"></span>
+      </div>
+
+      <!-- Document Viewport -->
+      <div class="invoice-viewport">
+
+        <!-- ========================================================
+             1. MASTER COURSE / TAX INVOICE CANVAS
+             ======================================================== -->
+        <div id="invoiceCanvas" style="display: none;">
+          <div class="doc-watermark">CACTS OFFICIAL INVOICE</div>
+
+          <!-- Document Header -->
+          <div class="doc-header">
+            <div class="doc-brand-block">
+              <img src="images/cacts-logo.png" alt="CACTS Logo" class="doc-brand-logo" />
+              <div>
+                <div class="doc-brand-title">CENTRE OF ADVANCED COMPUTER TRAINING AND STUDIES</div>
+                <div class="doc-brand-sub">
+                  First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune, MH 411023<br />
+                  Autonomous IT Education &amp; Research Academy &bull; Reg. Estd. 2012 &bull; Contact: +91 96655 66357
+                </div>
+              </div>
+            </div>
+            <div class="doc-type-badge-container">
+              <div class="doc-type-pill">COURSE TAX INVOICE</div>
+              <div class="doc-number-text" id="invNumberDisplay">CACTS-202610-001</div>
+              <div class="doc-date-text" id="invDateDisplay">Generated: Real-Time</div>
+            </div>
+          </div>
+
+          <!-- Meta Grid (Student & Program Details) -->
+          <div class="doc-meta-grid">
+            <div>
+              <div class="meta-box-title">Billed To (Student Information)</div>
+              <div class="meta-box-name" id="invStudentName">Student Name</div>
+              <div class="meta-box-detail"><strong>Registered Mobile:</strong> <span
+                  id="invMobileNumber">9876543210</span></div>
+              <div class="meta-box-detail"><strong>Enrollment / Joining Date:</strong> <span
+                  id="invJoiningDate">2026-10-05</span></div>
+            </div>
+            <div>
+              <div class="meta-box-title">Course &amp; Training Details</div>
+              <div class="meta-box-name" id="invCourseName">Software Engineering Lab</div>
+              <div class="meta-box-detail"><strong>Pedagogy:</strong> 1-to-1 Developer Mentoring &amp; Live Staging
+              </div>
+              <div class="meta-box-detail"><strong>Payment Status:</strong> <span id="invStatusPillInline"
+                  class="status-pill-badge partial">PARTIAL PAYMENT</span></div>
+            </div>
+          </div>
+
+          <!-- Fee Breakdown Table -->
+          <div class="doc-section-heading">Course Fee Structure &amp; Scholarship Breakdown</div>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th style="width: 5%;" class="text-center">Sr.</th>
+                <th style="width: 45%;">Program / Course Particulars</th>
+                <th style="width: 12%;" class="text-center">SAC Code</th>
+                <th style="width: 12%;" class="text-right">Standard Fee</th>
+                <th style="width: 13%;" class="text-right">Scholarship</th>
+                <th style="width: 13%;" class="text-right">Net Payable</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center" style="font-weight: 600;">1</td>
+                <td>
+                  <div style="font-weight: 700; font-size: 0.94rem; color: #0f172a;" id="tableCourseTitle">Java Full
+                    Stack Development</div>
+                  <div style="font-size: 0.73rem; color: #64748b; margin-top: 2px;">Comprehensive 1-to-1 Mentorship,
+                    Practical Architecture &amp; Live Staging</div>
+                </td>
+                <td class="text-center" style="font-family: monospace; font-size: 0.84rem; color: #475569;">999293</td>
+                <td class="text-right" id="tableGrossFee" style="white-space: nowrap;">&#8377; 19,999.00</td>
+                <td class="text-right" id="tableDiscount"
+                  style="color: #047857; font-weight: 600; white-space: nowrap;">- &#8377; 1,999.00</td>
+                <td class="text-right" style="white-space: nowrap;"><strong id="tableNetFee"
+                    style="color: #0f172a; font-size: 0.92rem;">&#8377; 18,000.00</strong></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Installment Payments Ledger Table -->
+          <div class="doc-section-heading">Installment Payments Ledger &amp; Received Receipts</div>
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th style="width: 15%;">Receipt No.</th>
+                <th style="width: 14%; text-align: center;">Payment Date</th>
+                <th style="width: 25%;">Transaction / UTR</th>
+                <th style="width: 15%;" class="text-right">Amount (&#8377;)</th>
+                <th style="width: 15%;" class="text-right">Running Paid</th>
+                <th style="width: 16%;" class="text-right">Balance Due</th>
+              </tr>
+            </thead>
+            <tbody id="paymentsLedgerBody">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+
+          <!-- Full-Width In-Words & Status Strip -->
+          <div class="summary-words-strip">
+            <div class="words-content">
+              <div class="words-line">
+                <span class="words-label">Total&nbsp;Amount&nbsp;Paid&nbsp;in&nbsp;Words:</span>
+                <span class="words-val" id="wordsAmountPaid">Rupees&nbsp;Eight&nbsp;Thousand&nbsp;Only</span>
+              </div>
+              <div class="words-line">
+                <span class="words-label">Outstanding&nbsp;Balance&nbsp;in&nbsp;Words:</span>
+                <span class="words-val balance" id="wordsBalanceDue">Rupees&nbsp;Ten&nbsp;Thousand&nbsp;Only</span>
+              </div>
+            </div>
+            <div id="invStatusPillSummary" class="status-pill-badge partial">
+              PARTIAL PAYMENT &bull; BALANCE PENDING
+            </div>
+          </div>
+
+          <!-- Full-Width Financial Statement & Final Account Standing Table -->
+          <div class="doc-section-heading">Financial Statement &amp; Final Account Standing</div>
+          <table class="doc-table summary-ledger-table">
+            <colgroup>
+              <col style="width: 72%;">
+              <col style="width: 28%;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <td class="total-label">Total&nbsp;Standard&nbsp;Course&nbsp;Fees:</td>
+                <td class="total-value" id="summaryGrossFee">&#8377; 19,999.00</td>
+              </tr>
+              <tr>
+                <td class="total-label">Institutional&nbsp;Scholarship&nbsp;/&nbsp;Special&nbsp;Discount:</td>
+                <td class="total-value" id="summaryDiscount" style="color: #047857;">- &#8377; 1,999.00</td>
+              </tr>
+              <tr class="net-payable-row">
+                <td class="total-label">Net&nbsp;Course&nbsp;Fees&nbsp;Payable&nbsp;(Gross&nbsp;Fee&nbsp;&minus;&nbsp;Scholarship):</td>
+                <td class="total-value" id="summaryNetFee">&#8377; 18,000.00</td>
+              </tr>
+              <tr>
+                <td class="total-label">Total&nbsp;Installment&nbsp;Payments&nbsp;Received&nbsp;to&nbsp;Date:</td>
+                <td class="total-value" id="summaryTotalPaid" style="color: #047857;">&#8377; 8,000.00</td>
+              </tr>
+              <tr class="balance-due-row" id="summaryBalanceRow">
+                <td class="total-label" id="summaryBalanceLabel">Remaining&nbsp;Outstanding&nbsp;Balance&nbsp;Due:</td>
+                <td class="total-value" id="summaryBalanceDue">&#8377; 10,000.00</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Auth Footer (QR, Seal, Signatures) -->
+          <div class="doc-auth-footer">
+            <div class="auth-qr-block">
+              <div class="auth-qr-img" id="invQrCodeContainer"></div>
+              <div class="auth-qr-caption">
+                <strong>Instant Verification</strong><br />
+                Scan this QR code to verify this live student billing record on CACTS Central Registry.
+              </div>
+            </div>
+
+            <div class="auth-seal-block">
+              <svg class="official-gold-seal-svg" width="80" height="80" viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="invSealGoldGrad" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+                    <stop offset="0%" stop-color="#fffbeb" />
+                    <stop offset="60%" stop-color="#fef3c7" />
+                    <stop offset="100%" stop-color="#fde68a" />
+                  </radialGradient>
+                  <linearGradient id="invSealBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#d97706" />
+                    <stop offset="50%" stop-color="#b45309" />
+                    <stop offset="100%" stop-color="#92400e" />
+                  </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="48" fill="url(#invSealGoldGrad)" stroke="url(#invSealBorderGrad)"
+                  stroke-width="2.5" />
+                <circle cx="50" cy="50" r="43.5" fill="none" stroke="#d97706" stroke-width="1.2"
+                  stroke-dasharray="2.5,2.5" />
+                <circle cx="50" cy="50" r="39" fill="none" stroke="#b45309" stroke-width="1.5" />
+                <circle cx="50" cy="50" r="28" fill="#fffdf5" stroke="#d97706" stroke-width="1" />
+                <text x="50" y="24" text-anchor="middle" font-family="'Montserrat', 'Inter', sans-serif" font-size="7.5"
+                  font-weight="800" fill="#78350f" letter-spacing="0.8">CACTS PUNE</text>
+                <text x="50" y="38" text-anchor="middle" font-size="9" fill="#d97706">★ ★ ★</text>
+                <text x="50" y="52" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="8"
+                  font-weight="900" fill="#92400e" letter-spacing="1">ACCOUNTS</text>
+                <text x="50" y="63" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="6.5"
+                  font-weight="800" fill="#047857" letter-spacing="0.8">VERIFIED</text>
+                <text x="50" y="80" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="6.5"
+                  font-weight="700" fill="#78350f" letter-spacing="0.5">ESTD. 2012</text>
+              </svg>
+            </div>
+
+            <div class="auth-sig-block">
+              <div class="auth-signature-script">Sheetal Shinde</div>
+              <div class="auth-sig-line"></div>
+              <div class="auth-sig-name">Sheetal Shinde</div>
+              <div class="auth-sig-title">Managing Director &amp; Accounts Desk</div>
+              <div class="auth-sig-title" style="font-size: 0.7rem; color: #94a3b8; margin-top: 2px;">CACTS Pune &bull;
+                Estd. 2012</div>
+            </div>
+          </div>
+
+          <div class="doc-legal-disclaimer">
+            This is a computer-generated official billing document issued by Centre of Advanced Computer Training and
+            Studies (CACTS). Fees paid cover 1-to-1 developer mentoring, practical lab infrastructure, code reviews, and
+            live project staging.
+          </div>
+        </div>
+
+
+        <!-- ========================================================
+             2. INDIVIDUAL PAYMENT RECEIPT VOUCHER CANVAS
+             ======================================================== -->
+        <div id="receiptCanvas" style="display: none;">
+          <div class="doc-watermark">PAYMENT RECEIPT</div>
+
+          <div class="receipt-voucher-box">
+            <div class="receipt-corner-deco receipt-corner-tl"></div>
+            <div class="receipt-corner-deco receipt-corner-tr"></div>
+            <div class="receipt-corner-deco receipt-corner-bl"></div>
+            <div class="receipt-corner-deco receipt-corner-br"></div>
+
+            <!-- Receipt Header -->
+            <div class="doc-header" style="border-bottom: 2px solid #0f172a;">
+              <div class="doc-brand-block">
+                <img src="images/cacts-logo.png" alt="CACTS Logo" class="doc-brand-logo" />
+                <div>
+                  <div class="doc-brand-title">CENTRE OF ADVANCED COMPUTER TRAINING AND STUDIES</div>
+                  <div class="doc-brand-sub">
+                    First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune, MH 411023<br />
+                    Autonomous IT Education &amp; Research Academy &bull; Reg. Estd. 2012 &bull; Contact: +91 96655
+                    66357
+                  </div>
+                </div>
+              </div>
+              <div class="doc-type-badge-container">
+                <div class="doc-type-pill" style="background: #047857; font-size: 0.73rem; padding: 3px 8px;">PAYMENT
+                  RECEIPT</div>
+                <div class="doc-number-text" id="rcptNumberDisplay">CACTS-R-001</div>
+                <div class="doc-date-text" id="rcptDateDisplay">Date: 2026-10-05</div>
+              </div>
+            </div>
+
+            <!-- Receipt Amount Highlight Badge -->
+            <div
+              style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; flex-wrap: wrap; gap: 10px;">
+              <div class="receipt-amount-display-badge">
+                <span>AMOUNT RECEIVED:</span>
+                <span id="rcptAmountBadge" style="color: #34d399;">&#8377; 5,000.00</span>
+              </div>
+              <div style="font-size: 0.85rem; color: #475569;">
+                <strong>Invoice Reference:</strong> <span id="rcptInvoiceRef">CACTS-202610-001</span>
+              </div>
+            </div>
+
+            <!-- Voucher Formal Wording -->
+            <div class="receipt-row-lead">
+              Received with thanks from Mr. / Ms. <span class="receipt-fill-line" id="rcptStudentName">Rahul
+                Patil</span> (Registered Mobile: <span class="receipt-fill-line" id="rcptMobile">9876543210</span>) the
+              sum of <span class="receipt-fill-line" id="rcptWordsAmount" style="color: #047857;">Rupees&nbsp;Five&nbsp;Thousand&nbsp;Only</span> towards payment for <span class="receipt-fill-line" id="rcptCourseName">Java Full Stack
+                Development</span> (1-to-1 Developer Mentoring &amp; Live Staging Program).
+            </div>
+
+            <!-- Transaction Details Box -->
+            <div
+              style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 14px 16px; margin: 16px 0; box-sizing: border-box;">
+              <div style="display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 14px; font-size: 0.85rem;">
+                <div>
+                  <div
+                    style="font-size: 0.7rem; text-transform: uppercase; color: #64748b; font-weight: 700; white-space: nowrap;">
+                    Transaction / UTR Reference</div>
+                  <div
+                    style="font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-top: 2px; font-family: monospace;"
+                    id="rcptTxnNumber">UPI123456789</div>
+                </div>
+                <div>
+                  <div
+                    style="font-size: 0.7rem; text-transform: uppercase; color: #64748b; font-weight: 700; white-space: nowrap;">
+                    Payment Mode</div>
+                  <div
+                    style="font-size: 0.92rem; font-weight: 700; color: #0f172a; margin-top: 2px; white-space: nowrap;"
+                    id="rcptPaymentMode">Digital Transfer / UPI</div>
+                </div>
+                <div>
+                  <div
+                    style="font-size: 0.7rem; text-transform: uppercase; color: #64748b; font-weight: 700; white-space: nowrap;">
+                    Installment Sequence</div>
+                  <div
+                    style="font-size: 0.92rem; font-weight: 700; color: #0f172a; margin-top: 2px; white-space: nowrap;"
+                    id="rcptSequence">Installment 1</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Installment Account Standing Strip -->
+            <div class="doc-section-heading">Account Standing After This Installment</div>
+            <table class="doc-table" style="margin-top: 10px;">
+              <thead>
+                <tr>
+                  <th style="width: 24%;">Net Total Course Fees</th>
+                  <th style="width: 19%;" class="text-right">Prior Cumulative</th>
+                  <th style="width: 19%;" class="text-right">This Receipt</th>
+                  <th style="width: 19%;" class="text-right">Total Paid</th>
+                  <th style="width: 19%;" class="text-right">Balance Due</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td id="rcptNetTotal" style="white-space: nowrap; font-weight: 600;">&#8377; 18,000.00</td>
+                  <td class="text-right" id="rcptPriorPaid" style="white-space: nowrap;">&#8377; 0.00</td>
+                  <td class="text-right" style="color: #047857; font-weight: 700; white-space: nowrap;"
+                    id="rcptThisAmount">&#8377; 5,000.00</td>
+                  <td class="text-right" id="rcptCumulativePaid" style="white-space: nowrap; font-weight: 600;">&#8377;
+                    5,000.00</td>
+                  <td class="text-right" style="color: #b45309; font-weight: 800; white-space: nowrap;"
+                    id="rcptBalanceDue">&#8377; 13,000.00</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Auth Footer (QR, Seal, Signature) -->
+            <div class="doc-auth-footer">
+              <div class="auth-qr-block">
+                <div class="auth-qr-img" id="rcptQrCodeContainer"></div>
+                <div class="auth-qr-caption">
+                  <strong>Digital Payment Receipt</strong><br />
+                  Scan to verify this official fee installment receipt on CACTS live verification portal.
+                </div>
+              </div>
+
+              <div class="auth-seal-block">
+                <svg class="official-gold-seal-svg" width="80" height="80" viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="rcptSealGoldGrad" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+                      <stop offset="0%" stop-color="#fffbeb" />
+                      <stop offset="60%" stop-color="#fef3c7" />
+                      <stop offset="100%" stop-color="#fde68a" />
+                    </radialGradient>
+                    <linearGradient id="rcptSealBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stop-color="#d97706" />
+                      <stop offset="50%" stop-color="#b45309" />
+                      <stop offset="100%" stop-color="#92400e" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="50" cy="50" r="48" fill="url(#rcptSealGoldGrad)" stroke="url(#rcptSealBorderGrad)"
+                    stroke-width="2.5" />
+                  <circle cx="50" cy="50" r="43.5" fill="none" stroke="#d97706" stroke-width="1.2"
+                    stroke-dasharray="2.5,2.5" />
+                  <circle cx="50" cy="50" r="39" fill="none" stroke="#b45309" stroke-width="1.5" />
+                  <circle cx="50" cy="50" r="28" fill="#fffdf5" stroke="#d97706" stroke-width="1" />
+                  <text x="50" y="24" text-anchor="middle" font-family="'Montserrat', 'Inter', sans-serif"
+                    font-size="7.5" font-weight="800" fill="#78350f" letter-spacing="0.8">CACTS PUNE</text>
+                  <text x="50" y="38" text-anchor="middle" font-size="9" fill="#047857">★ ★ ★</text>
+                  <text x="50" y="52" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="8"
+                    font-weight="900" fill="#047857" letter-spacing="1">RECEIPT</text>
+                  <text x="50" y="63" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="6.5"
+                    font-weight="800" fill="#047857" letter-spacing="0.8">CLEARED</text>
+                  <text x="50" y="80" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="6.5"
+                    font-weight="700" fill="#78350f" letter-spacing="0.5">ESTD. 2012</text>
+                </svg>
+              </div>
+
+              <div class="auth-sig-block">
+                <div class="auth-signature-script">Sheetal Shinde</div>
+                <div class="auth-sig-line"></div>
+                <div class="auth-sig-name">Sheetal Shinde</div>
+                <div class="auth-sig-title">Accounts Officer &bull; CACTS Pune</div>
+                <div class="auth-sig-title" style="font-size: 0.7rem; color: #94a3b8; margin-top: 2px;">CACTS Pune
+                  &bull; Estd. 2012</div>
+              </div>
+            </div>
+
+            <div class="doc-legal-disclaimer">
+              This receipt constitutes official acknowledgment of fee installment receipt. Subject to bank clearance for
+              cheque/transfer transactions.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Error Display Card -->
+      <div class="error-display-card" id="errorCard">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2"
+          style="margin-bottom: 1rem;">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <h2 id="errorTitle"
+          style="color: var(--text-primary); margin-bottom: 0.5rem; font-family: var(--font-heading);">Record Not Found
+        </h2>
+        <p id="errorDesc" style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.6;">
+          No billing record found for the provided details. Please verify your registered mobile number and admission
+          month.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Site Footer - Exactly matching verify.html -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-programs-row">
+        <h4 style="
+              color: var(--text-primary);
+              margin-bottom: 1.5rem;
+              font-size: 1rem;
+              font-weight: 700;
+              letter-spacing: 0.5px;
+              text-transform: uppercase;
+            ">
+          Engineering Labs &amp; Programs
+        </h4>
+        <ul class="footer-programs-grid">
+          <li><a href="courses/java-fullstack/">Java Fullstack Training</a></li>
+          <li><a href="courses/full-stack/">Full Stack Web (MERN)</a></li>
+          <li><a href="courses/react-js/">React JS Development</a></li>
+          <li><a href="courses/react-native/">React Native Mobile</a></li>
+          <li><a href="courses/ai-ml/">AI & Machine Learning</a></li>
+          <li><a href="courses/ai-red-teaming/">AI Red Teaming</a></li>
+          <li><a href="courses/data-science/">Data Science Analytics</a></li>
+          <li><a href="courses/data-engineering/">Data Engineering ETL</a></li>
+          <li><a href="courses/python/">Python Scripting Lab</a></li>
+          <li><a href="courses/devops/">DevOps Engineering</a></li>
+          <li><a href="courses/cloud/">Cloud Systems Architecture</a></li>
+          <li><a href="courses/power-bi/">Power BI Analytics</a></li>
+          <li><a href="courses/software-testing/">Software Testing Lab</a></li>
+          <li><a href="courses/cybersecurity/">Cybersecurity Operations</a></li>
+          <li><a href="courses/blockchain/">Blockchain Development</a></li>
+          <li><a href="courses/software-architect/">Software Architect Lab</a></li>
+        </ul>
+      </div>
+      <div class="footer-brand">
+        <a href="index.html" style="
+              font-family: var(--font-heading);
+              font-size: 1.5rem;
+              font-weight: 800;
+              color: white;
+            ">CACTS</a>
+        <p>
+          Centre of Advanced Computer Training and Studies. Providing
+          practical, one-to-one virtual software training and internships on
+          real company projects since 2012.
+        </p>
+        <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem">
+          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect height="12" width="4" x="2" y="9"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" style="
+                color: var(--text-secondary);
+                transition: var(--transition);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid var(--border);
+                border-radius: 50%;
+              " target="_blank">
+            <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="2" viewbox="0 0 24 24" width="18">
+              <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+              </path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Institutional Links</h4>
+        <ul style="list-style: none">
+          <li><a href="about.html">About CACTS</a></li>
+          <li><a href="academic-projects.html">Academic Projects</a></li>
+          <li><a href="ojt-internship.html">College OJT &amp; Internships</a></li>
+          <li><a href="courses/index.html">1-to-1 Mentoring Model</a></li>
+          <li><a href="showcase/internship-on-live-projects.html">Live Projects Internship</a></li>
+          <li><a href="comparisons/cacts-vs-classroom-vs-ai.html">CACTS vs Classroom vs AI</a></li>
+          <li><a href="reviews.html">Success Reviews</a></li>
+          <li><a href="faqs.html">Institutional FAQs</a></li>
+          <li><a href="jobs/index.html">Current Openings</a></li>
+          <li><a href="locations/index.html">Software Training Pune</a></li>
+          <li><a href="tools/free-career-guidance.html">Free Career Guidance</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Learning Portals</h4>
+        <ul style="list-style: none">
+          <li><a href="tools/index.html">Interactive Tools Suite</a></li>
+          <li><a href="tools/pune-it-salary-calculator.html">Pune IT Salary Calculator</a></li>
+          <li><a href="tools/pune-it-salary-report.html">Pune IT Salary Report 2026</a></li>
+          <li><a href="tools/course-recommendation-quiz.html">Course Finder Quiz</a></li>
+          <li><a href="tools/free-skill-assessment.html">Skill Assessment</a></li>
+          <li><a href="tools/career-roadmaps.html">Career Roadmaps</a></li>
+          <li><a href="guides/index.html">Career &amp; Tech Guides</a></li>
+          <li><a href="showcase/index.html">Student Project Showcase</a></li>
+          <li><a href="comparisons/technology-comparisons.html">Tech Comparisons</a></li>
+          <li><a href="tools/live-code-compiler.html">Live Code &amp; Syntax Validator</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact CACTS</h4>
+        <p style="margin-bottom: 0.5rem">
+          First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+          Maharashtra 411023
+        </p>
+        <p style="margin-bottom: 0.5rem">
+          <strong>Phone:</strong> +91 96655 66357
+        </p>
+        <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
+      </div>
+    </div>
+
+    <!-- Trust Credentials & Accreditations -->
+    <div style="
+          border-top: 1px solid var(--border);
+          padding: 1.5rem 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 2rem;
+          flex-wrap: wrap;
+          margin-top: 2rem;
+        ">
+      <div style="
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+          ">
+        <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong>
+        Our curricula and git code review models are designed in alignment
+        with ISO 29993:2017 standards for non-formal education training and
+        software engineering industry practices. *Self-declared alignment for
+        educational service quality.
+      </div>
+      <div style="
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            opacity: 0.75;
+            flex-wrap: wrap;
+          ">
+        <!-- ISO Compliant Badge -->
+        <div style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--accent-light);
+              cursor: help;
+            "
+          title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers.">
+          <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          ISO 29993:2017 ALIGNED*
+        </div>
+        <!-- Developer Led Badge -->
+        <div style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--primary-light);
+            ">
+          <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
+            <line x1="2" y1="22" x2="22" y2="20"></line>
+            <line x1="12" y1="17" x2="12" y2="20"></line>
+          </svg>
+          100% DEVELOPER LED
+        </div>
+        <!-- Reg Badge -->
+        <div style="
+              display: flex;
+              align-items: center;
+              gap: 0.5rem;
+              border: 1px solid var(--border);
+              padding: 0.4rem 0.75rem;
+              border-radius: 8px;
+              font-size: 0.75rem;
+              font-weight: 700;
+              color: var(--warning);
+            ">
+          <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
+            <line x1="9" x2="9" y1="22" y2="16"></line>
+            <line x1="15" x2="15" y1="22" y2="16"></line>
+            <line x1="9" x2="15" y1="16" y2="16"></line>
+            <path d="M8 6h2v2H8V6zm0 4h2v2H8v-2zm0 4h2v2H8v-2zm6-8h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z"></path>
+          </svg>
+          ESTD. 2012 IN PUNE
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div style="text-align: left">
+        <p>
+          &copy; <span id="footer-year">2026</span> CACTS - Centre of Advanced
+          Computer Training and Studies. All rights reserved.
+        </p>
+        <p style="
+              margin-top: 0.25rem;
+              font-size: 0.8rem;
+              color: var(--text-secondary);
+            ">
+          First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
+          Maharashtra 411023
+        </p>
+      </div>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+        <a href="sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
+        <span style="color: var(--border)">|</span>
+        <a href="feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
+        <span style="color: var(--border)">|</span>
+        <a href="privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
+        <span style="color: var(--border)">|</span>
+        <a href="terms-conditions.html" style="color: var(--text-secondary)">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Contact Buttons - Exactly matching verify.html -->
+  <div class="floating-ctas">
+    <a aria-label="Chat on WhatsApp" class="cta-circle cta-whatsapp"
+      href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20learning%20more%20about%20your%201-to-1%20training."
+      target="_blank">
+      <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+        stroke-width="2.5" style="vertical-align: middle; transform: translateY(-1px)" viewBox="0 0 24 24" width="24">
+        <path
+          d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+        </path>
+      </svg>
+    </a>
+    <a aria-label="Call CACTS" class="cta-circle cta-call" href="tel:+919665566357">
+      <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+        stroke-width="2.5" style="vertical-align: middle" viewBox="0 0 24 24" width="20">
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+        </path>
+      </svg>
+    </a>
+  </div>
+
+  <div id="toastNotification">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span id="toastMessage">Notification</span>
+  </div>
+
+  <script src="js/main.js"></script>
+
+  <!-- Invoicing & Receipts Application Logic -->
+  <script>
+    const INVOICE_API_ENDPOINT = "https://script.google.com/macros/s/AKfycbzrcvqXiyAjNmsU_r5BuyPqkTNaCoMnrVuBgamhf0zDph3PrYzTl_sVVvgeqQlhbA/exec";
+
+    let currentInvoices = {};
+    let currentActiveInvoice = null;
+    let currentActiveView = 'invoice'; // 'invoice' or 'receipt'
+    let currentActiveReceiptIndex = 0;
+
+    const DEFAULT_RECORD = {
+      invoiceNumber: "CACTS-202610-001",
+      studentName: "Rahul Patil",
+      mobileNumber: "9876543210",
+      joiningDate: "2026-10-05",
+      courseName: "Java Full Stack Development",
+      courseFees: 19999,
+      discount: 1999,
+      payments: [
+        {
+          receiptNumber: "CACTS-R-001",
+          date: "2026-10-05",
+          amount: 5000,
+          transactionNumber: "UPI123456789"
+        },
+        {
+          receiptNumber: "CACTS-R-002",
+          date: "2026-10-15",
+          amount: 3000,
+          transactionNumber: "TXN987654321"
+        }
+      ]
+    };
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const ySpan = document.getElementById('footer-year');
+      if (ySpan) ySpan.innerText = new Date().getFullYear();
+
+      const mobInput = document.getElementById('mobileInput');
+      if (mobInput) {
+        mobInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') handleManualSearch();
+        });
+      }
+
+      // Parse URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const mobileParam = urlParams.get('mobile');
+      const monthParam = urlParams.get('month');
+      const yearParam = urlParams.get('year');
+      const idParam = urlParams.get('id') || urlParams.get('inv');
+
+      if (mobileParam && mobileParam.trim()) {
+        const m = mobileParam.trim();
+        document.getElementById('mobileInput').value = m;
+        if (monthParam) document.getElementById('monthSelect').value = monthParam.trim();
+        if (yearParam) document.getElementById('yearSelect').value = yearParam.trim();
+        fetchInvoiceRecord(m, monthParam || document.getElementById('monthSelect').value, yearParam || document.getElementById('yearSelect').value);
+      } else if (idParam && idParam.trim()) {
+        const idStr = idParam.trim();
+        const parts = idStr.match(/(\d{4})(\d{2})/);
+        if (parts) {
+          document.getElementById('yearSelect').value = parts[1];
+          document.getElementById('monthSelect').value = parseInt(parts[2], 10).toString();
+        }
+        document.getElementById('mobileInput').value = '9876543210';
+        fetchInvoiceRecord('9876543210', document.getElementById('monthSelect').value, document.getElementById('yearSelect').value);
+      }
+      // When page visited without query params, do NOT auto-load any default invoice
+    });
+
+    window.addEventListener('resize', fitDocumentToScreen);
+
+    function fitDocumentToScreen() {
+      const viewport = document.querySelector('.invoice-viewport');
+      const canvas = currentActiveView === 'invoice' ? document.getElementById('invoiceCanvas') : document.getElementById('receiptCanvas');
+      if (!viewport || !canvas || canvas.style.display === 'none') return;
+
+      const sectionElem = viewport.closest('.tech-section') || document.body;
+      const sectionWidth = sectionElem.clientWidth;
+      const availableWidth = Math.min(sectionWidth - 16, 794);
+
+      if (availableWidth < 794) {
+        const scale = availableWidth / 794;
+        canvas.style.transform = `scale(${scale})`;
+        canvas.style.transformOrigin = 'top center';
+        viewport.style.height = `${(canvas.offsetHeight * scale) + 16}px`;
+      } else {
+        canvas.style.transform = 'none';
+        viewport.style.height = 'auto';
+      }
+    }
+
+    function handleManualSearch() {
+      const mobile = document.getElementById('mobileInput').value.trim();
+      const month = document.getElementById('monthSelect').value;
+      const year = document.getElementById('yearSelect').value;
+
+      if (!mobile || mobile.length !== 10 || !/^\d{10}$/.test(mobile)) {
+        showError('Invalid Mobile Number', 'Please enter a valid 10-digit registered mobile number (e.g. 9876543210).');
+        return;
+      }
+
+      const newUrl = `${window.location.protocol}//${window.location.host}${window.location.pathname}?mobile=${encodeURIComponent(mobile)}&month=${encodeURIComponent(month)}&year=${encodeURIComponent(year)}`;
+      window.history.pushState({ path: newUrl }, '', newUrl);
+
+      fetchInvoiceRecord(mobile, month, year);
+    }
+
+    function fetchInvoiceRecord(mobile, month, year, isBackgroundCheck = false) {
+      const statusBanner = document.getElementById('statusBanner');
+      if (!isBackgroundCheck) {
+        statusBanner.className = 'status-alert loading';
+        document.getElementById('statusInfo').innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="12"></circle></svg>
+          <span>CONNECTING TO SECURE BILLING GATEWAY: Authenticating student records for +91 ${mobile}...</span>
+        `;
+        document.getElementById('statusTimestamp').innerText = 'Querying ledger...';
+        document.getElementById('errorCard').style.display = 'none';
+      }
+
+      const requestUrl = `${INVOICE_API_ENDPOINT}?mobile=${encodeURIComponent(mobile)}&month=${encodeURIComponent(month)}&year=${encodeURIComponent(year)}`;
+
+      fetch(requestUrl)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP Error ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          if (!data || data.error || Object.keys(data).length === 0) {
+            if (mobile === '9876543210') {
+              currentInvoices = { "CACTS-202610-001": DEFAULT_RECORD };
+              currentActiveInvoice = DEFAULT_RECORD;
+              renderInvoice(DEFAULT_RECORD);
+              return;
+            }
+            const msg = data && data.error ? data.error : `No invoice records found for mobile ${mobile} in month ${month}/${year}.`;
+            showError('Billing Record Not Found', msg);
+            return;
+          }
+
+          currentInvoices = data;
+          // Pick first invoice key or matching invoice
+          const keys = Object.keys(data);
+          const firstKey = keys[0];
+          currentActiveInvoice = data[firstKey];
+
+          renderInvoice(currentActiveInvoice);
+        })
+        .catch(err => {
+          console.warn('Invoice fetch failed:', err);
+          if (mobile === '9876543210') {
+            currentInvoices = { "CACTS-202610-001": DEFAULT_RECORD };
+            currentActiveInvoice = DEFAULT_RECORD;
+            renderInvoice(DEFAULT_RECORD);
+            return;
+          }
+          showError('Billing Gateway Unavailable', 'Could not connect to the Google Apps Script billing service. Please check your internet connection.');
+        });
+    }
+
+    function renderInvoice(record) {
+      currentActiveInvoice = record;
+
+      document.getElementById('errorCard').style.display = 'none';
+      document.getElementById('downloadPdfBtn').disabled = false;
+      document.getElementById('printDocBtn').disabled = false;
+      document.getElementById('copyShareBtn').disabled = false;
+
+      // Status Banner
+      const statusBanner = document.getElementById('statusBanner');
+      const grossFees = Number(record.courseFees) || 0;
+      const discount = Number(record.discount) || 0;
+      const netPayable = Math.max(0, grossFees - discount);
+
+      const payments = Array.isArray(record.payments) ? record.payments : [];
+      const totalPaid = payments.reduce((sum, p) => sum + (Number(p.amount) || 0), 0);
+      const balanceDue = Math.max(0, netPayable - totalPaid);
+
+      let statusType = "PARTIAL";
+      let statusText = `PARTIAL PAYMENT: ${formatINR(totalPaid)} Paid &bull; ${formatINR(balanceDue)} Pending Balance`;
+      if (balanceDue <= 0 && netPayable > 0) {
+        statusType = "PAID";
+        statusText = `AUTHENTICATED BILLING: Invoice ${record.invoiceNumber} is Fully Paid &amp; Cleared.`;
+      } else if (totalPaid === 0) {
+        statusType = "UNPAID";
+        statusText = `PAYMENT PENDING: Net course fee of ${formatINR(netPayable)} is outstanding.`;
+      }
+
+      if (statusType === "PAID") {
+        statusBanner.className = 'status-alert success';
+      } else if (statusType === "PARTIAL") {
+        statusBanner.className = 'status-alert partial';
+      } else {
+        statusBanner.className = 'status-alert error';
+      }
+
+      document.getElementById('statusInfo').innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        <span>${statusText}</span>
+      `;
+      document.getElementById('statusTimestamp').innerText = `Verified: ${new Date().toLocaleDateString()}`;
+
+      // Update Top Badges & Selector
+      document.getElementById('receiptCountBadge').innerText = payments.length;
+      setupReceiptDropdown(payments);
+
+      // Populate Master Invoice Fields
+      document.getElementById('invNumberDisplay').innerText = record.invoiceNumber || 'CACTS-INV-001';
+      document.getElementById('invDateDisplay').innerText = `Issued: ${formatDate(record.joiningDate)}`;
+      document.getElementById('invStudentName').innerText = record.studentName || 'Student Name';
+      document.getElementById('invMobileNumber').innerText = `+91 ${record.mobileNumber || ''}`;
+      document.getElementById('invJoiningDate').innerText = formatDate(record.joiningDate);
+      document.getElementById('invCourseName').innerText = record.courseName || 'Software Engineering';
+      document.getElementById('tableCourseTitle').innerText = record.courseName || 'Software Engineering';
+
+      // Table & Totals
+      document.getElementById('tableGrossFee').innerText = formatINR(grossFees);
+      document.getElementById('tableDiscount').innerText = `- ${formatINR(discount)}`;
+      document.getElementById('tableNetFee').innerText = formatINR(netPayable);
+
+      document.getElementById('summaryGrossFee').innerText = formatINR(grossFees);
+      document.getElementById('summaryDiscount').innerText = `- ${formatINR(discount)}`;
+      document.getElementById('summaryNetFee').innerText = formatINR(netPayable);
+      document.getElementById('summaryTotalPaid').innerText = formatINR(totalPaid);
+      document.getElementById('summaryBalanceDue').innerText = formatINR(balanceDue);
+
+      // In Words
+      const paidInWords = convertNumberToIndianWords(totalPaid);
+      const balanceInWords = balanceDue > 0 ? convertNumberToIndianWords(balanceDue) : "Nil (No Outstanding Dues)";
+      document.getElementById('wordsAmountPaid').innerHTML = paidInWords.replace(/ /g, '&nbsp;');
+      document.getElementById('wordsBalanceDue').innerHTML = balanceInWords.replace(/ /g, '&nbsp;');
+
+      // Summary Balance Row & Words Styling
+      const balanceRow = document.getElementById('summaryBalanceRow');
+      const balanceLabel = document.getElementById('summaryBalanceLabel');
+      const wordsBalance = document.getElementById('wordsBalanceDue');
+      if (balanceRow) {
+        if (balanceDue <= 0 && netPayable > 0) {
+          balanceRow.className = 'balance-due-row cleared';
+          if (balanceLabel) balanceLabel.innerHTML = 'Account&nbsp;Standing:&nbsp;Net&nbsp;Balance&nbsp;Cleared&nbsp;in&nbsp;Full';
+          if (wordsBalance) wordsBalance.className = 'words-val';
+        } else {
+          balanceRow.className = 'balance-due-row';
+          if (balanceLabel) balanceLabel.innerHTML = 'Remaining&nbsp;Outstanding&nbsp;Balance&nbsp;Due:';
+          if (wordsBalance) wordsBalance.className = 'words-val balance';
+        }
+      }
+
+      // Status Pill Badges
+      const pillClass = statusType === "PAID" ? "status-pill-badge paid" : (statusType === "PARTIAL" ? "status-pill-badge partial" : "status-pill-badge unpaid");
+      const pillLabel = statusType === "PAID" ? "PAID IN FULL" : (statusType === "PARTIAL" ? "PARTIAL PAYMENT" : "PAYMENT PENDING");
+
+      const pillInline = document.getElementById('invStatusPillInline');
+      pillInline.className = pillClass;
+      pillInline.innerText = pillLabel;
+
+      const pillSummary = document.getElementById('invStatusPillSummary');
+      pillSummary.className = pillClass;
+      pillSummary.innerText = statusType === "PAID" ? "PAID IN FULL • ALL DUES CLEARED" : (statusType === "PARTIAL" ? `PARTIAL PAYMENT • ${formatINR(balanceDue)} DUE` : "PAYMENT OUTSTANDING");
+
+      // Populate Installments Ledger Table
+      const ledgerTbody = document.getElementById('paymentsLedgerBody');
+      ledgerTbody.innerHTML = '';
+
+      if (payments.length === 0) {
+        ledgerTbody.innerHTML = `<tr><td colspan="6" class="text-center" style="color: #94a3b8; padding: 20px;">No installment payments recorded yet.</td></tr>`;
+      } else {
+        let runningSum = 0;
+        payments.forEach((p, idx) => {
+          const amt = Number(p.amount) || 0;
+          runningSum += amt;
+          const remainingAfter = Math.max(0, netPayable - runningSum);
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td style="white-space: nowrap;">
+              <span class="receipt-link-btn" onclick="openSpecificReceipt(${idx})" title="Click to view Receipt Voucher">
+                ${p.receiptNumber}
+              </span>
+            </td>
+            <td class="text-center" style="white-space: nowrap; font-size: 0.8rem; color: #334155;">${formatDate(p.date)}</td>
+            <td style="font-family: monospace; font-size: 0.82rem; color: #334155;"><code style="background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.82rem; color: #334155;">${p.transactionNumber || 'N/A'}</code></td>
+            <td class="text-right" style="color: #047857; font-weight: 700; white-space: nowrap;">${formatINR(amt)}</td>
+            <td class="text-right" style="font-weight: 600; white-space: nowrap;">${formatINR(runningSum)}</td>
+            <td class="text-right" style="color: ${remainingAfter > 0 ? '#b45309' : '#047857'}; font-weight: 700; white-space: nowrap;">${formatINR(remainingAfter)}</td>
+          `;
+          ledgerTbody.appendChild(tr);
+        });
+      }
+
+      // Generate Verification QR Code
+      generateInvoiceQR(record);
+
+      // Render current view
+      switchView(currentActiveView);
+    }
+
+    function setupReceiptDropdown(payments) {
+      const select = document.getElementById('receiptSelect');
+      select.innerHTML = '';
+      if (payments.length > 0) {
+        payments.forEach((p, idx) => {
+          const opt = document.createElement('option');
+          opt.value = idx;
+          opt.innerText = `${p.receiptNumber} (${formatINR(p.amount)})`;
+          select.appendChild(opt);
+        });
+      }
+    }
+
+    function switchView(viewName) {
+      currentActiveView = viewName;
+      const btnInv = document.getElementById('btnViewInvoice');
+      const btnRcpt = document.getElementById('btnViewReceipt');
+      const invCanvas = document.getElementById('invoiceCanvas');
+      const rcptCanvas = document.getElementById('receiptCanvas');
+      const rcptSelect = document.getElementById('receiptSelect');
+
+      if (!currentActiveInvoice) {
+        invCanvas.style.display = 'none';
+        rcptCanvas.style.display = 'none';
+        rcptSelect.style.display = 'none';
+        return;
+      }
+
+      if (viewName === 'invoice') {
+        btnInv.className = 'view-toggle-btn active';
+        btnRcpt.className = 'view-toggle-btn';
+        invCanvas.style.display = 'block';
+        rcptCanvas.style.display = 'none';
+        rcptSelect.style.display = 'none';
+      } else {
+        btnInv.className = 'view-toggle-btn';
+        btnRcpt.className = 'view-toggle-btn active';
+        invCanvas.style.display = 'none';
+        rcptCanvas.style.display = 'block';
+        rcptSelect.style.display = 'inline-block';
+        renderSpecificReceipt(currentActiveReceiptIndex);
+      }
+
+      setTimeout(fitDocumentToScreen, 50);
+    }
+
+    function openSpecificReceipt(index) {
+      currentActiveReceiptIndex = index;
+      document.getElementById('receiptSelect').value = index;
+      switchView('receipt');
+    }
+
+    function renderSpecificReceipt(index) {
+      currentActiveReceiptIndex = parseInt(index, 10) || 0;
+      if (!currentActiveInvoice || !currentActiveInvoice.payments) return;
+
+      const payments = currentActiveInvoice.payments;
+      const payment = payments[currentActiveReceiptIndex] || payments[0];
+      if (!payment) return;
+
+      const grossFees = Number(currentActiveInvoice.courseFees) || 0;
+      const discount = Number(currentActiveInvoice.discount) || 0;
+      const netPayable = Math.max(0, grossFees - discount);
+
+      let priorSum = 0;
+      for (let i = 0; i < currentActiveReceiptIndex; i++) {
+        priorSum += (Number(payments[i].amount) || 0);
+      }
+      const thisAmount = Number(payment.amount) || 0;
+      const cumulativeSum = priorSum + thisAmount;
+      const remainingAfter = Math.max(0, netPayable - cumulativeSum);
+
+      document.getElementById('rcptNumberDisplay').innerText = payment.receiptNumber || 'CACTS-R-001';
+      document.getElementById('rcptDateDisplay').innerText = `Date: ${formatDate(payment.date)}`;
+      document.getElementById('rcptAmountBadge').innerText = formatINR(thisAmount);
+      document.getElementById('rcptInvoiceRef').innerText = currentActiveInvoice.invoiceNumber || 'N/A';
+
+      document.getElementById('rcptStudentName').innerText = currentActiveInvoice.studentName || 'Student Name';
+      document.getElementById('rcptMobile').innerText = `+91 ${currentActiveInvoice.mobileNumber || ''}`;
+      document.getElementById('rcptWordsAmount').innerHTML = convertNumberToIndianWords(thisAmount).replace(/ /g, '&nbsp;');
+      document.getElementById('rcptCourseName').innerText = currentActiveInvoice.courseName || 'Software Engineering';
+
+      document.getElementById('rcptTxnNumber').innerText = payment.transactionNumber || 'N/A';
+      document.getElementById('rcptPaymentMode').innerText = (payment.transactionNumber && payment.transactionNumber.startsWith('UPI')) ? 'UPI Transfer' : 'Direct Electronic Bank Transfer';
+      document.getElementById('rcptSequence').innerText = `Installment ${currentActiveReceiptIndex + 1} of ${payments.length}`;
+
+      document.getElementById('rcptNetTotal').innerText = formatINR(netPayable);
+      document.getElementById('rcptPriorPaid').innerText = formatINR(priorSum);
+      document.getElementById('rcptThisAmount').innerText = formatINR(thisAmount);
+      document.getElementById('rcptCumulativePaid').innerText = formatINR(cumulativeSum);
+      document.getElementById('rcptBalanceDue').innerText = formatINR(remainingAfter);
+
+      generateReceiptQR(payment);
+    }
+
+    function generateInvoiceQR(record) {
+      const container = document.getElementById('invQrCodeContainer');
+      container.innerHTML = '';
+      const url = `https://cactslearn.github.io/invoice.html?mobile=${record.mobileNumber}&month=${document.getElementById('monthSelect').value}&year=${document.getElementById('yearSelect').value}`;
+      new QRCode(container, {
+        text: url,
+        width: 76,
+        height: 76,
+        colorDark: "#0f172a",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    }
+
+    function generateReceiptQR(payment) {
+      const container = document.getElementById('rcptQrCodeContainer');
+      container.innerHTML = '';
+      const payload = `CACTS RECEIPT\nNo: ${payment.receiptNumber}\nDate: ${payment.date}\nAmount: Rs.${payment.amount}\nTxn: ${payment.transactionNumber}\nStudent: ${currentActiveInvoice.studentName}`;
+      new QRCode(container, {
+        text: payload,
+        width: 76,
+        height: 76,
+        colorDark: "#0f172a",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    }
+
+    function showError(title, message) {
+      document.getElementById('invoiceCanvas').style.display = 'none';
+      document.getElementById('receiptCanvas').style.display = 'none';
+      document.getElementById('downloadPdfBtn').disabled = true;
+      document.getElementById('printDocBtn').disabled = true;
+      document.getElementById('copyShareBtn').disabled = true;
+
+      const statusBanner = document.getElementById('statusBanner');
+      statusBanner.className = 'status-alert error';
+      document.getElementById('statusInfo').innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+        <span>BILLING LOOKUP FAILED: Record could not be authenticated.</span>
+      `;
+      document.getElementById('statusTimestamp').innerText = `Checked: ${new Date().toLocaleTimeString()}`;
+
+      const errorCard = document.getElementById('errorCard');
+      document.getElementById('errorTitle').innerText = title;
+      document.getElementById('errorDesc').innerText = message;
+      errorCard.style.display = 'block';
+    }
+
+    function downloadDocumentPDF() {
+      if (!currentActiveInvoice) return;
+      const isInvoice = currentActiveView === 'invoice';
+      const element = isInvoice ? document.getElementById('invoiceCanvas') : document.getElementById('receiptCanvas');
+      const filename = isInvoice ? `${currentActiveInvoice.invoiceNumber}_CACTS_Invoice.pdf` : `CACTS_Receipt_${currentActiveInvoice.payments[currentActiveReceiptIndex]?.receiptNumber || '001'}.pdf`;
+
+      // Save previous styles
+      const oldTransform = element.style.transform;
+      const oldOrigin = element.style.transformOrigin;
+      const oldPosition = element.style.position;
+      const oldTop = element.style.top;
+      const oldLeft = element.style.left;
+      const oldMargin = element.style.margin;
+      const oldZIndex = element.style.zIndex;
+      const oldWidth = element.style.width;
+      const oldMaxWidth = element.style.maxWidth;
+      const viewport = document.querySelector('.invoice-viewport');
+      const oldViewportHeight = viewport ? viewport.style.height : 'auto';
+
+      // Temporarily isolate element into fixed viewport to prevent any scroll or mobile cut-off
+      element.style.transform = 'none';
+      element.style.position = 'fixed';
+      element.style.top = '0px';
+      element.style.left = '0px';
+      element.style.margin = '0px';
+      element.style.width = '794px';
+      element.style.maxWidth = '794px';
+      element.style.zIndex = '99999';
+      if (viewport) viewport.style.height = 'auto';
+
+      document.fonts.ready.then(() => {
+        const targetWidth = 794;
+        const targetHeight = element.offsetHeight;
+
+        html2canvas(element, {
+          scale: 2.5,
+          useCORS: true,
+          allowTaint: true,
+          logging: false,
+          x: 0,
+          y: 0,
+          width: targetWidth,
+          height: targetHeight,
+          scrollX: 0,
+          scrollY: 0,
+          windowWidth: targetWidth,
+          backgroundColor: '#ffffff'
+        }).then(canvas => {
+          // Restore element styles immediately
+          element.style.transform = oldTransform;
+          element.style.transformOrigin = oldOrigin;
+          element.style.position = oldPosition;
+          element.style.top = oldTop;
+          element.style.left = oldLeft;
+          element.style.margin = oldMargin;
+          element.style.width = oldWidth;
+          element.style.maxWidth = oldMaxWidth;
+          element.style.zIndex = oldZIndex;
+          if (viewport) viewport.style.height = oldViewportHeight;
+          fitDocumentToScreen();
+
+          const imgData = canvas.toDataURL('image/jpeg', 0.98);
+
+          // Use jsPDF to place scaled image onto single A4 page with absolute fit
+          const JsPdfClass = (window.jspdf && window.jspdf.jsPDF) ? window.jspdf.jsPDF : (window.jsPDF ? window.jsPDF : null);
+
+          if (JsPdfClass) {
+            const pdf = new JsPdfClass({
+              orientation: 'portrait',
+              unit: 'mm',
+              format: 'a4',
+              compress: true
+            });
+
+            const a4Width = 210;
+            const a4Height = 297;
+            const margin = 8; // 8mm margin
+            const maxWidth = a4Width - (margin * 2); // 194mm
+            const maxHeight = a4Height - (margin * 2); // 281mm
+
+            const imgRatio = canvas.width / canvas.height;
+            let renderWidth = maxWidth;
+            let renderHeight = renderWidth / imgRatio;
+
+            // Strict single-page fitting: if rendered height exceeds printable page height, scale down
+            if (renderHeight > maxHeight) {
+              renderHeight = maxHeight;
+              renderWidth = renderHeight * imgRatio;
+            }
+
+            // Center horizontally and vertically on the single page
+            const posX = (a4Width - renderWidth) / 2;
+            const posY = (a4Height - renderHeight) / 2;
+
+            pdf.addImage(imgData, 'JPEG', posX, posY, renderWidth, renderHeight, undefined, 'FAST');
+            pdf.save(filename);
+            showToast("PDF downloaded - Single A4 page fit complete!");
+          } else {
+            // Fallback to html2pdf with exact px single page format
+            const opt = {
+              margin: 0,
+              filename: filename,
+              image: { type: 'jpeg', quality: 0.98 },
+              html2canvas: {
+                scale: 2,
+                useCORS: true,
+                x: 0,
+                y: 0,
+                width: targetWidth,
+                height: targetHeight,
+                windowWidth: targetWidth
+              },
+              jsPDF: { unit: 'px', format: [targetWidth, targetHeight], orientation: 'portrait', compress: true },
+              pagebreak: { mode: 'avoid-all' }
+            };
+            html2pdf().set(opt).from(element).save().then(() => {
+              showToast("PDF downloaded!");
+            });
+          }
+        }).catch(err => {
+          element.style.transform = oldTransform;
+          element.style.transformOrigin = oldOrigin;
+          element.style.position = oldPosition;
+          element.style.top = oldTop;
+          element.style.left = oldLeft;
+          element.style.margin = oldMargin;
+          element.style.zIndex = oldZIndex;
+          if (viewport) viewport.style.height = oldViewportHeight;
+          fitDocumentToScreen();
+          console.error(err);
+          showToast("Error generating PDF. Please use browser Print > Save as PDF.");
+        });
+      });
+    }
+
+    function copyDocumentLink() {
+      if (!currentActiveInvoice) return;
+      const url = currentActiveInvoice.mobileNumber ?
+        `${window.location.protocol}//${window.location.host}${window.location.pathname}?mobile=${encodeURIComponent(currentActiveInvoice.mobileNumber)}&month=${encodeURIComponent(document.getElementById('monthSelect').value)}&year=${encodeURIComponent(document.getElementById('yearSelect').value)}` :
+        window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        showToast("Direct invoice link copied to clipboard!");
+      }).catch(() => {
+        showToast("Link: " + url);
+      });
+    }
+
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      document.getElementById('toastMessage').innerText = message;
+      toast.style.display = 'flex';
+      setTimeout(() => {
+        toast.style.display = 'none';
+      }, 3500);
+    }
+
+    /* Helper: Indian Rupee Formatter */
+    function formatINR(val) {
+      const num = Number(val) || 0;
+      return '\u20B9 ' + num.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    /* Helper: Date Formatter */
+    function formatDate(dateStr) {
+      if (!dateStr) return 'N/A';
+      try {
+        const d = new Date(dateStr);
+        if (isNaN(d.getTime())) return dateStr;
+        return d.toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' });
+      } catch (e) {
+        return dateStr;
+      }
+    }
+
+    /* Helper: Number to Words (Indian Numbering System) */
+    function convertNumberToIndianWords(num) {
+      const n = Math.floor(Math.abs(Number(num) || 0));
+      if (n === 0) return "Rupees Zero Only";
+
+      const a = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+      const b = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+
+      function twoDigits(n) {
+        if (n < 20) return a[n];
+        const tens = b[Math.floor(n / 10)];
+        const ones = a[n % 10];
+        return ones ? tens + ' ' + ones : tens;
+      }
+
+      function inWords(val) {
+        if (val === 0) return '';
+        let words = [];
+
+        const crores = Math.floor(val / 10000000);
+        val %= 10000000;
+        if (crores > 0) words.push(inWords(crores) + ' Crore');
+
+        const lakhs = Math.floor(val / 100000);
+        val %= 100000;
+        if (lakhs > 0) words.push(twoDigits(lakhs) + ' Lakh');
+
+        const thousands = Math.floor(val / 1000);
+        val %= 1000;
+        if (thousands > 0) words.push(twoDigits(thousands) + ' Thousand');
+
+        const hundreds = Math.floor(val / 100);
+        val %= 100;
+        if (hundreds > 0) words.push(a[hundreds] + ' Hundred');
+
+        if (val > 0) {
+          if (words.length > 0) words.push('and');
+          words.push(twoDigits(val));
+        }
+
+        return words.join(' ');
+      }
+
+      return "Rupees " + inWords(n) + " Only";
+    }
+  </script>
+</body>
+
+</html>
