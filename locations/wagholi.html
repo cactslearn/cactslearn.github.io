@@ -11,6 +11,7 @@
  <meta content="index, follow" name="robots" />
  <link href="https://cactslearn.github.io/locations/wagholi.html" rel="canonical" />
  <link href="../css/style.css" rel="stylesheet" />
+ <link href="../css/locations.css" rel="stylesheet" />
  <!-- JSON-LD LocalBusiness Schema -->
  <script type="application/ld+json">
 {
@@ -2418,56 +2419,6 @@
  ]
  }
  </script>
- <style>
- .pune-courses-grid {
- display: grid;
- grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
- gap: 1.5rem;
- margin-top: 2.5rem;
- }
-
- .pune-course-card {
- background: var(--bg-card);
- border: 1px solid var(--border);
- border-radius: var(--border-radius);
- padding: 1.5rem;
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- transition: var(--transition);
- }
-
- .pune-course-card:hover {
- border-color: var(--border-hover);
- transform: translateY(-3px);
- background: var(--bg-card-hover);
- box-shadow: 0 10px 20px rgba(20, 184, 166, 0.08);
- }
-
- .pune-course-title {
- font-size: 1.15rem;
- color: var(--text-primary);
- margin-bottom: 0.5rem;
- font-family: var(--font-heading);
- }
-
- .pune-course-desc {
- color: var(--text-secondary);
- font-size: 0.88rem;
- line-height: 1.5;
- margin-bottom: 1.25rem;
- }
-
- .pune-course-meta {
- display: flex;
- justify-content: space-between;
- align-items: center;
- font-size: 0.85rem;
- border-top: 1px solid var(--border);
- padding-top: 0.75rem;
- margin-top: auto;
- }
- </style>
  <!-- JSON-LD FAQPage Schema -->
  <script type="application/ld+json">
  {
@@ -2546,7 +2497,7 @@
  </div>
  <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
  <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round"
- stroke-linejoin="round" stroke-width="2" style="vertical-align: middle"
+ stroke-linejoin="round" stroke-width="2" class="va-middle"
  viewbox="0 0 24 24" width="24">
  <line x1="3" x2="21" y1="12" y2="12"></line>
  <line x1="3" x2="21" y1="6" y2="6"></line>
@@ -2562,9 +2513,9 @@
  <a href="../reviews.html">Reviews</a>
  <a href="../faqs.html">FAQs</a>
  <button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle">
- <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
- stroke-linejoin="round" stroke-width="2" style="display: block" viewbox="0 0 24 24"
- width="20">
+ <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+ stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+ width="20" class="sun-icon d-block">
  <circle cx="12" cy="12" r="5"></circle>
  <line x1="12" x2="12" y1="1" y2="3"></line>
  <line x1="12" x2="12" y1="21" y2="23"></line>
@@ -2575,79 +2526,53 @@
  <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
  <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
  </svg>
- <svg class="moon-icon" fill="none" height="20" stroke="currentColor"
- stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
- style="display: none" viewbox="0 0 24 24" width="20">
+ <svg fill="none" height="20" stroke="currentColor"
+ stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" class="moon-icon d-none">
  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
  </svg>
  </button>
- <a class="btn btn-accent" href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%201-to-1%20demo%20session%20for%20training%20in%20Wagholi." target="_blank" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
+ <a href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%201-to-1%20demo%20session%20for%20training%20in%20Wagholi." target="_blank" class="btn btn-accent badge-dark-text">Book Demo</a>
  </nav>
  </div>
  </header>
- <main style="padding-top: 8rem">
+ <main class="pt-32">
  <!-- Hero SEO Section -->
- <section aria-labelledby="pune-h1" class="tech-section" style="padding-bottom: 4rem">
- <nav aria-label="Breadcrumb" style="
- margin-bottom: 2rem;
- font-size: 0.85rem;
- color: var(--text-secondary);
- ">
- <a href="../index.html" style="color: var(--accent)">Home</a> &gt;
- <a href="index.html" style="color: var(--accent)">Locations</a> &gt;
- <span style="color: var(--text-primary)">Wagholi Location</span>
+ <section aria-labelledby="pune-h1" class="tech-section u-9c2ee4">
+ <nav aria-label="Breadcrumb" class="u-09d055">
+ <a href="../index.html" class="text-accent">Home</a> &gt;
+ <a href="index.html" class="text-accent">Locations</a> &gt;
+ <span class="text-primary">Wagholi Location</span>
  </nav>
  <div class="grid-2">
  <div>
- <span style="
- display: inline-block;
- padding: 0.35rem 0.75rem;
- background: var(--accent-glow);
- border: 1px solid var(--accent);
- color: var(--accent-light);
- font-size: 0.85rem;
- font-weight: 600;
- border-radius: 20px;
- margin-bottom: 1.5rem;
- ">
+ <span class="u-7cde96">
  GH Raisoni &amp; Lexicon College Belt | Wagholi
  </span>
- <h1 id="pune-h1" style="
- font-size: 2.8rem;
- line-height: 1.2;
- font-family: var(--font-heading);
- margin-bottom: 1.5rem;
- ">
+ <h1 id="pune-h1" class="u-cba403">
  Software Training Institute in Wagholi, Pune
  </h1>
- <div class="location-intake-badge" style="margin: 1rem 0 1.5rem 0; color: var(--accent); font-weight: 600; font-size: 0.92rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+ <div class="location-intake-badge u-9c652f">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                 <span>Next 1-to-1 Intake: <span class="next-batch-date">October 15, 2026</span> (<span class="remaining-seats">1 Seats Available</span>)</span>
-                <span style="color: var(--border);">|</span>
+                <span class="border-subtle">|</span>
                 <span><span class="candidates-count">7400+ Engineers</span> Mentored</span>
-                <span style="color: var(--border);">|</span>
+                <span class="border-subtle">|</span>
                 <span>Pune Salary Benchmark: <span class="salary-benchmark">₹4.5 – ₹14.5 LPA</span></span>
               </div>
- <p style="
- font-size: 1.1rem;
- color: var(--text-secondary);
- line-height: 1.7;
- margin-bottom: 2rem;
- ">
+ <p class="u-959250">
  Serving engineering students along Nagar Road in Wagholi, CACTS
  brings <strong>1-to-1 software coaching to Wagholi</strong>. Enjoy
  100% practical screenshare lab sessions and live staging
  internships without traveling across town.
  </p>
- <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+ <div class="btn-row">
  <a class="btn btn-primary" href="#courses">Browse 1-to-1 Courses</a>
- <a class="btn btn-accent" href="../tools/free-skill-assessment.html"
- style="color: #0b0f19">Request Free
+ <a href="../tools/free-skill-assessment.html" class="btn btn-accent u-9f840f">Request Free
  Assessment</a>
  </div>
  </div>
  <div class="lead-form-container">
- <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading)">
+ <h3 class="heading-mb-6">
  Connect with our Mentors
  </h3>
  <form class="lead-form" id="pune-lead-form" toolaction="submit"
@@ -2672,44 +2597,42 @@
  </select>
  </div>
  <!-- Data Privacy Consent & Multilingual Switcher -->
- <div class="dpdp-consent-container"
- style="margin: 1.25rem 0 1rem 0; padding: 0.85rem; background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border); border-radius: 8px;">
+ <div class="dpdp-consent-container filter-box-panel">
  <div
- style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+ class="filter-box-header">
  <span
- style="font-size: 0.72rem; font-weight: 700; color: var(--accent-light); text-transform: uppercase; letter-spacing: 0.5px;">Data
+ class="filter-box-title">Data
  Privacy &amp; Consent Notice</span>
- <select class="dpdp-lang-select" onchange="toggleDpdpLang(this)"
- style="font-size: 0.72rem; padding: 2px 6px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px; cursor: pointer;">
+ <select onchange="toggleDpdpLang(this)" class="dpdp-lang-select filter-badge-btn">
  <option value="en">English</option>
  <option value="mr">मराठी (Marathi)</option>
  <option value="hi">हिंदी (Hindi)</option>
  </select>
  </div>
  <label
- style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.8rem; color: var(--text-secondary); cursor: pointer; line-height: 1.4;">
+ class="filter-checkbox-label">
  <input type="checkbox" id="dpdp_consent" name="dpdp_consent" required
- style="margin-top: 3px; accent-color: var(--accent);" />
+ class="input-accent-box" />
  <span class="dpdp-text-en">
  I consent to CACTS processing my name and contact details to
  schedule a free 1-to-1 demo session as per the
  <a href="privacy-policy.html#privacy-notice" target="_blank"
- style="color: var(--accent); text-decoration: underline;">Privacy
+ class="link-accent-underlined">Privacy
  &amp; Data Protection Notice</a>.
  I understand I can withdraw consent at any time.
  </span>
- <span class="dpdp-text-mr" style="display: none;">
+ <span class="dpdp-text-mr d-none">
  मी <a href="privacy-policy.html#privacy-notice" target="_blank"
- style="color: var(--accent); text-decoration: underline;">गोपनीयता
+ class="link-accent-underlined">गोपनीयता
  व डेटा संरक्षण सूचनेनुसार</a>
  विनामूल्य १-टू-१ डेमो सत्र
  आणि समुपदेशनासाठी माझे नाव आणि संपर्क तपशील प्रक्रिया करण्यास
  संमती देतो/देते.
  मी माझी संमती कोणत्याही वेळी मागे घेऊ शकतो/शकते.
  </span>
- <span class="dpdp-text-hi" style="display: none;">
+ <span class="dpdp-text-hi d-none">
  मैं <a href="privacy-policy.html#privacy-notice" target="_blank"
- style="color: var(--accent); text-decoration: underline;">गोपनीयता
+ class="link-accent-underlined">गोपनीयता
  एवं डेटा संरक्षण नोटिस</a> के अनुसार मुफ्त 1-टू-1 डेमो
  सत्र और परामर्श के लिए अपना नाम और संपर्क विवरण संसाधित करने के
  लिए सहमति देता/देती हूं।
@@ -2717,7 +2640,7 @@
  </span>
  </label>
  </div>
- <button class="btn btn-primary" style="width: 100%" type="submit">
+ <button type="submit" class="btn btn-primary w-full">
  Schedule Demo
  </button>
  </form>
@@ -2725,41 +2648,37 @@
  </div>
  </section>
  <!-- Practical 1-to-1 Pillar Section -->
- <section aria-labelledby="pillars-heading" style="border-top: 1px solid var(--border)">
+ <section aria-labelledby="pillars-heading" class="border-t">
  <h2 class="section-title" id="pillars-heading">
  Wagholi's Developer-Led Training Model
  </h2>
  <p class="section-subtitle">
  Why Wagholi college students choose CACTS 1-to-1 developer mentorship.
  </p>
- <div class="grid-3" style="margin-top: 3rem">
- <div class="card" style="padding: 2rem">
- <div style="margin-bottom: 1rem">
+ <div class="grid-3 mt-12">
+ <div class="card p-8">
+ <div class="mb-4">
  <svg fill="none" height="36" stroke="currentColor" stroke-linecap="round"
- stroke-linejoin="round" stroke-width="2" style="color: var(--accent)"
+ stroke-linejoin="round" stroke-width="2" class="text-accent"
  viewbox="0 0 24 24" width="36">
  <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
  <line x1="2" x2="22" y1="20" y2="20"></line>
  <line x1="12" x2="12" y1="17" y2="20"></line>
  </svg>
  </div>
- <h3 style="margin-bottom: 0.75rem; color: var(--accent-light)">
+ <h3 class="accent-mb-3">
  1-to-1 Paced Classes for Wagholi
  </h3>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- ">
+ <p class="text-muted-relaxed">
  No crowded classrooms. Candidates in Wagholi get a single
  developer-mentor working exclusively on live screenshare calls. We
  adjust the syllabus timing around your college or work schedule.
  </p>
  </div>
- <div class="card" style="padding: 2rem">
- <div style="margin-bottom: 1rem">
+ <div class="card p-8">
+ <div class="mb-4">
  <svg fill="none" height="36" stroke="currentColor" stroke-linecap="round"
- stroke-linejoin="round" stroke-width="2" style="color: var(--accent)"
+ stroke-linejoin="round" stroke-width="2" class="text-accent"
  viewbox="0 0 24 24" width="36">
  <circle cx="12" cy="12" r="3"></circle>
  <path
@@ -2767,14 +2686,10 @@
  </path>
  </svg>
  </div>
- <h3 style="margin-bottom: 0.75rem; color: var(--accent-light)">
+ <h3 class="accent-mb-3">
  Practical Production Code Focus
  </h3>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- ">
+ <p class="text-muted-relaxed">
  Write code from day one. Learners near GH Raisoni College of
  Engineering, Lexicon International, Moze College Wagholi, and
  Ubale Nagar master OOP structures, database schemas, and API
@@ -2782,10 +2697,10 @@
  watching slides.
  </p>
  </div>
- <div class="card" style="padding: 2rem">
- <div style="margin-bottom: 1rem">
+ <div class="card p-8">
+ <div class="mb-4">
  <svg fill="none" height="36" stroke="currentColor" stroke-linecap="round"
- stroke-linejoin="round" stroke-width="2" style="color: var(--accent)"
+ stroke-linejoin="round" stroke-width="2" class="text-accent"
  viewbox="0 0 24 24" width="36">
  <path d="M4.5 16.5c-1.5 1.25-2.5 3.5-2.5 3.5s2.25-1 3.5-2.5"></path>
  <path d="M12 12l9-9"></path>
@@ -2796,14 +2711,10 @@
  </path>
  </svg>
  </div>
- <h3 style="margin-bottom: 0.75rem; color: var(--accent-light)">
+ <h3 class="accent-mb-3">
  Live Staging Internships in Wagholi
  </h3>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- ">
+ <p class="text-muted-relaxed">
  Commit code to live servers. Trainees in Wagholi join active
  company staging branches, writing code, pushing feature branches,
  and receiving real developer pull request code reviews.
@@ -2812,7 +2723,7 @@
  </div>
  </section>
  <!-- Area Tech Landscape & Local Ecosystem Section -->
- <section aria-labelledby="landscape-heading" style="border-top: 1px solid var(--border); padding-top: 3rem">
+ <section aria-labelledby="landscape-heading" class="section-divider-top">
  <h2 class="section-title" id="landscape-heading">
  Software Engineering &amp; Hiring Ecosystem in Wagholi
  </h2>
@@ -2820,15 +2731,8 @@
  Why candidates from Wagholi choose direct line-by-line developer
  mentoring over traditional batch institutes.
  </p>
- <div class="card" style="padding: 2.5rem; margin-top: 2rem">
- <div style="
- display: grid;
- grid-template-columns: 1fr;
- gap: 1.5rem;
- color: var(--text-secondary);
- line-height: 1.7;
- font-size: 1rem;
- ">
+ <div class="card u-713030">
+ <div class="u-a1491e">
  <p>
  The technology landscape in <strong>Wagholi</strong> is driven by
  candidates seeking high-paying software engineering roles across
@@ -2847,23 +2751,23 @@
  At CACTS, we eliminate the batch model entirely for learners in
  <strong>Wagholi</strong>. Through our dedicated
  <a href="../courses/index.html"
- style="color: var(--accent-light); font-weight: 600">1-to-1 software
+ class="font-accent-semibold">1-to-1 software
  training framework</a>, every student is assigned an active software developer
  as a
  private mentor. Sessions take place live via interactive screen
  share, where your code is reviewed line by line. Whether you are
  learning
  <a href="../courses/java-fullstack/"
- style="color: var(--accent-light); font-weight: 600">Java Spring Boot
+ class="font-accent-semibold">Java Spring Boot
  Microservices</a>,
  <a href="../courses/full-stack/"
- style="color: var(--accent-light); font-weight: 600">MERN Web
+ class="font-accent-semibold">MERN Web
  Development</a>,
  <a href="../courses/data-science/"
- style="color: var(--accent-light); font-weight: 600">Python Data
+ class="font-accent-semibold">Python Data
  Science</a>, or
  <a href="../courses/devops/"
- style="color: var(--accent-light); font-weight: 600">Cloud DevOps
+ class="font-accent-semibold">Cloud DevOps
  Infrastructure</a>, your mentor adapts the speed, depth, and project domain to
  your
  exact goals.
@@ -2872,7 +2776,7 @@
  Furthermore, candidates in <strong>Wagholi</strong> get direct
  access to our
  <a href="../showcase/internship-on-live-projects.html"
- style="color: var(--accent-light); font-weight: 600">live project staging
+ class="font-accent-semibold">live project staging
  internship</a>. You will be
  added to active company Git repositories, write
  REST APIs, construct database migrations, and handle actual code
@@ -2881,18 +2785,18 @@
  or senior software salaries in Pune's IT market. Explore expected
  salary ranges for your target tech stack using our
  <a href="../tools/pune-it-salary-calculator.html"
- style="color: var(--accent-light); font-weight: 600">Pune
+ class="font-accent-semibold">Pune
  IT Salary Calculator</a>
  or read our detailed
  <a href="../tools/pune-it-salary-report.html"
- style="color: var(--accent-light); font-weight: 600">Pune IT
+ class="font-accent-semibold">Pune IT
  Salary Industry Report</a>.
  </p>
  </div>
  </div>
  </section>
  <!-- Dynamic Course Grid Section -->
- <section aria-labelledby="courses-heading" id="courses" style="border-top: 1px solid var(--border)">
+ <section aria-labelledby="courses-heading" id="courses" class="border-t">
  <h2 class="section-title" id="courses-heading">
  Software Engineering Courses in Wagholi, Pune
  </h2>
@@ -2913,9 +2817,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹19,999</span>
+ <span class="font-accent-bold">₹19,999</span>
  <a href="../courses/java-fullstack/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 2: Full Stack MERN -->
@@ -2930,9 +2834,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹17,999</span>
+ <span class="font-accent-bold">₹17,999</span>
  <a href="../courses/full-stack/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 3: React JS -->
@@ -2947,9 +2851,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹14,999</span>
+ <span class="font-accent-bold">₹14,999</span>
  <a href="../courses/react-js/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 4: React Native -->
@@ -2964,9 +2868,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹16,999</span>
+ <span class="font-accent-bold">₹16,999</span>
  <a href="../courses/react-native/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 5: AI & ML -->
@@ -2981,9 +2885,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹24,999</span>
+ <span class="font-accent-bold">₹24,999</span>
  <a href="../courses/ai-ml/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 6: AI Red Teaming -->
@@ -2998,9 +2902,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹24,999</span>
+ <span class="font-accent-bold">₹24,999</span>
  <a href="../courses/ai-red-teaming/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 7: Data Science -->
@@ -3015,9 +2919,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹22,999</span>
+ <span class="font-accent-bold">₹22,999</span>
  <a href="../courses/data-science/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 8: Data Engineering -->
@@ -3032,9 +2936,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹24,999</span>
+ <span class="font-accent-bold">₹24,999</span>
  <a href="../courses/data-engineering/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 9: Python Scripting -->
@@ -3049,9 +2953,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹9,999</span>
+ <span class="font-accent-bold">₹9,999</span>
  <a href="../courses/python/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 10: Power BI -->
@@ -3066,9 +2970,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹7,999</span>
+ <span class="font-accent-bold">₹7,999</span>
  <a href="../courses/power-bi/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 11: Cloud -->
@@ -3083,9 +2987,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹14,999</span>
+ <span class="font-accent-bold">₹14,999</span>
  <a href="../courses/cloud/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 12: DevOps -->
@@ -3100,9 +3004,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹14,999</span>
+ <span class="font-accent-bold">₹14,999</span>
  <a href="../courses/devops/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 13: Software Testing -->
@@ -3117,9 +3021,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹9,999</span>
+ <span class="font-accent-bold">₹9,999</span>
  <a href="../courses/software-testing/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 14: Cybersecurity -->
@@ -3134,9 +3038,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹19,999</span>
+ <span class="font-accent-bold">₹19,999</span>
  <a href="../courses/cybersecurity/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 15: Blockchain -->
@@ -3151,9 +3055,9 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹24,999</span>
+ <span class="font-accent-bold">₹24,999</span>
  <a href="../courses/blockchain/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  <!-- Course 16: Software Architect -->
@@ -3168,15 +3072,15 @@
  </p>
  </div>
  <div class="pune-course-meta">
- <span style="color: var(--accent-light); font-weight: 700">₹29,999</span>
+ <span class="font-accent-bold">₹29,999</span>
  <a href="../courses/software-architect/"
- style="color: var(--primary-light); font-weight: 600">View Syllabus &gt;</a>
+ class="font-primary-semibold">View Syllabus &gt;</a>
  </div>
  </div>
  </div>
  </section>
  <!-- Local Travel, Directions & Transit Info -->
- <section aria-labelledby="transit-heading" style="border-top: 1px solid var(--border); padding-top: 3rem">
+ <section aria-labelledby="transit-heading" class="section-divider-top">
  <h2 class="section-title" id="transit-heading">
  Commute &amp; Local Landmarks in Wagholi
  </h2>
@@ -3184,44 +3088,25 @@
  Rapid transit connectivity, student hubs, and flexible developer
  mentoring for candidates in Wagholi.
  </p>
- <div class="grid-2" style="margin-top: 2rem">
- <div class="card" style="padding: 2rem">
- <h3 style="
- color: var(--accent-light);
- margin-bottom: 1rem;
- font-size: 1.25rem;
- ">
+ <div class="grid-2 u-53a129">
+ <div class="card p-8">
+ <h3 class="u-9e0738">
  <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round"
- stroke-linejoin="round" stroke-width="2" style="
- vertical-align: middle;
- margin-right: 0.5rem;
- color: var(--accent);
- flex-shrink: 0;
- " viewbox="0 0 24 24" width="20">
+ stroke-linejoin="round" stroke-width="2" class="u-d7eca1" viewbox="0 0 24 24" width="20">
  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
  <circle cx="12" cy="10" r="3"></circle>
  </svg>Local Landmarks &amp; Student Hubs
  </h3>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- margin-bottom: 1rem;
- ">
+ <p class="text-muted-mb-4">
  Candidates from <b>Wagholi</b> frequently join our
  <a href="../courses/index.html"
- style="color: var(--accent-light); font-weight: 600">1-to-1 software
+ class="font-accent-semibold">1-to-1 software
  training</a>
  program from locations near
  <b>GH Raisoni College of Engineering, Lexicon International, Moze
  College Wagholi, and Ubale Nagar</b>.
  </p>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- margin-bottom: 1rem;
- ">
+ <p class="text-muted-mb-4">
  <b>Nearby Educational &amp; Tech Hubs:</b> Students and developers
  near
  <b>GH Raisoni Institute of Engineering &amp; Technology and Moze
@@ -3229,30 +3114,17 @@
  regularly leverage our live practical screenshares to build
  job-ready portfolios.
  </p>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- ">
+ <p class="text-muted-relaxed">
  <b>Solving Area Objections:</b> Nagar Road traffic jams between
  Wagholi and Yerwada waste hours for college students. Get direct
  1-to-1 developer mentoring online without traveling down Nagar
  Road.
  </p>
  </div>
- <div class="card" style="padding: 2rem">
- <h3 style="
- color: var(--accent-light);
- margin-bottom: 1rem;
- font-size: 1.25rem;
- ">
+ <div class="card p-8">
+ <h3 class="u-9e0738">
  <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round"
- stroke-linejoin="round" stroke-width="2" style="
- vertical-align: middle;
- margin-right: 0.5rem;
- color: var(--accent);
- flex-shrink: 0;
- " viewbox="0 0 24 24" width="20">
+ stroke-linejoin="round" stroke-width="2" class="u-d7eca1" viewbox="0 0 24 24" width="20">
  <rect height="14" rx="2" width="20" x="2" y="5"></rect>
  <path d="M2 10h20"></path>
  <path d="M6 15h12"></path>
@@ -3260,44 +3132,30 @@
  <path d="M18 19l-2-3"></path>
  </svg>Transit Options &amp; Virtual Convenience
  </h3>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- margin-bottom: 1rem;
- ">
+ <p class="text-muted-mb-4">
  <b>Metro &amp; Transit Routes:</b> Candidates in Wagholi use
  <b>Pune-Ahmednagar Highway BRTS line, PMPML Wagholi buses</b> for
  fast travel across the city.
  </p>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- margin-bottom: 1rem;
- ">
+ <p class="text-muted-mb-4">
  <b>Skip Travel Delays:</b> With our flexible virtual screenshare
  lab, you can attend interactive
- <a href="../courses/java-fullstack/" style="color: var(--accent-light)">Java
+ <a href="../courses/java-fullstack/" class="text-accent-light">Java
  Fullstack</a>,
- <a href="../courses/full-stack/" style="color: var(--accent-light)">MERN Stack</a>,
- <a href="../courses/data-science/" style="color: var(--accent-light)">Data
+ <a href="../courses/full-stack/" class="text-accent-light">MERN Stack</a>,
+ <a href="../courses/data-science/" class="text-accent-light">Data
  Science</a>, or
- <a href="../courses/devops/" style="color: var(--accent-light)">DevOps</a>
+ <a href="../courses/devops/" class="text-accent-light">DevOps</a>
  classes directly from your room without traveling.
  </p>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- ">
+ <p class="text-muted-relaxed">
  Check your potential earnings with our
  <a href="../tools/pune-it-salary-calculator.html"
- style="color: var(--accent-light); font-weight: 600">Pune
+ class="font-accent-semibold">Pune
  IT Salary Calculator</a>
  or take our
  <a href="../tools/course-recommendation-quiz.html"
- style="color: var(--accent-light); font-weight: 600">Course Finder Quiz</a>
+ class="font-accent-semibold">Course Finder Quiz</a>
  to identify your ideal software engineering track.
  </p>
  </div>
@@ -3305,178 +3163,152 @@
  </section>
  <!-- Localities cross-linking cluster -->
  <section aria-labelledby="local-cluster-heading"
- style="border-top: 1px solid var(--border); padding-top: 3rem">
- <h2 class="section-title" id="local-cluster-heading" style="text-align: center">
+ class="section-divider-top">
+ <h2 id="local-cluster-heading" class="section-title text-center">
  Our 1-to-1 Software Training Hubs in Pune &amp; PCMC
  </h2>
- <p class="section-subtitle" style="text-align: center">
+ <p class="section-subtitle text-center">
  Select your nearest neighborhood or IT corridor below to explore
  localized developer mentorship and live project internships.
  </p>
- <div style="
- display: grid;
- grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
- gap: 1rem;
- margin-top: 2rem;
- ">
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="pune.html" style="font-weight: 600; color: var(--accent-light)">Central Pune
+ <div class="u-d19b84">
+ <div class="card cell-center">
+ <a href="pune.html" class="font-accent-semibold">Central Pune
  Hub</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="index.html" style="font-weight: 600; color: var(--accent-light)">Shivane (CACTS
+ <div class="card cell-center">
+ <a href="index.html" class="font-accent-semibold">Shivane (CACTS
  HQ)</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="shivaji-nagar.html" style="font-weight: 600; color: var(--accent-light)">Shivaji
+ <div class="card cell-center">
+ <a href="shivaji-nagar.html" class="font-accent-semibold">Shivaji
  Nagar</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="fc-road.html" style="font-weight: 600; color: var(--accent-light)">FC Road</a>
+ <div class="card cell-center">
+ <a href="fc-road.html" class="font-accent-semibold">FC Road</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="jm-road.html" style="font-weight: 600; color: var(--accent-light)">JM Road</a>
+ <div class="card cell-center">
+ <a href="jm-road.html" class="font-accent-semibold">JM Road</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="kothrud.html" style="font-weight: 600; color: var(--accent-light)">Kothrud</a>
+ <div class="card cell-center">
+ <a href="kothrud.html" class="font-accent-semibold">Kothrud</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="karve-road.html" style="font-weight: 600; color: var(--accent-light)">Karve
+ <div class="card cell-center">
+ <a href="karve-road.html" class="font-accent-semibold">Karve
  Road</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
+ <div class="card cell-center">
  <a href="erandwane.html"
- style="font-weight: 600; color: var(--accent-light)">Erandwane</a>
+ class="font-accent-semibold">Erandwane</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="karvenagar.html" style="font-weight: 600; color: var(--accent-light)">Karve
+ <div class="card cell-center">
+ <a href="karvenagar.html" class="font-accent-semibold">Karve
  Nagar</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="warje.html" style="font-weight: 600; color: var(--accent-light)">Warje</a>
+ <div class="card cell-center">
+ <a href="warje.html" class="font-accent-semibold">Warje</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="sinhagad-road.html" style="font-weight: 600; color: var(--accent-light)">Sinhagad
+ <div class="card cell-center">
+ <a href="sinhagad-road.html" class="font-accent-semibold">Sinhagad
  Road</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="swargate.html" style="font-weight: 600; color: var(--accent-light)">Swargate</a>
+ <div class="card cell-center">
+ <a href="swargate.html" class="font-accent-semibold">Swargate</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="katraj.html" style="font-weight: 600; color: var(--accent-light)">Katraj</a>
+ <div class="card cell-center">
+ <a href="katraj.html" class="font-accent-semibold">Katraj</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
+ <div class="card cell-center">
  <a href="dhankawadi.html"
- style="font-weight: 600; color: var(--accent-light)">Dhankawadi</a>
+ class="font-accent-semibold">Dhankawadi</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="aundh.html" style="font-weight: 600; color: var(--accent-light)">Aundh</a>
+ <div class="card cell-center">
+ <a href="aundh.html" class="font-accent-semibold">Aundh</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="baner.html" style="font-weight: 600; color: var(--accent-light)">Baner</a>
+ <div class="card cell-center">
+ <a href="baner.html" class="font-accent-semibold">Baner</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="balewadi.html" style="font-weight: 600; color: var(--accent-light)">Balewadi</a>
+ <div class="card cell-center">
+ <a href="balewadi.html" class="font-accent-semibold">Balewadi</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="wakad.html" style="font-weight: 600; color: var(--accent-light)">Wakad</a>
+ <div class="card cell-center">
+ <a href="wakad.html" class="font-accent-semibold">Wakad</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
+ <div class="card cell-center">
  <a href="hinjewadi-phase-1.html"
- style="font-weight: 600; color: var(--accent-light)">Hinjewadi Phase 1</a>
+ class="font-accent-semibold">Hinjewadi Phase 1</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
+ <div class="card cell-center">
  <a href="hinjewadi-phase-2.html"
- style="font-weight: 600; color: var(--accent-light)">Hinjewadi Phase 2</a>
+ class="font-accent-semibold">Hinjewadi Phase 2</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
+ <div class="card cell-center">
  <a href="hinjewadi-phase-3.html"
- style="font-weight: 600; color: var(--accent-light)">Hinjewadi Phase 3</a>
+ class="font-accent-semibold">Hinjewadi Phase 3</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="pimple-saudagar.html" style="font-weight: 600; color: var(--accent-light)">Pimple
+ <div class="card cell-center">
+ <a href="pimple-saudagar.html" class="font-accent-semibold">Pimple
  Saudagar</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="rahatani.html" style="font-weight: 600; color: var(--accent-light)">Rahatani</a>
+ <div class="card cell-center">
+ <a href="rahatani.html" class="font-accent-semibold">Rahatani</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="akurdi.html" style="font-weight: 600; color: var(--accent-light)">Akurdi PCMC</a>
+ <div class="card cell-center">
+ <a href="akurdi.html" class="font-accent-semibold">Akurdi PCMC</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="chinchwad.html" style="font-weight: 600; color: var(--accent-light)">Chinchwad
+ <div class="card cell-center">
+ <a href="chinchwad.html" class="font-accent-semibold">Chinchwad
  PCMC</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="nigdi.html" style="font-weight: 600; color: var(--accent-light)">Nigdi PCMC</a>
+ <div class="card cell-center">
+ <a href="nigdi.html" class="font-accent-semibold">Nigdi PCMC</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="pimpri.html" style="font-weight: 600; color: var(--accent-light)">Pimpri PCMC</a>
+ <div class="card cell-center">
+ <a href="pimpri.html" class="font-accent-semibold">Pimpri PCMC</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="kharadi.html" style="font-weight: 600; color: var(--accent-light)">Kharadi
+ <div class="card cell-center">
+ <a href="kharadi.html" class="font-accent-semibold">Kharadi
  EON</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="viman-nagar.html" style="font-weight: 600; color: var(--accent-light)">Viman
+ <div class="card cell-center">
+ <a href="viman-nagar.html" class="font-accent-semibold">Viman
  Nagar</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="hadapsar.html" style="font-weight: 600; color: var(--accent-light)">Hadapsar</a>
+ <div class="card cell-center">
+ <a href="hadapsar.html" class="font-accent-semibold">Hadapsar</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
+ <div class="card cell-center">
  <a href="magarpatta-city.html"
- style="font-weight: 600; color: var(--accent-light)">Magarpatta City</a>
+ class="font-accent-semibold">Magarpatta City</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="mundhwa.html" style="font-weight: 600; color: var(--accent-light)">Mundhwa</a>
+ <div class="card cell-center">
+ <a href="mundhwa.html" class="font-accent-semibold">Mundhwa</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="wagholi.html" style="font-weight: 600; color: var(--accent-light)">Wagholi</a>
+ <div class="card cell-center">
+ <a href="wagholi.html" class="font-accent-semibold">Wagholi</a>
  </div>
- <div class="card" style="padding: 1.25rem; text-align: center">
- <a href="nagar-road.html" style="font-weight: 600; color: var(--accent-light)">Nagar
+ <div class="card cell-center">
+ <a href="nagar-road.html" class="font-accent-semibold">Nagar
  Road</a>
  </div>
  </div>
  </section>
  <!-- Google Maps Location Section -->
- <section aria-labelledby="map-heading" style="border-top: 1px solid var(--border)">
- <h2 id="map-heading" style="text-align: center; margin-bottom: 2rem">
+ <section aria-labelledby="map-heading" class="border-t">
+ <h2 id="map-heading" class="u-2a0d9b">
  Visit Our Physical Engineering Lab from Wagholi
  </h2>
- <div style="
- max-width: 800px;
- margin: 0 auto;
- border: 1px solid var(--border);
- border-radius: var(--border-radius);
- overflow: hidden;
- background: var(--bg-card);
- box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
- ">
+ <div class="u-79afea">
  <iframe allowfullscreen="" height="450" loading="lazy"
  referrerpolicy="no-referrer-when-downgrade"
  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1161.953561661783!2d73.77834101642081!3d18.46655071013162!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc295c02e7c7a4b%3A0xa8e6f68361f2eca4!2sCACTS!5e0!3m2!1sen!2sin!4v1781244873933!5m2!1sen!2sin"
- style="border: 0; display: block" title="CACTS Location Map - Shivane, Pune" width="100%">
+ class="u-a2dac2" title="CACTS Location Map - Shivane, Pune" width="100%">
  </iframe>
- <div style="
- padding: 1.5rem 2rem;
- text-align: center;
- border-top: 1px solid var(--border);
- ">
- <h4 style="
- margin-bottom: 0.5rem;
- font-size: 1.15rem;
- color: var(--text-primary);
- ">
+ <div class="u-f60af7">
+ <h4 class="u-5d84e1">
  Shivane, Pune, Maharashtra - 411023
  </h4>
- <p style="
- color: var(--text-secondary);
- font-size: 0.92rem;
- max-width: 600px;
- margin: 0 auto;
- ">
+ <p class="u-72dafc">
  Physical appointments can be scheduled by booking a slot. Online
  interactive mentoring is available virtually for all candidates.
  </p>
@@ -3486,138 +3318,96 @@
  <!-- Localized FAQ Section -->
  
     <!-- Verified Student Reviews & Testimonials Section -->
-    <section aria-labelledby="location-reviews-heading" style="padding-top: 3rem; border-top: 1px solid var(--border); margin-top: 3rem;">
-      <div style="text-align: center; margin-bottom: 2.5rem;">
+    <section aria-labelledby="location-reviews-heading" class="u-70568b">
+      <div class="u-fd5c31">
         <h2 class="section-title" id="location-reviews-heading">Student Reviews &amp; Testimonials</h2>
         <p class="section-subtitle">Real career transformations and feedback from students across Pune.</p>
-        <div style="display: inline-flex; align-items: center; gap: 0.75rem; margin-top: 1rem; background: var(--bg-card); border: 1px solid var(--accent); padding: 0.5rem 1.25rem; border-radius: 30px;">
-          <span style="color: var(--warning); display: inline-flex; align-items: center; gap: 0.25rem; font-weight: 700; font-size: 1.1rem;">
-            <svg fill="currentColor" height="18" stroke="currentColor" stroke-width="1" style="color: #eab308; vertical-align: middle;" viewbox="0 0 24 24" width="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <div class="u-2f33bd">
+          <span class="u-2716a4">
+            <svg fill="currentColor" height="18" stroke="currentColor" stroke-width="1" class="u-5ff56a" viewbox="0 0 24 24" width="18"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
             4.9 / 5.0 Rating
           </span>
-          <span style="color: var(--text-secondary); font-size: 0.95rem; font-weight: 500;">Based on 48 Verified Student Reviews</span>
+          <span class="u-d83e24">Based on 48 Verified Student Reviews</span>
         </div>
       </div>
-      <div class="grid-3" style="gap: 1.5rem;">
-        <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius);">
+      <div class="grid-3 u-4fb1cc">
+        <div class="card project-card-box">
           <div>
-            <div style="color: #eab308; margin-bottom: 0.75rem; font-size: 1.1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.25rem;">"The 1-to-1 attention was a game-changer. I got stuck on Java Hibernate session lifecycle, and my trainer debugged it with me line-by-line during the live internship phase."</p>
+            <div class="u-2f5c65">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="u-704ad6">"The 1-to-1 attention was a game-changer. I got stuck on Java Hibernate session lifecycle, and my trainer debugged it with me line-by-line during the live internship phase."</p>
           </div>
-          <div style="border-top: 1px solid var(--border); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
-            <strong style="color: var(--text-primary); font-size: 0.95rem;">Aniket K.</strong>
-            <span style="color: var(--accent); font-size: 0.85rem; font-weight: 500;">Java Fullstack Trainee</span>
+          <div class="u-f94903">
+            <strong class="u-5aecc9">Aniket K.</strong>
+            <span class="u-ca5185">Java Fullstack Trainee</span>
           </div>
         </div>
-        <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius);">
+        <div class="card project-card-box">
           <div>
-            <div style="color: #eab308; margin-bottom: 0.75rem; font-size: 1.1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.25rem;">"Unlike standard institutes in Pune that teach in batches of 40, here it is private. My trainer paced the Python scripts to match my grasp. Working on Git pull requests during the staging phase built my confidence."</p>
+            <div class="u-2f5c65">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="u-704ad6">"Unlike standard institutes in Pune that teach in batches of 40, here it is private. My trainer paced the Python scripts to match my grasp. Working on Git pull requests during the staging phase built my confidence."</p>
           </div>
-          <div style="border-top: 1px solid var(--border); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
-            <strong style="color: var(--text-primary); font-size: 0.95rem;">Pooja D.</strong>
-            <span style="color: var(--accent); font-size: 0.85rem; font-weight: 500;">Python &amp; Data Trainee</span>
+          <div class="u-f94903">
+            <strong class="u-5aecc9">Pooja D.</strong>
+            <span class="u-ca5185">Python &amp; Data Trainee</span>
           </div>
         </div>
-        <div class="card" style="padding: 1.75rem; display: flex; flex-direction: column; justify-content: space-between; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius);">
+        <div class="card project-card-box">
           <div>
-            <div style="color: #eab308; margin-bottom: 0.75rem; font-size: 1.1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.25rem;">"Best DevOps training model. We set up AWS EC2 instances, structured terraform templates, and debugged pipeline stages live. The Git branch code review comments from senior developers were highly detailed."</p>
+            <div class="u-2f5c65">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="u-704ad6">"Best DevOps training model. We set up AWS EC2 instances, structured terraform templates, and debugged pipeline stages live. The Git branch code review comments from senior developers were highly detailed."</p>
           </div>
-          <div style="border-top: 1px solid var(--border); padding-top: 0.75rem; display: flex; justify-content: space-between; align-items: center;">
-            <strong style="color: var(--text-primary); font-size: 0.95rem;">Rahul M.</strong>
-            <span style="color: var(--accent); font-size: 0.85rem; font-weight: 500;">DevOps &amp; Cloud Trainee</span>
+          <div class="u-f94903">
+            <strong class="u-5aecc9">Rahul M.</strong>
+            <span class="u-ca5185">DevOps &amp; Cloud Trainee</span>
           </div>
         </div>
       </div>
     </section>
 
-<section aria-labelledby="local-faq-heading" style="border-top: 1px solid var(--border); padding-top: 3rem">
- <h2 class="section-title" id="local-faq-heading" style="text-align: center">
+<section aria-labelledby="local-faq-heading" class="section-divider-top">
+ <h2 id="local-faq-heading" class="section-title text-center">
  Frequently Asked Questions in Wagholi
  </h2>
- <p class="section-subtitle" style="text-align: center">
+ <p class="section-subtitle text-center">
  Addressing local objections, commute questions, and course choices for
  candidates in Wagholi.
  </p>
- <div style="
- max-width: 900px;
- margin: 2rem auto 0 auto;
- display: flex;
- flex-direction: column;
- gap: 1.25rem;
- ">
- <div class="card" style="padding: 1.5rem">
- <h3 style="
- color: var(--accent-light);
- font-size: 1.15rem;
- margin-bottom: 0.5rem;
- font-family: var(--font-heading);
- ">
+ <div class="u-90160b">
+ <div class="card p-6">
+ <h3 class="accent-title-sm">
  Why do GH Raisoni &amp; Lexicon Wagholi students prefer CACTS
  1-to-1 training?
  </h3>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- ">
+ <p class="text-muted-relaxed">
  Wagholi students save long transit hours while getting private
  1-on-1 code reviews and live Git project internships.
  </p>
  </div>
- <div class="card" style="padding: 1.5rem">
- <h3 style="
- color: var(--accent-light);
- font-size: 1.15rem;
- margin-bottom: 0.5rem;
- font-family: var(--font-heading);
- ">
+ <div class="card p-6">
+ <h3 class="accent-title-sm">
  Can Wagholi freshers build GitHub portfolios for campus
  interviews?
  </h3>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- ">
+ <p class="text-muted-relaxed">
  Yes! Every student builds 3+ live GitHub repositories showcasing
  real web apps and microservices.
  </p>
  </div>
- <div class="card" style="padding: 1.5rem">
- <h3 style="
- color: var(--accent-light);
- font-size: 1.15rem;
- margin-bottom: 0.5rem;
- font-family: var(--font-heading);
- ">
+ <div class="card p-6">
+ <h3 class="accent-title-sm">
  Are session timings flexible during Wagholi college practicals?
  </h3>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- ">
+ <p class="text-muted-relaxed">
  Yes. 1-to-1 sessions can be scheduled flexibly around college
  hours.
  </p>
  </div>
- <div class="card" style="padding: 1.5rem">
- <h3 style="
- color: var(--accent-light);
- font-size: 1.15rem;
- margin-bottom: 0.5rem;
- font-family: var(--font-heading);
- ">
+ <div class="card p-6">
+ <h3 class="accent-title-sm">
  Which technologies are most in demand for Wagholi engineering
  graduates?
  </h3>
- <p style="
- color: var(--text-secondary);
- font-size: 0.95rem;
- line-height: 1.6;
- ">
+ <p class="text-muted-relaxed">
  Java Fullstack with Spring Boot, MERN Web Stack, Python Data
  Science, and AWS Cloud.
  </p>
@@ -3629,14 +3419,7 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-programs-row">
-        <h4 style="
-              color: var(--text-primary);
-              margin-bottom: 1.5rem;
-              font-size: 1rem;
-              font-weight: 700;
-              letter-spacing: 0.5px;
-              text-transform: uppercase;
-            ">
+        <h4 class="footer-col-heading">
           Engineering Labs &amp; Programs
         </h4>
         <ul class="footer-programs-grid">
@@ -3659,47 +3442,20 @@
         </ul>
       </div>
       <div class="footer-brand">
-        <a href="../index.html" style="
-              font-family: var(--font-heading);
-              font-size: 1.5rem;
-              font-weight: 800;
-              color: white;
-            ">CACTS</a>
+        <a href="../index.html" class="footer-brand-title">CACTS</a>
         <p>
           Centre of Advanced Computer Training and Studies. Providing
           practical, one-to-one virtual software training and internships on
           real company projects since 2012.
         </p>
-        <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem">
-          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+        <div class="footer-social footer-social-row">
+          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
           </a>
-          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -3707,18 +3463,7 @@
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
-          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
@@ -3726,18 +3471,7 @@
               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
             </svg>
           </a>
-          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path
@@ -3750,7 +3484,7 @@
       </div>
       <div class="footer-links">
         <h4>Institutional Links</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="../about.html">About CACTS</a></li>
           <li><a href="../academic-projects.html">Academic Projects</a></li>
           <li><a href="../ojt-internship.html">College OJT &amp; Internships</a></li>
@@ -3767,7 +3501,7 @@
       </div>
       <div class="footer-links">
         <h4>Learning Portals</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="../tools/index.html">Interactive Tools Suite</a></li>
           <li><a href="../tools/pune-it-salary-calculator.html">Pune IT Salary Calculator</a></li>
           <li><a href="../tools/pune-it-salary-report.html">Pune IT Salary Report 2026</a></li>
@@ -3782,79 +3516,39 @@
       </div>
       <div class="footer-contact">
         <h4>Contact CACTS</h4>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           <strong>Phone:</strong> +91 96655 66357
         </p>
         <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
       </div>
     </div>
     <!-- Trust Credentials & Accreditations -->
-    <div style="
-          border-top: 1px solid var(--border);
-          padding: 1.5rem 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-          margin-top: 2rem;
-        ">
-      <div style="
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            line-height: 1.5;
-          ">
+    <div class="footer-bottom-bar">
+      <div class="footer-desc-text">
         <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong>
         Our curricula and git code review models are designed in alignment
         with ISO 29993:2017 standards for non-formal education training and
         software engineering industry practices. *Self-declared alignment for
         educational service quality.
       </div>
-      <div style="
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            opacity: 0.75;
-            flex-wrap: wrap;
-          ">
+      <div class="footer-trust-strip">
         <!-- ISO Compliant Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--accent-light);
-              cursor: help;
-            "
+        <div class="footer-badge-accent"
           title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers.">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
           ISO 29993:2017 ALIGNED*
         </div>
         <!-- Developer Led Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--primary-light);
-            ">
+        <div class="footer-badge-primary">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
             <line x1="2" x2="22" y1="20" y2="20"></line>
             <line x1="12" x2="12" y1="17" y2="20"></line>
@@ -3862,19 +3556,9 @@
           100% DEVELOPER LED
         </div>
         <!-- Reg Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--warning);
-            ">
+        <div class="footer-badge-warning">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
             <line x1="9" x2="9" y1="22" y2="16"></line>
             <line x1="15" x2="15" y1="22" y2="16"></line>
@@ -3886,28 +3570,24 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div style="text-align: left">
+      <div class="text-left">
         <p>
           © <span id="footer-year">2026</span> CACTS - Centre of Advanced
           Computer Training and Studies. All rights reserved.
         </p>
-        <p style="
-              margin-top: 0.25rem;
-              font-size: 0.8rem;
-              color: var(--text-secondary);
-            ">
+        <p class="footer-address">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
       </div>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-        <a href="../sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../terms-conditions.html" style="color: var(--text-secondary)">Terms &amp; Conditions</a>
+      <div class="btn-row">
+        <a href="../sitemap.html" class="text-muted">Sitemap</a>
+        <span class="border-subtle">|</span>
+        <a href="../feeds/index.html" class="text-muted">RSS Feeds</a>
+        <span class="border-subtle">|</span>
+        <a href="../privacy-policy.html" class="text-muted">Privacy Policy</a>
+        <span class="border-subtle">|</span>
+        <a href="../terms-conditions.html" class="text-muted">Terms &amp; Conditions</a>
       </div>
     </div>
   </footer>
@@ -3917,7 +3597,7 @@
  href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20learning%20more%20about%20your%201-to-1%20training."
  target="_blank">
  <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
- stroke-width="2.5" style="vertical-align: middle; transform: translateY(-1px)" viewbox="0 0 24 24" width="24">
+ stroke-width="2.5" class="va-middle-cta" viewbox="0 0 24 24" width="24">
  <path
  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
  </path>
@@ -3925,7 +3605,7 @@
  </a>
  <a aria-label="Call CACTS" class="cta-circle cta-call" href="tel:+919665566357">
  <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
- stroke-width="2.5" style="vertical-align: middle" viewbox="0 0 24 24" width="20">
+ stroke-width="2.5" class="va-middle" viewbox="0 0 24 24" width="20">
  <path
  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
  </path>

@@ -1,0 +1,444 @@
+/* ==========================================================================
+   DOCUMENT PORTAL SHARED STYLESHEET (css/document-portal.css)
+   Shared styles for Certificate Verification (verify.html) & Student Invoicing (invoice.html)
+   ========================================================================== */
+
+/* Control Panel Card */
+.control-panel-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: var(--transition);
+}
+
+.control-panel-row-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.search-box-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 280px;
+  flex-wrap: wrap;
+}
+
+.search-box-group input,
+.search-box-group select {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: var(--transition);
+}
+
+.search-box-group input {
+  flex: 1;
+}
+
+.search-box-group select {
+  flex: 1;
+  min-width: 100px;
+}
+
+.search-box-group input:focus,
+.search-box-group select:focus {
+  border-color: var(--accent);
+}
+
+.action-btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Secondary Button Component */
+.btn-secondary {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--bg-card-hover);
+  border-color: var(--accent);
+  color: var(--accent-light);
+}
+
+/* View Toggle Switcher (Invoices vs Receipts) */
+.view-toggle-group {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.view-toggle-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.view-toggle-btn.active {
+  background: var(--accent);
+  color: #0b0f19;
+  font-weight: 700;
+}
+
+/* Light Theme Adjustments */
+body.light-theme .control-panel-card,
+body.light-theme .breakdown-card,
+body.light-theme .error-display-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .search-box-group input,
+body.light-theme .search-box-group select {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .search-box-group input:focus,
+body.light-theme .search-box-group select:focus {
+  border-color: var(--accent);
+}
+
+body.light-theme .btn-secondary {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #0f172a !important;
+}
+
+body.light-theme .btn-secondary:hover:not(:disabled) {
+  background: #f1f5f9;
+  color: var(--accent) !important;
+}
+
+body.light-theme .view-toggle-group {
+  background: #f1f5f9;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .view-toggle-btn.active {
+  background: var(--accent);
+  color: #0b0f19;
+}
+
+body.light-theme #toastNotification {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Verification & Invoicing Status Alert Banner */
+.status-alert {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.status-alert.success {
+  display: flex;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid var(--success);
+  color: var(--success);
+}
+
+.status-alert.expired,
+.status-alert.partial {
+  display: flex;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid #f59e0b;
+  color: #f59e0b;
+}
+
+.status-alert.error {
+  display: flex;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+
+.status-alert.loading {
+  display: flex;
+  background: rgba(2, 132, 199, 0.12);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.status-alert-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Error Display Card */
+.error-display-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.error-display-card svg {
+  width: 48px;
+  height: 48px;
+  color: var(--danger);
+  margin-bottom: 1rem;
+}
+
+.error-display-card h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.error-display-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Floating Toast Notification */
+#toastNotification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 9999;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Verification, Stamp & Signature Footer */
+.doc-auth-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  position: relative;
+  z-index: 2;
+}
+
+.auth-qr-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.auth-qr-img {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #e2e8f0;
+  padding: 2px;
+  background: #ffffff;
+  border-radius: 4px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.auth-qr-img canvas,
+.auth-qr-img img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  object-fit: contain;
+}
+
+.auth-qr-caption {
+  font-size: 0.67rem;
+  color: #64748b;
+  line-height: 1.35;
+  max-width: 165px;
+}
+
+.auth-seal-block {
+  height: 80px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.official-gold-seal-svg {
+  width: 80px;
+  height: 80px;
+  display: block;
+  filter: drop-shadow(0 2px 5px rgba(180, 83, 9, 0.2));
+  flex-shrink: 0;
+}
+
+.auth-sig-block {
+  height: 80px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+
+.auth-signature-script {
+  font-family: 'Alex Brush', cursive;
+  font-size: 1.85rem;
+  color: #0f172a;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.auth-sig-line {
+  width: 130px;
+  height: 1px;
+  background: #0f172a;
+  margin: 2px 0 4px auto;
+}
+
+.auth-sig-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.auth-sig-title {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.doc-legal-disclaimer {
+  margin-top: 12px;
+  font-size: 0.66rem;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.35;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 5px;
+}
+
+/* Responsive Mobile Control Panel Adjustment */
+@media (max-width: 768px) {
+  .control-panel-card {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .control-panel-row-top {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .search-box-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+    gap: 0.75rem;
+  }
+
+  .action-btn-group {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .search-box-group input,
+  .search-box-group select,
+  .search-box-group button,
+  .control-panel-row-top button,
+  .action-btn-group button,
+  #linkedinBtn,
+  #downloadPdfBtn,
+  #downloadPngBtn,
+  #copyLinkBtn,
+  #fetchInvoiceBtn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .view-toggle-group {
+    width: 100%;
+  }
+
+  .view-toggle-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}

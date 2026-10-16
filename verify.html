@@ -26,6 +26,8 @@
 
   <!-- Standard Site CSS -->
   <link href="css/style.css" rel="stylesheet" />
+  <link href="css/document-portal.css" rel="stylesheet" />
+  <link href="css/verification.css" rel="stylesheet" />
   <link href="css/social-share.css" rel="stylesheet" />
   <script src="js/social-share-engine.js" defer></script>
 
@@ -98,925 +100,6 @@
 }
   </script>
 
-  <style>
-    /* Control Panel Card */
-    .control-panel-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--border-radius);
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: var(--transition);
-    }
-
-    .control-panel-row-top {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.75rem;
-      width: 100%;
-    }
-
-    .search-box-group {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex: 1;
-      min-width: 280px;
-    }
-
-    .search-box-group input {
-      flex: 1;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-primary);
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-      font-size: 0.95rem;
-      font-family: var(--font-body);
-      outline: none;
-      transition: var(--transition);
-    }
-
-    .search-box-group input:focus {
-      border-color: var(--accent);
-    }
-
-    .action-btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      align-items: center;
-    }
-
-    .btn-secondary {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-primary);
-      font-weight: 600;
-      transition: var(--transition);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.65rem 1.15rem;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .btn-secondary:hover:not(:disabled) {
-      background: var(--bg-card-hover);
-      border-color: var(--accent);
-      color: var(--accent-light);
-    }
-
-    /* Dynamic Light Theme Adjustments */
-    body.light-theme .control-panel-card,
-    body.light-theme .breakdown-card,
-    body.light-theme .error-display-card {
-      background: rgba(255, 255, 255, 0.88);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    }
-
-    body.light-theme .search-box-group input {
-      background: #ffffff;
-      color: #0f172a;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-    }
-
-    body.light-theme .search-box-group input:focus {
-      border-color: var(--accent);
-    }
-
-    body.light-theme .btn-secondary {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.15);
-      color: #0f172a !important;
-    }
-
-    body.light-theme .btn-secondary:hover:not(:disabled) {
-      background: #f1f5f9;
-      color: var(--accent) !important;
-    }
-
-    body.light-theme .project-card-item {
-      background: #ffffff;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-    }
-
-    body.light-theme .project-card-title span,
-    body.light-theme .breakdown-card h3,
-    body.light-theme .error-display-card h2 {
-      color: #0f172a !important;
-    }
-
-    body.light-theme .hash-box-code {
-      background: #f8fafc;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      color: #475569;
-    }
-
-    body.light-theme .skill-badge {
-      background: rgba(20, 184, 166, 0.1);
-      border: 1px solid rgba(20, 184, 166, 0.3);
-      color: #0f766e;
-    }
-
-    body.light-theme #toastNotification {
-      background: #ffffff;
-      color: #0f172a;
-      border: 1px solid var(--accent);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-    }
-
-    /* Verification Status Alert Banner */
-    .status-alert {
-      width: 100%;
-      padding: 0.85rem 1.25rem;
-      border-radius: 8px;
-      margin-bottom: 1.5rem;
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .status-alert.success {
-      display: flex;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid var(--success);
-      color: var(--success);
-    }
-
-    .status-alert.expired {
-      display: flex;
-      background: rgba(245, 158, 11, 0.12);
-      border: 1px solid #f59e0b;
-      color: #f59e0b;
-    }
-
-    .status-alert.error {
-      display: flex;
-      background: rgba(239, 68, 68, 0.12);
-      border: 1px solid var(--danger);
-      color: var(--danger);
-    }
-
-    .status-alert.loading {
-      display: flex;
-      background: rgba(2, 132, 199, 0.12);
-      border: 1px solid var(--accent);
-      color: var(--accent);
-    }
-
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-
-    .status-alert-info {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    /* Responsive Certificate Viewport */
-    .certificate-viewport {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding: 0.5rem 0;
-      overflow: visible;
-      min-height: 0;
-    }
-
-    /* ==========================================================================
-       PRINT-READY CERTIFICATE CANVAS: Fixed A4 Landscape (1050px x 742px)
-       Padded & Compacted to ensure ZERO bottom clipping in PDF/Print
-       ========================================================================== */
-    #certificateCanvas {
-      width: 1050px;
-      height: 742px;
-      background-color: #ffffff !important;
-      color: #0a192f !important;
-      position: relative;
-      padding: 14px;
-      box-sizing: border-box;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      font-family: 'Montserrat', sans-serif;
-      overflow: hidden;
-      margin: 0 auto;
-      flex-shrink: 0;
-
-      -webkit-font-smoothing: antialiased !important;
-      -moz-osx-font-smoothing: grayscale !important;
-      text-rendering: optimizeLegibility !important;
-    }
-
-    /* Background Cryptographic Security Watermark */
-    .cert-security-watermark {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) rotate(-28deg);
-      font-family: 'Cinzel', serif;
-      font-size: 2.1rem;
-      font-weight: 800;
-      color: rgba(10, 25, 47, 0.035);
-      text-transform: uppercase;
-      letter-spacing: 6px;
-      white-space: nowrap;
-      pointer-events: none;
-      user-select: none;
-      z-index: 1;
-    }
-
-    /* Metallic Gold Foil Seal Badge - Doubled Size (120px x 120px) */
-    .gold-foil-seal-badge {
-      position: absolute;
-      top: 24px;
-      right: 28px;
-      width: 120px;
-      height: 120px;
-      background: radial-gradient(circle, #ffe082 0%, #d4af37 40%, #aa771c 80%, #bf953f 100%);
-      border-radius: 50%;
-      box-shadow: 0 6px 16px rgba(170, 119, 28, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 12;
-      border: 3px solid #ffffff;
-    }
-
-    .gold-foil-seal-inner {
-      width: 98px;
-      height: 98px;
-      border: 2px dashed #0a192f;
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #0a192f;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      line-height: 1.25;
-    }
-
-    /* Left CACTS Logo Badge - Matched 120px Scale Parallel to Seal */
-    .cert-logo-left-badge {
-      position: absolute;
-      top: 24px;
-      left: 28px;
-      width: 120px;
-      height: 120px;
-      background: #ffffff;
-      border-radius: 50%;
-      border: 2px solid #bf953f;
-      box-shadow: 0 4px 14px rgba(10, 25, 47, 0.15);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 12;
-      padding: 12px;
-      box-sizing: border-box;
-    }
-
-    .cert-logo-left-badge img {
-      max-width: 96px;
-      max-height: 96px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-    }
-
-    /* Multi-layered Outer Frame incorporating CACTS Brand Palette */
-    .cert-frame-outer {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      right: 10px;
-      bottom: 10px;
-      border: 3px solid #bf953f;
-      pointer-events: none;
-    }
-
-    .cert-frame-middle {
-      position: absolute;
-      top: 15px;
-      left: 15px;
-      right: 15px;
-      bottom: 15px;
-      border: 1px solid #e11d48;
-      pointer-events: none;
-    }
-
-    .cert-frame-inner {
-      position: absolute;
-      top: 19px;
-      left: 19px;
-      right: 19px;
-      bottom: 19px;
-      border: 1.5px solid #0a192f;
-      pointer-events: none;
-    }
-
-    /* Corner Vector Ornaments */
-    .corner-svg {
-      position: absolute;
-      width: 38px;
-      height: 38px;
-      color: #bf953f;
-      pointer-events: none;
-    }
-
-    .corner-tl {
-      top: 21px;
-      left: 21px;
-    }
-
-    .corner-tr {
-      top: 21px;
-      right: 21px;
-      transform: scaleX(-1);
-    }
-
-    .corner-bl {
-      bottom: 21px;
-      left: 21px;
-      transform: scaleY(-1);
-    }
-
-    .corner-br {
-      bottom: 21px;
-      right: 21px;
-      transform: scale(-1);
-    }
-
-    .cert-content {
-      position: relative;
-      z-index: 10;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 8px 20px;
-      text-align: center;
-      box-sizing: border-box;
-    }
-
-    /* Header Section - Height-Matched 110px Block Centered Between 120px Badges */
-    .cert-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 110px;
-      padding: 0 135px;
-      margin-bottom: 2px;
-    }
-
-    .cert-header-tag {
-      font-size: 0.6rem;
-      font-weight: 800;
-      color: #bf953f;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-
-    .cert-institute-name {
-      font-family: 'Cinzel', serif;
-      font-size: 1.22rem;
-      font-weight: 800;
-      color: #0a192f;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-      line-height: 1.3;
-      margin-bottom: 5px;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-    }
-
-    .cert-institute-sub {
-      font-size: 0.7rem;
-      font-weight: 800;
-      color: #e11d48;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-    }
-
-    /* Main Title Section */
-    .cert-title-container {
-      margin: 2px 0;
-    }
-
-    .cert-main-title {
-      font-family: 'Cinzel', serif;
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #0a192f !important;
-      background: none !important;
-      -webkit-text-fill-color: initial !important;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-
-    .cert-divider-line {
-      width: 200px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #e11d48, #bf953f, transparent);
-      margin: 2px auto;
-    }
-
-    /* Body Section */
-    .cert-body {
-      margin: 4px 0;
-      padding: 2px 0;
-    }
-
-    .cert-lead-text {
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #475569;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      margin-bottom: 2px;
-    }
-
-    .cert-student-name {
-      font-family: 'Alex Brush', cursive;
-      font-size: 3.2rem;
-      color: #0a192f;
-      margin: 0;
-      line-height: 1.05;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-    }
-
-    .cert-wording {
-      font-size: 0.88rem;
-      color: #334155;
-      line-height: 1.45;
-      max-width: 820px;
-      margin: 4px auto 6px auto;
-    }
-
-    .cert-course-name {
-      font-family: 'Cinzel', serif;
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #0a192f;
-      letter-spacing: 2px;
-      line-height: 1.35;
-      margin: 8px 0 8px 0;
-      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-    }
-
-    .cert-meta-details {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #aa771c;
-      letter-spacing: 1px;
-      margin-top: 2px;
-      margin-bottom: 4px;
-    }
-
-    /* Compliance Strip */
-    .cert-standards-strip {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin: 2px 0;
-      font-size: 0.6rem;
-      font-weight: 700;
-      color: #475569;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .cert-standard-tag {
-      padding: 1px 7px;
-      border: 1px solid #cbd5e1;
-      border-radius: 4px;
-      background: #f8fafc;
-    }
-
-    /* Footer Row 5-Column Alignment - 88px Core Height */
-    .cert-footer-row {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      margin-top: 4px;
-      padding-top: 4px;
-      border-top: 1px solid rgba(10, 25, 47, 0.12);
-      width: 100%;
-      min-height: 88px;
-    }
-
-    .qr-item-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      width: 76px;
-      height: 88px;
-    }
-
-    .qr-code-box {
-      width: 76px;
-      height: 76px;
-      background: #ffffff;
-      padding: 2px;
-      border: 1px solid #94a3b8;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-
-    .qr-code-box canvas,
-    .qr-code-box img {
-      width: 70px !important;
-      height: 70px !important;
-      image-rendering: pixelated;
-    }
-
-    .seal-center-box {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      margin: 0 2px;
-      height: 88px;
-    }
-
-    .seal-svg-img {
-      width: 76px;
-      height: 76px;
-    }
-
-    .sig-item-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      min-width: 165px;
-      height: 88px;
-      white-space: nowrap;
-    }
-
-    .sig-handwritten {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: #0a192f;
-      margin-bottom: 2px;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .sig-handwritten-director {
-      font-family: 'Sacramento', cursive;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: #0a192f;
-      margin-bottom: 2px;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .sig-rule {
-      width: 145px;
-      height: 1.5px;
-      background-color: #0a192f;
-      margin-top: 1px;
-      margin-bottom: 4px;
-    }
-
-    .sig-name-label {
-      font-size: 0.74rem;
-      font-weight: 700;
-      color: #0a192f;
-      margin-bottom: 3px;
-      line-height: 1.2;
-      letter-spacing: 0.3px;
-      white-space: nowrap;
-    }
-
-    .sig-title-label {
-      font-size: 0.62rem;
-      font-weight: 600;
-      color: #475569;
-      text-transform: uppercase;
-      line-height: 1.2;
-      letter-spacing: 0.5px;
-      white-space: nowrap;
-    }
-
-    /* Bottom Credentials Footer Bar */
-    .cert-credentials-footer {
-      font-size: 0.62rem;
-      font-weight: 600;
-      color: #475569;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      margin-top: 4px;
-      padding-top: 3px;
-      border-top: 1px dashed rgba(10, 25, 47, 0.15);
-    }
-
-    .cert-status-badge {
-      padding: 1px 5px;
-      border-radius: 3px;
-      font-size: 0.58rem;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .cert-status-badge.valid {
-      background: rgba(16, 185, 129, 0.15);
-      color: #059669;
-      border: 1px solid #10b981;
-    }
-
-    .cert-status-badge.expired {
-      background: rgba(245, 158, 11, 0.15);
-      color: #d97706;
-      border: 1px solid #f59e0b;
-    }
-
-    .cert-status-badge.revoked {
-      background: rgba(239, 68, 68, 0.15);
-      color: #dc2626;
-      border: 1px solid #ef4444;
-    }
-
-    /* Interactive Skills & Project Breakdown Section */
-    .breakdown-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--border-radius);
-      padding: 2rem;
-      margin-top: 2rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      transition: var(--transition);
-    }
-
-    .breakdown-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 1.5rem;
-    }
-
-    @media (max-width: 850px) {
-      .breakdown-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .skill-badges-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1rem;
-    }
-
-    .skill-badge {
-      background: rgba(191, 149, 63, 0.1);
-      border: 1px solid rgba(191, 149, 63, 0.3);
-      color: var(--accent-light);
-      padding: 0.4rem 0.8rem;
-      border-radius: 6px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: var(--transition);
-    }
-
-    .project-card-item {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
-      margin-bottom: 0.85rem;
-      transition: var(--transition);
-    }
-
-    .project-card-item:hover {
-      border-color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .project-card-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 0.25rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .project-card-desc {
-      font-size: 0.84rem;
-      color: var(--text-secondary);
-      line-height: 1.5;
-    }
-
-    .hash-box-code {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      padding: 0.75rem 1rem;
-      border-radius: 6px;
-      font-family: monospace;
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-      word-break: break-all;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-top: 0.75rem;
-    }
-
-    /* Error Display Card */
-    .error-display-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--border-radius);
-      padding: 3rem 2rem;
-      text-align: center;
-      max-width: 600px;
-      margin: 2rem auto;
-    }
-
-    .error-display-card svg {
-      width: 48px;
-      height: 48px;
-      color: var(--danger);
-      margin-bottom: 1rem;
-    }
-
-    .error-display-card h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 1.3rem;
-      color: var(--text-primary);
-      margin-bottom: 0.75rem;
-    }
-
-    .error-display-card p {
-      font-size: 0.9rem;
-      color: var(--text-secondary);
-      line-height: 1.6;
-    }
-
-    /* Toast Notification Container */
-    #toastNotification {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: var(--bg-card);
-      border: 1px solid var(--accent);
-      color: var(--text-primary);
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      display: none;
-      z-index: 9999;
-      align-items: center;
-      gap: 8px;
-    }
-
-    /* Responsive Mobile Control Panel Adjustment */
-    @media (max-width: 768px) {
-      .control-panel-card {
-        padding: 1rem;
-        gap: 1rem;
-      }
-
-      .control-panel-row-top {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        gap: 0.75rem;
-      }
-
-      .search-box-group {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        min-width: 0;
-        gap: 0.75rem;
-      }
-
-      .action-btn-group {
-        flex-direction: column;
-        align-items: stretch;
-        width: 100%;
-        gap: 0.75rem;
-      }
-
-      .search-box-group input,
-      .search-box-group button,
-      .control-panel-row-top button,
-      .action-btn-group button,
-      #linkedinBtn,
-      #downloadPdfBtn,
-      #downloadPngBtn,
-      #copyLinkBtn {
-        width: 100% !important;
-        box-sizing: border-box !important;
-        justify-content: center;
-        text-align: center;
-      }
-    }
-
-    /* Strict A4 Landscape Native Print Styles */
-    @page {
-      size: A4 landscape;
-      margin: 0;
-    }
-
-    @media print {
-
-      html,
-      body {
-        background: #ffffff !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        overflow: hidden !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-      }
-
-      .site-header,
-      footer.site-footer,
-      .control-panel-card,
-      .status-alert,
-      nav[aria-label="Breadcrumb"],
-      .floating-ctas,
-      #breakdownSection,
-      #toastNotification {
-        display: none !important;
-      }
-
-      main,
-      section.tech-section,
-      .certificate-viewport {
-        padding: 0 !important;
-        margin: 0 !important;
-        border: none !important;
-        width: 100% !important;
-        height: 100% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        position: relative !important;
-      }
-
-      #certificateCanvas {
-        box-shadow: none !important;
-        margin: auto !important;
-        padding: 14px !important;
-        transform: scale(1) !important;
-        width: 1050px !important;
-        height: 742px !important;
-        max-width: 100vw !important;
-        max-height: 100vh !important;
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-        box-sizing: border-box !important;
-      }
-    }
-  </style>
   <!-- RSS 2.0 Auto-Discovery Links -->
   <link rel="alternate" type="application/rss+xml" title="CACTS Master Updates"
     href="https://cactslearn.github.io/feeds/rss-main.xml" />
@@ -1040,7 +123,7 @@
       </div>
       <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
         <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-          stroke-width="2" style="vertical-align: middle" viewbox="0 0 24 24" width="24">
+          stroke-width="2" class="va-middle" viewbox="0 0 24 24" width="24">
           <line x1="3" x2="21" y1="12" y2="12"></line>
           <line x1="3" x2="21" y1="6" y2="6"></line>
           <line x1="3" x2="21" y1="18" y2="18"></line>
@@ -1055,8 +138,8 @@
         <a href="reviews.html">Reviews</a>
         <a href="faqs.html">FAQs</a>
         <button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle">
-          <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" style="display: block" viewbox="0 0 24 24" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" class="sun-icon d-block">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" x2="12" y1="1" y2="3"></line>
             <line x1="12" x2="12" y1="21" y2="23"></line>
@@ -1067,26 +150,26 @@
             <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
             <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
           </svg>
-          <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" style="display: none" viewbox="0 0 24 24" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" class="moon-icon d-none">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <a class="btn btn-accent"
+        <a
           href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%20free%201-to-1%20demo%20session."
-          target="_blank" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
+          target="_blank" class="btn btn-accent badge-dark-text">Book Demo</a>
       </nav>
     </div>
   </header>
 
   <!-- Main Content Area -->
-  <main style="padding-top: 8rem">
+  <main class="pt-32">
     <section aria-labelledby="verify-h1" class="tech-section">
 
       <!-- Breadcrumbs -->
-      <nav aria-label="Breadcrumb" style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-        <a href="index.html" style="color: var(--accent)">Home</a> &gt;
-        <span style="color: var(--text-primary)">Certificate Verification</span>
+      <nav aria-label="Breadcrumb" class="u-09d055">
+        <a href="index.html" class="text-accent">Home</a> &gt;
+        <span class="text-primary">Certificate Verification</span>
       </nav>
 
       <h1 class="section-title" id="verify-h1">Certificate Verification Portal</h1>
@@ -1098,8 +181,7 @@
         <div class="control-panel-row-top">
           <div class="search-box-group">
             <input type="text" id="certIdInput" placeholder="Enter Certificate ID (e.g. 20260812001)" />
-            <button class="btn btn-primary" id="verifyBtn" onclick="handleManualVerify()"
-              style="background: linear-gradient(135deg, #bf953f 0%, #d4af37 50%, #aa771c 100%); color: #0b0f19; font-weight: 700; padding: 0.75rem 1.25rem; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+            <button id="verifyBtn" onclick="handleManualVerify()" class="btn btn-primary u-9830b6">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -1108,17 +190,15 @@
               Verify Record
             </button>
           </div>
-          <button class="btn btn-linkedin" id="linkedinBtn" onclick="addToLinkedInProfile()"
-            style="background: #0077b5; color: #ffffff; font-weight: 600; padding: 0.75rem 1.25rem; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+          <button id="linkedinBtn" onclick="addToLinkedInProfile()" class="btn btn-linkedin u-170fd8">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.65 1.65 0 0 0-1.66 1.66c0 .92.74 1.66 1.66 1.66a1.65 1.65 0 0 0 1.65-1.66c0-.92-.73-1.66-1.65-1.66z" />
             </svg>
             Add to LinkedIn Profile
           </button>
-          <button class="btn btn-secondary" id="shareCertBtn"
-            onclick="if(window.CactsSocialShareEngine) window.CactsSocialShareEngine.openModalForUrl(window.location.href)"
-            style="background: rgba(37, 99, 235, 0.2); border: 1px solid #2563eb; color: #60a5fa; font-weight: 600; padding: 0.75rem 1.25rem; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.5rem; border-radius: 8px;">
+          <button id="shareCertBtn"
+            onclick="if(window.CactsSocialShareEngine) window.CactsSocialShareEngine.openModalForUrl(window.location.href)" class="btn btn-secondary u-794181">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="18" cy="5" r="3"></circle>
               <circle cx="6" cy="12" r="3"></circle>
@@ -1174,7 +254,7 @@
       <div class="certificate-viewport">
 
         <!-- PRINT-READY CERTIFICATE CANVAS (1050px x 742px) -->
-        <div id="certificateCanvas" style="display: none;">
+        <div id="certificateCanvas" class="d-none">
 
           <!-- Background Cryptographic Security Watermark -->
           <div class="cert-security-watermark">CACTS VERIFIED ACCREDITATION</div>
@@ -1301,12 +381,12 @@
 
             <!-- Bottom Credentials Footer -->
             <div class="cert-credentials-footer">
-              <div><strong style="color: #0a192f;">Certificate ID:</strong> <span id="barCertId">20260812001</span>
+              <div><strong class="u-a5b231">Certificate ID:</strong> <span id="barCertId">20260812001</span>
               </div>
-              <div><strong style="color: #0a192f;">Issue Date:</strong> <span id="barIssueDate">August 12, 2026</span>
+              <div><strong class="u-a5b231">Issue Date:</strong> <span id="barIssueDate">August 12, 2026</span>
               </div>
-              <div style="display: flex; align-items: center; gap: 5px;">
-                <strong style="color: #0a192f;">Status:</strong>
+              <div class="u-e9a0fa">
+                <strong class="u-a5b231">Status:</strong>
                 <span class="cert-status-badge valid" id="barStatusBadge">VALID</span>
               </div>
             </div>
@@ -1315,7 +395,7 @@
         </div>
 
         <!-- Error Display Card -->
-        <div class="error-display-card" id="errorCard" style="display: none;">
+        <div id="errorCard" class="error-display-card d-none">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
             stroke-linejoin="round">
             <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
@@ -1330,21 +410,21 @@
       </div>
 
       <!-- Skills & Verified Project Repositories Breakdown Section -->
-      <div class="breakdown-card" id="breakdownSection" style="display: none;">
-        <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+      <div id="breakdownSection" class="breakdown-card d-none">
+        <h3 class="u-d3f095">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
           Verified Accreditation &amp; Technical Competencies
         </h3>
-        <p style="font-size: 0.9rem; color: var(--text-secondary);">Direct proof of code execution, 1-to-1 mentoring
+        <p class="u-93284f">Direct proof of code execution, 1-to-1 mentoring
           reviews, and staging repositories completed during training.</p>
 
         <div class="breakdown-grid">
           <!-- Verified Skills Column -->
           <div>
             <h4
-              style="font-size: 1.05rem; color: var(--accent-light); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
+              class="u-b53ad9">
               Verified Skills &amp; Stack
             </h4>
             <div class="skill-badges-container" id="skillsContainer">
@@ -1355,7 +435,7 @@
           <!-- Verified Project Repositories Column -->
           <div>
             <h4
-              style="font-size: 1.05rem; color: var(--accent-light); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">
+              class="u-b53ad9">
               Live Staging Repositories
             </h4>
             <div id="projectsContainer">
@@ -1365,18 +445,18 @@
         </div>
 
         <!-- Cryptographic Checksum SHA-256 Box -->
-        <div style="margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1.25rem;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="u-67b5b9">
+          <div class="u-3607c3">
             <span
-              style="font-size: 0.82rem; font-weight: 700; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Cryptographic
+              class="u-97f69e">Cryptographic
               Proof Checksum (SHA-256)</span>
-            <span style="font-size: 0.78rem; color: var(--success); font-weight: 700;">&check; Cryptographically
+            <span class="u-4b77c8">&check; Cryptographically
               Verified</span>
           </div>
           <div class="hash-box-code">
             <span id="hashTextDisplay">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</span>
             <button onclick="copyHashText()"
-              style="background: none; border: none; color: var(--accent); cursor: pointer; font-size: 0.8rem; font-weight: 700;">Copy
+              class="u-f4d71c">Copy
               Hash</button>
           </div>
         </div>
@@ -1396,46 +476,45 @@
   <!-- Official Website Footer Matching Site CSS Grid Architecture -->
 
   <!-- ISO 29993:2017 Credential Security & Verification Protocol Section -->
-  <section aria-labelledby="verify-guide-heading" style="max-width: 1200px; margin: 3rem auto; padding: 0 1.5rem;">
-    <div style="border-top: 1px solid var(--border); padding-top: 3rem;">
-      <h2 class="section-title" id="verify-guide-heading" style="text-align: center; margin-bottom: 0.75rem;">
+  <section aria-labelledby="verify-guide-heading" class="u-6443f0">
+    <div class="border-t-pt-12">
+      <h2 id="verify-guide-heading" class="section-title u-259df8">
         ISO 29993:2017 Credential Security &amp; Employer Verification Protocol
       </h2>
-      <p class="section-subtitle"
-        style="text-align: center; max-width: 750px; margin: 0 auto 2.5rem auto; color: var(--text-secondary);">
+      <p class="section-subtitle u-afeab6">
         How employers, HR recruiters, and institutional partners verify candidate certificates issued by CACTS Pune.
       </p>
       <div class="grid-3">
         <div class="card">
-          <h3 style="margin-bottom: 0.75rem; color: var(--accent-light);">
+          <h3 class="accent-mb-3">
             1. Cryptographic Hash Verification
           </h3>
-          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+          <p class="text-muted-relaxed">
             Each certificate contains a unique 64-character SHA-256 cryptographic payload hash. Entering the Certificate
             ID displays the original immutable transcript and project commit logs stored in our verification registry.
           </p>
         </div>
         <div class="card">
-          <h3 style="margin-bottom: 0.75rem; color: var(--accent-light);">
+          <h3 class="accent-mb-3">
             2. Live Project Code Audit
           </h3>
-          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+          <p class="text-muted-relaxed">
             Unlike generic classroom certificates, verified CACTS credentials link directly to candidate GitHub pull
             requests and production project commits executed during our <a
               href="showcase/internship-on-live-projects.html"
-              style="color: var(--accent); text-decoration: underline;">Live Projects Internship</a>.
+              class="link-accent-underlined">Live Projects Internship</a>.
           </p>
         </div>
         <div class="card">
-          <h3 style="margin-bottom: 0.75rem; color: var(--accent-light);">
+          <h3 class="accent-mb-3">
             3. Employer Direct Screening
           </h3>
-          <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6;">
+          <p class="text-muted-relaxed">
             Corporate hiring partners can request direct 1-to-1 candidate performance evaluation transcripts. Explore
-            our <a href="courses/index.html" style="color: var(--accent); text-decoration: underline;">1-to-1 Mentoring
-              Model</a>, read <a href="reviews.html" style="color: var(--accent); text-decoration: underline;">Student
+            our <a href="courses/index.html" class="link-accent-underlined">1-to-1 Mentoring
+              Model</a>, read <a href="reviews.html" class="link-accent-underlined">Student
               Success Reviews</a>, or check <a href="jobs/index.html"
-              style="color: var(--accent); text-decoration: underline;">Career Openings</a>.
+              class="link-accent-underlined">Career Openings</a>.
           </p>
         </div>
       </div>
@@ -1445,14 +524,7 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-programs-row">
-        <h4 style="
-              color: var(--text-primary);
-              margin-bottom: 1.5rem;
-              font-size: 1rem;
-              font-weight: 700;
-              letter-spacing: 0.5px;
-              text-transform: uppercase;
-            ">
+        <h4 class="footer-col-heading">
           Engineering Labs &amp; Programs
         </h4>
         <ul class="footer-programs-grid">
@@ -1475,47 +547,20 @@
         </ul>
       </div>
       <div class="footer-brand">
-        <a href="index.html" style="
-              font-family: var(--font-heading);
-              font-size: 1.5rem;
-              font-weight: 800;
-              color: white;
-            ">CACTS</a>
+        <a href="index.html" class="footer-brand-title">CACTS</a>
         <p>
           Centre of Advanced Computer Training and Studies. Providing
           practical, one-to-one virtual software training and internships on
           real company projects since 2012.
         </p>
-        <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem">
-          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+        <div class="footer-social footer-social-row">
+          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
           </a>
-          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -1523,18 +568,7 @@
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
-          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
@@ -1542,18 +576,7 @@
               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
             </svg>
           </a>
-          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path
@@ -1566,7 +589,7 @@
       </div>
       <div class="footer-links">
         <h4>Institutional Links</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="about.html">About CACTS</a></li>
           <li><a href="academic-projects.html">Academic Projects</a></li>
           <li><a href="ojt-internship.html">College OJT &amp; Internships</a></li>
@@ -1583,7 +606,7 @@
       </div>
       <div class="footer-links">
         <h4>Learning Portals</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="tools/index.html">Interactive Tools Suite</a></li>
           <li><a href="tools/pune-it-salary-calculator.html">Pune IT Salary Calculator</a></li>
           <li><a href="tools/pune-it-salary-report.html">Pune IT Salary Report 2026</a></li>
@@ -1598,79 +621,39 @@
       </div>
       <div class="footer-contact">
         <h4>Contact CACTS</h4>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           <strong>Phone:</strong> +91 96655 66357
         </p>
         <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
       </div>
     </div>
     <!-- Trust Credentials & Accreditations -->
-    <div style="
-          border-top: 1px solid var(--border);
-          padding: 1.5rem 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-          margin-top: 2rem;
-        ">
-      <div style="
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            line-height: 1.5;
-          ">
+    <div class="footer-bottom-bar">
+      <div class="footer-desc-text">
         <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong>
         Our curricula and git code review models are designed in alignment
         with ISO 29993:2017 standards for non-formal education training and
         software engineering industry practices. *Self-declared alignment for
         educational service quality.
       </div>
-      <div style="
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            opacity: 0.75;
-            flex-wrap: wrap;
-          ">
+      <div class="footer-trust-strip">
         <!-- ISO Compliant Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--accent-light);
-              cursor: help;
-            "
+        <div class="footer-badge-accent"
           title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers.">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
           ISO 29993:2017 ALIGNED*
         </div>
         <!-- Developer Led Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--primary-light);
-            ">
+        <div class="footer-badge-primary">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
             <line x1="2" x2="22" y1="20" y2="20"></line>
             <line x1="12" x2="12" y1="17" y2="20"></line>
@@ -1678,19 +661,9 @@
           100% DEVELOPER LED
         </div>
         <!-- Reg Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--warning);
-            ">
+        <div class="footer-badge-warning">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
             <line x1="9" x2="9" y1="22" y2="16"></line>
             <line x1="15" x2="15" y1="22" y2="16"></line>
@@ -1702,28 +675,24 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div style="text-align: left">
+      <div class="text-left">
         <p>
           © <span id="footer-year">2026</span> CACTS - Centre of Advanced
           Computer Training and Studies. All rights reserved.
         </p>
-        <p style="
-              margin-top: 0.25rem;
-              font-size: 0.8rem;
-              color: var(--text-secondary);
-            ">
+        <p class="footer-address">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
       </div>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-        <a href="sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
-        <span style="color: var(--border)">|</span>
-        <a href="feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
-        <span style="color: var(--border)">|</span>
-        <a href="privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
-        <span style="color: var(--border)">|</span>
-        <a href="terms-conditions.html" style="color: var(--text-secondary)">Terms &amp; Conditions</a>
+      <div class="btn-row">
+        <a href="sitemap.html" class="text-muted">Sitemap</a>
+        <span class="border-subtle">|</span>
+        <a href="feeds/index.html" class="text-muted">RSS Feeds</a>
+        <span class="border-subtle">|</span>
+        <a href="privacy-policy.html" class="text-muted">Privacy Policy</a>
+        <span class="border-subtle">|</span>
+        <a href="terms-conditions.html" class="text-muted">Terms &amp; Conditions</a>
       </div>
     </div>
   </footer>
@@ -1734,7 +703,7 @@
       href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20learning%20more%20about%20your%201-to-1%20training."
       target="_blank">
       <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width="2.5" style="vertical-align: middle; transform: translateY(-1px)" viewBox="0 0 24 24" width="24">
+        stroke-width="2.5" class="va-middle-cta" viewBox="0 0 24 24" width="24">
         <path
           d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
         </path>
@@ -1742,7 +711,7 @@
     </a>
     <a aria-label="Call CACTS" class="cta-circle cta-call" href="tel:+919665566357">
       <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width="2.5" style="vertical-align: middle" viewBox="0 0 24 24" width="20">
+        stroke-width="2.5" class="va-middle" viewBox="0 0 24 24" width="20">
         <path
           d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
         </path>
@@ -1751,517 +720,7 @@
   </div>
 
   <script src="js/main.js"></script>
-
-  <!-- Application Verification Script -->
-  <script>
-    let currentRecord = null;
-
-    window.addEventListener('DOMContentLoaded', () => {
-      const ySpan = document.getElementById('footer-year');
-      if (ySpan) ySpan.innerText = new Date().getFullYear();
-
-      const certInput = document.getElementById('certIdInput');
-      if (certInput) {
-        certInput.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter') handleManualVerify();
-        });
-      }
-
-      // Check URL query parameters for Certificate ID
-      const urlParams = new URLSearchParams(window.location.search);
-      const certId = urlParams.get('id');
-      if (certId && certId.trim()) {
-        document.getElementById('certIdInput').value = certId.trim();
-        fetchCertificateRecord(certId.trim());
-      }
-      // When page visited without query parameters, do NOT auto-load any default certificate
-    });
-
-    window.addEventListener('resize', fitCertificateToScreen);
-
-    function fitCertificateToScreen() {
-      const viewport = document.querySelector('.certificate-viewport');
-      const canvas = document.getElementById('certificateCanvas');
-      if (!viewport || !canvas || canvas.style.display === 'none') return;
-
-      // Measure exact available content width inside section wrapper
-      const sectionElem = viewport.closest('.tech-section') || document.body;
-      const sectionWidth = sectionElem.clientWidth;
-      const availableWidth = Math.min(sectionWidth - 16, 1050);
-
-      if (availableWidth < 1050) {
-        const scale = availableWidth / 1050;
-        canvas.style.transform = `scale(${scale})`;
-        canvas.style.transformOrigin = 'top center';
-        viewport.style.height = `${(742 * scale) + 10}px`;
-      } else {
-        canvas.style.transform = 'none';
-        viewport.style.height = 'auto';
-      }
-    }
-
-    function handleManualVerify() {
-      const certId = document.getElementById('certIdInput').value.trim();
-      if (!certId) {
-        showError('Please Enter a Certificate ID', 'Specify an 11-digit Certificate ID (e.g. 20260812001) to look up verification records.');
-        return;
-      }
-      const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?id=' + encodeURIComponent(certId);
-      window.history.pushState({ path: newUrl }, '', newUrl);
-      fetchCertificateRecord(certId);
-    }
-
-    const CERT_API_ENDPOINT = "https://script.google.com/macros/s/AKfycbxPfWNqDgntuL1IaQnjfgkNbbVhlxMzgXE2mjfSrOsaPYeyC_nIlSzEOkcDcZ7S4_s/exec";
-
-    function fetchCertificateRecord(certId) {
-      if (!certId || certId.trim().length < 4) {
-        showError('Invalid Certificate ID Format', 'Please enter a valid Certificate ID (e.g. 20260812001).');
-        return;
-      }
-
-      const cleanId = certId.trim();
-
-      // Display live authentication loading state
-      const statusBanner = document.getElementById('statusBanner');
-      statusBanner.className = 'status-alert loading';
-      document.getElementById('statusInfo').innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="12"></circle></svg>
-        <span>CONNECTING TO LIVE ACCREDITATION GATEWAY: Authenticating Certificate ID ${cleanId}...</span>
-      `;
-      document.getElementById('statusTimestamp').innerText = 'Querying registry...';
-      document.getElementById('errorCard').style.display = 'none';
-
-      const apiUrl = `${CERT_API_ENDPOINT}?id=${encodeURIComponent(cleanId)}`;
-
-      fetch(apiUrl)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`Live gateway responded with HTTP status ${response.status}`);
-          }
-          return response.json();
-        })
-        .then(data => {
-          if (!data || data.success === false || data.error) {
-            const msg = (data && data.message) ? data.message : `No accreditation record matching Certificate ID "${cleanId}" was found in the live verification registry.`;
-            showError('Certificate Record Not Found', msg);
-            return;
-          }
-
-          const record = (data[cleanId] && typeof data[cleanId] === 'object') ? data[cleanId] : data;
-          if (record && (record.id || record.studentName)) {
-            // Defensively ensure array/object attributes are parsed if stringified
-            if (typeof record.skills === 'string') {
-              try { record.skills = JSON.parse(record.skills); } catch (e) { record.skills = record.skills.split(',').map(s => s.trim()); }
-            }
-            if (typeof record.projects === 'string') {
-              try { record.projects = JSON.parse(record.projects); } catch (e) {}
-            }
-            if (typeof record.signees === 'string') {
-              try { record.signees = JSON.parse(record.signees); } catch (e) {}
-            }
-            renderCertificate(record);
-          } else {
-            showError('Certificate Record Not Found', `No accreditation record matching Certificate ID "${cleanId}" was found in the live verification registry.`);
-          }
-        })
-        .catch(err => {
-          console.warn('Live API request failed, checking local backup if available:', err);
-          if (cleanId.length >= 6) {
-            const yearMonth = cleanId.substring(0, 6);
-            fetch(`records/${yearMonth}.json`)
-              .then(res => res.ok ? res.json() : Promise.reject())
-              .then(localData => {
-                if (localData && localData[cleanId]) {
-                  renderCertificate(localData[cleanId]);
-                  return;
-                }
-                showError('Certificate Record Not Found', `No accreditation record matching Certificate ID "${cleanId}" could be authenticated.`);
-              })
-              .catch(() => {
-                showError('Verification Gateway Unavailable', `Could not connect to the live verification registry. Please check your internet connection and try again.`);
-              });
-          } else {
-            showError('Verification Gateway Unavailable', `Could not connect to the live verification registry. Please check your internet connection and try again.`);
-          }
-        });
-    }
-
-    function renderCertificate(record) {
-      currentRecord = record;
-
-      document.getElementById('errorCard').style.display = 'none';
-      document.getElementById('certificateCanvas').style.display = 'flex';
-      document.getElementById('breakdownSection').style.display = 'block';
-      document.getElementById('downloadPdfBtn').disabled = false;
-      document.getElementById('downloadPngBtn').disabled = false;
-      document.getElementById('copyLinkBtn').disabled = false;
-
-      // Status Alert Banner & Status Badges
-      const statusBanner = document.getElementById('statusBanner');
-      const recStatus = (record.status || "VALID").toUpperCase();
-      const statusBadge = document.getElementById('barStatusBadge');
-
-      if (recStatus === "EXPIRED") {
-        statusBanner.className = 'status-alert expired';
-        document.getElementById('statusInfo').innerHTML = `
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-          <span>EXPIRED ACCREDITATION: Certificate ID ${record.id} accreditation period has expired.</span>
-        `;
-        statusBadge.className = 'cert-status-badge expired';
-        statusBadge.innerText = 'EXPIRED';
-      } else if (recStatus === "REVOKED") {
-        statusBanner.className = 'status-alert error';
-        document.getElementById('statusInfo').innerHTML = `
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-          <span>REVOKED ACCREDITATION: Certificate ID ${record.id} record has been revoked.</span>
-        `;
-        statusBadge.className = 'cert-status-badge revoked';
-        statusBadge.innerText = 'REVOKED';
-      } else {
-        statusBanner.className = 'status-alert success';
-        document.getElementById('statusInfo').innerHTML = `
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-          <span>AUTHENTICATED RECORD: Certificate ID ${record.id} is Verified &amp; Active.</span>
-        `;
-        statusBadge.className = 'cert-status-badge valid';
-        statusBadge.innerText = 'VALID';
-      }
-
-      document.getElementById('statusTimestamp').innerText = `Verified: ${new Date().toLocaleDateString()}`;
-
-      // Dynamic Title & Wording
-      const certTitleElem = document.getElementById('certTitle');
-      const certWordingElem = document.getElementById('certWording');
-
-      if (record.certificateTitle) {
-        certTitleElem.innerText = record.certificateTitle;
-      } else if (record.programType === "Internship") {
-        certTitleElem.innerText = "CERTIFICATE OF LIVE PROJECT INTERNSHIP";
-      } else if (record.programType === "Training") {
-        certTitleElem.innerText = "CERTIFICATE OF TRAINING COMPLETION";
-      } else {
-        certTitleElem.innerText = "CERTIFICATE OF PROFESSIONAL TRAINING & INTERNSHIP";
-      }
-
-      const pType = record.programType || "Training & Internship";
-      certWordingElem.innerHTML = `has successfully completed the <strong>1-to-1 Developer Mentoring &amp; Live Staging Internship</strong> (${pType}) in`;
-
-      // Student & Course Details
-      document.getElementById('certStudentName').innerText = record.studentName || "Student Name";
-      document.getElementById('certCourseName').innerText = record.courseName || "Software Engineering";
-      document.getElementById('certMetaDetails').innerText = `Duration: ${record.duration || '16 Weeks'} \u2022 Performance Grade: ${record.grade || 'Distinction (A+)'}`;
-
-      // Footer Credentials
-      document.getElementById('barCertId').innerText = record.id;
-      document.getElementById('barIssueDate').innerText = record.issueDate || "August 12, 2026";
-
-      // Signatures
-      if (record.signees) {
-        if (record.signees.director) {
-          document.getElementById('sigDirectorName').innerText = record.signees.director;
-          document.getElementById('sigDirectorFull').innerText = record.signees.director;
-        }
-        if (record.signees.directorTitle) {
-          document.getElementById('sigDirectorTitle').innerText = record.signees.directorTitle;
-        }
-        if (record.signees.trainer) {
-          document.getElementById('sigTrainerName').innerText = record.signees.trainer;
-          document.getElementById('sigTrainerFull').innerText = record.signees.trainer;
-        }
-        if (record.signees.trainerTitle) {
-          document.getElementById('sigTrainerTitle').innerText = record.signees.trainerTitle;
-        }
-      }
-
-      // Generate Dual High-DPI Scannable QR Codes
-      generateQRCodes(record);
-
-      // Render Verified Skills Badges
-      renderSkillsBreakdown(record.skills);
-
-      // Render Verified Project Repositories
-      renderProjectsBreakdown(record.projects);
-
-      // Cryptographic Hash Display
-      const hashStr = record.sha256Hash || generateDefaultHash(record.id);
-      document.getElementById('hashTextDisplay').innerText = hashStr;
-
-      // Fit to screen on initial render
-      setTimeout(fitCertificateToScreen, 50);
-    }
-
-    function renderSkillsBreakdown(skillsArray) {
-      const container = document.getElementById('skillsContainer');
-      container.innerHTML = '';
-      const list = skillsArray && skillsArray.length ? skillsArray : ["Python Scripting", "Software Architecture", "Git & Code Review", "PostgreSQL", "Docker", "REST APIs"];
-
-      list.forEach(skill => {
-        const badge = document.createElement('div');
-        badge.className = 'skill-badge';
-        badge.innerHTML = `
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>${skill}</span>
-        `;
-        container.appendChild(badge);
-      });
-    }
-
-    function renderProjectsBreakdown(projectsArray) {
-      const container = document.getElementById('projectsContainer');
-      container.innerHTML = '';
-      const list = projectsArray && projectsArray.length ? projectsArray : [
-        {
-          name: "Live Staging Architecture Project",
-          description: "Production codebase reviewed line-by-line in 1-to-1 mentoring sessions.",
-          url: "https://github.com/cactslearn/student-projects"
-        }
-      ];
-
-      list.forEach(proj => {
-        const item = document.createElement('div');
-        item.className = 'project-card-item';
-        item.innerHTML = `
-          <div class="project-card-title">
-            <span>${proj.name}</span>
-            <a href="${proj.url}" target="_blank" style="color: var(--accent); font-size: 0.8rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-              View Repository &rarr;
-            </a>
-          </div>
-          <div class="project-card-desc">${proj.description || ''}</div>
-        `;
-        container.appendChild(item);
-      });
-    }
-
-    function generateQRCodes(record) {
-      document.getElementById('qrcodeOnline').innerHTML = '';
-      document.getElementById('qrcodeOffline').innerHTML = '';
-
-      const onlineUrl = `https://cactslearn.github.io/verify.html?id=${record.id}`;
-      new QRCode(document.getElementById('qrcodeOnline'), {
-        text: onlineUrl,
-        width: 140,
-        height: 140,
-        colorDark: "#040c1a",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.M
-      });
-
-      const offlinePayload = `ID: ${record.id}\nNAME: ${record.studentName}\nPROGRAM: ${record.programType || '1-to-1 Training & Internship'}\nCOURSE: ${record.courseName}\nDATE: ${record.issueDate}\nSTATUS: ${record.status || 'VALID'}\nISSUER: CACTS Pune`;
-      new QRCode(document.getElementById('qrcodeOffline'), {
-        text: offlinePayload,
-        width: 140,
-        height: 140,
-        colorDark: "#040c1a",
-        colorLight: "#ffffff",
-        correctLevel: QRCode.CorrectLevel.L
-      });
-    }
-
-    function showError(title, message) {
-      document.getElementById('certificateCanvas').style.display = 'none';
-      document.getElementById('breakdownSection').style.display = 'none';
-      document.getElementById('downloadPdfBtn').disabled = true;
-      document.getElementById('downloadPngBtn').disabled = true;
-      document.getElementById('copyLinkBtn').disabled = true;
-
-      const statusBanner = document.getElementById('statusBanner');
-      statusBanner.className = 'status-alert error';
-      document.getElementById('statusInfo').innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
-        <span>UNVERIFIED RECORD: Certificate ID search could not be authenticated.</span>
-      `;
-      document.getElementById('statusTimestamp').innerText = `Checked: ${new Date().toLocaleTimeString()}`;
-
-      const errorCard = document.getElementById('errorCard');
-      document.getElementById('errorTitle').innerText = title;
-      document.getElementById('errorDesc').innerText = message;
-      errorCard.style.display = 'block';
-    }
-
-    /* LinkedIn Certification Add to Profile Link Generator */
-    function addToLinkedInProfile() {
-      if (!currentRecord) return;
-      const rec = currentRecord;
-      const certId = rec.id;
-      const certName = rec.courseName || "Software Engineering Training";
-      const orgName = "CACTS - Centre of Advanced Computer Training and Studies";
-      const issueYear = parseInt(rec.issueYear, 10) || 2026;
-      const issueMonth = parseInt(rec.issueMonth, 10) || 8;
-      const certUrl = `https://cactslearn.github.io/verify.html?id=${certId}`;
-
-      const linkedInUrl = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${encodeURIComponent(certName)}&organizationName=${encodeURIComponent(orgName)}&issueYear=${issueYear}&issueMonth=${issueMonth}&certUrl=${encodeURIComponent(certUrl)}&certId=${encodeURIComponent(certId)}`;
-
-      window.open(linkedInUrl, '_blank');
-      showToast("Opening LinkedIn Add Certification page...");
-    }
-
-    /* Copy Verification Link to Clipboard */
-    function copyVerificationLink() {
-      if (!currentRecord) return;
-      const onlineUrl = `https://cactslearn.github.io/verify.html?id=${currentRecord.id}`;
-      navigator.clipboard.writeText(onlineUrl).then(() => {
-        showToast("Verification link copied to clipboard!");
-      }).catch(() => {
-        showToast("Failed to copy link. URL: " + onlineUrl);
-      });
-    }
-
-    /* Copy SHA-256 Hash to Clipboard */
-    function copyHashText() {
-      const hash = document.getElementById('hashTextDisplay').innerText;
-      navigator.clipboard.writeText(hash).then(() => {
-        showToast("SHA-256 checksum copied to clipboard!");
-      });
-    }
-
-    /* High-Res PNG Image Export */
-    function downloadPNG() {
-      if (!currentRecord) return;
-      const element = document.getElementById('certificateCanvas');
-
-      const oldTransform = element.style.transform;
-      const oldOrigin = element.style.transformOrigin;
-      const oldPosition = element.style.position;
-      const oldTop = element.style.top;
-      const oldLeft = element.style.left;
-      const oldMargin = element.style.margin;
-      const viewport = document.querySelector('.certificate-viewport');
-      const oldViewportHeight = viewport.style.height;
-
-      element.style.transform = 'none';
-      element.style.position = 'fixed';
-      element.style.top = '0px';
-      element.style.left = '0px';
-      element.style.margin = '0px';
-      element.style.zIndex = '99999';
-      viewport.style.height = 'auto';
-
-      document.fonts.ready.then(() => {
-        html2canvas(element, {
-          scale: 3,
-          useCORS: true,
-          allowTaint: true,
-          logging: false,
-          x: 0,
-          y: 0,
-          width: 1050,
-          height: 742,
-          scrollX: 0,
-          scrollY: 0
-        }).then(canvas => {
-          element.style.transform = oldTransform;
-          element.style.transformOrigin = oldOrigin;
-          element.style.position = oldPosition;
-          element.style.top = oldTop;
-          element.style.left = oldLeft;
-          element.style.margin = oldMargin;
-          element.style.zIndex = 'auto';
-          viewport.style.height = oldViewportHeight;
-          fitCertificateToScreen();
-
-          const link = document.createElement('a');
-          link.download = `CACTS_Certificate_${currentRecord.id}.png`;
-          link.href = canvas.toDataURL('image/png', 1.0);
-          link.click();
-          showToast("High-Res Certificate PNG exported!");
-        }).catch(err => {
-          element.style.transform = oldTransform;
-          element.style.transformOrigin = oldOrigin;
-          element.style.position = oldPosition;
-          element.style.top = oldTop;
-          element.style.left = oldLeft;
-          element.style.margin = oldMargin;
-          element.style.zIndex = 'auto';
-          viewport.style.height = oldViewportHeight;
-          fitCertificateToScreen();
-        });
-      });
-    }
-
-    /* Standard PDF Export */
-    function downloadPDF() {
-      if (!currentRecord) return;
-      const element = document.getElementById('certificateCanvas');
-
-      const oldTransform = element.style.transform;
-      const oldOrigin = element.style.transformOrigin;
-      const oldPosition = element.style.position;
-      const oldTop = element.style.top;
-      const oldLeft = element.style.left;
-      const oldMargin = element.style.margin;
-      const viewport = document.querySelector('.certificate-viewport');
-      const oldViewportHeight = viewport.style.height;
-
-      element.style.transform = 'none';
-      element.style.position = 'fixed';
-      element.style.top = '0px';
-      element.style.left = '0px';
-      element.style.margin = '0px';
-      element.style.zIndex = '99999';
-      viewport.style.height = 'auto';
-
-      document.fonts.ready.then(() => {
-        const opt = {
-          margin: 0,
-          filename: `CACTS_Certificate_${currentRecord.id}.pdf`,
-          image: { type: 'jpeg', quality: 1.0 },
-          html2canvas: {
-            scale: 3,
-            letterRendering: true,
-            useCORS: true,
-            allowTaint: true,
-            logging: false,
-            x: 0,
-            y: 0,
-            width: 1050,
-            height: 742,
-            scrollX: 0,
-            scrollY: 0
-          },
-          jsPDF: { unit: 'px', format: [1050, 742], orientation: 'landscape', compress: true }
-        };
-
-        html2pdf().set(opt).from(element).save().then(() => {
-          element.style.transform = oldTransform;
-          element.style.transformOrigin = oldOrigin;
-          element.style.position = oldPosition;
-          element.style.top = oldTop;
-          element.style.left = oldLeft;
-          element.style.margin = oldMargin;
-          element.style.zIndex = 'auto';
-          viewport.style.height = oldViewportHeight;
-          fitCertificateToScreen();
-          showToast("Certificate PDF downloaded!");
-        }).catch(err => {
-          element.style.transform = oldTransform;
-          element.style.transformOrigin = oldOrigin;
-          element.style.position = oldPosition;
-          element.style.top = oldTop;
-          element.style.left = oldLeft;
-          element.style.margin = oldMargin;
-          element.style.zIndex = 'auto';
-          viewport.style.height = oldViewportHeight;
-          fitCertificateToScreen();
-        });
-      });
-    }
-
-    /* Toast Helper */
-    function showToast(message) {
-      const toast = document.getElementById('toastNotification');
-      document.getElementById('toastMessage').innerText = message;
-      toast.style.display = 'flex';
-      setTimeout(() => {
-        toast.style.display = 'none';
-      }, 3500);
-    }
-
-    function generateDefaultHash(id) {
-      return "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855";
-    }
-  </script>
+  <script src="js/certificate-engine.js" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,50 @@
+/* ==========================================================================
+   CAREERS & JOBS STYLESHEET (css/jobs.css)
+   Dedicated styles for CACTS Job Listings & Trainee Roles (jobs/*.html)
+   ========================================================================== */
+
+.job-detail-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .job-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.job-meta-tag {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  background: var(--accent-glow);
+  border: 1px solid var(--accent);
+  color: var(--accent-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-card-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bridge-banner-box {
+  background: linear-gradient(
+    135deg,
+    rgba(20, 184, 166, 0.12) 0%,
+    rgba(15, 23, 42, 0.9) 100%
+  );
+  border: 1px solid var(--accent);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-top: 2.5rem;
+}

@@ -1,0 +1,17 @@
+
+
+.comparison-section-item {
+      margin-bottom: 5rem;
+    }
+
+    .resources-list-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .resources-list-links a:hover {
+      color: var(--accent-light) !important;
+      transform: translateX(4px);
+    }

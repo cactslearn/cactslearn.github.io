@@ -160,8 +160,8 @@
         <a href="../../reviews.html">Reviews</a>
         <a href="../../faqs.html">FAQs</a>
         <button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle">
-          <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" style="display: block"
-            viewbox="0 0 24 24" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-width="2"
+            viewbox="0 0 24 24" width="20" class="sun-icon d-block">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" x2="12" y1="1" y2="3"></line>
             <line x1="12" x2="12" y1="21" y2="23"></line>
@@ -172,36 +172,28 @@
             <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
             <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
           </svg>
-          <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-width="2" style="display: none"
-            viewbox="0 0 24 24" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-width="2"
+            viewbox="0 0 24 24" width="20" class="moon-icon d-none">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <a class="btn btn-accent" href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%201-to-1%20demo%20session%20for%20AI%20%26%20Machine%20Learning%20Training." target="_blank" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
+        <a href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%201-to-1%20demo%20session%20for%20AI%20%26%20Machine%20Learning%20Training." target="_blank" class="btn btn-accent badge-dark-text">Book Demo</a>
       </nav>
     </div>
   </header>
   <main>
     <section aria-labelledby="course-h1" class="course-hero">
-      <nav aria-label="Breadcrumb" style="
-            margin-bottom: 1rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-          ">
-        <a href="../../index.html" style="color: var(--accent)">Home</a> &gt;
-        <a href="../index.html" style="color: var(--accent)">Courses</a> &gt;
-        <a href="index.html" style="color: var(--accent)">AI & Machine Learning</a>
-        &gt; <span style="color: var(--text-primary)">Projects</span>
+      <nav aria-label="Breadcrumb" class="meta-subtext-sm">
+        <a href="../../index.html" class="text-accent">Home</a> &gt;
+        <a href="../index.html" class="text-accent">Courses</a> &gt;
+        <a href="index.html" class="text-accent">AI & Machine Learning</a>
+        &gt; <span class="text-primary">Projects</span>
       </nav>
       <div class="grid-2">
         <div>
           <span class="course-badge">1-to-1 Personal Mentorship</span>
           <h1 id="course-h1">AI & Machine Learning Project Ideas</h1>
-          <p style="
-                font-size: 1.2rem;
-                color: var(--text-secondary);
-                margin-top: 1rem;
-              ">
+          <p class="subhead-secondary-lg">
             Production AI Projects to Build Your Portfolio & Deployed Machine
             Learning Models
           </p>
@@ -253,16 +245,7 @@
               <span>Pune Salary Outlook: <span class="salary-benchmark">₹6.0 – ₹14.8 LPA</span></span>
             </div>
           </div>
-          <div style="
-                background: rgba(255, 255, 255, 0.03);
-                border-left: 3px solid var(--accent);
-                padding: 0.85rem 1.25rem;
-                border-radius: 4px;
-                margin: 1.5rem 0;
-                font-size: 0.92rem;
-                line-height: 1.5;
-                color: var(--text-secondary);
-              ">
+          <div class="callout-aeo">
             <strong>Lab Overview:</strong> Everyone is selling AI magic. We
             teach the code that makes AI possible. If you want a classroom
             with a certificate, traditional institutes are waiting for you. If
@@ -270,7 +253,7 @@
             the lab. We bypass mass-classroom lecture batches to focus on
             1-to-1 code execution.
           </div>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <div class="btn-row">
             <a class="btn btn-accent"
               href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20the%201-to-1%20AI & Machine Learning%20training."
               target="_blank">WhatsApp Inquiry</a>
@@ -280,7 +263,7 @@
           </div>
         </div>
         <div class="lead-form-container" id="register">
-          <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading)">
+          <h3 class="heading-mb-6">
             Apply for a Seat in the Lab
           </h3>
           <form class="lead-form" toolaction="submit"
@@ -309,48 +292,46 @@
               </select>
             </div>
             <!-- Data Privacy Consent & Multilingual Switcher -->
-            <div class="dpdp-consent-container"
-              style="margin: 1.25rem 0 1rem 0; padding: 0.85rem; background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border); border-radius: 8px;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <div class="dpdp-consent-container filter-box-panel">
+              <div class="filter-box-header">
                 <span
-                  style="font-size: 0.72rem; font-weight: 700; color: var(--accent-light); text-transform: uppercase; letter-spacing: 0.5px;">Data
+                  class="filter-box-title">Data
                   Privacy &amp; Consent Notice</span>
-                <select class="dpdp-lang-select" onchange="toggleDpdpLang(this)"
-                  style="font-size: 0.72rem; padding: 2px 6px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px; cursor: pointer;">
+                <select onchange="toggleDpdpLang(this)" class="dpdp-lang-select filter-badge-btn">
                   <option value="en">English</option>
                   <option value="mr">मराठी (Marathi)</option>
                   <option value="hi">हिंदी (Hindi)</option>
                 </select>
               </div>
               <label
-                style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.8rem; color: var(--text-secondary); cursor: pointer; line-height: 1.4;">
+                class="filter-checkbox-label">
                 <input type="checkbox" id="dpdp_consent" name="dpdp_consent" required
-                  style="margin-top: 3px; accent-color: var(--accent);" />
+                  class="input-accent-box" />
                 <span class="dpdp-text-en">
                   I consent to CACTS processing my name and contact details to schedule a free 1-to-1 demo session as
                   per the
                   <a href="privacy-policy.html#privacy-notice" target="_blank"
-                    style="color: var(--accent); text-decoration: underline;">Privacy &amp; Data Protection Notice</a>.
+                    class="link-accent-underlined">Privacy &amp; Data Protection Notice</a>.
                   I understand I can withdraw consent at any time.
                 </span>
-                <span class="dpdp-text-mr" style="display: none;">
+                <span class="dpdp-text-mr d-none">
                   मी <a href="privacy-policy.html#privacy-notice" target="_blank"
-                    style="color: var(--accent); text-decoration: underline;">गोपनीयता व डेटा संरक्षण सूचनेनुसार</a>
+                    class="link-accent-underlined">गोपनीयता व डेटा संरक्षण सूचनेनुसार</a>
                   विनामूल्य १-टू-१ डेमो सत्र
                   आणि समुपदेशनासाठी माझे नाव आणि संपर्क
                   तपशील प्रक्रिया करण्यास संमती देतो/देते.
                   मी माझी संमती कोणत्याही वेळी मागे घेऊ शकतो/शकते.
                 </span>
-                <span class="dpdp-text-hi" style="display: none;">
+                <span class="dpdp-text-hi d-none">
                   मैं <a href="privacy-policy.html#privacy-notice" target="_blank"
-                    style="color: var(--accent); text-decoration: underline;">गोपनीयता एवं डेटा संरक्षण नोटिस</a> के
+                    class="link-accent-underlined">गोपनीयता एवं डेटा संरक्षण नोटिस</a> के
                   अनुसार मुफ्त 1-टू-1 डेमो सत्र और परामर्श के लिए अपना नाम और
                   संपर्क विवरण संसाधित करने के लिए सहमति देता/देती हूं।
                   मैं किसी भी समय सहमति वापस ले सकता/सकती हूं।
                 </span>
               </label>
             </div>
-            <button class="btn btn-primary" style="width: 100%" type="submit">
+            <button type="submit" class="btn btn-primary w-full">
               Submit Code Assessment Request
             </button>
           </form>
@@ -365,98 +346,54 @@
         Guide</a><a class="tab-link" href="certifications.html">Certifications</a><a class="tab-link"
         href="comparison.html">Comparison</a>
     </div>
-    <section aria-labelledby="details-heading" style="border-top: 1px solid var(--border)">
+    <section aria-labelledby="details-heading" class="border-t">
       <div class="course-layout">
         <div>
-          <h2 style="margin-bottom: 1.5rem">
+          <h2 class="mb-6">
             Production AI & ML Projects
           </h2>
-          <p style="
-                font-size: 1.1rem;
-                color: var(--text-secondary);
-                margin-bottom: 2.5rem;
-              ">
+          <p class="lead-desc-mb-10">
             Build real-world artificial intelligence models, computer vision
             systems, and LLM applications for your portfolio.
           </p>
-          <div style="
-                margin-bottom: 2.5rem;
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-              ">
-            <h3 style="
-                  font-size: 1.4rem;
-                  color: var(--text-primary);
-                  margin-bottom: 1rem;
-                ">
+          <div class="card-padded-box">
+            <h3 class="u-12143f">
               1. Predictive Sales & Demand Forecasting Model
             </h3>
-            <p style="color: var(--text-secondary); line-height: 1.7">
+            <p class="u-09a68f">
               Time-series forecasting engine built with XGBoost and Prophet
               for retail revenue prediction.
             </p>
           </div>
-          <div style="
-                margin-bottom: 2.5rem;
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-              ">
-            <h3 style="
-                  font-size: 1.4rem;
-                  color: var(--text-primary);
-                  margin-bottom: 1rem;
-                ">
+          <div class="card-padded-box">
+            <h3 class="u-12143f">
               2. Custom RAG Chatbot with LLMs & Vector Database
             </h3>
-            <p style="color: var(--text-secondary); line-height: 1.7">
+            <p class="u-09a68f">
               Enterprise document search and QA chatbot built with LangChain,
               Llama-Index, and FAISS vector embeddings.
             </p>
           </div>
-          <div style="
-                margin-bottom: 2.5rem;
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-              ">
-            <h3 style="
-                  font-size: 1.4rem;
-                  color: var(--text-primary);
-                  margin-bottom: 1rem;
-                ">
+          <div class="card-padded-box">
+            <h3 class="u-12143f">
               3. Real-Time Computer Vision Object Detector
             </h3>
-            <p style="color: var(--text-secondary); line-height: 1.7">
+            <p class="u-09a68f">
               Object recognition and tracking pipeline trained with YOLOv8 and
               OpenCV for surveillance streams.
             </p>
           </div>
-          <div style="
-                margin-bottom: 2.5rem;
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-              ">
-            <h3 style="
-                  font-size: 1.4rem;
-                  color: var(--text-primary);
-                  margin-bottom: 1rem;
-                ">
+          <div class="card-padded-box">
+            <h3 class="u-12143f">
               4. Customer Churn Prediction Pipeline with FastAPI Deployment
             </h3>
-            <p style="color: var(--text-secondary); line-height: 1.7">
+            <p class="u-09a68f">
               Classification pipeline with Scikit-learn, hyperparameter
               tuning, and REST API deployment on AWS EC2.
             </p>
           </div>
-          <div style="margin-top: 4rem">
-            <h2 style="margin-bottom: 1.5rem">Frequently Asked Questions</h2>
+          <div class="mt-16">
+            <h2 class="mb-6">Frequently Asked Questions</h2>
             <div class="course-faqs-accordion">
               <div class="curriculum-module">
                 <div class="module-header faq-header">
@@ -465,7 +402,7 @@
                 </div>
                 <div class="faq-content module-content">
                   <div class="module-content-inner">
-                    <p style="color: var(--text-secondary); font-size: 0.95rem" class="faq-intake-answer">
+                    <p class="text-muted-sm faq-intake-answer">
                       Intakes start twice monthly on the 1st and 15th. The next upcoming 1-to-1 intake starts on October 15, 2026 (with secondary intake on November 1, 2026).</p>
                   </div>
                 </div>
@@ -477,7 +414,7 @@
                 </div>
                 <div class="faq-content module-content">
                   <div class="module-content-inner">
-                    <p style="color: var(--text-secondary); font-size: 0.95rem">
+                    <p class="text-muted-sm">
                       You will build end-to-end production systems using PyTorch, TensorFlow, Scikit-Learn, OpenCV,
                       Hugging Face, LLMs, starting from architecture blueprints to live staging server deployments.
                     </p>
@@ -491,7 +428,7 @@
                 </div>
                 <div class="faq-content module-content">
                   <div class="module-content-inner">
-                    <p style="color: var(--text-secondary); font-size: 0.95rem">
+                    <p class="text-muted-sm">
                       Yes. Every project is committed to your personal public GitHub portfolio and deployed to live
                       staging environments so recruiters can verify your working application.
                     </p>
@@ -505,7 +442,7 @@
                 </div>
                 <div class="faq-content module-content">
                   <div class="module-content-inner">
-                    <p style="color: var(--text-secondary); font-size: 0.95rem">
+                    <p class="text-muted-sm">
                       Live project links and clean GitHub commit graphs serve as undeniable proof of engineering
                       capability, allowing you to walk interviewers through actual production code during technical
                       discussions.
@@ -554,21 +491,16 @@
               </svg><span>Individual Project Review Loop</span>
             </li>
           </ul>
-          <a class="btn btn-accent" href="#register" style="width: 100%; text-align: center; margin-top: 1.5rem">Apply
+          <a href="#register" class="btn btn-accent u-55aa36">Apply
             for Seat</a>
-          <p style="
-                text-align: center;
-                font-size: 0.8rem;
-                color: var(--text-secondary);
-                margin-top: 0.75rem;
-              ">
+          <p class="u-2d51c5">
             1-to-1 Personal Coaching Model
           </p>
         </aside>
       </div>
     </section>
     <!-- Student Testimonials / Reviews -->
-    <section aria-labelledby="reviews-heading" style="border-top: 1px solid var(--border); padding-top: 3rem">
+    <section aria-labelledby="reviews-heading" class="border-t-pt-12">
       <h2 class="section-title" id="reviews-heading">
         Student Success Stories
       </h2>
@@ -576,265 +508,157 @@
         Real feedback from students who completed our 1-to-1 virtual AI &amp;
         ML Training training.
       </p>
-      <div class="grid-3" style="margin-top: 3rem">
-        <div class="card" style="
-              padding: 2rem;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-            ">
-          <div style="
-                display: flex;
-                gap: 0.25rem;
-                align-items: center;
-                margin-bottom: 1rem;
-              ">
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+      <div class="grid-3 mt-12">
+        <div class="card card-body-spaced">
+          <div class="rating-stars-row">
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
           </div>
-          <p style="
-                font-style: italic;
-                color: var(--text-secondary);
-                margin-bottom: 1.5rem;
-                font-size: 0.95rem;
-                line-height: 1.6;
-                flex-grow: 1;
-              ">
+          <p class="card-desc-italic">
             "Upgrading to AI and ML was seamless due to the personalized
             attention. My mentor helped me understand the mathematical
             foundations behind SVM and Random Forests, and we implemented
             neural networks in Keras. Great coding practice."
           </p>
-          <div style="
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-              ">
+          <div class="card-footer-flex">
             <div>
-              <h4 style="
-                    color: var(--primary-light);
-                    margin: 0;
-                    font-size: 1rem;
-                  ">
+              <h4 class="price-label">
                 Vikram S.
               </h4>
-              <span style="font-size: 0.8rem; color: var(--text-secondary)">AI Engineer (Formerly Data Analyst),
+              <span class="text-muted-xs">AI Engineer (Formerly Data Analyst),
                 Hinjewadi, Pune</span>
             </div>
-            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" style="
-                  color: var(--accent);
-                  text-decoration: none;
-                  font-size: 0.75rem;
-                  font-weight: 500;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.25rem;
-                  white-space: nowrap;
-                " target="_blank">
+            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" class="link-accent-sm" target="_blank">
               Verify Review ↗
             </a>
           </div>
         </div>
-        <div class="card" style="
-              padding: 2rem;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-            ">
-          <div style="
-                display: flex;
-                gap: 0.25rem;
-                align-items: center;
-                margin-bottom: 1rem;
-              ">
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+        <div class="card card-body-spaced">
+          <div class="rating-stars-row">
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
           </div>
-          <p style="
-                font-style: italic;
-                color: var(--text-secondary);
-                margin-bottom: 1.5rem;
-                font-size: 0.95rem;
-                line-height: 1.6;
-                flex-grow: 1;
-              ">
+          <p class="card-desc-italic">
             "I did my final year project on NLP, but CACTS gave me the
             industry perspective. We built and deployed custom models using
             FastAPI. The trainer's knowledge of Scikit-Learn pipelines and
             TensorFlow was impressive."
           </p>
-          <div style="
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-              ">
+          <div class="card-footer-flex">
             <div>
-              <h4 style="
-                    color: var(--primary-light);
-                    margin: 0;
-                    font-size: 1rem;
-                  ">
+              <h4 class="price-label">
                 Snehal J.
               </h4>
-              <span style="font-size: 0.8rem; color: var(--text-secondary)">ML Research Assistant, DY Patil Pune</span>
+              <span class="text-muted-xs">ML Research Assistant, DY Patil Pune</span>
             </div>
-            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" style="
-                  color: var(--accent);
-                  text-decoration: none;
-                  font-size: 0.75rem;
-                  font-weight: 500;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.25rem;
-                  white-space: nowrap;
-                " target="_blank">
+            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" class="link-accent-sm" target="_blank">
               Verify Review ↗
             </a>
           </div>
         </div>
-        <div class="card" style="
-              padding: 2rem;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-            ">
-          <div style="
-                display: flex;
-                gap: 0.25rem;
-                align-items: center;
-                margin-bottom: 1rem;
-              ">
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+        <div class="card card-body-spaced">
+          <div class="rating-stars-row">
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
           </div>
-          <p style="
-                font-style: italic;
-                color: var(--text-secondary);
-                margin-bottom: 1.5rem;
-                font-size: 0.95rem;
-                line-height: 1.6;
-                flex-grow: 1;
-              ">
+          <p class="card-desc-italic">
             "Having a dedicated mentor to help debug my model training and
             explain hyperparameter tuning saved me months of struggle. The
             live project pipelines on company data were super challenging but
             rewarding."
           </p>
-          <div style="
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-              ">
+          <div class="card-footer-flex">
             <div>
-              <h4 style="
-                    color: var(--primary-light);
-                    margin: 0;
-                    font-size: 1rem;
-                  ">
+              <h4 class="price-label">
                 Piyush K.
               </h4>
-              <span style="font-size: 0.8rem; color: var(--text-secondary)">Software Developer, Kharadi, Pune</span>
+              <span class="text-muted-xs">Software Developer, Kharadi, Pune</span>
             </div>
-            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" style="
-                  color: var(--accent);
-                  text-decoration: none;
-                  font-size: 0.75rem;
-                  font-weight: 500;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.25rem;
-                  white-space: nowrap;
-                " target="_blank">
+            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" class="link-accent-sm" target="_blank">
               Verify Review ↗
             </a>
           </div>
@@ -843,27 +667,27 @@
     </section>
   
       <!-- Responsive Live Project Staging & Code Review Section -->
-      <section style="border-top: 1px solid var(--border); padding-top: 3rem; margin-top: 3rem;" aria-labelledby="project-staging-heading">
+      <section class="section-divider-thick" aria-labelledby="project-staging-heading">
         <h2 class="section-title" id="project-staging-heading">Production Staging &amp; Git Code Review Protocol</h2>
         <p class="section-subtitle">How students compile, test, and deploy production software code during the AI & Machine Learning track.</p>
         
-        <div class="grid-2" style="margin-top: 2rem; gap: 1.5rem;">
-          <div class="card" style="padding: 2rem;">
-            <h3 style="font-size: 1.2rem; color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading);">4-Stage Software Engineering Pipeline</h3>
-            <ol style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem;">
+        <div class="grid-2 u-0d5f2c">
+          <div class="card u-91f63f">
+            <h3 class="u-7724aa">4-Stage Software Engineering Pipeline</h3>
+            <ol class="u-e8104e">
               <li><strong>Feature Branch Isolation:</strong> You create dedicated Git branches for each module component following industry GitFlow standards.</li>
               <li><strong>Live Screen Code Review:</strong> Your mentor reviews pull requests line-by-line, pointing out security flaws and performance optimizations.</li>
               <li><strong>Automated Testing:</strong> You run unit and integration test suites before merging into staging.</li>
               <li><strong>Staging Deployment:</strong> Deploy active builds onto cloud servers or live hosting environments.</li>
             </ol>
           </div>
-          <div class="card" style="padding: 2rem;">
-            <h3 style="font-size: 1.2rem; color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading);">Verified Portfolio Showcase</h3>
-            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1rem;">
-              Employers don't want to see simple copy-paste tutorial code. Your completed projects become part of your public GitHub portfolio, backed by your verified completion credentials on <a href="../../verify.html" style="color: var(--accent); text-decoration: underline;">verify.html</a> and real experience in our <a href="../../showcase/internship-on-live-projects.html" style="color: var(--accent); text-decoration: underline;">Live Project Internship Program</a>.
+          <div class="card u-91f63f">
+            <h3 class="u-7724aa">Verified Portfolio Showcase</h3>
+            <p class="u-8af6dd">
+              Employers don't want to see simple copy-paste tutorial code. Your completed projects become part of your public GitHub portfolio, backed by your verified completion credentials on <a href="../../verify.html" class="link-accent-underlined">verify.html</a> and real experience in our <a href="../../showcase/internship-on-live-projects.html" class="link-accent-underlined">Live Project Internship Program</a>.
             </p>
-            <div style="margin-top: 1.25rem;">
-              <a href="../../reviews.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.6rem 1.2rem;">Read Student Internship Reviews &rarr;</a>
+            <div class="u-150a87">
+              <a href="../../reviews.html" class="btn btn-secondary u-d18ee1">Read Student Internship Reviews &rarr;</a>
             </div>
           </div>
         </div>
@@ -873,14 +697,7 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-programs-row">
-        <h4 style="
-              color: var(--text-primary);
-              margin-bottom: 1.5rem;
-              font-size: 1rem;
-              font-weight: 700;
-              letter-spacing: 0.5px;
-              text-transform: uppercase;
-            ">
+        <h4 class="footer-col-heading">
           Engineering Labs &amp; Programs
         </h4>
         <ul class="footer-programs-grid">
@@ -903,47 +720,20 @@
         </ul>
       </div>
       <div class="footer-brand">
-        <a href="../../index.html" style="
-              font-family: var(--font-heading);
-              font-size: 1.5rem;
-              font-weight: 800;
-              color: white;
-            ">CACTS</a>
+        <a href="../../index.html" class="footer-brand-title">CACTS</a>
         <p>
           Centre of Advanced Computer Training and Studies. Providing
           practical, one-to-one virtual software training and internships on
           real company projects since 2012.
         </p>
-        <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem">
-          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+        <div class="footer-social footer-social-row">
+          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
           </a>
-          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -951,18 +741,7 @@
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
-          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
@@ -970,18 +749,7 @@
               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
             </svg>
           </a>
-          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path
@@ -994,7 +762,7 @@
       </div>
       <div class="footer-links">
         <h4>Institutional Links</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="../../about.html">About CACTS</a></li>
           <li><a href="../../academic-projects.html">Academic Projects</a></li>
           <li><a href="../../ojt-internship.html">College OJT &amp; Internships</a></li>
@@ -1011,7 +779,7 @@
       </div>
       <div class="footer-links">
         <h4>Learning Portals</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="../../tools/index.html">Interactive Tools Suite</a></li>
           <li><a href="../../tools/pune-it-salary-calculator.html">Pune IT Salary Calculator</a></li>
           <li><a href="../../tools/pune-it-salary-report.html">Pune IT Salary Report 2026</a></li>
@@ -1026,79 +794,39 @@
       </div>
       <div class="footer-contact">
         <h4>Contact CACTS</h4>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           <strong>Phone:</strong> +91 96655 66357
         </p>
         <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
       </div>
     </div>
     <!-- Trust Credentials & Accreditations -->
-    <div style="
-          border-top: 1px solid var(--border);
-          padding: 1.5rem 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-          margin-top: 2rem;
-        ">
-      <div style="
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            line-height: 1.5;
-          ">
+    <div class="footer-bottom-bar">
+      <div class="footer-desc-text">
         <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong>
         Our curricula and git code review models are designed in alignment
         with ISO 29993:2017 standards for non-formal education training and
         software engineering industry practices. *Self-declared alignment for
         educational service quality.
       </div>
-      <div style="
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            opacity: 0.75;
-            flex-wrap: wrap;
-          ">
+      <div class="footer-trust-strip">
         <!-- ISO Compliant Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--accent-light);
-              cursor: help;
-            "
+        <div class="footer-badge-accent"
           title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers.">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
           ISO 29993:2017 ALIGNED*
         </div>
         <!-- Developer Led Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--primary-light);
-            ">
+        <div class="footer-badge-primary">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
             <line x1="2" x2="22" y1="20" y2="20"></line>
             <line x1="12" x2="12" y1="17" y2="20"></line>
@@ -1106,19 +834,9 @@
           100% DEVELOPER LED
         </div>
         <!-- Reg Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--warning);
-            ">
+        <div class="footer-badge-warning">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
             <line x1="9" x2="9" y1="22" y2="16"></line>
             <line x1="15" x2="15" y1="22" y2="16"></line>
@@ -1130,28 +848,24 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div style="text-align: left">
+      <div class="text-left">
         <p>
           © <span id="footer-year">2026</span> CACTS - Centre of Advanced
           Computer Training and Studies. All rights reserved.
         </p>
-        <p style="
-              margin-top: 0.25rem;
-              font-size: 0.8rem;
-              color: var(--text-secondary);
-            ">
+        <p class="footer-address">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
       </div>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-        <a href="../../sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../../feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../../privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../../terms-conditions.html" style="color: var(--text-secondary)">Terms &amp; Conditions</a>
+      <div class="btn-row">
+        <a href="../../sitemap.html" class="text-muted">Sitemap</a>
+        <span class="border-subtle">|</span>
+        <a href="../../feeds/index.html" class="text-muted">RSS Feeds</a>
+        <span class="border-subtle">|</span>
+        <a href="../../privacy-policy.html" class="text-muted">Privacy Policy</a>
+        <span class="border-subtle">|</span>
+        <a href="../../terms-conditions.html" class="text-muted">Terms &amp; Conditions</a>
       </div>
     </div>
   </footer>

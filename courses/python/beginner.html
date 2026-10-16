@@ -165,7 +165,7 @@
       </div>
       <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
         <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-          stroke-width="2" style="vertical-align: middle" viewbox="0 0 24 24" width="24">
+          stroke-width="2" class="va-middle" viewbox="0 0 24 24" width="24">
           <line x1="3" x2="21" y1="12" y2="12"></line>
           <line x1="3" x2="21" y1="6" y2="6"></line>
           <line x1="3" x2="21" y1="18" y2="18"></line>
@@ -180,8 +180,8 @@
         <a href="../../reviews.html">Reviews</a>
         <a href="../../faqs.html">FAQs</a>
         <button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle">
-          <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" style="display: block" viewbox="0 0 24 24" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" class="sun-icon d-block">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" x2="12" y1="1" y2="3"></line>
             <line x1="12" x2="12" y1="21" y2="23"></line>
@@ -192,12 +192,12 @@
             <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
             <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
           </svg>
-          <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" style="display: none" viewbox="0 0 24 24" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" class="moon-icon d-none">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <a class="btn btn-accent" href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%201-to-1%20demo%20session%20for%20Python%20Scripting%20%26%20Backend%20Training." target="_blank" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
+        <a href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%201-to-1%20demo%20session%20for%20Python%20Scripting%20%26%20Backend%20Training." target="_blank" class="btn btn-accent badge-dark-text">Book Demo</a>
       </nav>
     </div>
   </header>
@@ -205,25 +205,17 @@
   <main>
     <!-- Course Hero Section -->
     <section aria-labelledby="course-h1" class="course-hero">
-      <nav aria-label="Breadcrumb" style="
-            margin-bottom: 1rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-          ">
-        <a href="../../index.html" style="color: var(--accent)">Home</a> &gt;
-        <a href="../index.html" style="color: var(--accent)">Courses</a> &gt;
-        <a href="index.html" style="color: var(--accent)">Python Development</a>
-        &gt; <span style="color: var(--text-primary)">Beginner Guide</span>
+      <nav aria-label="Breadcrumb" class="meta-subtext-sm">
+        <a href="../../index.html" class="text-accent">Home</a> &gt;
+        <a href="../index.html" class="text-accent">Courses</a> &gt;
+        <a href="index.html" class="text-accent">Python Development</a>
+        &gt; <span class="text-primary">Beginner Guide</span>
       </nav>
       <div class="grid-2">
         <div>
           <span class="course-badge">1-to-1 Personal Mentorship</span>
           <h1 id="course-h1">Beginner to Python Developer Roadmap</h1>
-          <p style="
-                font-size: 1.2rem;
-                color: var(--text-secondary);
-                margin-top: 1rem;
-              ">
+          <p class="subhead-secondary-lg">
             The Structured Guide to Mastering Python Scripting, Web Frameworks
             &amp; Automation
           </p>
@@ -276,16 +268,7 @@
             </div>
           </div>
           <!-- AEO Answer-First Callout (Optimized for AI Search Engines) -->
-          <div style="
-                background: rgba(255, 255, 255, 0.03);
-                border-left: 3px solid var(--accent);
-                padding: 0.85rem 1.25rem;
-                border-radius: 4px;
-                margin: 1.5rem 0;
-                font-size: 0.92rem;
-                line-height: 1.5;
-                color: var(--text-secondary);
-              ">
+          <div class="callout-aeo">
             <strong>Lab Overview:</strong> Everyone is selling AI magic. We
             teach the code that makes AI possible. If you want a classroom
             with a certificate, the traditional institutes are waiting for
@@ -293,7 +276,7 @@
             seat in the lab. We bypass mass-classroom lecture batches to focus
             on 1-to-1 code execution.
           </div>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <div class="btn-row">
             <a class="btn btn-accent"
               href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20the%201-to-1%20Python%20Training%20training."
               target="_blank">
@@ -305,7 +288,7 @@
           </div>
         </div>
         <div class="lead-form-container" id="register">
-          <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading)">
+          <h3 class="heading-mb-6">
             Apply for a Seat in the Lab
           </h3>
           <form class="lead-form" toolaction="submit"
@@ -335,48 +318,46 @@
               </select>
             </div>
             <!-- Data Privacy Consent & Multilingual Switcher -->
-            <div class="dpdp-consent-container"
-              style="margin: 1.25rem 0 1rem 0; padding: 0.85rem; background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border); border-radius: 8px;">
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <div class="dpdp-consent-container filter-box-panel">
+              <div class="filter-box-header">
                 <span
-                  style="font-size: 0.72rem; font-weight: 700; color: var(--accent-light); text-transform: uppercase; letter-spacing: 0.5px;">Data
+                  class="filter-box-title">Data
                   Privacy &amp; Consent Notice</span>
-                <select class="dpdp-lang-select" onchange="toggleDpdpLang(this)"
-                  style="font-size: 0.72rem; padding: 2px 6px; background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary); border-radius: 4px; cursor: pointer;">
+                <select onchange="toggleDpdpLang(this)" class="dpdp-lang-select filter-badge-btn">
                   <option value="en">English</option>
                   <option value="mr">मराठी (Marathi)</option>
                   <option value="hi">हिंदी (Hindi)</option>
                 </select>
               </div>
               <label
-                style="display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.8rem; color: var(--text-secondary); cursor: pointer; line-height: 1.4;">
+                class="filter-checkbox-label">
                 <input type="checkbox" id="dpdp_consent" name="dpdp_consent" required
-                  style="margin-top: 3px; accent-color: var(--accent);" />
+                  class="input-accent-box" />
                 <span class="dpdp-text-en">
                   I consent to CACTS processing my name and contact details to schedule a free 1-to-1 demo session as
                   per the
                   <a href="privacy-policy.html#privacy-notice" target="_blank"
-                    style="color: var(--accent); text-decoration: underline;">Privacy &amp; Data Protection Notice</a>.
+                    class="link-accent-underlined">Privacy &amp; Data Protection Notice</a>.
                   I understand I can withdraw consent at any time.
                 </span>
-                <span class="dpdp-text-mr" style="display: none;">
+                <span class="dpdp-text-mr d-none">
                   मी <a href="privacy-policy.html#privacy-notice" target="_blank"
-                    style="color: var(--accent); text-decoration: underline;">गोपनीयता व डेटा संरक्षण सूचनेनुसार</a>
+                    class="link-accent-underlined">गोपनीयता व डेटा संरक्षण सूचनेनुसार</a>
                   विनामूल्य १-टू-१ डेमो सत्र
                   आणि समुपदेशनासाठी माझे नाव आणि संपर्क
                   तपशील प्रक्रिया करण्यास संमती देतो/देते.
                   मी माझी संमती कोणत्याही वेळी मागे घेऊ शकतो/शकते.
                 </span>
-                <span class="dpdp-text-hi" style="display: none;">
+                <span class="dpdp-text-hi d-none">
                   मैं <a href="privacy-policy.html#privacy-notice" target="_blank"
-                    style="color: var(--accent); text-decoration: underline;">गोपनीयता एवं डेटा संरक्षण नोटिस</a> के
+                    class="link-accent-underlined">गोपनीयता एवं डेटा संरक्षण नोटिस</a> के
                   अनुसार मुफ्त 1-टू-1 डेमो सत्र और परामर्श के लिए अपना नाम और
                   संपर्क विवरण संसाधित करने के लिए सहमति देता/देती हूं।
                   मैं किसी भी समय सहमति वापस ले सकता/सकती हूं।
                 </span>
               </label>
             </div>
-            <button class="btn btn-primary" style="width: 100%" type="submit">
+            <button type="submit" class="btn btn-primary w-full">
               Submit Code Assessment Request
             </button>
           </form>
@@ -393,36 +374,18 @@
         href="comparison.html">Comparison</a>
     </div>
     <!-- Course Content & Info -->
-    <section aria-labelledby="details-heading" style="border-top: 1px solid var(--border)">
+    <section aria-labelledby="details-heading" class="border-t">
       <div class="course-layout">
         <div>
-          <h2 style="margin-bottom: 1.5rem">Beginner Career Roadmap</h2>
-          <p style="
-                font-size: 1.1rem;
-                color: var(--text-secondary);
-                margin-bottom: 2.5rem;
-              ">
+          <h2 class="mb-6">Beginner Career Roadmap</h2>
+          <p class="lead-desc-mb-10">
             Step-by-step career navigation roadmap for learning Python
             Training and landing developer roles in Pune.
           </p>
-          <div style="
-                background: rgba(20, 184, 166, 0.05);
-                border: 1px solid var(--accent);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-                margin-top: 1rem;
-                margin-bottom: 3rem;
-              ">
-            <h3 style="
-                  color: var(--accent-light);
-                  margin-bottom: 1rem;
-                  font-family: var(--font-heading);
-                  display: flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                ">
+          <div class="u-09b3ac">
+            <h3 class="u-a6b98b">
               <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="20">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="20">
                 <path
                   d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5 5 0 0 0 8 8c0 1 .5 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5">
                 </path>
@@ -430,13 +393,7 @@
                 <line x1="10" x2="14" y1="22" y2="22"></line>
               </svg>Key Takeaways
             </h3>
-            <ul style="
-                  color: var(--text-secondary);
-                  margin-left: 1.5rem;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 0.75rem;
-                ">
+            <ul class="u-55885a">
               <li>
                 Learn Python data structures, OOP modules, file IO, and
                 regular expressions.
@@ -451,112 +408,48 @@
               </li>
             </ul>
           </div>
-          <div style="
-                margin-bottom: 2.5rem;
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-              ">
-            <h3 style="
-                  font-size: 1.4rem;
-                  color: var(--text-primary);
-                  margin-bottom: 1rem;
-                  font-family: var(--font-heading);
-                ">
+          <div class="card-padded-box">
+            <h3 class="section-subheading">
               Milestone 1: Core Python Syntax &amp; Data Types
             </h3>
-            <p style="
-                  color: var(--text-secondary);
-                  line-height: 1.7;
-                  font-size: 1rem;
-                  margin: 0;
-                ">
+            <p class="text-secondary-lead">
               Master Python variables, lists, dictionaries, tuples, sets,
               control flow loops, functions, lambda expressions, and error
               exception handling.
             </p>
           </div>
-          <div style="
-                margin-bottom: 2.5rem;
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-              ">
-            <h3 style="
-                  font-size: 1.4rem;
-                  color: var(--text-primary);
-                  margin-bottom: 1rem;
-                  font-family: var(--font-heading);
-                ">
+          <div class="card-padded-box">
+            <h3 class="section-subheading">
               Milestone 2: Object-Oriented Programming &amp; File I/O
             </h3>
-            <p style="
-                  color: var(--text-secondary);
-                  line-height: 1.7;
-                  font-size: 1rem;
-                  margin: 0;
-                ">
+            <p class="text-secondary-lead">
               Understand Python OOP classes, inheritance, decorators, module
               imports, virtual environments, and reading/writing CSV, JSON,
               and text files.
             </p>
           </div>
-          <div style="
-                margin-bottom: 2.5rem;
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-              ">
-            <h3 style="
-                  font-size: 1.4rem;
-                  color: var(--text-primary);
-                  margin-bottom: 1rem;
-                  font-family: var(--font-heading);
-                ">
+          <div class="card-padded-box">
+            <h3 class="section-subheading">
               Milestone 3: Web Scrapers &amp; Automation Scripts
             </h3>
-            <p style="
-                  color: var(--text-secondary);
-                  line-height: 1.7;
-                  font-size: 1rem;
-                  margin: 0;
-                ">
+            <p class="text-secondary-lead">
               Extract structured data from web pages using Requests,
               BeautifulSoup, and Selenium. Automate repetitive spreadsheet and
               OS file management tasks.
             </p>
           </div>
-          <div style="
-                margin-bottom: 2.5rem;
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-              ">
-            <h3 style="
-                  font-size: 1.4rem;
-                  color: var(--text-primary);
-                  margin-bottom: 1rem;
-                  font-family: var(--font-heading);
-                ">
+          <div class="card-padded-box">
+            <h3 class="section-subheading">
               Milestone 4: REST API Microservices &amp; SQL Integration
             </h3>
-            <p style="
-                  color: var(--text-secondary);
-                  line-height: 1.7;
-                  font-size: 1rem;
-                  margin: 0;
-                ">
+            <p class="text-secondary-lead">
               Build lightweight backend APIs using FastAPI or Flask, query
               relational databases using SQLAlchemy ORM, and host scripts on
               cloud servers.
             </p>
           </div>
-          <div style="margin-top: 4rem">
-            <h2 style="margin-bottom: 1.5rem">
+          <div class="mt-16">
+            <h2 class="mb-6">
               Career Roadmap &amp; Syllabus FAQs
             </h2>
             <div class="course-faqs-accordion">
@@ -567,7 +460,7 @@
                 </div>
                 <div class="faq-content module-content">
                   <div class="module-content-inner">
-                    <p style="color: var(--text-secondary); font-size: 0.95rem" class="faq-intake-answer">
+                    <p class="text-muted-sm faq-intake-answer">
                       Intakes start twice monthly on the 1st and 15th. The next upcoming 1-to-1 intake starts on October 15, 2026 (with secondary intake on November 1, 2026).</p>
                   </div>
                 </div>
@@ -579,7 +472,7 @@
                 </div>
                 <div class="faq-content module-content">
                   <div class="module-content-inner">
-                    <p style="color: var(--text-secondary); font-size: 0.95rem">
+                    <p class="text-muted-sm">
                       Yes. CACTS 1-to-1 training starts from core fundamentals and progresses step-by-step to advanced
                       production concepts. Mentorship pacing adapts completely to your personal learning speed.
                     </p>
@@ -593,7 +486,7 @@
                 </div>
                 <div class="faq-content module-content">
                   <div class="module-content-inner">
-                    <p style="color: var(--text-secondary); font-size: 0.95rem">
+                    <p class="text-muted-sm">
                       Most students complete the core curriculum and live company project internship in 12 to 16 weeks
                       of dedicated 1-to-1 mentorship sessions.
                     </p>
@@ -607,7 +500,7 @@
                 </div>
                 <div class="faq-content module-content">
                   <div class="module-content-inner">
-                    <p style="color: var(--text-secondary); font-size: 0.95rem">
+                    <p class="text-muted-sm">
                       Graduates are prepared for junior and mid-level roles such as Python Developer, Automation
                       Engineer, Software Developer, Scripting Specialist, backed by verified GitHub commits and live
                       staging deployment experience.
@@ -663,18 +556,17 @@
             </li>
           </ul>
           <div class="pricing-cta">
-            <a class="btn btn-accent"
-              href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20enrolling%20for%201-to-1%20Python%20Training%20training."
-              style="width: 100%; text-align: center; color: #0b0f19" target="_blank">
+            <a
+              href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20enrolling%20for%201-to-1%20Python%20Training%20training." target="_blank" class="btn btn-accent btn-full-dark">
               Enroll via WhatsApp
             </a>
-            <a class="btn btn-secondary" href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%201-to-1%20demo%20session%20for%20Python%20Scripting%20%26%20Backend%20Training." target="_blank" style="width: 100%; text-align: center; margin-top: 0.75rem">Request Free Trial Demo</a>
+            <a href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%201-to-1%20demo%20session%20for%20Python%20Scripting%20%26%20Backend%20Training." target="_blank" class="btn btn-secondary btn-full-mt-3">Request Free Trial Demo</a>
           </div>
         </aside>
       </div>
     </section>
     <!-- Student Testimonials / Reviews -->
-    <section aria-labelledby="reviews-heading" style="border-top: 1px solid var(--border); padding-top: 3rem">
+    <section aria-labelledby="reviews-heading" class="border-t-pt-12">
       <h2 class="section-title" id="reviews-heading">
         Student Success Stories
       </h2>
@@ -682,266 +574,158 @@
         Real feedback from students who completed our 1-to-1 virtual Python
         Training training.
       </p>
-      <div class="grid-3" style="margin-top: 3rem">
-        <div class="card" style="
-              padding: 2rem;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-            ">
-          <div style="
-                display: flex;
-                gap: 0.25rem;
-                align-items: center;
-                margin-bottom: 1rem;
-              ">
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+      <div class="grid-3 mt-12">
+        <div class="card card-body-spaced">
+          <div class="rating-stars-row">
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
           </div>
-          <p style="
-                font-style: italic;
-                color: var(--text-secondary);
-                margin-bottom: 1.5rem;
-                font-size: 0.95rem;
-                line-height: 1.6;
-                flex-grow: 1;
-              ">
+          <p class="card-desc-italic">
             "The Python programming training was incredibly detailed. Rather
             than watching recorded slides, my mentor had me write script
             modules, explaining classes and object-oriented practices live.
             The live project git workflows prepared me for coding
             expectations."
           </p>
-          <div style="
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-              ">
+          <div class="card-footer-flex">
             <div>
-              <h4 style="
-                    color: var(--primary-light);
-                    margin: 0;
-                    font-size: 1rem;
-                  ">
+              <h4 class="price-label">
                 Amit K.
               </h4>
-              <span style="font-size: 0.8rem; color: var(--text-secondary)">Python Scripting Specialist, Hinjewadi,
+              <span class="text-muted-xs">Python Scripting Specialist, Hinjewadi,
                 Pune</span>
             </div>
-            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" style="
-                  color: var(--accent);
-                  text-decoration: none;
-                  font-size: 0.75rem;
-                  font-weight: 500;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.25rem;
-                  white-space: nowrap;
-                " target="_blank">
+            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" class="link-accent-sm" target="_blank">
               Verify Review ↗
             </a>
           </div>
         </div>
-        <div class="card" style="
-              padding: 2rem;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-            ">
-          <div style="
-                display: flex;
-                gap: 0.25rem;
-                align-items: center;
-                margin-bottom: 1rem;
-              ">
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+        <div class="card card-body-spaced">
+          <div class="rating-stars-row">
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
           </div>
-          <p style="
-                font-style: italic;
-                color: var(--text-secondary);
-                margin-bottom: 1.5rem;
-                font-size: 0.95rem;
-                line-height: 1.6;
-                flex-grow: 1;
-              ">
+          <p class="card-desc-italic">
             "Excellent course for building core logic. My mentor was very
             patient and explained OOP concepts, file handling, and exception
             handling using real examples. I now feel very comfortable writing
             Python scripts."
           </p>
-          <div style="
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-              ">
+          <div class="card-footer-flex">
             <div>
-              <h4 style="
-                    color: var(--primary-light);
-                    margin: 0;
-                    font-size: 1rem;
-                  ">
+              <h4 class="price-label">
                 Ritu D.
               </h4>
-              <span style="font-size: 0.8rem; color: var(--text-secondary)">BSc Graduate, Kothrud, Pune</span>
+              <span class="text-muted-xs">BSc Graduate, Kothrud, Pune</span>
             </div>
-            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" style="
-                  color: var(--accent);
-                  text-decoration: none;
-                  font-size: 0.75rem;
-                  font-weight: 500;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.25rem;
-                  white-space: nowrap;
-                " target="_blank">
+            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" class="link-accent-sm" target="_blank">
               Verify Review ↗
             </a>
           </div>
         </div>
-        <div class="card" style="
-              padding: 2rem;
-              display: flex;
-              flex-direction: column;
-              justify-content: space-between;
-            ">
-          <div style="
-                display: flex;
-                gap: 0.25rem;
-                align-items: center;
-                margin-bottom: 1rem;
-              ">
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+        <div class="card card-body-spaced">
+          <div class="rating-stars-row">
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
-            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" style="color: var(--warning)"
+            <svg fill="currentColor" height="14" stroke="currentColor" stroke-width="2" class="text-warning"
               viewbox="0 0 24 24" width="14">
               <polygon
                 points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
               </polygon>
             </svg>
           </div>
-          <p style="
-                font-style: italic;
-                color: var(--text-secondary);
-                margin-bottom: 1.5rem;
-                font-size: 0.95rem;
-                line-height: 1.6;
-                flex-grow: 1;
-              ">
+          <p class="card-desc-italic">
             "The web scraping and API connection modules were very
             interesting. Since it's 1-on-1 training, I could ask as many
             questions as I wanted. We built automation scripts that save hours
             of manual data entry."
           </p>
-          <div style="
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-end;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-              ">
+          <div class="card-footer-flex">
             <div>
-              <h4 style="
-                    color: var(--primary-light);
-                    margin: 0;
-                    font-size: 1rem;
-                  ">
+              <h4 class="price-label">
                 Siddharth V.
               </h4>
-              <span style="font-size: 0.8rem; color: var(--text-secondary)">Engineering Student, VIT Pune</span>
+              <span class="text-muted-xs">Engineering Student, VIT Pune</span>
             </div>
-            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" style="
-                  color: var(--accent);
-                  text-decoration: none;
-                  font-size: 0.75rem;
-                  font-weight: 500;
-                  display: inline-flex;
-                  align-items: center;
-                  gap: 0.25rem;
-                  white-space: nowrap;
-                " target="_blank">
+            <a href="https://g.page/r/CaTs8mGD9uaoEBM/review" rel="noopener" class="link-accent-sm" target="_blank">
               Verify Review ↗
             </a>
           </div>
@@ -950,29 +734,29 @@
     </section>
   
       <!-- Responsive Beginner Prerequisites & Setup Assistance Section -->
-      <section style="border-top: 1px solid var(--border); padding-top: 3rem; margin-top: 3rem;" aria-labelledby="beginner-setup-heading">
+      <section class="section-divider-thick" aria-labelledby="beginner-setup-heading">
         <h2 class="section-title" id="beginner-setup-heading">Python Scripting & Backend Lab Beginner Onboarding &amp; Setup Protocol</h2>
         <p class="section-subtitle">How CACTS mentors help zero-experience beginners set up developer tools and conquer initial learning hurdles.</p>
         
-        <div class="grid-2" style="margin-top: 2rem; gap: 1.5rem;">
-          <div class="card" style="padding: 2rem;">
-            <h3 style="font-size: 1.25rem; color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading);">Zero-Code Prerequisites Checklist</h3>
-            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1rem;">
+        <div class="grid-2 u-0d5f2c">
+          <div class="card u-91f63f">
+            <h3 class="u-579579">Zero-Code Prerequisites Checklist</h3>
+            <p class="u-8af6dd">
               You do not need prior programming experience or a Computer Science degree to start. Your 1-to-1 mentor configures your IDE, installs language compilers, and guides you through your very first line of code during private live virtual sessions.
             </p>
-            <ul style="color: var(--text-secondary); line-height: 1.6; font-size: 0.9rem; margin-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <ul class="u-9f65b1">
               <li>Dedicated setup support for Windows, macOS, and Linux developer environments.</li>
               <li>Git version control and GitHub profile creation assistance.</li>
               <li>Free access to mentorship session recordings and custom starter code repositories.</li>
             </ul>
           </div>
-          <div class="card" style="padding: 2rem;">
-            <h3 style="font-size: 1.25rem; color: var(--accent-light); margin-bottom: 1rem; font-family: var(--font-heading);">Transition to Live Internship</h3>
-            <p style="color: var(--text-secondary); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1rem;">
-              Once you master beginner logic syntax, your mentor transitions you directly into compiling live features in our <a href="../../showcase/internship-on-live-projects.html" style="color: var(--accent); text-decoration: underline;">Live Project Internship Program</a>. Your completed projects earn verifiable credentials on <a href="../../verify.html" style="color: var(--accent); text-decoration: underline;">verify.html</a>.
+          <div class="card u-91f63f">
+            <h3 class="u-579579">Transition to Live Internship</h3>
+            <p class="u-8af6dd">
+              Once you master beginner logic syntax, your mentor transitions you directly into compiling live features in our <a href="../../showcase/internship-on-live-projects.html" class="link-accent-underlined">Live Project Internship Program</a>. Your completed projects earn verifiable credentials on <a href="../../verify.html" class="link-accent-underlined">verify.html</a>.
             </p>
-            <div style="margin-top: 1.5rem;">
-              <a href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%201-to-1%20demo%20session%20for%20Python%20Scripting%20%26%20Backend%20Training." target="_blank" class="btn btn-accent" style="color: #0b0f19; font-size: 0.9rem; padding: 0.6rem 1.2rem;">Book Free Beginner Counseling &rarr;</a>
+            <div class="u-511ee6">
+              <a href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%201-to-1%20demo%20session%20for%20Python%20Scripting%20%26%20Backend%20Training." target="_blank" class="btn btn-accent u-e6a1a0">Book Free Beginner Counseling &rarr;</a>
             </div>
           </div>
         </div>
@@ -982,14 +766,7 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-programs-row">
-        <h4 style="
-              color: var(--text-primary);
-              margin-bottom: 1.5rem;
-              font-size: 1rem;
-              font-weight: 700;
-              letter-spacing: 0.5px;
-              text-transform: uppercase;
-            ">
+        <h4 class="footer-col-heading">
           Engineering Labs &amp; Programs
         </h4>
         <ul class="footer-programs-grid">
@@ -1012,47 +789,20 @@
         </ul>
       </div>
       <div class="footer-brand">
-        <a href="../../index.html" style="
-              font-family: var(--font-heading);
-              font-size: 1.5rem;
-              font-weight: 800;
-              color: white;
-            ">CACTS</a>
+        <a href="../../index.html" class="footer-brand-title">CACTS</a>
         <p>
           Centre of Advanced Computer Training and Studies. Providing
           practical, one-to-one virtual software training and internships on
           real company projects since 2012.
         </p>
-        <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem">
-          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+        <div class="footer-social footer-social-row">
+          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
           </a>
-          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -1060,18 +810,7 @@
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
-          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
@@ -1079,18 +818,7 @@
               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
             </svg>
           </a>
-          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path
@@ -1103,7 +831,7 @@
       </div>
       <div class="footer-links">
         <h4>Institutional Links</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="../../about.html">About CACTS</a></li>
           <li><a href="../../academic-projects.html">Academic Projects</a></li>
           <li><a href="../../ojt-internship.html">College OJT &amp; Internships</a></li>
@@ -1120,7 +848,7 @@
       </div>
       <div class="footer-links">
         <h4>Learning Portals</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="../../tools/index.html">Interactive Tools Suite</a></li>
           <li><a href="../../tools/pune-it-salary-calculator.html">Pune IT Salary Calculator</a></li>
           <li><a href="../../tools/pune-it-salary-report.html">Pune IT Salary Report 2026</a></li>
@@ -1135,79 +863,39 @@
       </div>
       <div class="footer-contact">
         <h4>Contact CACTS</h4>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           <strong>Phone:</strong> +91 96655 66357
         </p>
         <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
       </div>
     </div>
     <!-- Trust Credentials & Accreditations -->
-    <div style="
-          border-top: 1px solid var(--border);
-          padding: 1.5rem 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-          margin-top: 2rem;
-        ">
-      <div style="
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            line-height: 1.5;
-          ">
+    <div class="footer-bottom-bar">
+      <div class="footer-desc-text">
         <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong>
         Our curricula and git code review models are designed in alignment
         with ISO 29993:2017 standards for non-formal education training and
         software engineering industry practices. *Self-declared alignment for
         educational service quality.
       </div>
-      <div style="
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            opacity: 0.75;
-            flex-wrap: wrap;
-          ">
+      <div class="footer-trust-strip">
         <!-- ISO Compliant Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--accent-light);
-              cursor: help;
-            "
+        <div class="footer-badge-accent"
           title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers.">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
           ISO 29993:2017 ALIGNED*
         </div>
         <!-- Developer Led Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--primary-light);
-            ">
+        <div class="footer-badge-primary">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
             <line x1="2" x2="22" y1="20" y2="20"></line>
             <line x1="12" x2="12" y1="17" y2="20"></line>
@@ -1215,19 +903,9 @@
           100% DEVELOPER LED
         </div>
         <!-- Reg Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--warning);
-            ">
+        <div class="footer-badge-warning">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
             <line x1="9" x2="9" y1="22" y2="16"></line>
             <line x1="15" x2="15" y1="22" y2="16"></line>
@@ -1239,28 +917,24 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div style="text-align: left">
+      <div class="text-left">
         <p>
           © <span id="footer-year">2026</span> CACTS - Centre of Advanced
           Computer Training and Studies. All rights reserved.
         </p>
-        <p style="
-              margin-top: 0.25rem;
-              font-size: 0.8rem;
-              color: var(--text-secondary);
-            ">
+        <p class="footer-address">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
       </div>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-        <a href="../../sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../../feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../../privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../../terms-conditions.html" style="color: var(--text-secondary)">Terms &amp; Conditions</a>
+      <div class="btn-row">
+        <a href="../../sitemap.html" class="text-muted">Sitemap</a>
+        <span class="border-subtle">|</span>
+        <a href="../../feeds/index.html" class="text-muted">RSS Feeds</a>
+        <span class="border-subtle">|</span>
+        <a href="../../privacy-policy.html" class="text-muted">Privacy Policy</a>
+        <span class="border-subtle">|</span>
+        <a href="../../terms-conditions.html" class="text-muted">Terms &amp; Conditions</a>
       </div>
     </div>
   </footer>
@@ -1270,7 +944,7 @@
       href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20have%20an%20inquiry%20regarding%20the%201-to-1%20Python%20Training%20training."
       target="_blank">
       <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width="2.5" style="vertical-align: middle; transform: translateY(-1px)" viewbox="0 0 24 24" width="24">
+        stroke-width="2.5" class="va-middle-cta" viewbox="0 0 24 24" width="24">
         <path
           d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
         </path>
@@ -1278,7 +952,7 @@
     </a>
     <a aria-label="Call CACTS" class="cta-circle cta-call" href="tel:+919665566357">
       <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width="2.5" style="vertical-align: middle" viewbox="0 0 24 24" width="20">
+        stroke-width="2.5" class="va-middle" viewbox="0 0 24 24" width="20">
         <path
           d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
         </path>

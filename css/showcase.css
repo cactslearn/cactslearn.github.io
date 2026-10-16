@@ -1,0 +1,328 @@
+/* ==========================================================================
+   SHOWCASE & PORTFOLIOS STYLESHEET (css/showcase.css)
+   Dedicated styles for CACTS Student Projects & Case Studies (showcase/*.html)
+   ========================================================================== */
+
+/* Filter Buttons & Portfolio Grid (student-projects.html) */
+.filter-btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.6rem 1.25rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  color: var(--text-primary);
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--border-hover);
+  box-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.15);
+  background: var(--bg-card-hover);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: 0.7;
+}
+
+.project-visual {
+  width: 100%;
+  height: 150px;
+  background: #020617;
+  border-radius: 8px;
+  margin-bottom: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.project-card:hover .project-visual {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.project-badge {
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  background: var(--primary-glow);
+  border: 1px solid var(--primary-light);
+  color: var(--primary-light);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-meta {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.project-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.project-links .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  flex: 1;
+  text-align: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+/* Timeline Components (internship-showcase.html) */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: var(--border);
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  width: 50%;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+  text-align: left;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: var(--bg-main);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+  right: -8px;
+  left: auto;
+  transform: none;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+  left: -8px;
+  transform: none;
+}
+
+.timeline-content {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.timeline-content:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+
+.timeline-number {
+  font-size: 1.25rem;
+  color: var(--accent-light);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.git-commit-box {
+  background: #030712;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: monospace;
+  padding: 1.25rem;
+  margin: 2rem 0;
+  font-size: 0.88rem;
+  color: #38bdf8;
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    width: 100%;
+    left: 0 !important;
+    padding-left: 45px;
+    padding-right: 0;
+    text-align: left !important;
+  }
+
+  .timeline-dot {
+    left: 12px !important;
+    right: auto !important;
+  }
+}
+
+/* Portfolio Case Studies (project-portfolios.html) */
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 3.5rem;
+}
+
+.portfolio-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+  padding: 3rem;
+  transition: var(--transition);
+}
+
+.portfolio-item:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+  box-shadow: 0 10px 30px rgba(20, 184, 166, 0.08);
+}
+
+.portfolio-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.portfolio-tag {
+  padding: 0.25rem 0.75rem;
+  background: var(--primary-glow);
+  border: 1px solid var(--primary-light);
+  color: var(--primary-light);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.diagram-box {
+  background: #030712;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-family: monospace;
+  font-size: 0.88rem;
+  color: #10b981;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  line-height: 1.4;
+}
+
+.portfolio-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.spec-item h4 {
+  color: var(--accent-light);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.spec-item p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}

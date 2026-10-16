@@ -1,3 +1,4 @@
+@import url("generated-utilities.css");
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
@@ -1073,3 +1074,398 @@ body.light-theme .faq-category-header {
     color: var(--primary);
 }
 
+/* ========================================================
+   REUSABLE COMPONENT & UTILITY CLASSES (Replacing Inline Styles)
+   ======================================================== */
+
+/* Callout Boxes */
+.callout-takeaways {
+    background: rgba(20, 184, 166, 0.05);
+    border: 1px solid var(--accent);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+body.light-theme .callout-takeaways {
+    background: rgba(20, 184, 166, 0.08);
+}
+.callout-takeaways-title {
+    color: var(--accent-light);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+body.light-theme .callout-takeaways-title {
+    color: var(--accent);
+}
+.callout-takeaways-list {
+    color: var(--text-secondary);
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.callout-aeo {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid var(--accent);
+    padding: 0.85rem 1.25rem;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+body.light-theme .callout-aeo {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+/* Feature Checklists */
+.checklist-container {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 0;
+    margin-bottom: 1.5rem;
+}
+.checklist-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* SVG Utility Helpers */
+.icon-accent { color: var(--accent) !important; flex-shrink: 0; vertical-align: middle; }
+.icon-success { color: var(--success) !important; flex-shrink: 0; vertical-align: middle; }
+.icon-warning { color: var(--warning) !important; flex-shrink: 0; vertical-align: middle; }
+.icon-primary { color: var(--primary) !important; flex-shrink: 0; vertical-align: middle; }
+
+/* Flex & Button Layout Helpers */
+.btn-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.btn-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.btn-full {
+    width: 100%;
+    text-align: center;
+}
+
+/* Site Footer Standardized Elements */
+.footer-estd-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--warning);
+}
+.footer-address {
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+.footer-links-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.footer-link {
+    color: var(--text-secondary);
+    transition: var(--transition);
+}
+.footer-link:hover {
+    color: var(--text-primary);
+}
+.footer-link-divider {
+    color: var(--border);
+}
+
+/* Floating CTAs SVG Alignment */
+.floating-ctas .cta-circle svg {
+    vertical-align: middle;
+}
+.floating-ctas .cta-whatsapp svg {
+    transform: translateY(-1px);
+}
+
+/* Badges & Content Flow */
+.badge-expert-verified {
+    color: var(--success);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+.article-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* ========================================================
+   HIGH-FREQUENCY UTILITY CLASSES (Deduplication Phase 2)
+   ======================================================== */
+.text-warning { color: var(--warning) !important; }
+.text-accent { color: var(--accent) !important; }
+.text-muted { color: var(--text-secondary) !important; }
+.text-muted-sm { color: var(--text-secondary); font-size: 0.95rem; }
+.shrink-0 { flex-shrink: 0 !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.list-unstyled { list-style: none !important; }
+
+/* Table & Grid Cell Layouts */
+.cell-center { padding: 1.25rem; text-align: center; }
+.grid-3col { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+
+/* Typography & Weights */
+.font-accent-semibold { font-weight: 600; color: var(--accent-light); }
+.font-accent-bold { color: var(--accent-light); font-weight: 700; }
+.font-primary-semibold { color: var(--primary-light); font-weight: 600; }
+.border-subtle { color: var(--border); }
+
+/* Common Link Helpers */
+.link-clean { color: var(--text-primary); text-decoration: none; transition: var(--transition); }
+.link-clean:hover { color: var(--accent); }
+.link-muted-flex { color: var(--text-secondary); transition: var(--transition); display: inline-flex; align-items: center; }
+.link-muted-flex:hover { color: var(--text-primary); }
+.link-accent-underlined { color: var(--accent); text-decoration: underline; }
+
+/* Shared Resource Link Directory */
+.resources-list-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-block;
+}
+.resources-list-links a:hover {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* Course Card & Component Deduplication Helpers */
+.social-circle-btn {
+  color: var(--text-secondary);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
+.social-circle-btn:hover {
+  color: var(--text-primary);
+  border-color: var(--accent);
+}
+.card-body-spaced {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.rating-stars-row {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+/* Location Page Utility Helpers */
+.text-muted-relaxed { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+.p-8 { padding: 2rem !important; }
+.section-divider-top { border-top: 1px solid var(--border); padding-top: 3rem; }
+
+/* ========================================================
+   MULTI-LINE & FOOTER COMPONENT DEDUPLICATION CLASSES
+   ======================================================== */
+
+/* Footer Standardized Badges */
+.footer-badge-warning {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--warning);
+}
+.footer-badge-primary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+.footer-badge-accent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-light);
+  cursor: help;
+}
+
+/* Meta & Badge Alignment */
+.meta-badge-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: nowrap;
+}
+
+/* Card Bottom & Layout Helpers */
+.card-footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.card-desc-italic {
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+.price-label {
+  color: var(--primary-light);
+  margin: 0;
+  font-size: 1rem;
+}
+.link-accent-sm {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.footer-bottom-row {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.text-left { text-align: left !important; }
+
+.text-muted-xs { font-size: 0.8rem; color: var(--text-secondary); }
+.filter-checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  line-height: 1.4;
+}
+
+/* ========================================================
+   DEEP DEDUPLICATION UTILITY & COMPONENT CLASSES (Phase 4)
+   ======================================================== */
+
+/* SVG Alignment & Mobile Nav */
+.mobile-menu-btn svg {
+  vertical-align: middle;
+}
+.va-middle {
+  vertical-align: middle !important;
+}
+.va-middle-cta {
+  vertical-align: middle !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Display & Width Utilities */
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.w-full { width: 100% !important; }
+
+/* Spacing Helpers */
+.mb-6 { margin-bottom: 1.5rem !important; }
+.mt-12 { margin-top: 3rem !important; }
+.border-t { border-top: 1px solid var(--border) !important; }
+
+/* Color & Typography Helpers */
+.text-primary { color: var(--text-primary) !important; }
+.text-accent-light { color: var(--accent-light) !important; }
+
+/* Footer Structural Component Classes */
+.footer-brand-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+}
+.footer-col-heading {
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.footer-social-row {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+.footer-trust-strip {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  opacity: 0.75;
+  flex-wrap: wrap;
+}
+.footer-bottom-bar {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.footer-desc-text {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.heading-mb-6 { margin-bottom: 1.5rem !important; font-family: var(--font-heading) !important; }
+.card-padded-box { margin-bottom: 2.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 2rem; }

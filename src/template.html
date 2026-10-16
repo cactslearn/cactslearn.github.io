@@ -42,7 +42,7 @@
       </div>
       <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
         <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-          stroke-width="2" style="vertical-align: middle" viewbox="0 0 24 24" width="24">
+          stroke-width="2" class="va-middle" viewbox="0 0 24 24" width="24">
           <line x1="3" x2="21" y1="12" y2="12"></line>
           <line x1="3" x2="21" y1="6" y2="6"></line>
           <line x1="3" x2="21" y1="18" y2="18"></line>
@@ -57,8 +57,8 @@
         <a href="reviews.html">Reviews</a>
         <a href="faqs.html">FAQs</a>
         <button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle">
-          <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" style="display: block" viewbox="0 0 24 24" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" class="sun-icon d-block">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" x2="12" y1="1" y2="3"></line>
             <line x1="12" x2="12" y1="21" y2="23"></line>
@@ -69,12 +69,12 @@
             <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
             <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
           </svg>
-          <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" style="display: none" viewbox="0 0 24 24" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" class="moon-icon d-none">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <a class="btn btn-accent" href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%20free%201-to-1%20demo%20session." target="_blank" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
+        <a href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%20free%201-to-1%20demo%20session." target="_blank" class="btn btn-accent badge-dark-text">Book Demo</a>
       </nav>
     </div>
   </header>
@@ -82,22 +82,14 @@
   <main>
     <!-- Course Hero Section -->
     <section aria-labelledby="course-h1" class="course-hero">
-      <nav aria-label="Breadcrumb" style="
-            margin-bottom: 1rem;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-          ">
+      <nav aria-label="Breadcrumb" class="meta-subtext-sm">
         {{course_breadcrumbs}}
       </nav>
       <div class="grid-2">
         <div>
           <span class="course-badge">1-to-1 Personal Mentorship</span>
           <h1 id="course-h1">{{h1}}</h1>
-          <p style="
-                font-size: 1.2rem;
-                color: var(--text-secondary);
-                margin-top: 1rem;
-              ">
+          <p class="subhead-secondary-lg">
             {{h2}}
           </p>
           <div class="course-meta-tags">
@@ -149,16 +141,7 @@
             </div>
           </div>
           <!-- AEO Answer-First Callout (Optimized for AI Search Engines) -->
-          <div style="
-                background: rgba(255, 255, 255, 0.03);
-                border-left: 3px solid var(--accent);
-                padding: 0.85rem 1.25rem;
-                border-radius: 4px;
-                margin: 1.5rem 0;
-                font-size: 0.92rem;
-                line-height: 1.5;
-                color: var(--text-secondary);
-              ">
+          <div class="callout-aeo">
             <strong>Lab Overview:</strong> Everyone is selling AI magic. We
             teach the code that makes AI possible. If you want a classroom
             with a certificate, the traditional institutes are waiting for
@@ -166,7 +149,7 @@
             seat in the lab. We bypass mass-classroom lecture batches to focus
             on 1-to-1 code execution.
           </div>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap">
+          <div class="btn-row">
             <a class="btn btn-accent"
               href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20the%201-to-1%20{{course_name_encoded}}%20training."
               target="_blank">
@@ -178,7 +161,7 @@
           </div>
         </div>
         <div class="lead-form-container" id="register">
-          <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading)">
+          <h3 class="heading-mb-6">
             Apply for a Seat in the Lab
           </h3>
           <form class="lead-form" toolaction="submit"
@@ -207,7 +190,7 @@
                 <option value="Career Switcher">Career Switcher</option>
               </select>
             </div>
-            <button class="btn btn-primary" style="width: 100%" type="submit">
+            <button class="btn btn-primary btn-full" type="submit">
               Submit Code Assessment Request
             </button>
           </form>
@@ -219,7 +202,7 @@
       <div class="course-tabs-inner">{{course_tabs}}</div>
     </div>
     <!-- Course Content & Info -->
-    <section aria-labelledby="details-heading" style="border-top: 1px solid var(--border)">
+    <section aria-labelledby="details-heading" class="border-t">
       <div class="course-layout">
         <div>{{course_left_column}}</div>
         <!-- Sticky Sidebar Pricing -->
@@ -268,12 +251,11 @@
             </li>
           </ul>
           <div class="pricing-cta">
-            <a class="btn btn-accent"
-              href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20enrolling%20for%201-to-1%20{{course_name_encoded}}%20training."
-              style="width: 100%; text-align: center; color: #0b0f19" target="_blank">
+            <a
+              href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20enrolling%20for%201-to-1%20{{course_name_encoded}}%20training." target="_blank" class="btn btn-accent btn-full-dark">
               Enroll via WhatsApp
             </a>
-            <a class="btn btn-secondary" href="#register" style="width: 100%; text-align: center; margin-top: 0.75rem">
+            <a href="#register" class="btn btn-secondary btn-full-mt-3">
               Request Free Trial Demo
             </a>
           </div>
@@ -281,7 +263,7 @@
       </div>
     </section>
     <!-- Student Testimonials / Reviews -->
-    <section aria-labelledby="reviews-heading" style="border-top: 1px solid var(--border); padding-top: 3rem">
+    <section aria-labelledby="reviews-heading" class="border-t-pt-12">
       <h2 class="section-title" id="reviews-heading">
         Student Success Stories
       </h2>
@@ -289,468 +271,272 @@
         Real feedback from students who completed our 1-to-1 virtual
         {{course_name}} training.
       </p>
-      <div class="grid-3" style="margin-top: 3rem">{{course_reviews}}</div>
+      <div class="grid-3 mt-12">{{course_reviews}}</div>
     </section>
     <!-- Related Programs cross-linking matrix -->
-    <section aria-labelledby="related-heading" style="border-top: 1px solid var(--border)">
+    <section aria-labelledby="related-heading" class="border-t">
       <h2 class="section-title" id="related-heading">
         Related Training Programs
       </h2>
       <p class="section-subtitle">
         Explore other individual, 1-to-1 virtual software engineering tracks.
       </p>
-      <div style="
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
-          ">
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/java-fullstack/" style="color: var(--text-primary)">Java Fullstack Development</a>
+      <div class="u-c78fd3">
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/java-fullstack/" class="text-primary">Java Fullstack Development</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             Enterprise Spring Boot, React, and SQL database pipelines.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/full-stack/" style="color: var(--text-primary)">Full Stack Web (MERN)</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/full-stack/" class="text-primary">Full Stack Web (MERN)</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             Modern React, Node, Express, MongoDB applications engineering.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/react-js/" style="color: var(--text-primary)">React JS Development</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/react-js/" class="text-primary">React JS Development</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             Component architecture, React Hooks, Redux Toolkit &amp; Vercel
             staging.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/react-native/" style="color: var(--text-primary)">React Native Mobile</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/react-native/" class="text-primary">React Native Mobile</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             Cross-platform native iOS &amp; Android mobile app engineering.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/ai-ml/" style="color: var(--text-primary)">AI &amp; Machine Learning</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/ai-ml/" class="text-primary">AI &amp; Machine Learning</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             Predictive modeling, neural networks, PyTorch, and LLMs.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/data-science/" style="color: var(--text-primary)">Data Science Analytics</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/data-science/" class="text-primary">Data Science Analytics</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             Statistical modeling, Pandas, SQL analytics &amp; dashboarding.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/data-engineering/" style="color: var(--text-primary)">Data Engineering ETL</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/data-engineering/" class="text-primary">Data Engineering ETL</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             Big Data pipelines, Apache Spark, Hadoop &amp; ETL automation.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/python/" style="color: var(--text-primary)">Python Scripting Lab</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/python/" class="text-primary">Python Scripting Lab</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             Core Python, OOP, web scrapers, and task automations.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/power-bi/" style="color: var(--text-primary)">Power BI Analytics</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/power-bi/" class="text-primary">Power BI Analytics</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             DAX computations, visual layouts, and enterprise dashboards.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/cloud/" style="color: var(--text-primary)">Cloud Systems Architecture</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/cloud/" class="text-primary">Cloud Systems Architecture</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             AWS infrastructure, VPC networks, S3 &amp; serverless systems.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/devops/" style="color: var(--text-primary)">DevOps Engineering</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/devops/" class="text-primary">DevOps Engineering</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             CI/CD automation pipelines, Docker, Kubernetes &amp; Terraform.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/software-testing/" style="color: var(--text-primary)">Software Testing Lab</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/software-testing/" class="text-primary">Software Testing Lab</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             Manual verification strategies and Selenium automation scripts.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/cybersecurity/" style="color: var(--text-primary)">Cybersecurity Operations</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/cybersecurity/" class="text-primary">Cybersecurity Operations</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             Network defense, SOC operations, Wireshark &amp; ethical hacking.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/blockchain/" style="color: var(--text-primary)">Blockchain Development</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/blockchain/" class="text-primary">Blockchain Development</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             Solidity, Ethereum EVM, Smart Contracts, Web3.js &amp; DApps.
           </p>
         </div>
-        <div class="card" style="padding: 1.5rem">
-          <h4 style="margin-bottom: 0.5rem">
-            <a href="../courses/software-architect/" style="color: var(--text-primary)">Software Architect</a>
+        <div class="card p-6">
+          <h4 class="mb-2">
+            <a href="../courses/software-architect/" class="text-primary">Software Architect</a>
           </h4>
-          <p style="font-size: 0.88rem; color: var(--text-secondary)">
+          <p class="u-4d031a">
             System design architectures, Event Brokers (Kafka) &amp; EKS.
           </p>
         </div>
       </div>
     </section>
     <!-- Explore Our Career Roles, Roadmaps, & Industry Use Cases Directory Block -->
-    <section class="container" style="margin-top: 4rem; margin-bottom: 4rem">
-      <div style="
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border);
-            border-radius: var(--border-radius);
-            padding: 3rem 2rem;
-          ">
-        <h2 style="
-              font-family: var(--font-heading);
-              font-size: 1.8rem;
-              margin-bottom: 2.5rem;
-              text-align: center;
-            ">
+    <section class="container u-4a7791">
+      <div class="u-7e7187">
+        <h2 class="u-85f8cf">
           Explore Our Career Roles, Roadmaps, &amp; Industry Use Cases
         </h2>
-        <div style="
-              display: grid;
-              grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-              gap: 2.5rem;
-            ">
+        <div class="u-0bd87a">
           <!-- Career Profiles Column (15 Tracks Covered) -->
-          <div style="
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-              ">
-            <h3 style="
-                  color: var(--accent-light);
-                  margin-bottom: 1.25rem;
-                  font-family: var(--font-heading);
-                  font-size: 1.15rem;
-                  display: flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                ">
+          <div class="u-bdd974">
+            <h3 class="u-4b6a0e">
               <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent-light); flex-shrink: 0" viewbox="0 0 24 24" width="20">
+                stroke-width="2" class="u-0ac6d0" viewbox="0 0 24 24" width="20">
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
               Career Profiles
             </h3>
-            <ul style="
-                  list-style: none;
-                  padding: 0;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 0.75rem;
-                  font-size: 0.92rem;
-                ">
+            <ul class="u-ab5f34">
               <li>
-                <a href="../courses/java-fullstack/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a Java Fullstack Developer Do?</a>
+                <a href="../courses/java-fullstack/roadmap.html" class="link-clean">What Does a Java Fullstack Developer Do?</a>
               </li>
               <li>
-                <a href="../courses/full-stack/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a MERN Full Stack Developer Do?</a>
+                <a href="../courses/full-stack/roadmap.html" class="link-clean">What Does a MERN Full Stack Developer Do?</a>
               </li>
               <li>
-                <a href="../courses/react-js/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a React JS Developer Do?</a>
+                <a href="../courses/react-js/roadmap.html" class="link-clean">What Does a React JS Developer Do?</a>
               </li>
               <li>
-                <a href="../courses/react-native/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a React Native Developer Do?</a>
+                <a href="../courses/react-native/roadmap.html" class="link-clean">What Does a React Native Developer Do?</a>
               </li>
               <li>
-                <a href="what-does-an-ai-engineer-do.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does an AI Engineer Do?</a>
+                <a href="what-does-an-ai-engineer-do.html" class="link-clean">What Does an AI Engineer Do?</a>
               </li>
               <li>
-                <a href="../courses/ai-red-teaming/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does an AI Red Teamer Do?</a>
+                <a href="../courses/ai-red-teaming/roadmap.html" class="link-clean">What Does an AI Red Teamer Do?</a>
               </li>
               <li>
-                <a href="../courses/data-science/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a Data Scientist Do?</a>
+                <a href="../courses/data-science/roadmap.html" class="link-clean">What Does a Data Scientist Do?</a>
               </li>
               <li>
-                <a href="what-does-a-data-engineer-do.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a Data Engineer Do?</a>
+                <a href="what-does-a-data-engineer-do.html" class="link-clean">What Does a Data Engineer Do?</a>
               </li>
               <li>
-                <a href="../courses/python/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a Python Developer Do?</a>
+                <a href="../courses/python/roadmap.html" class="link-clean">What Does a Python Developer Do?</a>
               </li>
               <li>
-                <a href="what-does-a-power-bi-developer-do.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a Power BI Developer Do?</a>
+                <a href="what-does-a-power-bi-developer-do.html" class="link-clean">What Does a Power BI Developer Do?</a>
               </li>
               <li>
-                <a href="../courses/cloud/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a Cloud Systems Engineer Do?</a>
+                <a href="../courses/cloud/roadmap.html" class="link-clean">What Does a Cloud Systems Engineer Do?</a>
               </li>
               <li>
-                <a href="what-does-a-devops-engineer-do.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a DevOps Engineer Do?</a>
+                <a href="what-does-a-devops-engineer-do.html" class="link-clean">What Does a DevOps Engineer Do?</a>
               </li>
               <li>
-                <a href="../courses/software-testing/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a Software Test Engineer Do?</a>
+                <a href="../courses/software-testing/roadmap.html" class="link-clean">What Does a Software Test Engineer Do?</a>
               </li>
               <li>
-                <a href="what-does-a-soc-analyst-do.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a SOC Analyst Do?</a>
+                <a href="what-does-a-soc-analyst-do.html" class="link-clean">What Does a SOC Analyst Do?</a>
               </li>
               <li>
-                <a href="what-does-a-blockchain-developer-do.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a Blockchain Developer Do?</a>
+                <a href="what-does-a-blockchain-developer-do.html" class="link-clean">What Does a Blockchain Developer Do?</a>
               </li>
               <li>
-                <a href="../courses/software-architect/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">What Does a Software Architect Do?</a>
+                <a href="../courses/software-architect/roadmap.html" class="link-clean">What Does a Software Architect Do?</a>
               </li>
             </ul>
           </div>
           <!-- Career Roadmaps Column (15 Tracks Covered) -->
-          <div style="
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-              ">
-            <h3 style="
-                  color: var(--primary-light);
-                  margin-bottom: 1.25rem;
-                  font-family: var(--font-heading);
-                  font-size: 1.15rem;
-                  display: flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                ">
+          <div class="u-bdd974">
+            <h3 class="u-67bb93">
               <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--primary-light); flex-shrink: 0" viewbox="0 0 24 24" width="20">
+                stroke-width="2" class="u-70ec13" viewbox="0 0 24 24" width="20">
                 <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
                 <line x1="9" x2="9" y1="3" y2="18"></line>
                 <line x1="15" x2="15" y1="6" y2="21"></line>
               </svg>
               Career Roadmaps
             </h3>
-            <ul style="
-                  list-style: none;
-                  padding: 0;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 0.75rem;
-                  font-size: 0.92rem;
-                ">
+            <ul class="u-ab5f34">
               <li>
-                <a href="../courses/java-fullstack/beginner.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to Java Fullstack Developer</a>
+                <a href="../courses/java-fullstack/beginner.html" class="link-clean">Beginner to Java Fullstack Developer</a>
               </li>
               <li>
-                <a href="../courses/full-stack/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to MERN Full Stack Developer</a>
+                <a href="../courses/full-stack/roadmap.html" class="link-clean">Beginner to MERN Full Stack Developer</a>
               </li>
               <li>
-                <a href="../courses/react-js/beginner.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to React JS Developer</a>
+                <a href="../courses/react-js/beginner.html" class="link-clean">Beginner to React JS Developer</a>
               </li>
               <li>
-                <a href="../courses/react-native/beginner.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to React Native Developer</a>
+                <a href="../courses/react-native/beginner.html" class="link-clean">Beginner to React Native Developer</a>
               </li>
               <li>
-                <a href="../courses/ai-ml/beginner.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to AI &amp; Machine Learning Engineer</a>
+                <a href="../courses/ai-ml/beginner.html" class="link-clean">Beginner to AI &amp; Machine Learning Engineer</a>
               </li>
               <li>
-                <a href="../courses/data-science/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to Data Scientist</a>
+                <a href="../courses/data-science/roadmap.html" class="link-clean">Beginner to Data Scientist</a>
               </li>
               <li>
-                <a href="../courses/data-engineering/beginner.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to Data Engineer</a>
+                <a href="../courses/data-engineering/beginner.html" class="link-clean">Beginner to Data Engineer</a>
               </li>
               <li>
-                <a href="../courses/python/beginner.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to Python Developer</a>
+                <a href="../courses/python/beginner.html" class="link-clean">Beginner to Python Developer</a>
               </li>
               <li>
-                <a href="../courses/power-bi/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to Power BI Analytics Engineer</a>
+                <a href="../courses/power-bi/roadmap.html" class="link-clean">Beginner to Power BI Analytics Engineer</a>
               </li>
               <li>
-                <a href="../courses/cloud/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to Cloud Systems Architect</a>
+                <a href="../courses/cloud/roadmap.html" class="link-clean">Beginner to Cloud Systems Architect</a>
               </li>
               <li>
-                <a href="../courses/devops/beginner.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to DevOps Engineer</a>
+                <a href="../courses/devops/beginner.html" class="link-clean">Beginner to DevOps Engineer</a>
               </li>
               <li>
-                <a href="../courses/software-testing/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to Software Test Engineer</a>
+                <a href="../courses/software-testing/roadmap.html" class="link-clean">Beginner to Software Test Engineer</a>
               </li>
               <li>
-                <a href="../courses/cybersecurity/beginner.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to Cybersecurity Analyst</a>
+                <a href="../courses/cybersecurity/beginner.html" class="link-clean">Beginner to Cybersecurity Analyst</a>
               </li>
               <li>
-                <a href="../courses/blockchain/beginner.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to Blockchain Developer</a>
+                <a href="../courses/blockchain/beginner.html" class="link-clean">Beginner to Blockchain Developer</a>
               </li>
               <li>
-                <a href="../courses/software-architect/roadmap.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Beginner to Enterprise Software Architect</a>
+                <a href="../courses/software-architect/roadmap.html" class="link-clean">Beginner to Enterprise Software Architect</a>
               </li>
             </ul>
           </div>
           <!-- Industry Use Cases & Resources Column (15 Tracks Covered) -->
-          <div style="
-                background: var(--bg-card);
-                border: 1px solid var(--border);
-                border-radius: var(--border-radius);
-                padding: 2rem;
-              ">
-            <h3 style="
-                  color: var(--warning);
-                  margin-bottom: 1.25rem;
-                  font-family: var(--font-heading);
-                  font-size: 1.15rem;
-                  display: flex;
-                  align-items: center;
-                  gap: 0.5rem;
-                ">
+          <div class="u-bdd974">
+            <h3 class="u-c33961">
               <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--warning); flex-shrink: 0" viewbox="0 0 24 24" width="20">
+                stroke-width="2" class="icon-warning" viewbox="0 0 24 24" width="20">
                 <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
                 <line x1="9" x2="9" y1="22" y2="16"></line>
                 <line x1="15" x2="15" y1="22" y2="16"></line>
@@ -759,118 +545,51 @@
               </svg>
               Industry Use Cases &amp; Projects
             </h3>
-            <ul style="
-                  list-style: none;
-                  padding: 0;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 0.75rem;
-                  font-size: 0.92rem;
-                ">
+            <ul class="u-ab5f34">
               <li>
-                <a href="../courses/java-fullstack/projects.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Java Fullstack Enterprise Systems</a>
+                <a href="../courses/java-fullstack/projects.html" class="link-clean">Java Fullstack Enterprise Systems</a>
               </li>
               <li>
-                <a href="project-portfolios.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">MERN Full Stack Portfolios</a>
+                <a href="project-portfolios.html" class="link-clean">MERN Full Stack Portfolios</a>
               </li>
               <li>
-                <a href="../courses/react-js/projects.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">React JS Production Blueprints</a>
+                <a href="../courses/react-js/projects.html" class="link-clean">React JS Production Blueprints</a>
               </li>
               <li>
-                <a href="../courses/react-native/projects.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">React Native Mobile App Projects</a>
+                <a href="../courses/react-native/projects.html" class="link-clean">React Native Mobile App Projects</a>
               </li>
               <li>
-                <a href="how-ai-is-used-in-healthcare.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">AI &amp; ML in Healthcare Systems</a>
+                <a href="how-ai-is-used-in-healthcare.html" class="link-clean">AI &amp; ML in Healthcare Systems</a>
               </li>
               <li>
-                <a href="../courses/data-science/projects.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Data Science Predictive Projects</a>
+                <a href="../courses/data-science/projects.html" class="link-clean">Data Science Predictive Projects</a>
               </li>
               <li>
-                <a href="how-data-engineering-is-used-in-e-commerce.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Data Engineering in E-Commerce</a>
+                <a href="how-data-engineering-is-used-in-e-commerce.html" class="link-clean">Data Engineering in E-Commerce</a>
               </li>
               <li>
-                <a href="../courses/java-fullstack/comparison.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Python vs Java Scripting Comparison</a>
+                <a href="../courses/java-fullstack/comparison.html" class="link-clean">Python vs Java Scripting Comparison</a>
               </li>
               <li>
-                <a href="how-power-bi-is-used-in-manufacturing.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Power BI in Manufacturing Dashboards</a>
+                <a href="how-power-bi-is-used-in-manufacturing.html" class="link-clean">Power BI in Manufacturing Dashboards</a>
               </li>
               <li>
-                <a href="../courses/cloud/certifications.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">AWS Cloud Infrastructure Certs</a>
+                <a href="../courses/cloud/certifications.html" class="link-clean">AWS Cloud Infrastructure Certs</a>
               </li>
               <li>
-                <a href="how-devops-is-used-in-software-companies.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">DevOps in Software Companies</a>
+                <a href="how-devops-is-used-in-software-companies.html" class="link-clean">DevOps in Software Companies</a>
               </li>
               <li>
-                <a href="student-projects.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Software Testing Automation Labs</a>
+                <a href="student-projects.html" class="link-clean">Software Testing Automation Labs</a>
               </li>
               <li>
-                <a href="../courses/cybersecurity/projects.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">SOC Analyst &amp; Hacking Projects</a>
+                <a href="../courses/cybersecurity/projects.html" class="link-clean">SOC Analyst &amp; Hacking Projects</a>
               </li>
               <li>
-                <a href="../courses/blockchain/projects.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Web3 &amp; Blockchain Smart Contracts</a>
+                <a href="../courses/blockchain/projects.html" class="link-clean">Web3 &amp; Blockchain Smart Contracts</a>
               </li>
               <li>
-                <a href="cacts-vs-classroom-vs-ai.html" style="
-                      color: var(--text-primary);
-                      text-decoration: none;
-                      transition: var(--transition);
-                    ">Software Architect Design Principles</a>
+                <a href="cacts-vs-classroom-vs-ai.html" class="link-clean">Software Architect Design Principles</a>
               </li>
             </ul>
           </div>
@@ -882,14 +601,7 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-programs-row">
-        <h4 style="
-              color: var(--text-primary);
-              margin-bottom: 1.5rem;
-              font-size: 1rem;
-              font-weight: 700;
-              letter-spacing: 0.5px;
-              text-transform: uppercase;
-            ">
+        <h4 class="footer-col-heading">
           Engineering Labs &amp; Programs
         </h4>
         <ul class="footer-programs-grid">
@@ -912,47 +624,20 @@
         </ul>
       </div>
       <div class="footer-brand">
-        <a href="../index.html" style="
-              font-family: var(--font-heading);
-              font-size: 1.5rem;
-              font-weight: 800;
-              color: white;
-            ">CACTS</a>
+        <a href="../index.html" class="footer-brand-title">CACTS</a>
         <p>
           Centre of Advanced Computer Training and Studies. Providing
           practical, one-to-one virtual software training and internships on
           real company projects since 2012.
         </p>
-        <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem">
-          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+        <div class="footer-social footer-social-row">
+          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
           </a>
-          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -960,18 +645,7 @@
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
-          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
@@ -979,18 +653,7 @@
               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
             </svg>
           </a>
-          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path
@@ -1003,7 +666,7 @@
       </div>
       <div class="footer-links">
         <h4>Institutional Links</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="../about.html">About CACTS</a></li>
           <li><a href="../academic-projects.html">Academic Projects</a></li>
           <li><a href="../ojt-internship.html">College OJT &amp; Internships</a></li>
@@ -1020,7 +683,7 @@
       </div>
       <div class="footer-links">
         <h4>Learning Portals</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="../tools/index.html">Interactive Tools Suite</a></li>
           <li><a href="../tools/pune-it-salary-calculator.html">Pune IT Salary Calculator</a></li>
           <li><a href="../tools/pune-it-salary-report.html">Pune IT Salary Report 2026</a></li>
@@ -1035,79 +698,39 @@
       </div>
       <div class="footer-contact">
         <h4>Contact CACTS</h4>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           <strong>Phone:</strong> +91 96655 66357
         </p>
         <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
       </div>
     </div>
     <!-- Trust Credentials & Accreditations -->
-    <div style="
-          border-top: 1px solid var(--border);
-          padding: 1.5rem 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-          margin-top: 2rem;
-        ">
-      <div style="
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            line-height: 1.5;
-          ">
+    <div class="footer-bottom-bar">
+      <div class="footer-desc-text">
         <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong>
         Our curricula and git code review models are designed in alignment
         with ISO 29993:2017 standards for non-formal education training and
         software engineering industry practices. *Self-declared alignment for
         educational service quality.
       </div>
-      <div style="
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            opacity: 0.75;
-            flex-wrap: wrap;
-          ">
+      <div class="footer-trust-strip">
         <!-- ISO Compliant Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--accent-light);
-              cursor: help;
-            "
+        <div class="footer-badge-accent"
           title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers.">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
           ISO 29993:2017 ALIGNED*
         </div>
         <!-- Developer Led Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--primary-light);
-            ">
+        <div class="footer-badge-primary">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
             <line x1="2" x2="22" y1="20" y2="20"></line>
             <line x1="12" x2="12" y1="17" y2="20"></line>
@@ -1115,19 +738,9 @@
           100% DEVELOPER LED
         </div>
         <!-- Reg Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--warning);
-            ">
+        <div class="footer-badge-warning">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
             <line x1="9" x2="9" y1="22" y2="16"></line>
             <line x1="15" x2="15" y1="22" y2="16"></line>
@@ -1139,28 +752,24 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div style="text-align: left">
+      <div class="text-left">
         <p>
           © <span id="footer-year">2026</span> CACTS - Centre of Advanced
           Computer Training and Studies. All rights reserved.
         </p>
-        <p style="
-              margin-top: 0.25rem;
-              font-size: 0.8rem;
-              color: var(--text-secondary);
-            ">
+        <p class="footer-address">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
       </div>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-        <a href="../sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
-        <span style="color: var(--border)">|</span>
-        <a href="../terms-conditions.html" style="color: var(--text-secondary)">Terms &amp; Conditions</a>
+      <div class="btn-row">
+        <a href="../sitemap.html" class="footer-link">Sitemap</a>
+        <span class="footer-link-divider">|</span>
+        <a href="../feeds/index.html" class="footer-link">RSS Feeds</a>
+        <span class="footer-link-divider">|</span>
+        <a href="../privacy-policy.html" class="footer-link">Privacy Policy</a>
+        <span class="footer-link-divider">|</span>
+        <a href="../terms-conditions.html" class="footer-link">Terms &amp; Conditions</a>
       </div>
     </div>
   </footer>
@@ -1170,7 +779,7 @@
       href="https://wa.me/919665566357?text=Hi%20CACTS,%20I%20have%20an%20inquiry%20regarding%20the%201-to-1%20{{course_name_encoded}}%20training."
       target="_blank">
       <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width="2.5" style="vertical-align: middle; transform: translateY(-1px)" viewbox="0 0 24 24" width="24">
+        stroke-width="2.5" class="va-middle-cta" viewbox="0 0 24 24" width="24">
         <path
           d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
         </path>
@@ -1178,7 +787,7 @@
     </a>
     <a aria-label="Call CACTS" class="cta-circle cta-call" href="tel:+919665566357">
       <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width="2.5" style="vertical-align: middle" viewbox="0 0 24 24" width="20">
+        stroke-width="2.5" class="va-middle" viewbox="0 0 24 24" width="20">
         <path
           d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
         </path>

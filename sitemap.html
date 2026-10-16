@@ -12,101 +12,6 @@
   <meta content="index, follow" name="robots" />
   <link href="https://cactslearn.github.io/sitemap.html" rel="canonical" />
   <link href="css/style.css" rel="stylesheet" />
-  <style>
-    .sitemap-grid-3col {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 2.5rem;
-    }
-
-    .sitemap-group {
-      background: var(--bg-card);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid var(--border);
-      border-radius: var(--border-radius);
-      padding: 2.25rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      transition: var(--transition);
-    }
-
-    .sitemap-group:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
-    }
-
-    .sitemap-group h3 {
-      color: var(--accent-light);
-      font-size: 1.25rem;
-      margin-bottom: 1.25rem;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 0.6rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-heading);
-    }
-
-    .sitemap-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.8rem;
-      padding: 0;
-      margin: 0;
-    }
-
-    .sitemap-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      line-height: 1.4;
-    }
-
-    .sitemap-list a {
-      color: var(--text-secondary);
-      font-size: 0.93rem;
-      font-weight: 500;
-      transition: var(--transition);
-      text-decoration: none;
-    }
-
-    .sitemap-list a:hover {
-      color: var(--text-primary);
-      padding-left: 3px;
-    }
-
-    .sitemap-bullet {
-      color: var(--accent);
-      font-weight: 800;
-      font-size: 0.85rem;
-      flex-shrink: 0;
-    }
-
-    .course-split-grid-3col {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    @media (max-width: 1100px) {
-
-      .sitemap-grid-3col,
-      .course-split-grid-3col {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 720px) {
-
-      .sitemap-grid-3col,
-      .course-split-grid-3col {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
   <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -141,6 +46,7 @@
   <link rel="alternate" type="application/rss+xml" title="CACTS Tech Jobs &amp; Internships" href="https://cactslearn.github.io/feeds/rss-jobs.xml" />
   <link rel="alternate" type="application/rss+xml" title="CACTS Tech Career Guides" href="https://cactslearn.github.io/feeds/rss-guides.xml" />
   <link rel="alternate" type="application/rss+xml" title="CACTS Engineering Courses" href="https://cactslearn.github.io/feeds/rss-courses.xml" />
+    <link rel="stylesheet" href="css/sitemap.css">
 </head>
 
 <body>
@@ -154,7 +60,7 @@
       </div>
       <button aria-label="Toggle navigation menu" class="mobile-menu-btn">
         <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-          stroke-width="2" style="vertical-align: middle" viewbox="0 0 24 24" width="24">
+          stroke-width="2" class="va-middle" viewbox="0 0 24 24" width="24">
           <line x1="3" x2="21" y1="12" y2="12"></line>
           <line x1="3" x2="21" y1="6" y2="6"></line>
           <line x1="3" x2="21" y1="18" y2="18"></line>
@@ -169,8 +75,8 @@
         <a href="reviews.html">Reviews</a>
         <a href="faqs.html">FAQs</a>
         <button aria-label="Toggle Theme" class="theme-toggle-btn" id="theme-toggle">
-          <svg class="sun-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" style="display: block" viewbox="0 0 24 24" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" class="sun-icon d-block">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" x2="12" y1="1" y2="3"></line>
             <line x1="12" x2="12" y1="21" y2="23"></line>
@@ -181,23 +87,23 @@
             <line x1="4.22" x2="5.64" y1="19.78" y2="18.36"></line>
             <line x1="18.36" x2="19.78" y1="5.64" y2="4.22"></line>
           </svg>
-          <svg class="moon-icon" fill="none" height="20" stroke="currentColor" stroke-linecap="round"
-            stroke-linejoin="round" stroke-width="2" style="display: none" viewbox="0 0 24 24" width="20">
+          <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" class="moon-icon d-none">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
           </svg>
         </button>
-        <a class="btn btn-accent" href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%20free%201-to-1%20demo%20session." target="_blank" style="padding: 0.5rem 1rem; color: #0b0f19">Book Demo</a>
+        <a href="https://wa.me/919665566357?text=Hi%20CACTS%2C%20I%27m%20interested%20in%20booking%20a%20free%201-to-1%20demo%20session." target="_blank" class="btn btn-accent badge-dark-text">Book Demo</a>
       </nav>
     </div>
   </header>
-  <main style="padding-top: 8rem; padding-bottom: 5rem">
+  <main class="u-c8d89f">
     <section aria-labelledby="sitemap-h1" class="tech-section">
-      <nav aria-label="Breadcrumb" style="margin-bottom: 2rem; font-size: 0.85rem; color: var(--text-secondary);">
-        <a href="index.html" style="color: var(--accent)">Home</a> &gt;
-        <span style="color: var(--text-primary)">Sitemap Directory</span>
+      <nav aria-label="Breadcrumb" class="u-09d055">
+        <a href="index.html" class="text-accent">Home</a> &gt;
+        <span class="text-primary">Sitemap Directory</span>
       </nav>
       <h1 class="section-title" id="sitemap-h1">Sitemap Directory</h1>
-      <p class="section-subtitle" style="text-align: left; margin-left: 0">
+      <p class="section-subtitle u-aa845a">
         Explore all core pages, interactive calculators, learning portals, career openings, tech guides, and 1-to-1
         training pathways across the CACTS platform.
       </p>
@@ -208,7 +114,7 @@
         <div class="sitemap-group">
           <h3>
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-              stroke-width="2" style="color: var(--accent); flex-shrink: 0;" viewbox="0 0 24 24" width="18">
+              stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
             </svg>
             Core Institutional &amp; Locations
@@ -290,7 +196,7 @@
         <div class="sitemap-group">
           <h3>
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-              stroke-width="2" style="color: var(--accent); flex-shrink: 0;" viewbox="0 0 24 24" width="18">
+              stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
               <path d="M18 20V10"></path>
               <path d="M12 20V4"></path>
               <path d="M6 20v-6"></path>
@@ -298,7 +204,7 @@
             Calculators &amp; Interactive Tools
           </h3>
           <ul class="sitemap-list">
-            <li><span class="sitemap-bullet" style="color: var(--accent);">•</span><a href="tools/" style="font-weight: 700; color: var(--accent-light);">Interactive Tools Suite (All 9 Tools)</a></li>
+            <li><span class="sitemap-bullet text-accent">•</span><a href="tools/" class="u-c78f23">Interactive Tools Suite (All 9 Tools)</a></li>
             <li><span class="sitemap-bullet">→</span><a href="tools/career-roadmaps.html">Tool: Career Roadmaps</a></li>
             <li><span class="sitemap-bullet">→</span><a href="tools/course-readiness-check.html">Tool: Course Readiness
                 Check</a></li>
@@ -323,7 +229,7 @@
         <div class="sitemap-group">
           <h3>
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-              stroke-width="2" style="color: var(--accent); flex-shrink: 0;" viewbox="0 0 24 24" width="18">
+              stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
               <rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
             </svg>
@@ -370,20 +276,20 @@
       </div>
 
       <!-- Middle Sections: Tech Guides & Student Showcase (3 Columns) -->
-      <div class="sitemap-grid-3col" style="margin-top: 2rem;">
+      <div class="sitemap-grid-3col u-53a129">
         <!-- Group 4: Specialized Career Guides & Comparisons -->
-        <div class="sitemap-group" style="grid-column: span 2;">
+        <div class="sitemap-group u-b80092">
           <h3>
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-              stroke-width="2" style="color: var(--accent); flex-shrink: 0;" viewbox="0 0 24 24" width="18">
+              stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
               <path
                 d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
               </path>
             </svg>
             Specialized Career Guides &amp; Tech Comparisons
           </h3>
-          <ul class="sitemap-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem 1.5rem;">
-            <li style="grid-column: 1 / -1;"><span class="sitemap-bullet" style="color: var(--accent);">•</span><a href="guides/" style="font-weight: 700; color: var(--accent-light);">Technology &amp; Career Guides Hub (All 19 Guides)</a></li>
+          <ul class="sitemap-list u-51dc12">
+            <li class="u-493b1c"><span class="sitemap-bullet text-accent">•</span><a href="guides/" class="u-c78f23">Technology &amp; Career Guides Hub (All 19 Guides)</a></li>
             <li><span class="sitemap-bullet">→</span><a href="comparisons/cacts-vs-classroom-vs-ai.html">Comparison:
                 Cacts Vs Classroom Vs AI</a></li>
             <li><span class="sitemap-bullet">→</span><a href="comparisons/technology-comparisons.html">Comparison:
@@ -432,14 +338,14 @@
         <div class="sitemap-group">
           <h3>
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-              stroke-width="2" style="color: var(--accent); flex-shrink: 0;" viewbox="0 0 24 24" width="18">
+              stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
               <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
               <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
             </svg>
             Student Showcase &amp; Portfolios
           </h3>
           <ul class="sitemap-list">
-            <li><span class="sitemap-bullet" style="color: var(--accent);">•</span><a href="showcase/" style="font-weight: 700; color: var(--accent-light);">Student Portfolios &amp; Showcases Hub</a></li>
+            <li><span class="sitemap-bullet text-accent">•</span><a href="showcase/" class="u-c78f23">Student Portfolios &amp; Showcases Hub</a></li>
             <li><span class="sitemap-bullet">→</span><a href="showcase/internship-on-live-projects.html">Showcase:
                 Internship On Live Projects</a></li>
             <li><span class="sitemap-bullet">→</span><a href="showcase/internship-showcase.html">Showcase: Internship
@@ -453,858 +359,858 @@
       </div>
 
       <!-- Group 6: Detailed Course Split Pages Directory (15 Tracks in 3-Column Grid) -->
-      <div style="margin-top: 4rem;">
+      <div class="mt-16">
         <h2
-          style="font-size: 2rem; color: var(--text-primary); font-family: var(--font-heading); margin-bottom: 0.5rem;">
+          class="u-468226">
           Course Modules &amp; Specialized Guides
         </h2>
-        <p style="color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem;">
+        <p class="u-d1a74a">
           Explore the full 9-tier architecture (Overview, Syllabus, Fees, Interview Q&amp;A, Career Roadmap, Project
           Ideas, Beginner Guide, Certifications, and Framework Comparisons) across all 15 engineering tracks.
         </p>
 
         <div class="course-split-grid-3col">
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
               </svg>
               Java Fullstack Engineering
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/java-fullstack/" style="font-weight: 700; color: var(--accent-light);">Java Fullstack
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/java-fullstack/" class="u-c78f23">Java Fullstack
                   Engineering Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/java-fullstack/syllabus.html">Java Fullstack Engineering Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/java-fullstack/fees.html">Java Fullstack Engineering Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/java-fullstack/interview-questions.html">Java Fullstack Engineering Interview Questions
                   & Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/java-fullstack/roadmap.html">Java Fullstack Engineering Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/java-fullstack/projects.html">Java Fullstack Engineering Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/java-fullstack/beginner.html">Java Fullstack Engineering Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/java-fullstack/certifications.html">Java Fullstack Engineering Industry Certifications
                   Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/java-fullstack/comparison.html">Java Fullstack Engineering Framework & Tech
                   Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
               </svg>
               Full Stack Web (MERN)
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/full-stack/" style="font-weight: 700; color: var(--accent-light);">Full Stack Web
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/full-stack/" class="u-c78f23">Full Stack Web
                   (MERN) Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/full-stack/syllabus.html">Full Stack Web (MERN) Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/full-stack/fees.html">Full Stack Web (MERN) Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/full-stack/interview-questions.html">Full Stack Web (MERN) Interview Questions &
                   Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/full-stack/roadmap.html">Full Stack Web (MERN) Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/full-stack/projects.html">Full Stack Web (MERN) Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/full-stack/beginner.html">Full Stack Web (MERN) Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/full-stack/certifications.html">Full Stack Web (MERN) Industry Certifications Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/full-stack/comparison.html">Full Stack Web (MERN) Framework & Tech Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
               </svg>
               React JS Development
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/react-js/" style="font-weight: 700; color: var(--accent-light);">React JS Development
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/react-js/" class="u-c78f23">React JS Development
                   Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-js/syllabus.html">React JS Development Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-js/fees.html">React JS Development Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-js/interview-questions.html">React JS Development Interview Questions &
                   Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-js/roadmap.html">React JS Development Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-js/projects.html">React JS Development Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-js/beginner.html">React JS Development Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-js/certifications.html">React JS Development Industry Certifications Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-js/comparison.html">React JS Development Framework & Tech Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
               </svg>
               React Native Mobile Engineering
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/react-native/" style="font-weight: 700; color: var(--accent-light);">React Native
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/react-native/" class="u-c78f23">React Native
                   Mobile Engineering Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-native/syllabus.html">React Native Mobile Engineering Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-native/fees.html">React Native Mobile Engineering Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-native/interview-questions.html">React Native Mobile Engineering Interview
                   Questions & Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-native/roadmap.html">React Native Mobile Engineering Career Navigation
                   Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-native/projects.html">React Native Mobile Engineering Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-native/beginner.html">React Native Mobile Engineering Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-native/certifications.html">React Native Mobile Engineering Industry
                   Certifications Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/react-native/comparison.html">React Native Mobile Engineering Framework & Tech
                   Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"></path>
               </svg>
               AI & Machine Learning Engineering
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/ai-ml/" style="font-weight: 700; color: var(--accent-light);">AI & Machine Learning
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/ai-ml/" class="u-c78f23">AI & Machine Learning
                   Engineering Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-ml/syllabus.html">AI & Machine Learning Engineering Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-ml/fees.html">AI & Machine Learning Engineering Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-ml/interview-questions.html">AI & Machine Learning Engineering Interview Questions &
                   Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-ml/roadmap.html">AI & Machine Learning Engineering Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-ml/projects.html">AI & Machine Learning Engineering Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-ml/beginner.html">AI & Machine Learning Engineering Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-ml/certifications.html">AI & Machine Learning Engineering Industry Certifications
                   Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-ml/comparison.html">AI & Machine Learning Engineering Framework & Tech
                   Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
               AI Red Teaming & Security
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/ai-red-teaming/" style="font-weight: 700; color: var(--accent-light);">AI Red Teaming &
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/ai-red-teaming/" class="u-c78f23">AI Red Teaming &
                   Security Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-red-teaming/syllabus.html">AI Red Teaming & Security Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-red-teaming/fees.html">AI Red Teaming & Security Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-red-teaming/interview-questions.html">AI Red Teaming & Security Interview Questions
                   & Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-red-teaming/roadmap.html">AI Red Teaming & Security Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-red-teaming/projects.html">AI Red Teaming & Security Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-red-teaming/beginner.html">AI Red Teaming & Security Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-red-teaming/certifications.html">AI Red Teaming & Security Industry Certifications
                   Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/ai-red-teaming/comparison.html">AI Red Teaming & Security Framework & Tech
                   Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M18 20V10M12 20V4M6 20v-6"></path>
               </svg>
               Data Science Analytics
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/data-science/" style="font-weight: 700; color: var(--accent-light);">Data Science
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/data-science/" class="u-c78f23">Data Science
                   Analytics Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-science/syllabus.html">Data Science Analytics Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-science/fees.html">Data Science Analytics Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-science/interview-questions.html">Data Science Analytics Interview Questions &
                   Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-science/roadmap.html">Data Science Analytics Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-science/projects.html">Data Science Analytics Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-science/beginner.html">Data Science Analytics Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-science/certifications.html">Data Science Analytics Industry Certifications
                   Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-science/comparison.html">Data Science Analytics Framework & Tech Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path
                   d="M4 7v10c0 2.21 3.58 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.58 4 8 4s8-1.79 8-4M4 7c0-2.21 3.58-4 8-4s8 1.79 8 4">
                 </path>
               </svg>
               Data Engineering ETL
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/data-engineering/" style="font-weight: 700; color: var(--accent-light);">Data
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/data-engineering/" class="u-c78f23">Data
                   Engineering ETL Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-engineering/syllabus.html">Data Engineering ETL Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-engineering/fees.html">Data Engineering ETL Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-engineering/interview-questions.html">Data Engineering ETL Interview Questions &
                   Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-engineering/roadmap.html">Data Engineering ETL Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-engineering/projects.html">Data Engineering ETL Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-engineering/beginner.html">Data Engineering ETL Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-engineering/certifications.html">Data Engineering ETL Industry Certifications
                   Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/data-engineering/comparison.html">Data Engineering ETL Framework & Tech Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
               </svg>
               Python Scripting & Automation
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/python/" style="font-weight: 700; color: var(--accent-light);">Python Scripting &
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/python/" class="u-c78f23">Python Scripting &
                   Automation Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/python/syllabus.html">Python Scripting & Automation Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/python/fees.html">Python Scripting & Automation Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/python/interview-questions.html">Python Scripting & Automation Interview Questions &
                   Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/python/roadmap.html">Python Scripting & Automation Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/python/projects.html">Python Scripting & Automation Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/python/beginner.html">Python Scripting & Automation Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/python/certifications.html">Python Scripting & Automation Industry Certifications
                   Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/python/comparison.html">Python Scripting & Automation Framework & Tech Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M18 20V10M12 20V4M6 20v-6"></path>
               </svg>
               Power BI Analytics & DAX
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/power-bi/" style="font-weight: 700; color: var(--accent-light);">Power BI Analytics &
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/power-bi/" class="u-c78f23">Power BI Analytics &
                   DAX Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/power-bi/syllabus.html">Power BI Analytics & DAX Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/power-bi/fees.html">Power BI Analytics & DAX Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/power-bi/interview-questions.html">Power BI Analytics & DAX Interview Questions &
                   Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/power-bi/roadmap.html">Power BI Analytics & DAX Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/power-bi/projects.html">Power BI Analytics & DAX Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/power-bi/beginner.html">Power BI Analytics & DAX Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/power-bi/certifications.html">Power BI Analytics & DAX Industry Certifications
                   Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/power-bi/comparison.html">Power BI Analytics & DAX Framework & Tech Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M19 18H6a4 4 0 0 1-1-7.87A6 6 0 0 1 16.65 8A4.5 4.5 0 0 1 19 18z"></path>
               </svg>
               Cloud Systems Architecture (AWS)
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/cloud/" style="font-weight: 700; color: var(--accent-light);">Cloud Systems
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/cloud/" class="u-c78f23">Cloud Systems
                   Architecture (AWS) Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cloud/syllabus.html">Cloud Systems Architecture (AWS) Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cloud/fees.html">Cloud Systems Architecture (AWS) Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cloud/interview-questions.html">Cloud Systems Architecture (AWS) Interview Questions &
                   Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cloud/roadmap.html">Cloud Systems Architecture (AWS) Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cloud/projects.html">Cloud Systems Architecture (AWS) Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cloud/beginner.html">Cloud Systems Architecture (AWS) Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cloud/certifications.html">Cloud Systems Architecture (AWS) Industry Certifications
                   Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cloud/comparison.html">Cloud Systems Architecture (AWS) Framework & Tech Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
               </svg>
               DevOps & Cloud Native
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/devops/" style="font-weight: 700; color: var(--accent-light);">DevOps & Cloud Native
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/devops/" class="u-c78f23">DevOps & Cloud Native
                   Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/devops/syllabus.html">DevOps & Cloud Native Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/devops/fees.html">DevOps & Cloud Native Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/devops/interview-questions.html">DevOps & Cloud Native Interview Questions &
                   Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/devops/roadmap.html">DevOps & Cloud Native Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/devops/projects.html">DevOps & Cloud Native Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/devops/beginner.html">DevOps & Cloud Native Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/devops/certifications.html">DevOps & Cloud Native Industry Certifications Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/devops/comparison.html">DevOps & Cloud Native Framework & Tech Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M9 11l3 3L22 4"></path>
               </svg>
               Software Testing & SDET QA
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/software-testing/" style="font-weight: 700; color: var(--accent-light);">Software
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/software-testing/" class="u-c78f23">Software
                   Testing & SDET QA Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-testing/syllabus.html">Software Testing & SDET QA Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-testing/fees.html">Software Testing & SDET QA Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-testing/interview-questions.html">Software Testing & SDET QA Interview
                   Questions & Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-testing/roadmap.html">Software Testing & SDET QA Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-testing/projects.html">Software Testing & SDET QA Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-testing/beginner.html">Software Testing & SDET QA Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-testing/certifications.html">Software Testing & SDET QA Industry
                   Certifications Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-testing/comparison.html">Software Testing & SDET QA Framework & Tech
                   Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
               Cybersecurity Operations Lab
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/cybersecurity/" style="font-weight: 700; color: var(--accent-light);">Cybersecurity
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/cybersecurity/" class="u-c78f23">Cybersecurity
                   Operations Lab Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cybersecurity/syllabus.html">Cybersecurity Operations Lab Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cybersecurity/fees.html">Cybersecurity Operations Lab Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cybersecurity/interview-questions.html">Cybersecurity Operations Lab Interview
                   Questions & Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cybersecurity/roadmap.html">Cybersecurity Operations Lab Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cybersecurity/projects.html">Cybersecurity Operations Lab Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cybersecurity/beginner.html">Cybersecurity Operations Lab Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cybersecurity/certifications.html">Cybersecurity Operations Lab Industry Certifications
                   Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/cybersecurity/comparison.html">Cybersecurity Operations Lab Framework & Tech
                   Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path
                   d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
                 </path>
               </svg>
               Blockchain Development
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/blockchain/" style="font-weight: 700; color: var(--accent-light);">Blockchain
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/blockchain/" class="u-c78f23">Blockchain
                   Development Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/blockchain/syllabus.html">Blockchain Development Curriculum & Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/blockchain/fees.html">Blockchain Development Fees & Flexible Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/blockchain/interview-questions.html">Blockchain Development Interview Questions &
                   Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/blockchain/roadmap.html">Blockchain Development Career Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/blockchain/projects.html">Blockchain Development Portfolio Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/blockchain/beginner.html">Blockchain Development Beginner Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/blockchain/certifications.html">Blockchain Development Industry Certifications
                   Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/blockchain/comparison.html">Blockchain Development Framework & Tech Comparison</a>
               </li>
             </ul>
           </div>
           <div
-            style="background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--border-radius); padding: 1.75rem; transition: var(--transition);">
+            class="u-546432">
             <h4
-              style="color: var(--text-primary); font-size: 1.15rem; margin-bottom: 1.25rem; font-family: var(--font-heading); display: flex; align-items: center; gap: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+              class="u-f1457d">
               <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                stroke-width="2" style="color: var(--accent); flex-shrink: 0" viewbox="0 0 24 24" width="18">
+                stroke-width="2" class="icon-accent" viewbox="0 0 24 24" width="18">
                 <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
               </svg>
               Software Architect & Distributed Systems
             </h4>
-            <ul class="sitemap-list" style="gap: 0.6rem">
+            <ul class="sitemap-list u-78e58e">
               <li>
-                <span class="sitemap-bullet" style="color: var(--accent)">•</span>
-                <a href="courses/software-architect/" style="font-weight: 700; color: var(--accent-light);">Software
+                <span class="sitemap-bullet text-accent">•</span>
+                <a href="courses/software-architect/" class="u-c78f23">Software
                   Architect & Distributed Systems Overview</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-architect/syllabus.html">Software Architect & Distributed Systems Curriculum &
                   Syllabus</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-architect/fees.html">Software Architect & Distributed Systems Fees & Flexible
                   Options</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-architect/interview-questions.html">Software Architect & Distributed Systems
                   Interview Questions & Answers</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-architect/roadmap.html">Software Architect & Distributed Systems Career
                   Navigation Roadmap</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-architect/projects.html">Software Architect & Distributed Systems Portfolio
                   Project Ideas</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-architect/beginner.html">Software Architect & Distributed Systems Beginner
                   Career Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-architect/certifications.html">Software Architect & Distributed Systems
                   Industry Certifications Guide</a>
               </li>
-              <li style="padding-left: 1.25rem">
-                <span class="sitemap-bullet" style="color: var(--text-secondary)">↳</span>
+              <li class="pl-5">
+                <span class="sitemap-bullet text-muted">↳</span>
                 <a href="courses/software-architect/comparison.html">Software Architect & Distributed Systems Framework
                   & Tech Comparison</a>
               </li>
@@ -1319,14 +1225,7 @@
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-programs-row">
-        <h4 style="
-              color: var(--text-primary);
-              margin-bottom: 1.5rem;
-              font-size: 1rem;
-              font-weight: 700;
-              letter-spacing: 0.5px;
-              text-transform: uppercase;
-            ">
+        <h4 class="footer-col-heading">
           Engineering Labs &amp; Programs
         </h4>
         <ul class="footer-programs-grid">
@@ -1349,47 +1248,20 @@
         </ul>
       </div>
       <div class="footer-brand">
-        <a href="index.html" style="
-              font-family: var(--font-heading);
-              font-size: 1.5rem;
-              font-weight: 800;
-              color: white;
-            ">CACTS</a>
+        <a href="index.html" class="footer-brand-title">CACTS</a>
         <p>
           Centre of Advanced Computer Training and Studies. Providing
           practical, one-to-one virtual software training and internships on
           real company projects since 2012.
         </p>
-        <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem">
-          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+        <div class="footer-social footer-social-row">
+          <a aria-label="Facebook" href="https://www.facebook.com/cactspune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
             </svg>
           </a>
-          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="LinkedIn" href="https://www.linkedin.com/company/cacts/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -1397,18 +1269,7 @@
               <circle cx="4" cy="4" r="2"></circle>
             </svg>
           </a>
-          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="Instagram" href="https://www.instagram.com/cacts_pune/" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
@@ -1416,18 +1277,7 @@
               <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
             </svg>
           </a>
-          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" style="
-                color: var(--text-secondary);
-                transition: var(--transition);
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 36px;
-                height: 36px;
-                background: rgba(255, 255, 255, 0.02);
-                border: 1px solid var(--border);
-                border-radius: 50%;
-              " target="_blank">
+          <a aria-label="YouTube" href="https://www.youtube.com/@CACTSPune" class="social-circle-btn" target="_blank">
             <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
               stroke-width="2" viewbox="0 0 24 24" width="18">
               <path
@@ -1440,7 +1290,7 @@
       </div>
       <div class="footer-links">
         <h4>Institutional Links</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="about.html">About CACTS</a></li>
           <li><a href="academic-projects.html">Academic Projects</a></li>
           <li><a href="ojt-internship.html">College OJT &amp; Internships</a></li>
@@ -1457,7 +1307,7 @@
       </div>
       <div class="footer-links">
         <h4>Learning Portals</h4>
-        <ul style="list-style: none">
+        <ul class="list-unstyled">
           <li><a href="tools/index.html">Interactive Tools Suite</a></li>
           <li><a href="tools/pune-it-salary-calculator.html">Pune IT Salary Calculator</a></li>
           <li><a href="tools/pune-it-salary-report.html">Pune IT Salary Report 2026</a></li>
@@ -1472,79 +1322,39 @@
       </div>
       <div class="footer-contact">
         <h4>Contact CACTS</h4>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
-        <p style="margin-bottom: 0.5rem">
+        <p class="mb-2">
           <strong>Phone:</strong> +91 96655 66357
         </p>
         <p><strong>Hours:</strong> Everyday: 8:00 AM - 10:00 PM</p>
       </div>
     </div>
     <!-- Trust Credentials & Accreditations -->
-    <div style="
-          border-top: 1px solid var(--border);
-          padding: 1.5rem 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 2rem;
-          flex-wrap: wrap;
-          margin-top: 2rem;
-        ">
-      <div style="
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            line-height: 1.5;
-          ">
+    <div class="footer-bottom-bar">
+      <div class="footer-desc-text">
         <strong>Pedagogical Standards &amp; Corporate Onboarding Alignment:</strong>
         Our curricula and git code review models are designed in alignment
         with ISO 29993:2017 standards for non-formal education training and
         software engineering industry practices. *Self-declared alignment for
         educational service quality.
       </div>
-      <div style="
-            display: flex;
-            gap: 1.5rem;
-            align-items: center;
-            opacity: 0.75;
-            flex-wrap: wrap;
-          ">
+      <div class="footer-trust-strip">
         <!-- ISO Compliant Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--accent-light);
-              cursor: help;
-            "
+        <div class="footer-badge-accent"
           title="Self-declared pedagogical alignment with standard ISO 29993:2017 parameters for non-formal learning providers.">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
           ISO 29993:2017 ALIGNED*
         </div>
         <!-- Developer Led Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--primary-light);
-            ">
+        <div class="footer-badge-primary">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="14" rx="2" ry="2" width="20" x="2" y="3"></rect>
             <line x1="2" x2="22" y1="20" y2="20"></line>
             <line x1="12" x2="12" y1="17" y2="20"></line>
@@ -1552,19 +1362,9 @@
           100% DEVELOPER LED
         </div>
         <!-- Reg Badge -->
-        <div style="
-              display: flex;
-              align-items: center;
-              gap: 0.5rem;
-              border: 1px solid var(--border);
-              padding: 0.4rem 0.75rem;
-              border-radius: 8px;
-              font-size: 0.75rem;
-              font-weight: 700;
-              color: var(--warning);
-            ">
+        <div class="footer-badge-warning">
           <svg fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" style="flex-shrink: 0" viewbox="0 0 24 24" width="14">
+            stroke-width="2" class="shrink-0" viewbox="0 0 24 24" width="14">
             <rect height="20" rx="2" ry="2" width="16" x="4" y="2"></rect>
             <line x1="9" x2="9" y1="22" y2="16"></line>
             <line x1="15" x2="15" y1="22" y2="16"></line>
@@ -1576,28 +1376,24 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div style="text-align: left">
+      <div class="text-left">
         <p>
           © <span id="footer-year">2026</span> CACTS - Centre of Advanced
           Computer Training and Studies. All rights reserved.
         </p>
-        <p style="
-              margin-top: 0.25rem;
-              font-size: 0.8rem;
-              color: var(--text-secondary);
-            ">
+        <p class="footer-address">
           First Floor, Shinde Arcade, NDA Rd, Deshmukh Nagar, Shivane, Pune,
           Maharashtra 411023
         </p>
       </div>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap">
-        <a href="sitemap.html" style="color: var(--text-secondary)">Sitemap</a>
-        <span style="color: var(--border)">|</span>
-        <a href="feeds/index.html" style="color: var(--text-secondary)">RSS Feeds</a>
-        <span style="color: var(--border)">|</span>
-        <a href="privacy-policy.html" style="color: var(--text-secondary)">Privacy Policy</a>
-        <span style="color: var(--border)">|</span>
-        <a href="terms-conditions.html" style="color: var(--text-secondary)">Terms &amp; Conditions</a>
+      <div class="btn-row">
+        <a href="sitemap.html" class="text-muted">Sitemap</a>
+        <span class="border-subtle">|</span>
+        <a href="feeds/index.html" class="text-muted">RSS Feeds</a>
+        <span class="border-subtle">|</span>
+        <a href="privacy-policy.html" class="text-muted">Privacy Policy</a>
+        <span class="border-subtle">|</span>
+        <a href="terms-conditions.html" class="text-muted">Terms &amp; Conditions</a>
       </div>
     </div>
   </footer>
@@ -1607,7 +1403,7 @@
       href="https://wa.me/919665566357?text=Hi%20CACTS,%20I'm%20interested%20in%20learning%20more%20about%20your%201-to-1%20training."
       target="_blank">
       <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width="2.5" style="vertical-align: middle; transform: translateY(-1px)" viewbox="0 0 24 24" width="24">
+        stroke-width="2.5" class="va-middle-cta" viewbox="0 0 24 24" width="24">
         <path
           d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
         </path>
@@ -1615,7 +1411,7 @@
     </a>
     <a aria-label="Call CACTS" class="cta-circle cta-call" href="tel:+919665566357">
       <svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width="2.5" style="vertical-align: middle" viewbox="0 0 24 24" width="20">
+        stroke-width="2.5" class="va-middle" viewbox="0 0 24 24" width="20">
         <path
           d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
         </path>
