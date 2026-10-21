@@ -1,0 +1,226 @@
+{
+  "version": "1.0",
+  "description": "Registry mapping high-intent GSC search queries to existing authoritative pages for in-place FAQ and schema enrichment without duplication.",
+  "pages": [
+    {
+      "page_path": "locations/sinhagad-road.html",
+      "queries": [
+        "full stack classes in sinhgad road / anandnagar"
+      ],
+      "schema_alternates": [
+        "Full Stack Classes in Sinhgad Road",
+        "Full Stack Classes in Anand Nagar",
+        "Software Classes along Sinhgad Road",
+        "Web Development Classes in Vadgaon Sinhgad Road"
+      ],
+      "faqs": [
+        {
+          "q": "Are 1-to-1 Full Stack classes available along Sinhgad Road and Anand Nagar?",
+          "a": "Yes, CACTS provides comprehensive 1-to-1 Full Stack classes (covering MERN stack, React 18, Node.js, and Java Spring Boot) for candidates along Sinhgad Road, Anand Nagar, Vadgaon Budruk, and Hingne Khurd. You work directly with a senior developer-mentor on live company project repositories with personalized pace, flexible morning or evening slots, and zero commute traffic."
+        }
+      ]
+    },
+    {
+      "page_path": "locations/karvenagar.html",
+      "queries": [
+        "it classes in karve nagar",
+        "java classes in karve nagar",
+        "karve nagar it classes",
+        "full stack classes in karve nagar"
+      ],
+      "schema_alternates": [
+        "IT Classes in Karve Nagar",
+        "Java Classes in Karve Nagar",
+        "Full Stack Classes in Karve Nagar",
+        "Best Software Classes in Karve Nagar Pune"
+      ],
+      "faqs": [
+        {
+          "q": "Where can I find the best Java classes in Karve Nagar with live project training?",
+          "a": "CACTS offers industry-aligned 1-to-1 Java classes near Karve Nagar for students from Cummins College, Marathwada Mitra Mandal, and nearby institutes. The curriculum spans Core Java, Spring Boot 3 microservices, Hibernate ORM, and SQL, featuring hands-on debugging, line-by-line code reviews, and live company staging internships."
+        },
+        {
+          "q": "What Full Stack and IT classes are offered in Karve Nagar for freshers?",
+          "a": "In Karve Nagar, CACTS provides private 1-to-1 IT classes in Java Fullstack, MERN Stack (React, Node, Express, MongoDB), Python Data Science, and Cloud DevOps. Each candidate receives dedicated developer guidance, GitHub portfolio building, and technical interview preparation with no crowded classroom batches."
+        }
+      ]
+    },
+    {
+      "page_path": "locations/kothrud.html",
+      "queries": [
+        "java classes in kothrud"
+      ],
+      "schema_alternates": [
+        "Java Classes in Kothrud",
+        "IT Classes in Kothrud",
+        "Full Stack Java Classes Kothrud Pune"
+      ],
+      "faqs": [
+        {
+          "q": "Which Java classes in Kothrud provide practical Spring Boot and microservices mentoring?",
+          "a": "CACTS delivers dedicated 1-to-1 Java classes for engineering students and working professionals in Kothrud (near Paud Road, Ideal Colony, and MIT-WPU). You master Java OOP, Spring Boot 3, REST API architecture, and database integrations through real-time screenshare coding sessions and live server deployments."
+        }
+      ]
+    },
+    {
+      "page_path": "locations/katraj.html",
+      "queries": [
+        "full stack classes in katraj"
+      ],
+      "schema_alternates": [
+        "Full Stack Classes in Katraj",
+        "Web Development Classes in Katraj",
+        "IT Classes near Bharati Vidyapeeth Katraj"
+      ],
+      "faqs": [
+        {
+          "q": "Are there 1-to-1 Full Stack web development classes near Katraj and Bharati Vidyapeeth?",
+          "a": "Yes. CACTS offers personalized Full Stack classes (Java Fullstack and MERN Stack) for college students in Katraj, Bharati Vidyapeeth campus, and Ambegaon. Training includes building production-ready web apps, RESTful microservices, and live Git staging deployment experience."
+        }
+      ]
+    },
+    {
+      "page_path": "locations/dhankawadi.html",
+      "queries": [
+        "full stack classes in dhankawadi / balajinagar",
+        "java classes in dhankawadi / balajinagar"
+      ],
+      "schema_alternates": [
+        "Full Stack Classes in Dhankawadi",
+        "Java Classes in Dhankawadi",
+        "IT Classes in Balaji Nagar Pune"
+      ],
+      "faqs": [
+        {
+          "q": "Where can I attend Full Stack and Java classes in Dhankawadi and Balaji Nagar?",
+          "a": "CACTS provides private 1-to-1 Java and Full Stack classes for candidates in Dhankawadi, Balaji Nagar, and Pune-Satara Road. The training covers full lifecycle software development—from frontend React interfaces to Spring Boot backend services and SQL databases—with individual mentor attention."
+        }
+      ]
+    },
+    {
+      "page_path": "locations/shivaji-nagar.html",
+      "queries": [
+        "java classes in shivajinagar"
+      ],
+      "schema_alternates": [
+        "Java Classes in Shivaji Nagar",
+        "Java Training Classes near FC Road",
+        "Best Java Classes in Shivajinagar Pune"
+      ],
+      "faqs": [
+        {
+          "q": "How do CACTS Java classes in Shivaji Nagar cater to COEP and college students?",
+          "a": "Students near Shivaji Nagar, FC Road, and JM Road benefit from flexible 1-to-1 Java classes covering OOP logic, Spring Boot microservices, and cloud deployment. Mentors pace each module around college lectures and lab exams, ensuring complete conceptual and practical mastery."
+        }
+      ]
+    },
+    {
+      "page_path": "locations/kharadi.html",
+      "queries": [
+        "web development classes in kharadi"
+      ],
+      "schema_alternates": [
+        "Web Development Classes in Kharadi",
+        "Full Stack Classes in Kharadi",
+        "React JS Classes in Kharadi Pune"
+      ],
+      "faqs": [
+        {
+          "q": "What web development classes are available for candidates in Kharadi IT hub?",
+          "a": "CACTS provides developer-led web development classes for professionals and freshers around EON Free Zone and World Trade Center Kharadi. Training covers React 18, Node.js, Express, MongoDB, and modern API design with flexible early-morning and late-evening 1-to-1 slots."
+        }
+      ]
+    },
+    {
+      "page_path": "locations/swargate.html",
+      "queries": [
+        "full stack classes in swargate"
+      ],
+      "schema_alternates": [
+        "Full Stack Classes in Swargate",
+        "Software Classes in Swargate",
+        "IT Classes near Swargate Pune"
+      ],
+      "faqs": [
+        {
+          "q": "Are Full Stack developer classes available for learners near Swargate?",
+          "a": "Yes. CACTS offers comprehensive 1-to-1 Full Stack classes covering MERN and Java Spring Boot for learners in Swargate, Tilak Road, and Mukund Nagar. Trainees write real production code and gain verifiable internship experience on live staging servers."
+        }
+      ]
+    },
+    {
+      "page_path": "courses/software-testing/index.html",
+      "queries": [
+        "software testing classes in pune",
+        "best software testing classes in pune",
+        "testing classes in pune"
+      ],
+      "schema_alternates": [
+        "Best Software Testing Classes in Pune",
+        "Software Testing Automation Classes Pune"
+      ],
+      "faqs": [
+        {
+          "q": "Why are CACTS 1-to-1 Software Testing classes considered the best in Pune?",
+          "a": "Unlike crowded batch testing classes in Pune, CACTS pairs you 1-to-1 with a senior QA Automation Engineer. You master Manual Testing, Selenium Java, TestNG, Cucumber BDD, and API testing on live client staging builds with 100% personalized mentorship."
+        }
+      ]
+    },
+    {
+      "page_path": "courses/data-engineering/index.html",
+      "queries": [
+        "data engineer classes in pune",
+        "etl testing classes in pune"
+      ],
+      "schema_alternates": [
+        "Data Engineer Classes in Pune",
+        "ETL Testing Classes in Pune",
+        "Big Data Engineering Classes Pune"
+      ],
+      "faqs": [
+        {
+          "q": "What makes CACTS Data Engineer and ETL classes in Pune unique?",
+          "a": "Our 1-to-1 Data Engineering classes in Pune focus on hands-on PySpark, Apache Kafka, Snowflake, and ETL pipeline design. Trainees build enterprise data lakes and validate data transformation logic directly with senior Big Data mentors."
+        }
+      ]
+    },
+    {
+      "page_path": "courses/react-js/index.html",
+      "queries": [
+        "react js classes in pune"
+      ],
+      "schema_alternates": [
+        "React JS Classes in Pune",
+        "Frontend React Development Classes Pune"
+      ],
+      "faqs": [
+        {
+          "q": "How are 1-to-1 React JS classes conducted in Pune?",
+          "a": "CACTS React JS classes in Pune are conducted 1-to-1 via interactive screenshare labs. You master modern JavaScript (ES6+), React 18 hooks, Redux Toolkit state management, REST API consumption, and Tailwind CSS by building production-grade frontend applications."
+        }
+      ]
+    },
+    {
+      "page_path": "index.html",
+      "queries": [
+        "data analytics classes near me",
+        "python classes near me",
+        "ai classes near me",
+        "computer class near me"
+      ],
+      "schema_alternates": [
+        "Software Classes Near Me",
+        "IT Classes Near Me in Pune",
+        "Python Classes Near Me",
+        "Data Analytics Classes Near Me",
+        "AI Classes Near Me"
+      ],
+      "faqs": [
+        {
+          "q": "Can I attend 1-to-1 software and computer classes near me in Pune?",
+          "a": "Yes. Whether you are located in Kothrud, Karve Nagar, Sinhagad Road, Wakad, or Hadapsar, CACTS offers 1-to-1 software classes in Python, Data Analytics, AI/ML, and Full Stack. You can learn in-person at our central Shivane lab or join live 1-to-1 virtual labs with a dedicated developer mentor."
+        }
+      ]
+    }
+  ]
+}
