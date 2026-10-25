@@ -155,7 +155,7 @@ function renderCertificate(record) {
   if (errorCard) errorCard.style.display = 'none';
 
   const certCanvas = document.getElementById('certificateCanvas');
-  if (certCanvas) certCanvas.style.display = 'flex';
+  if (certCanvas) { certCanvas.classList.remove('d-none'); certCanvas.style.display = 'flex'; }
 
   const breakdownSec = document.getElementById('breakdownSection');
   if (breakdownSec) breakdownSec.style.display = 'block';
@@ -379,7 +379,7 @@ function generateQRCodes(record) {
 
 function showError(title, message) {
   const certCanvas = document.getElementById('certificateCanvas');
-  if (certCanvas) certCanvas.style.display = 'none';
+  if (certCanvas) { certCanvas.classList.add('d-none'); certCanvas.style.display = 'none'; }
 
   const breakdownSec = document.getElementById('breakdownSection');
   if (breakdownSec) breakdownSec.style.display = 'none';

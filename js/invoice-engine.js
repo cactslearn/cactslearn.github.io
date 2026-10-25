@@ -380,8 +380,8 @@ function switchView(viewName) {
   const rcptSelect = document.getElementById('receiptSelect');
 
   if (!currentActiveInvoice) {
-    if (invCanvas) invCanvas.style.display = 'none';
-    if (rcptCanvas) rcptCanvas.style.display = 'none';
+    if (invCanvas) { invCanvas.classList.add('d-none'); invCanvas.style.display = 'none'; }
+    if (rcptCanvas) { rcptCanvas.classList.add('d-none'); rcptCanvas.style.display = 'none'; }
     if (rcptSelect) rcptSelect.style.display = 'none';
     return;
   }
@@ -389,14 +389,14 @@ function switchView(viewName) {
   if (viewName === 'invoice') {
     if (btnInv) btnInv.className = 'view-toggle-btn active';
     if (btnRcpt) btnRcpt.className = 'view-toggle-btn';
-    if (invCanvas) invCanvas.style.display = 'block';
-    if (rcptCanvas) rcptCanvas.style.display = 'none';
+    if (invCanvas) { invCanvas.classList.remove('d-none'); invCanvas.style.display = 'block'; }
+    if (rcptCanvas) { rcptCanvas.classList.add('d-none'); rcptCanvas.style.display = 'none'; }
     if (rcptSelect) rcptSelect.style.display = 'none';
   } else {
     if (btnInv) btnInv.className = 'view-toggle-btn';
     if (btnRcpt) btnRcpt.className = 'view-toggle-btn active';
-    if (invCanvas) invCanvas.style.display = 'none';
-    if (rcptCanvas) rcptCanvas.style.display = 'block';
+    if (invCanvas) { invCanvas.classList.add('d-none'); invCanvas.style.display = 'none'; }
+    if (rcptCanvas) { rcptCanvas.classList.remove('d-none'); rcptCanvas.style.display = 'block'; }
     if (rcptSelect) rcptSelect.style.display = 'inline-block';
     renderSpecificReceipt(currentActiveReceiptIndex);
   }
@@ -516,10 +516,10 @@ function generateReceiptQR(payment) {
 
 function showError(title, message) {
   const invCanvas = document.getElementById('invoiceCanvas');
-  if (invCanvas) invCanvas.style.display = 'none';
+  if (invCanvas) { invCanvas.classList.add('d-none'); invCanvas.style.display = 'none'; }
 
   const rcptCanvas = document.getElementById('receiptCanvas');
-  if (rcptCanvas) rcptCanvas.style.display = 'none';
+  if (rcptCanvas) { rcptCanvas.classList.add('d-none'); rcptCanvas.style.display = 'none'; }
 
   const dlBtn = document.getElementById('downloadPdfBtn');
   if (dlBtn) dlBtn.disabled = true;
