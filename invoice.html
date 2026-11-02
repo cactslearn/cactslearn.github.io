@@ -324,30 +324,38 @@
 
           <!-- Fee Breakdown Table -->
           <div class="doc-section-heading">Course Fee Structure &amp; Scholarship Breakdown</div>
-          <table class="doc-table">
+          <table class="doc-table fee-breakdown-table" id="feeBreakdownTable">
+            <colgroup>
+              <col class="fee-col-sr">
+              <col class="fee-col-course">
+              <col class="fee-col-sac">
+              <col class="fee-col-standard">
+              <col class="fee-col-scholarship">
+              <col class="fee-col-net">
+            </colgroup>
             <thead>
               <tr>
-                <th class="u-06d6f9 text-center">Sr.</th>
-                <th class="u-c01d85">Program / Course Particulars</th>
-                <th class="u-e6e185 text-center">SAC Code</th>
-                <th class="u-e6e185 text-right">Standard Fee</th>
-                <th class="u-d87019 text-right">Scholarship</th>
-                <th class="u-d87019 text-right">Net Payable</th>
+                <th class="fee-col-sr text-center">Sr.</th>
+                <th class="fee-col-course">Program / Course Particulars</th>
+                <th class="fee-col-sac text-center">SAC Code</th>
+                <th class="fee-col-standard text-right">Standard Fee</th>
+                <th class="fee-col-scholarship text-right">Scholarship</th>
+                <th class="fee-col-net text-right">Net Payable</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td class="text-center u-93d1d3">1</td>
-                <td>
+                <td class="fee-col-sr text-center u-93d1d3">1</td>
+                <td class="fee-col-course">
                   <div class="u-dccfc6" id="tableCourseTitle">Java Full
                     Stack Development</div>
                   <div class="u-a283b6">Comprehensive 1-to-1 Mentorship,
                     Practical Architecture &amp; Live Staging</div>
                 </td>
-                <td class="text-center u-71e94d">999293</td>
-                <td id="tableGrossFee" class="text-right u-f74950">&#8377; 19,999.00</td>
-                <td id="tableDiscount" class="text-right u-dc28b4">- &#8377; 1,999.00</td>
-                <td class="text-right u-f74950"><strong id="tableNetFee"
+                <td class="fee-col-sac text-center u-71e94d">999293</td>
+                <td id="tableGrossFee" class="fee-col-standard text-right u-f74950">&#8377; 19,999.00</td>
+                <td id="tableDiscount" class="fee-col-scholarship text-right u-dc28b4">- &#8377; 1,999.00</td>
+                <td class="fee-col-net text-right u-f74950"><strong id="tableNetFee"
                     class="u-d9b7ba">&#8377; 18,000.00</strong></td>
               </tr>
             </tbody>

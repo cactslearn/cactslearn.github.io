@@ -119,7 +119,7 @@ function fetchInvoiceRecord(mobile, month, year, isBackgroundCheck = false) {
     if (statusInfo) {
       statusInfo.innerHTML = `
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="12"></circle></svg>
-        <span>CONNECTING TO SECURE BILLING GATEWAY: Authenticating student records for +91 ${mobile}...</span>
+        <span>CONNECTING TO SECURE BILLING GATEWAY: Authenticating student records for ${mobile}...</span>
       `;
     }
     const statusTimestamp = document.getElementById('statusTimestamp');
@@ -241,7 +241,7 @@ function renderInvoice(record) {
   if (sName) sName.innerText = record.studentName || 'Student Name';
 
   const sMobile = document.getElementById('invMobileNumber');
-  if (sMobile) sMobile.innerText = `+91 ${record.mobileNumber || ''}`;
+  if (sMobile) sMobile.innerText = `${record.mobileNumber || ''}`;
 
   const sJoin = document.getElementById('invJoiningDate');
   if (sJoin) sJoin.innerText = formatDate(record.joiningDate);
@@ -447,7 +447,7 @@ function renderSpecificReceipt(index) {
   if (rcptName) rcptName.innerText = currentActiveInvoice.studentName || 'Student Name';
 
   const rcptMob = document.getElementById('rcptMobile');
-  if (rcptMob) rcptMob.innerText = `+91 ${currentActiveInvoice.mobileNumber || ''}`;
+  if (rcptMob) rcptMob.innerText = `${currentActiveInvoice.mobileNumber || ''}`;
 
   const rcptWords = document.getElementById('rcptWordsAmount');
   if (rcptWords) rcptWords.innerHTML = convertNumberToIndianWords(thisAmount).replace(/ /g, '&nbsp;');
@@ -603,7 +603,17 @@ function downloadDocumentPDF() {
       scrollX: 0,
       scrollY: 0,
       windowWidth: targetWidth,
-      backgroundColor: '#ffffff'
+      backgroundColor: '#ffffff',
+      onclone: (clonedDoc) => {
+        const docTables = clonedDoc.querySelectorAll('.doc-table');
+        docTables.forEach(tbl => {
+          const cells = tbl.querySelectorAll('th, td');
+          cells.forEach(c => {
+            c.style.overflow = 'visible';
+            c.style.textOverflow = 'clip';
+          });
+        });
+      }
     }).then(canvas => {
       // Restore element styles immediately
       element.style.transform = oldTransform;

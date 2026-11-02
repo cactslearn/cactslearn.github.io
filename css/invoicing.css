@@ -202,8 +202,7 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
   box-sizing: border-box;
 }
 
@@ -221,13 +220,83 @@
   padding: 6px 8px;
   border-bottom: 1px solid #e2e8f0;
   color: #1e293b;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  overflow: visible;
   box-sizing: border-box;
 }
 
 .doc-table tbody tr:nth-child(even) {
   background: #f8fafc;
+}
+
+/* Course Fee Structure & Scholarship Breakdown Table */
+.fee-breakdown-table {
+  width: 100% !important;
+  table-layout: fixed !important;
+  border-collapse: collapse !important;
+  margin: 10px 0 !important;
+}
+
+.fee-breakdown-table col.fee-col-sr,
+.fee-breakdown-table th.fee-col-sr,
+.fee-breakdown-table td.fee-col-sr {
+  width: 5% !important;
+}
+
+.fee-breakdown-table col.fee-col-course,
+.fee-breakdown-table th.fee-col-course,
+.fee-breakdown-table td.fee-col-course {
+  width: 36% !important;
+}
+
+.fee-breakdown-table col.fee-col-sac,
+.fee-breakdown-table th.fee-col-sac,
+.fee-breakdown-table td.fee-col-sac {
+  width: 9% !important;
+}
+
+.fee-breakdown-table col.fee-col-standard,
+.fee-breakdown-table th.fee-col-standard,
+.fee-breakdown-table td.fee-col-standard {
+  width: 16% !important;
+}
+
+.fee-breakdown-table col.fee-col-scholarship,
+.fee-breakdown-table th.fee-col-scholarship,
+.fee-breakdown-table td.fee-col-scholarship {
+  width: 17% !important;
+}
+
+.fee-breakdown-table col.fee-col-net,
+.fee-breakdown-table th.fee-col-net,
+.fee-breakdown-table td.fee-col-net {
+  width: 17% !important;
+}
+
+.fee-breakdown-table th {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+  padding: 6px 6px !important;
+  font-size: 0.71rem !important;
+  letter-spacing: 0.25px !important;
+  box-sizing: border-box !important;
+}
+
+.fee-breakdown-table td {
+  overflow: visible !important;
+  text-overflow: clip !important;
+  padding: 6px 6px !important;
+  box-sizing: border-box !important;
+  word-break: normal !important;
+}
+
+.fee-breakdown-table td.text-right {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.fee-breakdown-table #tableNetFee {
+  font-size: 0.88rem !important;
 }
 
 /* Section Subheaders */
@@ -605,6 +674,27 @@
 
   .summary-ledger-table td {
     padding: 4px 8px !important;
+  }
+
+  .doc-table th,
+  .doc-table td {
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+
+  .fee-breakdown-table th {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: nowrap !important;
+    padding: 5px 4px !important;
+    font-size: 0.70rem !important;
+  }
+
+  .fee-breakdown-table td {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    padding: 5px 4px !important;
+    font-size: 0.78rem !important;
   }
 
   .doc-auth-footer {
